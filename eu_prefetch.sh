@@ -18,24 +18,6 @@ set -e
 UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 
 # ──────────────────────────────────────────────────────────────────
-# HEARTBEAT — silent-death detector. Fires unconditionally at script
-# start via bash curl → Resend. Guarantees a signal even if the LLM
-# agent later hangs/times out. RESEND_KEY is passed via env from the
-# routine's events[0] Bash command (not committed to public GitHub).
-# ──────────────────────────────────────────────────────────────────
-if [ -n "${RESEND_KEY:-}" ]; then
-    HB_TIME=$(date -u '+%Y-%m-%d %H:%M UTC')
-    curl -sS -X POST 'https://api.resend.com/emails' \
-        -H "Authorization: Bearer ${RESEND_KEY}" \
-        -H 'Content-Type: application/json' \
-        --data-raw "{\"from\":\"onboarding@resend.dev\",\"to\":\"michaeljdzik@gmail.com\",\"subject\":\"⏳ Digest RUN STARTED ${HB_TIME}\",\"html\":\"<p>Digest agent bootstrap complete. Pipeline running.</p><p>If no <b>Daily Racing Digest</b> arrives by 10am ET, this run silently died — inspect the CCR session for ${HB_TIME} UTC.</p>\"}" \
-        -o /tmp/heartbeat_resp.txt 2>&1 || true
-    echo "HEARTBEAT: fired for ${HB_TIME} — resp: $(head -c 200 /tmp/heartbeat_resp.txt 2>/dev/null)"
-else
-    echo "HEARTBEAT_SKIP: RESEND_KEY env var not set"
-fi
-
-# ──────────────────────────────────────────────────────────────────
 # SDL UPCOMING — thestatsdontlie.com is the SOLE source
 # ──────────────────────────────────────────────────────────────────
 SDL_URL="https://www.thestatsdontlie.com/horse-racing/"

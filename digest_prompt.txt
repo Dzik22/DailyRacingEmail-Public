@@ -996,12 +996,12 @@ HORSES_TO_VERIFY = {{RESULTS_HORSES_JSON}}
 
 EXECUTE THESE STEPS IN ORDER:
 
-1. For EACH horse in HORSES_TO_VERIFY:
-   a. Run: WebSearch('"[horse]" [track] [month year] race result finish position')
-      Example: WebSearch('"Saxony Charms" Curragh May 2026 race result finish position')
-   b. If no clear finishing position found in the first search, try ONE more targeted search:
-      WebSearch('"[horse]" "[race_hint]" [date] result')
-   c. Extract the official finishing position (e.g. "3rd of 15"), exact race name (verbatim), jockey name, and winner name from the search results.
+1. FIRE ALL FIRST-PASS WEBSEARCHES IN PARALLEL. In a SINGLE assistant message, invoke ONE WebSearch tool call per horse concurrently — up to 10 concurrent per batch. If HORSES_TO_VERIFY has more than 10 entries, complete batch 1 fully before firing batch 2. Query per horse: `"[horse]" [track] [month year] race result finish position`. Example: `WebSearch('"Saxony Charms" Curragh May 2026 race result finish position')`.
+   a. Once all first-pass results are back, for each horse extract the official finishing position (e.g. "3rd of 15"), exact race name (verbatim), jockey name, and winner name from that horse's search results.
+   b. Any horse for which the first-pass returned no clear finishing position → queue a targeted second search: `"[horse]" "[race_hint]" [date] result`.
+   c. FIRE ALL QUEUED SECOND-PASS SEARCHES IN PARALLEL in a single message (same batching rule, batches of 10).
+
+⚠️ Parallel batching rule: WebSearch calls for different horses have no dependencies. Do NOT loop sequentially — sequential per-horse execution adds 10-30 min per run. Multiple WebSearch tool calls in a single assistant message run concurrently.
 
 2. RULES:
    - Position MUST be numeric (1st, 2nd, 3rd, 4th, …) — never "ran", "well beaten", "unplaced".
@@ -1233,14 +1233,18 @@ EXECUTE THESE STEPS IN ORDER:
    - Read /tmp/eu_recap_json.json (Racing Post Group/Listed results for yesterday)
    For each horse in the hardcoded list, scan all quote/summary fields for the horse name. If a quote mentions racing verbs (ran/raced/finished/debut/won/placed/Xth) with date or track info within 7 days, EXTRACT that data first — that's your seed before WebSearching.
 
-2. For EACH horse in the hardcoded list (in order):
-   a. If step 1 gave you a date + track + race + position from an evidence quote → record as raced_with_result, source="team_valor_pdf" or "syndicate_email"
-   b. ELSE run: WebSearch('"[horse]" race result June 2026 finish position runners site:racingpost.com')
-      Wait for results, scan for finishing position info from last 7 days (compare against today's date).
-   c. If no clear racingpost hit, fallback: WebSearch('"[horse]" "[syndicate]" race result June 2026 finished')
-   d. If a race is found WITHIN last 7 days but no exact finish position → raced_no_position with best-effort note
-   e. If no race found in last 7 days → did_not_race
-   f. If a race is found from the evidence quote but you cannot confirm finishing position via WebSearch → still record as raced_with_result IF the quote itself states position (e.g., "finished 4th"), otherwise raced_no_position
+2. WALK the hardcoded list once and split horses into two groups:
+   - IMMEDIATE-RESOLVE: horse has date + track + race + position from an evidence quote (from Step 1 evidence files) → record as raced_with_result, source="team_valor_pdf" or "syndicate_email". No WebSearch needed for this horse.
+   - NEEDS-SEARCH: all remaining horses (evidence gave partial or no signal).
+
+   a. FIRE ALL FIRST-PASS RACINGPOST SEARCHES IN PARALLEL for the NEEDS-SEARCH group. In a SINGLE assistant message, invoke one concurrent WebSearch per horse — up to 10 concurrent per batch. If NEEDS-SEARCH has more than 10 horses, complete batch 1 before firing batch 2. Query per horse: `"[horse]" race result [current month name] [year] finish position runners site:racingpost.com`. Scan each response for finishing position info from last 7 days (compare against today's date).
+   b. Any horse whose first-pass returned no clear racingpost hit → queue a fallback search. FIRE ALL FALLBACK SEARCHES IN PARALLEL in a single message: `"[horse]" "[syndicate]" race result [current month] [year] finished`.
+   c. Apply outcome classification to each horse:
+      - Race found WITHIN last 7 days but no exact finish position → raced_no_position with best-effort note
+      - No race found in last 7 days → did_not_race
+      - Race from evidence quote without confirming WebSearch → raced_with_result IF the quote itself states position (e.g., "finished 4th"), otherwise raced_no_position
+
+⚠️ Parallel batching rule: WebSearch calls for different horses have no dependencies. Do NOT loop sequentially — sequential per-horse execution adds 10-30 min per run. Multiple WebSearch tool calls in a single assistant message run concurrently.
 
 3. CRITICAL RULES:
    - Date math: "last 7 days" = today's date minus 7. Horse racing on May 23 with today June 28 = NOT within 7 days.

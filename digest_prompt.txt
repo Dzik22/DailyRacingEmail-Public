@@ -224,6 +224,7 @@ Flightress            → Woodford
 Outcomes Based        → Woodford
 Hypnos                → Woodford
 Kensai                → Woodford
+Castiglione           → Woodford
 ```
 
 Woodford also has unnamed 2-year-olds — include under Woodford badge if mentioned.
@@ -1449,12 +1450,14 @@ Your ONLY job is to find Master Table horse mentions in syndicate emails from th
 MASTER_TABLE = [{{ACTIVE_BARN_LIST}}]
 
 EXECUTE THESE SEARCHES IN ORDER:
-1. mcp__Gmail__search_threads({"query": "from:(aron@eclipsetbpartners.com OR barry@teamvalor.com OR emily@teamvalor.com OR hello@joincommonwealth.com OR woodford OR jamie@middlehamparkracing.net OR \"Tom Palin\" OR tk@wasabistables.com OR stallions@wasabistables.com OR dan@finalfurlongracingstable.com OR vince@finalfurlongracingstable.com) newer_than:7d in:inbox"})
+1. mcp__Gmail__search_threads({"query": "from:(aron@eclipsetbpartners.com OR barry@teamvalor.com OR emily@teamvalor.com OR hello@joincommonwealth.com OR woodford OR benhaggin@woodfordracing.ccsend.com OR woodfordracing.ccsend.com OR jamie@middlehamparkracing.net OR \"Tom Palin\" OR tk@wasabistables.com OR stallions@wasabistables.com OR dan@finalfurlongracingstable.com OR vince@finalfurlongracingstable.com) newer_than:7d in:inbox"})
 2. mcp__Gmail__search_threads({"query": "from:middlehamparkoffice@gmail.com newer_than:14d in:anywhere"})
 3. mcp__Gmail__search_threads({"query": "from:michaeljdzik@gmail.com subject:\"declared\" newer_than:14d in:anywhere"})
 4. mcp__Gmail__search_threads({"query": "from:aron@eclipsetbpartners.com newer_than:14d in:anywhere"})
 5. mcp__Gmail__search_threads({"query": "from:(tk@wasabistables.com OR stallions@wasabistables.com) newer_than:14d in:anywhere"})
 6. mcp__Gmail__search_threads({"query": "from:(dan@finalfurlongracingstable.com OR vince@finalfurlongracingstable.com) newer_than:14d in:anywhere"})
+7. mcp__Gmail__search_threads({"query": "from:(woodfordracing.ccsend.com OR benhaggin@woodfordracing.ccsend.com OR bill@woodford-racing.com OR ben@woodford-racing.com) newer_than:14d in:anywhere"})
+   ⚠️ WOODFORD post-race emails come from `benhaggin@woodfordracing.ccsend.com` (Constant Contact bulk sender). Subject format: "HORSENAME - Chart - Race Replay - Comments - DATE - TRACK". Body contains: chart quote (verbatim), Cherie DeVaux quote, next-step plan. When you see this pattern → open every thread with get_thread and extract the horse name (subject prefix) + full trainer quote for stable_updates.
 
 For EVERY unique thread returned across all 6 searches, call mcp__Gmail__get_thread with FULL_CONTENT to read the complete body.
 
@@ -1472,7 +1475,7 @@ EXTRACT RULES:
   - jamie@middlehamparkracing.net / "Tom Palin" / middlehamparkoffice@gmail.com → "Middleham Park"
   - tk@wasabistables.com / stallions@wasabistables.com → "Wasabi"
   - dan@finalfurlongracingstable.com / vince@finalfurlongracingstable.com → "Final Furlong"
-  - any sender containing "woodford" → "Woodford"
+  - any sender containing "woodford" (includes benhaggin@woodfordracing.ccsend.com, bill@woodford-racing.com, ben@woodford-racing.com, any @woodfordracing.ccsend.com Constant Contact address) → "Woodford"
   - any sender containing "rtp" → "RTP Racing"
   - michaeljdzik@gmail.com (self-sent) → use the syndicate the horse belongs to per MASTER_TABLE
 
@@ -2284,7 +2287,7 @@ After writing the JSON, run this validation check:
 ```bash
 python3 -c "
 import json
-MASTER = {'orchidaceae','ulysses rose','tellus mater','simply joking','saxony charms','oracle of delphi','lady moon','celestial siren','eager lad','sweetheart jewelry','cuban flame','coco g','rare allocation','sierra sagrada','snowglobe','oh shoot','otherworldly','random recall','phantom princess','boleto','capricious star','double right','straight shooter','maui madness','see you tonight','physique','just sayin','victor whiskey','corderito','core principle','highwaymen','clear for takeoff','mccoy','refute','alpha strike','flightress','outcomes based','hypnos','kensai'}
+MASTER = {'orchidaceae','ulysses rose','tellus mater','simply joking','saxony charms','oracle of delphi','lady moon','celestial siren','eager lad','sweetheart jewelry','cuban flame','coco g','rare allocation','sierra sagrada','snowglobe','oh shoot','otherworldly','random recall','phantom princess','boleto','capricious star','double right','straight shooter','maui madness','see you tonight','physique','just sayin','victor whiskey','corderito','core principle','highwaymen','clear for takeoff','mccoy','refute','alpha strike','flightress','outcomes based','hypnos','kensai','castiglione'}
 d = json.load(open('/tmp/digest_data.json'))
 ms = d.get('my_stable', {})
 print('JSON OK:')
@@ -2316,7 +2319,7 @@ VALID_SENDERS = {
     'tk@wasabistables.com', 'stallions@wasabistables.com', 'wasabistables.com',
     'dan@finalfurlongracingstable.com', 'vince@finalfurlongracingstable.com', 'finalfurlongracingstable.com',
     'michaeljdzik@gmail.com',  # self-forwarded notes (declared, etc.)
-    'woodford', 'rtp',  # substring matches for Woodford/RTP senders
+    'woodford', 'woodfordracing.ccsend.com', 'benhaggin', 'rtp',  # substring matches for Woodford/RTP senders
     'drive.google.com', 'google drive',  # Team Valor Drive PDFs
 }
 # Phrases that almost always indicate fabrication when not directly quoted from source
@@ -3088,7 +3091,7 @@ MASTER = {
   'victor whiskey':'Woodford','corderito':'Woodford','core principle':'Woodford',
   'highwaymen':'Woodford','clear for takeoff':'Woodford','mccoy':'Woodford',
   'refute':'Woodford','alpha strike':'Woodford','flightress':'Woodford','outcomes based':'Woodford',
-  'hypnos':'Woodford','kensai':'Woodford',
+  'hypnos':'Woodford','kensai':'Woodford','castiglione':'Woodford',
 }
 FLAGS = {
   'USA':'\U0001f1fa\U0001f1f8','GB':'\U0001f1ec\U0001f1e7','IRE':'\U0001f1ee\U0001f1ea',

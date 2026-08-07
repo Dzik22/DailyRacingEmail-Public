@@ -17,12 +17,22 @@ set -e
 
 UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 
+# Aug 7 2026 FIX — bound every fetch.
+# These curls previously had NO timeout at all. They run in the STEP 0 bootstrap,
+# which executes BEFORE the agent reads digest_prompt.txt, so a stalled connection to
+# thestatsdontlie.com (500KB) or racingpost.com (2.1MB) hangs the whole CCR session
+# until it exhausts its budget and dies -- producing no digest draft and not even the
+# Step 8 "AGENT ERROR" failsafe draft. That is the exact signature of the Aug 7 2026
+# 6am primary-routine failure (fired 10:09:56Z, zero output, zero trace).
+# `|| true` below guards a non-zero exit code but does NOT guard a hang; only --max-time does.
+CURL_OPTS=(--connect-timeout 15 --max-time 120 --retry 2 --retry-delay 3 --retry-connrefused)
+
 # ──────────────────────────────────────────────────────────────────
 # SDL UPCOMING — thestatsdontlie.com is the SOLE source
 # ──────────────────────────────────────────────────────────────────
 SDL_URL="https://www.thestatsdontlie.com/horse-racing/"
 echo "EU_PREFETCH: fetching upcoming from ${SDL_URL}"
-curl -s -L -A "${UA}" "${SDL_URL}" -o /tmp/sdl.html || true
+curl -s -L "${CURL_OPTS[@]}" -A "${UA}" "${SDL_URL}" -o /tmp/sdl.html || true
 SDL_BYTES=$(wc -c < /tmp/sdl.html 2>/dev/null || echo 0)
 echo "EU_PREFETCH: downloaded ${SDL_BYTES} bytes from SDL"
 
@@ -174,7 +184,7 @@ fi
 YEST=$(date -d 'yesterday' '+%Y-%m-%d' 2>/dev/null || date -v-1d '+%Y-%m-%d')
 RP_URL="https://www.racingpost.com/results/${YEST}"
 echo "EU_RECAP_PREFETCH: fetching YESTERDAY=${YEST} from ${RP_URL}"
-curl -s -L -A "${UA}" "${RP_URL}" -o /tmp/rp_yesterday.html || true
+curl -s -L "${CURL_OPTS[@]}" -A "${UA}" "${RP_URL}" -o /tmp/rp_yesterday.html || true
 RP_BYTES=$(wc -c < /tmp/rp_yesterday.html 2>/dev/null || echo 0)
 echo "EU_RECAP_PREFETCH: downloaded ${RP_BYTES} bytes"
 

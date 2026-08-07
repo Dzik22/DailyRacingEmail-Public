@@ -185,7 +185,6 @@ KNOWN WRONG ASSIGNMENTS FROM PREVIOUS RUNS — NEVER REPEAT THESE:
 Match case-insensitively. Ignore country suffixes (IRE), (FR), (GB). NEVER assign a syndicate from email data.
 
 ```
-Orchidaceae           → Team Valor
 Ulysses Rose          → Eclipse
 Tellus Mater          → Wasabi
 Simply Joking         → Commonwealth
@@ -479,7 +478,6 @@ Build ACTIVE_BARN = {horse_name_lowercase: "SyndicateName"} from what you find.
 **Exact column format of the ACTIVE BARN tab:**
 ```
 HORSES              Age/Sex    Syndicate
-Orchidaceae (IRE)   4/Filly    Team Valor
 Ulysses Rose (IRE)  4/Filly    Eclipse
 ...
 Flightress          2/Filly    Woodford
@@ -511,7 +509,7 @@ Store as ACTIVE_BARN for all of Steps 3–7. A horse NOT in ACTIVE_BARN is NOT M
 ```bash
 python3 -c "
 import json
-# ACTIVE_BARN_HORSES = list of named horse strings from your Drive read, e.g. ['Orchidaceae','Ulysses Rose',...]
+# ACTIVE_BARN_HORSES = list of named horse strings from your Drive read, e.g. ['Ulysses Rose','Saxony Charms',...]
 data = {'count': len(ACTIVE_BARN_HORSES), 'horses': ACTIVE_BARN_HORSES, 'source': 'spreadsheet' if len(ACTIVE_BARN_HORSES) > 0 else 'master_table_fallback'}
 open('/tmp/step_2_done.txt','w').write(json.dumps(data))
 print('STEP_2_GATE: count=' + str(data['count']) + ' source=' + data['source'])
@@ -551,7 +549,7 @@ EXECUTE THESE STEPS IN ORDER:
 2. For EACH matching PDF (no cap — read ALL):
    mcp__Google_Drive__read_file_content({"fileId": "<the file's id>"})
 
-3. For each PDF, identify which Master Table horse(s) it discusses. The PDF filename usually contains the horse name (e.g. "IB_Orchidaceae_062025.pdf" → Orchidaceae). The body content may also mention other Master Table horses by name.
+3. For each PDF, identify which Master Table horse(s) it discusses. The PDF filename usually contains the horse name (e.g. "IB_SaxonyCharms_062025.pdf" → Saxony Charms). The body content may also mention other Master Table horses by name.
 
 4. For each (PDF, horse) pair, write a 2–4 sentence summary of what the PDF says about that horse. Quote the most important factual claim verbatim (≥20 chars) in the `quote` field. NEVER invent facts — only summarize what the PDF actually says.
 
@@ -561,14 +559,14 @@ EXECUTE THESE STEPS IN ORDER:
   "version": "3.1",
   "pdfs": [
     {
-      "filename": "IB_Orchidaceae_062025.pdf",
+      "filename": "IB_SaxonyCharms_062025.pdf",
       "file_id": "1abc...xyz",
       "modified_date": "2026-06-22",
       "horse_mentions": [
         {
-          "horse": "Orchidaceae",
+          "horse": "Saxony Charms",
           "summary": "Trainer Andy Oliver reports the filly returned to fast work on June 18 at the Curragh and is being pointed toward the Group 3 Ballyogan Stakes on July 5.",
-          "quote": "Orchidaceae returned to fast work on the Curragh gallops on Friday and is being aimed at the G3 Ballyogan Stakes on July 5."
+          "quote": "Saxony Charms returned to fast work on the Curragh gallops on Friday and is being aimed at the G3 Ballyogan Stakes on July 5."
         }
       ]
     }
@@ -577,7 +575,7 @@ EXECUTE THESE STEPS IN ORDER:
     "pdfs_found": 1,
     "pdfs_read": 1,
     "total_horse_mentions": 1,
-    "horses_covered": ["Orchidaceae"]
+    "horses_covered": ["Saxony Charms"]
   }
 }
 
@@ -965,7 +963,7 @@ import json, sys
 # ENTRIES_FINAL     = the final list of horses you will put in the ENTRIES section
 EQUIBASE_ENTRIES = []   # e.g. ['Snowglobe']
 TWINSPIRES_HORSES = []  # e.g. ['Snowglobe']
-ENTRIES_FINAL = []      # e.g. ['Snowglobe','Saxony Charms','Orchidaceae']
+ENTRIES_FINAL = []      # e.g. ['Snowglobe','Saxony Charms','Boleto']
 
 data = {
     'equibase_all_threads': N_EQUIBASE_ALL,
@@ -1229,11 +1227,10 @@ Call the `Task` tool with these parameters:
 EU_RESULTS_PROMPT:
 You are the EU horse race-results lookup agent for Mike Dzik's daily racing digest.
 
-Your ONLY job: for each of the 10 hardcoded EU-based horses below, determine whether the horse raced in the last 7 days (today is whatever `date` shell command returns). If yes, return the full result. If no, return raced_recently=false. Never skip a horse. Never leave status blank.
+Your ONLY job: for each of the 9 hardcoded EU-based horses below, determine whether the horse raced in the last 7 days (today is whatever `date` shell command returns). If yes, return the full result. If no, return raced_recently=false. Never skip a horse. Never leave status blank.
 
-HARDCODED HORSE LIST (process ALL 10 every run — no exceptions):
+HARDCODED HORSE LIST (process ALL 9 every run — no exceptions):
 [
-  {"horse":"Orchidaceae","syndicate":"Team Valor"},
   {"horse":"Saxony Charms","syndicate":"Team Valor"},
   {"horse":"Oracle of Delphi","syndicate":"Team Valor"},
   {"horse":"Eager Lad","syndicate":"Team Valor"},
@@ -1266,7 +1263,7 @@ EXECUTE THESE STEPS IN ORDER:
 
 3. CRITICAL RULES:
    - Date math: "last 7 days" = today's date minus 7. Horse racing on May 23 with today June 28 = NOT within 7 days.
-   - For Team Valor horses, the Team Valor evidence is AUTHORITATIVE — if a Team Valor PDF/email says "Orchidaceae made her 2026 debut Saturday at Curragh in a 12-runner 7f handicap, ridden by Billy Lee", that IS a result entry (extract: date=Saturday, track=Curragh, race="7f handicap", field=12, jockey="Billy Lee", position from quote if stated, source="team_valor_pdf")
+   - For Team Valor horses, the Team Valor evidence is AUTHORITATIVE — if a Team Valor PDF/email says "Saxony Charms made her 2026 debut Saturday at Curragh in a 12-runner 7f handicap, ridden by Billy Lee", that IS a result entry (extract: date=Saturday, track=Curragh, race="7f handicap", field=12, jockey="Billy Lee", position from quote if stated, source="team_valor_pdf")
    - IGNORE Equibase post position numbers — they are starting gate draws, not finish positions
    - Position MUST be numeric (1, 2, 3...) — never "ran" or "well beaten"
    - Field size MUST be numeric — never assumed
@@ -1278,7 +1275,7 @@ EXECUTE THESE STEPS IN ORDER:
   "version": "4creu.1",
   "horses": [
     {
-      "horse": "Orchidaceae",
+      "horse": "Saxony Charms",
       "syndicate": "Team Valor",
       "status": "raced_with_result",
       "raced_date": "2026-06-27",
@@ -1309,7 +1306,7 @@ EXECUTE THESE STEPS IN ORDER:
     ... ALL 11 horses MUST appear in this array ...
   ],
   "summary": {
-    "total_searched": 10,
+    "total_searched": 9,
     "raced_with_result": N,
     "raced_no_position": N,
     "did_not_race": N
@@ -1317,7 +1314,7 @@ EXECUTE THESE STEPS IN ORDER:
 }
 
 ABSOLUTE RULES:
-- Output MUST contain EXACTLY 10 entries from the hardcoded list (plus any additional from stable_updates EU-track mentions)
+- Output MUST contain EXACTLY 9 entries from the hardcoded list (plus any additional from stable_updates EU-track mentions)
 - NEVER skip a horse — every horse must have a status
 - NEVER return raced_with_result with null position+field_size — use raced_no_position instead
 - Return JSON only — no markdown, no preamble
@@ -1343,8 +1340,8 @@ for k in ['version','horses','summary']:
         print('STEP_4cREU_SCHEMA_FAIL: missing top-level key "' + k + '"')
         sys.exit(1)
 
-# Required: ALL 10 hardcoded horses must appear (case-insensitive name match)
-REQUIRED_HORSES = ['orchidaceae','saxony charms','oracle of delphi','eager lad','sweetheart jewelry','otherworldly','phantom princess','boleto','capricious star','double right']
+# Required: ALL 9 hardcoded horses must appear (case-insensitive name match)
+REQUIRED_HORSES = ['saxony charms','oracle of delphi','eager lad','sweetheart jewelry','otherworldly','phantom princess','boleto','capricious star','double right']
 got = set(str(h.get('horse','')).lower().strip() for h in d.get('horses',[]))
 missing_horses = [r for r in REQUIRED_HORSES if r not in got]
 if missing_horses:
@@ -1452,7 +1449,7 @@ print('STEP_4d_AUDIT_WRITTEN: horses=' + str(data['horses_searched']))
   NOT FOUND → your NEXT action is to run Step 4d web searches. Do not continue Step 4e until STEP_4d_DONE is written.
   FOUND → continue.
 
-⚠️ THIS STEP IS NOT OPTIONAL. EU horses (Boleto, Capricious Star, Double Right — Middleham Park; Orchidaceae, etc. — Team Valor) NEVER appear in Equibase virtual stable notifications. Middleham Park emails and self-sent declared notes are the ONLY source of EU horse entries. If you skip this step, ENTRIES will show "No data this week" for all EU horses every single time. NEVER skip Step 4e.
+⚠️ THIS STEP IS NOT OPTIONAL. EU horses (Boleto, Capricious Star, Double Right — Middleham Park; Saxony Charms, etc. — Team Valor) NEVER appear in Equibase virtual stable notifications. Middleham Park emails and self-sent declared notes are the ONLY source of EU horse entries. If you skip this step, ENTRIES will show "No data this week" for all EU horses every single time. NEVER skip Step 4e.
 
 ### 🔒 SUBAGENT ARCHITECTURE — WHY THIS STEP RUNS IN ISOLATION
 Step 4e reads up to ~30K tokens of syndicate email bodies. If those bodies sit in your main context, they contaminate Step 7.1 stable_updates writing — the agent paraphrases or invents claims like "official rating of 108", "ran at Aqueduct", "underwent a scan" by drawing on fragments of context rather than quoting verbatim. To eliminate this, Step 4e runs in a **Task subagent** with its own context window. The subagent does the Gmail searches itself, extracts strict JSON evidence, and returns ONLY that JSON to you. You never see raw email bodies. Step 7.1 reads the JSON file as authoritative — fabrication becomes structurally impossible.
@@ -1462,7 +1459,7 @@ Step 4e reads up to ~30K tokens of syndicate email bodies. If those bodies sit i
 Call the `Task` tool with these parameters:
 - **subagent_type**: `general-purpose`
 - **description**: `Step 4e syndicate evidence extraction`
-- **prompt**: paste the entire EVIDENCE_PROMPT block below verbatim, with one substitution: replace `{{ACTIVE_BARN_LIST}}` with the comma-separated list of horse names from `/tmp/step_2_done.txt` (the "horses" field). Example: if step_2_done.txt has `{"horses":["Orchidaceae","Ulysses Rose","Boleto"]}` then substitute `Orchidaceae, Ulysses Rose, Boleto`.
+- **prompt**: paste the entire EVIDENCE_PROMPT block below verbatim, with one substitution: replace `{{ACTIVE_BARN_LIST}}` with the comma-separated list of horse names from `/tmp/step_2_done.txt` (the "horses" field). Example: if step_2_done.txt has `{"horses":["Ulysses Rose","Saxony Charms","Boleto"]}` then substitute `Ulysses Rose, Saxony Charms, Boleto`.
 
 ```
 EVIDENCE_PROMPT:
@@ -2309,7 +2306,7 @@ After writing the JSON, run this validation check:
 ```bash
 python3 -c "
 import json
-MASTER = {'orchidaceae','ulysses rose','tellus mater','simply joking','saxony charms','oracle of delphi','celestial siren','eager lad','sweetheart jewelry','cuban flame','coco g','rare allocation','sierra sagrada','snowglobe','oh shoot','otherworldly','random recall','phantom princess','boleto','capricious star','double right','straight shooter','maui madness','see you tonight','physique','just sayin','victor whiskey','corderito','core principle','highwaymen','clear for takeoff','mccoy','refute','alpha strike','flightress','outcomes based','hypnos','kensai','castiglione'}
+MASTER = {'ulysses rose','tellus mater','simply joking','saxony charms','oracle of delphi','celestial siren','eager lad','sweetheart jewelry','cuban flame','coco g','rare allocation','sierra sagrada','snowglobe','oh shoot','otherworldly','random recall','phantom princess','boleto','capricious star','double right','straight shooter','maui madness','see you tonight','physique','just sayin','victor whiskey','corderito','core principle','highwaymen','clear for takeoff','mccoy','refute','alpha strike','flightress','outcomes based','hypnos','kensai','castiglione'}
 d = json.load(open('/tmp/digest_data.json'))
 ms = d.get('my_stable', {})
 print('JSON OK:')
@@ -3139,7 +3136,7 @@ SILK = {
   'RTP Racing':     _badge('#888888','#aaaaaa','RTP RACING'),
 }
 MASTER = {
-  'orchidaceae':'Team Valor','ulysses rose':'Eclipse','tellus mater':'Wasabi',
+  'ulysses rose':'Eclipse','tellus mater':'Wasabi',
   'simply joking':'Commonwealth','saxony charms':'Team Valor','oracle of delphi':'Team Valor',
   'celestial siren':'Team Valor','eager lad':'Team Valor',
   'sweetheart jewelry':'Team Valor','cuban flame':'Eclipse','coco g':'Commonwealth',
@@ -3696,7 +3693,7 @@ except Exception as e:
 - SYNDICATE HEADERS IN STABLE UPDATES (LOCKED): The Python generator groups stable_updates by syndicate and renders an underlined syndicate name header before each group. The JSON `syndicate` field must match exactly one of the 8 valid syndicate names so the grouping works correctly.
 - SYNDICATE ABBREVIATIONS FORBIDDEN (LOCKED — ABSOLUTE — ZERO TOLERANCE): The `syndicate` field in digest_data.json MUST be the exact title-case full name. Valid values: `Eclipse` | `Team Valor` | `Commonwealth` | `Woodford` | `Middleham Park` | `Wasabi` | `Final Furlong` | `RTP Racing`. NEVER use abbreviations: MHP, WSB, WRF, TV, ECL, COM, FF, or any other shorthand. Abbreviation → `silk()` falls back to gray badge labeled with the abbreviation → all silk colors broken. Step 7.1 validation WILL `sys.exit(1)` if any abbreviation is found — the generator will not run until this is fixed.
 - MY STABLE MANUAL HTML IS ABSOLUTELY FORBIDDEN (LOCKED — ZERO TOLERANCE): The My Stable section header MUST use 🏇 (U+1F3C7, the horse-racing emoji, `\U0001f3c7`). The emoji 🐴 (U+1F434, horse face) is PROOF the agent wrote manual HTML — this is a critical violation. Every stable-row MUST be produced by the `row()` function in Step 7.5. NEVER write `<div class="stable-row">` or `<h4>` or any horse HTML manually. If you find yourself typing a horse entry directly → STOP → fix the JSON and re-run Step 7.5. Step 7.6 checks for missing silk badges and wrong emoji and will block submission if found.
-- EU RESULTS PROACTIVE SEARCH (LOCKED — MANDATORY EVERY DAY): Step 4c-R-EU runs every day for all 10 EU-based horses: Orchidaceae, Saxony Charms, Oracle of Delphi, Eager Lad, Sweetheart Jewelry (Team Valor) + Otherworldly (Eclipse) + Phantom Princess (RTP Racing) + Boleto, Capricious Star, Double Right (Middleham Park). Equibase virtual stable does NOT cover European tracks. These horses will NEVER appear in Equibase notifications even when they race. Use Racing Post WebSearch for each horse every day without exception.
+- EU RESULTS PROACTIVE SEARCH (LOCKED — MANDATORY EVERY DAY): Step 4c-R-EU runs every day for all 9 EU-based horses: Saxony Charms, Oracle of Delphi, Eager Lad, Sweetheart Jewelry (Team Valor) + Otherworldly (Eclipse) + Phantom Princess (RTP Racing) + Boleto, Capricious Star, Double Right (Middleham Park). Equibase virtual stable does NOT cover European tracks. These horses will NEVER appear in Equibase notifications even when they race. Use Racing Post WebSearch for each horse every day without exception.
 - CONTINENT DIVIDERS IN RECAP (LOCKED): 🇺🇸 UNITED STATES and 🌍 EUROPE dividers always present.
 - STAKES RECAP DATE SCOPE (LOCKED): Only races that ran on YESTERDAY_RP appear in the recap. Never pad with races from prior days — no "Saturday context", "weekend reference", or similar. Zero races on YESTERDAY_RP → write the no-races note, nothing else.
 - FLAG EMOJIS IN TRACK HEADERS (LOCKED): USA=🇺🇸, UK=🇬🇧, Ireland=🇮🇪, France=🇫🇷, Germany=🇩🇪.

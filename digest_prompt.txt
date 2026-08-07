@@ -195,7 +195,6 @@ Eager Lad             → Team Valor
 Sweetheart Jewelry    → Team Valor
 Cuban Flame           → Eclipse
 Coco G                → Commonwealth
-Rare Allocation       → Final Furlong
 Sierra Sagrada        → Wasabi
 Snowglobe             → Wasabi
 Oh Shoot              → Team Valor
@@ -2306,7 +2305,7 @@ After writing the JSON, run this validation check:
 ```bash
 python3 -c "
 import json
-MASTER = {'ulysses rose','tellus mater','simply joking','saxony charms','oracle of delphi','celestial siren','eager lad','sweetheart jewelry','cuban flame','coco g','rare allocation','sierra sagrada','snowglobe','oh shoot','otherworldly','random recall','phantom princess','boleto','capricious star','double right','straight shooter','maui madness','see you tonight','physique','just sayin','victor whiskey','corderito','core principle','highwaymen','clear for takeoff','mccoy','refute','alpha strike','flightress','outcomes based','hypnos','kensai','castiglione'}
+MASTER = {'ulysses rose','tellus mater','simply joking','saxony charms','oracle of delphi','celestial siren','eager lad','sweetheart jewelry','cuban flame','coco g','sierra sagrada','snowglobe','oh shoot','otherworldly','random recall','phantom princess','boleto','capricious star','double right','straight shooter','maui madness','see you tonight','physique','just sayin','victor whiskey','corderito','core principle','highwaymen','clear for takeoff','mccoy','refute','alpha strike','flightress','outcomes based','hypnos','kensai','castiglione'}
 d = json.load(open('/tmp/digest_data.json'))
 ms = d.get('my_stable', {})
 print('JSON OK:')
@@ -3140,7 +3139,7 @@ MASTER = {
   'simply joking':'Commonwealth','saxony charms':'Team Valor','oracle of delphi':'Team Valor',
   'celestial siren':'Team Valor','eager lad':'Team Valor',
   'sweetheart jewelry':'Team Valor','cuban flame':'Eclipse','coco g':'Commonwealth',
-  'rare allocation':'Final Furlong','sierra sagrada':'Wasabi','snowglobe':'Wasabi',
+  'sierra sagrada':'Wasabi','snowglobe':'Wasabi',
   'oh shoot':'Team Valor','otherworldly':'Eclipse','random recall':'Final Furlong',
   'phantom princess':'RTP Racing','boleto':'Middleham Park','capricious star':'Middleham Park',
   'double right':'Middleham Park','straight shooter':'Wasabi','maui madness':'Wasabi',

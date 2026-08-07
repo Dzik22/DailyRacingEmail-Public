@@ -291,10 +291,22 @@ print("→ /tmp/preflight_dates.txt")
 #   - Step 7.0.5 (later): WebFetch thestatsdontlie.com → /tmp/eu_upcoming_json.json (today/tomorrow)
 # This pre-flight just writes empty placeholder files so downstream gates don't trip
 # on missing files when the bootstrap runs before any real fetches.
-print("\nEU placeholders (real fetches happen in Step 5-RP + Step 7.0.5):")
-for f in ('/tmp/eu_recap.txt','/tmp/eu_upcoming.txt'):
-    open(f,'w').write('')
-    print(f"  -> {f} (empty placeholder)")
+# Aug 7 2026 FIX: this used to create EMPTY placeholder files at /tmp/eu_recap.txt and
+# /tmp/eu_upcoming.txt. That was actively harmful: it made os.path.exists() return True
+# for files that never receive data, so the Step 7.5 EU-recap safety net read an empty
+# file and silently no-opped, and the agent (told below that these files hold "today's
+# EU racing data") read them, found nothing, and wrote "No European Group race results".
+# Cost: EU stakes vanished from the digest on Aug 5, 6 and 7 2026.
+# The REAL EU files are written by eu_prefetch.sh in bootstrap Command 2, which runs
+# BEFORE this prompt is read. Report on those instead of fabricating empty ones.
+print("\nEU data from bootstrap eu_prefetch.sh (Command 2):")
+for f in ('/tmp/eu_recap_json.json','/tmp/eu_upcoming_json.json'):
+    if os.path.exists(f):
+        try: _n = len(json.load(open(f))) if f.endswith('recap_json.json') else sum(len(x.get('races',[])) for x in json.load(open(f)))
+        except Exception: _n = '?'
+        print(f"  -> {f} ({os.path.getsize(f)} bytes, {_n} races)")
+    else:
+        print(f"  -> {f} MISSING — eu_prefetch.sh failed. Re-run: bash /tmp/eu_prefetch.sh")
 
 # --- CSS ---
 css="""body{font-family:Georgia,serif;color:#1a1a1a;background:#eee8df;margin:0;padding:0}
@@ -341,7 +353,7 @@ print(f"\n→ /tmp/digest_css.txt ({len(css)} bytes)")
 
 # --- VERIFY ---
 print("\n=== PRE-FLIGHT STATUS ===")
-req=[('/tmp/preflight_dates.txt','dates'),('/tmp/eu_recap.txt','EU results'),('/tmp/eu_upcoming.txt','EU upcoming'),('/tmp/digest_css.txt','CSS')]
+req=[('/tmp/preflight_dates.txt','dates'),('/tmp/eu_recap_json.json','EU results'),('/tmp/eu_upcoming_json.json','EU upcoming'),('/tmp/digest_css.txt','CSS')]
 ok=True
 for path,desc in req:
     if os.path.exists(path):
@@ -355,21 +367,33 @@ PF_EOF
 ⚠️ **PRE-FLIGHT GATE (run immediately after — BLOCKING):**
 ```bash
 python3 -c "
-import os,sys
-files=['/tmp/preflight_dates.txt','/tmp/eu_recap.txt','/tmp/eu_upcoming.txt','/tmp/digest_css.txt']
+import os,sys,json
+files=['/tmp/preflight_dates.txt','/tmp/eu_recap_json.json','/tmp/eu_upcoming_json.json','/tmp/digest_css.txt']
 missing=[f for f in files if not os.path.exists(f)]
-if missing: print('PREFLIGHT GATE: FAIL — missing: '+str(missing)); sys.exit(1)
+if missing:
+    print('PREFLIGHT GATE: FAIL — missing: '+str(missing))
+    print('  If an eu_*.json is missing, bootstrap Command 2 failed. Re-run: bash /tmp/eu_prefetch.sh')
+    sys.exit(1)
 print('PREFLIGHT GATE: PASS — all 4 files present')
 for f in files: print('  '+f+': '+str(os.path.getsize(f))+' bytes')
-eu=open('/tmp/eu_upcoming.txt').read().strip()
-lines=[l for l in eu.splitlines() if l.strip()]
-print('EU upcoming pre-fetched: '+str(len(lines))+' lines ('+str(len([l for l in lines if 'TODAY' in l]))+' today)')
+rec=json.load(open('/tmp/eu_recap_json.json'))
+up=json.load(open('/tmp/eu_upcoming_json.json'))
+tot=sum(len(x.get('races',[])) for x in up)
+print('EU recap (yesterday, Racing Post): '+str(len(rec))+' Group/Listed races')
+for r in rec: print('   ['+r.get('grade','')+'] '+r.get('race_name','')+' @ '+r.get('track','')+' — winner '+r.get('winner','TBC'))
+print('EU upcoming (SDL): '+str(tot)+' races across '+str(len(up))+' day buckets')
+for x in up: print('   '+x.get('day_label','')+': '+str(len(x.get('races',[]))))
+if len(rec)==0 and tot==0: print('EU_PREFLIGHT_WARN: ZERO EU races from BOTH sources — suspicious. Verify eu_prefetch.sh actually reached thestatsdontlie.com and racingpost.com before accepting an EU-free digest.')
 "
 ```
 
 ⚠️ **IF PREFLIGHT GATE FAILS: Do NOT proceed to Step 1. Re-run the Python block above.**
 
-⚠️ **EU DATA SAFETY NET:** `/tmp/eu_recap.txt` and `/tmp/eu_upcoming.txt` are now pre-populated with today's EU racing data. If Steps 5-RP or the EU Upcoming script are skipped or fail later, the Step 6b pre-HTML audit MUST re-read these files and include their data in the JSON before Step 7. The data is already there — use it.
+⚠️ **EU DATA SAFETY NET (CORRECTED Aug 7 2026):** The authoritative EU files are `/tmp/eu_recap_json.json` (yesterday's Group/Listed results, from Racing Post) and `/tmp/eu_upcoming_json.json` (YESTERDAY/TODAY/TOMORROW graded races, from thestatsdontlie.com). Both are written by `eu_prefetch.sh` in bootstrap Command 2, which runs BEFORE you read this prompt — so the data is already on disk right now, and the gate above just printed every race by name.
+
+⚠️ `/tmp/eu_recap.txt` and `/tmp/eu_upcoming.txt` are **DEAD FILENAMES — nothing writes them.** They were previously created as empty placeholders, which caused the agent and the Step 7.5 safety net to read empty files and conclude there was no European racing. NEVER read them. NEVER treat their absence or emptiness as evidence that no EU races exist. If any instruction later in this prompt refers to `eu_recap.txt` or `eu_upcoming.txt`, substitute the `_json.json` file above.
+
+⚠️ **Writing "No European Group race results" is only permitted when `/tmp/eu_recap_json.json` contains an empty array.** If it has entries and you omit them, the Step 7.1 SOURCE GATE will fail the run.
 
 ⚠️ REQUIRED OUTPUT TOKEN — write this line verbatim right now before continuing:
 `STEP_0.5_DONE: preflight=PASS`
@@ -1869,7 +1893,7 @@ REQUIRED_GATES = [
     ('/tmp/step_4cr_done.txt',   'Step 4c-R (Results verification — gate)','Run Step 4c-R verification subagent invocation'),
     ('/tmp/step_4cr_data.json',  'Step 4c-R (Results verification — data JSON from subagent)','Invoke the Step 4c-R Task subagent; capture its JSON response to /tmp/step_4cr_data.json'),
     ('/tmp/step_4ceu_done.txt',  'Step 4c-EU-EMAIL (Timeform)',     'Run Step 4c-EU-EMAIL Timeform search'),
-    ('/tmp/step_4creu_done.txt', 'Step 4c-R-EU (EU horse results — gate)','Invoke the Step 4c-R-EU Task subagent to search all 11 EU MASTER TABLE horses for last-7-day results'),
+    ('/tmp/step_4creu_done.txt', 'Step 4c-R-EU (EU horse results — gate)','Invoke the Step 4c-R-EU Task subagent to search all 10 EU MASTER TABLE horses for last-7-day results'),
     ('/tmp/step_4creu_data.json','Step 4c-R-EU (EU horse results — data JSON from subagent)','Invoke the Step 4c-R-EU Task subagent; capture its JSON response to /tmp/step_4creu_data.json'),
     ('/tmp/step_4d_done.txt',    'Step 4d (Workout web details)',   'Run Step 4d WebSearch for each ENTRIES horse'),
     ('/tmp/step_4e_done.txt',    'Step 4e (Syndicate emails — gate)','Run Step 4e syndicate subagent invocation'),
@@ -1932,15 +1956,15 @@ Before writing ANY HTML, log these counts and fix any shortfalls in-line. Do not
   - TODAY is Sunday or Friday → minimum 2 USA races. Under 2 → re-run S_GRADED now.
   - TODAY is Mon–Thu → 0 USA graded is POSSIBLE but NEVER ASSUMED. You MUST: (1) have found and read the FWD-EQ email via get_thread AND (2) confirmed *Stakes Results* was absent. If /tmp/step_5drf_done.txt does not exist → you skipped Step 5-DRF → run it NOW before proceeding.
   - Any G1 or G2 host track found → verify complete supporting G3 card via S_HOST.
-- European Recap: re-read `/tmp/eu_recap.txt`. Count = N Group/Graded races. List every EU race found.
-  ⚠️ BEFORE ACCEPTING 0 EU RACES — confirm you actually ran the EU Results Python script (STEP 5-RP). If `/tmp/eu_recap.txt` is empty or missing, run STEP 5-RP NOW. "It's a light racing day" is NOT a valid reason to skip the curl call.
+- European Recap: re-read `/tmp/eu_recap_json.json`. Count = N Group/Graded races. List every EU race found.
+  ⚠️ BEFORE ACCEPTING 0 EU RACES — confirm you actually ran the EU Results Python script (STEP 5-RP). If `/tmp/eu_recap_json.json` is empty or missing, run STEP 5-RP NOW. "It's a light racing day" is NOT a valid reason to skip the curl call.
   - 0 races on Saturday → retry the curl call once. After retry still 0 → log gap (unusual).
   - 0 races on Friday or Sunday → retry once. 0 is possible but uncommon.
   - 0 races on Thursday → retry once. Still 0 → acceptable if API returned HTTP 200.
   - 0 races Mon–Wed → retry the curl call once. Still 0 → acceptable ONLY if the API returned an HTTP 200 with data (not a timeout or empty response). Log the API response size.
-  ⚠️ HOST-TRACK COMPLETENESS CHECK (MANDATORY — run even if eu_recap.txt has results):
-  For EACH course listed in eu_recap.txt: confirm you ran SUPPLEMENT E Step E-1 for that course. Group meeting cards always include G2/G3 support races alongside any G1. A single G1 at a course without any G2/G3 is a likely data gap — re-run SUPPLEMENT E Step E-1 for that specific course NOW.
-  Known multi-race days: Epsom Derby Festival (Oaks day + Derby day each have 2-4 Group races), Royal Ascot (4-6 Group races per day), Goodwood Festival (3-5 Group races per day). If eu_recap.txt shows only 1 race at these venues → run: WebSearch `[VENUE] {YESTERDAY_DISPLAY} all Group races results 2026`.
+  ⚠️ HOST-TRACK COMPLETENESS CHECK (MANDATORY — run even if eu_recap_json.json has results):
+  For EACH course listed in eu_recap_json.json: confirm you ran SUPPLEMENT E Step E-1 for that course. Group meeting cards always include G2/G3 support races alongside any G1. A single G1 at a course without any G2/G3 is a likely data gap — re-run SUPPLEMENT E Step E-1 for that specific course NOW.
+  Known multi-race days: Epsom Derby Festival (Oaks day + Derby day each have 2-4 Group races), Royal Ascot (4-6 Group races per day), Goodwood Festival (3-5 Group races per day). If eu_recap_json.json shows only 1 race at these venues → run: WebSearch `[VENUE] {YESTERDAY_DISPLAY} all Group races results 2026`.
 
 **Content audit:**
 - Top 10 stories pool: N stories from TDN + Paulick + syndicate emails (Step 4-A/4-B).
@@ -1958,13 +1982,13 @@ Before writing ANY HTML, log these counts and fix any shortfalls in-line. Do not
 
 ## MANDATORY API DATA RE-READ — Run this Bash command immediately before Step 7:
 ```bash
-echo "=== EU RECAP ===" && cat /tmp/eu_recap.txt 2>/dev/null || echo "(none)"
+echo "=== EU RECAP ===" && cat /tmp/eu_recap_json.json 2>/dev/null || echo "(none)"
 ```
 ⚠️ Use ONLY this freshly read data for the EU Stakes Recap section in Step 7.1 JSON.
 ⚠️ EU UPCOMING: Do NOT copy EU upcoming races into digest_data.json — the Step 7.5 generator reads them from /tmp/eu_upcoming_json.json (written by Step 7.0.5 pure bash curl). Network calls inside the Python generator heredoc are blocked in CCR — urllib does NOT work there. Just ensure digest_data.json upcoming has valid day_label entries for YESTERDAY/TODAY/TOMORROW. The generator replaces all EU races automatically from the pre-fetched file.
 
 Log final summary before Step 7 — ALL fields required, no blanks:
-"PRE-HTML AUDIT COMPLETE: ENTRIES=N, WORKS=N, RESULTS=N, USA_RECAP=N (S_DRF ran: YES/NO), EUR_RECAP=N (STEP 5-RP ran: YES/NO, /tmp/eu_recap.txt size=N bytes), UPCOMING=N (EU Upcoming script ran: YES/NO, /tmp/eu_upcoming.txt size=N bytes), TOP10=N, SALES=N. Proceeding to Step 7."
+"PRE-HTML AUDIT COMPLETE: ENTRIES=N, WORKS=N, RESULTS=N, USA_RECAP=N (S_DRF ran: YES/NO), EUR_RECAP=N (STEP 5-RP ran: YES/NO, /tmp/eu_recap_json.json size=N bytes), UPCOMING=N (EU Upcoming script ran: YES/NO, /tmp/eu_upcoming_json.json size=N bytes), TOP10=N, SALES=N. Proceeding to Step 7."
 If STEP 5-RP shows NO or either /tmp file is missing/empty: run those scripts immediately before Step 7. Do NOT skip.
 
 ⚠️ REQUIRED OUTPUT TOKEN — write this line verbatim right now before continuing:
@@ -2959,22 +2983,23 @@ if _os.path.exists('/tmp/eu_upcoming_json.json'):
         _eu_tot=sum(len(v) for v in _eu_by_prefix.values()); _eu_source='eu_upcoming_json.json'
         print('EU_FILE_READ: eu_upcoming_json.json — TODAY:'+str(len(_eu_by_prefix['TODAY']))+' YESTERDAY:'+str(len(_eu_by_prefix['YESTERDAY']))+' TOMORROW:'+str(len(_eu_by_prefix['TOMORROW']))+' total:'+str(_eu_tot))
     except Exception as _fe: print('EU_FILE_ERR: eu_upcoming_json.json — '+str(_fe))
-if _eu_source=='none' and _os.path.exists('/tmp/eu_upcoming.txt'):
+# Aug 7 2026 FIX: the old fallback here read '/tmp/eu_upcoming.txt', a filename nothing
+# has written since the June 2026 rewrite — dead code that could never fire. The real
+# fallback is the bash producer's own output, which exists even when merge_eu.py fails.
+# Also fires when the merged file loaded but is EMPTY (merge dropped everything).
+if sum(len(v) for v in _eu_by_prefix.values())==0 and _os.path.exists('/tmp/eu_upcoming_bash.json'):
     try:
+        _ejb=json.load(open('/tmp/eu_upcoming_bash.json'))
         _eu_tmp={'YESTERDAY':[],'TODAY':[],'TOMORROW':[]}
-        for _ln in open('/tmp/eu_upcoming.txt'):
-            _m=_eu_txt_pat.match(_ln.strip())
-            if not _m: continue
-            _lb3,_gr3,_rn3,_co3,_rg3,_df3,_=_m.groups(); _dt4=_eu_dd[_lb3]
-            try: _d3=str(int(float(_df3)))+'f'
-            except: _d3=_df3+'f'
-            _eu_tmp[_lb3].append({'grade':_gr3,'race_name':_eu_clean(_rn3),'date_short':_dt4.strftime('%a')+'\n'+_dt4.strftime('%b')+' '+str(_dt4.day),'track':_co3,'country':_rg3.upper(),'flag':_EU_FLAGS.get(_rg3.upper(),'\U0001f3c1'),'dist_surface':_d3+' · Turf'})
+        for _d3 in _ejb:
+            _lbl=_d3.get('day_label','').split()[0]
+            if _lbl in _eu_tmp: _eu_tmp[_lbl]=_d3.get('races',[])
         if sum(len(v) for v in _eu_tmp.values())>0:
-            _eu_by_prefix=_eu_tmp; _eu_source='eu_upcoming.txt'
-            print('EU_FILE_READ: eu_upcoming.txt — '+str(sum(len(v) for v in _eu_by_prefix.values()))+' races')
-    except Exception as _fe: print('EU_FILE_ERR: eu_upcoming.txt — '+str(_fe))
-if _eu_source=='none':
-    print('EU_FILE_MISSING: no eu_upcoming_json.json or eu_upcoming.txt — Step 7.0.5 did not run')
+            _eu_by_prefix=_eu_tmp; _eu_source='eu_upcoming_bash.json'
+            print('EU_FILE_FALLBACK: merged file empty/missing — recovered '+str(sum(len(v) for v in _eu_tmp.values()))+' races from eu_upcoming_bash.json (merge_eu.py likely failed)')
+    except Exception as _fe: print('EU_FILE_ERR: eu_upcoming_bash.json — '+str(_fe))
+if sum(len(v) for v in _eu_by_prefix.values())==0:
+    print('EU_FILE_MISSING: CRITICAL — no EU upcoming races from any source (eu_upcoming_json.json / eu_upcoming_bash.json). eu_prefetch.sh did not run or failed. Re-run: bash /tmp/eu_prefetch.sh')
 
 # === UNION WITH SDL DATA (thestatsdontlie.com) — third source ===
 # eu_sdl_json.json contains [{date_iso, grade, race_name, course, country, flag}]
@@ -3027,10 +3052,47 @@ if _os.path.exists('/tmp/eu_sdl_json.json'):
 else:
     print('EU_SDL_UNION: /tmp/eu_sdl_json.json not found — skipping (bootstrap SDL step may not have run)')
 
-# Re-sort each day by grade priority after the union
+# Aug 7 2026: thestatsdontlie.com does not publish distances, so SDL-sourced races carry
+# dist_surface='? · Turf'. Racing Post DOES publish them, so backfill any race that also
+# appears in eu_recap_json.json rather than shipping a visible '?' to the reader.
+try:
+    if _os.path.exists('/tmp/eu_recap_json.json'):
+        _rmap = {}
+        for _rr in (json.load(open('/tmp/eu_recap_json.json')) or []):
+            _rn2 = _norm_eu(_rr.get('race_name',''))
+            if _rn2 and not str(_rr.get('dist_surface','')).startswith('?'):
+                _rmap[_rn2] = _rr['dist_surface']
+        _bf = 0
+        for _pfx in _eu_by_prefix:
+            for _r in _eu_by_prefix[_pfx]:
+                if not str(_r.get('dist_surface','')).startswith('?'): continue
+                _n2 = _norm_eu(_r.get('race_name',''))
+                for _k,_v in _rmap.items():
+                    if _n2 and (_k == _n2 or _k in _n2 or _n2 in _k):
+                        _r['dist_surface'] = _v; _bf += 1; break
+        if _bf: print('EU_DIST_BACKFILL: filled ' + str(_bf) + ' distances from eu_recap_json.json')
+except Exception as _bfe: print('EU_DIST_BACKFILL_ERR: ' + str(_bfe))
+
+# Re-sort each day: chronological FIRST, then grade, then track.
+# Aug 7 2026 FIX: this used to sort by grade alone. Because the TOMORROW bucket spans
+# today+1..today+7, a G1 later in the week jumped ahead of a G3 running tomorrow — the
+# section headed "TOMORROW — Sat Aug 8" opened with Sun Aug 9 races. Date must lead.
 _GO_MERGE = {'G1':0,'G2':1,'G3':2,'LR':3}
+_MON_MERGE = {'Jan':1,'Feb':2,'Mar':3,'Apr':4,'May':5,'Jun':6,'Jul':7,'Aug':8,'Sep':9,'Oct':10,'Nov':11,'Dec':12}
+def _eu_daykey(r):
+    _p = str(r.get('date_short','')).replace('\n',' ').split()
+    try:
+        _mo = _MON_MERGE.get(_p[1], 0); _dy = int(_p[2])
+        if not _mo: return _eu_today
+        _cand = _dt(_eu_today.year, _mo, _dy)
+        # 7-day window can straddle a year boundary (late Dec -> early Jan)
+        if (_cand - _eu_today).days < -60: _cand = _dt(_eu_today.year + 1, _mo, _dy)
+        elif (_cand - _eu_today).days > 300: _cand = _dt(_eu_today.year - 1, _mo, _dy)
+        return _cand
+    except Exception:
+        return _eu_today
 for _pfx in ('YESTERDAY','TODAY','TOMORROW'):
-    _eu_by_prefix[_pfx].sort(key=lambda r: (_GO_MERGE.get(r.get('grade','LR'),9), r.get('track','')))
+    _eu_by_prefix[_pfx].sort(key=lambda r: (_eu_daykey(r), _GO_MERGE.get(r.get('grade','LR'),9), r.get('track','')))
 
 # Apply REPLACE: EU from API+SDL union; USA from agent; discard agent EU entries
 _SKIP_NM = ('racing dark','sale day','(sales)','(racing dark','goffs london sale','tattersalls','arqana sale','fasig-tipton sale','keeneland sale','obs sale')
@@ -3170,38 +3232,44 @@ s3 = hdr('\U0001f4f0','Top 10 News') + '<div class="horse-gap"></div>\n' + s3b
 
 recap = d.get('stakes_recap',{})
 
-# ── EU STAKES RECAP AUTO-SUPPLEMENT from eu_recap.txt ──────────────────────────
-# Agents consistently filter EU recap to G1 only. Generator reads eu_recap.txt
-# and injects any G2/G3 races the agent dropped into recap['europe'].
+# ── EU STAKES RECAP AUTO-SUPPLEMENT from eu_recap_json.json ────────────────────
+# AUTHORITATIVE SOURCE: eu_prefetch.sh parses the Racing Post YESTERDAY results page
+# and writes EVERY Group/Listed EU race to /tmp/eu_recap_json.json. Agents routinely
+# drop G2/G3 support races — or the whole EU section — so the generator unions
+# anything missing into recap['europe'], grouped by track.
+#
+# Aug 7 2026 FIX: this block previously read '/tmp/eu_recap.txt' — a filename nothing
+# has written since the June 2026 SDL/merge_eu.py rewrite. The os.path.exists guard was
+# therefore ALWAYS False, the safety net was dead code, and EU recap silently rendered
+# "No European Group race results" on every day the agent skipped it (observed Aug 5,
+# Aug 6, Aug 7 2026). Now reads the file the pipeline actually writes.
 try:
-    if _os.path.exists('/tmp/eu_recap.txt'):
-        _rp = _re.compile(r'^\[(\w+)\] (.+?) \| (.+?) \((\w+)\) \| (\S+)')
-        _wp = _re.compile(r'^\s+Winner:\s+(.+?)\s+\S+\s+J:')
-        _file_races=[]; _cur=None
-        for _rl in open('/tmp/eu_recap.txt'):
-            _rm=_rp.match(_rl.strip())
-            if _rm:
-                _rg,_rn,_rc,_rr,_rd=_rm.groups()
-                _cur={'grade':_rg,'race_name':_rn.replace(' ()','').strip(),'track':_rc,'country':_rr.upper(),'dist':_rd,'winner':'TBC'}
-                _file_races.append(_cur)
-            elif _cur:
-                _wm=_wp.match(_rl)
-                if _wm: _cur['winner']=_wm.group(1).strip()
+    if _os.path.exists('/tmp/eu_recap_json.json'):
+        _file_races = [r for r in (json.load(open('/tmp/eu_recap_json.json')) or []) if r.get('race_name')]
         if _file_races:
-            _agent_names={r.get('race_name','').lower() for blk in recap.get('europe',[]) for r in blk.get('races',[])}
-            _missing=[r for r in _file_races if r['race_name'].lower() not in _agent_names]
+            _agent_names = {_norm_eu(r.get('race_name','')) for blk in recap.get('europe',[]) for r in blk.get('races',[])}
+            def _already(nm):
+                _n = _norm_eu(nm)
+                return any(_a and _n and (_a == _n or _a in _n or _n in _a) for _a in _agent_names)
+            _missing = [r for r in _file_races if not _already(r.get('race_name',''))]
             if _missing:
-                print('EU_RECAP_SUPPLEMENT: adding '+str(len(_missing))+' races agent dropped: '+', '.join(r['race_name'] for r in _missing))
-                _by_venue={}
+                print('EU_RECAP_SUPPLEMENT: adding ' + str(len(_missing)) + ' races agent dropped: ' + ', '.join(r.get('race_name','') for r in _missing))
+                _by_venue = {}
                 for _r in _missing:
-                    _by_venue.setdefault((_r['track'],_r['country']),[]).append(_r)
+                    _by_venue.setdefault((_r.get('track',''), _r.get('country','GB')), []).append(_r)
                 for (_tc,_co),_rs in _by_venue.items():
-                    _existing=next((b for b in recap.get('europe',[]) if b.get('track','').lower()==_tc.lower()),None)
-                    _new_r=[{'grade':r['grade'],'race_name':r['race_name'],'dist_surface':r['dist']+' · Turf','winner':r['winner']} for r in _rs]
+                    _new_r = [{'grade':r.get('grade','LR'),'race_name':r.get('race_name',''),'dist_surface':r.get('dist_surface','? · Turf'),'winner':r.get('winner','TBC')} for r in _rs]
+                    _existing = next((b for b in recap.get('europe',[]) if b.get('track','').lower()==_tc.lower()), None)
                     if _existing: _existing.setdefault('races',[]).extend(_new_r)
                     else: recap.setdefault('europe',[]).append({'track':_tc,'country':_co,'date_display':yd,'races':_new_r})
             else:
                 print('EU_RECAP_SUPPLEMENT: agent recap is complete — no missing races')
+        _GO_RECAP = {'G1':0,'G2':1,'G3':2,'LR':3}
+        for _blk in recap.get('europe',[]):
+            _blk.get('races',[]).sort(key=lambda r: _GO_RECAP.get(str(r.get('grade','LR')),9))
+        print('EU_RECAP_FINAL: ' + str(sum(len(b.get('races',[])) for b in recap.get('europe',[]))) + ' EU races rendered (eu_recap_json.json had ' + str(len(_file_races)) + ')')
+    else:
+        print('EU_RECAP_SUPPLEMENT: CRITICAL — /tmp/eu_recap_json.json MISSING. eu_prefetch.sh did not run or failed silently. EU recap will be EMPTY. Re-run: bash /tmp/eu_prefetch.sh')
 except Exception as _rse: print('EU_RECAP_SUPPLEMENT_ERR: '+str(_rse))
 # ───────────────────────────────────────────────────────────────────────────────
 
@@ -3596,13 +3664,13 @@ except Exception as e:
 - USA GRADED STAKES ARE MANDATORY (LOCKED): Every G1/G2/G3 must appear in the Recap. No Listed/non-graded required.
 - ALL SEARCHES ARE MANDATORY (LOCKED): Every designated search runs every day — S_DRF, S_GRADED, S_HOST, Step 5-RP Racing Post WebFetch (EU results), Step 7.0.5 SDL WebFetch (EU upcoming). Nothing is skippable. "Context pressure" is not a reason to skip a search.
 - EUROPEAN STAKES RECAP (LOCKED — RACING POST ONLY): WebFetch `https://www.racingpost.com/results/{YESTERDAY_RP}` (Step 5-RP). Returns JSON of every Group/Listed flat result at EU venues. Output saved to `/tmp/eu_recap_json.json`. Re-read in Step 6b before HTML assembly. The Racing API is REMOVED.
-- EUROPEAN GRADED STAKES ARE MANDATORY (LOCKED): Every Group 1/2/3 flat race from the API MUST appear in the Stakes Recap. Re-read `/tmp/eu_recap.txt` before Step 7 and use that data verbatim.
+- EUROPEAN GRADED STAKES ARE MANDATORY (LOCKED): Every Group 1/2/3 flat race from the API MUST appear in the Stakes Recap. Re-read `/tmp/eu_recap_json.json` before Step 7 and use that data verbatim.
 - EUROPEAN RACE COUNTS — NO PRIOR EXPECTATIONS (LOCKED): Do NOT use training knowledge to predict how many EU races ran. Any count from 0 to 100+ is possible on any day. France, Germany, Italy, Ireland, GB all run Group races mid-week. Run all tools and report what they return — no more, no less. If API returns 0 → retry once, then run all WebSearch supplements regardless.
 - TABLE FORMAT — RECAP (LOCKED): 3-col HTML `<table>` (Race | Dist · Surface | Winner). Grade icon first. No 2nd/3rd column.
 - TABLE FORMAT — UPCOMING (LOCKED): 4-col HTML `<table>`. No Post Time.
 - UPCOMING WRAPPER (LOCKED): YESTERDAY + TODAY + TOMORROW (3 days) inside ONE `<div class="upcoming-wrapper">`.
 - USA UPCOMING (LOCKED): 3 mandatory WebSearch queries (U_DRF + U_GENERAL + U_MAJOR). Merge results. No WebFetch — DRF/Timeform are JavaScript sites. G1/G2/G3 only, YESTERDAY + TODAY + TOMORROW dates only.
-- EUROPEAN UPCOMING (LOCKED — RACING API IS PRIMARY): 3 Bash curl commands (YESTERDAY, TODAY, TOMORROW) via `curl | python3` to `racecards/pro?date=DATE`. Filter: `pattern` or `race_name` in Group/Groupe/Gruppo 1/2/3 OR Listed AND EU region AND Flat type. Listed → "LR". Merged into /tmp/eu_upcoming.txt. Python converter produces /tmp/eu_upcoming_json.json with exact JSON structure. Step 7.1 reads eu_upcoming_json.json VERBATIM — all grades (G1/G2/G3/LR) included, no manual filtering. One conditional WebSearch fallback only if API returns 0 across all 3 days.
+- EUROPEAN UPCOMING (LOCKED — RACING API IS PRIMARY): 3 Bash curl commands (YESTERDAY, TODAY, TOMORROW) via `curl | python3` to `racecards/pro?date=DATE`. Filter: `pattern` or `race_name` in Group/Groupe/Gruppo 1/2/3 OR Listed AND EU region AND Flat type. Listed → "LR". Merged into /tmp/eu_upcoming_json.json. Python converter produces /tmp/eu_upcoming_json.json with exact JSON structure. Step 7.1 reads eu_upcoming_json.json VERBATIM — all grades (G1/G2/G3/LR) included, no manual filtering. One conditional WebSearch fallback only if API returns 0 across all 3 days.
 - SALES EVENTS ARE NEVER RACES (LOCKED — ABSOLUTE): Sales events, auctions, and catalog days (Goffs London Sale, Tattersalls, Arqana, Keeneland, Fasig-Tipton, OBS, etc.) NEVER appear in the Upcoming Stakes section. A "Goffs London Sale Day", "Tattersalls December Sale", "Racing Dark" event, or any auction is NOT a race and must NEVER be listed as one. These belong ONLY in Sales & Industry (Section 6). If a WebSearch returns a sales event as a "Group" or "Listed" event — ignore it for the upcoming stakes section.
 - EU GRADE FILTER IS ABSOLUTELY FORBIDDEN (LOCKED — HIGHEST PRIORITY): The agent NEVER filters, omits, or second-guesses any EU upcoming race by grade at ANY step. G1, G2, G3, AND Listed (LR) — ALL appear in the Upcoming Stakes section. The Step 7.5 generator auto-merge injects every race in eu_upcoming_json.json directly into the HTML, regardless of what grade the agent thought was "notable enough." The agent has ZERO authority to decide a G2/G3/LR race is not worth including. If the Upcoming Stakes section shows ONLY G1 for Europe → the generator auto-merge failed → re-run Step 7.5 immediately. Every email EVER sent that showed only G1 for EU upcoming was WRONG. The correct output always includes all grades the API returned.
 - FWD-EQ WORKOUTS (LOCKED — VERIFIED): `in:anywhere`. Full body. Structured data only in WORKS.
@@ -3637,7 +3705,7 @@ except Exception as e:
 - DAY-AWARE RACE MINIMUMS (LOCKED — NO ASSUMPTIONS EVER): Sat/Sun → min 3 USA graded. Fri → min 1. Mon–Thu → 0 possible BUT ONLY after: (1) FWD-EQ email found and read via get_thread AND (2) *Stakes Results* confirmed absent. NEVER assume "it's a light day." NEVER assume "Thursday has no stakes." Training knowledge about racing calendars is NOT evidence. Only the FWD-EQ email is evidence. /tmp/step_5drf_done.txt must exist or Step 7.6 and Step 8 will block the draft.
 - UPCOMING MINIMUM 3 RACES (LOCKED): At least 1 G1/G2/G3 across Yesterday + Today + Tomorrow combined. If 0 → run fallback search.
 - STEP 6b IS MANDATORY (LOCKED): Runs every day. European recap via Step 5-RP Racing Post WebFetch — retry if 0 results on Sat/Sun.
-- EU FULL-CARD COMPLETENESS (LOCKED — SUPPLEMENT E): SUPPLEMENT E is mandatory every day. Finding one Group 1 at a European course does NOT satisfy the EU recap requirement. Every major meeting card has G2/G3 support races that MUST be found. For every course in eu_recap.txt, run the host-track full-card search (SUPPLEMENT E Step E-1). For every day where eu_recap.txt shows 0 EU races, run SUPPLEMENT E Step E-3 before writing "No European Group race results." KNOWN MISSED EXAMPLE: June 4, 2026 — G3 Betfred Diomed Stakes at Epsom was missing from recap even though the G1 Oaks at Epsom was correctly found for the next day. The G3 was on the same festival card and should have been found by SUPPLEMENT E E-1 targeting Epsom specifically.
+- EU FULL-CARD COMPLETENESS (LOCKED — SUPPLEMENT E): SUPPLEMENT E is mandatory every day. Finding one Group 1 at a European course does NOT satisfy the EU recap requirement. Every major meeting card has G2/G3 support races that MUST be found. For every course in eu_recap_json.json, run the host-track full-card search (SUPPLEMENT E Step E-1). For every day where eu_recap_json.json shows 0 EU races, run SUPPLEMENT E Step E-3 before writing "No European Group race results." KNOWN MISSED EXAMPLE: June 4, 2026 — G3 Betfred Diomed Stakes at Epsom was missing from recap even though the G1 Oaks at Epsom was correctly found for the next day. The G3 was on the same festival card and should have been found by SUPPLEMENT E E-1 targeting Epsom specifically.
 - EU G2/G3 SUPPLEMENT B DEDICATED SEARCH (LOCKED): In SUPPLEMENT B, the THIRD search `{YESTERDAY_DISPLAY} Group 2 Group 3 horse racing results GB Ireland 2026 winner` is MANDATORY and runs every day — it exists specifically to surface G2/G3 results that G1-dominated search results miss.
 - EU STAKES RECAP — RACING POST IS AUTHORITATIVE (LOCKED — NON-NEGOTIABLE): The bootstrap eu_prefetch.sh runs a Racing Post results page parse (`https://www.racingpost.com/results/YYYY-MM-DD`) and writes EVERY Group 1/2/3 + Listed race at EU tracks to `/tmp/eu_recap_json.json`. The Step 7.1 SOURCE GATE checks that EVERY race in this file appears in `stakes_recap.europe[]` and `sys.exit(1)` if any are missing. This solves the WebFetch truncation problem (RP page is 2.4MB; WebFetch only returns first chunk and silently drops G2/G3 support races behind a headline G1). KNOWN PAST FAILURES TO NEVER REPEAT: June 20, 2026 Royal Ascot Day 5 — agent reported only G1 QE II Jubilee + G2 Norfolk; MISSED G2 Hardwicke Stakes (winner Giavellotto) and G3 Jersey Stakes (winner Thesecretadversary). Both were on the Ascot card and both appear in /tmp/eu_recap_json.json. NEVER write a partial Ascot/Newmarket/Curragh/Chantilly card — always cross-check against /tmp/eu_recap_json.json before assembling stakes_recap.europe[].
 - EU UPCOMING — SDL WEBFETCH ONLY (LOCKED — RACING API IS REMOVED): Step 7.0.5 WebFetches `https://www.thestatsdontlie.com/horse-racing/`, returning a JSON array of every Group/Listed race. The Step 7.5 generator reads `/tmp/eu_upcoming_json.json` verbatim. KNOWN PAST FAILURES (under the now-removed API architecture): June 24, 2026 missed G3 Jannah Rose at Naas; June 26-27 missed Irish Derby weekend G2/G3 races. After Step 7.0.5, ALWAYS verify: `cat /tmp/eu_upcoming_json.json | python3 -c "import sys,json; d=json.load(sys.stdin); print('EU upcoming:', sum(len(x['races']) for x in d))"`. If TODAY/TOMORROW is suspiciously low for an active racing day (Sat/Sun < 3 races), re-call WebFetch on the SDL URL.

@@ -3298,7 +3298,20 @@ if not any(_up_days_src):
     print('S5_FALLBACK: d[upcoming] empty — using eu_upcoming_json.json (EU-only)')
 s5i = ''
 for _uday in (_up_days_src or []):
-    s5i += '<div class="day-header">\U0001f4c5 ' + str(_uday.get('day_label','')) + '</div>\n'
+    # Aug 12 2026 FIX: normalise the day header. The bucket label can arrive from three
+    # different producers (agent digest_data.json, eu_upcoming_json.json, or the S5 fallback),
+    # and eu_prefetch.sh writes an internal label of the form
+    # "TOMORROW - Next 7 days from Thu Aug 13". That scaffolding text leaked into the delivered
+    # email on the Aug 12 2026 verification run. Always rebuild the header from real dates so the
+    # reader sees "TOMORROW - Thu Aug 13" no matter which producer supplied the bucket.
+    _dl_raw = str(_uday.get('day_label',''))
+    _dl_pfx = _dl_raw.split()[0] if _dl_raw.split() else ''
+    if _dl_pfx in ('YESTERDAY','TODAY','TOMORROW'):
+        _dl_dt = _eu_dd.get(_dl_pfx, _eu_today)
+        _dl_out = _dl_pfx + ' \u2014 ' + _dl_dt.strftime('%a') + ' ' + _dl_dt.strftime('%b') + ' ' + str(_dl_dt.day)
+    else:
+        _dl_out = _dl_raw
+    s5i += '<div class="day-header">\U0001f4c5 ' + _dl_out + '</div>\n'
     _uraces = _uday.get('races', [])
     if _uraces:
         s5i += '<table class="race-table"><thead><tr><th style="width:13%">Date</th><th style="width:47%">Race</th><th style="width:26%">Track</th><th style="width:14%">Dist · Surface</th></tr></thead><tbody>\n'

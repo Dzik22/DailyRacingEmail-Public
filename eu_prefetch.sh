@@ -27,12 +27,40 @@ UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like
 # `|| true` below guards a non-zero exit code but does NOT guard a hang; only --max-time does.
 CURL_OPTS=(--connect-timeout 15 --max-time 120 --retry 2 --retry-delay 3 --retry-connrefused)
 
+# Aug 12 2026 FIX — fetch_validated(): retry on HTTP-level blocks AND short bodies.
+# curl --retry only covers connection errors and 5xx; it does NOT retry 403/406/429.
+# Observed live on Aug 12 2026: racingpost.com returned HTTP 406 with a 5,291-byte block
+# page after a few rapid requests. When that happens the byte-size guards below write an
+# EMPTY eu_*.json, the merger happily reports "MERGE_UPCOMING_DONE: 0 races", and the
+# digest renders "No graded stakes scheduled" for every day with only a WARN in the log.
+# That is the Aug 12 2026 upcoming-stakes outage: the file existed, it was just empty.
+# Browser-like Accept / Accept-Language headers also markedly reduce 406 rejections.
+fetch_validated() {
+    local url="$1" out="$2" minbytes="$3" label="$4"
+    local attempt code size
+    for attempt in 1 2 3; do
+        code=$(curl -s -L --compressed "${CURL_OPTS[@]}" -A "${UA}" \
+            -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8' \
+            -H 'Accept-Language: en-GB,en;q=0.9' \
+            -o "$out" -w '%{http_code}' "$url" 2>/dev/null || echo 000)
+        size=$(wc -c < "$out" 2>/dev/null || echo 0)
+        if [ "$code" = "200" ] && [ "$size" -ge "$minbytes" ]; then
+            echo "${label}_FETCH: OK on attempt ${attempt} (http ${code}, ${size} bytes)"
+            return 0
+        fi
+        echo "${label}_FETCH_RETRY: attempt ${attempt} rejected (http ${code}, ${size} bytes, need >=${minbytes})"
+        [ "$attempt" -lt 3 ] && sleep $((attempt * 6))
+    done
+    echo "${label}_FETCH_FAIL: all 3 attempts failed (last http ${code}, ${size} bytes) — downstream JSON will be EMPTY"
+    return 1
+}
+
 # ──────────────────────────────────────────────────────────────────
 # SDL UPCOMING — thestatsdontlie.com is the SOLE source
 # ──────────────────────────────────────────────────────────────────
 SDL_URL="https://www.thestatsdontlie.com/horse-racing/"
 echo "EU_PREFETCH: fetching upcoming from ${SDL_URL}"
-curl -s -L "${CURL_OPTS[@]}" -A "${UA}" "${SDL_URL}" -o /tmp/sdl.html || true
+fetch_validated "${SDL_URL}" /tmp/sdl.html 50000 EU_PREFETCH_SDL || true
 SDL_BYTES=$(wc -c < /tmp/sdl.html 2>/dev/null || echo 0)
 echo "EU_PREFETCH: downloaded ${SDL_BYTES} bytes from SDL"
 
@@ -184,7 +212,7 @@ fi
 YEST=$(date -d 'yesterday' '+%Y-%m-%d' 2>/dev/null || date -v-1d '+%Y-%m-%d')
 RP_URL="https://www.racingpost.com/results/${YEST}"
 echo "EU_RECAP_PREFETCH: fetching YESTERDAY=${YEST} from ${RP_URL}"
-curl -s -L "${CURL_OPTS[@]}" -A "${UA}" "${RP_URL}" -o /tmp/rp_yesterday.html || true
+fetch_validated "${RP_URL}" /tmp/rp_yesterday.html 100000 EU_RECAP_RP || true
 RP_BYTES=$(wc -c < /tmp/rp_yesterday.html 2>/dev/null || echo 0)
 echo "EU_RECAP_PREFETCH: downloaded ${RP_BYTES} bytes"
 

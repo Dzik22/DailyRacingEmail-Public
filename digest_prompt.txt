@@ -3309,6 +3309,22 @@ for _uday in (_up_days_src or []):
     if _dl_pfx in ('YESTERDAY','TODAY','TOMORROW'):
         _dl_dt = _eu_dd.get(_dl_pfx, _eu_today)
         _dl_out = _dl_pfx + ' \u2014 ' + _dl_dt.strftime('%a') + ' ' + _dl_dt.strftime('%b') + ' ' + str(_dl_dt.day)
+        # The TOMORROW bucket spans today+1..today+7, so a bare "Thu Aug 13" understates it when
+        # the bucket holds later races (Aug 12 2026: G1 Juddmonte on Aug 19 sat under "Thu Aug 13").
+        # Extend the header to the actual last race date whenever that is beyond tomorrow.
+        if _dl_pfx == 'TOMORROW':
+            _dl_last = _dl_dt
+            for _r_h in _uday.get('races', []):
+                _p_h = str(_r_h.get('date_short','')).replace('\n',' ').split()
+                try:
+                    _mo_h = _MON_MERGE.get(_p_h[1], 0); _dy_h = int(_p_h[2])
+                    if not _mo_h: continue
+                    _c_h = _dt(_eu_today.year, _mo_h, _dy_h)
+                    if (_c_h - _eu_today).days < -60: _c_h = _dt(_eu_today.year + 1, _mo_h, _dy_h)
+                    if _c_h > _dl_last: _dl_last = _c_h
+                except Exception: continue
+            if _dl_last > _dl_dt:
+                _dl_out += ' \u2013 ' + _dl_last.strftime('%a') + ' ' + _dl_last.strftime('%b') + ' ' + str(_dl_last.day)
     else:
         _dl_out = _dl_raw
     s5i += '<div class="day-header">\U0001f4c5 ' + _dl_out + '</div>\n'

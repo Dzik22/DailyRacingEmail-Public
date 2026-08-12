@@ -1609,7 +1609,7 @@ If the validator exits with error → re-invoke the Task subagent. The subagent'
 Workouts: WORKOUT_FOUND first (Step 4b). Step 4d is MANDATORY for ALL horses in ENTRIES (upcoming race in next 7 days) regardless of WORKOUT_FOUND. Step 4d is also the fallback for all other stable horses not in WORKOUT_FOUND.
 Entries: Step 4c. Results: Step 4c. Updates: Steps 3, 4, 4e.
 
-## STEP 5-DRF — USA STAKES RESULTS (SUBAGENT-WRAPPED — yesterday + 3-day upcoming)
+## STEP 5-DRF — USA STAKES RESULTS (SUBAGENT-WRAPPED — yesterday results + 7-day forward upcoming)
 
 ### ⚠️ GRADED STAKES ONLY: Grade 1, Grade 2, Grade 3. No Listed/non-graded required.
 ### ⚠️ NO CAP — NO ARTIFICIAL LIMIT: A single day can have 1 race or 50 races. Extract EVERY G1/G2/G3 result returned. Do not stop because you think you have "enough."
@@ -1628,7 +1628,7 @@ Call the `Task` tool with these parameters:
 ```
 FWDEQ_PROMPT:
 You are a USA stakes race extractor for Mike Dzik's daily racing digest.
-Your ONLY job is to read the FWD-EQ Equibase Thoroughbred Stakes Notification email and return strict JSON of yesterday's results + 3-day upcoming entries.
+Your ONLY job is to read the FWD-EQ Equibase Thoroughbred Stakes Notification email and return strict JSON of yesterday's results + upcoming entries across a 7-day forward window (yesterday, today, and today+1 through today+7).
 
 DATE WINDOW:
 - YESTERDAY_RP = {{YESTERDAY_RP}}
@@ -1667,7 +1667,20 @@ EXECUTE THESE STEPS IN ORDER:
      Churchill Downs
        Chicago S. - Grade 2, Race 9, $300,000 Added
    - Parse every (date header, track, race_name, grade) — same grade rules.
-   - Filter to date IN {YESTERDAY_RP, TODAY_RP, TOMORROW_RP}. Skip anything outside the 3-day window.
+   - KEEP a race if its date is YESTERDAY_RP, TODAY_RP, or ANY date from TOMORROW_RP through the
+     6th day after TOMORROW_RP (a 7-day forward window starting tomorrow, inclusive). Skip
+     anything outside that span.
+   - day_label assignment: date == YESTERDAY_RP -> "YESTERDAY"; date == TODAY_RP -> "TODAY";
+     any date in the forward 7-day span -> "TOMORROW".
+
+   ⚠️ Aug 12 2026 FIX — DO NOT narrow this back to a strict 3-day window. Equibase Virtual Stable
+   notifications are sparse and forward-rolling: they frequently list nothing for today or tomorrow
+   and carry races only 3-5 days out. On Aug 12 2026 the email's ONLY *Stakes Entries* were dated
+   August 15 — G1 Christophe Clement Turf S. at Saratoga and G3 Philip H. Iselin S. at Monmouth
+   Park. The old 3-day filter discarded both, so the digest printed "No graded stakes scheduled"
+   for all three USA day buckets while a Grade 1 was four days out. The EU path was widened to this
+   same +7 window on June 29 2026 (commit 0f5b0f7) for exactly this reason; matching them keeps a
+   single TOMORROW bucket from mixing two different windows.
 
 6. Return ONLY valid JSON (no markdown, no preamble) matching this exact schema:
 
@@ -1793,7 +1806,7 @@ If the validator exits with error → re-invoke the Task subagent. The subagent'
 
 ### DOWNSTREAM CONTRACT:
 - Step 7.1 stakes_recap.usa entries MUST come from /tmp/step_5drf_data.json `results[]`. Group by track. Use grade/race_name/dist_surface/winner verbatim.
-- Step 7.1 upcoming[].races (USA only) MUST come from /tmp/step_5drf_data.json `upcoming[]`, matched to day_label.
+- Step 7.1 upcoming[].races (USA only) MUST come from /tmp/step_5drf_data.json `upcoming[]`, matched to day_label. The TOMORROW bucket legitimately contains races dated up to 7 days ahead — do NOT drop them for being past tomorrow's date, and do NOT relabel them. This mirrors the EU TOMORROW bucket.
 - If results[] is empty AND fwdeq_threads_found > 0 → "No US graded stakes results for [date]" is CORRECT (the email was read and Section A was absent).
 - If fwdeq_threads_found == 0 → the FWD-EQ email did not arrive yet today; use the legacy WebSearch fallbacks below.
 

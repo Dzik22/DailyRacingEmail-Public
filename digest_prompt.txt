@@ -3182,6 +3182,16 @@ FLAGS = {
   'USA':'\U0001f1fa\U0001f1f8','GB':'\U0001f1ec\U0001f1e7','IRE':'\U0001f1ee\U0001f1ea',
   'FR':'\U0001f1eb\U0001f1f7','GER':'\U0001f1e9\U0001f1ea','ITA':'\U0001f1ee\U0001f1f9',
   'BEL':'\U0001f1e7\U0001f1ea','SWE':'\U0001f1f8\U0001f1ea','SPA':'\U0001f1ea\U0001f1f8',
+  # Aug 13 2026: Woodbine rendered with the generic checkered-flag fallback because CAN was
+  # missing. Canada carries G1/G2/G3 races that legitimately appear in Upcoming Stakes, so the
+  # gap was visible to the reader. Added the remaining nations that realistically show up.
+  'CAN':'\U0001f1e8\U0001f1e6','CANADA':'\U0001f1e8\U0001f1e6',
+  'JPN':'\U0001f1ef\U0001f1f5','AUS':'\U0001f1e6\U0001f1fa','NZ':'\U0001f1f3\U0001f1ff',
+  'UAE':'\U0001f1e6\U0001f1ea','HK':'\U0001f1ed\U0001f1f0','SAU':'\U0001f1f8\U0001f1e6',
+  'DEN':'\U0001f1e9\U0001f1f0','NOR':'\U0001f1f3\U0001f1f4','HOL':'\U0001f1f3\U0001f1f1',
+  'NED':'\U0001f1f3\U0001f1f1','AUT':'\U0001f1e6\U0001f1f9','SUI':'\U0001f1e8\U0001f1ed',
+  'TUR':'\U0001f1f9\U0001f1f7','ARG':'\U0001f1e6\U0001f1f7','BRZ':'\U0001f1e7\U0001f1f7',
+  'CHI':'\U0001f1e8\U0001f1f1','KOR':'\U0001f1f0\U0001f1f7','SAF':'\U0001f1ff\U0001f1e6',
 }
 GI = {
   'G1':'<span class="grade-icon">\U0001f3c6</span><span class="grade-g1">G1</span>',

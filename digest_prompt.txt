@@ -1682,6 +1682,21 @@ EXECUTE THESE STEPS IN ORDER:
    same +7 window on June 29 2026 (commit 0f5b0f7) for exactly this reason; matching them keeps a
    single TOMORROW bucket from mixing two different windows.
 
+5b. For EACH upcoming race from step 5, run ONE WebSearch to get its distance and surface:
+   WebSearch('"[RACE NAME]" "[TRACK]" 2026 stakes distance surface furlongs')
+   Example: WebSearch('"Christophe Clement Turf S." "Saratoga" 2026 stakes distance surface furlongs')
+   Extract dist_surface in the SAME format used for results, e.g. "1m1/8 · Dirt", "7f · Dirt",
+   "1m3/16 · Turf". Graded stakes run at a fixed distance year to year, so a result from a prior
+   running of the same race at the same track is acceptable evidence.
+   If the search does not yield a clear distance, set dist_surface = "?" — never guess a number.
+   CAP: run at most 12 of these searches. If there are more than 12 upcoming races, do the
+   highest grades first (G1, then G2, then G3) and set dist_surface="?" on the remainder.
+
+   ⚠️ Aug 12 2026 FIX — this step did not exist, so upcoming[] carried no dist_surface at all and
+   every USA upcoming race rendered as "? · Dirt" / "? · Turf" in the digest. The Equibase email
+   body contains only race name, grade, race number and purse — never a distance — so it has to
+   come from a search, exactly as step 4 already does for results.
+
 6. Return ONLY valid JSON (no markdown, no preamble) matching this exact schema:
 
 {
@@ -1707,6 +1722,7 @@ EXECUTE THESE STEPS IN ORDER:
       "day_label": "TOMORROW",
       "grade": "G3",
       "race_name": "Ohio Derby",
+      "dist_surface": "1m1/8 · Dirt",
       "source_quote": "Ohio Derby - Grade 3, Race 12, $500,000 Added"
     }
   ],
@@ -1761,7 +1777,7 @@ if d.get('fwdeq_searched') is not True:
 
 VALID_GRADES = {'G1','G2','G3'}
 required_result = ['track','date_iso','grade','race_name','dist_surface','winner','source_quote']
-required_upcoming = ['track','date_iso','day_label','grade','race_name','source_quote']
+required_upcoming = ['track','date_iso','day_label','grade','race_name','dist_surface','source_quote']
 problems = []
 for i, r in enumerate(d['results']):
     for k in required_result:
@@ -1806,7 +1822,7 @@ If the validator exits with error → re-invoke the Task subagent. The subagent'
 
 ### DOWNSTREAM CONTRACT:
 - Step 7.1 stakes_recap.usa entries MUST come from /tmp/step_5drf_data.json `results[]`. Group by track. Use grade/race_name/dist_surface/winner verbatim.
-- Step 7.1 upcoming[].races (USA only) MUST come from /tmp/step_5drf_data.json `upcoming[]`, matched to day_label. The TOMORROW bucket legitimately contains races dated up to 7 days ahead — do NOT drop them for being past tomorrow's date, and do NOT relabel them. This mirrors the EU TOMORROW bucket.
+- Step 7.1 upcoming[].races (USA only) MUST come from /tmp/step_5drf_data.json `upcoming[]`, matched to day_label. Carry `dist_surface` through verbatim into the rendered race row — do NOT drop it and do NOT substitute "?" when the subagent resolved a real value. The TOMORROW bucket legitimately contains races dated up to 7 days ahead — do NOT drop them for being past tomorrow's date, and do NOT relabel them. This mirrors the EU TOMORROW bucket.
 - If results[] is empty AND fwdeq_threads_found > 0 → "No US graded stakes results for [date]" is CORRECT (the email was read and Section A was absent).
 - If fwdeq_threads_found == 0 → the FWD-EQ email did not arrive yet today; use the legacy WebSearch fallbacks below.
 
@@ -3497,8 +3513,30 @@ BAD_HEADERS = ['📚 MY STABLE', '📚MY STABLE', '🔆 TOP 10', '🔆TOP 10', '
 for bh in BAD_HEADERS:
     if bh in h: problems.append('BAD PATTERN: \"' + bh + '\" — manually written section header (generator uses 🏇/🐎/📰/🏆/📅/💼)')
 BAD_PHRASES = ['STAKES WATCH', 'STAKES RECAP DAY', 'MY STABLE RUNNERS', 'NEWS & ENTRIES', 'NORTH AMERICA —', 'EUROPE —', 'Data sources:', 'Automated digest']
+# Aug 13 2026 FIX -- DIAGNOSTIC PROSE MUST NEVER REACH THE READER.
+# The Aug 13 2026 digest shipped with sentences explaining that primary sources were blocked by
+# the sandbox network egress policy, rendered inside the Stakes Recap and Upcoming sections.
+# The Python generator emits fixed empty-state strings and NEVER explains itself, so any of this
+# vocabulary in the HTML proves the agent hand-wrote or post-edited the output.
+# Operational detail belongs in the agent final chat message and the CCR log, never in the email.
+# The list below is deliberately restricted to infrastructure and tool vocabulary that cannot occur
+# in racing copy. Terms like blocked-by and could-not-be-verified are EXCLUDED on purpose: a horse
+# can be blocked by traffic, and the Aug 6 2026 digest legitimately said a result could not be
+# independently confirmed. An over-broad list here fails a good digest and produces NO email at
+# all, which is worse than the prose leak it prevents.
+BAD_PHRASES += ['sandbox', 'egress', 'source-access', 'WebSearch', 'get_thread', 'create_draft',
+                'thestatsdontlie.com', 'racingpost.com', 'Stakes Results section', 'digest_data.json',
+                'eu_upcoming_json', 'eu_recap_json', 'Step 5-DRF', 'Step 7.5', '/tmp/']
 for bp in BAD_PHRASES:
-    if bp in h: problems.append('BAD PATTERN: \"' + bp + '\" — manually written custom section/footer')
+    if bp in h: problems.append('BAD PATTERN: \"' + bp + '\" — manually written prose or diagnostic text (generator never emits this)')
+# The generator emits these empty-state strings VERBATIM and nothing else. If a near-miss variant
+# appears, the HTML did not come from the generator.
+if 'No graded stakes' in h and 'No graded stakes scheduled.' not in h:
+    problems.append('BAD PATTERN: altered empty-state text — generator only ever writes \"No graded stakes scheduled.\"')
+for _frag, _canon in (('No US graded stakes', 'No US graded stakes results for '),
+                      ('No European Group', 'No European Group race results for ')):
+    if _frag in h and _canon not in h:
+        problems.append('BAD PATTERN: altered empty-state text near \"' + _frag + '\" — generator wording was changed')
 if 'Mike Dzik' in h and 's Daily Racing' in h: problems.append('BAD PATTERN: manual footer using Mike Dzik possessive')
 if 'Generated Sunday' in h or 'Generated Monday' in h or 'Generated Tuesday' in h or 'Generated Wednesday' in h or 'Generated Thursday' in h or 'Generated Friday' in h or 'Generated Saturday' in h:
     problems.append('BAD PATTERN: \"Generated [day]\" footer')

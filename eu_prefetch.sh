@@ -39,7 +39,11 @@ fetch_validated() {
     local url="$1" out="$2" minbytes="$3" label="$4"
     local attempt code size
     for attempt in 1 2 3; do
-        code=$(curl -s -L --compressed "${CURL_OPTS[@]}" -A "${UA}" \
+        # Aug 13 2026: --compressed REMOVED. If the runtime curl lacks brotli, the server may
+        # return br-encoded bytes that curl cannot decode; the file is still large enough to pass
+        # the size gate but parses to ZERO races, which looks identical to "the source blocked us".
+        # Plain requests return HTTP 200 from both sources, so the flag bought nothing.
+        code=$(curl -s -L "${CURL_OPTS[@]}" -A "${UA}" \
             -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8' \
             -H 'Accept-Language: en-GB,en;q=0.9' \
             -o "$out" -w '%{http_code}' "$url" 2>/dev/null || echo 000)
@@ -84,6 +88,15 @@ clean = re.sub(r'\s+', ' ', clean)
 pat = re.compile(r'(\d{2}/\d{2}/\d{2})\s+-\s+([^()]{5,100}?)\s+\(([^)]+)\)\s+-\s+([A-Za-z][A-Za-z0-9 ]{3,30}?)(?=\s+\d{2}/\d{2}/\d{2}|\s+[A-Z][a-z]+\s+[A-Z]|\s*$)')
 matches = pat.findall(clean)
 print('EU_PREFETCH: parsed ' + str(len(matches)) + ' race entries from SDL page (after dash normalization)')
+# Aug 13 2026: distinguish "page fetched but unparseable" from "page fetched, genuinely no races".
+# A large SDL page that yields zero regex matches means the encoding or markup changed -- that is a
+# PARSE failure and must never be reported downstream as "no racing scheduled".
+if len(matches) == 0 and len(raw) > 200000:
+    print('EU_PREFETCH_PARSE_FAIL: SDL page is ' + str(len(raw)) + ' bytes but ZERO races parsed.')
+    print('  This is a PARSE/ENCODING failure, NOT an empty race calendar. Do not report "no racing".')
+    print('  Check: page markup changed, or the response was compressed and left undecoded.')
+elif len(matches) == 0:
+    print('EU_PREFETCH_EMPTY: SDL page small (' + str(len(raw)) + ' bytes) and zero races parsed.')
 
 # Debug: log what was actually captured so we can see in CCR logs
 for m in matches[:15]:

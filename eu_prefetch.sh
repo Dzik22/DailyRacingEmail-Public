@@ -59,6 +59,168 @@ fetch_validated() {
     return 1
 }
 
+
+# ══════════════════════════════════════════════════════════════════════════════
+# RACING API — PRIMARY EU SOURCE  (restored Aug 14 2026)
+#
+# History: all Racing API code was purged Jun 27 2026 (commit bd9cfca) on the
+# directive "IT CAN NOT USE THAT EVER AGAIN", after the agent repeatedly reported
+# the API as unavailable. That diagnosis was wrong twice over:
+#   1. The FAILURES were calling-mechanism failures, not data failures -- urllib
+#      blocked by Cloudflare JA3, subprocess blocked inside heredocs. Plain
+#      `curl -u` works fine and is what we use here.
+#   2. The old filter EXPLICITLY DISCARDED Listed races ("Listed, non-graded ...
+#      excluded by Python filter"), so even a working API would have surfaced
+#      only Group races. On Aug 14 2026 that meant 1 race instead of 5.
+#
+# Measured Aug 14 2026: SDL scraping found 1 EU stakes race. This API returned 5,
+# matching a manual track-by-track audit exactly -- 3 Listed at Cork/Newbury and a
+# Listed at Clairefontaine that SDL could not see at all (it carries no French
+# racing). It also supplies real distances, fixing the "? · Turf" placeholders.
+#
+# The credential is NEVER stored in this file. digest_prompt.txt and eu_prefetch.sh
+# are mirrored to a PUBLIC repo; the key lives only in the private CCR routine
+# prompt and arrives as the RACING_API_CREDS environment variable. If it is unset
+# or the API fails, this block writes nothing and the SDL/Racing Post scrapers
+# below run exactly as before.
+# ══════════════════════════════════════════════════════════════════════════════
+rm -f /tmp/rapi_ok
+if [ -n "${RACING_API_CREDS:-}" ]; then
+  echo "EU_RAPI: credential present — theracingapi.com is PRIMARY for EU stakes"
+  RAPI_DIR=/tmp/rapi; mkdir -p "$RAPI_DIR"; rm -f "$RAPI_DIR"/*.json 2>/dev/null || true
+  for i in 0 1 2 3 4 5 6 7; do
+    D=$(date -d "+${i} day" '+%Y-%m-%d' 2>/dev/null || date -v+${i}d '+%Y-%m-%d')
+    code=$(curl -s -u "${RACING_API_CREDS}" "${CURL_OPTS[@]}" \
+      "https://api.theracingapi.com/v1/racecards/pro?date=${D}" \
+      -o "${RAPI_DIR}/card_${D}.json" -w '%{http_code}' 2>/dev/null || echo 000)
+    echo "EU_RAPI_CARD ${D}: http ${code} ($(wc -c < "${RAPI_DIR}/card_${D}.json" 2>/dev/null || echo 0) bytes)"
+  done
+  YEST_A=$(date -d 'yesterday' '+%Y-%m-%d' 2>/dev/null || date -v-1d '+%Y-%m-%d')
+  code=$(curl -s -u "${RACING_API_CREDS}" "${CURL_OPTS[@]}" \
+    "https://api.theracingapi.com/v1/results?start_date=${YEST_A}&end_date=${YEST_A}&type=flat" \
+    -o "${RAPI_DIR}/results.json" -w '%{http_code}' 2>/dev/null || echo 000)
+  echo "EU_RAPI_RESULTS ${YEST_A}: http ${code} ($(wc -c < "${RAPI_DIR}/results.json" 2>/dev/null || echo 0) bytes)"
+
+python3 << 'PYRAPI'
+import json, os, glob
+from datetime import date, timedelta
+
+GROUP = {'Group 1','Group 2','Group 3','Groupe 1','Groupe 2','Groupe 3','Gruppo 1','Gruppo 2','Gruppo 3'}
+GRADE = {'Group 1':'G1','Group 2':'G2','Group 3':'G3','Groupe 1':'G1','Groupe 2':'G2','Groupe 3':'G3',
+         'Gruppo 1':'G1','Gruppo 2':'G2','Gruppo 3':'G3','Listed':'LR'}
+EU_REGIONS = {'gb','ire','fr','ger','ita','bel','swe','spa','den','nor','hol','aut'}
+FLAGS = {'GB':'\U0001f1ec\U0001f1e7','IRE':'\U0001f1ee\U0001f1ea','FR':'\U0001f1eb\U0001f1f7',
+         'GER':'\U0001f1e9\U0001f1ea','ITA':'\U0001f1ee\U0001f1f9','BEL':'\U0001f1e7\U0001f1ea',
+         'SWE':'\U0001f1f8\U0001f1ea','SPA':'\U0001f1ea\U0001f1f8','DEN':'\U0001f1e9\U0001f1f0',
+         'NOR':'\U0001f1f3\U0001f1f4','HOL':'\U0001f1f3\U0001f1f1','AUT':'\U0001f1e6\U0001f1f9'}
+DOW=['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
+MON={1:'Jan',2:'Feb',3:'Mar',4:'Apr',5:'May',6:'Jun',7:'Jul',8:'Aug',9:'Sep',10:'Oct',11:'Nov',12:'Dec'}
+T = date.today()
+
+def clean_course(c):
+    return (c or '').replace('(IRE)','').replace('(FR)','').replace('(GER)','').replace('(ITA)','').strip()
+
+def is_stakes(rec):
+    # Flat only: excludes jumps and, critically, the Pure Arabian cards that carry
+    # their own "Group" labels but are a different breed and do not belong here.
+    if str(rec.get('type','')).strip().lower() not in ('flat',''): return False
+    if 'arab' in (rec.get('race_name') or '').lower(): return False
+    if rec.get('is_abandoned') in (True,'true','True'): return False
+    if str(rec.get('region','')).lower() not in EU_REGIONS: return False
+    pat = (rec.get('pattern') or '').strip()
+    return pat in GROUP or pat == 'Listed'
+
+# ---------------------------------------------------------------- UPCOMING
+buckets = {'TODAY': [], 'TOMORROW': []}
+for f in sorted(glob.glob('/tmp/rapi/card_*.json')):
+    try: d = json.load(open(f))
+    except Exception: continue
+    cards = d.get('racecards') or d.get('data') or (d if isinstance(d, list) else [])
+    for c in cards:
+        if not is_stakes(c): continue
+        try: dt = date.fromisoformat(str(c.get('date'))[:10])
+        except Exception: continue
+        if dt == T: key = 'TODAY'
+        elif T < dt <= T + timedelta(days=7): key = 'TOMORROW'
+        else: continue
+        reg = str(c.get('region','GB')).upper()
+        dist = c.get('distance_round') or c.get('distance') or '?'
+        surf = c.get('surface') or 'Turf'
+        buckets[key].append({
+            'grade': GRADE.get((c.get('pattern') or '').strip(), 'LR'),
+            'race_name': (c.get('race_name') or '').replace(' ()','').strip(),
+            'date_short': DOW[dt.weekday()] + '\n' + MON[dt.month] + ' ' + str(dt.day),
+            'track': clean_course(c.get('course')),
+            'country': reg,
+            'flag': FLAGS.get(reg, '\U0001f3c1'),
+            'dist_surface': str(dist) + ' · ' + str(surf),
+        })
+
+GO = {'G1':0,'G2':1,'G3':2,'LR':3}
+for k in buckets: buckets[k].sort(key=lambda r: (r['date_short'], GO.get(r['grade'],9), r['track']))
+Y = T - timedelta(days=1)
+lbl = lambda p, d: p + ' — ' + DOW[d.weekday()] + ' ' + MON[d.month] + ' ' + str(d.day)
+upcoming = [{'day_label': lbl('YESTERDAY', Y), 'races': []},
+            {'day_label': lbl('TODAY', T), 'races': buckets['TODAY']},
+            {'day_label': 'TOMORROW — Next 7 days from ' + DOW[(T+timedelta(days=1)).weekday()] + ' ' + MON[(T+timedelta(days=1)).month] + ' ' + str((T+timedelta(days=1)).day),
+             'races': buckets['TOMORROW']}]
+
+# ------------------------------------------------------------------ RECAP
+recap = []
+if os.path.exists('/tmp/rapi/results.json'):
+    try:
+        rd = json.load(open('/tmp/rapi/results.json'))
+        for r in (rd.get('results') or rd.get('data') or []):
+            if not is_stakes(r): continue
+            win = '?'
+            for run in (r.get('runners') or []):
+                if str(run.get('position')) == '1':
+                    win = (run.get('horse') or '?').replace(' (IRE)','').replace(' (GB)','').replace(' (FR)','').strip()
+                    break
+            reg = str(r.get('region','GB')).upper()
+            recap.append({
+                'grade': GRADE.get((r.get('pattern') or '').strip(), 'LR'),
+                'race_name': (r.get('race_name') or '').replace(' ()','').strip(),
+                'track': clean_course(r.get('course')),
+                'country': reg,
+                'flag': FLAGS.get(reg, '\U0001f3c1'),
+                'dist_surface': str(r.get('dist') or '?') + ' · ' + str(r.get('surface') or 'Turf'),
+                'winner': win,
+                'off_time': r.get('off') or '',
+            })
+        recap.sort(key=lambda x: (GO.get(x['grade'],9), x['track']))
+        # seed the YESTERDAY bucket from results so the upcoming table shows what ran
+        upcoming[0]['races'] = [{
+            'grade': x['grade'], 'race_name': x['race_name'],
+            'date_short': DOW[Y.weekday()] + '\n' + MON[Y.month] + ' ' + str(Y.day),
+            'track': x['track'], 'country': x['country'], 'flag': x['flag'],
+            'dist_surface': x['dist_surface']} for x in recap]
+    except Exception as e:
+        print('EU_RAPI_RECAP_ERR: ' + str(e))
+
+tot = sum(len(b['races']) for b in upcoming)
+if tot > 0 or recap:
+    json.dump(upcoming, open('/tmp/eu_upcoming_bash.json','w'), ensure_ascii=False)
+    json.dump(recap, open('/tmp/eu_recap_bash.json','w'), ensure_ascii=False)
+    open('/tmp/rapi_ok','w').write('1')
+    print('EU_RAPI_DONE: ' + str(tot) + ' upcoming EU stakes races, ' + str(len(recap)) + ' recap races')
+    for b in upcoming:
+        print('  ' + b['day_label'] + ' (' + str(len(b['races'])) + ')')
+        for r in b['races']:
+            print('     [' + r['grade'] + '] ' + r['race_name'][:52] + ' @ ' + r['track'] + ' (' + r['country'] + ') ' + r['dist_surface'])
+    for r in recap:
+        print('  RECAP [' + r['grade'] + '] ' + r['race_name'][:48] + ' @ ' + r['track'] + ' — ' + r['winner'])
+else:
+    print('EU_RAPI_EMPTY: API returned no EU stakes races — falling back to SDL/Racing Post scraping')
+PYRAPI
+
+else
+  echo "EU_RAPI: RACING_API_CREDS not set — using SDL + Racing Post scraping"
+fi
+
+if [ -f /tmp/rapi_ok ]; then
+  echo "EU_PREFETCH_SKIP: Racing API already supplied EU data — skipping scraper (saves ~20s and avoids needless load on the source)"
+else
 # ──────────────────────────────────────────────────────────────────
 # SDL UPCOMING — thestatsdontlie.com is the SOLE source
 # ──────────────────────────────────────────────────────────────────
@@ -218,7 +380,11 @@ with open('/tmp/eu_upcoming_section.html','w') as f: f.write(s5html)
 print('EU_HTML_DONE: ' + str(total) + ' EU races → /tmp/eu_upcoming_section.html')
 PYSDL
 fi
+fi
 
+if [ -f /tmp/rapi_ok ]; then
+  echo "EU_PREFETCH_SKIP: Racing API already supplied EU data — skipping scraper (saves ~20s and avoids needless load on the source)"
+else
 # ──────────────────────────────────────────────────────────────────
 # RACING POST RESULTS — yesterday's results (unchanged)
 # ──────────────────────────────────────────────────────────────────
@@ -302,6 +468,7 @@ PYRECAP
 fi
 
 # === WRITE MERGER SCRIPT to /tmp/merge_eu.py (inlined here so CCR has no extra bootstrap download) ===
+fi
 cat > /tmp/merge_eu.py << 'MERGEEOF'
 #!/usr/bin/env python3
 # Single source of truth for combining EU race producer outputs.

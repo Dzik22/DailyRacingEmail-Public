@@ -3117,6 +3117,28 @@ def _eu_daykey(r):
 for _pfx in ('YESTERDAY','TODAY','TOMORROW'):
     _eu_by_prefix[_pfx].sort(key=lambda r: (_eu_daykey(r), _GO_MERGE.get(r.get('grade','LR'),9), r.get('track','')))
 
+# Aug 17 2026 FIX — ENFORCE EXACTLY 3 DAY BUCKETS.
+# The Aug 17 2026 digest shipped a FOURTH bucket labelled 'Sat Aug 22' holding USA races that
+# belonged inside TOMORROW (which spans today+1..today+7). FORMAT LOCK rule 6 forbids a 4th
+# bucket, but nothing enforced it, and any bucket whose label does not start with
+# YESTERDAY/TODAY/TOMORROW also silently receives ZERO EU races, because the merge below keys
+# _eu_by_prefix off that prefix. So a stray bucket both violates the format AND loses EU data.
+# Fold anything unrecognised into TOMORROW and always emit exactly three.
+try:
+    _WANT = ('YESTERDAY','TODAY','TOMORROW')
+    _nb = {k: [] for k in _WANT}; _nlbl = {}
+    _src_buckets = d.get('upcoming',[]) or []
+    for _db in _src_buckets:
+        _parts = str(_db.get('day_label','')).split()
+        _pf = _parts[0] if _parts else ''
+        _key = _pf if _pf in _WANT else 'TOMORROW'
+        if _pf in _WANT and _pf not in _nlbl: _nlbl[_pf] = _db.get('day_label','')
+        _nb[_key].extend(_db.get('races',[]) or [])
+    if len(_src_buckets) != 3:
+        print('UPCOMING_BUCKETS_FIXED: agent supplied ' + str(len(_src_buckets)) + ' buckets; folded into exactly 3 (unrecognised labels merged into TOMORROW)')
+    d['upcoming'] = [{'day_label': _nlbl.get(_k, _k + ' \u2014 ?'), 'races': _nb[_k]} for _k in _WANT]
+except Exception as _bx: print('UPCOMING_BUCKETS_ERR: ' + str(_bx))
+
 # Apply REPLACE: EU from API+SDL union; USA from agent; discard agent EU entries
 _SKIP_NM = ('racing dark','sale day','(sales)','(racing dark','goffs london sale','tattersalls','arqana sale','fasig-tipton sale','keeneland sale','obs sale')
 try:
@@ -3128,6 +3150,23 @@ try:
     _eu_mrg=sum(len(_eu_by_prefix.get(k,[])) for k in ['YESTERDAY','TODAY','TOMORROW'])
     print('EU_MERGE: set '+str(_eu_mrg)+' EU races from '+_eu_source+' (agent EU entries discarded)')
 except Exception as _eue: print('EU_MERGE_WARNING: '+str(_eue))
+# Aug 17 2026: prove no EU race was lost between the file and d['upcoming'].
+try:
+    _lost = []
+    for _pfx in ('YESTERDAY','TODAY','TOMORROW'):
+        _have = len(_eu_by_prefix.get(_pfx,[]))
+        _rend = 0
+        for _db2 in d.get('upcoming',[]):
+            _pp = str(_db2.get('day_label','')).split()
+            if _pp and _pp[0] == _pfx:
+                _rend += sum(1 for _r2 in _db2.get('races',[]) if _r2.get('country','') in _EU_CTRY)
+        if _have > 0 and _rend < _have:
+            _lost.append(_pfx + ' file=' + str(_have) + ' merged=' + str(_rend))
+    if _lost:
+        print('EU_LOSS_CRITICAL: EU races dropped between eu_upcoming_json.json and d[upcoming] -> ' + '; '.join(_lost))
+    else:
+        print('EU_LOSS_CHECK: OK - all EU races from the file survived into d[upcoming]')
+except Exception as _le: print('EU_LOSS_CHECK_ERR: ' + str(_le))
 # ────────────────────────────────────────────────────────────────────────────
 
 try:
@@ -3446,13 +3485,23 @@ if os.path.exists(eu_json):
     eu_days = _jeu.load(open(eu_json))
     total_eu = sum(len(d2.get('races',[])) for d2 in eu_days)
     if total_eu > 0:
+        # Aug 17 2026 FIX: compare on a normalised key. Race names are HTML-escaped in the
+        # document (apostrophes become &#39;) and the generator strips a trailing ' ()', so a raw
+        # substring test produced false mismatches. Normalise both sides to alphanumerics.
+        import html as _htmlmod, re as _reeu
+        _hnorm = _reeu.sub(r'[^a-z0-9]', '', _htmlmod.unescape(h).lower())
+        def _rkey(nm):
+            return _reeu.sub(r'[^a-z0-9]', '', str(nm).lower())
         eu_names = [r.get('race_name','') for d2 in eu_days for r in d2.get('races',[])]
-        found = sum(1 for nm in eu_names if nm and nm.lower() in h.lower())
+        missing = [nm for nm in eu_names if nm and _rkey(nm) not in _hnorm]
+        found = len(eu_names) - len(missing)
         print('EU_COVERAGE: ' + str(found) + '/' + str(total_eu) + ' EU race names in HTML')
         if found == 0:
             problems.append('CRITICAL — EU ZERO MATCH: eu_upcoming_json.json has ' + str(total_eu) + ' EU races but NONE appear in HTML — generator EU auto-merge did not execute. Re-run Step 7.5.')
-        elif found < total_eu:
-            print('  NOTE: ' + str(total_eu - found) + ' EU races missing by name (may be truncated or renamed — verify visually)')
+        elif missing:
+            # Aug 17 2026: this used to be a NOTE and the run proceeded. That is exactly how the
+            # York Ebor Festival (4 Group 1s) shipped missing. Partial loss now FAILS the seal.
+            problems.append('CRITICAL — EU PARTIAL LOSS: ' + str(len(missing)) + ' of ' + str(total_eu) + ' EU races are in eu_upcoming_json.json but NOT in the HTML: ' + '; '.join(missing[:6]) + ('; ...' if len(missing) > 6 else '') + ' — re-run Step 7.5; do NOT send a digest that silently drops stakes races.')
 if not os.path.exists('/tmp/step_5drf_done.txt'):
     problems.append('CRITICAL: /tmp/step_5drf_done.txt MISSING — Step 5-DRF FWD-EQ email search was SKIPPED. Run Step 5-DRF now, write the gate file, then re-run Step 7.5 and 7.6.')
 else:
@@ -3468,7 +3517,18 @@ for phrase in forbidden:
 my_stable_pos = h.find('MY STABLE')
 if my_stable_pos < 0: my_stable_pos = h.find('My Stable')
 if my_stable_pos >= 0:
-    ms_region = h[my_stable_pos:my_stable_pos+20000]
+    # Aug 17 2026 FIX: this was a fixed 20000-character window, which on any normal-length
+    # digest spills OUT of My Stable and into the next section. Stable Updates legitimately uses
+    # the horse emoji U+1F40E in its header, so the wrong-emoji check below fired on perfectly
+    # correct generator output -- Step 7.6 then exit(1)'d a good digest, told the agent to re-run,
+    # and gave it a reason to start hand-writing HTML. Bound the region to the actual section by
+    # stopping at the next section-header instead.
+    # NB: search for 'sh-icon', not 'section-header' -- the subsection class
+    # 'stable-subsection-header' CONTAINS the substring 'section-header', so searching for that
+    # cuts the region off at the ENTRIES subsection, before any silk badge exists. 'sh-icon' is
+    # emitted only by hdr() for top-level sections, so it lands on Stable Updates as intended.
+    _ms_end = h.find('sh-icon', my_stable_pos + 50)
+    ms_region = h[my_stable_pos:(_ms_end if _ms_end > my_stable_pos else my_stable_pos + 20000)]
     badge_count = ms_region.count('display:inline-table')
     if badge_count == 0:
         problems.append('CRITICAL: My Stable has ZERO silk badges (display:inline-table absent) — agent wrote manual HTML instead of using generator. Fix JSON and re-run Step 7.5.')

@@ -88,13 +88,53 @@ rm -f /tmp/rapi_ok
 if [ -n "${RACING_API_CREDS:-}" ]; then
   echo "EU_RAPI: credential present — theracingapi.com is PRIMARY for EU stakes"
   RAPI_DIR=/tmp/rapi; mkdir -p "$RAPI_DIR"; rm -f "$RAPI_DIR"/*.json 2>/dev/null || true
+  # region_codes cuts the payload ~5x (592KB vs 3.1MB per day) -- 8 days goes from ~6MB
+  # to ~1.2MB, which matters because this runs inside the CCR session budget.
+  # VALID region codes are gb, ire, fr, ger ONLY. "ita" is rejected with
+  # HTTP 422 "unrecognised region code" and, because the codes are sent as one query string,
+  # ONE bad code fails the ENTIRE request for every day. Verified individually Aug 17 2026.
+  # Filtering by region cuts each day from ~3.1MB (all regions) to ~592KB.
+  RAPI_REGIONS="region_codes=gb&region_codes=ire&region_codes=fr&region_codes=ger"
+  RAPI_DAY_FAIL=0
+  # Aug 17 2026: pace the calls deliberately. This is a paid subscription with rate limits and
+  # nine requests back-to-back is needlessly aggressive on someone else's service. A 3s gap makes
+  # the whole window ~25s instead of ~8s, which is irrelevant inside a 40-minute pipeline but
+  # keeps us comfortably inside any throttle. Do NOT remove this to save time.
+  RAPI_PACE=3
   for i in 0 1 2 3 4 5 6 7; do
+    [ "$i" -gt 0 ] && sleep "$RAPI_PACE"
     D=$(date -d "+${i} day" '+%Y-%m-%d' 2>/dev/null || date -v+${i}d '+%Y-%m-%d')
-    code=$(curl -s -u "${RACING_API_CREDS}" "${CURL_OPTS[@]}" \
-      "https://api.theracingapi.com/v1/racecards/pro?date=${D}" \
-      -o "${RAPI_DIR}/card_${D}.json" -w '%{http_code}' 2>/dev/null || echo 000)
-    echo "EU_RAPI_CARD ${D}: http ${code} ($(wc -c < "${RAPI_DIR}/card_${D}.json" 2>/dev/null || echo 0) bytes)"
+    F="${RAPI_DIR}/card_${D}.json"
+    dayok=0
+    # Aug 17 2026 FIX: validate EVERY day's response. The previous version parsed each file
+    # with a bare try/except, so any day that returned an error, a truncated body or a
+    # malformed payload silently contributed ZERO races -- indistinguishable from a day with
+    # no stakes racing. That is how the York Ebor Festival (4 Group 1s) went missing.
+    for attempt in 1 2 3; do
+      code=$(curl -s -u "${RACING_API_CREDS}" "${CURL_OPTS[@]}" \
+        "https://api.theracingapi.com/v1/racecards/pro?date=${D}&${RAPI_REGIONS}" \
+        -o "$F" -w '%{http_code}' 2>/dev/null || echo 000)
+      if [ "$code" = "200" ] && python3 -c "
+import json,sys
+d=json.load(open('$F'))
+sys.exit(0 if isinstance(d.get('racecards'), list) else 1)
+" 2>/dev/null; then dayok=1; break; fi
+      echo "EU_RAPI_CARD_RETRY ${D}: attempt ${attempt} rejected (http ${code}, $(wc -c < "$F" 2>/dev/null || echo 0) bytes)"
+      [ "$attempt" -lt 3 ] && sleep $((attempt * 6))
+    done
+    if [ "$dayok" = "1" ]; then
+      echo "EU_RAPI_CARD ${D}: OK (http ${code}, $(wc -c < "$F" 2>/dev/null || echo 0) bytes)"
+    else
+      echo "EU_RAPI_CARD_FAIL ${D}: all 3 attempts failed — races for this DATE ARE MISSING, not absent"
+      rm -f "$F"
+      RAPI_DAY_FAIL=$((RAPI_DAY_FAIL+1))
+    fi
   done
+  if [ "$RAPI_DAY_FAIL" -gt 0 ]; then
+    echo "EU_RAPI_PARTIAL: CRITICAL — ${RAPI_DAY_FAIL} of 8 days could not be fetched."
+    echo "  EU coverage for those dates is INCOMPLETE. This is a fetch failure, NOT an empty calendar."
+  fi
+  sleep "$RAPI_PACE"
   YEST_A=$(date -d 'yesterday' '+%Y-%m-%d' 2>/dev/null || date -v-1d '+%Y-%m-%d')
   code=$(curl -s -u "${RACING_API_CREDS}" "${CURL_OPTS[@]}" \
     "https://api.theracingapi.com/v1/results?start_date=${YEST_A}&end_date=${YEST_A}&type=flat" \
@@ -203,6 +243,7 @@ if tot > 0 or recap:
     json.dump(upcoming, open('/tmp/eu_upcoming_bash.json','w'), ensure_ascii=False)
     json.dump(recap, open('/tmp/eu_recap_bash.json','w'), ensure_ascii=False)
     open('/tmp/rapi_ok','w').write('1')
+    json.dump({'days_fetched': len(glob.glob('/tmp/rapi/card_*.json')), 'upcoming': tot, 'recap': len(recap)}, open('/tmp/rapi_status.json','w'))
     print('EU_RAPI_DONE: ' + str(tot) + ' upcoming EU stakes races, ' + str(len(recap)) + ' recap races')
     for b in upcoming:
         print('  ' + b['day_label'] + ' (' + str(len(b['races'])) + ')')

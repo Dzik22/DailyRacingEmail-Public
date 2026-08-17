@@ -3480,6 +3480,17 @@ if 'ENTRIES — NEXT 7 DAYS' not in h: problems.append('ENTRIES subsection heade
 if 'class=\"race-table\"' not in h: problems.append('Missing race-table class')
 # Verify EU upcoming races are present — check race names against eu_upcoming_json.json
 import os, json as _jeu
+# Aug 17 2026: the prefetch records what it actually fetched. If it reports EU races but the
+# HTML has none, the data was lost somewhere downstream -- fail rather than ship a silent gap.
+# This covers the case the coverage check below cannot: eu_upcoming_json.json arriving EMPTY.
+if os.path.exists('/tmp/rapi_status.json'):
+    try:
+        _rst = _jeu.load(open('/tmp/rapi_status.json'))
+        print('RAPI_STATUS: days_fetched=' + str(_rst.get('days_fetched')) + ' upcoming=' + str(_rst.get('upcoming')) + ' recap=' + str(_rst.get('recap')))
+        if int(_rst.get('upcoming', 0)) > 0 and 'grade-g1' not in h and 'grade-g2' not in h and 'grade-g3' not in h and 'grade-listed' not in h:
+            problems.append('CRITICAL — EU DATA LOST: the prefetch fetched ' + str(_rst.get('upcoming')) + ' EU stakes races but the HTML contains no graded race rows at all. Re-run Step 7.5.')
+    except Exception as _rse2:
+        print('RAPI_STATUS_ERR: ' + str(_rse2))
 eu_json = '/tmp/eu_upcoming_json.json'
 if os.path.exists(eu_json):
     eu_days = _jeu.load(open(eu_json))

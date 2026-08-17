@@ -111,7 +111,11 @@ if [ -n "${RACING_API_CREDS:-}" ]; then
     # malformed payload silently contributed ZERO races -- indistinguishable from a day with
     # no stakes racing. That is how the York Ebor Festival (4 Group 1s) went missing.
     for attempt in 1 2 3; do
-      code=$(curl -s -u "${RACING_API_CREDS}" "${CURL_OPTS[@]}" \
+      # --compressed: gzip cuts the wire transfer 11.4x (2,030,250 -> 177,358 bytes for a
+      # 41-card day, byte-identical after decompression). Across the 8-day window that is
+      # ~6.9MB -> ~600KB. This is safe here ONLY because the check below requires a parseable
+      # racecards list, so a failed decode is caught rather than silently yielding zero races.
+      code=$(curl -s -u "${RACING_API_CREDS}" --compressed "${CURL_OPTS[@]}" \
         "https://api.theracingapi.com/v1/racecards/pro?date=${D}&${RAPI_REGIONS}" \
         -o "$F" -w '%{http_code}' 2>/dev/null || echo 000)
       if [ "$code" = "200" ] && python3 -c "
@@ -136,7 +140,7 @@ sys.exit(0 if isinstance(d.get('racecards'), list) else 1)
   fi
   sleep "$RAPI_PACE"
   YEST_A=$(date -d 'yesterday' '+%Y-%m-%d' 2>/dev/null || date -v-1d '+%Y-%m-%d')
-  code=$(curl -s -u "${RACING_API_CREDS}" "${CURL_OPTS[@]}" \
+  code=$(curl -s -u "${RACING_API_CREDS}" --compressed "${CURL_OPTS[@]}" \
     "https://api.theracingapi.com/v1/results?start_date=${YEST_A}&end_date=${YEST_A}&type=flat" \
     -o "${RAPI_DIR}/results.json" -w '%{http_code}' 2>/dev/null || echo 000)
   echo "EU_RAPI_RESULTS ${YEST_A}: http ${code} ($(wc -c < "${RAPI_DIR}/results.json" 2>/dev/null || echo 0) bytes)"

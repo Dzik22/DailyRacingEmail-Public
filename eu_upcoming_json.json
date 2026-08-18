@@ -1,0 +1,186 @@
+[
+ {
+  "day_label": "YESTERDAY — Mon Aug 17",
+  "races": []
+ },
+ {
+  "day_label": "TODAY — Tue Aug 18",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Wed Aug 19",
+  "races": [
+   {
+    "grade": "G1",
+    "race_name": "Coolmore City Of Troy Nunthorpe Stakes (Group 1)",
+    "date_short": "Fri\nAug 21",
+    "track": "York",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "5f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Weatherbys Lonsdale Cup Stakes (Group 2)",
+    "date_short": "Fri\nAug 21",
+    "track": "York",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "2m½f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Al Basti Equiworld Dubai Gimcrack Stakes (Group 2)",
+    "date_short": "Fri\nAug 21",
+    "track": "York",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Irish Stallion Farms EBF Vincent O'Brien Ruby Stakes (Listed)",
+    "date_short": "Fri\nAug 21",
+    "track": "Killarney",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Sky Bet City Of York Stakes (Group 1)",
+    "date_short": "Sat\nAug 22",
+    "track": "York",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Alpha Centauri Debutante Stakes (Group 2)",
+    "date_short": "Sat\nAug 22",
+    "track": "Curragh",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Coolmore Stud City Of Troy Tom Cooper Irish EBF Futurity Stakes (Group 2)",
+    "date_short": "Sat\nAug 22",
+    "track": "Curragh",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Sky Bet Strensall Stakes (Group 3)",
+    "date_short": "Sat\nAug 22",
+    "track": "York",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m1f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Virgin Bet Chester Stakes (Listed Race)",
+    "date_short": "Sat\nAug 22",
+    "track": "Chester",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m6½f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Hopeful (Sponsored By Blackwell Earthmoving) Stakes (Listed Race)",
+    "date_short": "Sat\nAug 22",
+    "track": "Newmarket (July)",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Julia Graves Roses Stakes (Listed Race)",
+    "date_short": "Sat\nAug 22",
+    "track": "York",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "5f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Tally-Ho Stud Irish EBF Ballyogan Stakes (Group 3)",
+    "date_short": "Sun\nAug 23",
+    "track": "Naas",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Legends Global Yorkshire Oaks (Group 1)",
+    "date_short": "Thu\nAug 20",
+    "track": "York",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Sky Bet Lowther Stakes (Group 2)",
+    "date_short": "Thu\nAug 20",
+    "track": "York",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Bet With Tote On Racing & Sports Irish EBF Vinnie Roe Stakes (Listed)",
+    "date_short": "Thu\nAug 20",
+    "track": "Leopardstown",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m6f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "British Ebf & Sir Henry Cecil Galtres Stakes (Listed Race) (GBBPlus Race)",
+    "date_short": "Thu\nAug 20",
+    "track": "York",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Juddmonte International Stakes (Group 1)",
+    "date_short": "Wed\nAug 19",
+    "track": "York",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m2½f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Sky Bet Great Voltigeur Stakes (Group 2)",
+    "date_short": "Wed\nAug 19",
+    "track": "York",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Tattersalls Acomb Stakes (Group 3)",
+    "date_short": "Wed\nAug 19",
+    "track": "York",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "7f · Turf"
+   }
+  ]
+ }
+]

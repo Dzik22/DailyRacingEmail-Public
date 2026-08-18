@@ -1,0 +1,59 @@
+# Build EU stakes JSON on GitHub's infrastructure, because CCR cannot reach the sources.
+#
+# Measured from inside CCR on Aug 18 2026:
+#   api.theracingapi.com  000/0     (connection never completed)
+#   thestatsdontlie.com   000/0
+#   racingpost.com        000/0
+#   example.com           000/0
+#   raw.githubusercontent.com  200  <-- the only reachable host
+#
+# So the digest can never fetch race data itself. This workflow does the fetching where
+# the network works, commits the finished JSON here, and CCR downloads it from
+# raw.githubusercontent.com during its bootstrap.
+#
+# The credential lives ONLY in the encrypted repo secret RACING_API_CREDS. It is never in
+# this file, never in fetch_eu_stakes.py, and never in the committed JSON (which contains
+# nothing but public race names, grades, tracks and distances).
+name: Build EU stakes JSON
+
+on:
+  schedule:
+    # 09:27 UTC daily — comfortably ahead of the 10:00 UTC digest routine, and deliberately
+    # off the hour so we are not queued behind everyone else's :00 cron.
+    - cron: '27 9 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: eu-stakes
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Fetch EU stakes from theracingapi.com
+        env:
+          RACING_API_CREDS: ${{ secrets.RACING_API_CREDS }}
+        run: python3 fetch_eu_stakes.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add eu_upcoming_json.json eu_recap_json.json eu_build_status.json
+          if git diff --staged --quiet; then
+            echo "no change"
+          else
+            git commit -m "EU stakes JSON for $(date -u +%F)"
+            git push
+          fi

@@ -84,8 +84,66 @@ fetch_validated() {
 # or the API fails, this block writes nothing and the SDL/Racing Post scrapers
 # below run exactly as before.
 # ══════════════════════════════════════════════════════════════════════════════
-rm -f /tmp/rapi_ok
-if [ -n "${RACING_API_CREDS:-}" ]; then
+# ══════════════════════════════════════════════════════════════════════════════
+# TIER 0 — PRE-BUILT JSON FROM THE PUBLIC MIRROR  (added Aug 18 2026)
+#
+# THIS IS THE ONLY TIER THAT WORKS INSIDE CCR. Measured from inside CCR Aug 18 2026:
+#   api.theracingapi.com 000/0 | thestatsdontlie.com 000/0 | racingpost.com 000/0
+#   example.com 000/0          | raw.githubusercontent.com 200
+# 000 = the TCP connection never completed. CCR blocks essentially all egress; only
+# raw.githubusercontent.com is reachable. Every direct-fetch tier below is therefore
+# dead in CCR and alive only on a laptop -- which is exactly why EU stakes silently
+# vanished from Aug 17 while identical code passed every local test.
+#
+# A GitHub Actions workflow (.github/workflows/eu-stakes.yml in the public mirror) runs
+# fetch_eu_stakes.py at 09:27 UTC on GitHub's own machines, where the network works, and
+# commits the finished JSON. We just download it.
+#
+# STALENESS IS CHECKED. If the Action fails, the mirror keeps serving YESTERDAY's file,
+# and publishing that as today's card would be worse than publishing nothing. We require
+# eu_build_status.json to carry today's date; otherwise we reject it and fall through.
+# ══════════════════════════════════════════════════════════════════════════════
+MIRROR="https://raw.githubusercontent.com/Dzik22/DailyRacingEmail-Public/main"
+# Clear BOTH flags here, once. The API block used to do `rm -f /tmp/rapi_ok` itself, which
+# ran AFTER tier 0 had set it and silently wiped it -- the scrapers then re-ran and
+# overwrote 19 good races with 6. Caught by the tier-0 smoke test.
+rm -f /tmp/tier0_ok /tmp/rapi_ok
+TODAY_ISO=$(date '+%Y-%m-%d')
+if curl -sSL "${CURL_OPTS[@]}" "${MIRROR}/eu_build_status.json?cb=$$" -o /tmp/mirror_status.json 2>/dev/null; then
+  MSTAT=$(python3 -c "
+import json
+try:
+    d = json.load(open('/tmp/mirror_status.json'))
+    print(d.get('for_date','?'), d.get('upcoming',0), d.get('recap',0), len(d.get('failed_days',[])))
+except Exception:
+    print('? 0 0 0')
+" 2>/dev/null || echo '? 0 0 0')
+  set -- $MSTAT
+  MDATE="$1"; MUP="$2"; MREC="$3"; MFAIL="$4"
+  echo "EU_TIER0: mirror build for_date=${MDATE} upcoming=${MUP} recap=${MREC} failed_days=${MFAIL} (today=${TODAY_ISO})"
+  if [ "$MDATE" = "$TODAY_ISO" ]; then
+    curl -sSL "${CURL_OPTS[@]}" "${MIRROR}/eu_upcoming_json.json?cb=$$" -o /tmp/eu_upcoming_bash.json 2>/dev/null || true
+    curl -sSL "${CURL_OPTS[@]}" "${MIRROR}/eu_recap_json.json?cb=$$"    -o /tmp/eu_recap_bash.json    2>/dev/null || true
+    if python3 -c "
+import json, sys
+u = json.load(open('/tmp/eu_upcoming_bash.json'))
+r = json.load(open('/tmp/eu_recap_bash.json'))
+assert isinstance(u, list) and isinstance(r, list)
+sys.exit(0 if (sum(len(b.get('races', [])) for b in u) + len(r)) > 0 else 1)
+" 2>/dev/null; then
+      touch /tmp/tier0_ok /tmp/rapi_ok
+      echo "EU_TIER0_OK: using pre-built JSON from the mirror — no direct fetching needed"
+    else
+      echo "EU_TIER0_REJECT: mirror JSON present but empty or unparseable — falling through"
+    fi
+  else
+    echo "EU_TIER0_STALE: mirror build is for ${MDATE}, not ${TODAY_ISO} — the Action did not run or failed. Falling through to direct fetch."
+  fi
+else
+  echo "EU_TIER0_UNREACHABLE: could not fetch mirror build status — falling through"
+fi
+
+if [ ! -f /tmp/tier0_ok ] && [ -n "${RACING_API_CREDS:-}" ]; then
   echo "EU_RAPI: credential present — theracingapi.com is PRIMARY for EU stakes"
   RAPI_DIR=/tmp/rapi; mkdir -p "$RAPI_DIR"; rm -f "$RAPI_DIR"/*.json 2>/dev/null || true
   # region_codes cuts the payload ~5x (592KB vs 3.1MB per day) -- 8 days goes from ~6MB

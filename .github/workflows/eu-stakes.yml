@@ -1,0 +1,12 @@
+Bash(cat /Users/mikedzik/DailyRacingEmail/eu-stakes.yml)
+# Build EU stakes JSON on GitHub's infrastructure, because CCR cannot reach the sources.
+#
+# Measured from inside CCR on Aug 18 2026:
+#   api.theracingapi.com  000/0     (connection never completed)
+#   thestatsdontlie.com   000/0
+#   racingpost.com        000/0
+#   example.com           000/0
+#   raw.githubusercontent.com  200  <-- the only reachable host
+#
+# So the digest can never fetch race data itself. This workflow does the fetching where
+# the network works, commits the finished JSON here, and CCR downloads it

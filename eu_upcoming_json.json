@@ -1,14 +1,60 @@
 [
  {
-  "day_label": "YESTERDAY — Mon Aug 17",
+  "day_label": "YESTERDAY — Tue Aug 18",
   "races": []
  },
  {
-  "day_label": "TODAY — Tue Aug 18",
-  "races": []
+  "day_label": "TODAY — Wed Aug 19",
+  "races": [
+   {
+    "grade": "G1",
+    "race_name": "Juddmonte International Stakes (Group 1)",
+    "date_short": "Wed\nAug 19",
+    "track": "York",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m2½f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Sky Bet Great Voltigeur Stakes (Group 2)",
+    "date_short": "Wed\nAug 19",
+    "track": "York",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Prix Nevadour - Sheikh Abdulaziz Al Nujaifi (Group 3)",
+    "date_short": "Wed\nAug 19",
+    "track": "La Teste De Buch",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m1½f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Tattersalls Acomb Stakes (Group 3)",
+    "date_short": "Wed\nAug 19",
+    "track": "York",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Prix Occitanie",
+    "date_short": "Wed\nAug 19",
+    "track": "La Teste De Buch",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m1½f · Turf"
+   }
+  ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Wed Aug 19",
+  "day_label": "TOMORROW — Next 7 days from Thu Aug 20",
   "races": [
    {
     "grade": "G1",
@@ -93,7 +139,7 @@
    },
    {
     "grade": "LR",
-    "race_name": "Hopeful (Sponsored By Blackwell Earthmoving) Stakes (Listed Race)",
+    "race_name": "Hopeful Stakes (Sponsored By Blackwell Earthmoving) (Listed Race)",
     "date_short": "Sat\nAug 22",
     "track": "Newmarket (July)",
     "country": "GB",
@@ -153,33 +199,6 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "G1",
-    "race_name": "Juddmonte International Stakes (Group 1)",
-    "date_short": "Wed\nAug 19",
-    "track": "York",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m2½f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Sky Bet Great Voltigeur Stakes (Group 2)",
-    "date_short": "Wed\nAug 19",
-    "track": "York",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Tattersalls Acomb Stakes (Group 3)",
-    "date_short": "Wed\nAug 19",
-    "track": "York",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "7f · Turf"
    }
   ]
  }

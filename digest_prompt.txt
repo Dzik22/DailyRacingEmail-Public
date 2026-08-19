@@ -3117,6 +3117,19 @@ def _eu_daykey(r):
 for _pfx in ('YESTERDAY','TODAY','TOMORROW'):
     _eu_by_prefix[_pfx].sort(key=lambda r: (_eu_daykey(r), _GO_MERGE.get(r.get('grade','LR'),9), r.get('track','')))
 
+# Shared race-name cleaner. Removes ONLY the fixed boilerplate suffixes the feeds append --
+# never a genuine parenthetical like '(Prix Laprugne)' or '(Grand Prix De Clairefontaine)'.
+_NAME_STRIP = _re.compile(
+    r'\s*\((?:Group\s*[123]|Groupe\s*[123]|Gruppo\s*[123]|Grade\s*[123]'
+    r'|Listed(?:\s*Race)?|GBB\s*Race|GBBPlus\s*Race|GBB/GBBPlus\s*Race'
+    r'|Sponsored\s+By[^)]*|Registered\s+As[^)]*)\)', _re.IGNORECASE)
+def _clean_race_name(nm):
+    s2 = str(nm or ''); prev = None
+    while prev != s2:
+        prev = s2
+        s2 = _NAME_STRIP.sub('', s2).strip()
+    return _re.sub(r'\s{2,}', ' ', s2).strip()
+
 # Aug 17 2026 FIX — ENFORCE EXACTLY 3 DAY BUCKETS.
 # The Aug 17 2026 digest shipped a FOURTH bucket labelled 'Sat Aug 22' holding USA races that
 # belonged inside TOMORROW (which spans today+1..today+7). FORMAT LOCK rule 6 forbids a 4th
@@ -3146,7 +3159,19 @@ try:
         prefix=day.get('day_label','').split()[0]
         eu_races=_eu_by_prefix.get(prefix,[])
         usa_races=[r for r in day.get('races',[]) if r.get('country','') not in _EU_CTRY and not any(s in r.get('race_name','').lower() for s in _SKIP_NM)]
-        day['races']=eu_races+usa_races
+        # Aug 19 2026: sort the whole bucket by DATE across both continents. Previously it was
+        # eu_races + usa_races, so the EU block ran Aug 20->23 and then the USA block restarted
+        # at Aug 22 -- a Sunday race appeared above Saturday ones. Date, then grade, then track.
+        _merged = eu_races + usa_races
+        _merged.sort(key=lambda r: (_eu_daykey(r), _GO_MERGE.get(r.get('grade','LR'),9), r.get('track','')))
+        # Strip the grade/sponsor suffixes the sources tack on. The badge already says G1, so
+        # 'Juddmonte International Stakes (Group 1)' is saying it twice, and '(GBBPlus Race)' /
+        # '(Sponsored By ...)' is noise. NOTE: Step 7.6 applies the SAME cleaner to the JSON
+        # names before its coverage comparison -- if these two ever diverge, every race reads as
+        # missing and the seal fails. Change them together.
+        for _r3 in _merged:
+            _r3['race_name'] = _clean_race_name(_r3.get('race_name',''))
+        day['races']=_merged
     _eu_mrg=sum(len(_eu_by_prefix.get(k,[])) for k in ['YESTERDAY','TODAY','TOMORROW'])
     print('EU_MERGE: set '+str(_eu_mrg)+' EU races from '+_eu_source+' (agent EU entries discarded)')
 except Exception as _eue: print('EU_MERGE_WARNING: '+str(_eue))
@@ -3501,8 +3526,18 @@ if os.path.exists(eu_json):
         # substring test produced false mismatches. Normalise both sides to alphanumerics.
         import html as _htmlmod, re as _reeu
         _hnorm = _reeu.sub(r'[^a-z0-9]', '', _htmlmod.unescape(h).lower())
+        # Apply the same suffix stripping the generator uses before comparing. Without this the
+        # renderer's cleaned names would never match the raw JSON names and EVERY race would be
+        # reported missing, failing the seal on a perfectly good digest.
+        _strip76 = _reeu.compile(
+            r'\s*\((?:Group\s*[123]|Groupe\s*[123]|Gruppo\s*[123]|Grade\s*[123]'
+            r'|Listed(?:\s*Race)?|GBB\s*Race|GBBPlus\s*Race|GBB/GBBPlus\s*Race'
+            r'|Sponsored\s+By[^)]*|Registered\s+As[^)]*)\)', _reeu.IGNORECASE)
         def _rkey(nm):
-            return _reeu.sub(r'[^a-z0-9]', '', str(nm).lower())
+            t = str(nm or ''); prev = None
+            while prev != t:
+                prev = t; t = _strip76.sub('', t).strip()
+            return _reeu.sub(r'[^a-z0-9]', '', t.lower())
         eu_names = [r.get('race_name','') for d2 in eu_days for r in d2.get('races',[])]
         missing = [nm for nm in eu_names if nm and _rkey(nm) not in _hnorm]
         found = len(eu_names) - len(missing)

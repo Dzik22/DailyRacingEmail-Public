@@ -1,10 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Tue Aug 18",
-  "races": []
- },
- {
-  "day_label": "TODAY — Wed Aug 19",
+  "day_label": "YESTERDAY — Wed Aug 19",
   "races": [
    {
     "grade": "G1",
@@ -54,7 +50,48 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Thu Aug 20",
+  "day_label": "TODAY — Thu Aug 20",
+  "races": [
+   {
+    "grade": "G1",
+    "race_name": "Legends Global Yorkshire Oaks (Group 1)",
+    "date_short": "Thu\nAug 20",
+    "track": "York",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Sky Bet Lowther Stakes (Group 2)",
+    "date_short": "Thu\nAug 20",
+    "track": "York",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Bet With Tote On Racing & Sports Irish EBF Vinnie Roe Stakes (Listed)",
+    "date_short": "Thu\nAug 20",
+    "track": "Leopardstown",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m6f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "British Ebf & Sir Henry Cecil Galtres Stakes (Listed Race) (GBBPlus Race)",
+    "date_short": "Thu\nAug 20",
+    "track": "York",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m4f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Fri Aug 21",
   "races": [
    {
     "grade": "G1",
@@ -163,42 +200,6 @@
     "country": "IRE",
     "flag": "🇮🇪",
     "dist_surface": "6f · Turf"
-   },
-   {
-    "grade": "G1",
-    "race_name": "Legends Global Yorkshire Oaks (Group 1)",
-    "date_short": "Thu\nAug 20",
-    "track": "York",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Sky Bet Lowther Stakes (Group 2)",
-    "date_short": "Thu\nAug 20",
-    "track": "York",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Bet With Tote On Racing & Sports Irish EBF Vinnie Roe Stakes (Listed)",
-    "date_short": "Thu\nAug 20",
-    "track": "Leopardstown",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m6f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "British Ebf & Sir Henry Cecil Galtres Stakes (Listed Race) (GBBPlus Race)",
-    "date_short": "Thu\nAug 20",
-    "track": "York",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m4f · Turf"
    }
   ]
  }

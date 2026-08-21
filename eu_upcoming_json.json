@@ -1,56 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Wed Aug 19",
-  "races": [
-   {
-    "grade": "G1",
-    "race_name": "Juddmonte International Stakes (Group 1)",
-    "date_short": "Wed\nAug 19",
-    "track": "York",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m2½f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Sky Bet Great Voltigeur Stakes (Group 2)",
-    "date_short": "Wed\nAug 19",
-    "track": "York",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Prix Nevadour - Sheikh Abdulaziz Al Nujaifi (Group 3)",
-    "date_short": "Wed\nAug 19",
-    "track": "La Teste De Buch",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m1½f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Tattersalls Acomb Stakes (Group 3)",
-    "date_short": "Wed\nAug 19",
-    "track": "York",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Prix Occitanie",
-    "date_short": "Wed\nAug 19",
-    "track": "La Teste De Buch",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m1½f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Thu Aug 20",
+  "day_label": "YESTERDAY — Thu Aug 20",
   "races": [
    {
     "grade": "G1",
@@ -91,7 +41,7 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Fri Aug 21",
+  "day_label": "TODAY — Fri Aug 21",
   "races": [
    {
     "grade": "G1",
@@ -128,7 +78,12 @@
     "country": "IRE",
     "flag": "🇮🇪",
     "dist_surface": "1m · Turf"
-   },
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Sat Aug 22",
+  "races": [
    {
     "grade": "G1",
     "race_name": "Sky Bet City Of York Stakes (Group 1)",

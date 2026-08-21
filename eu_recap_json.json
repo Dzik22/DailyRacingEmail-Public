@@ -1,52 +1,42 @@
 [
  {
   "grade": "G1",
-  "race_name": "Juddmonte International Stakes (Group 1)",
-  "track": "York",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "1m2½f · Turf",
-  "winner": "Item",
-  "off_time": "3:35"
- },
- {
-  "grade": "G2",
-  "race_name": "Sky Bet Great Voltigeur Stakes (Group 2)",
+  "race_name": "Legends Global Yorkshire Oaks (Group 1)",
   "track": "York",
   "country": "GB",
   "flag": "🇬🇧",
   "dist_surface": "1m4f · Turf",
-  "winner": "Maltese Cross",
-  "off_time": "3:00"
+  "winner": "Kalpana",
+  "off_time": "3:35"
  },
  {
-  "grade": "G3",
-  "race_name": "Prix Nevadour - Sheikh Abdulaziz Al Nujaifi (Group 3)",
-  "track": "La Teste De Buch",
-  "country": "FR",
-  "flag": "🇫🇷",
-  "dist_surface": "1m1½f · Turf",
-  "winner": "Manarah El Izz",
-  "off_time": "7:00"
- },
- {
-  "grade": "G3",
-  "race_name": "Tattersalls Acomb Stakes (Group 3)",
+  "grade": "G2",
+  "race_name": "Sky Bet Lowther Stakes (Group 2)",
   "track": "York",
   "country": "GB",
   "flag": "🇬🇧",
-  "dist_surface": "7f · Turf",
-  "winner": "Haffner (USA)",
-  "off_time": "2:25"
+  "dist_surface": "6f · Turf",
+  "winner": "Libertango",
+  "off_time": "1:50"
  },
  {
   "grade": "LR",
-  "race_name": "Prix Occitanie",
-  "track": "La Teste De Buch",
-  "country": "FR",
-  "flag": "🇫🇷",
-  "dist_surface": "1m1½f · Turf",
-  "winner": "Lethal Beauty",
-  "off_time": "4:45"
+  "race_name": "Bet With Tote On Racing & Sports Irish EBF Vinnie Roe Stakes (Listed)",
+  "track": "Leopardstown",
+  "country": "IRE",
+  "flag": "🇮🇪",
+  "dist_surface": "1m6f · Turf",
+  "winner": "Highwayman",
+  "off_time": "6:30"
+ },
+ {
+  "grade": "LR",
+  "race_name": "British Ebf & Sir Henry Cecil Galtres Stakes (Listed Race) (GBBPlus Race)",
+  "track": "York",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "1m4f · Turf",
+  "winner": "Prizeland",
+  "off_time": "4:10"
  }
 ]

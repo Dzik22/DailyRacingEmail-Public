@@ -1,47 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Thu Aug 20",
-  "races": [
-   {
-    "grade": "G1",
-    "race_name": "Legends Global Yorkshire Oaks (Group 1)",
-    "date_short": "Thu\nAug 20",
-    "track": "York",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Sky Bet Lowther Stakes (Group 2)",
-    "date_short": "Thu\nAug 20",
-    "track": "York",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Bet With Tote On Racing & Sports Irish EBF Vinnie Roe Stakes (Listed)",
-    "date_short": "Thu\nAug 20",
-    "track": "Leopardstown",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m6f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "British Ebf & Sir Henry Cecil Galtres Stakes (Listed Race) (GBBPlus Race)",
-    "date_short": "Thu\nAug 20",
-    "track": "York",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m4f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Fri Aug 21",
+  "day_label": "YESTERDAY — Fri Aug 21",
   "races": [
    {
     "grade": "G1",
@@ -54,21 +13,21 @@
    },
    {
     "grade": "G2",
-    "race_name": "Weatherbys Lonsdale Cup Stakes (Group 2)",
-    "date_short": "Fri\nAug 21",
-    "track": "York",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "2m½f · Turf"
-   },
-   {
-    "grade": "G2",
     "race_name": "Al Basti Equiworld Dubai Gimcrack Stakes (Group 2)",
     "date_short": "Fri\nAug 21",
     "track": "York",
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Weatherbys Lonsdale Cup Stakes (Group 2)",
+    "date_short": "Fri\nAug 21",
+    "track": "York",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "2m½f · Turf"
    },
    {
     "grade": "LR",
@@ -82,7 +41,7 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Sat Aug 22",
+  "day_label": "TODAY — Sat Aug 22",
   "races": [
    {
     "grade": "G1",
@@ -146,6 +105,47 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "5f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Sun Aug 23",
+  "races": [
+   {
+    "grade": "G1",
+    "race_name": "Sumbe Prix Morny (group 1)",
+    "date_short": "Sun\nAug 23",
+    "track": "Deauville",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Sumbe Prix Jean Et Louis Romanet",
+    "date_short": "Sun\nAug 23",
+    "track": "Deauville",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m2f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Sumbe Prix Du Calvados",
+    "date_short": "Sun\nAug 23",
+    "track": "Deauville",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Sumbe Prix Kergorlay (group 2)",
+    "date_short": "Sun\nAug 23",
+    "track": "Deauville",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m7f · Turf"
    },
    {
     "grade": "G3",

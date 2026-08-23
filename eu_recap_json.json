@@ -1,42 +1,72 @@
 [
  {
   "grade": "G1",
-  "race_name": "Coolmore City Of Troy Nunthorpe Stakes (Group 1)",
+  "race_name": "Sky Bet City Of York Stakes (Group 1)",
   "track": "York",
   "country": "GB",
   "flag": "🇬🇧",
-  "dist_surface": "5f · Turf",
-  "winner": "Bacio (USA)",
-  "off_time": "3:35"
- },
- {
-  "grade": "G2",
-  "race_name": "Al Basti Equiworld Dubai Gimcrack Stakes (Group 2)",
-  "track": "York",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "6f · Turf",
-  "winner": "Arapaho Gold",
+  "dist_surface": "7f · Turf",
+  "winner": "Notable Speech",
   "off_time": "3:00"
  },
  {
   "grade": "G2",
-  "race_name": "Weatherbys Lonsdale Cup Stakes (Group 2)",
+  "race_name": "Coolmore Stud City Of Troy Tom Cooper Irish EBF Futurity Stakes (Group 2)",
+  "track": "Curragh",
+  "country": "IRE",
+  "flag": "🇮🇪",
+  "dist_surface": "7f · Turf",
+  "winner": "Giant Sequoia (USA)",
+  "off_time": "3:25"
+ },
+ {
+  "grade": "G2",
+  "race_name": "Alpha Centauri Debutante Stakes (Group 2)",
+  "track": "Curragh",
+  "country": "IRE",
+  "flag": "🇮🇪",
+  "dist_surface": "7f · Turf",
+  "winner": "Green Empress",
+  "off_time": "2:50"
+ },
+ {
+  "grade": "G3",
+  "race_name": "Sky Bet Strensall Stakes (Group 3)",
   "track": "York",
   "country": "GB",
   "flag": "🇬🇧",
-  "dist_surface": "2m½f · Turf",
-  "winner": "Al Nayyir",
-  "off_time": "2:25"
+  "dist_surface": "1m1f · Turf",
+  "winner": "Archivist",
+  "off_time": "1:50"
  },
  {
   "grade": "LR",
-  "race_name": "Irish Stallion Farms EBF Vincent O'Brien Ruby Stakes (Listed)",
-  "track": "Killarney",
-  "country": "IRE",
-  "flag": "🇮🇪",
-  "dist_surface": "1m · Turf",
-  "winner": "Jagged Edge",
-  "off_time": "6:20"
+  "race_name": "Virgin Bet Chester Stakes (Listed Race)",
+  "track": "Chester",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "1m6½f · Turf",
+  "winner": "Midak",
+  "off_time": "2:40"
+ },
+ {
+  "grade": "LR",
+  "race_name": "Hopeful Stakes (Sponsored By Blackwell Earthmoving) (Listed Race)",
+  "track": "Newmarket (July)",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "6f · Turf",
+  "winner": "Prince Of India",
+  "off_time": "3:19"
+ },
+ {
+  "grade": "LR",
+  "race_name": "Julia Graves Roses Stakes (Listed Race)",
+  "track": "York",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "5f · Turf",
+  "winner": "Sale Shark",
+  "off_time": "4:45"
  }
 ]

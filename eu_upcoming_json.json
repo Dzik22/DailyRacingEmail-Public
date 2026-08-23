@@ -1,47 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Fri Aug 21",
-  "races": [
-   {
-    "grade": "G1",
-    "race_name": "Coolmore City Of Troy Nunthorpe Stakes (Group 1)",
-    "date_short": "Fri\nAug 21",
-    "track": "York",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "5f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Al Basti Equiworld Dubai Gimcrack Stakes (Group 2)",
-    "date_short": "Fri\nAug 21",
-    "track": "York",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Weatherbys Lonsdale Cup Stakes (Group 2)",
-    "date_short": "Fri\nAug 21",
-    "track": "York",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "2m½f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Irish Stallion Farms EBF Vincent O'Brien Ruby Stakes (Listed)",
-    "date_short": "Fri\nAug 21",
-    "track": "Killarney",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Sat Aug 22",
+  "day_label": "YESTERDAY — Sat Aug 22",
   "races": [
    {
     "grade": "G1",
@@ -54,7 +13,7 @@
    },
    {
     "grade": "G2",
-    "race_name": "Alpha Centauri Debutante Stakes (Group 2)",
+    "race_name": "Coolmore Stud City Of Troy Tom Cooper Irish EBF Futurity Stakes (Group 2)",
     "date_short": "Sat\nAug 22",
     "track": "Curragh",
     "country": "IRE",
@@ -63,7 +22,7 @@
    },
    {
     "grade": "G2",
-    "race_name": "Coolmore Stud City Of Troy Tom Cooper Irish EBF Futurity Stakes (Group 2)",
+    "race_name": "Alpha Centauri Debutante Stakes (Group 2)",
     "date_short": "Sat\nAug 22",
     "track": "Curragh",
     "country": "IRE",
@@ -109,7 +68,7 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Sun Aug 23",
+  "day_label": "TODAY — Sun Aug 23",
   "races": [
    {
     "grade": "G1",
@@ -155,6 +114,20 @@
     "country": "IRE",
     "flag": "🇮🇪",
     "dist_surface": "6f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Mon Aug 24",
+  "races": [
+   {
+    "grade": "G3",
+    "race_name": "Snow Fairy Fillies Stakes (Group 3)",
+    "date_short": "Sat\nAug 29",
+    "track": "Curragh",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m1f · Turf"
    }
   ]
  }

@@ -1,72 +1,52 @@
 [
  {
   "grade": "G1",
-  "race_name": "Sky Bet City Of York Stakes (Group 1)",
-  "track": "York",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "7f · Turf",
-  "winner": "Notable Speech",
-  "off_time": "3:00"
- },
- {
-  "grade": "G2",
-  "race_name": "Coolmore Stud City Of Troy Tom Cooper Irish EBF Futurity Stakes (Group 2)",
-  "track": "Curragh",
-  "country": "IRE",
-  "flag": "🇮🇪",
-  "dist_surface": "7f · Turf",
-  "winner": "Giant Sequoia (USA)",
+  "race_name": "Sumbe Prix Jean Et Louis Romanet",
+  "track": "Deauville",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m2f · Turf",
+  "winner": "Aventure",
   "off_time": "3:25"
  },
  {
-  "grade": "G2",
-  "race_name": "Alpha Centauri Debutante Stakes (Group 2)",
-  "track": "Curragh",
-  "country": "IRE",
-  "flag": "🇮🇪",
-  "dist_surface": "7f · Turf",
-  "winner": "Green Empress",
+  "grade": "G1",
+  "race_name": "Sumbe Prix Morny (group 1)",
+  "track": "Deauville",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "6f · Turf",
+  "winner": "Senorita Bonita",
   "off_time": "2:50"
  },
  {
+  "grade": "G2",
+  "race_name": "Sumbe Prix Kergorlay (group 2)",
+  "track": "Deauville",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m7f · Turf",
+  "winner": "Defiantly",
+  "off_time": "1:33"
+ },
+ {
+  "grade": "G2",
+  "race_name": "Sumbe Prix Du Calvados",
+  "track": "Deauville",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "7f · Turf",
+  "winner": "Woot Woot",
+  "off_time": "12:58"
+ },
+ {
   "grade": "G3",
-  "race_name": "Sky Bet Strensall Stakes (Group 3)",
-  "track": "York",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "1m1f · Turf",
-  "winner": "Archivist",
-  "off_time": "1:50"
- },
- {
-  "grade": "LR",
-  "race_name": "Virgin Bet Chester Stakes (Listed Race)",
-  "track": "Chester",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "1m6½f · Turf",
-  "winner": "Midak",
-  "off_time": "2:40"
- },
- {
-  "grade": "LR",
-  "race_name": "Hopeful Stakes (Sponsored By Blackwell Earthmoving) (Listed Race)",
-  "track": "Newmarket (July)",
-  "country": "GB",
-  "flag": "🇬🇧",
+  "race_name": "Tally-Ho Stud Irish EBF Ballyogan Stakes (Group 3)",
+  "track": "Naas",
+  "country": "IRE",
+  "flag": "🇮🇪",
   "dist_surface": "6f · Turf",
-  "winner": "Prince Of India",
-  "off_time": "3:19"
- },
- {
-  "grade": "LR",
-  "race_name": "Julia Graves Roses Stakes (Listed Race)",
-  "track": "York",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "5f · Turf",
-  "winner": "Sale Shark",
-  "off_time": "4:45"
+  "winner": "Chantez",
+  "off_time": "4:00"
  }
 ]

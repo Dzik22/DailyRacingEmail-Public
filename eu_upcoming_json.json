@@ -1,84 +1,7 @@
 [
  {
-  "day_label": "YESTERDAY — Sat Aug 22",
+  "day_label": "YESTERDAY — Sun Aug 23",
   "races": [
-   {
-    "grade": "G1",
-    "race_name": "Sky Bet City Of York Stakes (Group 1)",
-    "date_short": "Sat\nAug 22",
-    "track": "York",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Coolmore Stud City Of Troy Tom Cooper Irish EBF Futurity Stakes (Group 2)",
-    "date_short": "Sat\nAug 22",
-    "track": "Curragh",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Alpha Centauri Debutante Stakes (Group 2)",
-    "date_short": "Sat\nAug 22",
-    "track": "Curragh",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Sky Bet Strensall Stakes (Group 3)",
-    "date_short": "Sat\nAug 22",
-    "track": "York",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m1f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Virgin Bet Chester Stakes (Listed Race)",
-    "date_short": "Sat\nAug 22",
-    "track": "Chester",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m6½f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Hopeful Stakes (Sponsored By Blackwell Earthmoving) (Listed Race)",
-    "date_short": "Sat\nAug 22",
-    "track": "Newmarket (July)",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Julia Graves Roses Stakes (Listed Race)",
-    "date_short": "Sat\nAug 22",
-    "track": "York",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "5f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Sun Aug 23",
-  "races": [
-   {
-    "grade": "G1",
-    "race_name": "Sumbe Prix Morny (group 1)",
-    "date_short": "Sun\nAug 23",
-    "track": "Deauville",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "6f · Turf"
-   },
    {
     "grade": "G1",
     "race_name": "Sumbe Prix Jean Et Louis Romanet",
@@ -89,13 +12,13 @@
     "dist_surface": "1m2f · Turf"
    },
    {
-    "grade": "G2",
-    "race_name": "Sumbe Prix Du Calvados",
+    "grade": "G1",
+    "race_name": "Sumbe Prix Morny (group 1)",
     "date_short": "Sun\nAug 23",
     "track": "Deauville",
     "country": "FR",
     "flag": "🇫🇷",
-    "dist_surface": "7f · Turf"
+    "dist_surface": "6f · Turf"
    },
    {
     "grade": "G2",
@@ -105,6 +28,15 @@
     "country": "FR",
     "flag": "🇫🇷",
     "dist_surface": "1m7f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Sumbe Prix Du Calvados",
+    "date_short": "Sun\nAug 23",
+    "track": "Deauville",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "7f · Turf"
    },
    {
     "grade": "G3",
@@ -118,7 +50,11 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Mon Aug 24",
+  "day_label": "TODAY — Mon Aug 24",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Tue Aug 25",
   "races": [
    {
     "grade": "G3",
@@ -128,6 +64,15 @@
     "country": "IRE",
     "flag": "🇮🇪",
     "dist_surface": "1m1f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Coolmore Stud Little Big Bear Fairy Bridge Stakes (Group 3)",
+    "date_short": "Sun\nAug 30",
+    "track": "Cork",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "7f · Turf"
    }
   ]
  }

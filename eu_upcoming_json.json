@@ -1,61 +1,24 @@
 [
  {
-  "day_label": "YESTERDAY — Sun Aug 23",
-  "races": [
-   {
-    "grade": "G1",
-    "race_name": "Sumbe Prix Jean Et Louis Romanet",
-    "date_short": "Sun\nAug 23",
-    "track": "Deauville",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m2f · Turf"
-   },
-   {
-    "grade": "G1",
-    "race_name": "Sumbe Prix Morny (group 1)",
-    "date_short": "Sun\nAug 23",
-    "track": "Deauville",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "6f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Sumbe Prix Kergorlay (group 2)",
-    "date_short": "Sun\nAug 23",
-    "track": "Deauville",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m7f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Sumbe Prix Du Calvados",
-    "date_short": "Sun\nAug 23",
-    "track": "Deauville",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Tally-Ho Stud Irish EBF Ballyogan Stakes (Group 3)",
-    "date_short": "Sun\nAug 23",
-    "track": "Naas",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "6f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Mon Aug 24",
+  "day_label": "YESTERDAY — Mon Aug 24",
   "races": []
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Tue Aug 25",
+  "day_label": "TODAY — Tue Aug 25",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Wed Aug 26",
   "races": [
+   {
+    "grade": "G2",
+    "race_name": "Virgin Bet Celebration Mile Stakes (Group 2)",
+    "date_short": "Sat\nAug 29",
+    "track": "Goodwood",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m · Turf"
+   },
    {
     "grade": "G3",
     "race_name": "Snow Fairy Fillies Stakes (Group 3)",
@@ -67,12 +30,57 @@
    },
    {
     "grade": "G3",
+    "race_name": "Betmgm Atalanta Stakes (Group 3)",
+    "date_short": "Sat\nAug 29",
+    "track": "Sandown",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Betmgm Solario Stakes (Group 3)",
+    "date_short": "Sat\nAug 29",
+    "track": "Sandown",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Weatherbys August Stakes (Listed Race)",
+    "date_short": "Sat\nAug 29",
+    "track": "Windsor",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m3½f · Turf"
+   },
+   {
+    "grade": "G3",
     "race_name": "Coolmore Stud Little Big Bear Fairy Bridge Stakes (Group 3)",
     "date_short": "Sun\nAug 30",
     "track": "Cork",
     "country": "IRE",
     "flag": "🇮🇪",
     "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Virgin Bet Prestige Fillies' Stakes (Group 3)",
+    "date_short": "Sun\nAug 30",
+    "track": "Goodwood",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "William Hill Beverley Bullet Sprint Stakes (Listed Race)",
+    "date_short": "Sun\nAug 30",
+    "track": "Beverley",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "5f · Turf"
    }
   ]
  }

@@ -1,24 +1,14 @@
 [
  {
-  "day_label": "YESTERDAY — Wed Aug 26",
-  "races": [
-   {
-    "grade": "LR",
-    "race_name": "Prix Millkom - Arqana",
-    "date_short": "Wed\nAug 26",
-    "track": "La Teste De Buch",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Thu Aug 27",
+  "day_label": "YESTERDAY — Thu Aug 27",
   "races": []
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Fri Aug 28",
+  "day_label": "TODAY — Fri Aug 28",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Sat Aug 29",
   "races": [
    {
     "grade": "LR",
@@ -127,6 +117,15 @@
     "country": "IRE",
     "flag": "🇮🇪",
     "dist_surface": "5f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Ire-incentive, It Pays To Buy Irish Dick Poole Fillies' Stakes (Group 3)",
+    "date_short": "Thu\nSep 3",
+    "track": "Salisbury",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · Turf"
    }
   ]
  }

@@ -1,24 +1,11 @@
 [
  {
-  "day_label": "YESTERDAY — Thu Aug 27",
+  "day_label": "YESTERDAY — Fri Aug 28",
   "races": []
  },
  {
-  "day_label": "TODAY — Fri Aug 28",
-  "races": []
- },
- {
-  "day_label": "TOMORROW — Next 7 days from Sat Aug 29",
+  "day_label": "TODAY — Sat Aug 29",
   "races": [
-   {
-    "grade": "LR",
-    "race_name": "British Stallion Studs Ebf Ripon Champion Two Yrs Old Trophy Stakes (Listed Race)",
-    "date_short": "Mon\nAug 31",
-    "track": "Ripon",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · Turf"
-   },
    {
     "grade": "G2",
     "race_name": "Virgin Bet Celebration Mile Stakes (Group 2)",
@@ -81,6 +68,20 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m3½f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Sun Aug 30",
+  "races": [
+   {
+    "grade": "LR",
+    "race_name": "British Stallion Studs Ebf Ripon Champion Two Yrs Old Trophy Stakes (Listed Race)",
+    "date_short": "Mon\nAug 31",
+    "track": "Ripon",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · Turf"
    },
    {
     "grade": "G3",

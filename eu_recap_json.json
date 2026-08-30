@@ -1,1 +1,72 @@
-[]
+[
+ {
+  "grade": "G2",
+  "race_name": "Virgin Bet Celebration Mile Stakes (Group 2)",
+  "track": "Goodwood",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "1m · Turf",
+  "winner": "Zavateri",
+  "off_time": "3:10"
+ },
+ {
+  "grade": "G3",
+  "race_name": "Snow Fairy Fillies Stakes (Group 3)",
+  "track": "Curragh",
+  "country": "IRE",
+  "flag": "🇮🇪",
+  "dist_surface": "1m1f · Turf",
+  "winner": "Miss Scott",
+  "off_time": "3:40"
+ },
+ {
+  "grade": "G3",
+  "race_name": "Heider Family Stables Round Tower Stakes (Group 3)",
+  "track": "Curragh",
+  "country": "IRE",
+  "flag": "🇮🇪",
+  "dist_surface": "6f · Turf",
+  "winner": "Push The Boat Out",
+  "off_time": "3:03"
+ },
+ {
+  "grade": "G3",
+  "race_name": "Newtownanner Stud Irish EBF Stakes (Group 3)",
+  "track": "Curragh",
+  "country": "IRE",
+  "flag": "🇮🇪",
+  "dist_surface": "1m · Turf",
+  "winner": "Sea Of Rain",
+  "off_time": "1:53"
+ },
+ {
+  "grade": "G3",
+  "race_name": "Betmgm Solario Stakes (Group 3)",
+  "track": "Sandown",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "7f · Turf",
+  "winner": "Alfred Wallace",
+  "off_time": "3:30"
+ },
+ {
+  "grade": "G3",
+  "race_name": "Betmgm Atalanta Stakes (Group 3)",
+  "track": "Sandown",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "1m · Turf",
+  "winner": "Love Dynasty",
+  "off_time": "2:50"
+ },
+ {
+  "grade": "LR",
+  "race_name": "Weatherbys August Stakes (Listed Race)",
+  "track": "Windsor",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "1m3½f · Turf",
+  "winner": "Tenability",
+  "off_time": "6:30"
+ }
+]

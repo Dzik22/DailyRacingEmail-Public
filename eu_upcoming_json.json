@@ -1,10 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Fri Aug 28",
-  "races": []
- },
- {
-  "day_label": "TODAY — Sat Aug 29",
+  "day_label": "YESTERDAY — Sat Aug 29",
   "races": [
    {
     "grade": "G2",
@@ -17,12 +13,12 @@
    },
    {
     "grade": "G3",
-    "race_name": "Newtownanner Stud Irish EBF Stakes (Group 3)",
+    "race_name": "Snow Fairy Fillies Stakes (Group 3)",
     "date_short": "Sat\nAug 29",
     "track": "Curragh",
     "country": "IRE",
     "flag": "🇮🇪",
-    "dist_surface": "1m · Turf"
+    "dist_surface": "1m1f · Turf"
    },
    {
     "grade": "G3",
@@ -35,20 +31,11 @@
    },
    {
     "grade": "G3",
-    "race_name": "Snow Fairy Fillies Stakes (Group 3)",
+    "race_name": "Newtownanner Stud Irish EBF Stakes (Group 3)",
     "date_short": "Sat\nAug 29",
     "track": "Curragh",
     "country": "IRE",
     "flag": "🇮🇪",
-    "dist_surface": "1m1f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Betmgm Atalanta Stakes (Group 3)",
-    "date_short": "Sat\nAug 29",
-    "track": "Sandown",
-    "country": "GB",
-    "flag": "🇬🇧",
     "dist_surface": "1m · Turf"
    },
    {
@@ -59,6 +46,15 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Betmgm Atalanta Stakes (Group 3)",
+    "date_short": "Sat\nAug 29",
+    "track": "Sandown",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m · Turf"
    },
    {
     "grade": "LR",
@@ -72,16 +68,16 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Sun Aug 30",
+  "day_label": "TODAY — Sun Aug 30",
   "races": [
    {
-    "grade": "LR",
-    "race_name": "British Stallion Studs Ebf Ripon Champion Two Yrs Old Trophy Stakes (Listed Race)",
-    "date_short": "Mon\nAug 31",
-    "track": "Ripon",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · Turf"
+    "grade": "G2",
+    "race_name": "Lucien Barriere Grand Prix De Deauville",
+    "date_short": "Sun\nAug 30",
+    "track": "Deauville",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m4½f · Turf"
    },
    {
     "grade": "G3",
@@ -91,6 +87,24 @@
     "country": "IRE",
     "flag": "🇮🇪",
     "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Barriere Prix Quincey",
+    "date_short": "Sun\nAug 30",
+    "track": "Deauville",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Barriere Prix De Meautry",
+    "date_short": "Sun\nAug 30",
+    "track": "Deauville",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "6f · Turf"
    },
    {
     "grade": "G3",
@@ -118,6 +132,29 @@
     "country": "IRE",
     "flag": "🇮🇪",
     "dist_surface": "5f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Mon Aug 31",
+  "races": [
+   {
+    "grade": "LR",
+    "race_name": "British Stallion Studs Ebf Ripon Champion Two Yrs Old Trophy Stakes (Listed Race)",
+    "date_short": "Mon\nAug 31",
+    "track": "Ripon",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Betfair Sprint Cup Stakes (Group 1)",
+    "date_short": "Sat\nSep 5",
+    "track": "Haydock",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · Turf"
    },
    {
     "grade": "G3",

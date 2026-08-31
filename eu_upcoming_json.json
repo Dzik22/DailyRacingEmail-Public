@@ -1,74 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Sat Aug 29",
-  "races": [
-   {
-    "grade": "G2",
-    "race_name": "Virgin Bet Celebration Mile Stakes (Group 2)",
-    "date_short": "Sat\nAug 29",
-    "track": "Goodwood",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Snow Fairy Fillies Stakes (Group 3)",
-    "date_short": "Sat\nAug 29",
-    "track": "Curragh",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m1f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Heider Family Stables Round Tower Stakes (Group 3)",
-    "date_short": "Sat\nAug 29",
-    "track": "Curragh",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "6f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Newtownanner Stud Irish EBF Stakes (Group 3)",
-    "date_short": "Sat\nAug 29",
-    "track": "Curragh",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Betmgm Solario Stakes (Group 3)",
-    "date_short": "Sat\nAug 29",
-    "track": "Sandown",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Betmgm Atalanta Stakes (Group 3)",
-    "date_short": "Sat\nAug 29",
-    "track": "Sandown",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Weatherbys August Stakes (Listed Race)",
-    "date_short": "Sat\nAug 29",
-    "track": "Windsor",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m3½f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Sun Aug 30",
+  "day_label": "YESTERDAY — Sun Aug 30",
   "races": [
    {
     "grade": "G2",
@@ -90,21 +22,21 @@
    },
    {
     "grade": "G3",
-    "race_name": "Barriere Prix Quincey",
-    "date_short": "Sun\nAug 30",
-    "track": "Deauville",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "G3",
     "race_name": "Barriere Prix De Meautry",
     "date_short": "Sun\nAug 30",
     "track": "Deauville",
     "country": "FR",
     "flag": "🇫🇷",
     "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Barriere Prix Quincey",
+    "date_short": "Sun\nAug 30",
+    "track": "Deauville",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m · Turf"
    },
    {
     "grade": "G3",
@@ -136,7 +68,7 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Mon Aug 31",
+  "day_label": "TODAY — Mon Aug 31",
   "races": [
    {
     "grade": "LR",
@@ -146,12 +78,62 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "6f · Turf"
-   },
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Tue Sep 1",
+  "races": [
    {
     "grade": "G1",
     "race_name": "Betfair Sprint Cup Stakes (Group 1)",
     "date_short": "Sat\nSep 5",
     "track": "Haydock",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Betfair Backs Opinions Superior Mile Stakes (Group 3)",
+    "date_short": "Sat\nSep 5",
+    "track": "Haydock",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "William Hill Sirenia Stakes (Group 3)",
+    "date_short": "Sat\nSep 5",
+    "track": "Kempton (AW)",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · AW"
+   },
+   {
+    "grade": "G3",
+    "race_name": "William Hill September Stakes (Group 3)",
+    "date_short": "Sat\nSep 5",
+    "track": "Kempton (AW)",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m4f · AW"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Betfair Celebrates Bow Echo Ascendant Stakes (Listed Race)",
+    "date_short": "Sat\nSep 5",
+    "track": "Haydock",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Starman At Tally Ho Stud Garrowby Stakes (Listed Race)",
+    "date_short": "Sun\nSep 6",
+    "track": "York",
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "6f · Turf"

@@ -1,74 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Sun Aug 30",
-  "races": [
-   {
-    "grade": "G2",
-    "race_name": "Lucien Barriere Grand Prix De Deauville",
-    "date_short": "Sun\nAug 30",
-    "track": "Deauville",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m4½f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Coolmore Stud Little Big Bear Stakes (Group 3)",
-    "date_short": "Sun\nAug 30",
-    "track": "Cork",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Barriere Prix De Meautry",
-    "date_short": "Sun\nAug 30",
-    "track": "Deauville",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "6f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Barriere Prix Quincey",
-    "date_short": "Sun\nAug 30",
-    "track": "Deauville",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Virgin Bet Prestige Fillies' Stakes (Group 3)",
-    "date_short": "Sun\nAug 30",
-    "track": "Goodwood",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "William Hill Beverley Bullet Sprint Stakes (Listed Race)",
-    "date_short": "Sun\nAug 30",
-    "track": "Beverley",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "5f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Irish Stallion Farms EBF Abergwaun Stakes (Listed)",
-    "date_short": "Sun\nAug 30",
-    "track": "Cork",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "5f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Mon Aug 31",
+  "day_label": "YESTERDAY — Mon Aug 31",
   "races": [
    {
     "grade": "LR",
@@ -82,7 +14,11 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Tue Sep 1",
+  "day_label": "TODAY — Tue Sep 1",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Wed Sep 2",
   "races": [
    {
     "grade": "G1",

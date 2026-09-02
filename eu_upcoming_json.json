@@ -1,25 +1,24 @@
 [
  {
-  "day_label": "YESTERDAY — Mon Aug 31",
-  "races": [
-   {
-    "grade": "LR",
-    "race_name": "British Stallion Studs Ebf Ripon Champion Two Yrs Old Trophy Stakes (Listed Race)",
-    "date_short": "Mon\nAug 31",
-    "track": "Ripon",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Tue Sep 1",
+  "day_label": "YESTERDAY — Tue Sep 1",
   "races": []
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Wed Sep 2",
+  "day_label": "TODAY — Wed Sep 2",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Thu Sep 3",
   "races": [
+   {
+    "grade": "G3",
+    "race_name": "Weatherbys Global Stallions App Winter Hill Stakes (Group 3)",
+    "date_short": "Mon\nSep 7",
+    "track": "Windsor",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m2f · Turf"
+   },
    {
     "grade": "G1",
     "race_name": "Betfair Sprint Cup Stakes (Group 1)",
@@ -76,7 +75,7 @@
    },
    {
     "grade": "G3",
-    "race_name": "Ire-incentive, It Pays To Buy Irish Dick Poole Fillies' Stakes (Group 3)",
+    "race_name": "IRE-Incentive, It Pays To Buy Irish Dick Poole Fillies' Stakes (Group 3)",
     "date_short": "Thu\nSep 3",
     "track": "Salisbury",
     "country": "GB",

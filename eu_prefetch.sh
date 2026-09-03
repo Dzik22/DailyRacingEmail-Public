@@ -96,48 +96,167 @@ fetch_validated() {
 # vanished from Aug 17 while identical code passed every local test.
 #
 # A GitHub Actions workflow (.github/workflows/eu-stakes.yml in the public mirror) runs
-# fetch_eu_stakes.py at 09:27 UTC on GitHub's own machines, where the network works, and
-# commits the finished JSON. We just download it.
+# fetch_eu_stakes.py on GitHub's own machines, where the network works, and commits the
+# finished JSON. We just download it.
 #
-# STALENESS IS CHECKED. If the Action fails, the mirror keeps serving YESTERDAY's file,
-# and publishing that as today's card would be worse than publishing nothing. We require
-# eu_build_status.json to carry today's date; otherwise we reject it and fall through.
+# STALENESS IS GRADED, NOT BINARY  (rewritten Sep 3 2026)
+# -------------------------------------------------------
+# The old rule was `for_date == today or reject outright`. That destroyed the Sep 3 email:
+# GitHub dispatched the 09:27 UTC cron 4-11.5 HOURS late every day from Aug 27 on (runs all
+# had conclusion=success and 0 min queue -- GitHub's scheduler simply fired late), so at the
+# 10:00 UTC digest the mirror still held yesterday's build, tier 0 was rejected, and the only
+# EU races that survived were whatever the SDL WebFetch happened to scrape. The Longchamp
+# G3/Listed card and the Haydock G1 vanished.
+#
+# The rejection was also unnecessary. A build for_date=D covers D through D+7, so yesterday's
+# build still contains today's and this week's races -- it just files them under the wrong
+# day_label. Verified Sep 3: the Sep 2 build held 8 races incl. today's Salisbury G3 and
+# Saturday's Haydock G1, all discarded. So instead of trusting day_label we RE-BUCKET every
+# race by its own date, which makes the pipeline immune to how late the Action runs.
+#
+# Two things this must NOT do, both of which were the point of the original strict gate:
+#   1. Never present stale RESULTS as yesterday's. A build for_date=D has recap for D-1, so
+#      it is only valid as "yesterday" when age==0. Older builds ship upcoming only.
+#   2. Never let a stale build suppress the live fetch. Only age==0 sets tier0_ok/rapi_ok.
+#      A stale build lands in its own producer slot as a FLOOR; the direct fetch and the
+#      scrapers still run and the merger unions on top of it.
 # ══════════════════════════════════════════════════════════════════════════════
 MIRROR="https://raw.githubusercontent.com/Dzik22/DailyRacingEmail-Public/main"
 # Clear BOTH flags here, once. The API block used to do `rm -f /tmp/rapi_ok` itself, which
 # ran AFTER tier 0 had set it and silently wiped it -- the scrapers then re-ran and
 # overwrote 19 good races with 6. Caught by the tier-0 smoke test.
-rm -f /tmp/tier0_ok /tmp/rapi_ok
+rm -f /tmp/tier0_ok /tmp/rapi_ok /tmp/eu_upcoming_tier0.json /tmp/eu_recap_tier0.json
 TODAY_ISO=$(date '+%Y-%m-%d')
 if curl -sSL "${CURL_OPTS[@]}" "${MIRROR}/eu_build_status.json?cb=$$" -o /tmp/mirror_status.json 2>/dev/null; then
   MSTAT=$(python3 -c "
 import json
+from datetime import date
 try:
     d = json.load(open('/tmp/mirror_status.json'))
-    print(d.get('for_date','?'), d.get('upcoming',0), d.get('recap',0), len(d.get('failed_days',[])))
+    fd = d.get('for_date','?')
+    try:
+        age = (date.today() - date(*[int(x) for x in fd.split('-')])).days
+    except Exception:
+        age = 999
+    print(fd, d.get('upcoming',0), d.get('recap',0), len(d.get('failed_days',[])), age)
 except Exception:
-    print('? 0 0 0')
-" 2>/dev/null || echo '? 0 0 0')
+    print('? 0 0 0 999')
+" 2>/dev/null || echo '? 0 0 0 999')
   set -- $MSTAT
-  MDATE="$1"; MUP="$2"; MREC="$3"; MFAIL="$4"
-  echo "EU_TIER0: mirror build for_date=${MDATE} upcoming=${MUP} recap=${MREC} failed_days=${MFAIL} (today=${TODAY_ISO})"
-  if [ "$MDATE" = "$TODAY_ISO" ]; then
-    curl -sSL "${CURL_OPTS[@]}" "${MIRROR}/eu_upcoming_json.json?cb=$$" -o /tmp/eu_upcoming_bash.json 2>/dev/null || true
-    curl -sSL "${CURL_OPTS[@]}" "${MIRROR}/eu_recap_json.json?cb=$$"    -o /tmp/eu_recap_bash.json    2>/dev/null || true
-    if python3 -c "
-import json, sys
-u = json.load(open('/tmp/eu_upcoming_bash.json'))
-r = json.load(open('/tmp/eu_recap_bash.json'))
-assert isinstance(u, list) and isinstance(r, list)
-sys.exit(0 if (sum(len(b.get('races', [])) for b in u) + len(r)) > 0 else 1)
-" 2>/dev/null; then
-      touch /tmp/tier0_ok /tmp/rapi_ok
-      echo "EU_TIER0_OK: using pre-built JSON from the mirror — no direct fetching needed"
+  MDATE="$1"; MUP="$2"; MREC="$3"; MFAIL="$4"; MAGE="$5"
+  echo "EU_TIER0: mirror build for_date=${MDATE} (age ${MAGE}d) upcoming=${MUP} recap=${MREC} failed_days=${MFAIL} (today=${TODAY_ISO})"
+  # age 0 = built for today. age 1-3 = the Action ran late (see header); still usable for
+  # upcoming because a build covers for_date .. for_date+7. Beyond 3 days the tail no longer
+  # reaches far enough forward to be worth anything.
+  if [ "$MAGE" -ge 0 ] 2>/dev/null && [ "$MAGE" -le 3 ] 2>/dev/null; then
+    curl -sSL "${CURL_OPTS[@]}" "${MIRROR}/eu_upcoming_json.json?cb=$$" -o /tmp/tier0_upcoming_raw.json 2>/dev/null || true
+    curl -sSL "${CURL_OPTS[@]}" "${MIRROR}/eu_recap_json.json?cb=$$"    -o /tmp/tier0_recap_raw.json    2>/dev/null || true
+    # Re-bucket by each race's OWN date so a late build files races correctly instead of
+    # under a day_label that was true when the Action ran. Writes the tier0 producer slot;
+    # the merger unions it with the bash/webfetch/cache producers.
+    TIER0_N=$(MAGE="$MAGE" python3 - <<'T0EOF' 2>/dev/null || echo 0
+import json, os, re
+from datetime import date, timedelta
+
+MON = {'Jan':1,'Feb':2,'Mar':3,'Apr':4,'May':5,'Jun':6,
+       'Jul':7,'Aug':8,'Sep':9,'Oct':10,'Nov':11,'Dec':12}
+DOW = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
+GO  = {'G1':0,'G2':1,'G3':2,'LR':3}
+T   = date.today()
+age = int(os.environ.get('MAGE', '0'))
+
+try:
+    raw = json.load(open('/tmp/tier0_upcoming_raw.json'))
+    assert isinstance(raw, list)
+except Exception:
+    print(0); raise SystemExit(0)
+
+def resolve(race):
+    """'Thu\\nSep 3' -> a real date. Month+day is unambiguous inside a +/-20d window."""
+    m = re.search(r'([A-Z][a-z]{2})\s+(\d{1,2})', str(race.get('date_short','')))
+    if not m:
+        return None
+    mo, dy = MON.get(m.group(1)), int(m.group(2))
+    if not mo:
+        return None
+    for off in range(-12, 21):
+        c = T + timedelta(days=off)
+        if c.month == mo and c.day == dy:
+            return c
+    return None
+
+buckets, seen = {'YESTERDAY': [], 'TODAY': [], 'TOMORROW': []}, set()
+unresolved = 0
+for day in raw:
+    pfx = (str(day.get('day_label','')).split() or [''])[0]
+    for r in day.get('races', []):
+        d = resolve(r)
+        if d is None:
+            # Keep it rather than lose it, but only from a same-day build where the
+            # original day_label is still trustworthy.
+            if age == 0 and pfx in buckets:
+                unresolved += 1
+            else:
+                continue
+            tgt = pfx
+        elif d < T - timedelta(days=1):
+            continue                      # already run and older than yesterday
+        elif d == T - timedelta(days=1):
+            tgt = 'YESTERDAY'
+        elif d == T:
+            tgt = 'TODAY'
+        else:
+            tgt = 'TOMORROW'
+        key = (r.get('grade',''), re.sub(r'\s+', ' ', str(r.get('race_name','')).lower()).strip(),
+               d.isoformat() if d else pfx)
+        if not key[1] or key in seen:
+            continue
+        seen.add(key)
+        if d is not None:                 # restamp so downstream shows the right day
+            r = dict(r, date_short=DOW[d.weekday()] + '\n' +
+                     [k for k, v in MON.items() if v == d.month][0] + ' ' + str(d.day))
+        buckets[tgt].append(r)
+
+for k in buckets:
+    buckets[k].sort(key=lambda r: (r.get('date_short',''), GO.get(r.get('grade','LR'), 9), r.get('track','')))
+
+Y, TM = T - timedelta(days=1), T + timedelta(days=1)
+inv = {v: k for k, v in MON.items()}
+lbl = lambda p, d: p + ' — ' + DOW[d.weekday()] + ' ' + inv[d.month] + ' ' + str(d.day)
+out = [
+    {'day_label': lbl('YESTERDAY', Y), 'races': buckets['YESTERDAY']},
+    {'day_label': lbl('TODAY', T),     'races': buckets['TODAY']},
+    {'day_label': 'TOMORROW — Next 7 days from ' + DOW[TM.weekday()] + ' ' + inv[TM.month] +
+                  ' ' + str(TM.day), 'races': buckets['TOMORROW']},
+]
+json.dump(out, open('/tmp/eu_upcoming_tier0.json', 'w'), ensure_ascii=False, indent=1)
+
+# Results are for for_date-1. Only a same-day build's recap is actually yesterday's.
+if age == 0:
+    try:
+        rec = json.load(open('/tmp/tier0_recap_raw.json'))
+        if isinstance(rec, list):
+            json.dump(rec, open('/tmp/eu_recap_tier0.json', 'w'), ensure_ascii=False, indent=1)
+    except Exception:
+        pass
+
+print(sum(len(b['races']) for b in out))
+T0EOF
+)
+    TIER0_N=${TIER0_N:-0}
+    if [ "$TIER0_N" -gt 0 ] 2>/dev/null; then
+      if [ "$MAGE" = "0" ]; then
+        touch /tmp/tier0_ok /tmp/rapi_ok
+        echo "EU_TIER0_OK: ${TIER0_N} races from today's pre-built mirror JSON — no direct fetching needed"
+      else
+        # Deliberately do NOT set tier0_ok/rapi_ok: this is a floor, not a substitute.
+        echo "EU_TIER0_STALE_USABLE: mirror build is ${MAGE}d old (${MDATE}); re-bucketed ${TIER0_N} races by race date and kept them as a floor. Direct fetch still runs; merger unions on top. Recap skipped (would be ${MAGE}d stale)."
+      fi
     else
       echo "EU_TIER0_REJECT: mirror JSON present but empty or unparseable — falling through"
     fi
   else
-    echo "EU_TIER0_STALE: mirror build is for ${MDATE}, not ${TODAY_ISO} — the Action did not run or failed. Falling through to direct fetch."
+    echo "EU_TIER0_UNUSABLE: mirror build for ${MDATE} is ${MAGE}d old (>3) — too stale to contribute. Falling through to direct fetch."
   fi
 else
   echo "EU_TIER0_UNREACHABLE: could not fetch mirror build status — falling through"
@@ -587,10 +706,15 @@ cat > /tmp/merge_eu.py << 'MERGEEOF'
 #   /tmp/eu_recap_json.json    — read by Step 7.5 generator + verifiers + Step 4c-R-EU subagent
 #
 # Usage: python3 /tmp/merge_eu.py [upcoming|recap|all]   (default: all)
-import sys, os, json
+import sys, os, json, re
 GO = {'G1':0,'G2':1,'G3':2,'LR':3}
 def normname(n):
     s = (n or '').lower().strip()
+    # Drop a trailing grade parenthetical BEFORE the suffix strip. The Racing API appends
+    # "(Group 1)" / "(Listed)" to race names and the scrapers do not, so the same race
+    # arriving from two producers deduped to two different keys and printed twice.
+    # Seen Sep 3 2026: "Betfair Sprint Cup Stakes (Group 1)" vs "Betfair Sprint Cup Stakes".
+    s = re.sub(r'\s*\((?:group|groupe|gruppo|grade|listed|g)\s*\d?\)\s*$', '', s).strip()
     for suf in [' stakes',' s.',' h.',' handicap']:
         if s.endswith(suf): s = s[:-len(suf)]
     for pfx in ['paddy power ','jenningsbet ','al basti equiworld dubai ','jebel ali racecourse and stables ','goffs ','fasig-tipton ','dubai duty free ','coral-']:
@@ -603,6 +727,7 @@ def _load(path):
     except Exception as e:
         print('MERGE_WARN: could not parse ' + path + ' — ' + str(e), file=sys.stderr); return None
 def merge_upcoming():
+    tier0 = _load('/tmp/eu_upcoming_tier0.json') or []
     bash = _load('/tmp/eu_upcoming_bash.json') or []
     webfetch = _load('/tmp/eu_upcoming_webfetch.json') or []
     cache = _load('/tmp/eu_upcoming_cache.json') or []
@@ -621,7 +746,10 @@ def merge_upcoming():
                 if key in seen[pfx]: continue
                 seen[pfx].add(key); by_prefix[pfx].append(race); added += 1
         if added > 0: print('  MERGE_UPCOMING: ' + source_name + ' added ' + str(added) + ' races')
-    absorb(bash, 'bash'); absorb(webfetch, 'webfetch'); absorb(cache, 'cache')
+    # tier0 FIRST: it is the Racing API via the mirror, the highest-quality producer and the
+    # only one with canonical day_labels. A stale tier0 build is already re-bucketed by race
+    # date in the Tier 0 block, so absorbing it first is safe even when the Action ran late.
+    absorb(tier0, 'tier0'); absorb(bash, 'bash'); absorb(webfetch, 'webfetch'); absorb(cache, 'cache')
     for pfx in by_prefix:
         if pfx == 'TOMORROW':
             by_prefix[pfx].sort(key=lambda r: (r.get('date_short',''), GO.get(r.get('grade','LR'),9), r.get('track','')))
@@ -637,6 +765,7 @@ def merge_upcoming():
     for d in result: print('  ' + d['day_label'] + ' (' + str(len(d['races'])) + ')')
     return total
 def merge_recap():
+    tier0 = _load('/tmp/eu_recap_tier0.json') or []
     bash = _load('/tmp/eu_recap_bash.json') or []
     webfetch = _load('/tmp/eu_recap_webfetch.json') or []
     result = []; seen = set()
@@ -648,7 +777,8 @@ def merge_recap():
             if key in seen: continue
             seen.add(key); result.append(race); added += 1
         if added > 0: print('  MERGE_RECAP: ' + source_name + ' added ' + str(added) + ' races')
-    absorb(bash, 'bash'); absorb(webfetch, 'webfetch')
+    # tier0 recap is only ever written for an age==0 build, so it is genuinely yesterday's.
+    absorb(tier0, 'tier0'); absorb(bash, 'bash'); absorb(webfetch, 'webfetch')
     result.sort(key=lambda r: (GO.get(r.get('grade','LR'),9), r.get('course','')))
     with open('/tmp/eu_recap_json.json','w') as f: json.dump(result, f, indent=2)
     print('MERGE_RECAP_DONE: ' + str(len(result)) + ' EU Group/Listed races written to /tmp/eu_recap_json.json')

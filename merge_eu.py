@@ -8,12 +8,19 @@ where a later producer would silently wipe an earlier producer's output.
 
 Producer files (any may exist or not):
   upcoming:
+    /tmp/eu_upcoming_tier0.json    — public-mirror JSON built by GitHub Actions (Tier 0)
     /tmp/eu_upcoming_bash.json     — bash eu_prefetch.sh (Step 0 bootstrap)
     /tmp/eu_upcoming_webfetch.json — Step 7.0.5 WebFetch
     /tmp/eu_upcoming_cache.json    — Step 7.0.6 Gmail cache load
   recap:
+    /tmp/eu_recap_tier0.json    — public-mirror JSON (Tier 0, same-day builds only)
     /tmp/eu_recap_bash.json     — bash eu_prefetch.sh (Step 0 bootstrap)
     /tmp/eu_recap_webfetch.json — Step 5-RP WebFetch
+
+Tier 0 used to write straight into /tmp/eu_upcoming_bash.json, which meant a stale mirror
+build could only ever be all-or-nothing: taken whole, or (as happened every morning from
+Aug 27 2026) rejected and lost. It now has its own slot like every other producer, so a
+late Action degrades to a floor the other producers union on top of.
 
 Consumed paths (this script is the ONLY writer):
   /tmp/eu_upcoming_json.json — read by Step 7.5 generator + verifiers
@@ -24,12 +31,17 @@ Usage:
   python3 /tmp/merge_eu.py recap      # rebuild /tmp/eu_recap_json.json
   python3 /tmp/merge_eu.py all        # rebuild both
 """
-import sys, os, json
+import sys, os, json, re
 
 GO = {'G1':0,'G2':1,'G3':2,'LR':3}
 
 def normname(n):
     s = (n or '').lower().strip()
+    # Drop a trailing grade parenthetical BEFORE the suffix strip. The Racing API appends
+    # "(Group 1)" / "(Listed)" to race names and the scrapers do not, so the same race
+    # arriving from two producers deduped to two different keys and printed twice.
+    # Seen Sep 3 2026: "Betfair Sprint Cup Stakes (Group 1)" vs "Betfair Sprint Cup Stakes".
+    s = re.sub(r'\s*\((?:group|groupe|gruppo|grade|listed|g)\s*\d?\)\s*$', '', s).strip()
     for suf in [' stakes',' s.',' h.',' handicap']:
         if s.endswith(suf): s = s[:-len(suf)]
     # Strip common sponsor prefixes
@@ -46,6 +58,7 @@ def _load(path):
         return None
 
 def merge_upcoming():
+    tier0 = _load('/tmp/eu_upcoming_tier0.json') or []
     bash = _load('/tmp/eu_upcoming_bash.json') or []
     webfetch = _load('/tmp/eu_upcoming_webfetch.json') or []
     cache = _load('/tmp/eu_upcoming_cache.json') or []
@@ -73,7 +86,9 @@ def merge_upcoming():
         if added > 0:
             print('  MERGE_UPCOMING: ' + source_name + ' added ' + str(added) + ' races')
 
-    # Order matters for day_label fallback: bash first (canonical), then webfetch, then cache.
+    # Order matters for day_label fallback: tier0 first (Racing API, canonical labels, and
+    # already re-bucketed by race date when the build was stale), then bash, webfetch, cache.
+    absorb(tier0, 'tier0')
     absorb(bash, 'bash')
     absorb(webfetch, 'webfetch')
     absorb(cache, 'cache')
@@ -99,6 +114,7 @@ def merge_upcoming():
     return total
 
 def merge_recap():
+    tier0 = _load('/tmp/eu_recap_tier0.json') or []
     bash = _load('/tmp/eu_recap_bash.json') or []
     webfetch = _load('/tmp/eu_recap_webfetch.json') or []
 
@@ -117,6 +133,8 @@ def merge_recap():
         if added > 0:
             print('  MERGE_RECAP: ' + source_name + ' added ' + str(added) + ' races')
 
+    # tier0 recap is only written for a same-day build, so it is genuinely yesterday's results.
+    absorb(tier0, 'tier0')
     absorb(bash, 'bash')
     absorb(webfetch, 'webfetch')
 

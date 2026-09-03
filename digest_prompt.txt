@@ -3010,19 +3010,25 @@ if _os.path.exists('/tmp/eu_upcoming_json.json'):
 # has written since the June 2026 rewrite — dead code that could never fire. The real
 # fallback is the bash producer's own output, which exists even when merge_eu.py fails.
 # Also fires when the merged file loaded but is EMPTY (merge dropped everything).
-if sum(len(v) for v in _eu_by_prefix.values())==0 and _os.path.exists('/tmp/eu_upcoming_bash.json'):
+# Sep 3 2026: try eu_upcoming_tier0.json BEFORE eu_upcoming_bash.json. Tier 0 (the
+# pre-built mirror JSON) got its own producer slot when the staleness gate was made
+# graded rather than binary, and it is the ONLY producer that works inside CCR — so if
+# merge_eu.py fails it is the only EU data that exists anywhere on disk. Checking only
+# the bash slot here would silently discard it.
+for _fb in ('/tmp/eu_upcoming_tier0.json','/tmp/eu_upcoming_bash.json'):
+    if sum(len(v) for v in _eu_by_prefix.values())>0 or not _os.path.exists(_fb): continue
     try:
-        _ejb=json.load(open('/tmp/eu_upcoming_bash.json'))
+        _ejb=json.load(open(_fb))
         _eu_tmp={'YESTERDAY':[],'TODAY':[],'TOMORROW':[]}
         for _d3 in _ejb:
-            _lbl=_d3.get('day_label','').split()[0]
+            _lbl=(_d3.get('day_label','').split() or [''])[0]
             if _lbl in _eu_tmp: _eu_tmp[_lbl]=_d3.get('races',[])
         if sum(len(v) for v in _eu_tmp.values())>0:
-            _eu_by_prefix=_eu_tmp; _eu_source='eu_upcoming_bash.json'
-            print('EU_FILE_FALLBACK: merged file empty/missing — recovered '+str(sum(len(v) for v in _eu_tmp.values()))+' races from eu_upcoming_bash.json (merge_eu.py likely failed)')
-    except Exception as _fe: print('EU_FILE_ERR: eu_upcoming_bash.json — '+str(_fe))
+            _eu_by_prefix=_eu_tmp; _eu_source=_fb.split('/')[-1]
+            print('EU_FILE_FALLBACK: merged file empty/missing — recovered '+str(sum(len(v) for v in _eu_tmp.values()))+' races from '+_fb.split('/')[-1]+' (merge_eu.py likely failed)')
+    except Exception as _fe: print('EU_FILE_ERR: '+_fb+' — '+str(_fe))
 if sum(len(v) for v in _eu_by_prefix.values())==0:
-    print('EU_FILE_MISSING: CRITICAL — no EU upcoming races from any source (eu_upcoming_json.json / eu_upcoming_bash.json). eu_prefetch.sh did not run or failed. Re-run: bash /tmp/eu_prefetch.sh')
+    print('EU_FILE_MISSING: CRITICAL — no EU upcoming races from any source (eu_upcoming_json.json / eu_upcoming_tier0.json / eu_upcoming_bash.json). eu_prefetch.sh did not run or failed. Re-run: bash /tmp/eu_prefetch.sh')
 
 # === UNION WITH SDL DATA (thestatsdontlie.com) — third source ===
 # eu_sdl_json.json contains [{date_iso, grade, race_name, course, country, flag}]

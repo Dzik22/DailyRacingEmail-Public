@@ -1,14 +1,69 @@
 [
  {
-  "day_label": "YESTERDAY — Tue Sep 1",
+  "day_label": "YESTERDAY — Wed Sep 2",
   "races": []
  },
  {
-  "day_label": "TODAY — Wed Sep 2",
-  "races": []
+  "day_label": "TODAY — Thu Sep 3",
+  "races": [
+   {
+    "grade": "G3",
+    "race_name": "Prix D'arenberg",
+    "date_short": "Thu\nSep 3",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "5f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Prix Gerald De Geoffre",
+    "date_short": "Thu\nSep 3",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m7f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "IRE-Incentive, It Pays To Buy Irish Dick Poole Fillies' Stakes (Group 3)",
+    "date_short": "Thu\nSep 3",
+    "track": "Salisbury",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Prix De Liancourt",
+    "date_short": "Thu\nSep 3",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m2½f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Prix Joubert",
+    "date_short": "Thu\nSep 3",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m6f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Prix De La Cochere",
+    "date_short": "Thu\nSep 3",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m · Turf"
+   }
+  ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Thu Sep 3",
+  "day_label": "TOMORROW — Next 7 days from Fri Sep 4",
   "races": [
    {
     "grade": "G3",
@@ -69,15 +124,6 @@
     "race_name": "Starman At Tally Ho Stud Garrowby Stakes (Listed Race)",
     "date_short": "Sun\nSep 6",
     "track": "York",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "IRE-Incentive, It Pays To Buy Irish Dick Poole Fillies' Stakes (Group 3)",
-    "date_short": "Thu\nSep 3",
-    "track": "Salisbury",
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "6f · Turf"

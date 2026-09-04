@@ -1,20 +1,7 @@
 [
  {
-  "day_label": "YESTERDAY — Wed Sep 2",
-  "races": []
- },
- {
-  "day_label": "TODAY — Thu Sep 3",
+  "day_label": "YESTERDAY — Thu Sep 3",
   "races": [
-   {
-    "grade": "G3",
-    "race_name": "Prix D'arenberg",
-    "date_short": "Thu\nSep 3",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "5f · Turf"
-   },
    {
     "grade": "G3",
     "race_name": "Prix Gerald De Geoffre",
@@ -23,6 +10,15 @@
     "country": "FR",
     "flag": "🇫🇷",
     "dist_surface": "1m7f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Prix D'arenberg",
+    "date_short": "Thu\nSep 3",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "5f · Turf"
    },
    {
     "grade": "G3",
@@ -35,12 +31,12 @@
    },
    {
     "grade": "LR",
-    "race_name": "Prix De Liancourt",
+    "race_name": "Prix De La Cochere",
     "date_short": "Thu\nSep 3",
     "track": "Longchamp",
     "country": "FR",
     "flag": "🇫🇷",
-    "dist_surface": "1m2½f · Turf"
+    "dist_surface": "1m · Turf"
    },
    {
     "grade": "LR",
@@ -53,17 +49,21 @@
    },
    {
     "grade": "LR",
-    "race_name": "Prix De La Cochere",
+    "race_name": "Prix De Liancourt",
     "date_short": "Thu\nSep 3",
     "track": "Longchamp",
     "country": "FR",
     "flag": "🇫🇷",
-    "dist_surface": "1m · Turf"
+    "dist_surface": "1m2½f · Turf"
    }
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Fri Sep 4",
+  "day_label": "TODAY — Fri Sep 4",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Sat Sep 5",
   "races": [
    {
     "grade": "G3",
@@ -94,21 +94,21 @@
    },
    {
     "grade": "G3",
-    "race_name": "William Hill Sirenia Stakes (Group 3)",
-    "date_short": "Sat\nSep 5",
-    "track": "Kempton (AW)",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · AW"
-   },
-   {
-    "grade": "G3",
     "race_name": "William Hill September Stakes (Group 3)",
     "date_short": "Sat\nSep 5",
     "track": "Kempton (AW)",
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m4f · AW"
+   },
+   {
+    "grade": "G3",
+    "race_name": "William Hill Sirenia Stakes (Group 3)",
+    "date_short": "Sat\nSep 5",
+    "track": "Kempton (AW)",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · AW"
    },
    {
     "grade": "LR",
@@ -127,6 +127,15 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Ardilaun Hotel Irish EBF Oyster Stakes (Listed)",
+    "date_short": "Tue\nSep 8",
+    "track": "Galway",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m4f · Turf"
    }
   ]
  }

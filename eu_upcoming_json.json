@@ -1,79 +1,11 @@
 [
  {
-  "day_label": "YESTERDAY — Thu Sep 3",
-  "races": [
-   {
-    "grade": "G3",
-    "race_name": "Prix Gerald De Geoffre",
-    "date_short": "Thu\nSep 3",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m7f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Prix D'arenberg",
-    "date_short": "Thu\nSep 3",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "5f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "IRE-Incentive, It Pays To Buy Irish Dick Poole Fillies' Stakes (Group 3)",
-    "date_short": "Thu\nSep 3",
-    "track": "Salisbury",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Prix De La Cochere",
-    "date_short": "Thu\nSep 3",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Prix Joubert",
-    "date_short": "Thu\nSep 3",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m6f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Prix De Liancourt",
-    "date_short": "Thu\nSep 3",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m2½f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Fri Sep 4",
+  "day_label": "YESTERDAY — Fri Sep 4",
   "races": []
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Sat Sep 5",
+  "day_label": "TODAY — Sat Sep 5",
   "races": [
-   {
-    "grade": "G3",
-    "race_name": "Weatherbys Global Stallions App Winter Hill Stakes (Group 3)",
-    "date_short": "Mon\nSep 7",
-    "track": "Windsor",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m2f · Turf"
-   },
    {
     "grade": "G1",
     "race_name": "Betfair Sprint Cup Stakes (Group 1)",
@@ -112,12 +44,107 @@
    },
    {
     "grade": "LR",
+    "race_name": "Prix Arqana - Criterium De L'ouest",
+    "date_short": "Sat\nSep 5",
+    "track": "Craon",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Gp De Craon - 10eme Etape Du Defi Du Galop - G.camprubi",
+    "date_short": "Sat\nSep 5",
+    "track": "Craon",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "LR",
     "race_name": "Betfair Celebrates Bow Echo Ascendant Stakes (Listed Race)",
     "date_short": "Sat\nSep 5",
     "track": "Haydock",
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Sun Sep 6",
+  "races": [
+   {
+    "grade": "G3",
+    "race_name": "Weatherbys Global Stallions App Winter Hill Stakes (Group 3)",
+    "date_short": "Mon\nSep 7",
+    "track": "Windsor",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m2f · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Qatar Prix Vermeille",
+    "date_short": "Sun\nSep 6",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Qatar Prix Du Moulin De Longchamp (group 1)",
+    "date_short": "Sun\nSep 6",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Qatar Prix D'aumale",
+    "date_short": "Sun\nSep 6",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Qatar Prix Niel (group 2)",
+    "date_short": "Sun\nSep 6",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Qatar Prix Foy (group 2)",
+    "date_short": "Sun\nSep 6",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Prix Association Des Aqps (Prix Richard De Gennes)",
+    "date_short": "Sun\nSep 6",
+    "track": "Craon",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Qatar Prix La Rochette (group 3)",
+    "date_short": "Sun\nSep 6",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "7f · Turf"
    },
    {
     "grade": "LR",
@@ -127,6 +154,24 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Betfred Park Hill Fillies' Stakes (Group 2)",
+    "date_short": "Thu\nSep 10",
+    "track": "Doncaster",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m6½f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Betfred May Hill Stakes (Group 2)",
+    "date_short": "Thu\nSep 10",
+    "track": "Doncaster",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m · Turf"
    },
    {
     "grade": "LR",

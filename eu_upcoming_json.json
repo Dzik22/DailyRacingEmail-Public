@@ -1,10 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Fri Sep 4",
-  "races": []
- },
- {
-  "day_label": "TODAY — Sat Sep 5",
+  "day_label": "YESTERDAY — Sat Sep 5",
   "races": [
    {
     "grade": "G1",
@@ -17,12 +13,12 @@
    },
    {
     "grade": "G3",
-    "race_name": "Betfair Backs Opinions Superior Mile Stakes (Group 3)",
+    "race_name": "William Hill Sirenia Stakes (Group 3)",
     "date_short": "Sat\nSep 5",
-    "track": "Haydock",
+    "track": "Kempton (AW)",
     "country": "GB",
     "flag": "🇬🇧",
-    "dist_surface": "1m · Turf"
+    "dist_surface": "6f · AW"
    },
    {
     "grade": "G3",
@@ -32,24 +28,6 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m4f · AW"
-   },
-   {
-    "grade": "G3",
-    "race_name": "William Hill Sirenia Stakes (Group 3)",
-    "date_short": "Sat\nSep 5",
-    "track": "Kempton (AW)",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · AW"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Prix Arqana - Criterium De L'ouest",
-    "date_short": "Sat\nSep 5",
-    "track": "Craon",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m · Turf"
    },
    {
     "grade": "LR",
@@ -62,27 +40,18 @@
    },
    {
     "grade": "LR",
-    "race_name": "Betfair Celebrates Bow Echo Ascendant Stakes (Listed Race)",
+    "race_name": "Prix Arqana - Criterium De L'ouest",
     "date_short": "Sat\nSep 5",
-    "track": "Haydock",
-    "country": "GB",
-    "flag": "🇬🇧",
+    "track": "Craon",
+    "country": "FR",
+    "flag": "🇫🇷",
     "dist_surface": "1m · Turf"
    }
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Sun Sep 6",
+  "day_label": "TODAY — Sun Sep 6",
   "races": [
-   {
-    "grade": "G3",
-    "race_name": "Weatherbys Global Stallions App Winter Hill Stakes (Group 3)",
-    "date_short": "Mon\nSep 7",
-    "track": "Windsor",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m2f · Turf"
-   },
    {
     "grade": "G1",
     "race_name": "Qatar Prix Vermeille",
@@ -154,6 +123,101 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "6f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Mon Sep 7",
+  "races": [
+   {
+    "grade": "G2",
+    "race_name": "Carlsberg Danish Pilsner Flying Childers Stakes (Group 2)",
+    "date_short": "Fri\nSep 11",
+    "track": "Doncaster",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "5f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Betfred Howard Wright Doncaster Cup Stakes (Group 2)",
+    "date_short": "Fri\nSep 11",
+    "track": "Doncaster",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "2m2f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Betfred Flying Scotsman Stakes (Listed Race)",
+    "date_short": "Fri\nSep 11",
+    "track": "Doncaster",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Weatherbys Global Stallions App Winter Hill Stakes (Group 3)",
+    "date_short": "Mon\nSep 7",
+    "track": "Windsor",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m2f · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Betfred St Leger Stakes (Group 1)",
+    "date_short": "Sat\nSep 12",
+    "track": "Doncaster",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m6½f · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Golden Fleece Stakes (Group 1)",
+    "date_short": "Sat\nSep 12",
+    "track": "Leopardstown",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m1f · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Coolmore America 'Justify' Matron Stakes (Group 1)",
+    "date_short": "Sat\nSep 12",
+    "track": "Leopardstown",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Royal Bahrain Irish Champion Stakes (Group 1)",
+    "date_short": "Sat\nSep 12",
+    "track": "Leopardstown",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m2f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Betfred Park Stakes (Group 2)",
+    "date_short": "Sat\nSep 12",
+    "track": "Doncaster",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Moyglare Stud Stakes (Group 1) (Fillies)",
+    "date_short": "Sun\nSep 13",
+    "track": "Curragh",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "7f · Turf"
    },
    {
     "grade": "G2",

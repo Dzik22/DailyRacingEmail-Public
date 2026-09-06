@@ -1,1 +1,52 @@
-[]
+[
+ {
+  "grade": "G1",
+  "race_name": "Betfair Sprint Cup Stakes (Group 1)",
+  "track": "Haydock",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "6f · Turf",
+  "winner": "Almeraq",
+  "off_time": "3:40"
+ },
+ {
+  "grade": "G3",
+  "race_name": "William Hill Sirenia Stakes (Group 3)",
+  "track": "Kempton (AW)",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "6f · AW",
+  "winner": "Moonrise",
+  "off_time": "3:20"
+ },
+ {
+  "grade": "G3",
+  "race_name": "William Hill September Stakes (Group 3)",
+  "track": "Kempton (AW)",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "1m4f · AW",
+  "winner": "Pride Of Arras",
+  "off_time": "2:50"
+ },
+ {
+  "grade": "LR",
+  "race_name": "Gp De Craon - 10eme Etape Du Defi Du Galop - G.camprubi",
+  "track": "Craon",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m4f · Turf",
+  "winner": "Jabracadabra",
+  "off_time": "4:52"
+ },
+ {
+  "grade": "LR",
+  "race_name": "Prix Arqana - Criterium De L'ouest",
+  "track": "Craon",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m · Turf",
+  "winner": "Golden Savior",
+  "off_time": "3:42"
+ }
+]

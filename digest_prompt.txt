@@ -51,6 +51,7 @@ Your ONE output is a Gmail draft to michaeljdzik@gmail.com. Step 8 (create_draft
 - Reorder sections
 - Change section names
 - Remove grade icons (🏆🥈🥉)
+- Remove the podium icons flanking a placed horse's name in MY STABLE / STABLE UPDATES (🏆 1st, 🥈 2nd, 🥉 3rd)
 - Remove section break dividers (======)
 - Change the header or footer text
 - Omit any of the 6 sections
@@ -98,6 +99,7 @@ Every digest MUST contain exactly these 6 sections in this exact order. No secti
 3. 🏃 WORKS — LAST 7 DAYS → workouts from FWD-EQ structured emails ONLY — no prose, no web summaries
 Format: `<div class="stable-subsection-wrap">` → header → `<div class="stable-row">` per horse (or `<div class="stable-no-news">` if empty)
 Every stable-row h4 MUST include the full inline silk badge HTML (colored squares + syndicate name).
+🏆🥈🥉 **PODIUM ICONS:** a horse that finished 1st, 2nd or 3rd gets its placing icon on BOTH sides of its name, followed by the silk badge — `🏆 HORSENAME 🏆` (won), `🥈 HORSENAME 🥈` (2nd), `🥉 HORSENAME 🥉` (3rd). The Step 7.5 `row()` function does this automatically from the RESULTS finish position; never type the icons by hand.
 ⚠️ UPDATES & NEWS IS NOT A SUBSECTION OF MY STABLE — it is a separate Section 2 (STABLE UPDATES).
 
 **SECTION 2 — 🐎 STABLE UPDATES** (all syndicates — proportional coverage)
@@ -326,6 +328,7 @@ css="""body{font-family:Georgia,serif;color:#1a1a1a;background:#eee8df;margin:0;
 .stable-row{background:#fdf8ee;border-left:4px solid #d4af37;margin:12px 14px;padding:16px 16px 14px;border-radius:3px}
 .stable-row h4{margin:0 0 8px;color:#1a1a2e;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px}.stable-h4{margin:0 0 8px;color:#1a1a2e;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;line-height:1.6}
 .stable-row p{margin:4px 0 0;font-size:13px;line-height:1.8;color:#333;font-weight:normal}
+.place-icon{font-size:16px;vertical-align:middle;line-height:1}
 .stable-tag{display:inline-block;background:#1a1a2e;color:#fff;font-size:9px;font-weight:bold;letter-spacing:1px;padding:2px 7px;border-radius:10px;text-transform:uppercase;margin-left:6px;vertical-align:middle}
 .stable-no-news{padding:16px 18px 18px;font-size:13px;color:#888;font-style:italic;background:#fff}
 .story{padding:22px 24px 20px;border-bottom:1px solid #e8e2d8;background:#fff}
@@ -2131,6 +2134,7 @@ If any box is unchecked → fix the gap NOW before proceeding.
 □ Workouts render as stable-row divs with h4+silk badge and p tag — NOT as a `<table>` and NOT as markdown pipe rows
 □ Yesterday + Today + Tomorrow (3 days) are inside ONE `<div class="upcoming-wrapper">` with day-header divs and race-table tables
 □ Every stable-row h4 contains the full inline silk badge HTML with colored left/right squares
+□ Every placed horse shows its icon on BOTH sides of its name in RESULTS — 🏆 1st, 🥈 2nd, 🥉 3rd (and in STABLE UPDATES when that entry carries "place"/"win")
 □ Full CSS block is included verbatim inside `<style>` tag
 □ Stakes Recap uses race-table 3-column HTML tables grouped by track (Race | Dist · Surface | Winner), not plain text
 □ EVERY race cell in Stakes Recap AND Upcoming starts with grade icon span HTML — zero rows with bare "G1"/"G2"/"G3"/"LR" text
@@ -2170,6 +2174,7 @@ css = """body{font-family:Georgia,serif;color:#1a1a1a;background:#eee8df;margin:
 .stable-row{background:#fdf8ee;border-left:4px solid #d4af37;margin:12px 14px;padding:16px 16px 14px;border-radius:3px}
 .stable-row h4{margin:0 0 8px;color:#1a1a2e;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px}.stable-h4{margin:0 0 8px;color:#1a1a2e;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;line-height:1.6}
 .stable-row p{margin:4px 0 0;font-size:13px;line-height:1.8;color:#333;font-weight:normal}
+.place-icon{font-size:16px;vertical-align:middle;line-height:1}
 .stable-tag{display:inline-block;background:#1a1a2e;color:#fff;font-size:9px;font-weight:bold;letter-spacing:1px;padding:2px 7px;border-radius:10px;text-transform:uppercase;margin-left:6px;vertical-align:middle}
 .stable-no-news{padding:16px 18px 18px;font-size:13px;color:#888;font-style:italic;background:#fff}
 .story{padding:22px 24px 20px;border-bottom:1px solid #e8e2d8;background:#fff}
@@ -2216,6 +2221,13 @@ Example: `"Finished 6th of 7 · [Race Name] · [Track] · [Date] · J: [Jockey]"
 ⚠️ NEVER invent field sizes — 12, 15, 8 runners must come from the web search result, not guessed.
 ⚠️ NEVER add a grade label (G1/G2/G3) unless the race is officially a graded stakes — check the race name from the search result.
 NEVER write: `"ran well"`, `"well beaten"`, `"ran okay"`, `"unplaced"` as the complete result. If you don't have the numeric position, run Step 4c-R now before writing this JSON.
+
+🏆🥈🥉 **PODIUM ICONS (AUTOMATIC — DO NOT TYPE THEM):**
+A `"Finished 1st of Y"` / `2nd of Y` / `3rd of Y` result is a placing. The generator auto-detects it and renders `🏆 HORSENAME 🏆` (1st), `🥈 HORSENAME 🥈` (2nd) or `🥉 HORSENAME 🥉` (3rd) in the RESULTS row — never add the emoji to `horse` or `text` yourself.
+- RESULTS entries: optional `"place": 1|2|3` to force an icon when the text phrasing is unusual, `"place": 0` to suppress. Omit the field and auto-detection decides. (`"win": true` is still accepted and means `"place": 1`.)
+- STABLE UPDATES entries: auto-detection is OFF (prose like "won her maiden last year" or "was 2nd last time" would misfire). If the update is about a horse that placed 1st/2nd/3rd in the last 7 days, add `"place": 1|2|3` (or `"win": true`) to that entry so its row gets the icons too.
+- 4th and worse get NO icon. ENTRIES and WORKS never get icons.
+- Step 7.5 (`place_icons_ok`) and Step 7.6 (`PLACING NOT ICONED`) both FAIL the digest if a flagged/detected placing renders without its two icon spans.
 
 ⚠️ **SYNDICATE FIELD (MANDATORY — MASTER TABLE ONLY):**
 Use only the exact syndicate name from the MASTER TABLE. The Python generator looks up silk badge colors from this field. Wrong syndicate name = wrong badge colors.
@@ -3281,8 +3293,32 @@ def silk(syn, horse=''):
         print('SILK WARN: no colored badge for horse="' + str(horse) + '" syn="' + str(syn) + '" → gray fallback badge')
     return result
 
-def row(horse, syn, text):
+# PODIUM ICONS (LOCKED): 1st = gold trophy, 2nd = silver medal, 3rd = bronze medal — one on
+# EACH side of the horse name. Same three icons the race tables use for G1/G2/G3.
+PLACE_ICON = {1: '\U0001f3c6', 2: '\U0001f948', 3: '\U0001f949'}
+
+def place_of(text):
+    # Sep 6 2026 (Coco G won): the finishing position must always be flagged on the horse name.
+    # Detection is anchored on the POSITION itself so "winner: Other Horse" never triggers it, and
+    # the (?<![0-9]) guards stop 11th/21st/22nd/23rd matching 1st/2nd/3rd.
+    t = str(text or '')
+    for n, w in ((1, 'st'), (2, 'nd'), (3, 'rd')):
+        if _re.search(r'(?<![0-9])' + str(n) + w + r'\s+of\s+\d', t, _re.I): return n
+        if _re.search(r'(?<![A-Za-z])(?:finished|placed)\s+' + str(n) + w + r'(?![A-Za-z])', t, _re.I): return n
+    if _re.search(r'(?<![A-Za-z])(?:won|win)\s+1st(?![A-Za-z])', t, _re.I): return 1
+    if _re.search(r'(?<![A-Za-z])WON(?![A-Za-z])', t): return 1
+    return None
+
+def _place_span(n):
+    return '<span class="place-icon">' + PLACE_ICON[n] + '</span>'
+
+def row(horse, syn, text, place=None):
     h = str(horse or 'UNKNOWN').upper()
+    # place=None → auto-detect from the result text. An explicit 1/2/3 (or True, meaning a win)
+    # from the JSON overrides; False/0 suppresses.
+    p = place_of(text) if place is None else (1 if place is True else place)
+    if p in (1, 2, 3):
+        h = _place_span(p) + '&nbsp;' + h + '&nbsp;' + _place_span(p)
     # Use div.stable-h4 not h4 — browsers foster-parent <table> outside <h4>, breaking badge layout
     return ('<div class="stable-row"><div class="stable-h4">' + h + '&nbsp;' + silk(syn, horse) + '</div>'
             + '<p>' + str(text or '') + '</p></div>\n<div class="horse-gap"></div>\n')
@@ -3307,11 +3343,11 @@ def tblock(v, yd):
 
 ms = d.get('my_stable', {}); yd = str(d.get('yesterday_display','')); td = str(d.get('today_display',''))
 s1 = hdr('\U0001f3c7','My Stable') + '<div class="horse-gap"></div>\n'
-s1 += sub('\U0001f4cb','ENTRIES — NEXT 7 DAYS', [row(e.get('horse'),e.get('syndicate'),e.get('text')) for e in ms.get('entries',[])])
+s1 += sub('\U0001f4cb','ENTRIES — NEXT 7 DAYS', [row(e.get('horse'),e.get('syndicate'),e.get('text'),0) for e in ms.get('entries',[])])
 s1 += SSB + '\n'
-s1 += sub('\U0001f3c1','RESULTS — LAST 7 DAYS', [row(r.get('horse'),r.get('syndicate'),r.get('text')) for r in ms.get('results',[])])
+s1 += sub('\U0001f3c1','RESULTS — LAST 7 DAYS', [row(r.get('horse'),r.get('syndicate'),r.get('text'),r.get('place', r.get('win'))) for r in ms.get('results',[])])
 s1 += SSB + '\n'
-s1 += sub('\U0001f3c3','WORKS — LAST 7 DAYS', [row(w.get('horse'),w.get('syndicate'),w.get('text')) for w in ms.get('works',[])])
+s1 += sub('\U0001f3c3','WORKS — LAST 7 DAYS', [row(w.get('horse'),w.get('syndicate'),w.get('text'),0) for w in ms.get('works',[])])
 s1 += '<div style="height:20px;background:#fff"></div>\n'
 
 upd = d.get('stable_updates',[])
@@ -3324,7 +3360,7 @@ if upd:
         groups[syn].append(u)
     for syn in gorder:
         s2 += '<div style="font-size:13px;font-weight:bold;text-decoration:underline;color:#1a1a2e;padding:8px 22px 4px;font-family:Georgia,serif">' + syn.upper() + '</div>\n'
-        for u in groups[syn]: s2 += row(u.get('horse'),u.get('syndicate'),u.get('text'))
+        for u in groups[syn]: s2 += row(u.get('horse'),u.get('syndicate'),u.get('text'),u.get('place', 1 if u.get('win') else 0))
 else:
     s2 += '<div class="stable-no-news">No stable updates this week.</div>\n'
 s2 += '<div style="height:20px;background:#fff"></div>\n'
@@ -3478,6 +3514,19 @@ checks = {
   'has_stable_updates':   'Stable Updates' in html,
   'top10_ok':             len(d.get('top10',[])) >= 10,
 }
+# PODIUM ICON CHECK — every 1st/2nd/3rd must carry its icon on BOTH sides of the horse name
+def _rowplace(x, auto):
+    v = x.get('place', x.get('win'))
+    if v is None: return place_of(x.get('text')) if auto else None
+    return 1 if v is True else v
+_placed = [(r.get('horse','?'), _rowplace(r, True)) for r in ms.get('results',[])]
+_placed += [(u.get('horse','?'), _rowplace(u, False)) for u in upd]
+_placed = [(hn, pl) for hn, pl in _placed if pl in (1,2,3)]
+checks['place_icons_ok'] = html.count('class="place-icon"') >= 2 * len(_placed)
+if _placed:
+    print('PODIUM ICONS: ' + str(len(_placed)) + ' placed horse(s) — '
+          + ', '.join(hn + ' (' + {1:'1st \U0001f3c6',2:'2nd \U0001f948',3:'3rd \U0001f949'}[pl] + ')' for hn, pl in _placed)
+          + ' | icon spans=' + str(html.count('class="place-icon"')) + ' (expect ' + str(2*len(_placed)) + ')')
 failed = [k for k,v in checks.items() if not v]
 gate = 'FAIL' if failed else 'PASS'
 open('/tmp/gate_passed.txt','w').write(gate)
@@ -3561,6 +3610,34 @@ else:
     print('STEP_5DRF_GATE: ' + gate_content)
     if 'fwdeq_searched=YES' not in gate_content:
         problems.append('CRITICAL: step_5drf_done.txt exists but does not confirm FWD-EQ was searched (content: "' + gate_content + '"). Re-run Step 5-DRF properly.')
+# PODIUM ICON ENFORCEMENT (Sep 6 2026 — Coco G won): 1st shows 🏆, 2nd 🥈, 3rd 🥉 on BOTH sides
+# of the horse name. Re-derive the placings from the JSON so a generator regression or a
+# hand-edited draft cannot ship a placed horse without its icons.
+try:
+    _dd = _jeu.load(open('/tmp/digest_data.json'))
+    import re as _rp76
+    def _place76(t):
+        t = str(t or '')
+        for _n, _w in ((1,'st'),(2,'nd'),(3,'rd')):
+            if _rp76.search(r'(?<![0-9])' + str(_n) + _w + r'\\s+of\\s+\\d', t, _rp76.I): return _n
+            if _rp76.search(r'(?<![A-Za-z])(?:finished|placed)\\s+' + str(_n) + _w + r'(?![A-Za-z])', t, _rp76.I): return _n
+        if _rp76.search(r'(?<![A-Za-z])(?:won|win)\\s+1st(?![A-Za-z])', t, _rp76.I): return 1
+        if _rp76.search(r'(?<![A-Za-z])WON(?![A-Za-z])', t): return 1
+        return None
+    def _rowp76(x, auto):
+        v = x.get('place', x.get('win'))
+        if v is None: return _place76(x.get('text')) if auto else None
+        return 1 if v is True else v
+    _pl76 = [(r.get('horse','?'), _rowp76(r, True)) for r in (_dd.get('my_stable') or {}).get('results', [])]
+    _pl76 += [(u.get('horse','?'), _rowp76(u, False)) for u in _dd.get('stable_updates', [])]
+    _pl76 = [(_hn, _p) for _hn, _p in _pl76 if _p in (1,2,3)]
+    _icount = h.count('class=\"place-icon\"')
+    if _pl76:
+        print('PODIUM_ICON_CHECK: ' + str(len(_pl76)) + ' placed — ' + ', '.join(_hn + ' (' + str(_p) + ')' for _hn, _p in _pl76) + ' | icon spans=' + str(_icount))
+    if _icount < 2 * len(_pl76):
+        problems.append('PLACING NOT ICONED: ' + str(len(_pl76)) + ' placed horse(s) in the JSON (' + ', '.join(_hn + ' ' + str(_p) for _hn, _p in _pl76) + ') but only ' + str(_icount) + ' podium-icon spans in the HTML — expected ' + str(2*len(_pl76)) + '. Re-run Step 7.5; 1st/2nd/3rd always show their icon on BOTH sides of the horse name.')
+except Exception as _we76:
+    print('PODIUM_ICON_CHECK_ERR: ' + str(_we76))
 forbidden = ['API blocked by network policy', 'data unavailable', 'EU graded stakes data unavailable',
              'network policy', 'API blocked', 'blocked by network']
 for phrase in forbidden:
@@ -3872,6 +3949,7 @@ except Exception as e:
 - FWD-EQ WORKOUTS (LOCKED — VERIFIED): `in:anywhere`. Full body. Structured data only in WORKS.
 - EQ-FORWARDED LABEL — SEARCH IS BROKEN (LOCKED): The Gmail `label:Label_43` search silently returns zero results even when Label_43 emails exist. **NEVER use `label:Label_43` as a search query.** ALL Equibase email searches use SENDER: `from:virtualstable@equibase.com`. Self-forwarded copies use: `from:michaeljdzik@gmail.com subject:"..."`. Any prompt text that still says `label:Label_43` is an error — ignore it and use the sender-based search instead. This applies to ALL five FWD-EQ searches without exception.
 - ENTRIES (LOCKED): Step 4c. Silk badge in h4.
+- PODIUM ICONS (LOCKED — Sep 6 2026, Coco G): Whenever a MASTER TABLE horse finishes 1st, 2nd or 3rd, its name is flanked on BOTH sides by that placing's icon — `🏆 HORSENAME 🏆` (1st), `🥈 HORSENAME 🥈` (2nd), `🥉 HORSENAME 🥉` (3rd) — in the RESULTS row, and in its STABLE UPDATES row when that entry sets `"place": 1|2|3` (or `"win": true`). Produced automatically by `row()`/`place_of()` in the Step 7.5 generator from the `"Finished Nth of Y"` text or the explicit JSON flag. NEVER type the icon into the `horse` or `text` field, and NEVER remove it. 4th and worse get nothing; Entries and Works never get icons. Step 7.5 check `place_icons_ok` and the Step 7.6 PLACING NOT ICONED check both block the draft if a placing renders without its two icon spans.
 - RESULTS (LOCKED): Any MASTER TABLE horse with result in last 7 days. A cancelled or voided race is NOT a result — put it in ENTRIES with "(— CANCELLED)" note or UPDATES, never RESULTS. ALWAYS verify the finishing position via WebSearch (Step 4c-R) — NEVER report just "ran" or "well beaten" without a numeric finish position (e.g., "3rd of 12"). The web search result overrides the Equibase notification if they differ.
 - TOP 10 NEWS (LOCKED): Exactly 10 numbered .story divs. Section header = "Top 10 News".
 - MY STABLE 3-SECTION STRUCTURE (LOCKED): (1)📋 ENTRIES — NEXT 7 DAYS (2)🏁 RESULTS — LAST 7 DAYS (3)🏃 WORKS — LAST 7 DAYS. NO 4th subsection. UPDATES belong in Section 2 STABLE UPDATES.

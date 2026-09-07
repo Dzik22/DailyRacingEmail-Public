@@ -1,66 +1,7 @@
 [
  {
-  "day_label": "YESTERDAY — Sat Sep 5",
+  "day_label": "YESTERDAY — Sun Sep 6",
   "races": [
-   {
-    "grade": "G1",
-    "race_name": "Betfair Sprint Cup Stakes (Group 1)",
-    "date_short": "Sat\nSep 5",
-    "track": "Haydock",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "William Hill Sirenia Stakes (Group 3)",
-    "date_short": "Sat\nSep 5",
-    "track": "Kempton (AW)",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · AW"
-   },
-   {
-    "grade": "G3",
-    "race_name": "William Hill September Stakes (Group 3)",
-    "date_short": "Sat\nSep 5",
-    "track": "Kempton (AW)",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m4f · AW"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Gp De Craon - 10eme Etape Du Defi Du Galop - G.camprubi",
-    "date_short": "Sat\nSep 5",
-    "track": "Craon",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Prix Arqana - Criterium De L'ouest",
-    "date_short": "Sat\nSep 5",
-    "track": "Craon",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Sun Sep 6",
-  "races": [
-   {
-    "grade": "G1",
-    "race_name": "Qatar Prix Vermeille",
-    "date_short": "Sun\nSep 6",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m4f · Turf"
-   },
    {
     "grade": "G1",
     "race_name": "Qatar Prix Du Moulin De Longchamp (group 1)",
@@ -71,17 +12,8 @@
     "dist_surface": "1m · Turf"
    },
    {
-    "grade": "G2",
-    "race_name": "Qatar Prix D'aumale",
-    "date_short": "Sun\nSep 6",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Qatar Prix Niel (group 2)",
+    "grade": "G1",
+    "race_name": "Qatar Prix Vermeille",
     "date_short": "Sun\nSep 6",
     "track": "Longchamp",
     "country": "FR",
@@ -96,6 +28,24 @@
     "country": "FR",
     "flag": "🇫🇷",
     "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Qatar Prix Niel (group 2)",
+    "date_short": "Sun\nSep 6",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Qatar Prix D'aumale",
+    "date_short": "Sun\nSep 6",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m · Turf"
    },
    {
     "grade": "G3",
@@ -127,7 +77,21 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Mon Sep 7",
+  "day_label": "TODAY — Mon Sep 7",
+  "races": [
+   {
+    "grade": "G3",
+    "race_name": "Weatherbys Global Stallions App Winter Hill Stakes (Group 3)",
+    "date_short": "Mon\nSep 7",
+    "track": "Windsor",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m2f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Tue Sep 8",
   "races": [
    {
     "grade": "G2",
@@ -155,15 +119,6 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Weatherbys Global Stallions App Winter Hill Stakes (Group 3)",
-    "date_short": "Mon\nSep 7",
-    "track": "Windsor",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m2f · Turf"
    },
    {
     "grade": "G1",
@@ -218,6 +173,42 @@
     "country": "IRE",
     "flag": "🇮🇪",
     "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Moyglare Stud Stakes (Group 1)",
+    "date_short": "Sun\nSep 13",
+    "track": "Curragh",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "BAR 1 Betting Flying Five Stakes (Group 1)",
+    "date_short": "Sun\nSep 13",
+    "track": "Curragh",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "5f · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Goffs Vincent O'Brien National Stakes (Group 1)",
+    "date_short": "Sun\nSep 13",
+    "track": "Curragh",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Moyglare ''Jewels'' Blandford Stakes (Group 2)",
+    "date_short": "Sun\nSep 13",
+    "track": "Curragh",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m2f · Turf"
    },
    {
     "grade": "G2",

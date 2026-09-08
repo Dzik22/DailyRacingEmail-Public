@@ -1,83 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Sun Sep 6",
-  "races": [
-   {
-    "grade": "G1",
-    "race_name": "Qatar Prix Du Moulin De Longchamp (group 1)",
-    "date_short": "Sun\nSep 6",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "G1",
-    "race_name": "Qatar Prix Vermeille",
-    "date_short": "Sun\nSep 6",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Qatar Prix Foy (group 2)",
-    "date_short": "Sun\nSep 6",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Qatar Prix Niel (group 2)",
-    "date_short": "Sun\nSep 6",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Qatar Prix D'aumale",
-    "date_short": "Sun\nSep 6",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Prix Association Des Aqps (Prix Richard De Gennes)",
-    "date_short": "Sun\nSep 6",
-    "track": "Craon",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Qatar Prix La Rochette (group 3)",
-    "date_short": "Sun\nSep 6",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Starman At Tally Ho Stud Garrowby Stakes (Listed Race)",
-    "date_short": "Sun\nSep 6",
-    "track": "York",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Mon Sep 7",
+  "day_label": "YESTERDAY — Mon Sep 7",
   "races": [
    {
     "grade": "G3",
@@ -91,7 +14,30 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Tue Sep 8",
+  "day_label": "TODAY — Tue Sep 8",
+  "races": [
+   {
+    "grade": "LR",
+    "race_name": "Ardilaun Hotel Irish EBF Oyster Stakes (Listed)",
+    "date_short": "Tue\nSep 8",
+    "track": "Galway",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Criterium De Lyon",
+    "date_short": "Tue\nSep 8",
+    "track": "Lyon Parilly",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Wed Sep 9",
   "races": [
    {
     "grade": "G2",
@@ -166,6 +112,15 @@
     "dist_surface": "7f · Turf"
    },
    {
+    "grade": "LR",
+    "race_name": "Virgin Bet Stand Cup Stakes (Listed Race)",
+    "date_short": "Sat\nSep 12",
+    "track": "Chester",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m4½f · Turf"
+   },
+   {
     "grade": "G1",
     "race_name": "Moyglare Stud Stakes (Group 1) (Fillies)",
     "date_short": "Sun\nSep 13",
@@ -211,6 +166,15 @@
     "dist_surface": "1m2f · Turf"
    },
    {
+    "grade": "G3",
+    "race_name": "Japan Racing Association Sceptre Fillies' Stakes (Group 3)",
+    "date_short": "Sun\nSep 13",
+    "track": "Doncaster",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "7f · Turf"
+   },
+   {
     "grade": "G2",
     "race_name": "Betfred Park Hill Fillies' Stakes (Group 2)",
     "date_short": "Thu\nSep 10",
@@ -227,15 +191,6 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Ardilaun Hotel Irish EBF Oyster Stakes (Listed)",
-    "date_short": "Tue\nSep 8",
-    "track": "Galway",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m4f · Turf"
    }
   ]
  }

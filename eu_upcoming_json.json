@@ -1,20 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Mon Sep 7",
-  "races": [
-   {
-    "grade": "G3",
-    "race_name": "Weatherbys Global Stallions App Winter Hill Stakes (Group 3)",
-    "date_short": "Mon\nSep 7",
-    "track": "Windsor",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m2f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Tue Sep 8",
+  "day_label": "YESTERDAY — Tue Sep 8",
   "races": [
    {
     "grade": "LR",
@@ -37,7 +23,11 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Wed Sep 9",
+  "day_label": "TODAY — Wed Sep 9",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Thu Sep 10",
   "races": [
    {
     "grade": "G2",
@@ -77,7 +67,7 @@
    },
    {
     "grade": "G1",
-    "race_name": "Golden Fleece Stakes (Group 1)",
+    "race_name": "HKJC World Pool Golden Fleece Stakes (Group 1)",
     "date_short": "Sat\nSep 12",
     "track": "Leopardstown",
     "country": "IRE",
@@ -104,12 +94,39 @@
    },
    {
     "grade": "G2",
+    "race_name": "Betfred Champagne Stakes (Group 2)",
+    "date_short": "Sat\nSep 12",
+    "track": "Doncaster",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "G2",
     "race_name": "Betfred Park Stakes (Group 2)",
     "date_short": "Sat\nSep 12",
     "track": "Doncaster",
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Tonybet Solonaway Stakes (Group 2)",
+    "date_short": "Sat\nSep 12",
+    "track": "Leopardstown",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "World Pool Bet With The Tote Kilternan Stakes (Group 3)",
+    "date_short": "Sat\nSep 12",
+    "track": "Leopardstown",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m4f · Turf"
    },
    {
     "grade": "LR",
@@ -119,6 +136,15 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m4½f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Ballylinch Stud Irish EBF Ingabelle Stakes (Listed)",
+    "date_short": "Sat\nSep 12",
+    "track": "Leopardstown",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "7f · Turf"
    },
    {
     "grade": "G1",

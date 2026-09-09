@@ -1,12 +1,22 @@
 [
  {
-  "grade": "G3",
-  "race_name": "Weatherbys Global Stallions App Winter Hill Stakes (Group 3)",
-  "track": "Windsor",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "1m2f · Turf",
-  "winner": "Maho Bay",
-  "off_time": "4:15"
+  "grade": "LR",
+  "race_name": "Ardilaun Hotel Irish EBF Oyster Stakes (Listed)",
+  "track": "Galway",
+  "country": "IRE",
+  "flag": "🇮🇪",
+  "dist_surface": "1m4f · Turf",
+  "winner": "Beset",
+  "off_time": "6:30"
+ },
+ {
+  "grade": "LR",
+  "race_name": "Criterium De Lyon",
+  "track": "Lyon Parilly",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m · Turf",
+  "winner": "Skyridge",
+  "off_time": "11:55"
  }
 ]

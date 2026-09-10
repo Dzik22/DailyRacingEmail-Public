@@ -1,33 +1,51 @@
 [
  {
-  "day_label": "YESTERDAY — Tue Sep 8",
+  "day_label": "YESTERDAY — Wed Sep 9",
+  "races": []
+ },
+ {
+  "day_label": "TODAY — Thu Sep 10",
   "races": [
    {
-    "grade": "LR",
-    "race_name": "Ardilaun Hotel Irish EBF Oyster Stakes (Listed)",
-    "date_short": "Tue\nSep 8",
-    "track": "Galway",
-    "country": "IRE",
-    "flag": "🇮🇪",
+    "grade": "G1",
+    "race_name": "Prix De Craon",
+    "date_short": "Thu\nSep 10",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
     "dist_surface": "1m4f · Turf"
    },
    {
-    "grade": "LR",
-    "race_name": "Criterium De Lyon",
-    "date_short": "Tue\nSep 8",
-    "track": "Lyon Parilly",
+    "grade": "G2",
+    "race_name": "Betfred Park Hill Fillies' Stakes (Group 2)",
+    "date_short": "Thu\nSep 10",
+    "track": "Doncaster",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m6½f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Betfred May Hill Stakes (Group 2)",
+    "date_short": "Thu\nSep 10",
+    "track": "Doncaster",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Prix Gladiateur",
+    "date_short": "Thu\nSep 10",
+    "track": "Longchamp",
     "country": "FR",
     "flag": "🇫🇷",
-    "dist_surface": "1m · Turf"
+    "dist_surface": "1m7½f · Turf"
    }
   ]
  },
  {
-  "day_label": "TODAY — Wed Sep 9",
-  "races": []
- },
- {
-  "day_label": "TOMORROW — Next 7 days from Thu Sep 10",
+  "day_label": "TOMORROW — Next 7 days from Fri Sep 11",
   "races": [
    {
     "grade": "G2",
@@ -199,24 +217,6 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Betfred Park Hill Fillies' Stakes (Group 2)",
-    "date_short": "Thu\nSep 10",
-    "track": "Doncaster",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m6½f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Betfred May Hill Stakes (Group 2)",
-    "date_short": "Thu\nSep 10",
-    "track": "Doncaster",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m · Turf"
    }
   ]
  }

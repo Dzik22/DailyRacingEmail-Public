@@ -1,10 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Wed Sep 9",
-  "races": []
- },
- {
-  "day_label": "TODAY — Thu Sep 10",
+  "day_label": "YESTERDAY — Thu Sep 10",
   "races": [
    {
     "grade": "G1",
@@ -17,21 +13,21 @@
    },
    {
     "grade": "G2",
-    "race_name": "Betfred Park Hill Fillies' Stakes (Group 2)",
-    "date_short": "Thu\nSep 10",
-    "track": "Doncaster",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m6½f · Turf"
-   },
-   {
-    "grade": "G2",
     "race_name": "Betfred May Hill Stakes (Group 2)",
     "date_short": "Thu\nSep 10",
     "track": "Doncaster",
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Betfred Park Hill Fillies' Stakes (Group 2)",
+    "date_short": "Thu\nSep 10",
+    "track": "Doncaster",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m6½f · Turf"
    },
    {
     "grade": "G3",
@@ -45,7 +41,7 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Fri Sep 11",
+  "day_label": "TODAY — Fri Sep 11",
   "races": [
    {
     "grade": "G2",
@@ -74,6 +70,20 @@
     "flag": "🇬🇧",
     "dist_surface": "7f · Turf"
    },
+   {
+    "grade": "LR",
+    "race_name": "Prix Turenne",
+    "date_short": "Fri\nSep 11",
+    "track": "Saint-Cloud",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m4f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Sat Sep 12",
+  "races": [
    {
     "grade": "G1",
     "race_name": "Betfred St Leger Stakes (Group 1)",
@@ -217,6 +227,24 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Trainor Stone & Tile Fortune Stakes (Listed Race)",
+    "date_short": "Wed\nSep 16",
+    "track": "Sandown",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Ebf Stallions John Musker Fillies' Stakes (Listed Race)",
+    "date_short": "Wed\nSep 16",
+    "track": "Yarmouth",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m2f · Turf"
    }
   ]
  }

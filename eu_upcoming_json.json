@@ -1,47 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Fri Sep 11",
-  "races": [
-   {
-    "grade": "G2",
-    "race_name": "Betfred Howard Wright Doncaster Cup Stakes (Group 2)",
-    "date_short": "Fri\nSep 11",
-    "track": "Doncaster",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "2m2f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Carlsberg Danish Pilsner Flying Childers Stakes (Group 2)",
-    "date_short": "Fri\nSep 11",
-    "track": "Doncaster",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "5f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Betfred Flying Scotsman Stakes (Listed Race)",
-    "date_short": "Fri\nSep 11",
-    "track": "Doncaster",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Prix Turenne",
-    "date_short": "Fri\nSep 11",
-    "track": "Saint-Cloud",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m4f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Sat Sep 12",
+  "day_label": "YESTERDAY — Sat Sep 12",
   "races": [
    {
     "grade": "G1",
@@ -54,12 +13,12 @@
    },
    {
     "grade": "G1",
-    "race_name": "HKJC World Pool Golden Fleece Stakes (Group 1)",
+    "race_name": "Royal Bahrain Irish Champion Stakes (Group 1)",
     "date_short": "Sat\nSep 12",
     "track": "Leopardstown",
     "country": "IRE",
     "flag": "🇮🇪",
-    "dist_surface": "1m1f · Turf"
+    "dist_surface": "1m2f · Turf"
    },
    {
     "grade": "G1",
@@ -72,16 +31,16 @@
    },
    {
     "grade": "G1",
-    "race_name": "Royal Bahrain Irish Champion Stakes (Group 1)",
+    "race_name": "HKJC World Pool Golden Fleece Stakes (Group 1)",
     "date_short": "Sat\nSep 12",
     "track": "Leopardstown",
     "country": "IRE",
     "flag": "🇮🇪",
-    "dist_surface": "1m2f · Turf"
+    "dist_surface": "1m1f · Turf"
    },
    {
     "grade": "G2",
-    "race_name": "Betfred Champagne Stakes (Group 2)",
+    "race_name": "Betfred Park Stakes (Group 2)",
     "date_short": "Sat\nSep 12",
     "track": "Doncaster",
     "country": "GB",
@@ -90,7 +49,7 @@
    },
    {
     "grade": "G2",
-    "race_name": "Betfred Park Stakes (Group 2)",
+    "race_name": "Betfred Champagne Stakes (Group 2)",
     "date_short": "Sat\nSep 12",
     "track": "Doncaster",
     "country": "GB",
@@ -114,39 +73,12 @@
     "country": "IRE",
     "flag": "🇮🇪",
     "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Virgin Bet Stand Cup Stakes (Listed Race)",
-    "date_short": "Sat\nSep 12",
-    "track": "Chester",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m4½f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Ballylinch Stud Irish EBF Ingabelle Stakes (Listed)",
-    "date_short": "Sat\nSep 12",
-    "track": "Leopardstown",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "7f · Turf"
    }
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Sun Sep 13",
+  "day_label": "TODAY — Sun Sep 13",
   "races": [
-   {
-    "grade": "G1",
-    "race_name": "Moyglare Stud Stakes (Group 1) (Fillies)",
-    "date_short": "Sun\nSep 13",
-    "track": "Curragh",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "7f · Turf"
-   },
    {
     "grade": "G1",
     "race_name": "Moyglare Stud Stakes (Group 1)",
@@ -218,6 +150,47 @@
     "country": "FR",
     "flag": "🇫🇷",
     "dist_surface": "1m2f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Mon Sep 14",
+  "races": [
+   {
+    "grade": "LR",
+    "race_name": "British EBF Stallions Harry Rosebery Stakes (Listed Race)",
+    "date_short": "Fri\nSep 18",
+    "track": "Ayr",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "5f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Arran Scottish Sprint EBF Fillies' Stakes (Listed Race)",
+    "date_short": "Fri\nSep 18",
+    "track": "Ayr",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "5½f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Dubai Duty Free Cup Stakes (Listed Race)",
+    "date_short": "Fri\nSep 18",
+    "track": "Newbury",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Dubai Duty Free Mill Reef Stakes (Group 2) (In Honour Of Ian Balding)",
+    "date_short": "Sat\nSep 19",
+    "track": "Newbury",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · Turf"
    },
    {
     "grade": "LR",

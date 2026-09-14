@@ -1,87 +1,10 @@
 [
  {
-  "day_label": "YESTERDAY — Sat Sep 12",
+  "day_label": "YESTERDAY — Sun Sep 13",
   "races": [
    {
     "grade": "G1",
-    "race_name": "Betfred St Leger Stakes (Group 1)",
-    "date_short": "Sat\nSep 12",
-    "track": "Doncaster",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m6½f · Turf"
-   },
-   {
-    "grade": "G1",
-    "race_name": "Royal Bahrain Irish Champion Stakes (Group 1)",
-    "date_short": "Sat\nSep 12",
-    "track": "Leopardstown",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m2f · Turf"
-   },
-   {
-    "grade": "G1",
-    "race_name": "Coolmore America 'Justify' Matron Stakes (Group 1)",
-    "date_short": "Sat\nSep 12",
-    "track": "Leopardstown",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "G1",
-    "race_name": "HKJC World Pool Golden Fleece Stakes (Group 1)",
-    "date_short": "Sat\nSep 12",
-    "track": "Leopardstown",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m1f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Betfred Park Stakes (Group 2)",
-    "date_short": "Sat\nSep 12",
-    "track": "Doncaster",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Betfred Champagne Stakes (Group 2)",
-    "date_short": "Sat\nSep 12",
-    "track": "Doncaster",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Tonybet Solonaway Stakes (Group 2)",
-    "date_short": "Sat\nSep 12",
-    "track": "Leopardstown",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "World Pool Bet With The Tote Kilternan Stakes (Group 3)",
-    "date_short": "Sat\nSep 12",
-    "track": "Leopardstown",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m4f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Sun Sep 13",
-  "races": [
-   {
-    "grade": "G1",
-    "race_name": "Moyglare Stud Stakes (Group 1)",
+    "race_name": "Goffs Vincent O'Brien National Stakes (Group 1)",
     "date_short": "Sun\nSep 13",
     "track": "Curragh",
     "country": "IRE",
@@ -99,7 +22,7 @@
    },
    {
     "grade": "G1",
-    "race_name": "Goffs Vincent O'Brien National Stakes (Group 1)",
+    "race_name": "Moyglare Stud Stakes (Group 1)",
     "date_short": "Sun\nSep 13",
     "track": "Curragh",
     "country": "IRE",
@@ -126,12 +49,12 @@
    },
    {
     "grade": "G3",
-    "race_name": "Prix Du Petit Couvert (Group 3)",
+    "race_name": "Prix Du Prince D'orange (Group 3)",
     "date_short": "Sun\nSep 13",
     "track": "Longchamp",
     "country": "FR",
     "flag": "🇫🇷",
-    "dist_surface": "5f · Turf"
+    "dist_surface": "1m2f · Turf"
    },
    {
     "grade": "G3",
@@ -144,9 +67,23 @@
    },
    {
     "grade": "G3",
-    "race_name": "Prix Du Prince D'orange (Group 3)",
+    "race_name": "Prix Du Petit Couvert (Group 3)",
     "date_short": "Sun\nSep 13",
     "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "5f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TODAY — Mon Sep 14",
+  "races": [
+   {
+    "grade": "LR",
+    "race_name": "La Coupe De Marseille - Arqana",
+    "date_short": "Mon\nSep 14",
+    "track": "Salon-de-Provence",
     "country": "FR",
     "flag": "🇫🇷",
     "dist_surface": "1m2f · Turf"
@@ -154,7 +91,7 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Mon Sep 14",
+  "day_label": "TOMORROW — Next 7 days from Tue Sep 15",
   "races": [
    {
     "grade": "LR",
@@ -191,6 +128,33 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Ladbrokes 'New Customers Get 50/1 Old Firm Offer' Firth Of Clyde (For The Ayrshire Agricultural Challenge Cup) (Group 3)",
+    "date_short": "Sat\nSep 19",
+    "track": "Ayr",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Dubai International Airport World Trophy Stakes (Group 3)",
+    "date_short": "Sat\nSep 19",
+    "track": "Newbury",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "5f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Ladbrokes 'Get Racing Bet Builder Winnings Boosts' Doonside Cup Stakes (Listed Race)",
+    "date_short": "Sat\nSep 19",
+    "track": "Ayr",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m2f · Turf"
    },
    {
     "grade": "LR",

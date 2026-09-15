@@ -1,83 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Sun Sep 13",
-  "races": [
-   {
-    "grade": "G1",
-    "race_name": "Goffs Vincent O'Brien National Stakes (Group 1)",
-    "date_short": "Sun\nSep 13",
-    "track": "Curragh",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "G1",
-    "race_name": "BAR 1 Betting Flying Five Stakes (Group 1)",
-    "date_short": "Sun\nSep 13",
-    "track": "Curragh",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "5f · Turf"
-   },
-   {
-    "grade": "G1",
-    "race_name": "Moyglare Stud Stakes (Group 1)",
-    "date_short": "Sun\nSep 13",
-    "track": "Curragh",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Moyglare ''Jewels'' Blandford Stakes (Group 2)",
-    "date_short": "Sun\nSep 13",
-    "track": "Curragh",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m2f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Japan Racing Association Sceptre Fillies' Stakes (Group 3)",
-    "date_short": "Sun\nSep 13",
-    "track": "Doncaster",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Prix Du Prince D'orange (Group 3)",
-    "date_short": "Sun\nSep 13",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m2f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Dubai Racing Carnival Prix Du Pin (group 3)",
-    "date_short": "Sun\nSep 13",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Prix Du Petit Couvert (Group 3)",
-    "date_short": "Sun\nSep 13",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "5f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Mon Sep 14",
+  "day_label": "YESTERDAY — Mon Sep 14",
   "races": [
    {
     "grade": "LR",
@@ -91,7 +14,11 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Tue Sep 15",
+  "day_label": "TODAY — Tue Sep 15",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Wed Sep 16",
   "races": [
    {
     "grade": "LR",

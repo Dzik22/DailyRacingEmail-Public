@@ -1,82 +1,12 @@
 [
  {
-  "grade": "G1",
-  "race_name": "Goffs Vincent O'Brien National Stakes (Group 1)",
-  "track": "Curragh",
-  "country": "IRE",
-  "flag": "🇮🇪",
-  "dist_surface": "7f · Turf",
-  "winner": "Folsom Blues",
-  "off_time": "4:00"
- },
- {
-  "grade": "G1",
-  "race_name": "BAR 1 Betting Flying Five Stakes (Group 1)",
-  "track": "Curragh",
-  "country": "IRE",
-  "flag": "🇮🇪",
-  "dist_surface": "5f · Turf",
-  "winner": "Comanche Brave",
-  "off_time": "3:25"
- },
- {
-  "grade": "G1",
-  "race_name": "Moyglare Stud Stakes (Group 1)",
-  "track": "Curragh",
-  "country": "IRE",
-  "flag": "🇮🇪",
-  "dist_surface": "7f · Turf",
-  "winner": "Sun Goddess",
-  "off_time": "2:50"
- },
- {
-  "grade": "G2",
-  "race_name": "Moyglare ''Jewels'' Blandford Stakes (Group 2)",
-  "track": "Curragh",
-  "country": "IRE",
-  "flag": "🇮🇪",
-  "dist_surface": "1m2f · Turf",
-  "winner": "Thundering On",
-  "off_time": "5:10"
- },
- {
-  "grade": "G3",
-  "race_name": "Japan Racing Association Sceptre Fillies' Stakes (Group 3)",
-  "track": "Doncaster",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "7f · Turf",
-  "winner": "Pina Sonata",
-  "off_time": "3:05"
- },
- {
-  "grade": "G3",
-  "race_name": "Prix Du Prince D'orange (Group 3)",
-  "track": "Longchamp",
+  "grade": "LR",
+  "race_name": "La Coupe De Marseille - Arqana",
+  "track": "Salon-de-Provence",
   "country": "FR",
   "flag": "🇫🇷",
   "dist_surface": "1m2f · Turf",
-  "winner": "Phineas",
-  "off_time": "3:25"
- },
- {
-  "grade": "G3",
-  "race_name": "Dubai Racing Carnival Prix Du Pin (group 3)",
-  "track": "Longchamp",
-  "country": "FR",
-  "flag": "🇫🇷",
-  "dist_surface": "7f · Turf",
-  "winner": "Fort Payne",
-  "off_time": "2:50"
- },
- {
-  "grade": "G3",
-  "race_name": "Prix Du Petit Couvert (Group 3)",
-  "track": "Longchamp",
-  "country": "FR",
-  "flag": "🇫🇷",
-  "dist_surface": "5f · Turf",
-  "winner": "Naana's Shadow",
-  "off_time": "1:33"
+  "winner": "Wiki",
+  "off_time": "1:47"
  }
 ]

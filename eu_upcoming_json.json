@@ -1,34 +1,20 @@
 [
  {
-  "day_label": "YESTERDAY — Wed Sep 16",
-  "races": [
-   {
-    "grade": "LR",
-    "race_name": "Trainor Stone & Tile Fortune Stakes (Listed Race)",
-    "date_short": "Wed\nSep 16",
-    "track": "Sandown",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Ebf Stallions John Musker Fillies' Stakes (Listed Race)",
-    "date_short": "Wed\nSep 16",
-    "track": "Yarmouth",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m2f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Thu Sep 17",
+  "day_label": "YESTERDAY — Thu Sep 17",
   "races": []
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Fri Sep 18",
+  "day_label": "TODAY — Fri Sep 18",
   "races": [
+   {
+    "grade": "G3",
+    "race_name": "Prix Yves D'armaille - Prix Cokoriko",
+    "date_short": "Fri\nSep 18",
+    "track": "Moulins",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m4f · Turf"
+   },
    {
     "grade": "LR",
     "race_name": "British EBF Stallions Harry Rosebery Stakes (Listed Race)",
@@ -55,6 +41,20 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "7f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Sat Sep 19",
+  "races": [
+   {
+    "grade": "LR",
+    "race_name": "Castlebridge Consignment Blenheim Stakes (Listed)",
+    "date_short": "Mon\nSep 21",
+    "track": "Fairyhouse",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "6f · Turf"
    },
    {
     "grade": "G2",
@@ -97,6 +97,24 @@
     "race_name": "Ladbrokes 'Get Racing Bet Builder Winnings Boosts' Doonside Cup Stakes (Listed Race)",
     "date_short": "Sat\nSep 19",
     "track": "Ayr",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m2f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Edmund & Josie Whelan Memorial Listowel Stakes (Listed)",
+    "date_short": "Tue\nSep 22",
+    "track": "Listowel",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Virgin Bet Foundation Stakes (Listed Race)",
+    "date_short": "Wed\nSep 23",
+    "track": "Goodwood",
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m2f · Turf"

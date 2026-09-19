@@ -1,10 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Thu Sep 17",
-  "races": []
- },
- {
-  "day_label": "TODAY — Fri Sep 18",
+  "day_label": "YESTERDAY — Fri Sep 18",
   "races": [
    {
     "grade": "G3",
@@ -17,21 +13,21 @@
    },
    {
     "grade": "LR",
-    "race_name": "British EBF Stallions Harry Rosebery Stakes (Listed Race)",
-    "date_short": "Fri\nSep 18",
-    "track": "Ayr",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "5f · Turf"
-   },
-   {
-    "grade": "LR",
     "race_name": "Arran Scottish Sprint EBF Fillies' Stakes (Listed Race)",
     "date_short": "Fri\nSep 18",
     "track": "Ayr",
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "5½f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "British EBF Stallions Harry Rosebery Stakes (Listed Race)",
+    "date_short": "Fri\nSep 18",
+    "track": "Ayr",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "5f · Turf"
    },
    {
     "grade": "LR",
@@ -45,17 +41,8 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Sat Sep 19",
+  "day_label": "TODAY — Sat Sep 19",
   "races": [
-   {
-    "grade": "LR",
-    "race_name": "Castlebridge Consignment Blenheim Stakes (Listed)",
-    "date_short": "Mon\nSep 21",
-    "track": "Fairyhouse",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "6f · Turf"
-   },
    {
     "grade": "G2",
     "race_name": "Dubai Duty Free Mill Reef Stakes (Group 2) (In Honour Of Ian Balding)",
@@ -73,6 +60,33 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Prix Des Chenes - Tattersalls - Fonds Europeen De L'elevage",
+    "date_short": "Sat\nSep 19",
+    "track": "Chantilly",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Prix Eclipse - Tattersalls - Fonds Europeen De L'elevage",
+    "date_short": "Sat\nSep 19",
+    "track": "Chantilly",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Prix Bertrand De Tarragon - Fonds Europeen De L'elevage",
+    "date_short": "Sat\nSep 19",
+    "track": "Chantilly",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m1f · Turf"
    },
    {
     "grade": "G3",
@@ -100,6 +114,47 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m2f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Sun Sep 20",
+  "races": [
+   {
+    "grade": "G2",
+    "race_name": "Betway Rockfel Stakes (Group 2)",
+    "date_short": "Fri\nSep 25",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Castlebridge Consignment Blenheim Stakes (Listed)",
+    "date_short": "Mon\nSep 21",
+    "track": "Fairyhouse",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Tattersalls Stakes (Registered As The Somerville Tattersall Stakes) (Group 3)",
+    "date_short": "Thu\nSep 24",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Jockey Club Rose Bowl Stakes (Listed Race)",
+    "date_short": "Thu\nSep 24",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "2m · Turf"
    },
    {
     "grade": "LR",

@@ -1,42 +1,62 @@
 [
  {
-  "grade": "G3",
-  "race_name": "Prix Yves D'armaille - Prix Cokoriko",
-  "track": "Moulins",
-  "country": "FR",
-  "flag": "🇫🇷",
-  "dist_surface": "1m4f · Turf",
-  "winner": "Nairobi Delabrunie",
-  "off_time": "11:29"
- },
- {
-  "grade": "LR",
-  "race_name": "Arran Scottish Sprint EBF Fillies' Stakes (Listed Race)",
-  "track": "Ayr",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "5½f · Turf",
-  "winner": "Fluorescence",
-  "off_time": "3:05"
- },
- {
-  "grade": "LR",
-  "race_name": "British EBF Stallions Harry Rosebery Stakes (Listed Race)",
-  "track": "Ayr",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "5f · Turf",
-  "winner": "Mussab",
-  "off_time": "2:30"
- },
- {
-  "grade": "LR",
-  "race_name": "Dubai Duty Free Cup Stakes (Listed Race)",
+  "grade": "G2",
+  "race_name": "Dubai Duty Free Mill Reef Stakes (Group 2) (In Honour Of Ian Balding)",
   "track": "Newbury",
   "country": "GB",
   "flag": "🇬🇧",
-  "dist_surface": "7f · Turf",
-  "winner": "Catullus",
-  "off_time": "4:07"
+  "dist_surface": "6f · Turf",
+  "winner": "Nabati",
+  "off_time": "2:12"
+ },
+ {
+  "grade": "G3",
+  "race_name": "Ladbrokes 'New Customers Get 50/1 Old Firm Offer' Firth Of Clyde (For The Ayrshire Agricultural Challenge Cup) (Group 3)",
+  "track": "Ayr",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "6f · Turf",
+  "winner": "Silent Beauty",
+  "off_time": "3:05"
+ },
+ {
+  "grade": "G3",
+  "race_name": "Prix Bertrand De Tarragon - Fonds Europeen De L'elevage",
+  "track": "Chantilly",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m1f · Turf",
+  "winner": "Anakova",
+  "off_time": "2:50"
+ },
+ {
+  "grade": "G3",
+  "race_name": "Prix Eclipse - Tattersalls - Fonds Europeen De L'elevage",
+  "track": "Chantilly",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "6f · Turf",
+  "winner": "Primetime Emmy (AUS)",
+  "off_time": "1:33"
+ },
+ {
+  "grade": "G3",
+  "race_name": "Denny Cordell Lavarack & Lanwades Stud Fillies Stakes (Group 3)",
+  "track": "Gowran Park",
+  "country": "IRE",
+  "flag": "🇮🇪",
+  "dist_surface": "1m1½f · Turf",
+  "winner": "Syzygy",
+  "off_time": "3:50"
+ },
+ {
+  "grade": "LR",
+  "race_name": "Ladbrokes 'Get Racing Bet Builder Winnings Boosts' Doonside Cup Stakes (Listed Race)",
+  "track": "Ayr",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "1m2f · Turf",
+  "winner": "Fast Tracker",
+  "off_time": "1:55"
  }
 ]

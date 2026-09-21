@@ -1,62 +1,12 @@
 [
  {
-  "grade": "G2",
-  "race_name": "Dubai Duty Free Mill Reef Stakes (Group 2) (In Honour Of Ian Balding)",
-  "track": "Newbury",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "6f · Turf",
-  "winner": "Nabati",
-  "off_time": "2:12"
- },
- {
-  "grade": "G3",
-  "race_name": "Ladbrokes 'New Customers Get 50/1 Old Firm Offer' Firth Of Clyde (For The Ayrshire Agricultural Challenge Cup) (Group 3)",
-  "track": "Ayr",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "6f · Turf",
-  "winner": "Silent Beauty",
-  "off_time": "3:05"
- },
- {
-  "grade": "G3",
-  "race_name": "Prix Bertrand De Tarragon - Fonds Europeen De L'elevage",
-  "track": "Chantilly",
-  "country": "FR",
-  "flag": "🇫🇷",
-  "dist_surface": "1m1f · Turf",
-  "winner": "Anakova",
-  "off_time": "2:50"
- },
- {
-  "grade": "G3",
-  "race_name": "Prix Eclipse - Tattersalls - Fonds Europeen De L'elevage",
-  "track": "Chantilly",
-  "country": "FR",
-  "flag": "🇫🇷",
-  "dist_surface": "6f · Turf",
-  "winner": "Primetime Emmy (AUS)",
-  "off_time": "1:33"
- },
- {
-  "grade": "G3",
-  "race_name": "Denny Cordell Lavarack & Lanwades Stud Fillies Stakes (Group 3)",
-  "track": "Gowran Park",
-  "country": "IRE",
-  "flag": "🇮🇪",
-  "dist_surface": "1m1½f · Turf",
-  "winner": "Syzygy",
-  "off_time": "3:50"
- },
- {
   "grade": "LR",
-  "race_name": "Ladbrokes 'Get Racing Bet Builder Winnings Boosts' Doonside Cup Stakes (Listed Race)",
-  "track": "Ayr",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "1m2f · Turf",
-  "winner": "Fast Tracker",
-  "off_time": "1:55"
+  "race_name": "Grand Prix Region Grand Est-12e Etape Du Defi Du Galop-g.camprubi",
+  "track": "Strasbourg",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m2½f · Turf",
+  "winner": "Merano (SWI)",
+  "off_time": "12:40"
  }
 ]

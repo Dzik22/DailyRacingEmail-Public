@@ -1,20 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Sun Sep 20",
-  "races": [
-   {
-    "grade": "LR",
-    "race_name": "Grand Prix Region Grand Est-12e Etape Du Defi Du Galop-g.camprubi",
-    "date_short": "Sun\nSep 20",
-    "track": "Strasbourg",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m2½f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Mon Sep 21",
+  "day_label": "YESTERDAY — Mon Sep 21",
   "races": [
    {
     "grade": "LR",
@@ -28,7 +14,21 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Tue Sep 22",
+  "day_label": "TODAY — Tue Sep 22",
+  "races": [
+   {
+    "grade": "LR",
+    "race_name": "Edmund & Josie Whelan Memorial Listowel Stakes (Listed)",
+    "date_short": "Tue\nSep 22",
+    "track": "Listowel",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Wed Sep 23",
   "races": [
    {
     "grade": "G2",
@@ -56,6 +56,15 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "BAR 1 Betting Diamond Stakes (Listed)",
+    "date_short": "Fri\nSep 25",
+    "track": "Dundalk (AW)",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m2½f · AW"
    },
    {
     "grade": "LR",
@@ -137,15 +146,6 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "2m · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Edmund & Josie Whelan Memorial Listowel Stakes (Listed)",
-    "date_short": "Tue\nSep 22",
-    "track": "Listowel",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m · Turf"
    },
    {
     "grade": "LR",

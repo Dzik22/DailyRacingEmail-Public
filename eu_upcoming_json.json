@@ -1,20 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Mon Sep 21",
-  "races": [
-   {
-    "grade": "LR",
-    "race_name": "Castlebridge Consignment Blenheim Stakes (Listed)",
-    "date_short": "Mon\nSep 21",
-    "track": "Fairyhouse",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "6f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Tue Sep 22",
+  "day_label": "YESTERDAY — Tue Sep 22",
   "races": [
    {
     "grade": "LR",
@@ -28,7 +14,21 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Wed Sep 23",
+  "day_label": "TODAY — Wed Sep 23",
+  "races": [
+   {
+    "grade": "LR",
+    "race_name": "Virgin Bet Foundation Stakes (Listed Race)",
+    "date_short": "Wed\nSep 23",
+    "track": "Goodwood",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m2f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Thu Sep 24",
   "races": [
    {
     "grade": "G2",
@@ -131,6 +131,24 @@
    },
    {
     "grade": "G3",
+    "race_name": "Qatar Racing And Equestrian Club Renaissance Stakes (Group 3)",
+    "date_short": "Sun\nSep 27",
+    "track": "Curragh",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Darley Fillies Stakes (Group 3)",
+    "date_short": "Sun\nSep 27",
+    "track": "Curragh",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "G3",
     "race_name": "Tattersalls Stakes (Registered As The Somerville Tattersall Stakes) (Group 3)",
     "date_short": "Thu\nSep 24",
     "track": "Newmarket",
@@ -146,15 +164,6 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "2m · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Virgin Bet Foundation Stakes (Listed Race)",
-    "date_short": "Wed\nSep 23",
-    "track": "Goodwood",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m2f · Turf"
    }
   ]
  }

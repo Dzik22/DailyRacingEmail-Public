@@ -2370,6 +2370,7 @@ Before proceeding to Step 7, you MUST log exactly this text (fill in YES/NO and 
 
 ```
 STEP COMPLETION LOG:
+  Step 0.4 EU data fetch ran:       YES/NO — N EU races on disk
   Step 0.5 pre-flight ran:          YES/NO
   Step 1 dates confirmed:           YES/NO
   Step 2 spreadsheet read:          YES/NO
@@ -2390,6 +2391,9 @@ STEP COMPLETION LOG:
 ```
 
 ⚠️ If ANY step shows NO: you MUST go back and run that step before proceeding.
+⚠️ "Step 0.4 EU data fetch ran: NO" means the EU JSON was never downloaded — go run Step 0.4 now. If it
+   ran but the mirror could not contribute (EU04_* line), log "YES — 0 races, mirror unusable" and CARRY
+   ON: Steps 7.0.5 and 5-RP still reach the EU sources over WebFetch. Never stop the digest over this.
 ⚠️ "Step 4e MPR/syndicate emails: NO" is NEVER acceptable — this step is mandatory.
 ⚠️ If ENTRIES is empty but Step 4e ran and found no MPR Entry emails → log "none found" — that is acceptable.
 ⚠️ If ENTRIES is empty and Step 4e shows NO → go back and run Step 4e NOW.

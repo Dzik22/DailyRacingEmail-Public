@@ -230,6 +230,321 @@ Woodford also has unnamed 2-year-olds — include under Woodford badge if mentio
 NOT Mike's: Queen Azteca, Armor Supreme, Sirius A, Blackisthenewblack, Want and Power, Warming, Code, Victorious Dream, Capturing, Versailles Road, Twilight Delight, Freaky, Journalism, Speed Shopper, Classic Q, Meaning, Corruption, Roja, Slice, Study, Gstaad, Precise, Napoleon Solo, Constitution River, Golden Tempo, Emerging Market, Thought Process.
 ⚠️ ECLIPSE EMAILS MENTION MANY NON-OWNED HORSES: Eclipse Thoroughbred Partners owns a large stable. Their emails reference many horses that are NOT in Mike's MASTER TABLE. ONLY horses explicitly listed in the MASTER TABLE (Ulysses Rose, Cuban Flame, Otherworldly) are Mike's Eclipse horses. Every other Eclipse-mentioned horse → Top 10 News only. NEVER put a non-MASTER-TABLE Eclipse horse in Stable Updates.
 
+## ⚠️ STEP 0.4 — EU DATA FETCH (INLINE — RUN THIS BEFORE STEP 0.5)
+
+⚠️⚠️ **NEVER DOWNLOAD A SHELL SCRIPT AND RUN IT.** Sep 24 2026: the 6 AM routine died at Step 0
+because bootstrap Command 2 did `curl eu_prefetch.sh -o /tmp/eu_prefetch.sh && bash /tmp/eu_prefetch.sh`.
+The environment's security classifier blocked executing a downloaded script ("Code from External"),
+the EU pre-fetch never ran, and — because the pipeline treats it as a mandatory precondition — the
+agent correctly refused to fabricate data and produced an AGENT ERROR draft instead of a digest.
+No email that day.
+
+The fix is structural: this step downloads **DATA ONLY** (three .json files) and runs **ONLY the
+Python written below, inline in this prompt**. `eu_prefetch.sh` is never downloaded and never
+executed by the digest agent. It remains in the repo for laptop use.
+
+⚠️ THIS IS WHERE EU DATA COMES FROM IN CCR. Measured from inside CCR: the container can reach
+raw.githubusercontent.com and essentially nothing else — theracingapi.com, thestatsdontlie.com and
+racingpost.com all fail to connect. A GitHub Actions workflow runs the Racing API fetch on GitHub's
+own machines and commits the finished JSON to the public mirror. This step downloads that JSON.
+
+⚠️ STALENESS IS GRADED, NOT BINARY. GitHub dispatches the build cron hours late most days, so at
+10:00 UTC the mirror usually still holds YESTERDAY's build. A build for_date=D covers D through D+7,
+so yesterday's build still contains today's and this week's races — it just files them under the
+wrong day_label. Every race is therefore RE-BUCKETED by its own date. Two rules this must never
+break: (1) only a same-day build's recap is valid as "yesterday's results"; (2) a stale build is a
+FLOOR, not a substitute — the WebFetch producers in Steps 7.0.5 and 5-RP still run and the merger
+unions on top of it.
+
+Run this ONE Bash command NOW:
+
+```bash
+MIRROR="https://raw.githubusercontent.com/Dzik22/DailyRacingEmail-Public/main"
+CB="$$-$(date +%s)"
+for f in eu_build_status.json eu_upcoming_json.json eu_recap_json.json; do
+  curl -sSL --connect-timeout 15 --max-time 90 --retry 2 --retry-delay 3 \
+       "${MIRROR}/${f}?cb=${CB}" -o "/tmp/mirror_${f}" 2>/dev/null || true
+done
+
+python3 << 'EU04EOF'
+import json, os, re
+from datetime import date, timedelta
+
+MON = {'Jan':1,'Feb':2,'Mar':3,'Apr':4,'May':5,'Jun':6,
+       'Jul':7,'Aug':8,'Sep':9,'Oct':10,'Nov':11,'Dec':12}
+DOW = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
+GO  = {'G1':0,'G2':1,'G3':2,'LR':3}
+T   = date.today()
+
+for f in ('/tmp/tier0_ok', '/tmp/rapi_ok', '/tmp/eu_upcoming_tier0.json', '/tmp/eu_recap_tier0.json'):
+    try: os.remove(f)
+    except OSError: pass
+
+def _load(p):
+    try:
+        with open(p) as fh: return json.load(fh)
+    except Exception: return None
+
+status = _load('/tmp/mirror_eu_build_status.json') or {}
+fd = str(status.get('for_date', ''))
+try:
+    y, m, d = (int(x) for x in fd.split('-'))
+    age = (T - date(y, m, d)).days
+except Exception:
+    age = None
+
+if age is None:
+    print('EU04_UNREACHABLE: no usable eu_build_status.json from the mirror — EU data will come from')
+    print('  the Step 7.0.5 / 5-RP WebFetch producers only. Continue the pipeline; do NOT abort.')
+    raise SystemExit(0)
+
+print('EU04_MIRROR: build for_date=' + fd + ' (age ' + str(age) + 'd, today=' + T.isoformat() + ')'
+      + ' upcoming=' + str(status.get('upcoming','?')) + ' recap=' + str(status.get('recap','?')))
+
+if age < 0 or age > 3:
+    print('EU04_UNUSABLE: build is ' + str(age) + 'd old (>3) — too stale to contribute. WebFetch producers only.')
+    raise SystemExit(0)
+
+raw = _load('/tmp/mirror_eu_upcoming_json.json')
+if not isinstance(raw, list):
+    print('EU04_REJECT: mirror upcoming JSON missing or unparseable — WebFetch producers only.')
+    raise SystemExit(0)
+
+def resolve(race):
+    """'Thu\\nSep 3' -> a real date. Month+day is unambiguous inside a +/-20d window."""
+    mt = re.search(r'([A-Z][a-z]{2})\s+(\d{1,2})', str(race.get('date_short','')))
+    if not mt: return None
+    mo, dy = MON.get(mt.group(1)), int(mt.group(2))
+    if not mo: return None
+    for off in range(-12, 21):
+        c = T + timedelta(days=off)
+        if c.month == mo and c.day == dy: return c
+    return None
+
+buckets, seen = {'YESTERDAY': [], 'TODAY': [], 'TOMORROW': []}, set()
+for day in raw:
+    pfx = (str(day.get('day_label','')).split() or [''])[0]
+    for r in day.get('races', []):
+        dt = resolve(r)
+        if dt is None:
+            # Keep it rather than lose it, but only from a same-day build where the
+            # original day_label is still trustworthy.
+            if age == 0 and pfx in buckets: tgt = pfx
+            else: continue
+        elif dt < T - timedelta(days=1): continue     # already run and older than yesterday
+        elif dt == T - timedelta(days=1): tgt = 'YESTERDAY'
+        elif dt == T: tgt = 'TODAY'
+        else: tgt = 'TOMORROW'
+        key = (r.get('grade',''), re.sub(r'\s+', ' ', str(r.get('race_name','')).lower()).strip(),
+               dt.isoformat() if dt else pfx)
+        if not key[1] or key in seen: continue
+        seen.add(key)
+        if dt is not None:                            # restamp so downstream shows the right day
+            r = dict(r, date_short=DOW[dt.weekday()] + '\n' +
+                     [k for k, v in MON.items() if v == dt.month][0] + ' ' + str(dt.day))
+        buckets[tgt].append(r)
+
+for k in buckets:
+    buckets[k].sort(key=lambda r: (r.get('date_short',''), GO.get(r.get('grade','LR'), 9), r.get('track','')))
+
+Y, TM = T - timedelta(days=1), T + timedelta(days=1)
+inv = {v: k for k, v in MON.items()}
+lbl = lambda p, dd: p + ' — ' + DOW[dd.weekday()] + ' ' + inv[dd.month] + ' ' + str(dd.day)
+out = [
+    {'day_label': lbl('YESTERDAY', Y), 'races': buckets['YESTERDAY']},
+    {'day_label': lbl('TODAY', T),     'races': buckets['TODAY']},
+    {'day_label': 'TOMORROW — Next 7 days from ' + DOW[TM.weekday()] + ' ' + inv[TM.month] +
+                  ' ' + str(TM.day), 'races': buckets['TOMORROW']},
+]
+json.dump(out, open('/tmp/eu_upcoming_tier0.json', 'w'), ensure_ascii=False, indent=1)
+n = sum(len(b['races']) for b in out)
+
+# Results are for for_date-1. Only a same-day build's recap is actually yesterday's.
+nrec = 0
+if age == 0:
+    rec = _load('/tmp/mirror_eu_recap_json.json')
+    if isinstance(rec, list):
+        json.dump(rec, open('/tmp/eu_recap_tier0.json', 'w'), ensure_ascii=False, indent=1)
+        nrec = len(rec)
+
+json.dump({'days_fetched': status.get('days_fetched', '-'), 'upcoming': n, 'recap': nrec,
+           'for_date': fd, 'age_days': age, 'source': 'mirror-tier0'},
+          open('/tmp/rapi_status.json', 'w'))
+
+if n > 0 and age == 0:
+    open('/tmp/tier0_ok', 'w').close(); open('/tmp/rapi_ok', 'w').close()
+    print('EU_TIER0_OK: ' + str(n) + ' races from today\'s pre-built mirror JSON (recap ' + str(nrec) + ')')
+elif n > 0:
+    print('EU_TIER0_STALE_USABLE: build is ' + str(age) + 'd old; re-bucketed ' + str(n) + ' races by race '
+          'date and kept them as a floor. WebFetch producers still run; merger unions on top. Recap skipped.')
+else:
+    print('EU04_EMPTY: mirror JSON parsed but yielded 0 in-window races — WebFetch producers only.')
+EU04EOF
+
+cat > /tmp/merge_eu.py << 'MERGEEOF'
+#!/usr/bin/env python3
+"""
+merge_eu.py — single source of truth for combining EU race producer outputs.
+
+Architecture: each producer writes to its OWN exclusive path; this script is
+the ONLY writer of the consumed paths. Eliminates the WebFetch-overwrite trap
+where a later producer would silently wipe an earlier producer's output.
+
+Producer files (any may exist or not):
+  upcoming:
+    /tmp/eu_upcoming_tier0.json    — public-mirror JSON built by GitHub Actions (Tier 0)
+    /tmp/eu_upcoming_bash.json     — bash eu_prefetch.sh (Step 0 bootstrap)
+    /tmp/eu_upcoming_webfetch.json — Step 7.0.5 WebFetch
+    /tmp/eu_upcoming_cache.json    — Step 7.0.6 Gmail cache load
+  recap:
+    /tmp/eu_recap_tier0.json    — public-mirror JSON (Tier 0, same-day builds only)
+    /tmp/eu_recap_bash.json     — bash eu_prefetch.sh (Step 0 bootstrap)
+    /tmp/eu_recap_webfetch.json — Step 5-RP WebFetch
+
+Tier 0 used to write straight into /tmp/eu_upcoming_bash.json, which meant a stale mirror
+build could only ever be all-or-nothing: taken whole, or (as happened every morning from
+Aug 27 2026) rejected and lost. It now has its own slot like every other producer, so a
+late Action degrades to a floor the other producers union on top of.
+
+Consumed paths (this script is the ONLY writer):
+  /tmp/eu_upcoming_json.json — read by Step 7.5 generator + verifiers
+  /tmp/eu_recap_json.json    — read by Step 7.5 generator + verifiers + Step 4c-R-EU
+
+Usage:
+  python3 /tmp/merge_eu.py upcoming   # rebuild /tmp/eu_upcoming_json.json
+  python3 /tmp/merge_eu.py recap      # rebuild /tmp/eu_recap_json.json
+  python3 /tmp/merge_eu.py all        # rebuild both
+"""
+import sys, os, json, re
+
+GO = {'G1':0,'G2':1,'G3':2,'LR':3}
+
+def normname(n):
+    s = (n or '').lower().strip()
+    # Drop a trailing grade parenthetical BEFORE the suffix strip. The Racing API appends
+    # "(Group 1)" / "(Listed)" to race names and the scrapers do not, so the same race
+    # arriving from two producers deduped to two different keys and printed twice.
+    # Seen Sep 3 2026: "Betfair Sprint Cup Stakes (Group 1)" vs "Betfair Sprint Cup Stakes".
+    s = re.sub(r'\s*\((?:group|groupe|gruppo|grade|listed|g)\s*\d?\)\s*$', '', s).strip()
+    for suf in [' stakes',' s.',' h.',' handicap']:
+        if s.endswith(suf): s = s[:-len(suf)]
+    # Strip common sponsor prefixes
+    for pfx in ['paddy power ','jenningsbet ','al basti equiworld dubai ','jebel ali racecourse and stables ','goffs ','fasig-tipton ','dubai duty free ','coral-']:
+        if s.startswith(pfx): s = s[len(pfx):]
+    return s.strip()
+
+def _load(path):
+    if not os.path.exists(path): return None
+    try:
+        with open(path) as f: return json.load(f)
+    except Exception as e:
+        print('MERGE_WARN: could not parse ' + path + ' — ' + str(e), file=sys.stderr)
+        return None
+
+def merge_upcoming():
+    tier0 = _load('/tmp/eu_upcoming_tier0.json') or []
+    bash = _load('/tmp/eu_upcoming_bash.json') or []
+    webfetch = _load('/tmp/eu_upcoming_webfetch.json') or []
+    cache = _load('/tmp/eu_upcoming_cache.json') or []
+
+    # Each input is a list of {day_label, races[]}. Union by (grade, normname) per prefix.
+    # Use bash structure as the skeleton (it always runs and has correct day_label format).
+    by_prefix = {'YESTERDAY':[], 'TODAY':[], 'TOMORROW':[]}
+    day_label = {'YESTERDAY':'', 'TODAY':'', 'TOMORROW':''}
+    seen = {'YESTERDAY':set(), 'TODAY':set(), 'TOMORROW':set()}
+
+    def absorb(source, source_name):
+        added = 0
+        for day in source:
+            pfx = (day.get('day_label','').split() or [''])[0]
+            if pfx not in by_prefix: continue
+            if not day_label[pfx]:
+                day_label[pfx] = day.get('day_label','')
+            for race in day.get('races', []):
+                key = (race.get('grade',''), normname(race.get('race_name','')))
+                if not key[1]: continue  # skip empty names
+                if key in seen[pfx]: continue
+                seen[pfx].add(key)
+                by_prefix[pfx].append(race)
+                added += 1
+        if added > 0:
+            print('  MERGE_UPCOMING: ' + source_name + ' added ' + str(added) + ' races')
+
+    # Order matters for day_label fallback: tier0 first (Racing API, canonical labels, and
+    # already re-bucketed by race date when the build was stale), then bash, webfetch, cache.
+    absorb(tier0, 'tier0')
+    absorb(bash, 'bash')
+    absorb(webfetch, 'webfetch')
+    absorb(cache, 'cache')
+
+    # Sort: TOMORROW by date_short then grade; others by grade.
+    for pfx in by_prefix:
+        if pfx == 'TOMORROW':
+            by_prefix[pfx].sort(key=lambda r: (r.get('date_short',''), GO.get(r.get('grade','LR'),9), r.get('track','')))
+        else:
+            by_prefix[pfx].sort(key=lambda r: (GO.get(r.get('grade','LR'),9), r.get('track','')))
+
+    result = []
+    for pfx in ('YESTERDAY','TODAY','TOMORROW'):
+        # Default label if nothing produced
+        lbl = day_label[pfx] or (pfx + ' — ?')
+        result.append({'day_label': lbl, 'races': by_prefix[pfx]})
+
+    with open('/tmp/eu_upcoming_json.json','w') as f: json.dump(result, f, indent=2)
+    total = sum(len(d['races']) for d in result)
+    print('MERGE_UPCOMING_DONE: ' + str(total) + ' total races written to /tmp/eu_upcoming_json.json')
+    for d in result:
+        print('  ' + d['day_label'] + ' (' + str(len(d['races'])) + ')')
+    return total
+
+def merge_recap():
+    tier0 = _load('/tmp/eu_recap_tier0.json') or []
+    bash = _load('/tmp/eu_recap_bash.json') or []
+    webfetch = _load('/tmp/eu_recap_webfetch.json') or []
+
+    # Each input is a flat list of {grade, race_name, course, country, dist, surface, winner, jockey}
+    result = []
+    seen = set()
+    def absorb(source, source_name):
+        added = 0
+        for race in source:
+            key = (race.get('grade',''), normname(race.get('race_name','')))
+            if not key[1]: continue
+            if key in seen: continue
+            seen.add(key)
+            result.append(race)
+            added += 1
+        if added > 0:
+            print('  MERGE_RECAP: ' + source_name + ' added ' + str(added) + ' races')
+
+    # tier0 recap is only written for a same-day build, so it is genuinely yesterday's results.
+    absorb(tier0, 'tier0')
+    absorb(bash, 'bash')
+    absorb(webfetch, 'webfetch')
+
+    result.sort(key=lambda r: (GO.get(r.get('grade','LR'),9), r.get('course','')))
+
+    with open('/tmp/eu_recap_json.json','w') as f: json.dump(result, f, indent=2)
+    print('MERGE_RECAP_DONE: ' + str(len(result)) + ' EU Group/Listed races written to /tmp/eu_recap_json.json')
+    return len(result)
+
+if __name__ == '__main__':
+    mode = sys.argv[1] if len(sys.argv) > 1 else 'all'
+    if mode in ('upcoming','all'): merge_upcoming()
+    if mode in ('recap','all'): merge_recap()
+MERGEEOF
+chmod +x /tmp/merge_eu.py
+python3 /tmp/merge_eu.py all
+```
+
+**What you MUST see:** an `EU_TIER0_OK` or `EU_TIER0_STALE_USABLE` line, then `MERGE_UPCOMING_DONE`.
+- `EU04_UNREACHABLE` / `EU04_UNUSABLE` / `EU04_REJECT` / `EU04_EMPTY` → the mirror could not contribute.
+  Re-run this command ONCE. If it repeats, CONTINUE THE PIPELINE ANYWAY — Steps 7.0.5 and 5-RP fetch EU
+  races over WebFetch, which works when container egress does not. Never abort the digest over this, and
+  never write "EU data unavailable" into the email.
+- ⚠️ `/tmp/merge_eu.py` is written by the heredoc above, NOT downloaded. Steps 7.0.5 and 5-RP call it.
+  If it is missing later, re-run this Step 0.4 command — never curl it from anywhere.
+
 ## STEP 0.5 — MANDATORY PRE-FLIGHT (⚠️ RUN THIS FIRST — before Step 1 and before any email searches)
 
 ⚠️ THIS IS THE VERY FIRST EXECUTABLE STEP. Run the entire Bash command below before doing anything else.
@@ -296,16 +611,16 @@ print("→ /tmp/preflight_dates.txt")
 # file and silently no-opped, and the agent (told below that these files hold "today's
 # EU racing data") read them, found nothing, and wrote "No European Group race results".
 # Cost: EU stakes vanished from the digest on Aug 5, 6 and 7 2026.
-# The REAL EU files are written by eu_prefetch.sh in bootstrap Command 2, which runs
+# The REAL EU files are written by STEP 0.4 (EU DATA FETCH), which runs
 # BEFORE this prompt is read. Report on those instead of fabricating empty ones.
-print("\nEU data from bootstrap eu_prefetch.sh (Command 2):")
+print("\nEU data from Step 0.4 (mirror fetch):")
 for f in ('/tmp/eu_recap_json.json','/tmp/eu_upcoming_json.json'):
     if os.path.exists(f):
         try: _n = len(json.load(open(f))) if f.endswith('recap_json.json') else sum(len(x.get('races',[])) for x in json.load(open(f)))
         except Exception: _n = '?'
         print(f"  -> {f} ({os.path.getsize(f)} bytes, {_n} races)")
     else:
-        print(f"  -> {f} MISSING — eu_prefetch.sh failed. Re-run: bash /tmp/eu_prefetch.sh")
+        print(f"  -> {f} MISSING — Step 0.4 EU fetch did not run or found no data. Re-run Step 0.4.")
 
 # --- CSS ---
 css="""body{font-family:Georgia,serif;color:#1a1a1a;background:#eee8df;margin:0;padding:0}
@@ -372,7 +687,7 @@ files=['/tmp/preflight_dates.txt','/tmp/eu_recap_json.json','/tmp/eu_upcoming_js
 missing=[f for f in files if not os.path.exists(f)]
 if missing:
     print('PREFLIGHT GATE: FAIL — missing: '+str(missing))
-    print('  If an eu_*.json is missing, bootstrap Command 2 failed. Re-run: bash /tmp/eu_prefetch.sh')
+    print('  If an eu_*.json is missing, Step 0.4 did not run or the mirror was unusable. Re-run Step 0.4.')
     sys.exit(1)
 print('PREFLIGHT GATE: PASS — all 4 files present')
 for f in files: print('  '+f+': '+str(os.path.getsize(f))+' bytes')
@@ -389,7 +704,7 @@ if len(rec)==0 and tot==0: print('EU_PREFLIGHT_WARN: ZERO EU races from BOTH sou
 
 ⚠️ **IF PREFLIGHT GATE FAILS: Do NOT proceed to Step 1. Re-run the Python block above.**
 
-⚠️ **EU DATA SAFETY NET (CORRECTED Aug 7 2026):** The authoritative EU files are `/tmp/eu_recap_json.json` (yesterday's Group/Listed results, from Racing Post) and `/tmp/eu_upcoming_json.json` (YESTERDAY/TODAY/TOMORROW graded races, from thestatsdontlie.com). Both are written by `eu_prefetch.sh` in bootstrap Command 2, which runs BEFORE you read this prompt — so the data is already on disk right now, and the gate above just printed every race by name.
+⚠️ **EU DATA SAFETY NET (CORRECTED Aug 7 2026):** The authoritative EU files are `/tmp/eu_recap_json.json` (yesterday's Group/Listed results, from Racing Post) and `/tmp/eu_upcoming_json.json` (YESTERDAY/TODAY/TOMORROW graded races, from thestatsdontlie.com). Both are written by **STEP 0.4 (EU DATA FETCH)**, the first executable step in this prompt — so the data is already on disk right now, and the gate above just printed every race by name.
 
 ⚠️ `/tmp/eu_recap.txt` and `/tmp/eu_upcoming.txt` are **DEAD FILENAMES — nothing writes them.** They were previously created as empty placeholders, which caused the agent and the Step 7.5 safety net to read empty files and conclude there was no European racing. NEVER read them. NEVER treat their absence or emptiness as evidence that no EU races exist. If any instruction later in this prompt refers to `eu_recap.txt` or `eu_upcoming.txt`, substitute the `_json.json` file above.
 
@@ -1927,7 +2242,7 @@ REQUIRED_GATES = [
     ('/tmp/step_5drf_done.txt',  'Step 5-DRF (USA stakes — gate)',  'Run Step 5-DRF FWD-EQ subagent invocation'),
     ('/tmp/step_5drf_data.json', 'Step 5-DRF (USA stakes — data JSON from subagent)','Invoke the Step 5-DRF Task subagent; capture its JSON response to /tmp/step_5drf_data.json'),
     ('/tmp/eu_upcoming_json.json','Step 7.0.5 (EU upcoming — SDL WebFetch)','Re-run Step 7.0.5 WebFetch on thestatsdontlie.com/horse-racing/'),
-    ('/tmp/eu_sdl_json.json',     'Step 7.0.5 (EU upcoming — SDL third source)','Re-run bash /tmp/eu_prefetch.sh to fetch thestatsdontlie.com — required as cross-validation for EU graded races'),
+    ('/tmp/eu_sdl_json.json',     'Step 7.0.5 (EU upcoming — SDL third source)','Run the Step 7.0.5 WebFetch to fetch thestatsdontlie.com — required as cross-validation for EU graded races'),
 ]
 missing = []
 present = []
@@ -2968,9 +3283,9 @@ _eu_chk_today = _dt.today()
 _eu_chk_dow = _eu_chk_today.strftime('%A')
 if not _os.path.exists('/tmp/eu_upcoming_json.json'):
     print('EU_PREFETCH_GATE FAILURE — ABORT:')
-    print('  /tmp/eu_upcoming_json.json is MISSING. The Step 0 bootstrap eu_prefetch.sh did not run or failed silently.')
+    print('  /tmp/eu_upcoming_json.json is MISSING. Step 0.4 (EU DATA FETCH) did not run or failed silently.')
     print('  RECOVERY: run this Bash command, then re-run Step 7.5:')
-    print('    bash /tmp/eu_prefetch.sh')
+    print('    (re-run the STEP 0.4 EU DATA FETCH command — never curl+bash a script)')
     import sys as _sysEU; _sysEU.exit(1)
 try:
     _eu_chk = json.load(open('/tmp/eu_upcoming_json.json'))
@@ -2984,7 +3299,7 @@ try:
     if _eu_chk_total == 0 and _eu_chk_dow in ('Wednesday','Thursday','Friday','Saturday','Sunday'):
         print('EU_PREFETCH_GATE WARNING: zero EU races on ' + _eu_chk_dow + ' is suspicious. thestatsdontlie.com likely has data — re-run Step 7.0.5 WebFetch before generating HTML.')
         print('  RECOVERY: run this Bash command, then re-run Step 7.5:')
-        print('    bash /tmp/eu_prefetch.sh')
+        print('    (re-run the STEP 0.4 EU DATA FETCH command — never curl+bash a script)')
         import sys as _sysEU; _sysEU.exit(1)
 except Exception as _ex_eu:
     print('EU_PREFETCH_GATE ERR reading eu_upcoming_json.json: ' + str(_ex_eu))
@@ -3040,7 +3355,7 @@ for _fb in ('/tmp/eu_upcoming_tier0.json','/tmp/eu_upcoming_bash.json'):
             print('EU_FILE_FALLBACK: merged file empty/missing — recovered '+str(sum(len(v) for v in _eu_tmp.values()))+' races from '+_fb.split('/')[-1]+' (merge_eu.py likely failed)')
     except Exception as _fe: print('EU_FILE_ERR: '+_fb+' — '+str(_fe))
 if sum(len(v) for v in _eu_by_prefix.values())==0:
-    print('EU_FILE_MISSING: CRITICAL — no EU upcoming races from any source (eu_upcoming_json.json / eu_upcoming_tier0.json / eu_upcoming_bash.json). eu_prefetch.sh did not run or failed. Re-run: bash /tmp/eu_prefetch.sh')
+    print('EU_FILE_MISSING: CRITICAL — no EU upcoming races from any source (eu_upcoming_json.json / eu_upcoming_tier0.json / eu_upcoming_bash.json). Step 0.4 did not run or the mirror was unusable. Re-run Step 0.4.')
 
 # === UNION WITH SDL DATA (thestatsdontlie.com) — third source ===
 # eu_sdl_json.json contains [{date_iso, grade, race_name, course, country, flag}]
@@ -3408,7 +3723,7 @@ try:
             _blk.get('races',[]).sort(key=lambda r: _GO_RECAP.get(str(r.get('grade','LR')),9))
         print('EU_RECAP_FINAL: ' + str(sum(len(b.get('races',[])) for b in recap.get('europe',[]))) + ' EU races rendered (eu_recap_json.json had ' + str(len(_file_races)) + ')')
     else:
-        print('EU_RECAP_SUPPLEMENT: CRITICAL — /tmp/eu_recap_json.json MISSING. eu_prefetch.sh did not run or failed silently. EU recap will be EMPTY. Re-run: bash /tmp/eu_prefetch.sh')
+        print('EU_RECAP_SUPPLEMENT: CRITICAL — /tmp/eu_recap_json.json MISSING. Step 0.4 did not run, or the mirror build was stale so recap is skipped by design. EU recap then comes from the Step 5-RP WebFetch — run it.')
 except Exception as _rse: print('EU_RECAP_SUPPLEMENT_ERR: '+str(_rse))
 # ───────────────────────────────────────────────────────────────────────────────
 

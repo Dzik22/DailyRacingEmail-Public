@@ -1,12 +1,22 @@
 [
  {
-  "grade": "LR",
-  "race_name": "Virgin Bet Foundation Stakes (Listed Race)",
-  "track": "Goodwood",
+  "grade": "G3",
+  "race_name": "Tattersalls Stakes (Registered As The Somerville Tattersall Stakes) (Group 3)",
+  "track": "Newmarket",
   "country": "GB",
   "flag": "🇬🇧",
-  "dist_surface": "1m2f · Turf",
-  "winner": "Respond",
-  "off_time": "3:15"
+  "dist_surface": "7f · Turf",
+  "winner": "Fuel The Jet",
+  "off_time": "3:00"
+ },
+ {
+  "grade": "LR",
+  "race_name": "Jockey Club Rose Bowl Stakes (Listed Race)",
+  "track": "Newmarket",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "2m · Turf",
+  "winner": "Gregory",
+  "off_time": "3:35"
  }
 ]

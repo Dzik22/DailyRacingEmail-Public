@@ -1,22 +1,62 @@
 [
  {
-  "grade": "G3",
-  "race_name": "Tattersalls Stakes (Registered As The Somerville Tattersall Stakes) (Group 3)",
+  "grade": "G2",
+  "race_name": "Betway Joel Stakes (Group 2)",
+  "track": "Newmarket",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "1m · Turf",
+  "winner": "Talk Of New York",
+  "off_time": "3:00"
+ },
+ {
+  "grade": "G2",
+  "race_name": "Betway Rockfel Stakes (Group 2)",
   "track": "Newmarket",
   "country": "GB",
   "flag": "🇬🇧",
   "dist_surface": "7f · Turf",
-  "winner": "Fuel The Jet",
-  "off_time": "3:00"
+  "winner": "Pensando A Te",
+  "off_time": "2:25"
  },
  {
-  "grade": "LR",
-  "race_name": "Jockey Club Rose Bowl Stakes (Listed Race)",
+  "grade": "G3",
+  "race_name": "Princess Royal Stakes (sponsored By Betway) (Group 3)",
   "track": "Newmarket",
   "country": "GB",
   "flag": "🇬🇧",
-  "dist_surface": "2m · Turf",
-  "winner": "Gregory",
+  "dist_surface": "1m4f · Turf",
+  "winner": "Coedana",
+  "off_time": "1:50"
+ },
+ {
+  "grade": "LR",
+  "race_name": "BAR 1 Betting Diamond Stakes (Listed)",
+  "track": "Dundalk (AW)",
+  "country": "IRE",
+  "flag": "🇮🇪",
+  "dist_surface": "1m2½f · AW",
+  "winner": "Military Order",
+  "off_time": "7:30"
+ },
+ {
+  "grade": "LR",
+  "race_name": "Betway Godolphin Stakes (Listed Race)",
+  "track": "Newmarket",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "1m4f · Turf",
+  "winner": "Fortitudine",
   "off_time": "3:35"
+ },
+ {
+  "grade": "LR",
+  "race_name": "Betway British Ebf Rosemary Stakes (Listed Race)",
+  "track": "Newmarket",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "1m · Turf",
+  "winner": "Alobayyah",
+  "off_time": "1:15"
  }
 ]

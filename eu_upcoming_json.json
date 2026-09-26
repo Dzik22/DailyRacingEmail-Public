@@ -1,39 +1,7 @@
 [
  {
-  "day_label": "YESTERDAY — Thu Sep 24",
+  "day_label": "YESTERDAY — Fri Sep 25",
   "races": [
-   {
-    "grade": "G3",
-    "race_name": "Tattersalls Stakes (Registered As The Somerville Tattersall Stakes) (Group 3)",
-    "date_short": "Thu\nSep 24",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Jockey Club Rose Bowl Stakes (Listed Race)",
-    "date_short": "Thu\nSep 24",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "2m · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Fri Sep 25",
-  "races": [
-   {
-    "grade": "G2",
-    "race_name": "Betway Rockfel Stakes (Group 2)",
-    "date_short": "Fri\nSep 25",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "7f · Turf"
-   },
    {
     "grade": "G2",
     "race_name": "Betway Joel Stakes (Group 2)",
@@ -42,6 +10,15 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Betway Rockfel Stakes (Group 2)",
+    "date_short": "Fri\nSep 25",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "7f · Turf"
    },
    {
     "grade": "G3",
@@ -63,26 +40,26 @@
    },
    {
     "grade": "LR",
-    "race_name": "Betway British Ebf Rosemary Stakes (Listed Race)",
-    "date_short": "Fri\nSep 25",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "LR",
     "race_name": "Betway Godolphin Stakes (Listed Race)",
     "date_short": "Fri\nSep 25",
     "track": "Newmarket",
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Betway British Ebf Rosemary Stakes (Listed Race)",
+    "date_short": "Fri\nSep 25",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m · Turf"
    }
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Sat Sep 26",
+  "day_label": "TODAY — Sat Sep 26",
   "races": [
    {
     "grade": "G1",
@@ -129,6 +106,20 @@
     "flag": "🇬🇧",
     "dist_surface": "6f · Turf"
    },
+   {
+    "grade": "LR",
+    "race_name": "Gp Des Provinces-Px Andre Baboin-13e Etape Defi Du GALOP-G.CAMPRUBI",
+    "date_short": "Sat\nSep 26",
+    "track": "Lyon Parilly",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m4f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Sun Sep 27",
+  "races": [
    {
     "grade": "G3",
     "race_name": "Qatar Racing And Equestrian Club Renaissance Stakes (Group 3)",

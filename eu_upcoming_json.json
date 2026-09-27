@@ -1,75 +1,7 @@
 [
  {
-  "day_label": "YESTERDAY — Fri Sep 25",
+  "day_label": "YESTERDAY — Sat Sep 26",
   "races": [
-   {
-    "grade": "G2",
-    "race_name": "Betway Joel Stakes (Group 2)",
-    "date_short": "Fri\nSep 25",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Betway Rockfel Stakes (Group 2)",
-    "date_short": "Fri\nSep 25",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Princess Royal Stakes (sponsored By Betway) (Group 3)",
-    "date_short": "Fri\nSep 25",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "BAR 1 Betting Diamond Stakes (Listed)",
-    "date_short": "Fri\nSep 25",
-    "track": "Dundalk (AW)",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m2½f · AW"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Betway Godolphin Stakes (Listed Race)",
-    "date_short": "Fri\nSep 25",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Betway British Ebf Rosemary Stakes (Listed Race)",
-    "date_short": "Fri\nSep 25",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Sat Sep 26",
-  "races": [
-   {
-    "grade": "G1",
-    "race_name": "Tattersalls Middle Park Stakes (Group 1)",
-    "date_short": "Sat\nSep 26",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · Turf"
-   },
    {
     "grade": "G1",
     "race_name": "Bet365 Cambridgeshire (Class 2 Heritage Handicap)",
@@ -78,6 +10,15 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m1f · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Tattersalls Middle Park Stakes (Group 1)",
+    "date_short": "Sat\nSep 26",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · Turf"
    },
    {
     "grade": "G2",
@@ -90,21 +31,21 @@
    },
    {
     "grade": "G2",
-    "race_name": "Tattersalls Online Royal Lodge Stakes (Group 2)",
-    "date_short": "Sat\nSep 26",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "G2",
     "race_name": "Tattersalls Sceptre Sessions Cheveley Park Stakes (Group 1)",
     "date_short": "Sat\nSep 26",
     "track": "Newmarket",
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Tattersalls Online Royal Lodge Stakes (Group 2)",
+    "date_short": "Sat\nSep 26",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m · Turf"
    },
    {
     "grade": "LR",
@@ -118,7 +59,7 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Sun Sep 27",
+  "day_label": "TODAY — Sun Sep 27",
   "races": [
    {
     "grade": "G3",
@@ -137,6 +78,38 @@
     "country": "IRE",
     "flag": "🇮🇪",
     "dist_surface": "7f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Mon Sep 28",
+  "races": [
+   {
+    "grade": "LR",
+    "race_name": "BetMGM Noel Murless Stakes (Listed Race)",
+    "date_short": "Fri\nOct 2",
+    "track": "Ascot",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m6f · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Betmgm Sun Chariot Stakes (Group 1)",
+    "date_short": "Sat\nOct 3",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Qatar Prix de l'Arc de Triomphe (Group 1) (3yo+ No Geldings) (Grande Course) (Turf)",
+    "date_short": "Sun\nOct 4",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m4f · Turf"
    },
    {
     "grade": "LR",

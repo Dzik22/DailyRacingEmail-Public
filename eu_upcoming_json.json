@@ -1,66 +1,16 @@
 [
  {
-  "day_label": "YESTERDAY — Sat Sep 26",
+  "day_label": "YESTERDAY — Sun Sep 27",
   "races": [
    {
-    "grade": "G1",
-    "race_name": "Bet365 Cambridgeshire (Class 2 Heritage Handicap)",
-    "date_short": "Sat\nSep 26",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m1f · Turf"
-   },
-   {
-    "grade": "G1",
-    "race_name": "Tattersalls Middle Park Stakes (Group 1)",
-    "date_short": "Sat\nSep 26",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Churchill Tyres Beresford Stakes (Group 2)",
-    "date_short": "Sat\nSep 26",
+    "grade": "G3",
+    "race_name": "Darley Fillies Stakes (Group 3)",
+    "date_short": "Sun\nSep 27",
     "track": "Curragh",
     "country": "IRE",
     "flag": "🇮🇪",
-    "dist_surface": "1m · Turf"
+    "dist_surface": "7f · Turf"
    },
-   {
-    "grade": "G2",
-    "race_name": "Tattersalls Sceptre Sessions Cheveley Park Stakes (Group 1)",
-    "date_short": "Sat\nSep 26",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Tattersalls Online Royal Lodge Stakes (Group 2)",
-    "date_short": "Sat\nSep 26",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Gp Des Provinces-Px Andre Baboin-13e Etape Defi Du GALOP-G.CAMPRUBI",
-    "date_short": "Sat\nSep 26",
-    "track": "Lyon Parilly",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m4f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Sun Sep 27",
-  "races": [
    {
     "grade": "G3",
     "race_name": "Qatar Racing And Equestrian Club Renaissance Stakes (Group 3)",
@@ -71,18 +21,32 @@
     "dist_surface": "6f · Turf"
    },
    {
-    "grade": "G3",
-    "race_name": "Darley Fillies Stakes (Group 3)",
+    "grade": "LR",
+    "race_name": "Prix Haras De Bouquetot (Prix Du Point Du Jour)",
     "date_short": "Sun\nSep 27",
-    "track": "Curragh",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "7f · Turf"
+    "track": "Craon",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m · Turf"
    }
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Mon Sep 28",
+  "day_label": "TODAY — Mon Sep 28",
+  "races": [
+   {
+    "grade": "LR",
+    "race_name": "Grand Criterium De Bordeaux",
+    "date_short": "Mon\nSep 28",
+    "track": "Bordeaux Le Bouscat",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Tue Sep 29",
   "races": [
    {
     "grade": "LR",
@@ -103,6 +67,60 @@
     "dist_surface": "1m · Turf"
    },
    {
+    "grade": "G3",
+    "race_name": "Betmgm Cumberland Lodge Stakes (Group 3)",
+    "date_short": "Sat\nOct 3",
+    "track": "Ascot",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "John Guest Racing Bengough Stakes (Group 3)",
+    "date_short": "Sat\nOct 3",
+    "track": "Ascot",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Betmgm British Ebf October Stakes (Listed Race)",
+    "date_short": "Sat\nOct 3",
+    "track": "Ascot",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Betmgm Rous Stakes (Listed Race)",
+    "date_short": "Sat\nOct 3",
+    "track": "Ascot",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "5f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "William Hill Two Year Old Trophy (Listed Race)",
+    "date_short": "Sat\nOct 3",
+    "track": "Redcar",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Racing Tv Ebf Stallions Guisborough Stakes (Listed Race)",
+    "date_short": "Sat\nOct 3",
+    "track": "Redcar",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "7f · Turf"
+   },
+   {
     "grade": "G1",
     "race_name": "Qatar Prix de l'Arc de Triomphe (Group 1) (3yo+ No Geldings) (Grande Course) (Turf)",
     "date_short": "Sun\nOct 4",
@@ -110,6 +128,15 @@
     "country": "FR",
     "flag": "🇫🇷",
     "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Prix De Bonneval",
+    "date_short": "Tue\nSep 29",
+    "track": "Chantilly",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "5½f · Turf"
    },
    {
     "grade": "LR",

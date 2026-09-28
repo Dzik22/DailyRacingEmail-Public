@@ -1,62 +1,32 @@
 [
  {
-  "grade": "G1",
-  "race_name": "Bet365 Cambridgeshire (Class 2 Heritage Handicap)",
-  "track": "Newmarket",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "1m1f · Turf",
-  "winner": "Pierre Royal",
-  "off_time": "3:40"
- },
- {
-  "grade": "G1",
-  "race_name": "Tattersalls Middle Park Stakes (Group 1)",
-  "track": "Newmarket",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "6f · Turf",
-  "winner": "Orthodox",
-  "off_time": "3:00"
- },
- {
-  "grade": "G2",
-  "race_name": "Churchill Tyres Beresford Stakes (Group 2)",
+  "grade": "G3",
+  "race_name": "Darley Fillies Stakes (Group 3)",
   "track": "Curragh",
   "country": "IRE",
   "flag": "🇮🇪",
-  "dist_surface": "1m · Turf",
-  "winner": "Noble Exhibit",
-  "off_time": "3:10"
+  "dist_surface": "7f · Turf",
+  "winner": "Curracloe (USA)",
+  "off_time": "3:45"
  },
  {
-  "grade": "G2",
-  "race_name": "Tattersalls Sceptre Sessions Cheveley Park Stakes (Group 1)",
-  "track": "Newmarket",
-  "country": "GB",
-  "flag": "🇬🇧",
+  "grade": "G3",
+  "race_name": "Qatar Racing And Equestrian Club Renaissance Stakes (Group 3)",
+  "track": "Curragh",
+  "country": "IRE",
+  "flag": "🇮🇪",
   "dist_surface": "6f · Turf",
-  "winner": "Sun Goddess",
-  "off_time": "2:27"
- },
- {
-  "grade": "G2",
-  "race_name": "Tattersalls Online Royal Lodge Stakes (Group 2)",
-  "track": "Newmarket",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "1m · Turf",
-  "winner": "Haffner (USA)",
-  "off_time": "1:55"
+  "winner": "Soul Love",
+  "off_time": "2:35"
  },
  {
   "grade": "LR",
-  "race_name": "Gp Des Provinces-Px Andre Baboin-13e Etape Defi Du GALOP-G.CAMPRUBI",
-  "track": "Lyon Parilly",
+  "race_name": "Prix Haras De Bouquetot (Prix Du Point Du Jour)",
+  "track": "Craon",
   "country": "FR",
   "flag": "🇫🇷",
-  "dist_surface": "1m4f · Turf",
-  "winner": "Le Combat Continue",
-  "off_time": "1:15"
+  "dist_surface": "1m · Turf",
+  "winner": "Focus",
+  "off_time": "12:40"
  }
 ]

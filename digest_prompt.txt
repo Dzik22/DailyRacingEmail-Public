@@ -3299,19 +3299,133 @@ except Exception as e:
 # urllib and subprocess are blocked in CCR. All EU data comes from Step 7.0.5
 # pure bash curls which write /tmp/eu_upcoming_json.json before this generator runs.
 
-# === EU PREFETCH SANITY GATE (NON-NEGOTIABLE) ===
-# Refuse to proceed if eu_upcoming_json.json is missing OR has zero races across all 3 days.
-# Silent empty output is the #1 cause of "No graded stakes scheduled" bugs — fail loudly
-# so the agent re-runs eu_prefetch.sh before re-attempting Step 7.5.
+# === EU DATA GATE — SELF-HEALING, NEVER FATAL (rewritten Sep 29 2026) ===
+# SEP 29 2026 — THE SECOND DAY MIKE GOT NO EMAIL. This gate used to sys.exit(1) when
+# /tmp/eu_upcoming_json.json was missing. The routine's old bootstrap Command 2 was blocked by the
+# security classifier (again), Step 0.4 never ran, this gate aborted, Step 7.5 wrote no HTML, Step
+# 7.6 had nothing to verify, and the run shipped an AGENT ERROR draft. A missing EU file must NEVER
+# cost the whole digest: My Stable, Stable Updates, Top 10, USA stakes and Sales were all available.
+#
+# So this gate now does three things in order, and NEVER exits:
+#   1. If the EU files are missing or empty, FETCH THEM HERE with urllib — no shell, no downloaded
+#      script, just the pre-built JSON the GitHub Action commits to the public mirror. This makes
+#      the EU data independent of whether the agent remembered to run Step 0.4.
+#   2. Re-bucket every race by its OWN date (same graded-staleness rule as Step 0.4) so a build from
+#      yesterday still files today's races under TODAY, and a stale recap is never shown as
+#      yesterday's results.
+#   3. If that fails too, print a loud diagnostic and CARRY ON with an empty EU section. Step 7.6's
+#      EU coverage check still catches real data loss: it compares the HTML against the file, so
+#      when the file is genuinely absent there is nothing to silently drop.
 import datetime as _dtm
 _eu_chk_today = _dt.today()
 _eu_chk_dow = _eu_chk_today.strftime('%A')
-if not _os.path.exists('/tmp/eu_upcoming_json.json'):
-    print('EU_PREFETCH_GATE FAILURE — ABORT:')
-    print('  /tmp/eu_upcoming_json.json is MISSING. Step 0.4 (EU DATA FETCH) did not run or failed silently.')
-    print('  RECOVERY: run this Bash command, then re-run Step 7.5:')
-    print('    (re-run the STEP 0.4 EU DATA FETCH command — never curl+bash a script)')
-    import sys as _sysEU; _sysEU.exit(1)
+
+def _eu_selfheal():
+    """Fetch + re-bucket the mirror build straight into the consumed paths. Returns race count."""
+    import urllib.request as _ur, re as _rsh
+    MIRROR = 'https://raw.githubusercontent.com/Dzik22/DailyRacingEmail-Public/main'
+    _cb = str(int(_dtm.datetime.now().timestamp()))
+    got = {}
+    for name in ('eu_build_status.json', 'eu_upcoming_json.json', 'eu_recap_json.json'):
+        try:
+            with _ur.urlopen(MIRROR + '/' + name + '?cb=' + _cb, timeout=45) as r:
+                got[name] = json.loads(r.read().decode('utf-8'))
+        except Exception as e:
+            print('EU_SELFHEAL_FETCH_FAIL: ' + name + ' — ' + str(e))
+    status = got.get('eu_build_status.json') or {}
+    raw = got.get('eu_upcoming_json.json')
+    if not isinstance(raw, list):
+        return 0
+    fd = str(status.get('for_date', ''))
+    try:
+        _y, _m, _d = (int(x) for x in fd.split('-'))
+        age = (_eu_chk_today - _dt(_y, _m, _d)).days
+    except Exception:
+        age = 99
+    print('EU_SELFHEAL: mirror build for_date=' + fd + ' age=' + str(age) + 'd')
+    if age < 0 or age > 3:
+        print('EU_SELFHEAL_UNUSABLE: build too stale to contribute')
+        return 0
+    MON = {'Jan':1,'Feb':2,'Mar':3,'Apr':4,'May':5,'Jun':6,'Jul':7,'Aug':8,'Sep':9,'Oct':10,'Nov':11,'Dec':12}
+    DOW = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
+    GO = {'G1':0,'G2':1,'G3':2,'LR':3}
+    T = _eu_chk_today
+    def resolve(race):
+        mt = _rsh.search(r'([A-Z][a-z]{2})\s+(\d{1,2})', str(race.get('date_short','')))
+        if not mt: return None
+        mo, dy = MON.get(mt.group(1)), int(mt.group(2))
+        if not mo: return None
+        for off in range(-12, 21):
+            c = T + _td(days=off)
+            if c.month == mo and c.day == dy: return c
+        return None
+    buckets, seen = {'YESTERDAY': [], 'TODAY': [], 'TOMORROW': []}, set()
+    for day in raw:
+        pfx = (str(day.get('day_label','')).split() or [''])[0]
+        for r in day.get('races', []):
+            dt_ = resolve(r)
+            if dt_ is None:
+                if age == 0 and pfx in buckets: tgt = pfx
+                else: continue
+            elif dt_ < T - _td(days=1): continue
+            elif dt_ == T - _td(days=1): tgt = 'YESTERDAY'
+            elif dt_ == T: tgt = 'TODAY'
+            else: tgt = 'TOMORROW'
+            key = (r.get('grade',''), _rsh.sub(r'\s+', ' ', str(r.get('race_name','')).lower()).strip(),
+                   dt_.isoformat() if dt_ else pfx)
+            if not key[1] or key in seen: continue
+            seen.add(key)
+            if dt_ is not None:
+                r = dict(r, date_short=DOW[dt_.weekday()] + '\n' +
+                         [k for k, v in MON.items() if v == dt_.month][0] + ' ' + str(dt_.day))
+            buckets[tgt].append(r)
+    for k in buckets:
+        buckets[k].sort(key=lambda r: (r.get('date_short',''), GO.get(r.get('grade','LR'), 9), r.get('track','')))
+    Y, TM = T - _td(days=1), T + _td(days=1)
+    inv = {v: k for k, v in MON.items()}
+    lbl = lambda pp, dd: pp + ' — ' + DOW[dd.weekday()] + ' ' + inv[dd.month] + ' ' + str(dd.day)
+    out = [
+        {'day_label': lbl('YESTERDAY', Y), 'races': buckets['YESTERDAY']},
+        {'day_label': lbl('TODAY', T),     'races': buckets['TODAY']},
+        {'day_label': 'TOMORROW — Next 7 days from ' + DOW[TM.weekday()] + ' ' + inv[TM.month] +
+                      ' ' + str(TM.day), 'races': buckets['TOMORROW']},
+    ]
+    json.dump(out, open('/tmp/eu_upcoming_json.json', 'w'), ensure_ascii=False, indent=1)
+    n = sum(len(b['races']) for b in out)
+    # Only a same-day build's recap is actually yesterday's results. For a stale build the recap
+    # is skipped — but the file must still exist, because every other producer path guarantees it
+    # and Step 5-RP's WebFetch merges into it later.
+    if not _os.path.exists('/tmp/eu_recap_json.json'):
+        rec = got.get('eu_recap_json.json') if age == 0 else []
+        json.dump(rec if isinstance(rec, list) else [],
+                  open('/tmp/eu_recap_json.json', 'w'), ensure_ascii=False, indent=1)
+    return n
+
+_eu_need_heal = not _os.path.exists('/tmp/eu_upcoming_json.json')
+if not _eu_need_heal:
+    try:
+        _peek = json.load(open('/tmp/eu_upcoming_json.json'))
+        _eu_need_heal = sum(len(d.get('races',[])) for d in _peek) == 0
+    except Exception as _pe:
+        print('EU_GATE: /tmp/eu_upcoming_json.json unreadable (' + str(_pe) + ') — will self-heal')
+        _eu_need_heal = True
+if _eu_need_heal:
+    print('EU_GATE: no usable EU data on disk (Step 0.4 did not run, or the mirror gave nothing).')
+    print('  Fetching the pre-built mirror JSON from here instead — the digest is NEVER abandoned over EU data.')
+    try:
+        _healed = _eu_selfheal()
+    except Exception as _he:
+        _healed = 0
+        print('EU_SELFHEAL_ERR: ' + str(_he))
+    if _healed > 0:
+        print('EU_SELFHEAL_OK: ' + str(_healed) + ' EU races recovered and written to /tmp/eu_upcoming_json.json')
+    else:
+        print('EU_SELFHEAL_EMPTY: could not recover EU races. CONTINUING ANYWAY with an empty EU section —')
+        print('  every other section still ships. Never exit here; an AGENT ERROR draft is far worse.')
+        if not _os.path.exists('/tmp/eu_upcoming_json.json'):
+            json.dump([], open('/tmp/eu_upcoming_json.json', 'w'))
+        if not _os.path.exists('/tmp/eu_recap_json.json'):
+            json.dump([], open('/tmp/eu_recap_json.json', 'w'))
 try:
     _eu_chk = json.load(open('/tmp/eu_upcoming_json.json'))
     _eu_chk_total = sum(len(d.get('races',[])) for d in _eu_chk)
@@ -3320,15 +3434,13 @@ try:
         if d_.get('day_label','').startswith('TODAY'):
             _eu_chk_today_n = len(d_.get('races',[]))
     print('EU_PREFETCH_GATE: total=' + str(_eu_chk_total) + ' TODAY=' + str(_eu_chk_today_n) + ' day_of_week=' + _eu_chk_dow)
-    # If zero races on a known active racing day, force re-fetch
     if _eu_chk_total == 0 and _eu_chk_dow in ('Wednesday','Thursday','Friday','Saturday','Sunday'):
-        print('EU_PREFETCH_GATE WARNING: zero EU races on ' + _eu_chk_dow + ' is suspicious. thestatsdontlie.com likely has data — re-run Step 7.0.5 WebFetch before generating HTML.')
-        print('  RECOVERY: run this Bash command, then re-run Step 7.5:')
-        print('    (re-run the STEP 0.4 EU DATA FETCH command — never curl+bash a script)')
-        import sys as _sysEU; _sysEU.exit(1)
+        # Suspicious, and worth shouting about — but NOT worth losing the email over.
+        print('EU_PREFETCH_GATE WARNING: zero EU races on ' + _eu_chk_dow + ' is suspicious. Mention it in')
+        print('  your final chat message, run the Step 7.0.5 WebFetch if you have not, and CONTINUE.')
 except Exception as _ex_eu:
-    print('EU_PREFETCH_GATE ERR reading eu_upcoming_json.json: ' + str(_ex_eu))
-    import sys as _sysEU; _sysEU.exit(1)
+    print('EU_PREFETCH_GATE ERR reading eu_upcoming_json.json: ' + str(_ex_eu) + ' — continuing with no EU data')
+    _eu_chk, _eu_chk_total = [], 0
 # Also inspect the status file (if eu_prefetch.sh wrote one)
 if _os.path.exists('/tmp/eu_prefetch_status.json'):
     try:

@@ -18,9 +18,21 @@ name: Build EU stakes JSON
 
 on:
   schedule:
-    # 09:27 UTC daily — comfortably ahead of the 10:00 UTC digest routine, and deliberately
-    # off the hour so we are not queued behind everyone else's :00 cron.
-    - cron: '27 9 * * *'
+    # FOUR attempts, deliberately early. GitHub dispatches scheduled crons hours late:
+    # the last six runs landed at 13:47, 14:16, 14:17, 14:39, 14:45 and 17:43 UTC.
+    # The digest runs at 10:00 UTC, so a single 09:27 cron never won the race and the
+    # mirror still held YESTERDAY's build every morning.
+    #
+    # Scheduled-cron delay is GitHub platform behaviour we cannot control, so we buy
+    # margin instead: run in the quiet 01:00-07:00 UTC window and take four shots. The
+    # first to land write are near-no-ops (thecommit step
+    # exits early when no
+    #
+    # Do NOT "tidy" this  attempt is what broke it.
+    - cron: '11 1 * * *'
+    - cron: '11 3 * * *'
+    - cron: '11 5 * * *'
+    - cron: '11 7 * * *'
   workflow_dispatch: {}
 
 permissions:

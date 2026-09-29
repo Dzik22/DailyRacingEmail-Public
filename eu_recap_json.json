@@ -1,32 +1,12 @@
 [
  {
-  "grade": "G3",
-  "race_name": "Darley Fillies Stakes (Group 3)",
-  "track": "Curragh",
-  "country": "IRE",
-  "flag": "🇮🇪",
-  "dist_surface": "7f · Turf",
-  "winner": "Curracloe (USA)",
-  "off_time": "3:45"
- },
- {
-  "grade": "G3",
-  "race_name": "Qatar Racing And Equestrian Club Renaissance Stakes (Group 3)",
-  "track": "Curragh",
-  "country": "IRE",
-  "flag": "🇮🇪",
-  "dist_surface": "6f · Turf",
-  "winner": "Soul Love",
-  "off_time": "2:35"
- },
- {
   "grade": "LR",
-  "race_name": "Prix Haras De Bouquetot (Prix Du Point Du Jour)",
-  "track": "Craon",
+  "race_name": "Grand Criterium De Bordeaux",
+  "track": "Bordeaux Le Bouscat",
   "country": "FR",
   "flag": "🇫🇷",
   "dist_surface": "1m · Turf",
-  "winner": "Focus",
-  "off_time": "12:40"
+  "winner": "Sydney Moon",
+  "off_time": "4:07"
  }
 ]

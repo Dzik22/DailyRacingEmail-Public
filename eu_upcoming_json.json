@@ -1,38 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Sun Sep 27",
-  "races": [
-   {
-    "grade": "G3",
-    "race_name": "Darley Fillies Stakes (Group 3)",
-    "date_short": "Sun\nSep 27",
-    "track": "Curragh",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Qatar Racing And Equestrian Club Renaissance Stakes (Group 3)",
-    "date_short": "Sun\nSep 27",
-    "track": "Curragh",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "6f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Prix Haras De Bouquetot (Prix Du Point Du Jour)",
-    "date_short": "Sun\nSep 27",
-    "track": "Craon",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Mon Sep 28",
+  "day_label": "YESTERDAY — Mon Sep 28",
   "races": [
    {
     "grade": "LR",
@@ -46,7 +14,30 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Tue Sep 29",
+  "day_label": "TODAY — Tue Sep 29",
+  "races": [
+   {
+    "grade": "LR",
+    "race_name": "Prix De Bonneval",
+    "date_short": "Tue\nSep 29",
+    "track": "Chantilly",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "5½f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Irish Stallion Farms EBF Navigation Stakes (Listed)",
+    "date_short": "Tue\nSep 29",
+    "track": "Cork",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m2½f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Wed Sep 30",
   "races": [
    {
     "grade": "LR",
@@ -56,6 +47,24 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m6f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Irish Stallion Farms EBF Legacy Stakes (Listed)",
+    "date_short": "Fri\nOct 2",
+    "track": "Dundalk (AW)",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "5f · AW"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Irish Stallion Farms EBF Star Appeal Stakes (Listed)",
+    "date_short": "Fri\nOct 2",
+    "track": "Dundalk (AW)",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "7f · AW"
    },
    {
     "grade": "G1",
@@ -128,24 +137,6 @@
     "country": "FR",
     "flag": "🇫🇷",
     "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Prix De Bonneval",
-    "date_short": "Tue\nSep 29",
-    "track": "Chantilly",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "5½f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Irish Stallion Farms EBF Navigation Stakes (Listed)",
-    "date_short": "Tue\nSep 29",
-    "track": "Cork",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m2½f · Turf"
    }
   ]
  }

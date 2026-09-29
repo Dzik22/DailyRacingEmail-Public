@@ -3624,11 +3624,23 @@ except Exception as _bx: print('UPCOMING_BUCKETS_ERR: ' + str(_bx))
 
 # Apply REPLACE: EU from API+SDL union; USA from agent; discard agent EU entries
 _SKIP_NM = ('racing dark','sale day','(sales)','(racing dark','goffs london sale','tattersalls','arqana sale','fasig-tipton sale','keeneland sale','obs sale')
+
+def _is_sales_day(r):
+    """True only for an auction/sales-day row, never for a real race a sales company sponsors.
+
+    SEP 29 2026: the G2 Jessamine S. at Keeneland vanished from Upcoming Stakes because its full
+    name, 'Jessamine S. Presented by Keeneland Sales', contains 'keeneland sale'. Silently dropping
+    a graded stakes is the exact failure this pipeline exists to prevent, so a name match alone is
+    no longer enough — a row carrying a real grade is a RACE, whoever sponsors it."""
+    nm = str(r.get('race_name','')).lower()
+    if not any(_s in nm for _s in _SKIP_NM):
+        return False
+    return str(r.get('grade','')).strip().upper() not in ('G1','G2','G3','LR')
 try:
     for day in d.get('upcoming',[]):
         prefix=day.get('day_label','').split()[0]
         eu_races=_eu_by_prefix.get(prefix,[])
-        usa_races=[r for r in day.get('races',[]) if r.get('country','') not in _EU_CTRY and not any(s in r.get('race_name','').lower() for s in _SKIP_NM)]
+        usa_races=[r for r in day.get('races',[]) if r.get('country','') not in _EU_CTRY and not _is_sales_day(r)]
         # Aug 19 2026: sort the whole bucket by DATE across both continents. Previously it was
         # eu_races + usa_races, so the EU block ran Aug 20->23 and then the USA block restarted
         # at Aug 22 -- a Sunday race appeared above Saturday ones. Date, then grade, then track.

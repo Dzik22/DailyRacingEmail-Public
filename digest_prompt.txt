@@ -224,6 +224,12 @@ Oh Shoot              → Team Valor
 Otherworldly          → Eclipse
 Random Recall         → Final Furlong
 Phantom Princess      → RTP Racing
+CS Incharge '25 Filly → Rainbows End      (unnamed — see UNNAMED PROSPECTS)
+Indian Charm '25 Filly→ Rainbows End      (unnamed — see UNNAMED PROSPECTS)
+Velvet '25 Filly      → Rainbows End      (unnamed — see UNNAMED PROSPECTS)
+Ransomed Heart '25 Filly → Wasabi         (unnamed — see UNNAMED PROSPECTS)
+Blinkers '25 Filly    → Wasabi            (unnamed — see UNNAMED PROSPECTS)
+Imply '25 Filly       → Commonwealth      (unnamed — see UNNAMED PROSPECTS)
 Boleto                → Middleham Park
 Capricious Star       → Middleham Park
 Double Right          → Middleham Park
@@ -825,18 +831,49 @@ Three columns: horse name (with optional country suffix in parentheses), age/sex
 **Syndicate name normalisation (abbreviations in the spreadsheet):**
 - "CMWLTH" → Commonwealth
 - "Middleham" → Middleham Park
+- "Rainbows End" / "Rainbow's End" / "Rainbow's End Racing Stable" → Rainbows End (no apostrophe — matches the SILK key)
 - Everything else is spelled out (Eclipse, Team Valor, Wasabi, Final Furlong, Woodford, RTP Racing)
 
 **Parsing rules:**
 - Strip country suffixes "(IRE)", "(FR)", "(GB)", "(AUS)" etc. from horse names before storing lowercase keys
-- Rows where horse name is "TBD" → unnamed Woodford horse; include under Woodford badge only if mentioned by name in emails; never invent a TBD entry
+- Rows whose horse name is "TBD", "Unamed", "Unnamed" or blank → an UNNAMED PROSPECT. Do NOT discard
+  it and do NOT assume Woodford. Identify it by its SIRE & DAM (the spreadsheet carries them in the
+  same row) and match it to the UNNAMED PROSPECTS table below, which supplies its canonical handle and
+  syndicate. Never invent a prospect that is not in that table.
 - If a horse shows "claimed", "sold", "retired" → NOT active, exclude
 - If a horse is in the MASTER TABLE but NOT in ACTIVE_BARN → claimed/sold/retired → stop tracking it immediately
-- If a horse IS in ACTIVE_BARN but NOT in the MASTER TABLE → new addition → use the syndicate name from the spreadsheet (normalised per the rules above) in the JSON `syndicate` field. The generator SILK dict is keyed by syndicate name, so any horse in a known syndicate (Eclipse, Team Valor, Commonwealth, Woodford, Middleham Park, Wasabi, Final Furlong, RTP Racing) will automatically get the correct badge colors
+- If a horse IS in ACTIVE_BARN but NOT in the MASTER TABLE → new addition → use the syndicate name from the spreadsheet (normalised per the rules above) in the JSON `syndicate` field. The generator SILK dict is keyed by syndicate name, so any horse in a known syndicate (Eclipse, Team Valor, Commonwealth, Woodford, Middleham Park, Wasabi, Final Furlong, RTP Racing, Rainbows End) will automatically get the correct badge colors
+
+### UNNAMED PROSPECTS (2025 yearling fillies — no registered name yet)
+
+⚠️ ADDED SEP 29 2026. These six fillies are Mike's but have no registered name, so nothing in an email
+will ever say their name. They are tracked by DAM. Until a name is registered they appear in STABLE
+UPDATES only — never in ENTRIES, RESULTS or WORKS (they are yearlings and cannot be entered to race).
+
+| Canonical handle (use VERBATIM in JSON `horse`) | Sire × Dam (Damsire) | Syndicate | Mike's share |
+|---|---|---|---|
+| CS Incharge '25 Filly     | Cyberknife × CS Incharge (Take Charge Indy)   | Rainbows End | 2.00% |
+| Indian Charm '25 Filly    | Vekoma × Indian Charm (Indian Charlie)        | Rainbows End | 2.00% |
+| Velvet '25 Filly          | Good Magic × Velvet (American Pharoah)        | Rainbows End | 2.00% |
+| Ransomed Heart '25 Filly  | Arabian Lion × Ransomed Heart (IRE) (Galileo) | Wasabi       | 4.00% |
+| Blinkers '25 Filly        | Arabian Lion × Blinkers (Stay Thirsty)        | Wasabi       | 2.00% |
+| Imply '25 Filly           | Good Magic × Imply (E Dubai)                  | Commonwealth | 0.03% |
+
+**HOW TO MATCH ONE IN AN EMAIL — the dam is the key, never the sire:**
+- An email naming the DAM ("the Imply filly", "our Velvet yearling", "Ransomed Heart's filly") → that prospect.
+- "Sire × Dam" / "Sire out of Dam" / "Sire—Dam" phrasing → match on the DAM half.
+- ⚠️ SIRE ALONE IS AMBIGUOUS AND MUST NEVER BE USED TO MATCH. Arabian Lion has TWO fillies here, both
+  Wasabi. Good Magic has TWO, in DIFFERENT syndicates (Velvet → Rainbows End, Imply → Commonwealth).
+  "the Good Magic filly" with no dam is NOT matchable — put that content in Top 10 News instead.
+- A hip number alone is NOT matchable either unless the email also gives the dam.
+
+**WHEN A NAME IS REGISTERED:** the syndicate email will say so ("the Velvet filly has been named X").
+Report the naming as a Stable Update, and tell Mike in that update that the MASTER TABLE and this
+table both need the real name swapped in — the handle stops matching once emails switch to the name.
 
 **If the Drive read fails or ACTIVE BARN is not found → fall back to the hardcoded MASTER TABLE below.**
 
-Log: `"ACTIVE_BARN loaded: N named horses (M TBD unnamed Woodford)"` — or `"ACTIVE_BARN: Drive read failed — using MASTER TABLE fallback"`
+Log: `"ACTIVE_BARN loaded: N named horses (M unnamed prospects)"` — or `"ACTIVE_BARN: Drive read failed — using MASTER TABLE fallback"`
 
 Store as ACTIVE_BARN for all of Steps 3–7. A horse NOT in ACTIVE_BARN is NOT Mike's → Top 10 News only, never My Stable or Stable Updates.
 
@@ -1807,12 +1844,15 @@ Your ONLY job is to find Master Table horse mentions in syndicate emails from th
 MASTER_TABLE = [{{ACTIVE_BARN_LIST}}]
 
 EXECUTE THESE SEARCHES IN ORDER:
-1. mcp__Gmail__search_threads({"query": "from:(aron@eclipsetbpartners.com OR barry@teamvalor.com OR emily@teamvalor.com OR hello@joincommonwealth.com OR woodford OR benhaggin@woodfordracing.ccsend.com OR woodfordracing.ccsend.com OR jamie@middlehamparkracing.net OR \"Tom Palin\" OR tk@wasabistables.com OR stallions@wasabistables.com OR dan@finalfurlongracingstable.com OR vince@finalfurlongracingstable.com) newer_than:7d in:inbox"})
+1. mcp__Gmail__search_threads({"query": "from:(aron@eclipsetbpartners.com OR barry@teamvalor.com OR emily@teamvalor.com OR hello@joincommonwealth.com OR woodford OR benhaggin@woodfordracing.ccsend.com OR woodfordracing.ccsend.com OR jamie@middlehamparkracing.net OR \"Tom Palin\" OR tk@wasabistables.com OR stallions@wasabistables.com OR dan@finalfurlongracingstable.com OR vince@finalfurlongracingstable.com OR rainbowsendracingstable@gmail.com) newer_than:7d in:inbox"})
 2. mcp__Gmail__search_threads({"query": "from:middlehamparkoffice@gmail.com newer_than:14d in:anywhere"})
 3. mcp__Gmail__search_threads({"query": "from:michaeljdzik@gmail.com subject:\"declared\" newer_than:14d in:anywhere"})
 4. mcp__Gmail__search_threads({"query": "from:aron@eclipsetbpartners.com newer_than:14d in:anywhere"})
 5. mcp__Gmail__search_threads({"query": "from:(tk@wasabistables.com OR stallions@wasabistables.com) newer_than:14d in:anywhere"})
 6. mcp__Gmail__search_threads({"query": "from:(dan@finalfurlongracingstable.com OR vince@finalfurlongracingstable.com) newer_than:14d in:anywhere"})
+7. mcp__Gmail__search_threads({"query": "from:rainbowsendracingstable@gmail.com newer_than:14d in:anywhere"})
+   ⚠️ Rainbow's End mails Mike via BCC to undisclosed-recipients, so they may carry no INBOX label.
+   `in:anywhere` is REQUIRED here — an `in:inbox` search can silently return nothing.
 7. mcp__Gmail__search_threads({"query": "from:(woodfordracing.ccsend.com OR benhaggin@woodfordracing.ccsend.com OR bill@woodford-racing.com OR ben@woodford-racing.com) newer_than:14d in:anywhere"})
    ⚠️ WOODFORD post-race emails come from `benhaggin@woodfordracing.ccsend.com` (Constant Contact bulk sender). Subject format: "HORSENAME - Chart - Race Replay - Comments - DATE - TRACK". Body contains: chart quote (verbatim), Cherie DeVaux quote, next-step plan. When you see this pattern → open every thread with get_thread and extract the horse name (subject prefix) + full trainer quote for stable_updates.
 
@@ -1834,6 +1874,7 @@ EXTRACT RULES:
   - dan@finalfurlongracingstable.com / vince@finalfurlongracingstable.com → "Final Furlong"
   - any sender containing "woodford" (includes benhaggin@woodfordracing.ccsend.com, bill@woodford-racing.com, ben@woodford-racing.com, any @woodfordracing.ccsend.com Constant Contact address) → "Woodford"
   - any sender containing "rtp" → "RTP Racing"
+  - rainbowsendracingstable@gmail.com (Bob Scavetta) → "Rainbows End"
   - michaeljdzik@gmail.com (self-sent) → use the syndicate the horse belongs to per MASTER_TABLE
 
 OUTPUT — return ONLY valid JSON matching this exact schema (no preamble, no markdown, no explanation):
@@ -1896,7 +1937,7 @@ if not isinstance(ev['evidence'], list):
     print('STEP_4e_SCHEMA_FAIL: evidence must be a list')
     sys.exit(1)
 
-VALID_SYN = {'Eclipse','Team Valor','Commonwealth','Woodford','Middleham Park','Wasabi','Final Furlong','RTP Racing'}
+VALID_SYN = {'Eclipse','Team Valor','Commonwealth','Woodford','Middleham Park','Wasabi','Final Furlong','RTP Racing','Rainbows End'}
 required_entry = ['horse','syndicate','sender','subject','date','quote','is_mpr_entry','is_self_declared']
 problems = []
 for i, e in enumerate(ev['evidence']):
@@ -2571,7 +2612,7 @@ A `"Finished 1st of Y"` / `2nd of Y` / `3rd of Y` result is a placing. The gener
 
 ⚠️ **SYNDICATE FIELD (MANDATORY — MASTER TABLE ONLY):**
 Use only the exact syndicate name from the MASTER TABLE. The Python generator looks up silk badge colors from this field. Wrong syndicate name = wrong badge colors.
-Valid values: `Eclipse` | `Team Valor` | `Commonwealth` | `Woodford` | `Middleham Park` | `Wasabi` | `Final Furlong` | `RTP Racing`
+Valid values: `Eclipse` | `Team Valor` | `Commonwealth` | `Woodford` | `Middleham Park` | `Wasabi` | `Final Furlong` | `RTP Racing` | `Rainbows End`
 
 Write this exact JSON structure to `/tmp/digest_data.json` using the Write tool:
 
@@ -2717,6 +2758,7 @@ VALID_SENDERS = {
     'middlehamparkoffice@gmail.com',
     'tk@wasabistables.com', 'stallions@wasabistables.com', 'wasabistables.com',
     'dan@finalfurlongracingstable.com', 'vince@finalfurlongracingstable.com', 'finalfurlongracingstable.com',
+    'rainbowsendracingstable@gmail.com',
     'michaeljdzik@gmail.com',  # self-forwarded notes (declared, etc.)
     'woodford', 'woodfordracing.ccsend.com', 'benhaggin', 'rtp',  # substring matches for Woodford/RTP senders
     'drive.google.com', 'google drive',  # Team Valor Drive PDFs
@@ -2929,7 +2971,7 @@ bad2 = [e.get('horse','?') for e in d.get('my_stable',{}).get('entries',[]) if e
 bad3 = [r.get('horse','?') for r in d.get('my_stable',{}).get('results',[]) if r.get('horse','').lower().strip() not in MASTER]
 if bad2: print('ENTRIES VIOLATION (non-MASTER horses): ' + str(bad2))
 if bad3: print('RESULTS VIOLATION (non-MASTER horses): ' + str(bad3))
-VALID_SYN = {'eclipse','team valor','commonwealth','woodford','middleham park','wasabi','final furlong','rtp racing'}
+VALID_SYN = {'eclipse','team valor','commonwealth','woodford','middleham park','wasabi','final furlong','rtp racing','rainbows end'}
 
 # === EU RESULTS CROSS-CHECK (June 28 2026 — Orchidaceae/Saxony Charms/Lady Moon miss fix) ===
 # Every horse in /tmp/step_4creu_data.json with status=raced_with_result MUST appear in my_stable.results
@@ -2971,7 +3013,7 @@ all_horse_items = ms.get('entries',[]) + ms.get('results',[]) + ms.get('works',[
 bad_syn = [(i.get('horse','?'), i.get('syndicate','?')) for i in all_horse_items if i.get('syndicate','') and i.get('syndicate','').lower().strip() not in VALID_SYN]
 if bad_syn:
     print('SYNDICATE_ABBREV_ERROR — ABORT: these entries use abbreviations or invalid names instead of full syndicate names:')
-    for h_name, s_val in bad_syn: print('  horse="' + h_name + '" syndicate="' + s_val + '" — MUST be one of: Eclipse | Team Valor | Commonwealth | Woodford | Middleham Park | Wasabi | Final Furlong | RTP Racing')
+    for h_name, s_val in bad_syn: print('  horse="' + h_name + '" syndicate="' + s_val + '" — MUST be one of: Eclipse | Team Valor | Commonwealth | Woodford | Middleham Park | Wasabi | Final Furlong | RTP Racing | Rainbows End')
     print('ACTION: Fix ALL syndicate fields to exact title-case names above. Then re-run Steps 7.1 validation + 7.5 generator. Abbreviations (MHP, WSB, WRF, TV, ECL, COM, FF, etc.) are NEVER valid.')
     import sys as _sys2; _sys2.exit(1)
 else:
@@ -3184,15 +3226,30 @@ Compare the VERIFY output to the WebFetch raw response. EVERY race from WebFetch
 
 ## STEP 7.0.6 — EU YESTERDAY CACHE LOAD (Gmail inbox → eu_upcoming_json.json — MANDATORY after Step 7.0.5)
 
-⚠️ THIS STEP IS MANDATORY. Do NOT skip it. YESTERDAY races from public sources are often incomplete first thing in the morning — many race result pages haven't updated yet. This step loads the full previous-day race list from a Gmail message saved by Step 8b of the prior run (NOTE: `mcp__Gmail__create_draft` actually SENDS the email — the cache lives in Gmail inbox, NOT drafts folder) and injects it into the YESTERDAY slot of eu_upcoming_json.json.
+⚠️ THIS STEP IS MANDATORY. Do NOT skip it. YESTERDAY races from public sources are often incomplete first thing in the morning — many race result pages haven't updated yet. This step loads the full previous-day race list from the EU_CACHE **draft** saved by Step 8b of the prior run and injects it into the YESTERDAY slot of eu_upcoming_json.json.
+
+⚠️⚠️ SEP 29 2026 — THIS STEP SILENTLY FOUND NOTHING FOR ~10 WEEKS. Two compounding faults, both fixed below:
+  1. WRONG FOLDER. This step used to say "create_draft actually SENDS the email — the cache lives in
+     Gmail inbox, NOT drafts folder". That stopped being true ~Jul 16 2026 when create_draft became
+     save-only. Measured Sep 3 2026: `search_threads subject:"EU_CACHE" in:anywhere` returns exactly
+     two hits, both labelled SENT, dated 2026-07-20 and 2026-06-14 — and nothing after. Every EU_CACHE
+     since is an unsent draft.
+  2. `in:anywhere` DOES NOT INCLUDE DRAFTS. The search_threads tool excludes drafts by default, so even
+     pointed at the right place the old query could never match.
+  Do NOT "restore" the search_threads call. It cannot see drafts.
+
+⚠️ SUBJECT SEARCH DOES NOT WORK ON DRAFTS. Measured Sep 3 2026 against a draft that demonstrably
+existed: `subject:"EU_CACHE"` → {}, bare `EU_CACHE` → {}, `subject:EU_CACHE newer_than:2d` → {}, while
+a bare `newer_than:1d` returned it. So the date filter is the ONLY reliable server-side filter here —
+match the subject yourself, client-side. Do not add a subject: operator back into this query.
 
 **Run these actions in order:**
 
-**Action 1:** Call `mcp__Gmail__search_threads` with query `subject:"EU_CACHE [YESTERDAY_DATE]" in:anywhere` — where `[YESTERDAY_DATE]` is yesterday's date in YYYY-MM-DD format (e.g. if today is 2026-06-16, search for `subject:"EU_CACHE 2026-06-15"`). This exact-date search avoids picking up older EU_CACHE emails from prior days.
+**Action 1:** Call `mcp__Gmail__list_drafts` with query `newer_than:2d`, `view: DRAFT_VIEW_FULL`, `pageSize: 25`. Then find, IN THE RESULTS, the draft whose `subject` is exactly `EU_CACHE [YESTERDAY_DATE]` — where `[YESTERDAY_DATE]` is yesterday's date in YYYY-MM-DD format (e.g. if today is 2026-09-30, look for `EU_CACHE 2026-09-29`). Matching the exact date client-side is what stops an older cache being picked up. If no draft matches, print `EU_CACHE_MISS: no EU_CACHE draft for [YESTERDAY_DATE]` and continue — YESTERDAY then comes from the other producers.
 
-**Action 2:** If threads returned — take the first thread, call `mcp__Gmail__get_thread` with its ID (messageFormat: FULL_CONTENT). Use the `htmlBody` field (NOT `plaintextBody` — Gmail word-wraps plaintext, inserting raw newlines mid-JSON that break json.load). Run this bash to parse and inject:
+**Action 2:** Take that draft's `htmlBody` field directly (NOT `plaintextBody` — Gmail word-wraps plaintext, inserting raw newlines mid-JSON that break json.load). `list_drafts` with DRAFT_VIEW_FULL already returns the body, so there is no second fetch — do NOT call get_thread. Run this bash to parse and inject:
 ```bash
-# PASTE the htmlBody string from get_thread as the HTML_BODY variable below
+# PASTE the htmlBody string from the EU_CACHE draft as the HTML_BODY variable below
 python3 << 'CACHE706'
 import html as _html, re as _re, json, sys, os
 from datetime import date, timedelta
@@ -3708,6 +3765,7 @@ SILK = {
   'Wasabi':         _badge('#5DB539','#FF6600','WASABI'),
   'Final Furlong':  _badge('#4169E1','#FFFFFF','FINAL FURLONG'),
   'RTP Racing':     _badge('#888888','#aaaaaa','RTP RACING'),
+  'Rainbows End':   _badge('#6A1B9A','#FFFFFF','RAINBOWS END'),
 }
 MASTER = {
   'ulysses rose':'Eclipse','tellus mater':'Wasabi',
@@ -3723,6 +3781,10 @@ MASTER = {
   'highwaymen':'Woodford','clear for takeoff':'Woodford','mccoy':'Woodford',
   'refute':'Woodford','alpha strike':'Woodford','flightress':'Woodford','outcomes based':'Woodford',
   'hypnos':'Woodford','kensai':'Woodford','castiglione':'Woodford',
+  # Unnamed 2025 yearling fillies — see UNNAMED PROSPECTS table. Keyed by dam.
+  "cs incharge '25 filly":'Rainbows End', "indian charm '25 filly":'Rainbows End',
+  "velvet '25 filly":'Rainbows End', "ransomed heart '25 filly":'Wasabi',
+  "blinkers '25 filly":'Wasabi', "imply '25 filly":'Commonwealth',
 }
 FLAGS = {
   'USA':'\U0001f1fa\U0001f1f8','GB':'\U0001f1ec\U0001f1e7','IRE':'\U0001f1ee\U0001f1ea',
@@ -4313,7 +4375,10 @@ Elements that MUST NOT appear in /tmp/digest_draft.html (generator never produce
 
 ## STEP 8b — SAVE TODAY EU CACHE TO GMAIL (MANDATORY — runs after Step 8 create_draft)
 
-⚠️ THIS STEP IS MANDATORY. Do NOT skip it. Without this step, tomorrow's YESTERDAY section will show incomplete API data (only G1 races at 6 AM EDT). This step saves today's EU races by sending an email to michaeljdzik@gmail.com — NOTE: `mcp__Gmail__create_draft` actually SENDS the email so it arrives in inbox (not drafts). Step 7.0.6 searches inbox for it next morning.
+⚠️ THIS STEP IS MANDATORY. Do NOT skip it. Without this step, tomorrow's YESTERDAY section will show incomplete API data (only G1 races at 6 AM EDT). This step saves today's EU races as an unsent Gmail **draft**. Step 7.0.6 reads that draft next morning via `list_drafts`.
+
+⚠️ `create_draft` SAVES, IT DOES NOT SEND (changed ~Jul 16 2026). The cache lives in the Drafts
+folder. The old text here claimed the opposite and sent Step 7.0.6 hunting the inbox for ~10 weeks.
 
 **Action 1:** Run bash to extract today's races:
 ```bash
@@ -4335,10 +4400,13 @@ except Exception as e:
 **Action 2:** Call `mcp__Gmail__create_draft`:
 - to: `["michaeljdzik@gmail.com"]`
 - subject: `EU_CACHE [TODAY_DATE]` — where TODAY_DATE = the `saved_date` value printed above (format: YYYY-MM-DD, e.g. `EU_CACHE 2026-06-16`)
-- body: [the single-line JSON string printed from /tmp/eu_cache_to_save.json — use the `body` parameter, NOT `htmlBody`]
+- htmlBody: [the single-line JSON string printed from /tmp/eu_cache_to_save.json]
 
-⚠️ Use `body` (plain text), NOT `htmlBody`. This is a data storage message, not an email newsletter.
-⚠️ The subject MUST start with `EU_CACHE ` exactly — Step 7.0.6 searches `subject:EU_CACHE in:anywhere`.
+⚠️ Use `htmlBody`, NOT `body`. THE PRODUCER AND THE CONSUMER MUST AGREE. Step 7.0.6 reads the
+`htmlBody` field, because Gmail word-wraps `plaintextBody` and inserts raw newlines mid-JSON that
+break `json.load`. Writing this cache with `body` puts the JSON somewhere Step 7.0.6 does not read.
+⚠️ The subject MUST start with `EU_CACHE ` exactly, followed by the date — Step 7.0.6 matches that
+subject client-side against the `list_drafts` results.
 
 **Action 3:** Run audit write:
 ```bash
@@ -4370,7 +4438,7 @@ except Exception as e:
 - EU UPCOMING IS UNCONDITIONAL (LOCKED — BLOCKING): Step 7.0.5 MUST call WebFetch on thestatsdontlie.com and produce /tmp/eu_upcoming_json.json before Step 6b. An upcoming section containing ONLY USA races when eu_upcoming_json.json has EU race data IS A CRITICAL BUG. If the HTML upcoming section has zero European races but eu_upcoming_json.json is non-empty → the HTML is wrong → fix the JSON and re-run Step 7.5. NEVER skip the SDL WebFetch because you think it's a light EU racing day — only the WebFetch output tells you that. The Racing API is REMOVED — do NOT attempt theracingapi.com curls.
 - GENERATOR IS THE ONLY HTML SOURCE (LOCKED — ABSOLUTE): The Python generator in Step 7.5 is the SOLE producer of the email HTML. The agent NEVER writes HTML independently at any step. No custom headers, syndicates tickers, race day alerts, split-entries sections, or any element not produced by the Step 7.5 generator may appear in the draft. Step 8 passes the verbatim content of /tmp/digest_draft.html — period. If the generator output lacks something → fix the JSON and re-run the generator. NEVER write HTML manually.
 - STEP 8 IS UNCONDITIONAL.
-- STEP 8b IS MANDATORY (EU CACHE SAVE — LOCKED): After Step 8 create_draft succeeds, Step 8b MUST run — call `list_drafts` first to confirm Step 7.0.6 ran, then extract TODAY races and call `create_draft` with subject `EU_CACHE YYYY-MM-DD` and `body` = JSON. Skipping Step 8b means tomorrow's YESTERDAY section shows only the G1 the API returns at 6 AM EDT. Write `/tmp/step_8b_done.txt` regardless of outcome. This step NEVER blocks email delivery — but it ALWAYS runs after create_draft.
+- STEP 8b IS MANDATORY (EU CACHE SAVE — LOCKED): After Step 8 create_draft succeeds, Step 8b MUST run — call `list_drafts` first to confirm Step 7.0.6 ran, then extract TODAY races and call `create_draft` with subject `EU_CACHE YYYY-MM-DD` and `htmlBody` = JSON (NOT `body` — Step 7.0.6 reads `htmlBody`). Skipping Step 8b means tomorrow's YESTERDAY section shows only the G1 the API returns at 6 AM EDT. Write `/tmp/step_8b_done.txt` regardless of outcome. This step NEVER blocks email delivery — but it ALWAYS runs after create_draft.
 - DATE NAMES: Bash output only.
 - HTML ONLY OUTPUT (LOCKED — HIGHEST PRIORITY): htmlBody MUST start with `<!DOCTYPE html><html>`. NEVER plain text or markdown.
 - NO MARKDOWN IN EMAIL BODY (LOCKED): Zero markdown syntax. No `**`, `##`, `* bullets`, `| pipes`, `---`. HTML tags only.
@@ -4390,7 +4458,7 @@ except Exception as e:
 - STABLE UPDATES SECTION (LOCKED): Section 2 uses `<div class="section-header"><h2><span class="sh-icon">🐎</span>Stable Updates</h2></div>`. Content = MASTER TABLE horses only, grouped by syndicate, stable-row format with silk badges.
 - HORSE ENTRY SPACING (LOCKED): `<div class="horse-gap"></div>` between every stable-row. Also at top and bottom of each subsection-wrap.
 - SILK BADGE IN EVERY HORSE ENTRY (LOCKED — TABLE-BASED, NOT SPANS): Every horse div.stable-h4 = `HORSENAME [silk badge table]`. The badge is an inline `<table>` produced by `_badge(c1, c2, label)` in Step 7.5 — NEVER a `<span>` with background-color. Gmail strips `display:inline-block` from spans, making span-based color squares invisible. `<td bgcolor="">` is the ONLY reliable email-safe colored element. NEVER write horse name and syndicate as plain text. NEVER use class="stable-tag" as the badge (that CSS class is vestigial). The generator `_badge()` function produces the correct HTML automatically — the agent has no control over badge format.
-- SILK COLORED SQUARES ARE PERMANENT AND IMMUTABLE (LOCKED — AGENT CANNOT CHANGE OR REMOVE THEM): The two colored cells inside every silk badge MUST appear in every rendered email. These are `<td>` elements with `bgcolor=` attribute + `background-color` inline style, produced by `_badge()` in Step 7.5. NEVER span-based. If Step 8 verification finds `bgcolor=` or `display:inline-table` absent, that means silk badges are missing — CRITICAL failure, re-run Step 7.5 immediately. Always write JSON syndicate values in exact title-case: Eclipse, Team Valor, Commonwealth, Woodford, Middleham Park, Wasabi, Final Furlong, RTP Racing.
+- SILK COLORED SQUARES ARE PERMANENT AND IMMUTABLE (LOCKED — AGENT CANNOT CHANGE OR REMOVE THEM): The two colored cells inside every silk badge MUST appear in every rendered email. These are `<td>` elements with `bgcolor=` attribute + `background-color` inline style, produced by `_badge()` in Step 7.5. NEVER span-based. If Step 8 verification finds `bgcolor=` or `display:inline-table` absent, that means silk badges are missing — CRITICAL failure, re-run Step 7.5 immediately. Always write JSON syndicate values in exact title-case: Eclipse, Team Valor, Commonwealth, Woodford, Middleham Park, Wasabi, Final Furlong, RTP Racing, Rainbows End.
 - GRADE ICONS (LOCKED — ZERO EXCEPTIONS): Every race row in every Stakes Recap table AND every Upcoming table MUST start with the grade icon span HTML. NEVER write "G1", "G2", "G3", or "LR" as bare text in any race cell. The exact required HTML for each grade:
   G1: `<span class="grade-icon">🏆</span><span class="grade-g1">G1</span>&nbsp;`
   G2: `<span class="grade-icon">🥈</span><span class="grade-g2">G2</span>&nbsp;`
@@ -4426,7 +4494,7 @@ except Exception as e:
 - STEP 7.5 IS UNCONDITIONAL: After writing HTML to `/tmp/digest_draft.html`, run the GATE CHECK Python command. All 11 checks must pass. `has_navy_color_1a1a2e`, `has_stable_tag_class`, `has_grade_g1_class`, `has_section_breaks`, `has_subsection_headers`, and `has_stable_updates_section` MUST pass. GATE must show `GATE PASS` before create_draft is called — no exceptions.
 - WORKOUT FORMAT IS STABLE-ROW DIVS ONLY (LOCKED): `<div class="stable-row">` not table.
 - WORKS DATA SOURCE IS STRUCTURED ONLY (LOCKED): FWD-EQ or Equibase web. No syndicate narratives.
-- SYNDICATE BALANCE IN UPDATES (LOCKED): UPDATES & NEWS must cover ALL syndicates proportionally — Eclipse, Woodford, Middleham Park, Final Furlong, RTP Racing, Wasabi, Commonwealth, Team Valor. Team Valor PDFs (Step 3) must NOT crowd out other syndicates. Cap Team Valor to max 3 stable-rows when other syndicates have news. Run per-syndicate targeted email searches (Step 4e) to find non-Team-Valor content.
+- SYNDICATE BALANCE IN UPDATES (LOCKED): UPDATES & NEWS must cover ALL syndicates proportionally — Eclipse, Woodford, Middleham Park, Final Furlong, RTP Racing, Wasabi, Commonwealth, Team Valor, Rainbows End. Team Valor PDFs (Step 3) must NOT crowd out other syndicates. Cap Team Valor to max 3 stable-rows when other syndicates have news. Run per-syndicate targeted email searches (Step 4e) to find non-Team-Valor content.
 - ENTRIES HORSES MANDATE STEP 4D (LOCKED): Snowglobe: refno=1309825.
 - UPCOMING WRAPPER IS MANDATORY (LOCKED): YESTERDAY + TODAY + TOMORROW (3 days) inside one `<div class="upcoming-wrapper">`.
 - STEP 7 COMPLETENESS SUPERSEDES SEARCH VOLUME (LOCKED): Skip supplemental WebFetch. Never compress Step 7.
@@ -4434,7 +4502,7 @@ except Exception as e:
 - SALES & INDUSTRY MINIMUM 2 STORIES (LOCKED).
 - SALES & INDUSTRY SCOPE STRICT (LOCKED — FINANCIAL ONLY): sales_industry contains ONLY sales results, auctions, stud fees, breeding news, stallion/farm news, wagering handle, purse increases. ZERO race deaths, ZERO regulatory/legal decisions, ZERO criminal cases, ZERO human interest. If a story is not primarily about commerce or money changing hands → move it to Top 10 News, NEVER Sales & Industry. "Scott Robinson prison time" = Legal → Top 10. "Keeneland September Sale results" = Auction → Sales & Industry.
 - SYNDICATE HEADERS IN STABLE UPDATES (LOCKED): The Python generator groups stable_updates by syndicate and renders an underlined syndicate name header before each group. The JSON `syndicate` field must match exactly one of the 8 valid syndicate names so the grouping works correctly.
-- SYNDICATE ABBREVIATIONS FORBIDDEN (LOCKED — ABSOLUTE — ZERO TOLERANCE): The `syndicate` field in digest_data.json MUST be the exact title-case full name. Valid values: `Eclipse` | `Team Valor` | `Commonwealth` | `Woodford` | `Middleham Park` | `Wasabi` | `Final Furlong` | `RTP Racing`. NEVER use abbreviations: MHP, WSB, WRF, TV, ECL, COM, FF, or any other shorthand. Abbreviation → `silk()` falls back to gray badge labeled with the abbreviation → all silk colors broken. Step 7.1 validation WILL `sys.exit(1)` if any abbreviation is found — the generator will not run until this is fixed.
+- SYNDICATE ABBREVIATIONS FORBIDDEN (LOCKED — ABSOLUTE — ZERO TOLERANCE): The `syndicate` field in digest_data.json MUST be the exact title-case full name. Valid values: `Eclipse` | `Team Valor` | `Commonwealth` | `Woodford` | `Middleham Park` | `Wasabi` | `Final Furlong` | `RTP Racing` | `Rainbows End`. NEVER use abbreviations: MHP, WSB, WRF, TV, ECL, COM, FF, or any other shorthand. Abbreviation → `silk()` falls back to gray badge labeled with the abbreviation → all silk colors broken. Step 7.1 validation WILL `sys.exit(1)` if any abbreviation is found — the generator will not run until this is fixed.
 - MY STABLE MANUAL HTML IS ABSOLUTELY FORBIDDEN (LOCKED — ZERO TOLERANCE): The My Stable section header MUST use 🏇 (U+1F3C7, the horse-racing emoji, `\U0001f3c7`). The emoji 🐴 (U+1F434, horse face) is PROOF the agent wrote manual HTML — this is a critical violation. Every stable-row MUST be produced by the `row()` function in Step 7.5. NEVER write `<div class="stable-row">` or `<h4>` or any horse HTML manually. If you find yourself typing a horse entry directly → STOP → fix the JSON and re-run Step 7.5. Step 7.6 checks for missing silk badges and wrong emoji and will block submission if found.
 - EU RESULTS PROACTIVE SEARCH (LOCKED — MANDATORY EVERY DAY): Step 4c-R-EU runs every day for all 9 EU-based horses: Saxony Charms, Oracle of Delphi, Eager Lad, Sweetheart Jewelry (Team Valor) + Otherworldly (Eclipse) + Phantom Princess (RTP Racing) + Boleto, Capricious Star, Double Right (Middleham Park). Equibase virtual stable does NOT cover European tracks. These horses will NEVER appear in Equibase notifications even when they race. Use Racing Post WebSearch for each horse every day without exception.
 - CONTINENT DIVIDERS IN RECAP (LOCKED): 🇺🇸 UNITED STATES and 🌍 EUROPE dividers always present.

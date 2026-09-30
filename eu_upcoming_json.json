@@ -1,20 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Mon Sep 28",
-  "races": [
-   {
-    "grade": "LR",
-    "race_name": "Grand Criterium De Bordeaux",
-    "date_short": "Mon\nSep 28",
-    "track": "Bordeaux Le Bouscat",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Tue Sep 29",
+  "day_label": "YESTERDAY — Tue Sep 29",
   "races": [
    {
     "grade": "LR",
@@ -28,7 +14,11 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Wed Sep 30",
+  "day_label": "TODAY — Wed Sep 30",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Thu Oct 1",
   "races": [
    {
     "grade": "LR",
@@ -128,6 +118,24 @@
     "country": "FR",
     "flag": "🇫🇷",
     "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Coolmore Sioux Nation Concorde Stakes (Listed)",
+    "date_short": "Sun\nOct 4",
+    "track": "Curragh",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Hailey Equine Irish EBF Brigid's Pastures Stakes (Listed)",
+    "date_short": "Sun\nOct 4",
+    "track": "Curragh",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "6f · Turf"
    }
   ]
  }

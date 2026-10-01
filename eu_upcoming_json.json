@@ -1,24 +1,14 @@
 [
  {
-  "day_label": "YESTERDAY — Tue Sep 29",
-  "races": [
-   {
-    "grade": "LR",
-    "race_name": "Prix De Bonneval",
-    "date_short": "Tue\nSep 29",
-    "track": "Chantilly",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "5½f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Wed Sep 30",
+  "day_label": "YESTERDAY — Wed Sep 30",
   "races": []
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Thu Oct 1",
+  "day_label": "TODAY — Thu Oct 1",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Fri Oct 2",
   "races": [
    {
     "grade": "LR",

@@ -11,6 +11,15 @@
   "day_label": "TOMORROW — Next 7 days from Fri Oct 2",
   "races": [
    {
+    "grade": "G3",
+    "race_name": "Prix De Conde Jockey Club De Turquie",
+    "date_short": "Fri\nOct 2",
+    "track": "Saint-Cloud",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m2f · Turf"
+   },
+   {
     "grade": "LR",
     "race_name": "BetMGM Noel Murless Stakes (Listed Race)",
     "date_short": "Fri\nOct 2",
@@ -36,6 +45,33 @@
     "country": "IRE",
     "flag": "🇮🇪",
     "dist_surface": "7f · AW"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Prix Matchem",
+    "date_short": "Fri\nOct 2",
+    "track": "Saint-Cloud",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Prix Dahlia",
+    "date_short": "Fri\nOct 2",
+    "track": "Saint-Cloud",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m2f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Prix Coronation",
+    "date_short": "Fri\nOct 2",
+    "track": "Saint-Cloud",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m · Turf"
    },
    {
     "grade": "G1",

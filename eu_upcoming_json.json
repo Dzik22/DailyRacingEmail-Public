@@ -1,14 +1,10 @@
 [
  {
-  "day_label": "YESTERDAY — Wed Sep 30",
+  "day_label": "YESTERDAY — Thu Oct 1",
   "races": []
  },
  {
-  "day_label": "TODAY — Thu Oct 1",
-  "races": []
- },
- {
-  "day_label": "TOMORROW — Next 7 days from Fri Oct 2",
+  "day_label": "TODAY — Fri Oct 2",
   "races": [
    {
     "grade": "G3",
@@ -72,6 +68,29 @@
     "country": "FR",
     "flag": "🇫🇷",
     "dist_surface": "1m · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Sat Oct 3",
+  "races": [
+   {
+    "grade": "G1",
+    "race_name": "Qatar Prix de Royallieu (Group 1)",
+    "date_short": "Sat\nOct 3",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m6f · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Qatar Prix du Cadran (Group 1)",
+    "date_short": "Sat\nOct 3",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "2m4f · Turf"
    },
    {
     "grade": "G1",
@@ -80,6 +99,33 @@
     "track": "Newmarket",
     "country": "GB",
     "flag": "🇬🇧",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Qatar Prix Chaudenay",
+    "date_short": "Sat\nOct 3",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m7f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Qatar Prix Dollar (group 2)",
+    "date_short": "Sat\nOct 3",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m1½f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Qatar Prix Daniel Wildenstein (Group 2)",
+    "date_short": "Sat\nOct 3",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
     "dist_surface": "1m · Turf"
    },
    {
@@ -129,7 +175,7 @@
    },
    {
     "grade": "LR",
-    "race_name": "Racing Tv Ebf Stallions Guisborough Stakes (Listed Race)",
+    "race_name": "John Smith's Ebf Stallions Guisborough Stakes (Listed Race)",
     "date_short": "Sat\nOct 3",
     "track": "Redcar",
     "country": "GB",

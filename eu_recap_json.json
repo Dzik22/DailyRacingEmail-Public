@@ -1,1 +1,72 @@
-[]
+[
+ {
+  "grade": "G3",
+  "race_name": "Prix De Conde Jockey Club De Turquie",
+  "track": "Saint-Cloud",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m2f · Turf",
+  "winner": "Just Yet",
+  "off_time": "12:43"
+ },
+ {
+  "grade": "LR",
+  "race_name": "BetMGM Noel Murless Stakes (Listed Race)",
+  "track": "Ascot",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "1m6f · Turf",
+  "winner": "Infraad",
+  "off_time": "3:35"
+ },
+ {
+  "grade": "LR",
+  "race_name": "Irish Stallion Farms EBF Star Appeal Stakes (Listed)",
+  "track": "Dundalk (AW)",
+  "country": "IRE",
+  "flag": "🇮🇪",
+  "dist_surface": "7f · AW",
+  "winner": "Joga Bonito",
+  "off_time": "7:30"
+ },
+ {
+  "grade": "LR",
+  "race_name": "Irish Stallion Farms EBF Legacy Stakes (Listed)",
+  "track": "Dundalk (AW)",
+  "country": "IRE",
+  "flag": "🇮🇪",
+  "dist_surface": "5f · AW",
+  "winner": "Shimmering Sun",
+  "off_time": "6:00"
+ },
+ {
+  "grade": "LR",
+  "race_name": "Prix Coronation",
+  "track": "Saint-Cloud",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m · Turf",
+  "winner": "Vaticana",
+  "off_time": "4:14"
+ },
+ {
+  "grade": "LR",
+  "race_name": "Prix Dahlia",
+  "track": "Saint-Cloud",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m2f · Turf",
+  "winner": "Miss Justice",
+  "off_time": "3:38"
+ },
+ {
+  "grade": "LR",
+  "race_name": "Prix Matchem",
+  "track": "Saint-Cloud",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "7f · Turf",
+  "winner": "No Tune",
+  "off_time": "3:03"
+ }
+]

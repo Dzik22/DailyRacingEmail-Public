@@ -1,84 +1,7 @@
 [
  {
-  "day_label": "YESTERDAY — Fri Oct 2",
+  "day_label": "YESTERDAY — Sat Oct 3",
   "races": [
-   {
-    "grade": "G3",
-    "race_name": "Prix De Conde Jockey Club De Turquie",
-    "date_short": "Fri\nOct 2",
-    "track": "Saint-Cloud",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m2f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "BetMGM Noel Murless Stakes (Listed Race)",
-    "date_short": "Fri\nOct 2",
-    "track": "Ascot",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m6f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Irish Stallion Farms EBF Star Appeal Stakes (Listed)",
-    "date_short": "Fri\nOct 2",
-    "track": "Dundalk (AW)",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "7f · AW"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Irish Stallion Farms EBF Legacy Stakes (Listed)",
-    "date_short": "Fri\nOct 2",
-    "track": "Dundalk (AW)",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "5f · AW"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Prix Coronation",
-    "date_short": "Fri\nOct 2",
-    "track": "Saint-Cloud",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Prix Dahlia",
-    "date_short": "Fri\nOct 2",
-    "track": "Saint-Cloud",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m2f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Prix Matchem",
-    "date_short": "Fri\nOct 2",
-    "track": "Saint-Cloud",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "7f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Sat Oct 3",
-  "races": [
-   {
-    "grade": "G1",
-    "race_name": "Qatar Prix de Royallieu (Group 1)",
-    "date_short": "Sat\nOct 3",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m6f · Turf"
-   },
    {
     "grade": "G1",
     "race_name": "Qatar Prix du Cadran (Group 1)",
@@ -87,6 +10,15 @@
     "country": "FR",
     "flag": "🇫🇷",
     "dist_surface": "2m4f · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Qatar Prix de Royallieu (Group 1)",
+    "date_short": "Sat\nOct 3",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m6f · Turf"
    },
    {
     "grade": "G1",
@@ -99,12 +31,12 @@
    },
    {
     "grade": "G2",
-    "race_name": "Qatar Prix Chaudenay",
+    "race_name": "Qatar Prix Daniel Wildenstein (Group 2)",
     "date_short": "Sat\nOct 3",
     "track": "Longchamp",
     "country": "FR",
     "flag": "🇫🇷",
-    "dist_surface": "1m7f · Turf"
+    "dist_surface": "1m · Turf"
    },
    {
     "grade": "G2",
@@ -117,21 +49,12 @@
    },
    {
     "grade": "G2",
-    "race_name": "Qatar Prix Daniel Wildenstein (Group 2)",
+    "race_name": "Qatar Prix Chaudenay",
     "date_short": "Sat\nOct 3",
     "track": "Longchamp",
     "country": "FR",
     "flag": "🇫🇷",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Betmgm Cumberland Lodge Stakes (Group 3)",
-    "date_short": "Sat\nOct 3",
-    "track": "Ascot",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m4f · Turf"
+    "dist_surface": "1m7f · Turf"
    },
    {
     "grade": "G3",
@@ -143,13 +66,13 @@
     "dist_surface": "6f · Turf"
    },
    {
-    "grade": "LR",
-    "race_name": "Betmgm British Ebf October Stakes (Listed Race)",
+    "grade": "G3",
+    "race_name": "Betmgm Cumberland Lodge Stakes (Group 3)",
     "date_short": "Sat\nOct 3",
     "track": "Ascot",
     "country": "GB",
     "flag": "🇬🇧",
-    "dist_surface": "7f · Turf"
+    "dist_surface": "1m4f · Turf"
    },
    {
     "grade": "LR",
@@ -162,12 +85,12 @@
    },
    {
     "grade": "LR",
-    "race_name": "William Hill Two Year Old Trophy (Listed Race)",
+    "race_name": "Betmgm British Ebf October Stakes (Listed Race)",
     "date_short": "Sat\nOct 3",
-    "track": "Redcar",
+    "track": "Ascot",
     "country": "GB",
     "flag": "🇬🇧",
-    "dist_surface": "6f · Turf"
+    "dist_surface": "7f · Turf"
    },
    {
     "grade": "LR",
@@ -177,30 +100,21 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "William Hill Two Year Old Trophy (Listed Race)",
+    "date_short": "Sat\nOct 3",
+    "track": "Redcar",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · Turf"
    }
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Sun Oct 4",
+  "day_label": "TODAY — Sun Oct 4",
   "races": [
-   {
-    "grade": "G1",
-    "race_name": "Bet365 Fillies' Mile (Group 1)",
-    "date_short": "Fri\nOct 9",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Thoroughbred Industry Employee Awards Challenge Stakes (Group 2)",
-    "date_short": "Fri\nOct 9",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m · Turf"
-   },
    {
     "grade": "G1",
     "race_name": "Qatar Prix Marcel Boussac - Criterium Des Pouliches",
@@ -272,6 +186,92 @@
     "country": "IRE",
     "flag": "🇮🇪",
     "dist_surface": "6f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Mon Oct 5",
+  "races": [
+   {
+    "grade": "G1",
+    "race_name": "Old Rowley Cup Handicap Stakes (Heritage Handicap) (GBBPlus Race)",
+    "date_short": "Fri\nOct 9",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Bet365 Fillies' Mile (Group 1)",
+    "date_short": "Fri\nOct 9",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Newmarket Academy Godolphin Beacon Project Cornwallis Stakes (Group 3)",
+    "date_short": "Fri\nOct 9",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "5f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Godolphin Lifetime Care Oh So Sharp Stakes (Group 3)",
+    "date_short": "Fri\nOct 9",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Newmarket Pony Academy Pride Stakes (Group 3)",
+    "date_short": "Fri\nOct 9",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m2f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Godolphin Under Starters Orders EBF Boadicea Stakes (Listed Race)",
+    "date_short": "Fri\nOct 9",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Irish Stallion Farms EBF Navigation Stakes (Listed)",
+    "date_short": "Mon\nOct 5",
+    "track": "Killarney",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m3f · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Darley Dewhurst Stakes (Group 1)",
+    "date_short": "Sat\nOct 10",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "2m2f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Emirates Autumn Stakes (Group 3)",
+    "date_short": "Sat\nOct 10",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "7f · Turf"
    },
    {
     "grade": "LR",

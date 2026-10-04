@@ -1,72 +1,122 @@
 [
  {
-  "grade": "G3",
-  "race_name": "Prix De Conde Jockey Club De Turquie",
-  "track": "Saint-Cloud",
+  "grade": "G1",
+  "race_name": "Qatar Prix du Cadran (Group 1)",
+  "track": "Longchamp",
   "country": "FR",
   "flag": "🇫🇷",
-  "dist_surface": "1m2f · Turf",
-  "winner": "Just Yet",
-  "off_time": "12:43"
+  "dist_surface": "2m4f · Turf",
+  "winner": "Caballo De Mar",
+  "off_time": "4:00"
  },
  {
-  "grade": "LR",
-  "race_name": "BetMGM Noel Murless Stakes (Listed Race)",
-  "track": "Ascot",
+  "grade": "G1",
+  "race_name": "Qatar Prix de Royallieu (Group 1)",
+  "track": "Longchamp",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m6f · Turf",
+  "winner": "Fairy Glen",
+  "off_time": "3:25"
+ },
+ {
+  "grade": "G1",
+  "race_name": "Betmgm Sun Chariot Stakes (Group 1)",
+  "track": "Newmarket",
   "country": "GB",
   "flag": "🇬🇧",
-  "dist_surface": "1m6f · Turf",
-  "winner": "Infraad",
-  "off_time": "3:35"
+  "dist_surface": "1m · Turf",
+  "winner": "Blue Bolt",
+  "off_time": "1:35"
  },
  {
-  "grade": "LR",
-  "race_name": "Irish Stallion Farms EBF Star Appeal Stakes (Listed)",
-  "track": "Dundalk (AW)",
-  "country": "IRE",
-  "flag": "🇮🇪",
-  "dist_surface": "7f · AW",
-  "winner": "Joga Bonito",
-  "off_time": "7:30"
- },
- {
-  "grade": "LR",
-  "race_name": "Irish Stallion Farms EBF Legacy Stakes (Listed)",
-  "track": "Dundalk (AW)",
-  "country": "IRE",
-  "flag": "🇮🇪",
-  "dist_surface": "5f · AW",
-  "winner": "Shimmering Sun",
-  "off_time": "6:00"
- },
- {
-  "grade": "LR",
-  "race_name": "Prix Coronation",
-  "track": "Saint-Cloud",
+  "grade": "G2",
+  "race_name": "Qatar Prix Daniel Wildenstein (Group 2)",
+  "track": "Longchamp",
   "country": "FR",
   "flag": "🇫🇷",
   "dist_surface": "1m · Turf",
-  "winner": "Vaticana",
-  "off_time": "4:14"
+  "winner": "Qirat",
+  "off_time": "4:35"
+ },
+ {
+  "grade": "G2",
+  "race_name": "Qatar Prix Dollar (group 2)",
+  "track": "Longchamp",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m1½f · Turf",
+  "winner": "Wimbledon Hawkeye",
+  "off_time": "12:58"
+ },
+ {
+  "grade": "G2",
+  "race_name": "Qatar Prix Chaudenay",
+  "track": "Longchamp",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m7f · Turf",
+  "winner": "Jabracadabra",
+  "off_time": "12:23"
+ },
+ {
+  "grade": "G3",
+  "race_name": "John Guest Racing Bengough Stakes (Group 3)",
+  "track": "Ascot",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "6f · Turf",
+  "winner": "Hidden Force",
+  "off_time": "3:00"
+ },
+ {
+  "grade": "G3",
+  "race_name": "Betmgm Cumberland Lodge Stakes (Group 3)",
+  "track": "Ascot",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "1m4f · Turf",
+  "winner": "Al Aasy",
+  "off_time": "2:25"
  },
  {
   "grade": "LR",
-  "race_name": "Prix Dahlia",
-  "track": "Saint-Cloud",
-  "country": "FR",
-  "flag": "🇫🇷",
-  "dist_surface": "1m2f · Turf",
-  "winner": "Miss Justice",
-  "off_time": "3:38"
+  "race_name": "Betmgm Rous Stakes (Listed Race)",
+  "track": "Ascot",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "5f · Turf",
+  "winner": "Air Force One",
+  "off_time": "1:50"
  },
  {
   "grade": "LR",
-  "race_name": "Prix Matchem",
-  "track": "Saint-Cloud",
-  "country": "FR",
-  "flag": "🇫🇷",
+  "race_name": "Betmgm British Ebf October Stakes (Listed Race)",
+  "track": "Ascot",
+  "country": "GB",
+  "flag": "🇬🇧",
   "dist_surface": "7f · Turf",
-  "winner": "No Tune",
-  "off_time": "3:03"
+  "winner": "So Regal",
+  "off_time": "1:15"
+ },
+ {
+  "grade": "LR",
+  "race_name": "John Smith's Ebf Stallions Guisborough Stakes (Listed Race)",
+  "track": "Redcar",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "7f · Turf",
+  "winner": "Sondad",
+  "off_time": "3:55"
+ },
+ {
+  "grade": "LR",
+  "race_name": "William Hill Two Year Old Trophy (Listed Race)",
+  "track": "Redcar",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "6f · Turf",
+  "winner": "Satellite Of Love",
+  "off_time": "3:20"
  }
 ]

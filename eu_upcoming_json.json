@@ -95,7 +95,7 @@
   "races": [
    {
     "grade": "G1",
-    "race_name": "Old Rowley Cup Handicap Stakes (Heritage Handicap) (GBBPlus Race)",
+    "race_name": "Bet365 Old Rowley Cup Handicap Stakes (Heritage Handicap) (GBBPlus Race)",
     "date_short": "Fri\nOct 9",
     "track": "Newmarket",
     "country": "GB",
@@ -149,7 +149,7 @@
    },
    {
     "grade": "G1",
-    "race_name": "Darley Dewhurst Stakes (Group 1)",
+    "race_name": "Club Godolphin Cesarewitch Handicap Stakes (Heritage Handicap) (GBBPlus Race)",
     "date_short": "Sat\nOct 10",
     "track": "Newmarket",
     "country": "GB",
@@ -158,12 +158,39 @@
    },
    {
     "grade": "G3",
-    "race_name": "Emirates Autumn Stakes (Group 3)",
+    "race_name": "Too Darn Hot Darley Stakes (Group 3)",
+    "date_short": "Sat\nOct 10",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m1f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Night Of Thunder Zetland Stakes (Group 3)",
+    "date_short": "Sat\nOct 10",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m2f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Darley Dewhurst Stakes (Group 1)",
     "date_short": "Sat\nOct 10",
     "track": "Newmarket",
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Sky Bet Rockingham Stakes (Listed Race)",
+    "date_short": "Sat\nOct 10",
+    "track": "York",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · Turf"
    },
    {
     "grade": "LR",

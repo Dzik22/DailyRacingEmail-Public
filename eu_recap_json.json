@@ -1,122 +1,82 @@
 [
  {
   "grade": "G1",
-  "race_name": "Qatar Prix du Cadran (Group 1)",
+  "race_name": "Qatar Prix de la Foret (Group 1)",
   "track": "Longchamp",
   "country": "FR",
   "flag": "🇫🇷",
-  "dist_surface": "2m4f · Turf",
-  "winner": "Caballo De Mar",
-  "off_time": "4:00"
+  "dist_surface": "7f · Turf",
+  "winner": "True Love",
+  "off_time": "4:25"
  },
  {
   "grade": "G1",
-  "race_name": "Qatar Prix de Royallieu (Group 1)",
+  "race_name": "Prix de l'Opera Longines",
   "track": "Longchamp",
   "country": "FR",
   "flag": "🇫🇷",
-  "dist_surface": "1m6f · Turf",
-  "winner": "Fairy Glen",
-  "off_time": "3:25"
+  "dist_surface": "1m2f · Turf",
+  "winner": "Miss Scott",
+  "off_time": "3:50"
  },
  {
   "grade": "G1",
-  "race_name": "Betmgm Sun Chariot Stakes (Group 1)",
-  "track": "Newmarket",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "1m · Turf",
-  "winner": "Blue Bolt",
-  "off_time": "1:35"
- },
- {
-  "grade": "G2",
-  "race_name": "Qatar Prix Daniel Wildenstein (Group 2)",
+  "race_name": "Qatar Prix de l'Arc de Triomphe (Group 1)",
   "track": "Longchamp",
   "country": "FR",
   "flag": "🇫🇷",
-  "dist_surface": "1m · Turf",
-  "winner": "Qirat",
-  "off_time": "4:35"
- },
- {
-  "grade": "G2",
-  "race_name": "Qatar Prix Dollar (group 2)",
-  "track": "Longchamp",
-  "country": "FR",
-  "flag": "🇫🇷",
-  "dist_surface": "1m1½f · Turf",
-  "winner": "Wimbledon Hawkeye",
-  "off_time": "12:58"
- },
- {
-  "grade": "G2",
-  "race_name": "Qatar Prix Chaudenay",
-  "track": "Longchamp",
-  "country": "FR",
-  "flag": "🇫🇷",
-  "dist_surface": "1m7f · Turf",
-  "winner": "Jabracadabra",
-  "off_time": "12:23"
- },
- {
-  "grade": "G3",
-  "race_name": "John Guest Racing Bengough Stakes (Group 3)",
-  "track": "Ascot",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "6f · Turf",
-  "winner": "Hidden Force",
-  "off_time": "3:00"
- },
- {
-  "grade": "G3",
-  "race_name": "Betmgm Cumberland Lodge Stakes (Group 3)",
-  "track": "Ascot",
-  "country": "GB",
-  "flag": "🇬🇧",
   "dist_surface": "1m4f · Turf",
-  "winner": "Al Aasy",
-  "off_time": "2:25"
+  "winner": "Daryz",
+  "off_time": "3:05"
  },
  {
-  "grade": "LR",
-  "race_name": "Betmgm Rous Stakes (Listed Race)",
-  "track": "Ascot",
-  "country": "GB",
-  "flag": "🇬🇧",
+  "grade": "G1",
+  "race_name": "Prix de l'Abbaye de Longchamp Longines (Group 1)",
+  "track": "Longchamp",
+  "country": "FR",
+  "flag": "🇫🇷",
   "dist_surface": "5f · Turf",
-  "winner": "Air Force One",
-  "off_time": "1:50"
+  "winner": "Miss Yechance",
+  "off_time": "1:47"
  },
  {
-  "grade": "LR",
-  "race_name": "Betmgm British Ebf October Stakes (Listed Race)",
-  "track": "Ascot",
-  "country": "GB",
-  "flag": "🇬🇧",
+  "grade": "G1",
+  "race_name": "Qatar Prix Jean-Luc Lagardere (Group 1)",
+  "track": "Longchamp",
+  "country": "FR",
+  "flag": "🇫🇷",
   "dist_surface": "7f · Turf",
-  "winner": "So Regal",
-  "off_time": "1:15"
+  "winner": "Amusingly",
+  "off_time": "1:09"
+ },
+ {
+  "grade": "G1",
+  "race_name": "Qatar Prix Marcel Boussac - Criterium Des Pouliches",
+  "track": "Longchamp",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m · Turf",
+  "winner": "Green Empress",
+  "off_time": "12:31"
  },
  {
   "grade": "LR",
-  "race_name": "John Smith's Ebf Stallions Guisborough Stakes (Listed Race)",
-  "track": "Redcar",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "7f · Turf",
-  "winner": "Sondad",
-  "off_time": "3:55"
- },
- {
-  "grade": "LR",
-  "race_name": "William Hill Two Year Old Trophy (Listed Race)",
-  "track": "Redcar",
-  "country": "GB",
-  "flag": "🇬🇧",
+  "race_name": "Hailey Equine Irish EBF Brigid's Pastures Stakes (Listed)",
+  "track": "Curragh",
+  "country": "IRE",
+  "flag": "🇮🇪",
   "dist_surface": "6f · Turf",
-  "winner": "Satellite Of Love",
-  "off_time": "3:20"
+  "winner": "Carla Ridge",
+  "off_time": "3:40"
+ },
+ {
+  "grade": "LR",
+  "race_name": "Coolmore Sioux Nation Concorde Stakes (Listed)",
+  "track": "Curragh",
+  "country": "IRE",
+  "flag": "🇮🇪",
+  "dist_surface": "7f · Turf",
+  "winner": "King Cuan",
+  "off_time": "2:30"
  }
 ]

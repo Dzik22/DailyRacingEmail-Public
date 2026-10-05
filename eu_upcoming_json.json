@@ -1,155 +1,15 @@
 [
  {
-  "day_label": "YESTERDAY — Sat Oct 3",
+  "day_label": "YESTERDAY — Sun Oct 4",
   "races": [
    {
     "grade": "G1",
-    "race_name": "Qatar Prix du Cadran (Group 1)",
-    "date_short": "Sat\nOct 3",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "2m4f · Turf"
-   },
-   {
-    "grade": "G1",
-    "race_name": "Qatar Prix de Royallieu (Group 1)",
-    "date_short": "Sat\nOct 3",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m6f · Turf"
-   },
-   {
-    "grade": "G1",
-    "race_name": "Betmgm Sun Chariot Stakes (Group 1)",
-    "date_short": "Sat\nOct 3",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Qatar Prix Daniel Wildenstein (Group 2)",
-    "date_short": "Sat\nOct 3",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Qatar Prix Dollar (group 2)",
-    "date_short": "Sat\nOct 3",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m1½f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Qatar Prix Chaudenay",
-    "date_short": "Sat\nOct 3",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m7f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "John Guest Racing Bengough Stakes (Group 3)",
-    "date_short": "Sat\nOct 3",
-    "track": "Ascot",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Betmgm Cumberland Lodge Stakes (Group 3)",
-    "date_short": "Sat\nOct 3",
-    "track": "Ascot",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Betmgm Rous Stakes (Listed Race)",
-    "date_short": "Sat\nOct 3",
-    "track": "Ascot",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "5f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Betmgm British Ebf October Stakes (Listed Race)",
-    "date_short": "Sat\nOct 3",
-    "track": "Ascot",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "John Smith's Ebf Stallions Guisborough Stakes (Listed Race)",
-    "date_short": "Sat\nOct 3",
-    "track": "Redcar",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "William Hill Two Year Old Trophy (Listed Race)",
-    "date_short": "Sat\nOct 3",
-    "track": "Redcar",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Sun Oct 4",
-  "races": [
-   {
-    "grade": "G1",
-    "race_name": "Qatar Prix Marcel Boussac - Criterium Des Pouliches",
-    "date_short": "Sun\nOct 4",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "G1",
-    "race_name": "Qatar Prix Jean-Luc Lagardere (Group 1)",
+    "race_name": "Qatar Prix de la Foret (Group 1)",
     "date_short": "Sun\nOct 4",
     "track": "Longchamp",
     "country": "FR",
     "flag": "🇫🇷",
     "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "G1",
-    "race_name": "Prix de l'Abbaye de Longchamp Longines (Group 1)",
-    "date_short": "Sun\nOct 4",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "5f · Turf"
-   },
-   {
-    "grade": "G1",
-    "race_name": "Qatar Prix de l'Arc de Triomphe (Group 1)",
-    "date_short": "Sun\nOct 4",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m4f · Turf"
    },
    {
     "grade": "G1",
@@ -162,7 +22,25 @@
    },
    {
     "grade": "G1",
-    "race_name": "Qatar Prix de la Foret (Group 1)",
+    "race_name": "Qatar Prix de l'Arc de Triomphe (Group 1)",
+    "date_short": "Sun\nOct 4",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Prix de l'Abbaye de Longchamp Longines (Group 1)",
+    "date_short": "Sun\nOct 4",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "5f · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Qatar Prix Jean-Luc Lagardere (Group 1)",
     "date_short": "Sun\nOct 4",
     "track": "Longchamp",
     "country": "FR",
@@ -170,13 +48,13 @@
     "dist_surface": "7f · Turf"
    },
    {
-    "grade": "LR",
-    "race_name": "Coolmore Sioux Nation Concorde Stakes (Listed)",
+    "grade": "G1",
+    "race_name": "Qatar Prix Marcel Boussac - Criterium Des Pouliches",
     "date_short": "Sun\nOct 4",
-    "track": "Curragh",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "7f · Turf"
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m · Turf"
    },
    {
     "grade": "LR",
@@ -186,11 +64,34 @@
     "country": "IRE",
     "flag": "🇮🇪",
     "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Coolmore Sioux Nation Concorde Stakes (Listed)",
+    "date_short": "Sun\nOct 4",
+    "track": "Curragh",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "7f · Turf"
    }
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Mon Oct 5",
+  "day_label": "TODAY — Mon Oct 5",
+  "races": [
+   {
+    "grade": "LR",
+    "race_name": "Irish Stallion Farms EBF Navigation Stakes (Listed)",
+    "date_short": "Mon\nOct 5",
+    "track": "Killarney",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m3f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Tue Oct 6",
   "races": [
    {
     "grade": "G1",
@@ -245,15 +146,6 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "6f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Irish Stallion Farms EBF Navigation Stakes (Listed)",
-    "date_short": "Mon\nOct 5",
-    "track": "Killarney",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m3f · Turf"
    },
    {
     "grade": "G1",

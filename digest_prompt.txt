@@ -253,6 +253,11 @@ Kensai                → Woodford
 Castiglione           → Woodford
 ```
 
+⚠️ IMPLY '25 IS A COLT (noted Oct 5 2026). The UNNAMED PROSPECTS handle says "Imply '25 Filly",
+but Commonwealth's own emails say colt — "the yearling colt has arrived at Diamond A Farm". Same
+horse; match either spelling, and call it a colt in prose. Mike holds 20 shares, confirmed by
+Commonwealth's "Purchase Confirmed!" email of Sep 29 2026.
+
 Woodford also has unnamed 2-year-olds — include under Woodford badge if mentioned.
 NOT Mike's: Queen Azteca, Armor Supreme, Sirius A, Blackisthenewblack, Want and Power, Warming, Code, Victorious Dream, Capturing, Versailles Road, Twilight Delight, Freaky, Journalism, Speed Shopper, Classic Q, Meaning, Corruption, Roja, Slice, Study, Gstaad, Precise, Napoleon Solo, Constitution River, Golden Tempo, Emerging Market, Thought Process.
 ⚠️ ECLIPSE EMAILS MENTION MANY NON-OWNED HORSES: Eclipse Thoroughbred Partners owns a large stable. Their emails reference many horses that are NOT in Mike's MASTER TABLE. ONLY horses explicitly listed in the MASTER TABLE (Ulysses Rose, Cuban Flame, Otherworldly) are Mike's Eclipse horses. Every other Eclipse-mentioned horse → Top 10 News only. NEVER put a non-MASTER-TABLE Eclipse horse in Stable Updates.
@@ -2600,6 +2605,26 @@ Every result entry `text` field MUST follow this exact format:
 Example: `"Finished 3rd of 15 · [Race Name] · The Curragh (IRE) · May 24 · J: [Jockey]"` — field size from official results, grade only if the race is actually graded
 Example: `"Finished 6th of 7 · [Race Name] · [Track] · [Date] · J: [Jockey]"`
 ⚠️ NEVER invent field sizes — 12, 15, 8 runners must come from the web search result, not guessed.
+
+⚠️ **FIELD SIZE MEANS RACE-DAY STARTERS (rule added Sep 29 2026).** Sources routinely disagree, so resolve
+it this way every time instead of improvising:
+- The number in "1st of Y" is the horses that ACTUALLY STARTED, never the number declared or entered.
+- DECLARATIONS AND ENTRIES ARE NOT A FIELD SIZE. An owner email saying "post 8 of 21 runners" or a
+  racecard listing 20 declared tells you nothing about how many went to post. Scratches are normal.
+- When sources conflict, prefer the post-race report's runner count over any pre-race figure, and prefer
+  a figure stated twice in a race report over one stated once in a headline or preview.
+  Worked example (Saxony Charms, Sep 26 2026 Curragh): the entry email said "post 8 of 21 runners", the
+  bulletin headline said "21-runner", its race report said "wired a 17-horse field" and "a field of 17
+  runners", and independent search confirmed 17 started. 17 was correct — declarations were 20-21, with
+  scratches down to 17 starters.
+- If the starter count genuinely cannot be established, DO NOT average, split the difference, or fall back
+  to the declared number. State the verified part and omit the count — e.g.
+  "Won on debut by 1¾ lengths · $100,000 Maiden Special Weight, 6½f dirt · Parx Racing · Sep 19 · J: Jorge
+  Vargas Jr." — and set `"place"` explicitly in the JSON so the podium icon still renders. Then say in your
+  FINAL CHAT MESSAGE (never in the email) that the field size could not be confirmed.
+- A DECLARED horse that does not appear in the finishing order is a NON-RUNNER. Never report a position for
+  it, and never treat an entry as proof that it ran (Capricious Star, Redcar Oct 3 2026: declared, withdrawn,
+  absent from the 13-horse result).
 ⚠️ NEVER add a grade label (G1/G2/G3) unless the race is officially a graded stakes — check the race name from the search result.
 NEVER write: `"ran well"`, `"well beaten"`, `"ran okay"`, `"unplaced"` as the complete result. If you don't have the numeric position, run Step 4c-R now before writing this JSON.
 
@@ -2727,7 +2752,14 @@ After writing the JSON, run this validation check:
 ```bash
 python3 -c "
 import json
-MASTER = {'ulysses rose','tellus mater','simply joking','saxony charms','oracle of delphi','celestial siren','eager lad','sweetheart jewelry','cuban flame','coco g','sierra sagrada','snowglobe','oh shoot','otherworldly','random recall','phantom princess','boleto','capricious star','double right','straight shooter','maui madness','see you tonight','physique','just sayin','victor whiskey','corderito','core principle','highwaymen','clear for takeoff','mccoy','refute','alpha strike','flightress','outcomes based','hypnos','kensai','castiglione'}
+MASTER = {'ulysses rose','tellus mater','simply joking','saxony charms','oracle of delphi','celestial siren','eager lad','sweetheart jewelry','cuban flame','coco g','sierra sagrada','snowglobe','oh shoot','otherworldly','random recall','phantom princess','boleto','capricious star','double right','straight shooter','maui madness','see you tonight','physique','just sayin','victor whiskey','corderito','core principle','highwaymen','clear for takeoff','mccoy','refute','alpha strike','flightress','outcomes based','hypnos','kensai','castiglione',
+  # Unnamed 2025 yearling prospects (UNNAMED PROSPECTS table, keyed by dam). Added to this set
+  # Oct 5 2026: they were in the MASTER TABLE and the silk dict but NOT here, so the
+  # stable_updates gate below flagged them as non-MASTER and told the agent to move them to
+  # top10 — which is how Mike's own Imply '25 purchase kept vanishing from the digest.
+  # The imply-colt key is an alias: Commonwealth's emails call that one a colt, not a filly.
+  'cs incharge \'25 filly','indian charm \'25 filly','velvet \'25 filly',
+  'ransomed heart \'25 filly','blinkers \'25 filly','imply \'25 filly','imply \'25 colt'}
 d = json.load(open('/tmp/digest_data.json'))
 ms = d.get('my_stable', {})
 print('JSON OK:')
@@ -3785,6 +3817,10 @@ MASTER = {
   "cs incharge '25 filly":'Rainbows End', "indian charm '25 filly":'Rainbows End',
   "velvet '25 filly":'Rainbows End', "ransomed heart '25 filly":'Wasabi',
   "blinkers '25 filly":'Wasabi', "imply '25 filly":'Commonwealth',
+  # Oct 5 2026: Commonwealth's own emails call the Imply prospect a COLT ("the yearling colt has
+  # arrived at Diamond A Farm"), so accept that spelling too — otherwise the handle mismatches and
+  # the badge falls back to grey. Same horse either way.
+  "imply '25 colt":'Commonwealth',
 }
 FLAGS = {
   'USA':'\U0001f1fa\U0001f1f8','GB':'\U0001f1ec\U0001f1e7','IRE':'\U0001f1ee\U0001f1ea',
@@ -4481,6 +4517,12 @@ except Exception as e:
 - FWD-EQ WORKOUTS (LOCKED — VERIFIED): `in:anywhere`. Full body. Structured data only in WORKS.
 - EQ-FORWARDED LABEL — SEARCH IS BROKEN (LOCKED): The Gmail `label:Label_43` search silently returns zero results even when Label_43 emails exist. **NEVER use `label:Label_43` as a search query.** ALL Equibase email searches use SENDER: `from:virtualstable@equibase.com`. Self-forwarded copies use: `from:michaeljdzik@gmail.com subject:"..."`. Any prompt text that still says `label:Label_43` is an error — ignore it and use the sender-based search instead. This applies to ALL five FWD-EQ searches without exception.
 - ENTRIES (LOCKED): Step 4c. Silk badge in h4.
+- FIELD SIZE = STARTERS (LOCKED — Sep 29 2026): The Y in "Finished Xth of Y" is the number of horses that
+  actually started. Declarations and entries are never the field size; scratches are routine. When sources
+  conflict, the post-race report's runner count beats any pre-race figure. If the starter count cannot be
+  established, omit it and state the verified part rather than guessing or averaging — and set `"place"` so
+  the podium icon still renders. A declared horse absent from the finishing order is a NON-RUNNER: never
+  report a position for it.
 - PODIUM ICONS (LOCKED — Sep 6 2026, Coco G): Whenever a MASTER TABLE horse finishes 1st, 2nd or 3rd, its name is flanked on BOTH sides by that placing's icon — `🏆 HORSENAME 🏆` (1st), `🥈 HORSENAME 🥈` (2nd), `🥉 HORSENAME 🥉` (3rd) — in the RESULTS row, and in its STABLE UPDATES row when that entry sets `"place": 1|2|3` (or `"win": true`). Produced automatically by `row()`/`place_of()` in the Step 7.5 generator from the `"Finished Nth of Y"` text or the explicit JSON flag. NEVER type the icon into the `horse` or `text` field, and NEVER remove it. 4th and worse get nothing; Entries and Works never get icons. Step 7.5 check `place_icons_ok` and the Step 7.6 PLACING NOT ICONED check both block the draft if a placing renders without its two icon spans.
 - RESULTS (LOCKED): Any MASTER TABLE horse with result in last 7 days. A cancelled or voided race is NOT a result — put it in ENTRIES with "(— CANCELLED)" note or UPDATES, never RESULTS. ALWAYS verify the finishing position via WebSearch (Step 4c-R) — NEVER report just "ran" or "well beaten" without a numeric finish position (e.g., "3rd of 12"). The web search result overrides the Equibase notification if they differ.
 - TOP 10 NEWS (LOCKED): Exactly 10 numbered .story divs. Section header = "Top 10 News".

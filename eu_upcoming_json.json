@@ -1,83 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Sun Oct 4",
-  "races": [
-   {
-    "grade": "G1",
-    "race_name": "Qatar Prix de la Foret (Group 1)",
-    "date_short": "Sun\nOct 4",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "G1",
-    "race_name": "Prix de l'Opera Longines",
-    "date_short": "Sun\nOct 4",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m2f · Turf"
-   },
-   {
-    "grade": "G1",
-    "race_name": "Qatar Prix de l'Arc de Triomphe (Group 1)",
-    "date_short": "Sun\nOct 4",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "G1",
-    "race_name": "Prix de l'Abbaye de Longchamp Longines (Group 1)",
-    "date_short": "Sun\nOct 4",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "5f · Turf"
-   },
-   {
-    "grade": "G1",
-    "race_name": "Qatar Prix Jean-Luc Lagardere (Group 1)",
-    "date_short": "Sun\nOct 4",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "G1",
-    "race_name": "Qatar Prix Marcel Boussac - Criterium Des Pouliches",
-    "date_short": "Sun\nOct 4",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Hailey Equine Irish EBF Brigid's Pastures Stakes (Listed)",
-    "date_short": "Sun\nOct 4",
-    "track": "Curragh",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "6f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Coolmore Sioux Nation Concorde Stakes (Listed)",
-    "date_short": "Sun\nOct 4",
-    "track": "Curragh",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "7f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Mon Oct 5",
+  "day_label": "YESTERDAY — Mon Oct 5",
   "races": [
    {
     "grade": "LR",
@@ -91,7 +14,11 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Tue Oct 6",
+  "day_label": "TODAY — Tue Oct 6",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Wed Oct 7",
   "races": [
    {
     "grade": "G1",

@@ -1,82 +1,12 @@
 [
  {
-  "grade": "G1",
-  "race_name": "Qatar Prix de la Foret (Group 1)",
-  "track": "Longchamp",
-  "country": "FR",
-  "flag": "🇫🇷",
-  "dist_surface": "7f · Turf",
-  "winner": "True Love",
-  "off_time": "4:25"
- },
- {
-  "grade": "G1",
-  "race_name": "Prix de l'Opera Longines",
-  "track": "Longchamp",
-  "country": "FR",
-  "flag": "🇫🇷",
-  "dist_surface": "1m2f · Turf",
-  "winner": "Miss Scott",
-  "off_time": "3:50"
- },
- {
-  "grade": "G1",
-  "race_name": "Qatar Prix de l'Arc de Triomphe (Group 1)",
-  "track": "Longchamp",
-  "country": "FR",
-  "flag": "🇫🇷",
-  "dist_surface": "1m4f · Turf",
-  "winner": "Daryz",
-  "off_time": "3:05"
- },
- {
-  "grade": "G1",
-  "race_name": "Prix de l'Abbaye de Longchamp Longines (Group 1)",
-  "track": "Longchamp",
-  "country": "FR",
-  "flag": "🇫🇷",
-  "dist_surface": "5f · Turf",
-  "winner": "Miss Yechance",
-  "off_time": "1:47"
- },
- {
-  "grade": "G1",
-  "race_name": "Qatar Prix Jean-Luc Lagardere (Group 1)",
-  "track": "Longchamp",
-  "country": "FR",
-  "flag": "🇫🇷",
-  "dist_surface": "7f · Turf",
-  "winner": "Amusingly",
-  "off_time": "1:09"
- },
- {
-  "grade": "G1",
-  "race_name": "Qatar Prix Marcel Boussac - Criterium Des Pouliches",
-  "track": "Longchamp",
-  "country": "FR",
-  "flag": "🇫🇷",
-  "dist_surface": "1m · Turf",
-  "winner": "Green Empress",
-  "off_time": "12:31"
- },
- {
   "grade": "LR",
-  "race_name": "Hailey Equine Irish EBF Brigid's Pastures Stakes (Listed)",
-  "track": "Curragh",
+  "race_name": "Irish Stallion Farms EBF Navigation Stakes (Listed)",
+  "track": "Killarney",
   "country": "IRE",
   "flag": "🇮🇪",
-  "dist_surface": "6f · Turf",
-  "winner": "Carla Ridge",
-  "off_time": "3:40"
- },
- {
-  "grade": "LR",
-  "race_name": "Coolmore Sioux Nation Concorde Stakes (Listed)",
-  "track": "Curragh",
-  "country": "IRE",
-  "flag": "🇮🇪",
-  "dist_surface": "7f · Turf",
-  "winner": "King Cuan",
-  "off_time": "2:30"
+  "dist_surface": "1m3f · Turf",
+  "winner": "Shaihaan",
+  "off_time": "3:20"
  }
 ]

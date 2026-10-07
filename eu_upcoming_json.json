@@ -120,6 +120,24 @@
    },
    {
     "grade": "LR",
+    "race_name": "Irish Stallion Farms EBF Garnet Stakes (Listed)",
+    "date_short": "Sun\nOct 11",
+    "track": "Naas",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Irish Stallion Farms EBF Bluebell Stakes (Listed)",
+    "date_short": "Sun\nOct 11",
+    "track": "Naas",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "LR",
     "race_name": "British Stallion Studs EBF Beckford Stakes (Listed Race) (GBBPlus Race)",
     "date_short": "Thu\nOct 8",
     "track": "Bath",

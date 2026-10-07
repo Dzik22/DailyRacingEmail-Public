@@ -1,24 +1,14 @@
 [
  {
-  "day_label": "YESTERDAY — Mon Oct 5",
-  "races": [
-   {
-    "grade": "LR",
-    "race_name": "Irish Stallion Farms EBF Navigation Stakes (Listed)",
-    "date_short": "Mon\nOct 5",
-    "track": "Killarney",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m3f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Tue Oct 6",
+  "day_label": "YESTERDAY — Tue Oct 6",
   "races": []
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Wed Oct 7",
+  "day_label": "TODAY — Wed Oct 7",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Thu Oct 8",
   "races": [
    {
     "grade": "G1",
@@ -85,7 +75,7 @@
    },
    {
     "grade": "G3",
-    "race_name": "Too Darn Hot Darley Stakes (Group 3)",
+    "race_name": "Modern Games Darley Stakes (Group 3)",
     "date_short": "Sat\nOct 10",
     "track": "Newmarket",
     "country": "GB",
@@ -94,7 +84,7 @@
    },
    {
     "grade": "G3",
-    "race_name": "Night Of Thunder Zetland Stakes (Group 3)",
+    "race_name": "Native Trail Zetland Stakes (Group 3)",
     "date_short": "Sat\nOct 10",
     "track": "Newmarket",
     "country": "GB",
@@ -109,6 +99,15 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "RFL Steels Stakes (Listed)",
+    "date_short": "Sat\nOct 10",
+    "track": "Naas",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "6f · Turf"
    },
    {
     "grade": "LR",

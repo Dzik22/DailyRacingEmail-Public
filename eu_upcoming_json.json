@@ -1,14 +1,33 @@
 [
  {
-  "day_label": "YESTERDAY — Tue Oct 6",
+  "day_label": "YESTERDAY — Wed Oct 7",
   "races": []
  },
  {
-  "day_label": "TODAY — Wed Oct 7",
-  "races": []
+  "day_label": "TODAY — Thu Oct 8",
+  "races": [
+   {
+    "grade": "G2",
+    "race_name": "Prix Du Bourbonnais",
+    "date_short": "Thu\nOct 8",
+    "track": "Saint-Cloud",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m4½f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "British Stallion Studs EBF Beckford Stakes (Listed Race) (GBBPlus Race)",
+    "date_short": "Thu\nOct 8",
+    "track": "Bath",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m6f · Turf"
+   }
+  ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Thu Oct 8",
+  "day_label": "TOMORROW — Next 7 days from Fri Oct 9",
   "races": [
    {
     "grade": "G1",
@@ -18,6 +37,15 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Thoroughbred Industry Employee Awards Challenge Stakes (Group 2)",
+    "date_short": "Fri\nOct 9",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "7f · Turf"
    },
    {
     "grade": "G2",
@@ -135,15 +163,6 @@
     "country": "IRE",
     "flag": "🇮🇪",
     "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "British Stallion Studs EBF Beckford Stakes (Listed Race) (GBBPlus Race)",
-    "date_short": "Thu\nOct 8",
-    "track": "Bath",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m6f · Turf"
    }
   ]
  }

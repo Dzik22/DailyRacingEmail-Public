@@ -49,6 +49,33 @@ def normname(n):
         if s.startswith(pfx): s = s[len(pfx):]
     return s.strip()
 
+# Oct 7 2026: the Racing API's own `grade` field cannot be trusted. That morning's build
+# labelled the Bet365 Old Rowley Cup Handicap and the Cesarewitch Handicap — both Heritage
+# HANDICAPS, which FORMAT LOCK rule 11 forbids outright — as G1, while demoting the real
+# Group 1s: the Fillies' Mile came through as G2 and the Dewhurst as G3. The official race
+# TITLE carries the true classification in a parenthetical, so derive the grade from the
+# name whenever one is present and treat the feed's field as a fallback only.
+_GRADE_RE = re.compile(r'\((?:group|groupe|gruppo|grade)\s*([123])\)', re.I)
+_LISTED_RE = re.compile(r'\(listed(?:\s+race)?\)', re.I)
+_HCAP_RE = re.compile(r'\((?:heritage\s+handicap|handicap)\)', re.I)
+
+def normalize_race(race):
+    """Return the race with a name-derived grade, or None if it must not appear at all."""
+    nm = str(race.get('race_name','') or '')
+    g = _GRADE_RE.search(nm)
+    derived = ('G' + g.group(1)) if g else ('LR' if _LISTED_RE.search(nm) else None)
+    # Only a race whose CLASSIFICATION parenthetical says handicap is dropped. Matching a
+    # bare "handicap" anywhere in the title was wrong: America's graded stakes are full of
+    # traditional handicap names — the Santa Anita Handicap (G1), Suburban (G2), Delaware
+    # (G1) — and that rule would have silently deleted every one of them.
+    if derived is None and _HCAP_RE.search(nm):
+        print('  MERGE_DROP_HANDICAP: ' + nm[:70])
+        return None
+    if derived and derived != race.get('grade'):
+        print('  MERGE_REGRADE: ' + race.get('grade','?') + ' -> ' + derived + '  ' + nm[:60])
+        race = dict(race); race['grade'] = derived
+    return race
+
 def _load(path):
     if not os.path.exists(path): return None
     try:
@@ -77,6 +104,8 @@ def merge_upcoming():
             if not day_label[pfx]:
                 day_label[pfx] = day.get('day_label','')
             for race in day.get('races', []):
+                race = normalize_race(race)
+                if race is None: continue
                 key = (race.get('grade',''), normname(race.get('race_name','')))
                 if not key[1]: continue  # skip empty names
                 if key in seen[pfx]: continue
@@ -124,6 +153,8 @@ def merge_recap():
     def absorb(source, source_name):
         added = 0
         for race in source:
+            race = normalize_race(race)
+            if race is None: continue
             key = (race.get('grade',''), normname(race.get('race_name','')))
             if not key[1]: continue
             if key in seen: continue

@@ -473,16 +473,18 @@ def normname(n):
 # name whenever one is present and treat the feed's field as a fallback only.
 _GRADE_RE = re.compile(r'\((?:group|groupe|gruppo|grade)\s*([123])\)', re.I)
 _LISTED_RE = re.compile(r'\(listed(?:\s+race)?\)', re.I)
+_HCAP_RE = re.compile(r'\((?:heritage\s+handicap|handicap)\)', re.I)
 
 def normalize_race(race):
     """Return the race with a name-derived grade, or None if it must not appear at all."""
     nm = str(race.get('race_name','') or '')
-    low = nm.lower()
     g = _GRADE_RE.search(nm)
     derived = ('G' + g.group(1)) if g else ('LR' if _LISTED_RE.search(nm) else None)
-    # Handicaps are never upcoming-stakes material, whatever the feed calls them. A race
-    # whose official title says Group/Listed keeps its place; "Heritage Handicap" does not.
-    if 'handicap' in low and derived is None:
+    # Only a race whose CLASSIFICATION parenthetical says handicap is dropped. Matching a
+    # bare "handicap" anywhere in the title was wrong: America's graded stakes are full of
+    # traditional handicap names — the Santa Anita Handicap (G1), Suburban (G2), Delaware
+    # (G1) — and that rule would have silently deleted every one of them.
+    if derived is None and _HCAP_RE.search(nm):
         print('  MERGE_DROP_HANDICAP: ' + nm[:70])
         return None
     if derived and derived != race.get('grade'):
@@ -3769,6 +3771,26 @@ try:
         # '(Sponsored By ...)' is noise. NOTE: Step 7.6 applies the SAME cleaner to the JSON
         # names before its coverage comparison -- if these two ever diverge, every race reads as
         # missing and the seal fails. Change them together.
+        # Oct 8 2026: the grade must be trusted from the TITLE, not the feed's field, and it
+        # must happen HERE — before _clean_race_name strips the '(Group 1)' parenthetical that
+        # carries the truth. Step 0.4 already does this, but eu_prefetch.sh writes its own
+        # producer file and skips that path: on Oct 8 the bootstrap succeeded, Step 0.4's
+        # merger never saw the data, and the digest shipped the Old Rowley Cup and the
+        # Cesarewitch — both Heritage HANDICAPS — as G1 while the Fillies' Mile read G2 and
+        # the Dewhurst read G3. Doing it in the generator makes it producer-independent.
+        _kept = []
+        for _r3 in _merged:
+            _nm3 = str(_r3.get('race_name','') or '')
+            _g3 = _re.search(r'\((?:group|groupe|gruppo|grade)\s*([123])\)', _nm3, _re.I)
+            _d3 = ('G' + _g3.group(1)) if _g3 else ('LR' if _re.search(r'\(listed(?:\s+race)?\)', _nm3, _re.I) else None)
+            if _d3 is None and _re.search(r'\((?:heritage\s+handicap|handicap)\)', _nm3, _re.I):
+                print('GEN_DROP_HANDICAP: ' + _nm3[:70]); continue
+            if _d3 and _d3 != _r3.get('grade'):
+                print('GEN_REGRADE: ' + str(_r3.get('grade')) + ' -> ' + _d3 + '  ' + _nm3[:55])
+                _r3['grade'] = _d3
+            _kept.append(_r3)
+        _merged = _kept
+        _merged.sort(key=lambda r: (_eu_daykey(r), _GO_MERGE.get(r.get('grade','LR'),9), r.get('track','')))
         for _r3 in _merged:
             _r3['race_name'] = _clean_race_name(_r3.get('race_name',''))
         day['races']=_merged

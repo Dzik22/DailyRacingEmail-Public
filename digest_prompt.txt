@@ -4010,7 +4010,11 @@ try:
                 for _r in _missing:
                     _by_venue.setdefault((_r.get('track',''), _r.get('country','GB')), []).append(_r)
                 for (_tc,_co),_rs in _by_venue.items():
-                    _new_r = [{'grade':r.get('grade','LR'),'race_name':r.get('race_name',''),'dist_surface':r.get('dist_surface','? · Turf'),'winner':r.get('winner','TBC')} for r in _rs]
+                    # Oct 9 2026: run the recap names through the same cleaner the upcoming
+                    # table uses. Without it the supplement shipped the raw feed title —
+                    # 'British Stallion Studs EBF Beckford Stakes (Listed Race) (GBBPlus Race)' —
+                    # where the badge already says LR and the suffixes are pure noise.
+                    _new_r = [{'grade':r.get('grade','LR'),'race_name':_clean_race_name(r.get('race_name','')),'dist_surface':r.get('dist_surface','? · Turf'),'winner':r.get('winner','TBC')} for r in _rs]
                     _existing = next((b for b in recap.get('europe',[]) if b.get('track','').lower()==_tc.lower()), None)
                     if _existing: _existing.setdefault('races',[]).extend(_new_r)
                     else: recap.setdefault('europe',[]).append({'track':_tc,'country':_co,'date_display':yd,'races':_new_r})

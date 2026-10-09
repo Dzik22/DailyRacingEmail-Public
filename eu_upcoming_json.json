@@ -1,10 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Wed Oct 7",
-  "races": []
- },
- {
-  "day_label": "TODAY — Thu Oct 8",
+  "day_label": "YESTERDAY — Thu Oct 8",
   "races": [
    {
     "grade": "G2",
@@ -27,7 +23,7 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Fri Oct 9",
+  "day_label": "TODAY — Fri Oct 9",
   "races": [
    {
     "grade": "G1",
@@ -85,6 +81,15 @@
    },
    {
     "grade": "LR",
+    "race_name": "Prix Charles Laffitte",
+    "date_short": "Fri\nOct 9",
+    "track": "Compiegne",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m2f · Turf"
+   },
+   {
+    "grade": "LR",
     "race_name": "Godolphin Under Starters Orders EBF Boadicea Stakes (Listed Race)",
     "date_short": "Fri\nOct 9",
     "track": "Newmarket",
@@ -92,6 +97,29 @@
     "flag": "🇬🇧",
     "dist_surface": "6f · Turf"
    },
+   {
+    "grade": "LR",
+    "race_name": "Prix Panacee - Fonds Europeen De L'elevage",
+    "date_short": "Fri\nOct 9",
+    "track": "Toulouse",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Derby Du Languedoc - Fonds Europeen De L'elevage",
+    "date_short": "Fri\nOct 9",
+    "track": "Toulouse",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m4f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Sat Oct 10",
+  "races": [
    {
     "grade": "G1",
     "race_name": "Club Godolphin Cesarewitch Handicap Stakes (Heritage Handicap) (GBBPlus Race)",
@@ -118,6 +146,15 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m2f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Emirates Autumn Stakes (Group 3)",
+    "date_short": "Sat\nOct 10",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m · Turf"
    },
    {
     "grade": "G3",

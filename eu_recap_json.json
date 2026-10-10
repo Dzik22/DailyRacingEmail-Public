@@ -1,22 +1,102 @@
 [
  {
+  "grade": "G1",
+  "race_name": "Bet365 Old Rowley Cup Handicap Stakes (Heritage Handicap) (GBBPlus Race)",
+  "track": "Newmarket",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "1m4f · Turf",
+  "winner": "Study Of Words",
+  "off_time": "3:30"
+ },
+ {
   "grade": "G2",
-  "race_name": "Prix Du Bourbonnais",
-  "track": "Saint-Cloud",
-  "country": "FR",
-  "flag": "🇫🇷",
-  "dist_surface": "1m4½f · Turf",
-  "winner": "Nirano De Palma",
-  "off_time": "3:40"
+  "race_name": "Bet365 Fillies' Mile (Group 1)",
+  "track": "Newmarket",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "1m · Turf",
+  "winner": "Musical Times",
+  "off_time": "2:57"
+ },
+ {
+  "grade": "G2",
+  "race_name": "Thoroughbred Industry Employee Awards Challenge Stakes (Group 2)",
+  "track": "Newmarket",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "7f · Turf",
+  "winner": "Never So Brave",
+  "off_time": "2:25"
+ },
+ {
+  "grade": "G3",
+  "race_name": "Newmarket Pony Academy Pride Stakes (Group 3)",
+  "track": "Newmarket",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "1m2f · Turf",
+  "winner": "Song Of The Clouds",
+  "off_time": "4:45"
+ },
+ {
+  "grade": "G3",
+  "race_name": "Godolphin Lifetime Care Oh So Sharp Stakes (Group 3)",
+  "track": "Newmarket",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "7f · Turf",
+  "winner": "Lola De Valence",
+  "off_time": "1:50"
+ },
+ {
+  "grade": "G3",
+  "race_name": "Newmarket Academy Godolphin Beacon Project Cornwallis Stakes (Group 3)",
+  "track": "Newmarket",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "5f · Turf",
+  "winner": "Mussab",
+  "off_time": "1:15"
  },
  {
   "grade": "LR",
-  "race_name": "British Stallion Studs EBF Beckford Stakes (Listed Race) (GBBPlus Race)",
-  "track": "Bath",
+  "race_name": "Prix Charles Laffitte",
+  "track": "Compiegne",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m2f · Turf",
+  "winner": "Woody Frangipani",
+  "off_time": "3:03"
+ },
+ {
+  "grade": "LR",
+  "race_name": "Godolphin Under Starters Orders EBF Boadicea Stakes (Listed Race)",
+  "track": "Newmarket",
   "country": "GB",
   "flag": "🇬🇧",
-  "dist_surface": "1m6f · Turf",
-  "winner": "Brilliant Star",
-  "off_time": "3:15"
+  "dist_surface": "6f · Turf",
+  "winner": "Ruby's Angel",
+  "off_time": "4:10"
+ },
+ {
+  "grade": "LR",
+  "race_name": "Derby Du Languedoc - Fonds Europeen De L'elevage",
+  "track": "Toulouse",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m4f · Turf",
+  "winner": "Habibi",
+  "off_time": "3:20"
+ },
+ {
+  "grade": "LR",
+  "race_name": "Prix Panacee - Fonds Europeen De L'elevage",
+  "track": "Toulouse",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m4f · Turf",
+  "winner": "Spirit Of Zarak",
+  "off_time": "2:45"
  }
 ]

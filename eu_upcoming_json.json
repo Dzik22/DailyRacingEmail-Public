@@ -1,29 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Thu Oct 8",
-  "races": [
-   {
-    "grade": "G2",
-    "race_name": "Prix Du Bourbonnais",
-    "date_short": "Thu\nOct 8",
-    "track": "Saint-Cloud",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m4½f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "British Stallion Studs EBF Beckford Stakes (Listed Race) (GBBPlus Race)",
-    "date_short": "Thu\nOct 8",
-    "track": "Bath",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m6f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Fri Oct 9",
+  "day_label": "YESTERDAY — Fri Oct 9",
   "races": [
    {
     "grade": "G1",
@@ -36,15 +13,6 @@
    },
    {
     "grade": "G2",
-    "race_name": "Thoroughbred Industry Employee Awards Challenge Stakes (Group 2)",
-    "date_short": "Fri\nOct 9",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "G2",
     "race_name": "Bet365 Fillies' Mile (Group 1)",
     "date_short": "Fri\nOct 9",
     "track": "Newmarket",
@@ -53,17 +21,8 @@
     "dist_surface": "1m · Turf"
    },
    {
-    "grade": "G3",
-    "race_name": "Newmarket Academy Godolphin Beacon Project Cornwallis Stakes (Group 3)",
-    "date_short": "Fri\nOct 9",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "5f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Godolphin Lifetime Care Oh So Sharp Stakes (Group 3)",
+    "grade": "G2",
+    "race_name": "Thoroughbred Industry Employee Awards Challenge Stakes (Group 2)",
     "date_short": "Fri\nOct 9",
     "track": "Newmarket",
     "country": "GB",
@@ -78,6 +37,24 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m2f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Godolphin Lifetime Care Oh So Sharp Stakes (Group 3)",
+    "date_short": "Fri\nOct 9",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Newmarket Academy Godolphin Beacon Project Cornwallis Stakes (Group 3)",
+    "date_short": "Fri\nOct 9",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "5f · Turf"
    },
    {
     "grade": "LR",
@@ -99,7 +76,7 @@
    },
    {
     "grade": "LR",
-    "race_name": "Prix Panacee - Fonds Europeen De L'elevage",
+    "race_name": "Derby Du Languedoc - Fonds Europeen De L'elevage",
     "date_short": "Fri\nOct 9",
     "track": "Toulouse",
     "country": "FR",
@@ -108,7 +85,7 @@
    },
    {
     "grade": "LR",
-    "race_name": "Derby Du Languedoc - Fonds Europeen De L'elevage",
+    "race_name": "Prix Panacee - Fonds Europeen De L'elevage",
     "date_short": "Fri\nOct 9",
     "track": "Toulouse",
     "country": "FR",
@@ -118,7 +95,7 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Sat Oct 10",
+  "day_label": "TODAY — Sat Oct 10",
   "races": [
    {
     "grade": "G1",
@@ -128,6 +105,15 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "2m2f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Criterium De Maisons-laffitte",
+    "date_short": "Sat\nOct 10",
+    "track": "Chantilly",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "6f · Turf"
    },
    {
     "grade": "G3",
@@ -167,6 +153,24 @@
    },
    {
     "grade": "LR",
+    "race_name": "Prix Saraca",
+    "date_short": "Sat\nOct 10",
+    "track": "Chantilly",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Prix Le Fabuleux",
+    "date_short": "Sat\nOct 10",
+    "track": "Chantilly",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m1f · Turf"
+   },
+   {
+    "grade": "LR",
     "race_name": "RFL Steels Stakes (Listed)",
     "date_short": "Sat\nOct 10",
     "track": "Naas",
@@ -182,7 +186,12 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "6f · Turf"
-   },
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Sun Oct 11",
+  "races": [
    {
     "grade": "LR",
     "race_name": "Irish Stallion Farms EBF Garnet Stakes (Listed)",

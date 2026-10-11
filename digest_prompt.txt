@@ -1880,7 +1880,7 @@ Your ONLY job is to find Master Table horse mentions in syndicate emails from th
 MASTER_TABLE = [{{ACTIVE_BARN_LIST}}]
 
 EXECUTE THESE SEARCHES IN ORDER:
-1. mcp__Gmail__search_threads({"query": "from:(aron@eclipsetbpartners.com OR barry@teamvalor.com OR emily@teamvalor.com OR hello@joincommonwealth.com OR woodford OR benhaggin@woodfordracing.ccsend.com OR woodfordracing.ccsend.com OR jamie@middlehamparkracing.net OR \"Tom Palin\" OR tk@wasabistables.com OR stallions@wasabistables.com OR dan@finalfurlongracingstable.com OR vince@finalfurlongracingstable.com OR rainbowsendracingstable@gmail.com) newer_than:7d in:inbox"})
+1. mcp__Gmail__search_threads({"query": "from:(aron@eclipsetbpartners.com OR barry@teamvalor.com OR emily@teamvalor.com OR hello@joincommonwealth.com OR woodford OR benhaggin@woodfordracing.ccsend.com OR woodfordracing.ccsend.com OR jamie@middlehamparkracing.net OR middlehamparkoffice@gmail.com OR \"Tom Palin\" OR tk@wasabistables.com OR stallions@wasabistables.com OR dan@finalfurlongracingstable.com OR vince@finalfurlongracingstable.com OR rainbowsendracingstable@gmail.com) newer_than:7d in:inbox"})
 2. mcp__Gmail__search_threads({"query": "from:middlehamparkoffice@gmail.com newer_than:14d in:anywhere"})
 3. mcp__Gmail__search_threads({"query": "from:michaeljdzik@gmail.com subject:\"declared\" newer_than:14d in:anywhere"})
 4. mcp__Gmail__search_threads({"query": "from:aron@eclipsetbpartners.com newer_than:14d in:anywhere"})
@@ -2653,6 +2653,14 @@ it this way every time instead of improvising:
   "Won on debut by 1¾ lengths · $100,000 Maiden Special Weight, 6½f dirt · Parx Racing · Sep 19 · J: Jorge
   Vargas Jr." — and set `"place"` explicitly in the JSON so the podium icon still renders. Then say in your
   FINAL CHAT MESSAGE (never in the email) that the field size could not be confirmed.
+- AN ENTRY IS NOT A DECLARATION, AND NEITHER IS A RUN (rule added Oct 11 2026). British and Irish
+  stables enter horses days ahead and then declare a smaller number; Middleham Park's own entry mail
+  says so outright: "If we declare for the above, I will be in touch on the day of declarations to
+  confirm the runners... If your horse is not declared, then the entry will be removed." So an
+  `is_mpr_entry` row belongs in ENTRIES only with its status stated — write "ENTERED — not yet
+  declared" in the text. Never phrase it so a reader would think the horse is a confirmed runner,
+  and never carry it into RESULTS. US Equibase entries are different: those come from a drawn field
+  and may be stated plainly.
 - A DECLARED horse that does not appear in the finishing order is a NON-RUNNER. Never report a position for
   it, and never treat an entry as proof that it ran (Capricious Star, Redcar Oct 3 2026: declared, withdrawn,
   absent from the 13-horse result).

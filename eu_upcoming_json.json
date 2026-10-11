@@ -1,101 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Fri Oct 9",
-  "races": [
-   {
-    "grade": "G1",
-    "race_name": "Bet365 Old Rowley Cup Handicap Stakes (Heritage Handicap) (GBBPlus Race)",
-    "date_short": "Fri\nOct 9",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Bet365 Fillies' Mile (Group 1)",
-    "date_short": "Fri\nOct 9",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Thoroughbred Industry Employee Awards Challenge Stakes (Group 2)",
-    "date_short": "Fri\nOct 9",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Newmarket Pony Academy Pride Stakes (Group 3)",
-    "date_short": "Fri\nOct 9",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m2f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Godolphin Lifetime Care Oh So Sharp Stakes (Group 3)",
-    "date_short": "Fri\nOct 9",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Newmarket Academy Godolphin Beacon Project Cornwallis Stakes (Group 3)",
-    "date_short": "Fri\nOct 9",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "5f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Prix Charles Laffitte",
-    "date_short": "Fri\nOct 9",
-    "track": "Compiegne",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m2f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Godolphin Under Starters Orders EBF Boadicea Stakes (Listed Race)",
-    "date_short": "Fri\nOct 9",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Derby Du Languedoc - Fonds Europeen De L'elevage",
-    "date_short": "Fri\nOct 9",
-    "track": "Toulouse",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Prix Panacee - Fonds Europeen De L'elevage",
-    "date_short": "Fri\nOct 9",
-    "track": "Toulouse",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m4f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Sat Oct 10",
+  "day_label": "YESTERDAY — Sat Oct 10",
   "races": [
    {
     "grade": "G1",
@@ -117,21 +22,12 @@
    },
    {
     "grade": "G3",
-    "race_name": "Modern Games Darley Stakes (Group 3)",
+    "race_name": "Darley Dewhurst Stakes (Group 1)",
     "date_short": "Sat\nOct 10",
     "track": "Newmarket",
     "country": "GB",
     "flag": "🇬🇧",
-    "dist_surface": "1m1f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Native Trail Zetland Stakes (Group 3)",
-    "date_short": "Sat\nOct 10",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m2f · Turf"
+    "dist_surface": "7f · Turf"
    },
    {
     "grade": "G3",
@@ -144,21 +40,21 @@
    },
    {
     "grade": "G3",
-    "race_name": "Darley Dewhurst Stakes (Group 1)",
+    "race_name": "Native Trail Zetland Stakes (Group 3)",
     "date_short": "Sat\nOct 10",
     "track": "Newmarket",
     "country": "GB",
     "flag": "🇬🇧",
-    "dist_surface": "7f · Turf"
+    "dist_surface": "1m2f · Turf"
    },
    {
-    "grade": "LR",
-    "race_name": "Prix Saraca",
+    "grade": "G3",
+    "race_name": "Modern Games Darley Stakes (Group 3)",
     "date_short": "Sat\nOct 10",
-    "track": "Chantilly",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "7f · Turf"
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m1f · Turf"
    },
    {
     "grade": "LR",
@@ -168,6 +64,15 @@
     "country": "FR",
     "flag": "🇫🇷",
     "dist_surface": "1m1f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Prix Saraca",
+    "date_short": "Sat\nOct 10",
+    "track": "Chantilly",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "7f · Turf"
    },
    {
     "grade": "LR",
@@ -190,7 +95,7 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Sun Oct 11",
+  "day_label": "TODAY — Sun Oct 11",
   "races": [
    {
     "grade": "LR",
@@ -209,6 +114,47 @@
     "country": "IRE",
     "flag": "🇮🇪",
     "dist_surface": "1m4f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Mon Oct 12",
+  "races": [
+   {
+    "grade": "G1",
+    "race_name": "Qatar Racing British Champions Long Distance Cup (Group 1)",
+    "date_short": "Sat\nOct 17",
+    "track": "Ascot",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "2m · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Qatar Racing British Champions Sprint Stakes (Group 1)",
+    "date_short": "Sat\nOct 17",
+    "track": "Ascot",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Qatar Racing British Champions Fillies & Mares Stakes (Group 1)",
+    "date_short": "Sat\nOct 17",
+    "track": "Ascot",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Queen Elizabeth II Stakes (Sponsored By Qatar Racing) (Group 1)",
+    "date_short": "Sat\nOct 17",
+    "track": "Ascot",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m2f · Turf"
    }
   ]
  }

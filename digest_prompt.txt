@@ -81,7 +81,7 @@ Your ONE output is a Gmail draft to michaeljdzik@gmail.com. Step 8 (create_draft
 
 **THE FORMAT CONFIRMED PERFECT ON JUNE 2, 2026 CONTAINED:**
 1. Table-based silk badges: `<table>...<td bgcolor="c1">...<td bgcolor="c2">...<td>SYNDICATE NAME</td>` — ZERO spans
-2. 6 sections in exact order: MY STABLE → STABLE UPDATES → TOP 10 NEWS → STAKES RECAP → UPCOMING STAKES → SALES & INDUSTRY
+2. 6 sections in exact order: MY STABLE → STABLE UPDATES → TOP 10 NEWS → STAKES RECAP → UPCOMING STAKES → SALES & INDUSTRY (+ seasonal 🏅 BREEDERS' CUP WATCH between MY STABLE and STABLE UPDATES, emitted by the Step 7.5 generator alone, only until the Breeders' Cup ends)
 3. `======================================================` section breaks between every section
 4. Grade icons: 🏆G1 (red badge), 🥈G2 (green badge), 🥉G3 (blue badge) — in EVERY race row
 5. Underlined syndicate name headers in STABLE UPDATES (TEAM VALOR, COMMONWEALTH, WOODFORD, WASABI, ECLIPSE, etc.)
@@ -96,7 +96,7 @@ Your ONE output is a Gmail draft to michaeljdzik@gmail.com. Step 8 (create_draft
 The format of this email is PERMANENTLY FIXED. It was set by Mike and cannot be changed, simplified, or adapted under any circumstances.
 
 **WHAT IS LOCKED (cannot change under ANY circumstances):**
-- The 6 HTML sections, in exact order: My Stable → Stable Updates → Top 10 News → Stakes Recap → Upcoming Stakes → Sales & Industry
+- The 6 HTML sections, in exact order: My Stable → Stable Updates → Top 10 News → Stakes Recap → Upcoming Stakes → Sales & Industry (+ seasonal 🏅 BREEDERS' CUP WATCH between MY STABLE and STABLE UPDATES, emitted by the Step 7.5 generator alone, only until the Breeders' Cup ends)
 - Every CSS class name used in the template (`.wrapper`, `.section-header`, `.stable-row`, `.stable-tag`, `.race-table`, `.grade-g1/g2/g3`, `.upcoming-wrapper`, `.day-header`, etc.)
 - The section-spacer + `======` section-break separators between every section
 - The silk badge HTML structure with inline-style colored squares
@@ -113,6 +113,8 @@ If your planned htmlBody does not start with `<!DOCTYPE html><html><head><meta c
 ## ⚠️ OUTPUT CONTRACT — LOCKED SECTION STRUCTURE (ENFORCED BEFORE STEP 7)
 
 Every digest MUST contain exactly these 6 sections in this exact order. No section may be omitted, reordered, renamed, or replaced with plain text.
+
+THE ONE SANCTIONED EXTRA (Oct 11 2026, Mike's request): a seasonal **🏅 BREEDERS' CUP WATCH** section between MY STABLE and STABLE UPDATES. The Step 7.5 generator builds it entirely from `/tmp/mirror_bc_points.json` (downloaded in Step 0.4) — it needs NO JSON from you, NO searches, NO tool calls. Do not add it, edit it, move it or remove it; if it is present, it is correct. It disappears by itself after the Breeders' Cup (Oct 31 2026).
 
 **SECTION 1 — 🏇 MY STABLE** (3 subsections — ALL always present, use placeholder if empty, never omit)
 1. 📋 ENTRIES — NEXT 7 DAYS → upcoming races for MASTER TABLE horses (from Step 4c)
@@ -293,7 +295,7 @@ Run this ONE Bash command NOW:
 ```bash
 MIRROR="https://raw.githubusercontent.com/Dzik22/DailyRacingEmail-Public/main"
 CB="$$-$(date +%s)"
-for f in eu_build_status.json eu_upcoming_json.json eu_recap_json.json; do
+for f in eu_build_status.json eu_upcoming_json.json eu_recap_json.json bc_points.json; do
   curl -sSL --connect-timeout 15 --max-time 90 --retry 2 --retry-delay 3 \
        "${MIRROR}/${f}?cb=${CB}" -o "/tmp/mirror_${f}" 2>/dev/null || true
 done
@@ -3971,6 +3973,92 @@ s1 += SSB + '\n'
 s1 += sub('\U0001f3c3','WORKS — LAST 7 DAYS', [row(w.get('horse'),w.get('syndicate'),w.get('text'),0) for w in ms.get('works',[])])
 s1 += '<div style="height:20px;background:#fff"></div>\n'
 
+# ── BREEDERS' CUP WATCH (added Oct 11 2026) ─────────────────────────────────
+# Mike asked to track the barn's Breeders' Cup points standings (Simply Joking was 8th-tied on
+# 14 pts in the Filly & Mare Sprint that day). fetch_bc_points.py runs in the eu-stakes GitHub
+# Action (members.breederscup.com is Cloudflare-gated, and CCR reaches only GitHub raw) and
+# commits bc_points.json to the public mirror; Step 0.4 downloads it to /tmp/mirror_bc_points.json.
+# Seasonal and self-contained: renders only through event.last_day, only from that file, and NEVER
+# raises -- any problem means s_bc stays '' and the digest is exactly the 6 locked sections.
+s_bc = ''
+try:
+    _bc = None
+    for _bcp in ('/tmp/mirror_bc_points.json', '/tmp/bc_points.json'):
+        if _os.path.exists(_bcp):
+            try: _bc = json.load(open(_bcp)); break
+            except Exception: _bc = None
+    if _bc is None:
+        import urllib.request as _bcur
+        try:
+            with _bcur.urlopen('https://raw.githubusercontent.com/Dzik22/DailyRacingEmail-Public/main/bc_points.json?cb='
+                               + str(_dt.today().toordinal()), timeout=30) as _r:
+                _bc = json.loads(_r.read().decode('utf-8'))
+        except Exception as _bce:
+            print('BC_WATCH: no bc_points.json (' + str(_bce) + ') -- section skipped')
+    _ev = (_bc or {}).get('event', {})
+    _bc_last = _dt.fromisoformat(_ev.get('last_day', '1900-01-01'))
+    _bc_first = _dt.fromisoformat(_ev.get('first_day', '1900-01-01'))
+    if _bc and _dt.today() <= _bc_last:
+        _bc_for = _dt.fromisoformat(_bc.get('for_date', '1900-01-01'))
+        def _md(x): return x.strftime('%b') + ' ' + str(x.day)
+        def _ord(n): return str(n) + ('th' if 10 <= n % 100 <= 20 else {1:'st',2:'nd',3:'rd'}.get(n % 10, 'th'))
+        _bc_rows = []
+        for _dv in _bc.get('divisions', []):
+            _hs = _dv.get('horses', [])
+            _cw = sum(1 for x in _hs if x.get('challenge_winner'))
+            _lead = max(_hs, key=lambda x: x.get('points', 0)) if _hs else None
+            for x in _hs:
+                if str(x.get('name', '')).lower().strip() not in MASTER: continue
+                _p = x.get('points', 0)
+                _bits = ['<b>' + _dv.get('name', '').replace('&', '&amp;') + '</b> &nbsp;·&nbsp; <b>' + str(_p) + ' pts</b>']
+                if x.get('challenge_winner'):
+                    _bits.append("<b>'Win and You're In' winner — automatic berth</b>")
+                else:
+                    _bits.append(('tied ' if x.get('points_tied') else '') + _ord(x.get('points_rank', 0)) + ' on points')
+                _bits.append(_ord(x.get('board_pos', 0)) + ' of ' + str(len(_hs)) + ' on the leaderboard'
+                             + (' (' + str(_cw) + " 'Win and You're In' winner" + ('s' if _cw != 1 else '') + ' listed first)' if _cw and not x.get('challenge_winner') else ''))
+                if _lead and _lead is not x:
+                    _bits.append('leader ' + str(_lead.get('name', '')) + ' ' + str(_lead.get('points', 0)) + ' pts')
+                _pv = (_bc.get('prev') or {}).get(_dv.get('name', '') + '|' + str(x.get('name', '')))
+                if _pv and _bc.get('prev_date'):
+                    _pd = _dt.fromisoformat(_bc['prev_date']); _chg = []
+                    if _p != _pv.get('points'): _chg.append(('+' if _p > _pv.get('points', 0) else '') + str(_p - _pv.get('points', 0)) + ' pts')
+                    if x.get('board_pos') != _pv.get('board_pos'):
+                        _chg.append(('▲ up from ' if x.get('board_pos', 0) < _pv.get('board_pos', 0) else '▼ down from ') + _ord(_pv.get('board_pos', 0)))
+                    _bits.append(('since ' + _md(_pd) + ': ' + ', '.join(_chg)) if _chg else ('no change since ' + _md(_pd)))
+                elif _bc.get('prev_date'):
+                    _bits.append('NEW to the top ' + str(len(_hs)) + ' since ' + _md(_dt.fromisoformat(_bc['prev_date'])))
+                _t = ' &nbsp;·&nbsp; '.join(_bits)
+                if x.get('out'): _t += '<br><b>⚠️ Listed (OUT) on the Breeders\' Cup leaderboard.</b>'
+                if x.get('nomination'): _t += '<br><b>⚠️ ' + str(x['nomination']) + '</b>'
+                _rs = [r for r in x.get('races', []) if r.get('points')]
+                if _rs:
+                    _rs.sort(key=lambda r: _dt(*(lambda m, d, y: (int(y), int(m), int(d)))(*r['date'].split('/'))), reverse=True)
+                    _t += '<br>Points races: ' + '; '.join(
+                        _ord(int(r['pos'])) + ' ' + r.get('grade', '') + ' ' + r.get('race', '').split(' presented by ')[0].split(' Presented by ')[0]
+                        + ' (' + r.get('track', '') + ', ' + r.get('date', '').rsplit('/', 1)[0] + ') +' + str(r['points'])
+                        for r in _rs[:4] if str(r.get('pos', '')).isdigit())
+                _bc_rows.append(row(x.get('name'), MASTER.get(str(x.get('name', '')).lower().strip()), _t, 0))
+        _days = (_bc_first - _dt.today()).days
+        _pre = _dt.fromisoformat(_ev.get('pre_entry_deadline', '1900-01-01'))
+        _intro = (str(_ev.get('venue', '')) + ' &nbsp;·&nbsp; ' + str(_ev.get('dates', ''))
+                  + (' &nbsp;·&nbsp; <b>' + str(_days) + ' days to go</b>' if _days > 0 else ' &nbsp;·&nbsp; <b>RACE DAY</b>' if _days == 0 else '')
+                  + ('<br>Pre-entry deadline: <b>' + _pre.strftime('%a %b ') + str(_pre.day) + '</b>' if _pre >= _dt.today() else '')
+                  + "<br>Fields max 14. 'Win and You're In' winners get automatic berths; the rest come from points and a selection panel."
+                  + '<br>Standings as of ' + _md(_bc_for) + (' ⚠️ (latest available)' if (_dt.today() - _bc_for).days > 2 else ''))
+        s_bc = (hdr('\U0001f3c5', "Breeders' Cup Watch") + '<div class="horse-gap"></div>\n'
+                + '<div class="story"><p>' + _intro + '</p></div>\n'
+                + sub('\U0001f3c5', 'POINTS STANDINGS — TOP 16 BY DIVISION', _bc_rows or [])
+                + '<div style="height:20px;background:#fff"></div>\n')
+        if not _bc_rows:
+            s_bc = s_bc.replace('No data this week.', 'No barn horses in any division top 16.')
+        print('BC_WATCH: ' + str(len(_bc_rows)) + ' barn horse(s) on the leaderboard, standings ' + str(_bc_for))
+    elif _bc:
+        print('BC_WATCH: past ' + str(_bc_last) + ' -- section off')
+except Exception as _bcx:
+    s_bc = ''
+    print('BC_WATCH_ERR: ' + str(_bcx) + ' -- section skipped, digest unaffected')
+
 upd = d.get('stable_updates',[])
 s2 = hdr('\U0001f40e','Stable Updates') + '<div class="horse-gap"></div>\n'
 if upd:
@@ -4112,7 +4200,7 @@ footer = ("<div class=\"footer\"><p>Mike's Daily Racing Digest | DRF · Racing P
 
 html = ('<!DOCTYPE html><html><head><meta charset="UTF-8"><style>' + css + '</style></head><body><div class="wrapper">'
         + '<div class="header"><h1>\U0001f3c7 Daily Racing Digest</h1><p>' + td + ' | News from ' + yd + '</p></div>\n'
-        + SB + s1 + SB + s2 + SB + s3 + SB + s4 + SB + s5 + SB + s6 + footer + '</div></body></html>')
+        + SB + s1 + (SB + s_bc if s_bc else '') + SB + s2 + SB + s3 + SB + s4 + SB + s5 + SB + s6 + footer + '</div></body></html>')
 
 with open('/tmp/digest_draft.html','w') as f: f.write(html)
 
@@ -4552,6 +4640,7 @@ except Exception as e:
 - FOOTER EXACT (LOCKED): p1 = "Mike's Daily Racing Digest | DRF · Racing Post · TDN · Paulick · Eclipse · Team Valor · Commonwealth · Woodford · Final Furlong · Wasabi · RTP Racing · Equibase · Middleham Park · BloodHorse". p2 = "michaeljdzik@gmail.com | 6:00 AM ET daily".
 - MINIMUM VIABLE HTML (LOCKED): Context tight → shorten content, NEVER change format.
 - SECTION ORDER (LOCKED — 6 SECTIONS): (1) MY STABLE (2) STABLE UPDATES (3) TOP 10 NEWS (4) STAKES RECAP (5) UPCOMING STAKES (6) SALES & INDUSTRY. This order is ABSOLUTE. MY STABLE is ALWAYS first. STABLE UPDATES is ALWAYS second. TOP 10 NEWS is ALWAYS third.
+- BREEDERS' CUP WATCH (SEASONAL — Oct 11 2026): the generator alone inserts a 🏅 Breeders' Cup Watch section between MY STABLE and STABLE UPDATES from /tmp/mirror_bc_points.json (barn horses in each division's top-16 points leaderboard, with change since the previous day). It is not a 7th section you produce — it needs no JSON, searches or tool calls — and it is not a format violation. Never add, edit or remove it. It switches itself off after the last Breeders' Cup day.
 - SECTION BREAKS MANDATORY COUNT (LOCKED): The HTML MUST contain ≥ 8 `<div class="section-break" style="text-align:center;font-family:monospace;color:#555;font-size:14px;font-weight:bold;padding:10px 0;letter-spacing:2px">======================================================</div>` dividers. Count them before writing to /tmp/digest_draft.html. Fewer than 8 → STOP, add missing breaks, then write. The gate check enforces this: `has_section_breaks` FAIL = missing dividers.
 - SUBSECTION HEADERS EXACT (LOCKED): MY STABLE has exactly 3 subsection headers, VERBATIM: `📋 ENTRIES — NEXT 7 DAYS` | `🏁 RESULTS — LAST 7 DAYS` | `🏃 WORKS — LAST 7 DAYS`. No 4th subsection. No UPDATES & NEWS inside MY STABLE.
 - STABLE UPDATES SECTION (LOCKED): Section 2 uses `<div class="section-header"><h2><span class="sh-icon">🐎</span>Stable Updates</h2></div>`. Content = MASTER TABLE horses only, grouped by syndicate, stable-row format with silk badges.

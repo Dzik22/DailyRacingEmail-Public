@@ -32,6 +32,19 @@ OUTPUT (schema unchanged, so the generator needs no changes):
 import json, os, sys, time, urllib.request, base64
 from datetime import date, timedelta
 
+# Breeders' Cup points leaderboard rides along on this workflow (its file can't be edited: the PAT
+# has no `workflow` scope). Run it FIRST -- this script can sys.exit(1) below, which would skip the
+# commit step -- and stage its output so "Commit if changed" includes it. It never raises and never
+# fails this build; on any problem it prints BC_FAIL and the old bc_points.json stays as it was.
+if os.path.exists('fetch_bc_points.py'):
+    import subprocess
+    try:
+        subprocess.run([sys.executable, 'fetch_bc_points.py'], timeout=300, check=False)
+        if os.path.exists('bc_points.json'):
+            subprocess.run(['git', 'add', 'bc_points.json'], timeout=30, check=False)
+    except Exception as _bce:
+        print('BC_FAIL: ' + str(_bce))
+
 CREDS = os.environ.get('RACING_API_CREDS', '').strip()
 if not CREDS:
     print('FATAL: RACING_API_CREDS not set', file=sys.stderr)

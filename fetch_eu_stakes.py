@@ -147,6 +147,20 @@ for i in range(8):                       # today .. today+7
     cards = data['racecards']
     hits = [c for c in cards if is_stakes(c)]
     print('day %s: %d cards, %d stakes' % (d, len(cards), len(hits)))
+    # Oct 12 2026: the build shipped British Champions Day with four of its five Group 1s and
+    # the distances one row out of step -- every wrong row carried the NEXT race's distance,
+    # which is what a dropped race looks like from the outside. race_row() takes the name and
+    # the distance from the SAME record, so the misalignment cannot start here; it is either in
+    # what the API returned or in what is_stakes() threw away. These two lines settle which.
+    # Printed only for courses that produced a hit, so the log stays short.
+    _hit_courses = {clean_course(c.get('course')) for c in hits}
+    for c in cards:
+        if clean_course(c.get('course')) in _hit_courses:
+            print('      CARD %-10s %-6s %-9s pat=%-8s typ=%-5s %s' % (
+                clean_course(c.get('course')), str(c.get('off_time') or c.get('off') or '-')[:6],
+                str(c.get('distance_round') or c.get('distance') or '-')[:9],
+                str(c.get('pattern') or '-')[:8], str(c.get('type') or '-')[:5],
+                ('HIT  ' if is_stakes(c) else 'drop ') + str(c.get('race_name') or '')[:58]))
     for c in hits:
         try:
             cd = date.fromisoformat(str(c.get('date'))[:10])

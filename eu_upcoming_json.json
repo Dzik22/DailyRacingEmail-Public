@@ -1,111 +1,7 @@
 [
  {
-  "day_label": "YESTERDAY — Sat Oct 10",
+  "day_label": "YESTERDAY — Sun Oct 11",
   "races": [
-   {
-    "grade": "G1",
-    "race_name": "Club Godolphin Cesarewitch Handicap Stakes (Heritage Handicap) (GBBPlus Race)",
-    "date_short": "Sat\nOct 10",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "2m2f · Turf"
-   },
-   {
-    "grade": "G2",
-    "race_name": "Criterium De Maisons-laffitte",
-    "date_short": "Sat\nOct 10",
-    "track": "Chantilly",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "6f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Darley Dewhurst Stakes (Group 1)",
-    "date_short": "Sat\nOct 10",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Emirates Autumn Stakes (Group 3)",
-    "date_short": "Sat\nOct 10",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Native Trail Zetland Stakes (Group 3)",
-    "date_short": "Sat\nOct 10",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m2f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Modern Games Darley Stakes (Group 3)",
-    "date_short": "Sat\nOct 10",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m1f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Prix Le Fabuleux",
-    "date_short": "Sat\nOct 10",
-    "track": "Chantilly",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m1f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Prix Saraca",
-    "date_short": "Sat\nOct 10",
-    "track": "Chantilly",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "RFL Steels Stakes (Listed)",
-    "date_short": "Sat\nOct 10",
-    "track": "Naas",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "6f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Sky Bet Rockingham Stakes (Listed Race)",
-    "date_short": "Sat\nOct 10",
-    "track": "York",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Sun Oct 11",
-  "races": [
-   {
-    "grade": "LR",
-    "race_name": "Irish Stallion Farms EBF Garnet Stakes (Listed)",
-    "date_short": "Sun\nOct 11",
-    "track": "Naas",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m · Turf"
-   },
    {
     "grade": "LR",
     "race_name": "Irish Stallion Farms EBF Bluebell Stakes (Listed)",
@@ -114,11 +10,24 @@
     "country": "IRE",
     "flag": "🇮🇪",
     "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Irish Stallion Farms EBF Garnet Stakes (Listed)",
+    "date_short": "Sun\nOct 11",
+    "track": "Naas",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m · Turf"
    }
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Mon Oct 12",
+  "day_label": "TODAY — Mon Oct 12",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Tue Oct 13",
   "races": [
    {
     "grade": "G1",

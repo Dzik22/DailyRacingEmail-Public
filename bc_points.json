@@ -1,6 +1,6 @@
 {
- "for_date": "2026-10-11",
- "built_utc": "2026-10-11T19:57:40.704188Z",
+ "for_date": "2026-10-12",
+ "built_utc": "2026-10-12T07:18:58.954529Z",
  "source": "https://members.breederscup.com/Points/PointsLeaderboard",
  "event": {
   "name": "Breeders' Cup World Championships",
@@ -9565,6 +9565,1097 @@
    ]
   }
  ],
- "prev_date": "",
- "prev": {}
+ "prev_date": "2026-10-11",
+ "prev": {
+  "Brown Advisory Juvenile Turf|Al Hudaiba": {
+   "points": 10,
+   "points_rank": 1,
+   "board_pos": 1
+  },
+  "Brown Advisory Juvenile Turf|Agate": {
+   "points": 6,
+   "points_rank": 2,
+   "board_pos": 2
+  },
+  "Brown Advisory Juvenile Turf|Let Em Know": {
+   "points": 6,
+   "points_rank": 2,
+   "board_pos": 3
+  },
+  "Brown Advisory Juvenile Turf|Folsom Blues": {
+   "points": 0,
+   "points_rank": 14,
+   "board_pos": 4
+  },
+  "Brown Advisory Juvenile Turf|Haffner": {
+   "points": 0,
+   "points_rank": 14,
+   "board_pos": 5
+  },
+  "Brown Advisory Juvenile Turf|Bold Leadership": {
+   "points": 6,
+   "points_rank": 2,
+   "board_pos": 6
+  },
+  "Brown Advisory Juvenile Turf|Oscar": {
+   "points": 6,
+   "points_rank": 2,
+   "board_pos": 7
+  },
+  "Brown Advisory Juvenile Turf|Induction": {
+   "points": 4,
+   "points_rank": 6,
+   "board_pos": 8
+  },
+  "Brown Advisory Juvenile Turf|Liam's Law": {
+   "points": 4,
+   "points_rank": 6,
+   "board_pos": 9
+  },
+  "Brown Advisory Juvenile Turf|Observed": {
+   "points": 4,
+   "points_rank": 6,
+   "board_pos": 10
+  },
+  "Brown Advisory Juvenile Turf|Repo Man": {
+   "points": 4,
+   "points_rank": 6,
+   "board_pos": 11
+  },
+  "Brown Advisory Juvenile Turf|Roscoe Goose": {
+   "points": 4,
+   "points_rank": 6,
+   "board_pos": 12
+  },
+  "Brown Advisory Juvenile Turf|How's Al Today": {
+   "points": 0,
+   "points_rank": 14,
+   "board_pos": 13
+  },
+  "Brown Advisory Juvenile Turf|Maxify": {
+   "points": 2,
+   "points_rank": 11,
+   "board_pos": 14
+  },
+  "Brown Advisory Juvenile Turf|Pass On By": {
+   "points": 2,
+   "points_rank": 11,
+   "board_pos": 15
+  },
+  "Brown Advisory Juvenile Turf|Real Goodbar": {
+   "points": 2,
+   "points_rank": 11,
+   "board_pos": 16
+  },
+  "Cygames Sprint|Listenupshance": {
+   "points": 19,
+   "points_rank": 2,
+   "board_pos": 1
+  },
+  "Cygames Sprint|T Kraft": {
+   "points": 10,
+   "points_rank": 5,
+   "board_pos": 2
+  },
+  "Cygames Sprint|Nakatomi": {
+   "points": 6,
+   "points_rank": 14,
+   "board_pos": 3
+  },
+  "Cygames Sprint|Dark Saffron": {
+   "points": 0,
+   "points_rank": 15,
+   "board_pos": 4
+  },
+  "Cygames Sprint|Imagination": {
+   "points": 0,
+   "points_rank": 15,
+   "board_pos": 5
+  },
+  "Cygames Sprint|Englishman": {
+   "points": 24,
+   "points_rank": 1,
+   "board_pos": 6
+  },
+  "Cygames Sprint|Hymn": {
+   "points": 14,
+   "points_rank": 3,
+   "board_pos": 7
+  },
+  "Cygames Sprint|Crude Velocity": {
+   "points": 12,
+   "points_rank": 4,
+   "board_pos": 8
+  },
+  "Cygames Sprint|Maximum Bourbon": {
+   "points": 10,
+   "points_rank": 5,
+   "board_pos": 9
+  },
+  "Cygames Sprint|T O Elvis": {
+   "points": 10,
+   "points_rank": 5,
+   "board_pos": 10
+  },
+  "Cygames Sprint|Book'em Danno": {
+   "points": 8,
+   "points_rank": 8,
+   "board_pos": 11
+  },
+  "Cygames Sprint|Built": {
+   "points": 8,
+   "points_rank": 8,
+   "board_pos": 12
+  },
+  "Cygames Sprint|Crazy Mason": {
+   "points": 8,
+   "points_rank": 8,
+   "board_pos": 13
+  },
+  "Cygames Sprint|Getaway Car": {
+   "points": 8,
+   "points_rank": 8,
+   "board_pos": 14
+  },
+  "Cygames Sprint|Moonlight": {
+   "points": 8,
+   "points_rank": 8,
+   "board_pos": 15
+  },
+  "Cygames Sprint|Senior Officer": {
+   "points": 7,
+   "points_rank": 13,
+   "board_pos": 16
+  },
+  "Dirt Mile|Iron Man Cal": {
+   "points": 8,
+   "points_rank": 7,
+   "board_pos": 1
+  },
+  "Dirt Mile|Commandment": {
+   "points": 26,
+   "points_rank": 1,
+   "board_pos": 2
+  },
+  "Dirt Mile|Bishops Bay": {
+   "points": 12,
+   "points_rank": 2,
+   "board_pos": 3
+  },
+  "Dirt Mile|Deep Flame": {
+   "points": 10,
+   "points_rank": 3,
+   "board_pos": 4
+  },
+  "Dirt Mile|Disruptor": {
+   "points": 10,
+   "points_rank": 3,
+   "board_pos": 5
+  },
+  "Dirt Mile|Local Knowledge": {
+   "points": 10,
+   "points_rank": 3,
+   "board_pos": 6
+  },
+  "Dirt Mile|Nu What's New": {
+   "points": 10,
+   "points_rank": 3,
+   "board_pos": 7
+  },
+  "Dirt Mile|Full Serrano": {
+   "points": 8,
+   "points_rank": 7,
+   "board_pos": 8
+  },
+  "Dirt Mile|Caldera": {
+   "points": 6,
+   "points_rank": 9,
+   "board_pos": 9
+  },
+  "Dirt Mile|Chunk of Gold": {
+   "points": 6,
+   "points_rank": 9,
+   "board_pos": 10
+  },
+  "Dirt Mile|Class President": {
+   "points": 6,
+   "points_rank": 9,
+   "board_pos": 11
+  },
+  "Dirt Mile|Corporate Power": {
+   "points": 6,
+   "points_rank": 9,
+   "board_pos": 12
+  },
+  "Dirt Mile|East Avenue": {
+   "points": 6,
+   "points_rank": 9,
+   "board_pos": 13
+  },
+  "Dirt Mile|Paladin": {
+   "points": 6,
+   "points_rank": 9,
+   "board_pos": 14
+  },
+  "Dirt Mile|Point Dume": {
+   "points": 6,
+   "points_rank": 9,
+   "board_pos": 15
+  },
+  "Dirt Mile|Vodka Vodka": {
+   "points": 6,
+   "points_rank": 9,
+   "board_pos": 16
+  },
+  "FanDuel Juvenile|Hughes": {
+   "points": 24,
+   "points_rank": 1,
+   "board_pos": 1
+  },
+  "FanDuel Juvenile|American History": {
+   "points": 10,
+   "points_rank": 3,
+   "board_pos": 2
+  },
+  "FanDuel Juvenile|U. S. S. Valor": {
+   "points": 10,
+   "points_rank": 3,
+   "board_pos": 3
+  },
+  "FanDuel Juvenile|Booked": {
+   "points": 12,
+   "points_rank": 2,
+   "board_pos": 4
+  },
+  "FanDuel Juvenile|The Good Life": {
+   "points": 10,
+   "points_rank": 3,
+   "board_pos": 5
+  },
+  "FanDuel Juvenile|Phone Booth": {
+   "points": 8,
+   "points_rank": 6,
+   "board_pos": 6
+  },
+  "FanDuel Juvenile|Coach Pope": {
+   "points": 6,
+   "points_rank": 7,
+   "board_pos": 7
+  },
+  "FanDuel Juvenile|Gaudreau": {
+   "points": 6,
+   "points_rank": 7,
+   "board_pos": 8
+  },
+  "FanDuel Juvenile|Mystrix": {
+   "points": 6,
+   "points_rank": 7,
+   "board_pos": 9
+  },
+  "FanDuel Juvenile|Net Par": {
+   "points": 6,
+   "points_rank": 7,
+   "board_pos": 10
+  },
+  "FanDuel Juvenile|Twinkle Town": {
+   "points": 6,
+   "points_rank": 7,
+   "board_pos": 11
+  },
+  "FanDuel Juvenile|Club Reign": {
+   "points": 4,
+   "points_rank": 12,
+   "board_pos": 12
+  },
+  "FanDuel Juvenile|Dang Son": {
+   "points": 4,
+   "points_rank": 12,
+   "board_pos": 13
+  },
+  "FanDuel Juvenile|Imperial Honor": {
+   "points": 4,
+   "points_rank": 12,
+   "board_pos": 14
+  },
+  "FanDuel Juvenile|Q B Rocket": {
+   "points": 4,
+   "points_rank": 12,
+   "board_pos": 15
+  },
+  "FanDuel Juvenile|Salahudin": {
+   "points": 4,
+   "points_rank": 12,
+   "board_pos": 16
+  },
+  "FanDuel Mile|Deterministic": {
+   "points": 30,
+   "points_rank": 1,
+   "board_pos": 1
+  },
+  "FanDuel Mile|Rhetorical": {
+   "points": 24,
+   "points_rank": 2,
+   "board_pos": 2
+  },
+  "FanDuel Mile|Cabo Spirit": {
+   "points": 10,
+   "points_rank": 11,
+   "board_pos": 3
+  },
+  "FanDuel Mile|Notable Speech": {
+   "points": 10,
+   "points_rank": 11,
+   "board_pos": 4
+  },
+  "FanDuel Mile|Sixpence": {
+   "points": 0,
+   "points_rank": 14,
+   "board_pos": 5
+  },
+  "FanDuel Mile|Ten Bob Tony": {
+   "points": 0,
+   "points_rank": 14,
+   "board_pos": 6
+  },
+  "FanDuel Mile|True Love": {
+   "points": 0,
+   "points_rank": 14,
+   "board_pos": 7
+  },
+  "FanDuel Mile|Zulu Kingdom": {
+   "points": 19,
+   "points_rank": 3,
+   "board_pos": 8
+  },
+  "FanDuel Mile|Title Role": {
+   "points": 18,
+   "points_rank": 4,
+   "board_pos": 9
+  },
+  "FanDuel Mile|Almendares": {
+   "points": 16,
+   "points_rank": 5,
+   "board_pos": 10
+  },
+  "FanDuel Mile|One Stripe": {
+   "points": 16,
+   "points_rank": 5,
+   "board_pos": 11
+  },
+  "FanDuel Mile|El Potente": {
+   "points": 14,
+   "points_rank": 7,
+   "board_pos": 12
+  },
+  "FanDuel Mile|Formidable Man": {
+   "points": 12,
+   "points_rank": 8,
+   "board_pos": 13
+  },
+  "FanDuel Mile|King of Gosford": {
+   "points": 12,
+   "points_rank": 8,
+   "board_pos": 14
+  },
+  "FanDuel Mile|Lagynos": {
+   "points": 12,
+   "points_rank": 8,
+   "board_pos": 15
+  },
+  "FanDuel Mile|Mi Bago": {
+   "points": 10,
+   "points_rank": 11,
+   "board_pos": 16
+  },
+  "Filly & Mare Sprint|Ways and Means": {
+   "points": 22,
+   "points_rank": 2,
+   "board_pos": 1
+  },
+  "Filly & Mare Sprint|Evanescence": {
+   "points": 8,
+   "points_rank": 12,
+   "board_pos": 2
+  },
+  "Filly & Mare Sprint|Kerry's Kiss": {
+   "points": 4,
+   "points_rank": 16,
+   "board_pos": 3
+  },
+  "Filly & Mare Sprint|R Disaster": {
+   "points": 24,
+   "points_rank": 1,
+   "board_pos": 4
+  },
+  "Filly & Mare Sprint|Eclatant": {
+   "points": 18,
+   "points_rank": 3,
+   "board_pos": 5
+  },
+  "Filly & Mare Sprint|Grand Job": {
+   "points": 18,
+   "points_rank": 3,
+   "board_pos": 6
+  },
+  "Filly & Mare Sprint|Explora": {
+   "points": 16,
+   "points_rank": 5,
+   "board_pos": 7
+  },
+  "Filly & Mare Sprint|Majestic Oops": {
+   "points": 16,
+   "points_rank": 5,
+   "board_pos": 8
+  },
+  "Filly & Mare Sprint|Percy's Bar": {
+   "points": 16,
+   "points_rank": 5,
+   "board_pos": 9
+  },
+  "Filly & Mare Sprint|Luv Your Neighbor": {
+   "points": 14,
+   "points_rank": 8,
+   "board_pos": 10
+  },
+  "Filly & Mare Sprint|Simply Joking": {
+   "points": 14,
+   "points_rank": 8,
+   "board_pos": 11
+  },
+  "Filly & Mare Sprint|On Time Girl": {
+   "points": 12,
+   "points_rank": 10,
+   "board_pos": 12
+  },
+  "Filly & Mare Sprint|Sweet Azteca": {
+   "points": 10,
+   "points_rank": 11,
+   "board_pos": 13
+  },
+  "Filly & Mare Sprint|Grammy Girl": {
+   "points": 8,
+   "points_rank": 12,
+   "board_pos": 14
+  },
+  "Filly & Mare Sprint|Usha": {
+   "points": 8,
+   "points_rank": 12,
+   "board_pos": 15
+  },
+  "Filly & Mare Sprint|A Fine Chardonnay": {
+   "points": 7,
+   "points_rank": 15,
+   "board_pos": 16
+  },
+  "John Deere Juvenile Fillies Turf|Voyager": {
+   "points": 10,
+   "points_rank": 1,
+   "board_pos": 1
+  },
+  "John Deere Juvenile Fillies Turf|Domestic Agenda": {
+   "points": 6,
+   "points_rank": 2,
+   "board_pos": 2
+  },
+  "John Deere Juvenile Fillies Turf|Serenas Ghost": {
+   "points": 6,
+   "points_rank": 2,
+   "board_pos": 3
+  },
+  "John Deere Juvenile Fillies Turf|Green Empress": {
+   "points": 0,
+   "points_rank": 15,
+   "board_pos": 4
+  },
+  "John Deere Juvenile Fillies Turf|Sun Goddess": {
+   "points": 0,
+   "points_rank": 15,
+   "board_pos": 5
+  },
+  "John Deere Juvenile Fillies Turf|De la Renta": {
+   "points": 6,
+   "points_rank": 2,
+   "board_pos": 6
+  },
+  "John Deere Juvenile Fillies Turf|Bounce Back": {
+   "points": 4,
+   "points_rank": 5,
+   "board_pos": 7
+  },
+  "John Deere Juvenile Fillies Turf|Embouteillage": {
+   "points": 4,
+   "points_rank": 5,
+   "board_pos": 8
+  },
+  "John Deere Juvenile Fillies Turf|Seneca Park": {
+   "points": 4,
+   "points_rank": 5,
+   "board_pos": 9
+  },
+  "John Deere Juvenile Fillies Turf|Vanta": {
+   "points": 4,
+   "points_rank": 5,
+   "board_pos": 10
+  },
+  "John Deere Juvenile Fillies Turf|Golden Siren": {
+   "points": 2,
+   "points_rank": 9,
+   "board_pos": 11
+  },
+  "John Deere Juvenile Fillies Turf|Harper's Corner": {
+   "points": 2,
+   "points_rank": 9,
+   "board_pos": 12
+  },
+  "John Deere Juvenile Fillies Turf|Luminous Beauty": {
+   "points": 1,
+   "points_rank": 12,
+   "board_pos": 13
+  },
+  "John Deere Juvenile Fillies Turf|Mel Went Home": {
+   "points": 2,
+   "points_rank": 9,
+   "board_pos": 14
+  },
+  "John Deere Juvenile Fillies Turf|Big Blast": {
+   "points": 1,
+   "points_rank": 12,
+   "board_pos": 15
+  },
+  "John Deere Juvenile Fillies Turf|More Champagne": {
+   "points": 1,
+   "points_rank": 12,
+   "board_pos": 16
+  },
+  "Juvenile Fillies|Summer Starlet": {
+   "points": 16,
+   "points_rank": 1,
+   "board_pos": 1
+  },
+  "Juvenile Fillies|Emphatic": {
+   "points": 10,
+   "points_rank": 3,
+   "board_pos": 2
+  },
+  "Juvenile Fillies|Domain Expansion": {
+   "points": 6,
+   "points_rank": 7,
+   "board_pos": 3
+  },
+  "Juvenile Fillies|Holmby": {
+   "points": 12,
+   "points_rank": 2,
+   "board_pos": 4
+  },
+  "Juvenile Fillies|Dotsy": {
+   "points": 10,
+   "points_rank": 3,
+   "board_pos": 5
+  },
+  "Juvenile Fillies|Miss Monica": {
+   "points": 10,
+   "points_rank": 3,
+   "board_pos": 6
+  },
+  "Juvenile Fillies|Crazy Hot Mess": {
+   "points": 7,
+   "points_rank": 6,
+   "board_pos": 7
+  },
+  "Juvenile Fillies|Harper's Corner": {
+   "points": 6,
+   "points_rank": 7,
+   "board_pos": 8
+  },
+  "Juvenile Fillies|Rum Twist": {
+   "points": 6,
+   "points_rank": 7,
+   "board_pos": 9
+  },
+  "Juvenile Fillies|Angel of Kirk": {
+   "points": 4,
+   "points_rank": 10,
+   "board_pos": 10
+  },
+  "Juvenile Fillies|Manuka Honey": {
+   "points": 4,
+   "points_rank": 10,
+   "board_pos": 11
+  },
+  "Juvenile Fillies|Oh She Said Yes": {
+   "points": 4,
+   "points_rank": 10,
+   "board_pos": 12
+  },
+  "Juvenile Fillies|Revenge of the Sis": {
+   "points": 4,
+   "points_rank": 10,
+   "board_pos": 13
+  },
+  "Juvenile Fillies|Stress Relief": {
+   "points": 4,
+   "points_rank": 10,
+   "board_pos": 14
+  },
+  "Juvenile Fillies|Scarlett Begonia": {
+   "points": 3,
+   "points_rank": 15,
+   "board_pos": 15
+  },
+  "Juvenile Fillies|Blockade": {
+   "points": 0,
+   "points_rank": 16,
+   "board_pos": 16
+  },
+  "Juvenile Turf Sprint|Good to Be King": {
+   "points": 4,
+   "points_rank": 1,
+   "board_pos": 1
+  },
+  "Juvenile Turf Sprint|Orthodox": {
+   "points": 0,
+   "points_rank": 8,
+   "board_pos": 2
+  },
+  "Juvenile Turf Sprint|Pershaada": {
+   "points": 0,
+   "points_rank": 8,
+   "board_pos": 3
+  },
+  "Juvenile Turf Sprint|Adonius": {
+   "points": 4,
+   "points_rank": 1,
+   "board_pos": 4
+  },
+  "Juvenile Turf Sprint|Brickyard Belle": {
+   "points": 4,
+   "points_rank": 1,
+   "board_pos": 5
+  },
+  "Juvenile Turf Sprint|Love a Warrior": {
+   "points": 2,
+   "points_rank": 4,
+   "board_pos": 6
+  },
+  "Juvenile Turf Sprint|Regent's Park": {
+   "points": 2,
+   "points_rank": 4,
+   "board_pos": 7
+  },
+  "Juvenile Turf Sprint|Ruiva": {
+   "points": 0,
+   "points_rank": 8,
+   "board_pos": 8
+  },
+  "Juvenile Turf Sprint|Luminous Beauty": {
+   "points": 1,
+   "points_rank": 6,
+   "board_pos": 9
+  },
+  "Juvenile Turf Sprint|Wood Island": {
+   "points": 1,
+   "points_rank": 6,
+   "board_pos": 10
+  },
+  "Juvenile Turf Sprint|Moonrise": {
+   "points": 0,
+   "points_rank": 8,
+   "board_pos": 11
+  },
+  "Longines Classic|Knightsbridge": {
+   "points": 28,
+   "points_rank": 2,
+   "board_pos": 1
+  },
+  "Longines Classic|Skippylongstocking": {
+   "points": 21,
+   "points_rank": 6,
+   "board_pos": 2
+  },
+  "Longines Classic|Sovereignty": {
+   "points": 18,
+   "points_rank": 9,
+   "board_pos": 3
+  },
+  "Longines Classic|Forged Steel": {
+   "points": 16,
+   "points_rank": 11,
+   "board_pos": 4
+  },
+  "Longines Classic|Magnitude": {
+   "points": 14,
+   "points_rank": 12,
+   "board_pos": 5
+  },
+  "Longines Classic|Baby Vino": {
+   "points": 10,
+   "points_rank": 14,
+   "board_pos": 6
+  },
+  "Longines Classic|Forever Young": {
+   "points": 10,
+   "points_rank": 14,
+   "board_pos": 7
+  },
+  "Longines Classic|Costa Nova": {
+   "points": 0,
+   "points_rank": 16,
+   "board_pos": 8
+  },
+  "Longines Classic|Golden Tempo": {
+   "points": 32,
+   "points_rank": 1,
+   "board_pos": 9
+  },
+  "Longines Classic|Renegade": {
+   "points": 26,
+   "points_rank": 3,
+   "board_pos": 10
+  },
+  "Longines Classic|Further Ado": {
+   "points": 22,
+   "points_rank": 4,
+   "board_pos": 11
+  },
+  "Longines Classic|Napoleon Solo": {
+   "points": 22,
+   "points_rank": 4,
+   "board_pos": 12
+  },
+  "Longines Classic|Silent Tactic": {
+   "points": 20,
+   "points_rank": 7,
+   "board_pos": 13
+  },
+  "Longines Classic|The Puma": {
+   "points": 20,
+   "points_rank": 7,
+   "board_pos": 14
+  },
+  "Longines Classic|So Happy": {
+   "points": 18,
+   "points_rank": 9,
+   "board_pos": 15
+  },
+  "Longines Classic|Iron Honor": {
+   "points": 14,
+   "points_rank": 12,
+   "board_pos": 16
+  },
+  "Longines Distaff|Fully Subscribed": {
+   "points": 38,
+   "points_rank": 2,
+   "board_pos": 1
+  },
+  "Longines Distaff|Nitrogen": {
+   "points": 34,
+   "points_rank": 3,
+   "board_pos": 2
+  },
+  "Longines Distaff|Immersive": {
+   "points": 18,
+   "points_rank": 6,
+   "board_pos": 3
+  },
+  "Longines Distaff|Eunomia": {
+   "points": 15,
+   "points_rank": 10,
+   "board_pos": 4
+  },
+  "Longines Distaff|Super Corredora": {
+   "points": 6,
+   "points_rank": 15,
+   "board_pos": 5
+  },
+  "Longines Distaff|Herd Immunity": {
+   "points": 0,
+   "points_rank": 16,
+   "board_pos": 6
+  },
+  "Longines Distaff|Counting Stars": {
+   "points": 42,
+   "points_rank": 1,
+   "board_pos": 7
+  },
+  "Longines Distaff|Splendora": {
+   "points": 34,
+   "points_rank": 3,
+   "board_pos": 8
+  },
+  "Longines Distaff|Always a Runner": {
+   "points": 32,
+   "points_rank": 5,
+   "board_pos": 9
+  },
+  "Longines Distaff|My Miss Mo": {
+   "points": 18,
+   "points_rank": 6,
+   "board_pos": 10
+  },
+  "Longines Distaff|Meaning": {
+   "points": 16,
+   "points_rank": 8,
+   "board_pos": 11
+  },
+  "Longines Distaff|Om N Joy": {
+   "points": 16,
+   "points_rank": 8,
+   "board_pos": 12
+  },
+  "Longines Distaff|Measure": {
+   "points": 14,
+   "points_rank": 11,
+   "board_pos": 13
+  },
+  "Longines Distaff|Bodacious Bay": {
+   "points": 12,
+   "points_rank": 12,
+   "board_pos": 14
+  },
+  "Longines Distaff|Regaled": {
+   "points": 12,
+   "points_rank": 12,
+   "board_pos": 15
+  },
+  "Longines Distaff|Shred the Gnar": {
+   "points": 12,
+   "points_rank": 12,
+   "board_pos": 16
+  },
+  "Longines Turf|Test Score": {
+   "points": 22,
+   "points_rank": 1,
+   "board_pos": 1
+  },
+  "Longines Turf|Survie": {
+   "points": 16,
+   "points_rank": 4,
+   "board_pos": 2
+  },
+  "Longines Turf|Tiffany": {
+   "points": 6,
+   "points_rank": 10,
+   "board_pos": 3
+  },
+  "Longines Turf|Calandagan": {
+   "points": 0,
+   "points_rank": 11,
+   "board_pos": 4
+  },
+  "Longines Turf|Eccentric": {
+   "points": 0,
+   "points_rank": 11,
+   "board_pos": 5
+  },
+  "Longines Turf|Hotazhell": {
+   "points": 0,
+   "points_rank": 11,
+   "board_pos": 6
+  },
+  "Longines Turf|Kalpana": {
+   "points": 0,
+   "points_rank": 11,
+   "board_pos": 7
+  },
+  "Longines Turf|Meisho Tabaru": {
+   "points": 0,
+   "points_rank": 11,
+   "board_pos": 8
+  },
+  "Longines Turf|Ombudsman": {
+   "points": 0,
+   "points_rank": 11,
+   "board_pos": 9
+  },
+  "Longines Turf|Burnham Square": {
+   "points": 20,
+   "points_rank": 2,
+   "board_pos": 10
+  },
+  "Longines Turf|Minaret Station": {
+   "points": 20,
+   "points_rank": 2,
+   "board_pos": 11
+  },
+  "Longines Turf|West End Kid": {
+   "points": 16,
+   "points_rank": 4,
+   "board_pos": 12
+  },
+  "Longines Turf|Glacius": {
+   "points": 14,
+   "points_rank": 6,
+   "board_pos": 13
+  },
+  "Longines Turf|Gold Phoenix": {
+   "points": 14,
+   "points_rank": 6,
+   "board_pos": 14
+  },
+  "Longines Turf|Remember Mamba": {
+   "points": 14,
+   "points_rank": 6,
+   "board_pos": 15
+  },
+  "Longines Turf|Mondego": {
+   "points": 13,
+   "points_rank": 9,
+   "board_pos": 16
+  },
+  "Maker's Mark Filly & Mare Turf|Thought Process": {
+   "points": 26,
+   "points_rank": 2,
+   "board_pos": 1
+  },
+  "Maker's Mark Filly & Mare Turf|Kathynmarissa": {
+   "points": 24,
+   "points_rank": 4,
+   "board_pos": 2
+  },
+  "Maker's Mark Filly & Mare Turf|Gimme a Nother": {
+   "points": 20,
+   "points_rank": 5,
+   "board_pos": 3
+  },
+  "Maker's Mark Filly & Mare Turf|Embroidery": {
+   "points": 0,
+   "points_rank": 14,
+   "board_pos": 4
+  },
+  "Maker's Mark Filly & Mare Turf|Miss Scott": {
+   "points": 0,
+   "points_rank": 14,
+   "board_pos": 5
+  },
+  "Maker's Mark Filly & Mare Turf|Se Va Colando": {
+   "points": 0,
+   "points_rank": 14,
+   "board_pos": 6
+  },
+  "Maker's Mark Filly & Mare Turf|Classic Q": {
+   "points": 30,
+   "points_rank": 1,
+   "board_pos": 7
+  },
+  "Maker's Mark Filly & Mare Turf|Tam Tam": {
+   "points": 25,
+   "points_rank": 3,
+   "board_pos": 8
+  },
+  "Maker's Mark Filly & Mare Turf|Faithful Departed": {
+   "points": 20,
+   "points_rank": 5,
+   "board_pos": 9
+  },
+  "Maker's Mark Filly & Mare Turf|Segesta": {
+   "points": 20,
+   "points_rank": 5,
+   "board_pos": 10
+  },
+  "Maker's Mark Filly & Mare Turf|Portfolio Duration": {
+   "points": 18,
+   "points_rank": 8,
+   "board_pos": 11
+  },
+  "Maker's Mark Filly & Mare Turf|Kensington Lane": {
+   "points": 14,
+   "points_rank": 9,
+   "board_pos": 12
+  },
+  "Maker's Mark Filly & Mare Turf|Take A Breath": {
+   "points": 14,
+   "points_rank": 9,
+   "board_pos": 13
+  },
+  "Maker's Mark Filly & Mare Turf|Destino d'Oro": {
+   "points": 12,
+   "points_rank": 11,
+   "board_pos": 14
+  },
+  "Maker's Mark Filly & Mare Turf|Bless the Broken": {
+   "points": 10,
+   "points_rank": 12,
+   "board_pos": 15
+  },
+  "Maker's Mark Filly & Mare Turf|Expensive Queen": {
+   "points": 10,
+   "points_rank": 12,
+   "board_pos": 16
+  },
+  "Prevagen Turf Sprint|Sorrento Sky": {
+   "points": 12,
+   "points_rank": 2,
+   "board_pos": 1
+  },
+  "Prevagen Turf Sprint|Reef Runner": {
+   "points": 10,
+   "points_rank": 4,
+   "board_pos": 2
+  },
+  "Prevagen Turf Sprint|Possiblemente": {
+   "points": 6,
+   "points_rank": 11,
+   "board_pos": 3
+  },
+  "Prevagen Turf Sprint|Bacio": {
+   "points": 0,
+   "points_rank": 12,
+   "board_pos": 4
+  },
+  "Prevagen Turf Sprint|Comanche Brave": {
+   "points": 0,
+   "points_rank": 12,
+   "board_pos": 6
+  },
+  "Prevagen Turf Sprint|Miss Yechance": {
+   "points": 0,
+   "points_rank": 12,
+   "board_pos": 7
+  },
+  "Prevagen Turf Sprint|Mission Central": {
+   "points": 0,
+   "points_rank": 12,
+   "board_pos": 8
+  },
+  "Prevagen Turf Sprint|In Our Time": {
+   "points": 18,
+   "points_rank": 1,
+   "board_pos": 9
+  },
+  "Prevagen Turf Sprint|Somerset West": {
+   "points": 12,
+   "points_rank": 2,
+   "board_pos": 10
+  },
+  "Prevagen Turf Sprint|Joe Shiesty": {
+   "points": 10,
+   "points_rank": 4,
+   "board_pos": 11
+  },
+  "Prevagen Turf Sprint|John the Beer Man": {
+   "points": 10,
+   "points_rank": 4,
+   "board_pos": 12
+  },
+  "Prevagen Turf Sprint|Lion Lake": {
+   "points": 10,
+   "points_rank": 4,
+   "board_pos": 13
+  },
+  "Prevagen Turf Sprint|Movin' On Up": {
+   "points": 10,
+   "points_rank": 4,
+   "board_pos": 14
+  },
+  "Prevagen Turf Sprint|Slay the Day": {
+   "points": 10,
+   "points_rank": 4,
+   "board_pos": 15
+  },
+  "Prevagen Turf Sprint|Sumter": {
+   "points": 10,
+   "points_rank": 4,
+   "board_pos": 16
+  }
+ }
 }

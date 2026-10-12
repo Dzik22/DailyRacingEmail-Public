@@ -1,6 +1,6 @@
 {
  "for_date": "2026-10-12",
- "built_utc": "2026-10-12T10:39:17.132727Z",
+ "built_utc": "2026-10-12T13:02:08.542344Z",
  "source": "https://members.breederscup.com/Points/PointsLeaderboard",
  "event": {
   "name": "Breeders' Cup World Championships",
@@ -1351,6 +1351,16 @@
      "owner": "Juddmonte",
      "trainer": "Brad Cox",
      "races": [
+      {
+       "bcc": false,
+       "date": "10/17/2026",
+       "track": "Kee",
+       "race": "Perryville",
+       "grade": "G3",
+       "division": "Sprint",
+       "pos": "0",
+       "points": 0
+      },
       {
        "bcc": false,
        "date": "8/29/2026",
@@ -3637,6 +3647,16 @@
      "races": [
       {
        "bcc": false,
+       "date": "10/17/2026",
+       "track": "Kee",
+       "race": "Raven Run S.",
+       "grade": "G2",
+       "division": "Filly & Mare Sprint",
+       "pos": "0",
+       "points": 0
+      },
+      {
+       "bcc": false,
        "date": "9/5/2026",
        "track": "KD",
        "race": "The Music City Stakes",
@@ -3968,7 +3988,7 @@
        "race": "Franklin Stakes",
        "grade": "G2",
        "division": "Turf Sprint",
-       "pos": "0",
+       "pos": "5",
        "points": 0
       },
       {
@@ -4017,6 +4037,16 @@
      "owner": "Double 22 Stables, LLC",
      "trainer": "Ian R. Wilkes",
      "races": [
+      {
+       "bcc": false,
+       "date": "10/17/2026",
+       "track": "Kee",
+       "race": "Raven Run S.",
+       "grade": "G2",
+       "division": "Filly & Mare Sprint",
+       "pos": "0",
+       "points": 0
+      },
       {
        "bcc": false,
        "date": "9/19/2026",
@@ -8903,7 +8933,7 @@
      ],
      "board_pos": 2,
      "points": 10,
-     "points_rank": 4,
+     "points_rank": 5,
      "points_tied": true
     },
     {
@@ -9205,6 +9235,72 @@
      "points_tied": true
     },
     {
+     "name": "Time to Dazzle",
+     "country": "",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "Tracy Farmer",
+     "trainer": "Mark E. Casse",
+     "races": [
+      {
+       "bcc": false,
+       "date": "10/11/2026",
+       "track": "Kee",
+       "race": "Franklin Stakes",
+       "grade": "G2",
+       "division": "Turf Sprint",
+       "pos": "1",
+       "points": 6
+      },
+      {
+       "bcc": false,
+       "date": "8/29/2026",
+       "track": "KD",
+       "race": "The Ladies Turf Sprint",
+       "grade": "G1",
+       "division": "Turf Sprint",
+       "pos": "2",
+       "points": 6
+      },
+      {
+       "bcc": false,
+       "date": "6/4/2026",
+       "track": "Sar",
+       "race": "Intercontinental",
+       "grade": "G2",
+       "division": "Turf Sprint",
+       "pos": "7",
+       "points": 0
+      },
+      {
+       "bcc": false,
+       "date": "5/1/2026",
+       "track": "CD",
+       "race": "Unbridled Sidney Stakes",
+       "grade": "G2",
+       "division": "Turf Sprint",
+       "pos": "5",
+       "points": 0
+      },
+      {
+       "bcc": false,
+       "date": "4/12/2026",
+       "track": "Kee",
+       "race": "Giant's Causeway S.",
+       "grade": "G2",
+       "division": "Turf Sprint",
+       "pos": "4",
+       "points": 0
+      }
+     ],
+     "board_pos": 11,
+     "points": 12,
+     "points_rank": 2,
+     "points_tied": true
+    },
+    {
      "name": "Joe Shiesty",
      "country": "",
      "out": false,
@@ -9245,9 +9341,9 @@
        "points": 0
       }
      ],
-     "board_pos": 11,
+     "board_pos": 12,
      "points": 10,
-     "points_rank": 4,
+     "points_rank": 5,
      "points_tied": true
     },
     {
@@ -9291,9 +9387,9 @@
        "points": 4
       }
      ],
-     "board_pos": 12,
+     "board_pos": 13,
      "points": 10,
-     "points_rank": 4,
+     "points_rank": 5,
      "points_tied": true
     },
     {
@@ -9357,9 +9453,9 @@
        "points": 4
       }
      ],
-     "board_pos": 13,
+     "board_pos": 14,
      "points": 10,
-     "points_rank": 4,
+     "points_rank": 5,
      "points_tied": true
     },
     {
@@ -9379,7 +9475,7 @@
        "race": "Franklin Stakes",
        "grade": "G2",
        "division": "Turf Sprint",
-       "pos": "0",
+       "pos": "4",
        "points": 0
       },
       {
@@ -9443,9 +9539,9 @@
        "points": 2
       }
      ],
-     "board_pos": 14,
+     "board_pos": 15,
      "points": 10,
-     "points_rank": 4,
+     "points_rank": 5,
      "points_tied": true
     },
     {
@@ -9491,75 +9587,9 @@
        "points": 4
       }
      ],
-     "board_pos": 15,
-     "points": 10,
-     "points_rank": 4,
-     "points_tied": true
-    },
-    {
-     "name": "Sumter",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "Perry R. Bass II , Ramona Seeligson Bass",
-     "trainer": "Richard E. Mandella",
-     "races": [
-      {
-       "bcc": false,
-       "date": "9/26/2026",
-       "track": "SA",
-       "race": "Eddie D. Stakes",
-       "grade": "G2",
-       "division": "Turf Sprint",
-       "pos": "2",
-       "points": 4
-      },
-      {
-       "bcc": true,
-       "date": "8/22/2026",
-       "track": "Dmr",
-       "race": "Green Flash Handicap",
-       "grade": "G2",
-       "division": "Turf Sprint",
-       "pos": "5",
-       "points": 0
-      },
-      {
-       "bcc": false,
-       "date": "6/13/2026",
-       "track": "SA",
-       "race": "Daytona S.",
-       "grade": "G3",
-       "division": "Turf Sprint",
-       "pos": "2",
-       "points": 2
-      },
-      {
-       "bcc": false,
-       "date": "4/18/2026",
-       "track": "SA",
-       "race": "American S.",
-       "grade": "G3",
-       "division": "Mile",
-       "pos": "5",
-       "points": 0
-      },
-      {
-       "bcc": false,
-       "date": "3/14/2026",
-       "track": "SA",
-       "race": "San Simeon S.",
-       "grade": "G3",
-       "division": "Turf Sprint",
-       "pos": "1",
-       "points": 4
-      }
-     ],
      "board_pos": 16,
      "points": 10,
-     "points_rank": 4,
+     "points_rank": 5,
      "points_tied": true
     }
    ]

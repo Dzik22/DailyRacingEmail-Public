@@ -147,11 +147,28 @@ for i in range(8):                       # today .. today+7
     cards = data['racecards']
     hits = [c for c in cards if is_stakes(c)]
     print('day %s: %d cards, %d stakes' % (d, len(cards), len(hits)))
-    # Oct 12 2026: the build shipped British Champions Day with four of its five Group 1s and
-    # the distances one row out of step -- every wrong row carried the NEXT race's distance,
-    # which is what a dropped race looks like from the outside. race_row() takes the name and
-    # the distance from the SAME record, so the misalignment cannot start here; it is either in
-    # what the API returned or in what is_stakes() threw away. These two lines settle which.
+    # Oct 12 2026: the build shipped British Champions Day with four of its five Group 1s, and
+    # the names and distances did not agree with each other. It looked like a one-row shift, so
+    # these two lines went in to show the raw card. Oct 13's log answered it on the first run and
+    # the shift theory was wrong:
+    #
+    #   day 2026-10-17: 41 cards, 4 stakes
+    #     CARD Ascot 1:30 2m   pat=Group 1 HIT  ...Long Distance Cup (Group 1)
+    #     CARD Ascot 2:40 1m4f pat=Group 1 HIT  ...Fillies & Mares Stakes (Group 1)
+    #     CARD Ascot 3:20 1m   pat=Group 1 HIT  Queen Elizabeth II Stakes (Group 1)
+    #     CARD Ascot 4:00 1m2f pat=Group 1 HIT  ...Champion Stakes (Group 1)
+    #     CARD Ascot 4:35 1m   pat=-       drop Balmoral Handicap Stakes
+    #
+    # Five races where the real card has six. The British Champions Sprint Stakes is simply not
+    # in what the API returns -- is_stakes() never sees it, and the Balmoral is dropped correctly
+    # for carrying no pattern. So the Oct 12 fault was the API's: the Champion Stakes missing AND
+    # the name "British Champions Sprint Stakes" sitting on the 2:40/1m4f record, which is the
+    # Fillies & Mares. Every distance matched its own record both days; only the names lied.
+    #
+    # The lesson is not fixable here -- we cannot invent a race the feed withholds. Hand-check a
+    # feature card (Champions Day, Arc weekend, the Guineas, the Breeders' Cup) against a cited
+    # source before the digest goes out, and keep these lines: they turn an invisible upstream
+    # gap into one grep.
     # Printed only for courses that produced a hit, so the log stays short.
     _hit_courses = {clean_course(c.get('course')) for c in hits}
     for c in cards:

@@ -1,6 +1,6 @@
 {
- "for_date": "2026-10-12",
- "built_utc": "2026-10-12T16:40:39.027533Z",
+ "for_date": "2026-10-13",
+ "built_utc": "2026-10-13T07:40:38.520424Z",
  "source": "https://members.breederscup.com/Points/PointsLeaderboard",
  "event": {
   "name": "Breeders' Cup World Championships",
@@ -4200,7 +4200,7 @@
      ],
      "board_pos": 4,
      "points": 0,
-     "points_rank": 15,
+     "points_rank": 14,
      "points_tied": true
     },
     {
@@ -4226,7 +4226,7 @@
      ],
      "board_pos": 5,
      "points": 0,
-     "points_rank": 15,
+     "points_rank": 14,
      "points_tied": true
     },
     {
@@ -4396,42 +4396,6 @@
      "points_tied": true
     },
     {
-     "name": "Harper's Corner",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "Charles L. Biggs",
-     "trainer": "Cathal A. Lynch",
-     "races": [
-      {
-       "bcc": false,
-       "date": "10/3/2026",
-       "track": "Bel",
-       "race": "Matron Stakes",
-       "grade": "G3",
-       "division": "Juvenile Fillies Turf",
-       "pos": "2",
-       "points": 2
-      },
-      {
-       "bcc": true,
-       "date": "9/5/2026",
-       "track": "Sar",
-       "race": "Spinaway",
-       "grade": "G1",
-       "division": "Juvenile Fillies",
-       "pos": "2",
-       "points": 6
-      }
-     ],
-     "board_pos": 12,
-     "points": 2,
-     "points_rank": 9,
-     "points_tied": true
-    },
-    {
      "name": "Luminous Beauty",
      "country": "",
      "out": false,
@@ -4462,9 +4426,9 @@
        "points": 2
       }
      ],
-     "board_pos": 13,
+     "board_pos": 12,
      "points": 1,
-     "points_rank": 12,
+     "points_rank": 11,
      "points_tied": true
     },
     {
@@ -4488,7 +4452,7 @@
        "points": 2
       }
      ],
-     "board_pos": 14,
+     "board_pos": 13,
      "points": 2,
      "points_rank": 9,
      "points_tied": true
@@ -4514,9 +4478,9 @@
        "points": 1
       }
      ],
-     "board_pos": 15,
+     "board_pos": 14,
      "points": 1,
-     "points_rank": 12,
+     "points_rank": 11,
      "points_tied": true
     },
     {
@@ -4540,9 +4504,35 @@
        "points": 1
       }
      ],
-     "board_pos": 16,
+     "board_pos": 15,
      "points": 1,
-     "points_rank": 12,
+     "points_rank": 11,
+     "points_tied": true
+    },
+    {
+     "name": "Amusingly",
+     "country": "GB",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "Juddmonte",
+     "trainer": "Francis-Henri Graffard",
+     "races": [
+      {
+       "bcc": true,
+       "date": "10/4/2026",
+       "track": "Lch",
+       "race": "Qatar Prix Jean-Luc Lagardere",
+       "grade": "G1",
+       "division": "Juvenile Turf",
+       "pos": "1",
+       "points": 0
+      }
+     ],
+     "board_pos": 16,
+     "points": 0,
+     "points_rank": 14,
      "points_tied": true
     }
    ]
@@ -4774,42 +4764,6 @@
      "points_tied": false
     },
     {
-     "name": "Harper's Corner",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "Charles L. Biggs",
-     "trainer": "Cathal A. Lynch",
-     "races": [
-      {
-       "bcc": false,
-       "date": "10/3/2026",
-       "track": "Bel",
-       "race": "Matron Stakes",
-       "grade": "G3",
-       "division": "Juvenile Fillies Turf",
-       "pos": "2",
-       "points": 2
-      },
-      {
-       "bcc": true,
-       "date": "9/5/2026",
-       "track": "Sar",
-       "race": "Spinaway",
-       "grade": "G1",
-       "division": "Juvenile Fillies",
-       "pos": "2",
-       "points": 6
-      }
-     ],
-     "board_pos": 8,
-     "points": 6,
-     "points_rank": 7,
-     "points_tied": true
-    },
-    {
      "name": "Rum Twist",
      "country": "",
      "out": false,
@@ -4830,7 +4784,7 @@
        "points": 6
       }
      ],
-     "board_pos": 9,
+     "board_pos": 8,
      "points": 6,
      "points_rank": 7,
      "points_tied": true
@@ -4856,9 +4810,9 @@
        "points": 4
       }
      ],
-     "board_pos": 10,
+     "board_pos": 9,
      "points": 4,
-     "points_rank": 10,
+     "points_rank": 9,
      "points_tied": true
     },
     {
@@ -4882,9 +4836,9 @@
        "points": 4
       }
      ],
-     "board_pos": 11,
+     "board_pos": 10,
      "points": 4,
-     "points_rank": 10,
+     "points_rank": 9,
      "points_tied": true
     },
     {
@@ -4908,9 +4862,9 @@
        "points": 4
       }
      ],
-     "board_pos": 12,
+     "board_pos": 11,
      "points": 4,
-     "points_rank": 10,
+     "points_rank": 9,
      "points_tied": true
     },
     {
@@ -4934,9 +4888,9 @@
        "points": 4
       }
      ],
-     "board_pos": 13,
+     "board_pos": 12,
      "points": 4,
-     "points_rank": 10,
+     "points_rank": 9,
      "points_tied": true
     },
     {
@@ -4970,9 +4924,9 @@
        "points": 4
       }
      ],
-     "board_pos": 14,
+     "board_pos": 13,
      "points": 4,
-     "points_rank": 10,
+     "points_rank": 9,
      "points_tied": true
     },
     {
@@ -5006,9 +4960,9 @@
        "points": 1
       }
      ],
-     "board_pos": 15,
+     "board_pos": 14,
      "points": 3,
-     "points_rank": 15,
+     "points_rank": 14,
      "points_tied": false
     },
     {
@@ -5042,9 +4996,35 @@
        "points": 0
       }
      ],
-     "board_pos": 16,
+     "board_pos": 15,
      "points": 0,
      "points_rank": 16,
+     "points_tied": false
+    },
+    {
+     "name": "Quattro Passi",
+     "country": "",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "Debbie Lanni",
+     "trainer": "Bob Baffert",
+     "races": [
+      {
+       "bcc": true,
+       "date": "10/3/2026",
+       "track": "SA",
+       "race": "Oak Leaf Stakes Presented by Oak Tree Racing Association",
+       "grade": "G2",
+       "division": "Juvenile Fillies",
+       "pos": "3",
+       "points": 2
+      }
+     ],
+     "board_pos": 16,
+     "points": 2,
+     "points_rank": 15,
      "points_tied": false
     }
    ]
@@ -5102,7 +5082,7 @@
      ],
      "board_pos": 2,
      "points": 0,
-     "points_rank": 8,
+     "points_rank": 9,
      "points_tied": true
     },
     {
@@ -5138,7 +5118,7 @@
      ],
      "board_pos": 3,
      "points": 0,
-     "points_rank": 8,
+     "points_rank": 9,
      "points_tied": true
     },
     {
@@ -5204,6 +5184,42 @@
      "points_tied": true
     },
     {
+     "name": "Harper's Corner",
+     "country": "",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "Charles L. Biggs",
+     "trainer": "Cathal A. Lynch",
+     "races": [
+      {
+       "bcc": false,
+       "date": "10/3/2026",
+       "track": "Bel",
+       "race": "Matron Stakes",
+       "grade": "G3",
+       "division": "Juvenile Fillies Turf",
+       "pos": "2",
+       "points": 2
+      },
+      {
+       "bcc": true,
+       "date": "9/5/2026",
+       "track": "Sar",
+       "race": "Spinaway",
+       "grade": "G1",
+       "division": "Juvenile Fillies",
+       "pos": "2",
+       "points": 6
+      }
+     ],
+     "board_pos": 6,
+     "points": 2,
+     "points_rank": 4,
+     "points_tied": true
+    },
+    {
      "name": "Love a Warrior",
      "country": "",
      "out": false,
@@ -5224,7 +5240,7 @@
        "points": 2
       }
      ],
-     "board_pos": 6,
+     "board_pos": 7,
      "points": 2,
      "points_rank": 4,
      "points_tied": true
@@ -5260,7 +5276,7 @@
        "points": 0
       }
      ],
-     "board_pos": 7,
+     "board_pos": 8,
      "points": 2,
      "points_rank": 4,
      "points_tied": true
@@ -5296,9 +5312,9 @@
        "points": 2
       }
      ],
-     "board_pos": 8,
+     "board_pos": 9,
      "points": 0,
-     "points_rank": 8,
+     "points_rank": 9,
      "points_tied": true
     },
     {
@@ -5332,9 +5348,9 @@
        "points": 2
       }
      ],
-     "board_pos": 9,
+     "board_pos": 10,
      "points": 1,
-     "points_rank": 6,
+     "points_rank": 7,
      "points_tied": true
     },
     {
@@ -5358,9 +5374,9 @@
        "points": 1
       }
      ],
-     "board_pos": 10,
+     "board_pos": 11,
      "points": 1,
-     "points_rank": 6,
+     "points_rank": 7,
      "points_tied": true
     },
     {
@@ -5384,9 +5400,9 @@
        "points": 0
       }
      ],
-     "board_pos": 11,
+     "board_pos": 12,
      "points": 0,
-     "points_rank": 8,
+     "points_rank": 9,
      "points_tied": true
     }
    ]
@@ -9595,7 +9611,7 @@
    ]
   }
  ],
- "prev_date": "2026-10-11",
+ "prev_date": "2026-10-12",
  "prev": {
   "Brown Advisory Juvenile Turf|Al Hudaiba": {
    "points": 10,
@@ -10619,7 +10635,7 @@
   },
   "Prevagen Turf Sprint|Reef Runner": {
    "points": 10,
-   "points_rank": 4,
+   "points_rank": 5,
    "board_pos": 2
   },
   "Prevagen Turf Sprint|Possiblemente": {
@@ -10657,34 +10673,34 @@
    "points_rank": 2,
    "board_pos": 10
   },
+  "Prevagen Turf Sprint|Time to Dazzle": {
+   "points": 12,
+   "points_rank": 2,
+   "board_pos": 11
+  },
   "Prevagen Turf Sprint|Joe Shiesty": {
    "points": 10,
-   "points_rank": 4,
-   "board_pos": 11
+   "points_rank": 5,
+   "board_pos": 12
   },
   "Prevagen Turf Sprint|John the Beer Man": {
    "points": 10,
-   "points_rank": 4,
-   "board_pos": 12
+   "points_rank": 5,
+   "board_pos": 13
   },
   "Prevagen Turf Sprint|Lion Lake": {
    "points": 10,
-   "points_rank": 4,
-   "board_pos": 13
+   "points_rank": 5,
+   "board_pos": 14
   },
   "Prevagen Turf Sprint|Movin' On Up": {
    "points": 10,
-   "points_rank": 4,
-   "board_pos": 14
+   "points_rank": 5,
+   "board_pos": 15
   },
   "Prevagen Turf Sprint|Slay the Day": {
    "points": 10,
-   "points_rank": 4,
-   "board_pos": 15
-  },
-  "Prevagen Turf Sprint|Sumter": {
-   "points": 10,
-   "points_rank": 4,
+   "points_rank": 5,
    "board_pos": 16
   }
  }

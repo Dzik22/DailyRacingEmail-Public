@@ -1,33 +1,14 @@
 [
  {
-  "day_label": "YESTERDAY — Sun Oct 11",
-  "races": [
-   {
-    "grade": "LR",
-    "race_name": "Irish Stallion Farms EBF Bluebell Stakes (Listed)",
-    "date_short": "Sun\nOct 11",
-    "track": "Naas",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Irish Stallion Farms EBF Garnet Stakes (Listed)",
-    "date_short": "Sun\nOct 11",
-    "track": "Naas",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Mon Oct 12",
+  "day_label": "YESTERDAY — Mon Oct 12",
   "races": []
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Tue Oct 13",
+  "day_label": "TODAY — Tue Oct 13",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Wed Oct 14",
   "races": [
    {
     "grade": "G1",

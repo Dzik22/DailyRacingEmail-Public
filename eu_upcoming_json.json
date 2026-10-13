@@ -45,6 +45,15 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m2f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Grand Prix Anjou Bretagne - Fonds Europeen De L'elevage",
+    "date_short": "Wed\nOct 14",
+    "track": "Nantes",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m · Turf"
    }
   ]
  }

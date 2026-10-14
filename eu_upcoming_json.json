@@ -1,15 +1,43 @@
 [
  {
-  "day_label": "YESTERDAY — Mon Oct 12",
+  "day_label": "YESTERDAY — Tue Oct 13",
   "races": []
  },
  {
-  "day_label": "TODAY — Tue Oct 13",
-  "races": []
- },
- {
-  "day_label": "TOMORROW — Next 7 days from Wed Oct 14",
+  "day_label": "TODAY — Wed Oct 14",
   "races": [
+   {
+    "grade": "G2",
+    "race_name": "Prix Glorieuse",
+    "date_short": "Wed\nOct 14",
+    "track": "Saint-Cloud",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m4½f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Grand Prix Anjou Bretagne - Fonds Europeen De L'elevage",
+    "date_short": "Wed\nOct 14",
+    "track": "Nantes",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Thu Oct 15",
+  "races": [
+   {
+    "grade": "LR",
+    "race_name": "British Stallion Studs Ebf Silver Tankard Stakes (Listed Race)",
+    "date_short": "Mon\nOct 19",
+    "track": "Pontefract",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m · Turf"
+   },
    {
     "grade": "G1",
     "race_name": "Qatar Racing British Champions Long Distance Cup (Group 1)",
@@ -18,6 +46,15 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "2m · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Qatar Racing British Champions Sprint Stakes (Group 1)",
+    "date_short": "Sat\nOct 17",
+    "track": "Ascot",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · Turf"
    },
    {
     "grade": "G1",
@@ -47,13 +84,40 @@
     "dist_surface": "1m2f · Turf"
    },
    {
+    "grade": "G3",
+    "race_name": "Mongey Communications Eyrefield Stakes (Group 3)",
+    "date_short": "Sat\nOct 17",
+    "track": "Leopardstown",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m1f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Mongey Communications Killavullan Stakes (Group 3)",
+    "date_short": "Sat\nOct 17",
+    "track": "Leopardstown",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "7f · Turf"
+   },
+   {
     "grade": "LR",
-    "race_name": "Grand Prix Anjou Bretagne - Fonds Europeen De L'elevage",
-    "date_short": "Wed\nOct 14",
-    "track": "Nantes",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m · Turf"
+    "race_name": "Bahrain Turf Club Knockaire Stakes (Listed)",
+    "date_short": "Sun\nOct 18",
+    "track": "Leopardstown",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m½f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Trigo Stakes (Listed)",
+    "date_short": "Sun\nOct 18",
+    "track": "Leopardstown",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m2f · Turf"
    }
   ]
  }

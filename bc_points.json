@@ -1,6 +1,6 @@
 {
- "for_date": "2026-10-13",
- "built_utc": "2026-10-13T14:57:32.274866Z",
+ "for_date": "2026-10-14",
+ "built_utc": "2026-10-14T06:06:24.427108Z",
  "source": "https://members.breederscup.com/Points/PointsLeaderboard",
  "event": {
   "name": "Breeders' Cup World Championships",
@@ -5490,7 +5490,7 @@
     {
      "name": "Skippylongstocking",
      "country": "",
-     "out": false,
+     "out": true,
      "notes": [],
      "challenge_winner": true,
      "nomination": "",
@@ -9611,7 +9611,7 @@
    ]
   }
  ],
- "prev_date": "2026-10-12",
+ "prev_date": "2026-10-13",
  "prev": {
   "Brown Advisory Juvenile Turf|Al Hudaiba": {
    "points": 10,
@@ -10110,12 +10110,12 @@
   },
   "John Deere Juvenile Fillies Turf|Green Empress": {
    "points": 0,
-   "points_rank": 15,
+   "points_rank": 14,
    "board_pos": 4
   },
   "John Deere Juvenile Fillies Turf|Sun Goddess": {
    "points": 0,
-   "points_rank": 15,
+   "points_rank": 14,
    "board_pos": 5
   },
   "John Deere Juvenile Fillies Turf|De la Renta": {
@@ -10148,29 +10148,29 @@
    "points_rank": 9,
    "board_pos": 11
   },
-  "John Deere Juvenile Fillies Turf|Harper's Corner": {
-   "points": 2,
-   "points_rank": 9,
-   "board_pos": 12
-  },
   "John Deere Juvenile Fillies Turf|Luminous Beauty": {
    "points": 1,
-   "points_rank": 12,
-   "board_pos": 13
+   "points_rank": 11,
+   "board_pos": 12
   },
   "John Deere Juvenile Fillies Turf|Mel Went Home": {
    "points": 2,
    "points_rank": 9,
-   "board_pos": 14
+   "board_pos": 13
   },
   "John Deere Juvenile Fillies Turf|Big Blast": {
    "points": 1,
-   "points_rank": 12,
-   "board_pos": 15
+   "points_rank": 11,
+   "board_pos": 14
   },
   "John Deere Juvenile Fillies Turf|More Champagne": {
    "points": 1,
-   "points_rank": 12,
+   "points_rank": 11,
+   "board_pos": 15
+  },
+  "John Deere Juvenile Fillies Turf|Amusingly": {
+   "points": 0,
+   "points_rank": 14,
    "board_pos": 16
   },
   "Juvenile Fillies|Summer Starlet": {
@@ -10208,49 +10208,49 @@
    "points_rank": 6,
    "board_pos": 7
   },
-  "Juvenile Fillies|Harper's Corner": {
+  "Juvenile Fillies|Rum Twist": {
    "points": 6,
    "points_rank": 7,
    "board_pos": 8
   },
-  "Juvenile Fillies|Rum Twist": {
-   "points": 6,
-   "points_rank": 7,
-   "board_pos": 9
-  },
   "Juvenile Fillies|Angel of Kirk": {
    "points": 4,
-   "points_rank": 10,
-   "board_pos": 10
+   "points_rank": 9,
+   "board_pos": 9
   },
   "Juvenile Fillies|Manuka Honey": {
    "points": 4,
-   "points_rank": 10,
-   "board_pos": 11
+   "points_rank": 9,
+   "board_pos": 10
   },
   "Juvenile Fillies|Oh She Said Yes": {
    "points": 4,
-   "points_rank": 10,
-   "board_pos": 12
+   "points_rank": 9,
+   "board_pos": 11
   },
   "Juvenile Fillies|Revenge of the Sis": {
    "points": 4,
-   "points_rank": 10,
-   "board_pos": 13
+   "points_rank": 9,
+   "board_pos": 12
   },
   "Juvenile Fillies|Stress Relief": {
    "points": 4,
-   "points_rank": 10,
-   "board_pos": 14
+   "points_rank": 9,
+   "board_pos": 13
   },
   "Juvenile Fillies|Scarlett Begonia": {
    "points": 3,
-   "points_rank": 15,
-   "board_pos": 15
+   "points_rank": 14,
+   "board_pos": 14
   },
   "Juvenile Fillies|Blockade": {
    "points": 0,
    "points_rank": 16,
+   "board_pos": 15
+  },
+  "Juvenile Fillies|Quattro Passi": {
+   "points": 2,
+   "points_rank": 15,
    "board_pos": 16
   },
   "Juvenile Turf Sprint|Good to Be King": {
@@ -10260,12 +10260,12 @@
   },
   "Juvenile Turf Sprint|Orthodox": {
    "points": 0,
-   "points_rank": 8,
+   "points_rank": 9,
    "board_pos": 2
   },
   "Juvenile Turf Sprint|Pershaada": {
    "points": 0,
-   "points_rank": 8,
+   "points_rank": 9,
    "board_pos": 3
   },
   "Juvenile Turf Sprint|Adonius": {
@@ -10278,35 +10278,40 @@
    "points_rank": 1,
    "board_pos": 5
   },
-  "Juvenile Turf Sprint|Love a Warrior": {
+  "Juvenile Turf Sprint|Harper's Corner": {
    "points": 2,
    "points_rank": 4,
    "board_pos": 6
   },
-  "Juvenile Turf Sprint|Regent's Park": {
+  "Juvenile Turf Sprint|Love a Warrior": {
    "points": 2,
    "points_rank": 4,
    "board_pos": 7
   },
+  "Juvenile Turf Sprint|Regent's Park": {
+   "points": 2,
+   "points_rank": 4,
+   "board_pos": 8
+  },
   "Juvenile Turf Sprint|Ruiva": {
    "points": 0,
-   "points_rank": 8,
-   "board_pos": 8
+   "points_rank": 9,
+   "board_pos": 9
   },
   "Juvenile Turf Sprint|Luminous Beauty": {
    "points": 1,
-   "points_rank": 6,
-   "board_pos": 9
+   "points_rank": 7,
+   "board_pos": 10
   },
   "Juvenile Turf Sprint|Wood Island": {
    "points": 1,
-   "points_rank": 6,
-   "board_pos": 10
+   "points_rank": 7,
+   "board_pos": 11
   },
   "Juvenile Turf Sprint|Moonrise": {
    "points": 0,
-   "points_rank": 8,
-   "board_pos": 11
+   "points_rank": 9,
+   "board_pos": 12
   },
   "Longines Classic|Knightsbridge": {
    "points": 28,

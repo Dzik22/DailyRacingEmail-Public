@@ -1,6 +1,6 @@
 {
  "for_date": "2026-10-15",
- "built_utc": "2026-10-15T09:47:41.781606Z",
+ "built_utc": "2026-10-15T12:36:47.446062Z",
  "source": "https://members.breederscup.com/Points/PointsLeaderboard",
  "event": {
   "name": "Breeders' Cup World Championships",
@@ -7530,16 +7530,6 @@
      "owner": "Silverton Hill, LLC",
      "trainer": "Jessica Harrington",
      "races": [
-      {
-       "bcc": true,
-       "date": "10/17/2026",
-       "track": "ASC",
-       "race": "Qatar Racing Champion Stakes",
-       "grade": "G1",
-       "division": "Turf",
-       "pos": "0",
-       "points": 0
-      },
       {
        "bcc": true,
        "date": "9/12/2026",

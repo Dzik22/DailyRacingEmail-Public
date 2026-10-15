@@ -1,10 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Tue Oct 13",
-  "races": []
- },
- {
-  "day_label": "TODAY — Wed Oct 14",
+  "day_label": "YESTERDAY — Wed Oct 14",
   "races": [
    {
     "grade": "G2",
@@ -27,7 +23,11 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Thu Oct 15",
+  "day_label": "TODAY — Thu Oct 15",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Fri Oct 16",
   "races": [
    {
     "grade": "LR",

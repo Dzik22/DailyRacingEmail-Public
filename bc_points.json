@@ -1,6 +1,6 @@
 {
- "for_date": "2026-10-14",
- "built_utc": "2026-10-14T12:49:40.973680Z",
+ "for_date": "2026-10-15",
+ "built_utc": "2026-10-15T05:52:22.612668Z",
  "source": "https://members.breederscup.com/Points/PointsLeaderboard",
  "event": {
   "name": "Breeders' Cup World Championships",
@@ -826,6 +826,42 @@
      "points_tied": false
     },
     {
+     "name": "Local Knowledge",
+     "country": "",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "Spendthrift Farm",
+     "trainer": "Todd A. Pletcher",
+     "races": [
+      {
+       "bcc": false,
+       "date": "8/29/2026",
+       "track": "Sar",
+       "race": "H. Allen Jerkens S.",
+       "grade": "G1",
+       "division": "Dirt Mile",
+       "pos": "3",
+       "points": 4
+      },
+      {
+       "bcc": false,
+       "date": "7/31/2026",
+       "track": "Sar",
+       "race": "Amsterdam",
+       "grade": "G2",
+       "division": "Sprint",
+       "pos": "1",
+       "points": 6
+      }
+     ],
+     "board_pos": 9,
+     "points": 10,
+     "points_rank": 5,
+     "points_tied": true
+    },
+    {
      "name": "Maximum Bourbon",
      "country": "",
      "out": false,
@@ -856,7 +892,7 @@
        "points": 6
       }
      ],
-     "board_pos": 9,
+     "board_pos": 10,
      "points": 10,
      "points_rank": 5,
      "points_tied": true
@@ -882,7 +918,7 @@
        "points": 10
       }
      ],
-     "board_pos": 10,
+     "board_pos": 11,
      "points": 10,
      "points_rank": 5,
      "points_tied": true
@@ -918,9 +954,9 @@
        "points": 4
       }
      ],
-     "board_pos": 11,
+     "board_pos": 12,
      "points": 8,
-     "points_rank": 8,
+     "points_rank": 9,
      "points_tied": true
     },
     {
@@ -954,9 +990,9 @@
        "points": 2
       }
      ],
-     "board_pos": 12,
+     "board_pos": 13,
      "points": 8,
-     "points_rank": 8,
+     "points_rank": 9,
      "points_tied": true
     },
     {
@@ -1022,9 +1058,9 @@
        "points": 2
       }
      ],
-     "board_pos": 13,
+     "board_pos": 14,
      "points": 8,
-     "points_rank": 8,
+     "points_rank": 9,
      "points_tied": true
     },
     {
@@ -1068,9 +1104,9 @@
        "points": 4
       }
      ],
-     "board_pos": 14,
+     "board_pos": 15,
      "points": 8,
-     "points_rank": 8,
+     "points_rank": 9,
      "points_tied": true
     },
     {
@@ -1124,46 +1160,10 @@
        "points": 0
       }
      ],
-     "board_pos": 15,
-     "points": 8,
-     "points_rank": 8,
-     "points_tied": true
-    },
-    {
-     "name": "Senior Officer",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "Qatar Racing LLC",
-     "trainer": "Brad Cox",
-     "races": [
-      {
-       "bcc": true,
-       "date": "10/1/2026",
-       "track": "Bel",
-       "race": "Vosburgh",
-       "grade": "G3",
-       "division": "Sprint",
-       "pos": "3",
-       "points": 1
-      },
-      {
-       "bcc": true,
-       "date": "8/29/2026",
-       "track": "Sar",
-       "race": "Forego",
-       "grade": "G1",
-       "division": "Dirt Mile",
-       "pos": "2",
-       "points": 6
-      }
-     ],
      "board_pos": 16,
-     "points": 7,
-     "points_rank": 13,
-     "points_tied": false
+     "points": 8,
+     "points_rank": 9,
+     "points_tied": true
     }
    ]
   },
@@ -1204,7 +1204,7 @@
      ],
      "board_pos": 1,
      "points": 8,
-     "points_rank": 7,
+     "points_rank": 6,
      "points_tied": true
     },
     {
@@ -1424,42 +1424,6 @@
      "points_tied": true
     },
     {
-     "name": "Local Knowledge",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "Spendthrift Farm",
-     "trainer": "Todd A. Pletcher",
-     "races": [
-      {
-       "bcc": false,
-       "date": "8/29/2026",
-       "track": "Sar",
-       "race": "H. Allen Jerkens S.",
-       "grade": "G1",
-       "division": "Dirt Mile",
-       "pos": "3",
-       "points": 4
-      },
-      {
-       "bcc": false,
-       "date": "7/31/2026",
-       "track": "Sar",
-       "race": "Amsterdam",
-       "grade": "G2",
-       "division": "Sprint",
-       "pos": "1",
-       "points": 6
-      }
-     ],
-     "board_pos": 6,
-     "points": 10,
-     "points_rank": 3,
-     "points_tied": true
-    },
-    {
      "name": "Nu What's New",
      "country": "",
      "out": false,
@@ -1520,7 +1484,7 @@
        "points": 2
       }
      ],
-     "board_pos": 7,
+     "board_pos": 6,
      "points": 10,
      "points_rank": 3,
      "points_tied": true
@@ -1566,9 +1530,9 @@
        "points": 4
       }
      ],
-     "board_pos": 8,
+     "board_pos": 7,
      "points": 8,
-     "points_rank": 7,
+     "points_rank": 6,
      "points_tied": true
     },
     {
@@ -1592,9 +1556,9 @@
        "points": 6
       }
      ],
-     "board_pos": 9,
+     "board_pos": 8,
      "points": 6,
-     "points_rank": 9,
+     "points_rank": 8,
      "points_tied": true
     },
     {
@@ -1628,9 +1592,9 @@
        "points": 2
       }
      ],
-     "board_pos": 10,
+     "board_pos": 9,
      "points": 6,
-     "points_rank": 9,
+     "points_rank": 8,
      "points_tied": true
     },
     {
@@ -1656,9 +1620,9 @@
        "points": 6
       }
      ],
-     "board_pos": 11,
+     "board_pos": 10,
      "points": 6,
-     "points_rank": 9,
+     "points_rank": 8,
      "points_tied": true
     },
     {
@@ -1682,9 +1646,9 @@
        "points": 6
       }
      ],
-     "board_pos": 12,
+     "board_pos": 11,
      "points": 6,
-     "points_rank": 9,
+     "points_rank": 8,
      "points_tied": true
     },
     {
@@ -1748,9 +1712,9 @@
        "points": 2
       }
      ],
-     "board_pos": 13,
+     "board_pos": 12,
      "points": 6,
-     "points_rank": 9,
+     "points_rank": 8,
      "points_tied": true
     },
     {
@@ -1776,9 +1740,9 @@
        "points": 6
       }
      ],
-     "board_pos": 14,
+     "board_pos": 13,
      "points": 6,
-     "points_rank": 9,
+     "points_rank": 8,
      "points_tied": true
     },
     {
@@ -1822,9 +1786,9 @@
        "points": 6
       }
      ],
-     "board_pos": 15,
+     "board_pos": 14,
      "points": 6,
-     "points_rank": 9,
+     "points_rank": 8,
      "points_tied": true
     },
     {
@@ -1868,10 +1832,46 @@
        "points": 6
       }
      ],
-     "board_pos": 16,
+     "board_pos": 15,
      "points": 6,
-     "points_rank": 9,
+     "points_rank": 8,
      "points_tied": true
+    },
+    {
+     "name": "Taptastic",
+     "country": "",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "Winchell Thoroughbreds LLC, Stonestreet Stables, LLC",
+     "trainer": "Steven M. Asmussen",
+     "races": [
+      {
+       "bcc": false,
+       "date": "6/7/2026",
+       "track": "CD",
+       "race": "Matt Winn S.",
+       "grade": "G3",
+       "division": "Dirt Mile",
+       "pos": "3",
+       "points": 1
+      },
+      {
+       "bcc": false,
+       "date": "3/28/2026",
+       "track": "OP",
+       "race": "Arkansas Derby",
+       "grade": "G1",
+       "division": "Classic",
+       "pos": "3",
+       "points": 4
+      }
+     ],
+     "board_pos": 16,
+     "points": 5,
+     "points_rank": 16,
+     "points_tied": false
     }
    ]
   },
@@ -2436,7 +2436,7 @@
      "notes": [],
      "challenge_winner": true,
      "nomination": "",
-     "owner": "Gary Barber , Cheyenne Stables LLC, Adam Wachtel",
+     "owner": "Gary Barber , Cheyenne Stables LLC, Wachtel Stable, LLC",
      "trainer": "William Walden",
      "races": [
       {
@@ -4734,8 +4734,8 @@
      "notes": [],
      "challenge_winner": false,
      "nomination": "",
-     "owner": "Michael McMillan",
-     "trainer": "Peter Miller",
+     "owner": "Michael McMillan , Raymond C. Bryner",
+     "trainer": "Raymond C. Bryner",
      "races": [
       {
        "bcc": false,
@@ -7212,7 +7212,7 @@
      "races": [
       {
        "bcc": false,
-       "date": "10/1/2026",
+       "date": "10/3/2026",
        "track": "Del",
        "race": "Delaware Handicap",
        "grade": "G3",
@@ -7275,7 +7275,7 @@
      ],
      "challenge_winner": false,
      "nomination": "",
-     "owner": "Flying Dutchmen Breeding and Racing, LLC",
+     "owner": "Flying Dutchmen",
      "trainer": "Brian A. Lynch",
      "races": [
       {
@@ -7460,6 +7460,16 @@
      "races": [
       {
        "bcc": true,
+       "date": "10/17/2026",
+       "track": "ASC",
+       "race": "Qatar Racing Champion Stakes",
+       "grade": "G1",
+       "division": "Turf",
+       "pos": "0",
+       "points": 0
+      },
+      {
+       "bcc": true,
        "date": "7/25/2026",
        "track": "ASC",
        "race": "King George VI & Queen Elizabeth Stakes",
@@ -7520,6 +7530,16 @@
      "owner": "Silverton Hill, LLC",
      "trainer": "Jessica Harrington",
      "races": [
+      {
+       "bcc": true,
+       "date": "10/17/2026",
+       "track": "ASC",
+       "race": "Qatar Racing Champion Stakes",
+       "grade": "G1",
+       "division": "Turf",
+       "pos": "0",
+       "points": 0
+      },
       {
        "bcc": true,
        "date": "9/12/2026",
@@ -7630,6 +7650,16 @@
      "owner": "Godolphin, LLC",
      "trainer": "John Gosden and Thady Gosden",
      "races": [
+      {
+       "bcc": true,
+       "date": "10/17/2026",
+       "track": "ASC",
+       "race": "Qatar Racing Champion Stakes",
+       "grade": "G1",
+       "division": "Turf",
+       "pos": "0",
+       "points": 0
+      },
       {
        "bcc": true,
        "date": "8/19/2026",
@@ -9569,7 +9599,7 @@
      ],
      "challenge_winner": false,
      "nomination": "",
-     "owner": "Flying Dutchmen Breeding and Racing, LLC",
+     "owner": "Flying Dutchmen",
      "trainer": "Brian A. Lynch",
      "races": [
       {
@@ -9611,7 +9641,7 @@
    ]
   }
  ],
- "prev_date": "2026-10-13",
+ "prev_date": "2026-10-14",
  "prev": {
   "Brown Advisory Juvenile Turf|Al Hudaiba": {
    "points": 10,

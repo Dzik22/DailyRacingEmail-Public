@@ -1,33 +1,14 @@
 [
  {
-  "day_label": "YESTERDAY — Wed Oct 14",
-  "races": [
-   {
-    "grade": "G2",
-    "race_name": "Prix Glorieuse",
-    "date_short": "Wed\nOct 14",
-    "track": "Saint-Cloud",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m4½f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Grand Prix Anjou Bretagne - Fonds Europeen De L'elevage",
-    "date_short": "Wed\nOct 14",
-    "track": "Nantes",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Thu Oct 15",
+  "day_label": "YESTERDAY — Thu Oct 15",
   "races": []
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Fri Oct 16",
+  "day_label": "TODAY — Fri Oct 16",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Sat Oct 17",
   "races": [
    {
     "grade": "LR",
@@ -118,6 +99,15 @@
     "country": "IRE",
     "flag": "🇮🇪",
     "dist_surface": "1m2f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Staffordstown Stud Stakes (Group 3)",
+    "date_short": "Tue\nOct 20",
+    "track": "Curragh",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m · Turf"
    }
   ]
  }

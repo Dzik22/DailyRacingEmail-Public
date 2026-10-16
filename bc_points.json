@@ -1,6 +1,6 @@
 {
- "for_date": "2026-10-15",
- "built_utc": "2026-10-15T12:36:47.446062Z",
+ "for_date": "2026-10-16",
+ "built_utc": "2026-10-16T05:48:49.243652Z",
  "source": "https://members.breederscup.com/Points/PointsLeaderboard",
  "event": {
   "name": "Breeders' Cup World Championships",
@@ -9631,7 +9631,7 @@
    ]
   }
  ],
- "prev_date": "2026-10-14",
+ "prev_date": "2026-10-15",
  "prev": {
   "Brown Advisory Juvenile Turf|Al Hudaiba": {
    "points": 10,
@@ -9753,49 +9753,49 @@
    "points_rank": 4,
    "board_pos": 8
   },
-  "Cygames Sprint|Maximum Bourbon": {
+  "Cygames Sprint|Local Knowledge": {
    "points": 10,
    "points_rank": 5,
    "board_pos": 9
   },
-  "Cygames Sprint|T O Elvis": {
+  "Cygames Sprint|Maximum Bourbon": {
    "points": 10,
    "points_rank": 5,
    "board_pos": 10
   },
+  "Cygames Sprint|T O Elvis": {
+   "points": 10,
+   "points_rank": 5,
+   "board_pos": 11
+  },
   "Cygames Sprint|Book'em Danno": {
    "points": 8,
-   "points_rank": 8,
-   "board_pos": 11
+   "points_rank": 9,
+   "board_pos": 12
   },
   "Cygames Sprint|Built": {
    "points": 8,
-   "points_rank": 8,
-   "board_pos": 12
+   "points_rank": 9,
+   "board_pos": 13
   },
   "Cygames Sprint|Crazy Mason": {
    "points": 8,
-   "points_rank": 8,
-   "board_pos": 13
+   "points_rank": 9,
+   "board_pos": 14
   },
   "Cygames Sprint|Getaway Car": {
    "points": 8,
-   "points_rank": 8,
-   "board_pos": 14
+   "points_rank": 9,
+   "board_pos": 15
   },
   "Cygames Sprint|Moonlight": {
    "points": 8,
-   "points_rank": 8,
-   "board_pos": 15
-  },
-  "Cygames Sprint|Senior Officer": {
-   "points": 7,
-   "points_rank": 13,
+   "points_rank": 9,
    "board_pos": 16
   },
   "Dirt Mile|Iron Man Cal": {
    "points": 8,
-   "points_rank": 7,
+   "points_rank": 6,
    "board_pos": 1
   },
   "Dirt Mile|Commandment": {
@@ -9818,59 +9818,59 @@
    "points_rank": 3,
    "board_pos": 5
   },
-  "Dirt Mile|Local Knowledge": {
+  "Dirt Mile|Nu What's New": {
    "points": 10,
    "points_rank": 3,
    "board_pos": 6
   },
-  "Dirt Mile|Nu What's New": {
-   "points": 10,
-   "points_rank": 3,
-   "board_pos": 7
-  },
   "Dirt Mile|Full Serrano": {
    "points": 8,
-   "points_rank": 7,
-   "board_pos": 8
+   "points_rank": 6,
+   "board_pos": 7
   },
   "Dirt Mile|Caldera": {
    "points": 6,
-   "points_rank": 9,
-   "board_pos": 9
+   "points_rank": 8,
+   "board_pos": 8
   },
   "Dirt Mile|Chunk of Gold": {
    "points": 6,
-   "points_rank": 9,
-   "board_pos": 10
+   "points_rank": 8,
+   "board_pos": 9
   },
   "Dirt Mile|Class President": {
    "points": 6,
-   "points_rank": 9,
-   "board_pos": 11
+   "points_rank": 8,
+   "board_pos": 10
   },
   "Dirt Mile|Corporate Power": {
    "points": 6,
-   "points_rank": 9,
-   "board_pos": 12
+   "points_rank": 8,
+   "board_pos": 11
   },
   "Dirt Mile|East Avenue": {
    "points": 6,
-   "points_rank": 9,
-   "board_pos": 13
+   "points_rank": 8,
+   "board_pos": 12
   },
   "Dirt Mile|Paladin": {
    "points": 6,
-   "points_rank": 9,
-   "board_pos": 14
+   "points_rank": 8,
+   "board_pos": 13
   },
   "Dirt Mile|Point Dume": {
    "points": 6,
-   "points_rank": 9,
-   "board_pos": 15
+   "points_rank": 8,
+   "board_pos": 14
   },
   "Dirt Mile|Vodka Vodka": {
    "points": 6,
-   "points_rank": 9,
+   "points_rank": 8,
+   "board_pos": 15
+  },
+  "Dirt Mile|Taptastic": {
+   "points": 5,
+   "points_rank": 16,
    "board_pos": 16
   },
   "FanDuel Juvenile|Hughes": {

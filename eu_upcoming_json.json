@@ -75,6 +75,15 @@
   "day_label": "TOMORROW — Next 7 days from Sun Oct 18",
   "races": [
    {
+    "grade": "G3",
+    "race_name": "BAR 1 Betting Mercury Stakes (Group 3)",
+    "date_short": "Fri\nOct 23",
+    "track": "Dundalk (AW)",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "5f · AW"
+   },
+   {
     "grade": "LR",
     "race_name": "British Stallion Studs Ebf Silver Tankard Stakes (Listed Race)",
     "date_short": "Mon\nOct 19",
@@ -82,6 +91,15 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Prix Du Conseil De Paris (Group 2)",
+    "date_short": "Sun\nOct 18",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m3f · Turf"
    },
    {
     "grade": "LR",
@@ -100,6 +118,24 @@
     "country": "IRE",
     "flag": "🇮🇪",
     "dist_surface": "1m2f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Prix Casimir Delamarre",
+    "date_short": "Sun\nOct 18",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m1f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Prix De Saint-cyr",
+    "date_short": "Sun\nOct 18",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "7f · Turf"
    },
    {
     "grade": "G3",

@@ -1,6 +1,6 @@
 {
- "for_date": "2026-10-16",
- "built_utc": "2026-10-16T12:17:35.645578Z",
+ "for_date": "2026-10-17",
+ "built_utc": "2026-10-17T05:33:39.582126Z",
  "source": "https://members.breederscup.com/Points/PointsLeaderboard",
  "event": {
   "name": "Breeders' Cup World Championships",
@@ -110,7 +110,7 @@
      "notes": [],
      "challenge_winner": true,
      "nomination": "",
-     "owner": "Al Shira'aa Racing USA, Inc",
+     "owner": "Al Shira’aa Racing Limited",
      "trainer": "Joseph Patrick O'Brien",
      "races": [
       {
@@ -319,7 +319,9 @@
      "name": "Repo Man",
      "country": "",
      "out": false,
-     "notes": [],
+     "notes": [
+      "layoff"
+     ],
      "challenge_winner": false,
      "nomination": "",
      "owner": "Amerman Racing, LLC",
@@ -2380,7 +2382,7 @@
      "notes": [],
      "challenge_winner": true,
      "nomination": "",
-     "owner": "St. Elias Stables LLC, Ken Langone , Jump Sucker Stable, Vicarage Stable",
+     "owner": "St. Elias Stables LLC, Ken Langone , Steven Duncker, Vicarage Stable",
      "trainer": "Miguel Clement",
      "races": [
       {
@@ -4682,7 +4684,7 @@
      "notes": [],
      "challenge_winner": false,
      "nomination": "",
-     "owner": "Tom Paluck",
+     "owner": "TSP Enterprises",
      "trainer": "John A. Grabowski",
      "races": [
       {
@@ -6186,7 +6188,7 @@
      "notes": [],
      "challenge_winner": false,
      "nomination": "",
-     "owner": "OGMA Investments, LLC, High Step Racing, TCC Stables LLC, YNG Stables LLC, JR Ranch",
+     "owner": "OGMA Investments, LLC, Saleh Al Otaibi , TCC Stables LLC, YNG Stables LLC, High Step Racing, JR Ranch",
      "trainer": "Gustavo Delgado",
      "races": [
       {
@@ -8902,12 +8904,10 @@
      "name": "Sorrento Sky",
      "country": "IRE",
      "out": false,
-     "notes": [
-      "R2"
-     ],
+     "notes": [],
      "challenge_winner": true,
-     "nomination": "R2-Not Nominated, Sire Not Nominated",
-     "owner": "Benowitz Family Trust, CYBT, McLean Racing Stables, Saul Gevertz , Marc Lantzman , Michael Nentwig",
+     "nomination": "",
+     "owner": "Michael Nentwig , Agave Racing Stable, Benowitz Family Trust, CYBT, McLean Racing Stables, Saul Gevertz , Marc Lantzman",
      "trainer": "Philip D'Amato",
      "races": [
       {
@@ -9015,7 +9015,7 @@
      "notes": [],
      "challenge_winner": true,
      "nomination": "",
-     "owner": "MyRacehorse, Torie Gladwell , Deja Blu Stables, Jacob Renshaw Shockley , Knollwood Stables, Valerie B. Dailey , Joshua Hanna",
+     "owner": "MyRacehorse, Torie Gladwell , Deja Blu Stables, Jacob Renshaw Shockley , Valerie B. Dailey , Joshua Hanna , Josh Messenger",
      "trainer": "Wesley A. Ward",
      "races": [
       {
@@ -9631,7 +9631,7 @@
    ]
   }
  ],
- "prev_date": "2026-10-15",
+ "prev_date": "2026-10-16",
  "prev": {
   "Brown Advisory Juvenile Turf|Al Hudaiba": {
    "points": 10,

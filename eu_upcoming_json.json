@@ -1,24 +1,11 @@
 [
  {
-  "day_label": "YESTERDAY — Thu Oct 15",
+  "day_label": "YESTERDAY — Fri Oct 16",
   "races": []
  },
  {
-  "day_label": "TODAY — Fri Oct 16",
-  "races": []
- },
- {
-  "day_label": "TOMORROW — Next 7 days from Sat Oct 17",
+  "day_label": "TODAY — Sat Oct 17",
   "races": [
-   {
-    "grade": "LR",
-    "race_name": "British Stallion Studs Ebf Silver Tankard Stakes (Listed Race)",
-    "date_short": "Mon\nOct 19",
-    "track": "Pontefract",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m · Turf"
-   },
    {
     "grade": "G1",
     "race_name": "Qatar Racing British Champions Long Distance Cup (Group 1)",
@@ -81,6 +68,20 @@
     "country": "IRE",
     "flag": "🇮🇪",
     "dist_surface": "7f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Sun Oct 18",
+  "races": [
+   {
+    "grade": "LR",
+    "race_name": "British Stallion Studs Ebf Silver Tankard Stakes (Listed Race)",
+    "date_short": "Mon\nOct 19",
+    "track": "Pontefract",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m · Turf"
    },
    {
     "grade": "LR",

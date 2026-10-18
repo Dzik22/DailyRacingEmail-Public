@@ -1,6 +1,6 @@
 {
  "for_date": "2026-10-18",
- "built_utc": "2026-10-18T09:28:58.939687Z",
+ "built_utc": "2026-10-18T12:01:35.664468Z",
  "source": "https://members.breederscup.com/Points/PointsLeaderboard",
  "event": {
   "name": "Breeders' Cup World Championships",
@@ -828,6 +828,118 @@
      "points_tied": false
     },
     {
+     "name": "Chief Wallabee",
+     "country": "",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "Mike & Katherine Ball",
+     "trainer": "William I. Mott",
+     "races": [
+      {
+       "bcc": false,
+       "date": "10/17/2026",
+       "track": "Kee",
+       "race": "Perryville",
+       "grade": "G3",
+       "division": "Sprint",
+       "pos": "2",
+       "points": 2
+      },
+      {
+       "bcc": false,
+       "date": "6/6/2026",
+       "track": "Sar",
+       "race": "Belmont Stakes",
+       "grade": "G1",
+       "division": "Classic",
+       "pos": "4",
+       "points": 0
+      },
+      {
+       "bcc": false,
+       "date": "5/2/2026",
+       "track": "CD",
+       "race": "Kentucky Derby",
+       "grade": "G1",
+       "division": "Classic",
+       "pos": "4",
+       "points": 0
+      },
+      {
+       "bcc": false,
+       "date": "3/28/2026",
+       "track": "GP",
+       "race": "Florida Derby",
+       "grade": "G1",
+       "division": "Classic",
+       "pos": "3",
+       "points": 4
+      },
+      {
+       "bcc": false,
+       "date": "2/28/2026",
+       "track": "GP",
+       "race": "Fountain of Youth S.",
+       "grade": "G2",
+       "division": "Dirt Mile",
+       "pos": "2",
+       "points": 4
+      }
+     ],
+     "board_pos": 9,
+     "points": 10,
+     "points_rank": 5,
+     "points_tied": true
+    },
+    {
+     "name": "Deep Flame",
+     "country": "",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "Juddmonte",
+     "trainer": "Brad Cox",
+     "races": [
+      {
+       "bcc": false,
+       "date": "10/17/2026",
+       "track": "Kee",
+       "race": "Perryville",
+       "grade": "G3",
+       "division": "Sprint",
+       "pos": "6",
+       "points": 0
+      },
+      {
+       "bcc": false,
+       "date": "8/29/2026",
+       "track": "Sar",
+       "race": "H. Allen Jerkens S.",
+       "grade": "G1",
+       "division": "Dirt Mile",
+       "pos": "2",
+       "points": 6
+      },
+      {
+       "bcc": false,
+       "date": "6/28/2026",
+       "track": "CD",
+       "race": "Maxfield S.",
+       "grade": "G3",
+       "division": "Dirt Mile",
+       "pos": "1",
+       "points": 4
+      }
+     ],
+     "board_pos": 10,
+     "points": 10,
+     "points_rank": 5,
+     "points_tied": true
+    },
+    {
      "name": "Local Knowledge",
      "country": "",
      "out": false,
@@ -858,7 +970,7 @@
        "points": 6
       }
      ],
-     "board_pos": 9,
+     "board_pos": 11,
      "points": 10,
      "points_rank": 5,
      "points_tied": true
@@ -894,7 +1006,7 @@
        "points": 6
       }
      ],
-     "board_pos": 10,
+     "board_pos": 12,
      "points": 10,
      "points_rank": 5,
      "points_tied": true
@@ -920,7 +1032,7 @@
        "points": 10
       }
      ],
-     "board_pos": 11,
+     "board_pos": 13,
      "points": 10,
      "points_rank": 5,
      "points_tied": true
@@ -956,9 +1068,9 @@
        "points": 4
       }
      ],
-     "board_pos": 12,
+     "board_pos": 14,
      "points": 8,
-     "points_rank": 9,
+     "points_rank": 11,
      "points_tied": true
     },
     {
@@ -992,9 +1104,9 @@
        "points": 2
       }
      ],
-     "board_pos": 13,
+     "board_pos": 15,
      "points": 8,
-     "points_rank": 9,
+     "points_rank": 11,
      "points_tied": true
     },
     {
@@ -1060,111 +1172,9 @@
        "points": 2
       }
      ],
-     "board_pos": 14,
-     "points": 8,
-     "points_rank": 9,
-     "points_tied": true
-    },
-    {
-     "name": "Getaway Car",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "SF Racing LLC, Starlight Racing, Madaket Stables LLC, Stonestreet Stables, LLC, Dianne Bashor , Determined Stables, Robert E. Masterson , Tom Ryan , Waves Edge Capital LLC, Catherine Donovan",
-     "trainer": "Bob Baffert",
-     "races": [
-      {
-       "bcc": false,
-       "date": "3/29/2026",
-       "track": "SA",
-       "race": "San Carlos S.",
-       "grade": "G3",
-       "division": "Sprint",
-       "pos": "6",
-       "points": 0
-      },
-      {
-       "bcc": false,
-       "date": "3/7/2026",
-       "track": "SA",
-       "race": "Santa Anita H.",
-       "grade": "G1",
-       "division": "Classic",
-       "pos": "3",
-       "points": 4
-      },
-      {
-       "bcc": false,
-       "date": "1/31/2026",
-       "track": "SA",
-       "race": "San Pasqual S.",
-       "grade": "G2",
-       "division": "Classic",
-       "pos": "2",
-       "points": 4
-      }
-     ],
-     "board_pos": 15,
-     "points": 8,
-     "points_rank": 9,
-     "points_tied": true
-    },
-    {
-     "name": "Moonlight",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "Tom Kagele",
-     "trainer": "Peter Miller",
-     "races": [
-      {
-       "bcc": true,
-       "date": "10/1/2026",
-       "track": "Bel",
-       "race": "Vosburgh",
-       "grade": "G3",
-       "division": "Sprint",
-       "pos": "7",
-       "points": 0
-      },
-      {
-       "bcc": true,
-       "date": "8/29/2026",
-       "track": "Dmr",
-       "race": "Pat O'Brien Stakes",
-       "grade": "G2",
-       "division": "Dirt Mile",
-       "pos": "2",
-       "points": 4
-      },
-      {
-       "bcc": true,
-       "date": "7/25/2026",
-       "track": "Dmr",
-       "race": "Bing Crosby Stakes",
-       "grade": "G1",
-       "division": "Sprint",
-       "pos": "3",
-       "points": 4
-      },
-      {
-       "bcc": false,
-       "date": "6/28/2026",
-       "track": "CD",
-       "race": "Hanshin S.",
-       "grade": "G3",
-       "division": "Dirt Mile",
-       "pos": "7",
-       "points": 0
-      }
-     ],
      "board_pos": 16,
      "points": 8,
-     "points_rank": 9,
+     "points_rank": 11,
      "points_tied": true
     }
    ]
@@ -1206,7 +1216,7 @@
      ],
      "board_pos": 1,
      "points": 8,
-     "points_rank": 6,
+     "points_rank": 5,
      "points_tied": true
     },
     {
@@ -1344,52 +1354,6 @@
      "points_tied": false
     },
     {
-     "name": "Deep Flame",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "Juddmonte",
-     "trainer": "Brad Cox",
-     "races": [
-      {
-       "bcc": false,
-       "date": "10/17/2026",
-       "track": "Kee",
-       "race": "Perryville",
-       "grade": "G3",
-       "division": "Sprint",
-       "pos": "0",
-       "points": 0
-      },
-      {
-       "bcc": false,
-       "date": "8/29/2026",
-       "track": "Sar",
-       "race": "H. Allen Jerkens S.",
-       "grade": "G1",
-       "division": "Dirt Mile",
-       "pos": "2",
-       "points": 6
-      },
-      {
-       "bcc": false,
-       "date": "6/28/2026",
-       "track": "CD",
-       "race": "Maxfield S.",
-       "grade": "G3",
-       "division": "Dirt Mile",
-       "pos": "1",
-       "points": 4
-      }
-     ],
-     "board_pos": 4,
-     "points": 10,
-     "points_rank": 3,
-     "points_tied": true
-    },
-    {
      "name": "Disruptor",
      "country": "",
      "out": false,
@@ -1420,7 +1384,7 @@
        "points": 4
       }
      ],
-     "board_pos": 5,
+     "board_pos": 4,
      "points": 10,
      "points_rank": 3,
      "points_tied": true
@@ -1486,7 +1450,7 @@
        "points": 2
       }
      ],
-     "board_pos": 6,
+     "board_pos": 5,
      "points": 10,
      "points_rank": 3,
      "points_tied": true
@@ -1532,9 +1496,9 @@
        "points": 4
       }
      ],
-     "board_pos": 7,
+     "board_pos": 6,
      "points": 8,
-     "points_rank": 6,
+     "points_rank": 5,
      "points_tied": true
     },
     {
@@ -1558,9 +1522,9 @@
        "points": 6
       }
      ],
-     "board_pos": 8,
+     "board_pos": 7,
      "points": 6,
-     "points_rank": 8,
+     "points_rank": 7,
      "points_tied": true
     },
     {
@@ -1594,9 +1558,9 @@
        "points": 2
       }
      ],
-     "board_pos": 9,
+     "board_pos": 8,
      "points": 6,
-     "points_rank": 8,
+     "points_rank": 7,
      "points_tied": true
     },
     {
@@ -1622,9 +1586,9 @@
        "points": 6
       }
      ],
-     "board_pos": 10,
+     "board_pos": 9,
      "points": 6,
-     "points_rank": 8,
+     "points_rank": 7,
      "points_tied": true
     },
     {
@@ -1648,9 +1612,9 @@
        "points": 6
       }
      ],
-     "board_pos": 11,
+     "board_pos": 10,
      "points": 6,
-     "points_rank": 8,
+     "points_rank": 7,
      "points_tied": true
     },
     {
@@ -1714,9 +1678,9 @@
        "points": 2
       }
      ],
-     "board_pos": 12,
+     "board_pos": 11,
      "points": 6,
-     "points_rank": 8,
+     "points_rank": 7,
      "points_tied": true
     },
     {
@@ -1742,9 +1706,9 @@
        "points": 6
       }
      ],
-     "board_pos": 13,
+     "board_pos": 12,
      "points": 6,
-     "points_rank": 8,
+     "points_rank": 7,
      "points_tied": true
     },
     {
@@ -1788,9 +1752,9 @@
        "points": 6
       }
      ],
-     "board_pos": 14,
+     "board_pos": 13,
      "points": 6,
-     "points_rank": 8,
+     "points_rank": 7,
      "points_tied": true
     },
     {
@@ -1834,9 +1798,9 @@
        "points": 6
       }
      ],
-     "board_pos": 15,
+     "board_pos": 14,
      "points": 6,
-     "points_rank": 8,
+     "points_rank": 7,
      "points_tied": true
     },
     {
@@ -1870,8 +1834,64 @@
        "points": 4
       }
      ],
-     "board_pos": 16,
+     "board_pos": 15,
      "points": 5,
+     "points_rank": 15,
+     "points_tied": false
+    },
+    {
+     "name": "Bartholdy",
+     "country": "",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "David A. Bernsen",
+     "trainer": "Jose Francisco D'Angelo",
+     "races": [
+      {
+       "bcc": true,
+       "date": "8/29/2026",
+       "track": "Dmr",
+       "race": "Pat O'Brien Stakes",
+       "grade": "G2",
+       "division": "Dirt Mile",
+       "pos": "10",
+       "points": 0
+      },
+      {
+       "bcc": false,
+       "date": "5/31/2026",
+       "track": "SA",
+       "race": "Triple Bend S.",
+       "grade": "G3",
+       "division": "Dirt Mile",
+       "pos": "3",
+       "points": 1
+      },
+      {
+       "bcc": false,
+       "date": "3/29/2026",
+       "track": "SA",
+       "race": "San Carlos S.",
+       "grade": "G3",
+       "division": "Sprint",
+       "pos": "3",
+       "points": 1
+      },
+      {
+       "bcc": false,
+       "date": "1/31/2026",
+       "track": "SA",
+       "race": "San Pasqual S.",
+       "grade": "G2",
+       "division": "Classic",
+       "pos": "3",
+       "points": 2
+      }
+     ],
+     "board_pos": 16,
+     "points": 4,
      "points_rank": 16,
      "points_tied": false
     }
@@ -3654,7 +3674,7 @@
        "race": "Raven Run S.",
        "grade": "G2",
        "division": "Filly & Mare Sprint",
-       "pos": "0",
+       "pos": "9",
        "points": 0
       },
       {
@@ -4046,7 +4066,7 @@
        "race": "Raven Run S.",
        "grade": "G2",
        "division": "Filly & Mare Sprint",
-       "pos": "0",
+       "pos": "8",
        "points": 0
       },
       {
@@ -7922,6 +7942,16 @@
      "owner": "C R K Stable LLC",
      "trainer": "Cherie DeVaux",
      "races": [
+      {
+       "bcc": false,
+       "date": "10/24/2026",
+       "track": "Kee",
+       "race": "Bryan Station",
+       "grade": "G2",
+       "division": "Mile",
+       "pos": "0",
+       "points": 0
+      },
       {
        "bcc": false,
        "date": "8/8/2026",

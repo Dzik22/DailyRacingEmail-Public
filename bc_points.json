@@ -1,6 +1,6 @@
 {
- "for_date": "2026-10-17",
- "built_utc": "2026-10-17T11:32:50.825037Z",
+ "for_date": "2026-10-18",
+ "built_utc": "2026-10-18T05:51:08.186427Z",
  "source": "https://members.breederscup.com/Points/PointsLeaderboard",
  "event": {
   "name": "Breeders' Cup World Championships",
@@ -4150,7 +4150,7 @@
      "notes": [],
      "challenge_winner": true,
      "nomination": "",
-     "owner": "Moving Forward Racing.LLC",
+     "owner": "Moving Forward Racing, LLC",
      "trainer": "Joe Sharp",
      "races": [
       {
@@ -7447,7 +7447,7 @@
      ],
      "board_pos": 3,
      "points": 6,
-     "points_rank": 10,
+     "points_rank": 11,
      "points_tied": false
     },
     {
@@ -7467,7 +7467,7 @@
        "race": "Qatar Racing Champion Stakes",
        "grade": "G1",
        "division": "Turf",
-       "pos": "0",
+       "pos": "2",
        "points": 0
       },
       {
@@ -7493,7 +7493,7 @@
      ],
      "board_pos": 4,
      "points": 0,
-     "points_rank": 11,
+     "points_rank": 12,
      "points_tied": true
     },
     {
@@ -7519,7 +7519,7 @@
      ],
      "board_pos": 5,
      "points": 0,
-     "points_rank": 11,
+     "points_rank": 12,
      "points_tied": true
     },
     {
@@ -7545,53 +7545,7 @@
      ],
      "board_pos": 6,
      "points": 0,
-     "points_rank": 11,
-     "points_tied": true
-    },
-    {
-     "name": "Kalpana",
-     "country": "GB",
-     "out": false,
-     "notes": [],
-     "challenge_winner": true,
-     "nomination": "",
-     "owner": "Juddmonte Farms Limited",
-     "trainer": "Andrew Balding",
-     "races": [
-      {
-       "bcc": true,
-       "date": "10/4/2026",
-       "track": "Lch",
-       "race": "Qatar Prix de l'Arc de Triomphe",
-       "grade": "G1",
-       "division": "Turf",
-       "pos": "5",
-       "points": 0
-      },
-      {
-       "bcc": true,
-       "date": "8/20/2026",
-       "track": "YOR",
-       "race": "Legends Global Yorkshire Oaks",
-       "grade": "G1",
-       "division": "Filly & Mare Turf",
-       "pos": "1",
-       "points": 0
-      },
-      {
-       "bcc": true,
-       "date": "7/25/2026",
-       "track": "ASC",
-       "race": "King George VI & Queen Elizabeth Stakes",
-       "grade": "G1",
-       "division": "Turf",
-       "pos": "1",
-       "points": 0
-      }
-     ],
-     "board_pos": 7,
-     "points": 0,
-     "points_rank": 11,
+     "points_rank": 12,
      "points_tied": true
     },
     {
@@ -7627,9 +7581,9 @@
        "points": 0
       }
      ],
-     "board_pos": 8,
+     "board_pos": 7,
      "points": 0,
-     "points_rank": 11,
+     "points_rank": 12,
      "points_tied": true
     },
     {
@@ -7649,7 +7603,7 @@
        "race": "Qatar Racing Champion Stakes",
        "grade": "G1",
        "division": "Turf",
-       "pos": "0",
+       "pos": "1",
        "points": 0
       },
       {
@@ -7683,9 +7637,9 @@
        "points": 0
       }
      ],
-     "board_pos": 9,
+     "board_pos": 8,
      "points": 0,
-     "points_rank": 11,
+     "points_rank": 12,
      "points_tied": true
     },
     {
@@ -7739,7 +7693,7 @@
        "points": 6
       }
      ],
-     "board_pos": 10,
+     "board_pos": 9,
      "points": 20,
      "points_rank": 2,
      "points_tied": true
@@ -7795,7 +7749,7 @@
        "points": 2
       }
      ],
-     "board_pos": 11,
+     "board_pos": 10,
      "points": 20,
      "points_rank": 2,
      "points_tied": true
@@ -7841,7 +7795,7 @@
        "points": 4
       }
      ],
-     "board_pos": 12,
+     "board_pos": 11,
      "points": 16,
      "points_rank": 4,
      "points_tied": true
@@ -7877,7 +7831,7 @@
        "points": 10
       }
      ],
-     "board_pos": 13,
+     "board_pos": 12,
      "points": 14,
      "points_rank": 6,
      "points_tied": true
@@ -7953,7 +7907,7 @@
        "points": 0
       }
      ],
-     "board_pos": 14,
+     "board_pos": 13,
      "points": 14,
      "points_rank": 6,
      "points_tied": true
@@ -8009,7 +7963,7 @@
        "points": 4
       }
      ],
-     "board_pos": 15,
+     "board_pos": 14,
      "points": 14,
      "points_rank": 6,
      "points_tied": true
@@ -8085,9 +8039,85 @@
        "points": 4
       }
      ],
-     "board_pos": 16,
+     "board_pos": 15,
      "points": 13,
      "points_rank": 9,
+     "points_tied": false
+    },
+    {
+     "name": "Flashiest",
+     "country": "",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "Adam Wachtel , Gary Barber , Nicolas Drion , Mathilde Sandra Powell",
+     "trainer": "Leonard Powell",
+     "races": [
+      {
+       "bcc": false,
+       "date": "9/26/2026",
+       "track": "SA",
+       "race": "John Henry Turf Championship",
+       "grade": "G2",
+       "division": "Turf",
+       "pos": "2",
+       "points": 4
+      },
+      {
+       "bcc": true,
+       "date": "8/29/2026",
+       "track": "Dmr",
+       "race": "Del Mar Handicap Presented By The Japan Racing Association",
+       "grade": "G2",
+       "division": "Turf",
+       "pos": "8",
+       "points": 0
+      },
+      {
+       "bcc": false,
+       "date": "6/4/2026",
+       "track": "Sar",
+       "race": "Belmont Gold Cup",
+       "grade": "G2",
+       "division": "Turf",
+       "pos": "4",
+       "points": 0
+      },
+      {
+       "bcc": false,
+       "date": "5/2/2026",
+       "track": "SA",
+       "race": "Charles Whittingham S.",
+       "grade": "G2",
+       "division": "Turf",
+       "pos": "2",
+       "points": 4
+      },
+      {
+       "bcc": false,
+       "date": "3/21/2026",
+       "track": "SA",
+       "race": "San Luis Rey S.",
+       "grade": "G3",
+       "division": "Turf",
+       "pos": "2",
+       "points": 2
+      },
+      {
+       "bcc": false,
+       "date": "2/14/2026",
+       "track": "SA",
+       "race": "San Marcos S.",
+       "grade": "G3",
+       "division": "Turf",
+       "pos": "2",
+       "points": 2
+      }
+     ],
+     "board_pos": 16,
+     "points": 12,
+     "points_rank": 10,
      "points_tied": false
     }
    ]
@@ -8277,7 +8307,53 @@
      ],
      "board_pos": 4,
      "points": 0,
-     "points_rank": 14,
+     "points_rank": 13,
+     "points_tied": true
+    },
+    {
+     "name": "Kalpana",
+     "country": "GB",
+     "out": false,
+     "notes": [],
+     "challenge_winner": true,
+     "nomination": "",
+     "owner": "Juddmonte Farms Limited",
+     "trainer": "Andrew Balding",
+     "races": [
+      {
+       "bcc": true,
+       "date": "10/4/2026",
+       "track": "Lch",
+       "race": "Qatar Prix de l'Arc de Triomphe",
+       "grade": "G1",
+       "division": "Turf",
+       "pos": "5",
+       "points": 0
+      },
+      {
+       "bcc": true,
+       "date": "8/20/2026",
+       "track": "YOR",
+       "race": "Legends Global Yorkshire Oaks",
+       "grade": "G1",
+       "division": "Filly & Mare Turf",
+       "pos": "1",
+       "points": 0
+      },
+      {
+       "bcc": true,
+       "date": "7/25/2026",
+       "track": "ASC",
+       "race": "King George VI & Queen Elizabeth Stakes",
+       "grade": "G1",
+       "division": "Turf",
+       "pos": "1",
+       "points": 0
+      }
+     ],
+     "board_pos": 5,
+     "points": 0,
+     "points_rank": 13,
      "points_tied": true
     },
     {
@@ -8301,9 +8377,9 @@
        "points": 0
       }
      ],
-     "board_pos": 5,
+     "board_pos": 6,
      "points": 0,
-     "points_rank": 14,
+     "points_rank": 13,
      "points_tied": true
     },
     {
@@ -8327,9 +8403,9 @@
        "points": 0
       }
      ],
-     "board_pos": 6,
+     "board_pos": 7,
      "points": 0,
-     "points_rank": 14,
+     "points_rank": 13,
      "points_tied": true
     },
     {
@@ -8403,7 +8479,7 @@
        "points": 0
       }
      ],
-     "board_pos": 7,
+     "board_pos": 8,
      "points": 30,
      "points_rank": 1,
      "points_tied": false
@@ -8459,7 +8535,7 @@
        "points": 4
       }
      ],
-     "board_pos": 8,
+     "board_pos": 9,
      "points": 25,
      "points_rank": 3,
      "points_tied": false
@@ -8527,7 +8603,7 @@
        "points": 0
       }
      ],
-     "board_pos": 9,
+     "board_pos": 10,
      "points": 20,
      "points_rank": 5,
      "points_tied": true
@@ -8593,7 +8669,7 @@
        "points": 10
       }
      ],
-     "board_pos": 10,
+     "board_pos": 11,
      "points": 20,
      "points_rank": 5,
      "points_tied": true
@@ -8639,7 +8715,7 @@
        "points": 4
       }
      ],
-     "board_pos": 11,
+     "board_pos": 12,
      "points": 18,
      "points_rank": 8,
      "points_tied": false
@@ -8685,7 +8761,7 @@
        "points": 10
       }
      ],
-     "board_pos": 12,
+     "board_pos": 13,
      "points": 14,
      "points_rank": 9,
      "points_tied": true
@@ -8741,7 +8817,7 @@
        "points": 4
       }
      ],
-     "board_pos": 13,
+     "board_pos": 14,
      "points": 14,
      "points_rank": 9,
      "points_tied": true
@@ -8777,7 +8853,7 @@
        "points": 6
       }
      ],
-     "board_pos": 14,
+     "board_pos": 15,
      "points": 12,
      "points_rank": 11,
      "points_tied": false
@@ -8853,46 +8929,10 @@
        "points": 6
       }
      ],
-     "board_pos": 15,
-     "points": 10,
-     "points_rank": 12,
-     "points_tied": true
-    },
-    {
-     "name": "Expensive Queen",
-     "country": "IRE",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "Farfellow Farms Ltd.",
-     "trainer": "Brendan P. Walsh",
-     "races": [
-      {
-       "bcc": false,
-       "date": "10/2/2026",
-       "track": "Kee",
-       "race": "First Lady Stakes",
-       "grade": "G1",
-       "division": "Filly & Mare Turf",
-       "pos": "6",
-       "points": 0
-      },
-      {
-       "bcc": false,
-       "date": "4/11/2026",
-       "track": "Kee",
-       "race": "Jenny Wiley S.",
-       "grade": "G1",
-       "division": "Filly & Mare Turf",
-       "pos": "1",
-       "points": 10
-      }
-     ],
      "board_pos": 16,
      "points": 10,
      "points_rank": 12,
-     "points_tied": true
+     "points_tied": false
     }
    ]
   },
@@ -9093,7 +9133,7 @@
      "notes": [],
      "challenge_winner": true,
      "nomination": "",
-     "owner": "Al Leith Racing Club",
+     "owner": "Al Leith Racing",
      "trainer": "Karl Burke",
      "races": [
       {
@@ -9631,7 +9671,7 @@
    ]
   }
  ],
- "prev_date": "2026-10-16",
+ "prev_date": "2026-10-17",
  "prev": {
   "Brown Advisory Juvenile Turf|Al Hudaiba": {
    "points": 10,

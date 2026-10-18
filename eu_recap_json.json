@@ -1,1 +1,72 @@
-[]
+[
+ {
+  "grade": "G1",
+  "race_name": "Qatar Racing Champion Stakes (Group 1)",
+  "track": "Ascot",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "1m2f · Turf",
+  "winner": "Ombudsman",
+  "off_time": "4:00"
+ },
+ {
+  "grade": "G1",
+  "race_name": "Queen Elizabeth II Stakes (Sponsored By Qatar Racing) (Group 1)",
+  "track": "Ascot",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "1m · Turf",
+  "winner": "Talk Of New York",
+  "off_time": "3:20"
+ },
+ {
+  "grade": "G1",
+  "race_name": "Qatar Racing British Champions Fillies & Mares Stakes (Group 1)",
+  "track": "Ascot",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "1m4f · Turf",
+  "winner": "Minnie Hauk",
+  "off_time": "2:40"
+ },
+ {
+  "grade": "G1",
+  "race_name": "Qatar Racing British Champions Sprint Stakes (Group 1)",
+  "track": "Ascot",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "6f · Turf",
+  "winner": "Almeraq",
+  "off_time": "2:05"
+ },
+ {
+  "grade": "G1",
+  "race_name": "Qatar Racing British Champions Long Distance Cup (Group 1)",
+  "track": "Ascot",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "2m · Turf",
+  "winner": "Mount Atlas",
+  "off_time": "1:30"
+ },
+ {
+  "grade": "G3",
+  "race_name": "Mongey Communications Killavullan Stakes (Group 3)",
+  "track": "Leopardstown",
+  "country": "IRE",
+  "flag": "🇮🇪",
+  "dist_surface": "7f · Turf",
+  "winner": "Capability Brown",
+  "off_time": "4:15"
+ },
+ {
+  "grade": "G3",
+  "race_name": "Mongey Communications Eyrefield Stakes (Group 3)",
+  "track": "Leopardstown",
+  "country": "IRE",
+  "flag": "🇮🇪",
+  "dist_surface": "1m1f · Turf",
+  "winner": "Wall Street",
+  "off_time": "3:07"
+ }
+]

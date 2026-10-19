@@ -231,7 +231,7 @@ Indian Charm '25 Filly→ Rainbows End      (unnamed — see UNNAMED PROSPECTS)
 Velvet '25 Filly      → Rainbows End      (unnamed — see UNNAMED PROSPECTS)
 Ransomed Heart '25 Filly → Wasabi         (unnamed — see UNNAMED PROSPECTS)
 Blinkers '25 Filly    → Wasabi            (unnamed — see UNNAMED PROSPECTS)
-Imply '25 Filly       → Commonwealth      (unnamed — see UNNAMED PROSPECTS)
+Imply '25 Colt        → Commonwealth      (unnamed — see UNNAMED PROSPECTS)
 Marie Lee '25 Colt    → Middleham Park    (unnamed — see UNNAMED PROSPECTS)
 Off My Stage '25 Filly → Bradley Thoroughbreds (unnamed — see UNNAMED PROSPECTS)
 Theia '25 Filly       → Bradley Thoroughbreds (unnamed — see UNNAMED PROSPECTS)
@@ -258,9 +258,9 @@ Kensai                → Woodford
 Castiglione           → Woodford
 ```
 
-⚠️ IMPLY '25 IS A COLT (noted Oct 5 2026). The UNNAMED PROSPECTS handle says "Imply '25 Filly",
-but Commonwealth's own emails say colt — "the yearling colt has arrived at Diamond A Farm". Same
-horse; match either spelling, and call it a colt in prose. Mike holds 20 shares, confirmed by
+⚠️ IMPLY '25 IS A COLT (confirmed by Mike Oct 19 2026; the handle was "Imply '25 Filly" until then).
+Commonwealth's emails say colt — "the yearling colt has arrived at Diamond A Farm". Use the handle
+"Imply '25 Colt". An old "Imply '25 Filly" spelling is the same horse — still match it. Mike holds 20 shares, confirmed by
 Commonwealth's "Purchase Confirmed!" email of Sep 29 2026.
 
 Woodford also has unnamed 2-year-olds — include under Woodford badge if mentioned.
@@ -900,16 +900,16 @@ UPDATES only — never in ENTRIES, RESULTS or WORKS (they are yearlings and cann
 | Velvet '25 Filly          | Good Magic × Velvet (American Pharoah)        | Rainbows End | 2.00% |
 | Ransomed Heart '25 Filly  | Arabian Lion × Ransomed Heart (IRE) (Galileo) | Wasabi       | 4.00% |
 | Blinkers '25 Filly        | Arabian Lion × Blinkers (Stay Thirsty)        | Wasabi       | 2.00% |
-| Imply '25 Filly           | Good Magic × Imply (E Dubai)                  | Commonwealth | 0.03% |
+| Imply '25 Colt            | Good Magic × Imply (E Dubai)                  | Commonwealth | 0.03% |
 | Marie Lee '25 Colt        | St Mark's Basilica × Marie Lee (IRE)          | Middleham Park | 2.50% |
 | Off My Stage '25 Filly    | Golden Pal × Off My Stage (More Than Ready)   | Bradley Thoroughbreds | 2.50% |
 | Theia '25 Filly           | American Pharoah × Theia (Curlin)             | Bradley Thoroughbreds | 2.50% |
 
 **HOW TO MATCH ONE IN AN EMAIL — the dam is the key, never the sire:**
-- An email naming the DAM ("the Imply filly", "our Velvet yearling", "Ransomed Heart's filly") → that prospect.
+- An email naming the DAM ("the Imply colt", "our Velvet yearling", "Ransomed Heart's filly") → that prospect.
 - "Sire × Dam" / "Sire out of Dam" / "Sire—Dam" phrasing → match on the DAM half.
 - ⚠️ SIRE ALONE IS AMBIGUOUS AND MUST NEVER BE USED TO MATCH. Arabian Lion has TWO fillies here, both
-  Wasabi. Good Magic has TWO, in DIFFERENT syndicates (Velvet → Rainbows End, Imply → Commonwealth).
+  Wasabi. Good Magic has TWO (a filly and a colt), in DIFFERENT syndicates (Velvet → Rainbows End, Imply → Commonwealth).
   "the Good Magic filly" with no dam is NOT matchable — put that content in Top 10 News instead.
 - A hip number alone is NOT matchable either unless the email also gives the dam.
 - MARIE LEE '25 COLT — Middleham Park SPELL THE DAM "MARIA LEE" ("MPR Update - St Mark's Basilica Ex Maria

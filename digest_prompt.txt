@@ -232,6 +232,9 @@ Velvet '25 Filly      → Rainbows End      (unnamed — see UNNAMED PROSPECTS)
 Ransomed Heart '25 Filly → Wasabi         (unnamed — see UNNAMED PROSPECTS)
 Blinkers '25 Filly    → Wasabi            (unnamed — see UNNAMED PROSPECTS)
 Imply '25 Filly       → Commonwealth      (unnamed — see UNNAMED PROSPECTS)
+Marie Lee '25 Colt    → Middleham Park    (unnamed — see UNNAMED PROSPECTS)
+Off My Stage '25 Filly → Bradley Thoroughbreds (unnamed — see UNNAMED PROSPECTS)
+Theia '25 Filly       → Bradley Thoroughbreds (unnamed — see UNNAMED PROSPECTS)
 Boleto                → Middleham Park
 Capricious Star       → Middleham Park
 Double Right          → Middleham Park
@@ -870,6 +873,7 @@ Three columns: horse name (with optional country suffix in parentheses), age/sex
 - "CMWLTH" → Commonwealth
 - "Middleham" → Middleham Park
 - "Rainbows End" / "Rainbow's End" / "Rainbow's End Racing Stable" → Rainbows End (no apostrophe — matches the SILK key)
+- "Bradley TB" / "Bradley" / "Bradley Thoroughbreds" / "Bradley Thoroughbreds, LLC" → Bradley Thoroughbreds
 - Everything else is spelled out (Eclipse, Team Valor, Wasabi, Final Furlong, Woodford, RTP Racing)
 
 **Parsing rules:**
@@ -880,11 +884,12 @@ Three columns: horse name (with optional country suffix in parentheses), age/sex
   syndicate. Never invent a prospect that is not in that table.
 - If a horse shows "claimed", "sold", "retired" → NOT active, exclude
 - If a horse is in the MASTER TABLE but NOT in ACTIVE_BARN → claimed/sold/retired → stop tracking it immediately
-- If a horse IS in ACTIVE_BARN but NOT in the MASTER TABLE → new addition → use the syndicate name from the spreadsheet (normalised per the rules above) in the JSON `syndicate` field. The generator SILK dict is keyed by syndicate name, so any horse in a known syndicate (Eclipse, Team Valor, Commonwealth, Woodford, Middleham Park, Wasabi, Final Furlong, RTP Racing, Rainbows End) will automatically get the correct badge colors
+- If a horse IS in ACTIVE_BARN but NOT in the MASTER TABLE → new addition → use the syndicate name from the spreadsheet (normalised per the rules above) in the JSON `syndicate` field. The generator SILK dict is keyed by syndicate name, so any horse in a known syndicate (Eclipse, Team Valor, Commonwealth, Woodford, Middleham Park, Wasabi, Final Furlong, RTP Racing, Rainbows End, Bradley Thoroughbreds) will automatically get the correct badge colors
 
-### UNNAMED PROSPECTS (2025 yearling fillies — no registered name yet)
+### UNNAMED PROSPECTS (2025 yearlings — no registered name yet)
 
-⚠️ ADDED SEP 29 2026. These six fillies are Mike's but have no registered name, so nothing in an email
+⚠️ ADDED SEP 29 2026 (six); three more added OCT 19 2026 (Marie Lee colt, Off My Stage + Theia fillies).
+These nine yearlings are Mike's but have no registered name, so nothing in an email
 will ever say their name. They are tracked by DAM. Until a name is registered they appear in STABLE
 UPDATES only — never in ENTRIES, RESULTS or WORKS (they are yearlings and cannot be entered to race).
 
@@ -896,6 +901,9 @@ UPDATES only — never in ENTRIES, RESULTS or WORKS (they are yearlings and cann
 | Ransomed Heart '25 Filly  | Arabian Lion × Ransomed Heart (IRE) (Galileo) | Wasabi       | 4.00% |
 | Blinkers '25 Filly        | Arabian Lion × Blinkers (Stay Thirsty)        | Wasabi       | 2.00% |
 | Imply '25 Filly           | Good Magic × Imply (E Dubai)                  | Commonwealth | 0.03% |
+| Marie Lee '25 Colt        | St Mark's Basilica × Marie Lee (IRE)          | Middleham Park | 2.50% |
+| Off My Stage '25 Filly    | Golden Pal × Off My Stage (More Than Ready)   | Bradley Thoroughbreds | 2.50% |
+| Theia '25 Filly           | American Pharoah × Theia (Curlin)             | Bradley Thoroughbreds | 2.50% |
 
 **HOW TO MATCH ONE IN AN EMAIL — the dam is the key, never the sire:**
 - An email naming the DAM ("the Imply filly", "our Velvet yearling", "Ransomed Heart's filly") → that prospect.
@@ -904,6 +912,14 @@ UPDATES only — never in ENTRIES, RESULTS or WORKS (they are yearlings and cann
   Wasabi. Good Magic has TWO, in DIFFERENT syndicates (Velvet → Rainbows End, Imply → Commonwealth).
   "the Good Magic filly" with no dam is NOT matchable — put that content in Top 10 News instead.
 - A hip number alone is NOT matchable either unless the email also gives the dam.
+- MARIE LEE '25 COLT — Middleham Park SPELL THE DAM "MARIA LEE" ("MPR Update - St Mark's Basilica Ex Maria
+  Lee Colt"). Maria Lee = Marie Lee: same horse, match either. Their bodies often say only "Dear St Mark's
+  Basilica Colt owners". St Mark's Basilica has ONLY this one prospect, so in an email FROM a Middleham Park
+  sender that sire-only wording DOES match. It is a European turf horse (Tim Palin, Middleham).
+- BRADLEY THOROUGHBREDS write their yearlings as "2025 GOLDEN PAL/OFF MY STAGE (KY)" and
+  "2025 AMERICAN PHAROAH/THEIA (KY)", or "the Golden Pal-Off My Stage filly". Match on the dam half, as above.
+  Golden Pal and American Pharoah each have only one prospect here, so a sire-only mention in an email
+  FROM a Bradley sender also matches. (American Pharoah is also Velvet's DAMSIRE — damsire never matches.)
 
 **WHEN A NAME IS REGISTERED:** the syndicate email will say so ("the Velvet filly has been named X").
 Report the naming as a Stable Update, and tell Mike in that update that the MASTER TABLE and this
@@ -1882,8 +1898,10 @@ Your ONLY job is to find Master Table horse mentions in syndicate emails from th
 MASTER_TABLE = [{{ACTIVE_BARN_LIST}}]
 
 EXECUTE THESE SEARCHES IN ORDER:
-1. mcp__Gmail__search_threads({"query": "from:(aron@eclipsetbpartners.com OR barry@teamvalor.com OR emily@teamvalor.com OR hello@joincommonwealth.com OR woodford OR benhaggin@woodfordracing.ccsend.com OR woodfordracing.ccsend.com OR jamie@middlehamparkracing.net OR middlehamparkoffice@gmail.com OR \"Tom Palin\" OR tk@wasabistables.com OR stallions@wasabistables.com OR dan@finalfurlongracingstable.com OR vince@finalfurlongracingstable.com OR rainbowsendracingstable@gmail.com) newer_than:7d in:inbox"})
-2. mcp__Gmail__search_threads({"query": "from:middlehamparkoffice@gmail.com newer_than:14d in:anywhere"})
+1. mcp__Gmail__search_threads({"query": "from:(aron@eclipsetbpartners.com OR barry@teamvalor.com OR emily@teamvalor.com OR hello@joincommonwealth.com OR woodford OR benhaggin@woodfordracing.ccsend.com OR woodfordracing.ccsend.com OR jamie@middlehamparkracing.net OR middlehamparkoffice@gmail.com OR \"Tom Palin\" OR tk@wasabistables.com OR stallions@wasabistables.com OR dan@finalfurlongracingstable.com OR vince@finalfurlongracingstable.com OR rainbowsendracingstable@gmail.com OR liam.middlehamparkracing@gmail.com OR bradleythoroughbreds.com OR noreply@theracingmanager.com) newer_than:7d in:inbox"})
+2. mcp__Gmail__search_threads({"query": "from:(middlehamparkoffice@gmail.com OR liam.middlehamparkracing@gmail.com) newer_than:14d in:anywhere"})
+   ⚠️ liam.middlehamparkracing@gmail.com (Liam Spiby, MPR admin) sends the "MPR Update - <horse>" owner
+   updates, BCC'd to Mike. Added Oct 19 2026 — it carries the St Mark's Basilica colt's updates.
 3. mcp__Gmail__search_threads({"query": "from:michaeljdzik@gmail.com subject:\"declared\" newer_than:14d in:anywhere"})
 4. mcp__Gmail__search_threads({"query": "from:aron@eclipsetbpartners.com newer_than:14d in:anywhere"})
 5. mcp__Gmail__search_threads({"query": "from:(tk@wasabistables.com OR stallions@wasabistables.com) newer_than:14d in:anywhere"})
@@ -1891,28 +1909,36 @@ EXECUTE THESE SEARCHES IN ORDER:
 7. mcp__Gmail__search_threads({"query": "from:rainbowsendracingstable@gmail.com newer_than:14d in:anywhere"})
    ⚠️ Rainbow's End mails Mike via BCC to undisclosed-recipients, so they may carry no INBOX label.
    `in:anywhere` is REQUIRED here — an `in:inbox` search can silently return nothing.
+7b. mcp__Gmail__search_threads({"query": "from:(bradleythoroughbreds.com OR prb-bradleythoroughbreds.com@shared1.ccsend.com OR noreply@theracingmanager.com) newer_than:14d in:anywhere"})
+   ⚠️ Bradley Thoroughbreds (Pat & Devon Bradley, Lexington) — added Oct 19 2026. Senders: sarah@ / Devon@ /
+   prb@bradleythoroughbreds.com, the monthly "BT ... Newsletter" from prb-bradleythoroughbreds.com@shared1.ccsend.com,
+   and The Racing Manager app (noreply@theracingmanager.com), which Bradley now uses for horse updates.
+   The newsletter covers Bradley's WHOLE stable — only Off My Stage '25 / Theia '25 are Mike's.
+   Invoices and "Create Your Account" invites are admin, not horse news — skip them.
 7. mcp__Gmail__search_threads({"query": "from:(woodfordracing.ccsend.com OR benhaggin@woodfordracing.ccsend.com OR bill@woodford-racing.com OR ben@woodford-racing.com) newer_than:14d in:anywhere"})
    ⚠️ WOODFORD post-race emails come from `benhaggin@woodfordracing.ccsend.com` (Constant Contact bulk sender). Subject format: "HORSENAME - Chart - Race Replay - Comments - DATE - TRACK". Body contains: chart quote (verbatim), Cherie DeVaux quote, next-step plan. When you see this pattern → open every thread with get_thread and extract the horse name (subject prefix) + full trainer quote for stable_updates.
 
-For EVERY unique thread returned across all 6 searches, call mcp__Gmail__get_thread with FULL_CONTENT to read the complete body.
+For EVERY unique thread returned across all of these searches, call mcp__Gmail__get_thread with FULL_CONTENT to read the complete body.
 
 EXTRACT RULES:
 - For each Master Table horse mention found in any email body, create ONE evidence entry per (horse, email) pair
 - "quote" must be ≥20 chars copied VERBATIM from the email body — no paraphrasing, no summarizing, no invented content
 - If an email body has no Master Table horse names, skip that email entirely
 - If an email mentions a horse name NOT in MASTER_TABLE, skip that mention (it's not Mike's horse)
-- Detect MPR entries: any thread from middlehamparkoffice@gmail.com / jamie@middlehamparkracing.net / "Tom Palin" with subject containing "Entry" or "Declared" → set is_mpr_entry: true
+- Detect MPR entries: any thread from middlehamparkoffice@gmail.com / liam.middlehamparkracing@gmail.com / jamie@middlehamparkracing.net / "Tom Palin" with subject containing "Entry" or "Declared" → set is_mpr_entry: true
 - Detect self-declared: any thread from michaeljdzik@gmail.com with "declared" in subject → set is_self_declared: true
 - Syndicate mapping (use this for the syndicate field):
   - aron@eclipsetbpartners.com → "Eclipse"
   - barry@teamvalor.com / emily@teamvalor.com → "Team Valor"
   - hello@joincommonwealth.com → "Commonwealth"
-  - jamie@middlehamparkracing.net / "Tom Palin" / middlehamparkoffice@gmail.com → "Middleham Park"
+  - jamie@middlehamparkracing.net / "Tom Palin" / middlehamparkoffice@gmail.com / liam.middlehamparkracing@gmail.com → "Middleham Park"
   - tk@wasabistables.com / stallions@wasabistables.com → "Wasabi"
   - dan@finalfurlongracingstable.com / vince@finalfurlongracingstable.com → "Final Furlong"
   - any sender containing "woodford" (includes benhaggin@woodfordracing.ccsend.com, bill@woodford-racing.com, ben@woodford-racing.com, any @woodfordracing.ccsend.com Constant Contact address) → "Woodford"
   - any sender containing "rtp" → "RTP Racing"
   - rainbowsendracingstable@gmail.com (Bob Scavetta) → "Rainbows End"
+  - prb@bradleythoroughbreds.com (Pat Bradley — main contact) / any sender containing "bradleythoroughbreds" → "Bradley Thoroughbreds"
+  - noreply@theracingmanager.com (app used by several syndicates) → the syndicate the horse belongs to per MASTER_TABLE
   - michaeljdzik@gmail.com (self-sent) → use the syndicate the horse belongs to per MASTER_TABLE
 
 OUTPUT — return ONLY valid JSON matching this exact schema (no preamble, no markdown, no explanation):
@@ -1975,7 +2001,7 @@ if not isinstance(ev['evidence'], list):
     print('STEP_4e_SCHEMA_FAIL: evidence must be a list')
     sys.exit(1)
 
-VALID_SYN = {'Eclipse','Team Valor','Commonwealth','Woodford','Middleham Park','Wasabi','Final Furlong','RTP Racing','Rainbows End'}
+VALID_SYN = {'Eclipse','Team Valor','Commonwealth','Woodford','Middleham Park','Wasabi','Final Furlong','RTP Racing','Rainbows End','Bradley Thoroughbreds'}
 required_entry = ['horse','syndicate','sender','subject','date','quote','is_mpr_entry','is_self_declared']
 problems = []
 for i, e in enumerate(ev['evidence']):
@@ -2678,7 +2704,7 @@ A `"Finished 1st of Y"` / `2nd of Y` / `3rd of Y` result is a placing. The gener
 
 ⚠️ **SYNDICATE FIELD (MANDATORY — MASTER TABLE ONLY):**
 Use only the exact syndicate name from the MASTER TABLE. The Python generator looks up silk badge colors from this field. Wrong syndicate name = wrong badge colors.
-Valid values: `Eclipse` | `Team Valor` | `Commonwealth` | `Woodford` | `Middleham Park` | `Wasabi` | `Final Furlong` | `RTP Racing` | `Rainbows End`
+Valid values: `Eclipse` | `Team Valor` | `Commonwealth` | `Woodford` | `Middleham Park` | `Wasabi` | `Final Furlong` | `RTP Racing` | `Rainbows End` | `Bradley Thoroughbreds`
 
 Write this exact JSON structure to `/tmp/digest_data.json` using the Write tool:
 
@@ -2800,7 +2826,9 @@ MASTER = {'ulysses rose','tellus mater','simply joking','saxony charms','oracle 
   # top10 — which is how Mike's own Imply '25 purchase kept vanishing from the digest.
   # The imply-colt key is an alias: Commonwealth's emails call that one a colt, not a filly.
   'cs incharge \'25 filly','indian charm \'25 filly','velvet \'25 filly',
-  'ransomed heart \'25 filly','blinkers \'25 filly','imply \'25 filly','imply \'25 colt'}
+  'ransomed heart \'25 filly','blinkers \'25 filly','imply \'25 filly','imply \'25 colt',
+  # Oct 19 2026 additions. maria-lee is an alias: Middleham Park spell the dam Maria Lee.
+  'marie lee \'25 colt','maria lee \'25 colt','off my stage \'25 filly','theia \'25 filly'}
 d = json.load(open('/tmp/digest_data.json'))
 ms = d.get('my_stable', {})
 print('JSON OK:')
@@ -2832,6 +2860,8 @@ VALID_SENDERS = {
     'tk@wasabistables.com', 'stallions@wasabistables.com', 'wasabistables.com',
     'dan@finalfurlongracingstable.com', 'vince@finalfurlongracingstable.com', 'finalfurlongracingstable.com',
     'rainbowsendracingstable@gmail.com',
+    'liam.middlehamparkracing@gmail.com',
+    'prb@bradleythoroughbreds.com', 'bradleythoroughbreds.com', 'theracingmanager.com',
     'michaeljdzik@gmail.com',  # self-forwarded notes (declared, etc.)
     'woodford', 'woodfordracing.ccsend.com', 'benhaggin', 'rtp',  # substring matches for Woodford/RTP senders
     'drive.google.com', 'google drive',  # Team Valor Drive PDFs
@@ -3044,7 +3074,7 @@ bad2 = [e.get('horse','?') for e in d.get('my_stable',{}).get('entries',[]) if e
 bad3 = [r.get('horse','?') for r in d.get('my_stable',{}).get('results',[]) if r.get('horse','').lower().strip() not in MASTER]
 if bad2: print('ENTRIES VIOLATION (non-MASTER horses): ' + str(bad2))
 if bad3: print('RESULTS VIOLATION (non-MASTER horses): ' + str(bad3))
-VALID_SYN = {'eclipse','team valor','commonwealth','woodford','middleham park','wasabi','final furlong','rtp racing','rainbows end'}
+VALID_SYN = {'eclipse','team valor','commonwealth','woodford','middleham park','wasabi','final furlong','rtp racing','rainbows end','bradley thoroughbreds'}
 
 # === EU RESULTS CROSS-CHECK (June 28 2026 — Orchidaceae/Saxony Charms/Lady Moon miss fix) ===
 # Every horse in /tmp/step_4creu_data.json with status=raced_with_result MUST appear in my_stable.results
@@ -3086,7 +3116,7 @@ all_horse_items = ms.get('entries',[]) + ms.get('results',[]) + ms.get('works',[
 bad_syn = [(i.get('horse','?'), i.get('syndicate','?')) for i in all_horse_items if i.get('syndicate','') and i.get('syndicate','').lower().strip() not in VALID_SYN]
 if bad_syn:
     print('SYNDICATE_ABBREV_ERROR — ABORT: these entries use abbreviations or invalid names instead of full syndicate names:')
-    for h_name, s_val in bad_syn: print('  horse="' + h_name + '" syndicate="' + s_val + '" — MUST be one of: Eclipse | Team Valor | Commonwealth | Woodford | Middleham Park | Wasabi | Final Furlong | RTP Racing | Rainbows End')
+    for h_name, s_val in bad_syn: print('  horse="' + h_name + '" syndicate="' + s_val + '" — MUST be one of: Eclipse | Team Valor | Commonwealth | Woodford | Middleham Park | Wasabi | Final Furlong | RTP Racing | Rainbows End | Bradley Thoroughbreds')
     print('ACTION: Fix ALL syndicate fields to exact title-case names above. Then re-run Steps 7.1 validation + 7.5 generator. Abbreviations (MHP, WSB, WRF, TV, ECL, COM, FF, etc.) are NEVER valid.')
     import sys as _sys2; _sys2.exit(1)
 else:
@@ -3858,7 +3888,8 @@ SILK = {
   'Wasabi':         _badge('#5DB539','#FF6600','WASABI'),
   'Final Furlong':  _badge('#4169E1','#FFFFFF','FINAL FURLONG'),
   'RTP Racing':     _badge('#888888','#aaaaaa','RTP RACING'),
-  'Rainbows End':   _badge('#6A1B9A','#FFFFFF','RAINBOWS END'),
+  'Rainbows End':   _badge('#0B2A5B','#D4AF37','RAINBOWS END'),  # dark blue / gold (per Mike, Oct 19 2026)
+  'Bradley Thoroughbreds': _badge('#0B2A5B','#0B5D1E','BRADLEY'),  # Oct 19 2026 — dark blue / dark green (per Mike)
 }
 MASTER = {
   'ulysses rose':'Eclipse','tellus mater':'Wasabi',
@@ -3882,6 +3913,9 @@ MASTER = {
   # arrived at Diamond A Farm"), so accept that spelling too — otherwise the handle mismatches and
   # the badge falls back to grey. Same horse either way.
   "imply '25 colt":'Commonwealth',
+  # Oct 19 2026 additions. Middleham Park spell the Marie Lee dam "Maria Lee" — accept both.
+  "marie lee '25 colt":'Middleham Park', "maria lee '25 colt":'Middleham Park',
+  "off my stage '25 filly":'Bradley Thoroughbreds', "theia '25 filly":'Bradley Thoroughbreds',
 }
 FLAGS = {
   'USA':'\U0001f1fa\U0001f1f8','GB':'\U0001f1ec\U0001f1e7','IRE':'\U0001f1ee\U0001f1ea',
@@ -4653,7 +4687,7 @@ except Exception as e:
 - STABLE UPDATES SECTION (LOCKED): Section 2 uses `<div class="section-header"><h2><span class="sh-icon">🐎</span>Stable Updates</h2></div>`. Content = MASTER TABLE horses only, grouped by syndicate, stable-row format with silk badges.
 - HORSE ENTRY SPACING (LOCKED): `<div class="horse-gap"></div>` between every stable-row. Also at top and bottom of each subsection-wrap.
 - SILK BADGE IN EVERY HORSE ENTRY (LOCKED — TABLE-BASED, NOT SPANS): Every horse div.stable-h4 = `HORSENAME [silk badge table]`. The badge is an inline `<table>` produced by `_badge(c1, c2, label)` in Step 7.5 — NEVER a `<span>` with background-color. Gmail strips `display:inline-block` from spans, making span-based color squares invisible. `<td bgcolor="">` is the ONLY reliable email-safe colored element. NEVER write horse name and syndicate as plain text. NEVER use class="stable-tag" as the badge (that CSS class is vestigial). The generator `_badge()` function produces the correct HTML automatically — the agent has no control over badge format.
-- SILK COLORED SQUARES ARE PERMANENT AND IMMUTABLE (LOCKED — AGENT CANNOT CHANGE OR REMOVE THEM): The two colored cells inside every silk badge MUST appear in every rendered email. These are `<td>` elements with `bgcolor=` attribute + `background-color` inline style, produced by `_badge()` in Step 7.5. NEVER span-based. If Step 8 verification finds `bgcolor=` or `display:inline-table` absent, that means silk badges are missing — CRITICAL failure, re-run Step 7.5 immediately. Always write JSON syndicate values in exact title-case: Eclipse, Team Valor, Commonwealth, Woodford, Middleham Park, Wasabi, Final Furlong, RTP Racing, Rainbows End.
+- SILK COLORED SQUARES ARE PERMANENT AND IMMUTABLE (LOCKED — AGENT CANNOT CHANGE OR REMOVE THEM): The two colored cells inside every silk badge MUST appear in every rendered email. These are `<td>` elements with `bgcolor=` attribute + `background-color` inline style, produced by `_badge()` in Step 7.5. NEVER span-based. If Step 8 verification finds `bgcolor=` or `display:inline-table` absent, that means silk badges are missing — CRITICAL failure, re-run Step 7.5 immediately. Always write JSON syndicate values in exact title-case: Eclipse, Team Valor, Commonwealth, Woodford, Middleham Park, Wasabi, Final Furlong, RTP Racing, Rainbows End, Bradley Thoroughbreds.
 - GRADE ICONS (LOCKED — ZERO EXCEPTIONS): Every race row in every Stakes Recap table AND every Upcoming table MUST start with the grade icon span HTML. NEVER write "G1", "G2", "G3", or "LR" as bare text in any race cell. The exact required HTML for each grade:
   G1: `<span class="grade-icon">🏆</span><span class="grade-g1">G1</span>&nbsp;`
   G2: `<span class="grade-icon">🥈</span><span class="grade-g2">G2</span>&nbsp;`
@@ -4695,7 +4729,7 @@ except Exception as e:
 - STEP 7.5 IS UNCONDITIONAL: After writing HTML to `/tmp/digest_draft.html`, run the GATE CHECK Python command. All 11 checks must pass. `has_navy_color_1a1a2e`, `has_stable_tag_class`, `has_grade_g1_class`, `has_section_breaks`, `has_subsection_headers`, and `has_stable_updates_section` MUST pass. GATE must show `GATE PASS` before create_draft is called — no exceptions.
 - WORKOUT FORMAT IS STABLE-ROW DIVS ONLY (LOCKED): `<div class="stable-row">` not table.
 - WORKS DATA SOURCE IS STRUCTURED ONLY (LOCKED): FWD-EQ or Equibase web. No syndicate narratives.
-- SYNDICATE BALANCE IN UPDATES (LOCKED): UPDATES & NEWS must cover ALL syndicates proportionally — Eclipse, Woodford, Middleham Park, Final Furlong, RTP Racing, Wasabi, Commonwealth, Team Valor, Rainbows End. Team Valor PDFs (Step 3) must NOT crowd out other syndicates. Cap Team Valor to max 3 stable-rows when other syndicates have news. Run per-syndicate targeted email searches (Step 4e) to find non-Team-Valor content.
+- SYNDICATE BALANCE IN UPDATES (LOCKED): UPDATES & NEWS must cover ALL syndicates proportionally — Eclipse, Woodford, Middleham Park, Final Furlong, RTP Racing, Wasabi, Commonwealth, Team Valor, Rainbows End, Bradley Thoroughbreds. Team Valor PDFs (Step 3) must NOT crowd out other syndicates. Cap Team Valor to max 3 stable-rows when other syndicates have news. Run per-syndicate targeted email searches (Step 4e) to find non-Team-Valor content.
 - ENTRIES HORSES MANDATE STEP 4D (LOCKED): Snowglobe: refno=1309825.
 - UPCOMING WRAPPER IS MANDATORY (LOCKED): YESTERDAY + TODAY + TOMORROW (3 days) inside one `<div class="upcoming-wrapper">`.
 - STEP 7 COMPLETENESS SUPERSEDES SEARCH VOLUME (LOCKED): Skip supplemental WebFetch. Never compress Step 7.
@@ -4703,7 +4737,7 @@ except Exception as e:
 - SALES & INDUSTRY MINIMUM 2 STORIES (LOCKED).
 - SALES & INDUSTRY SCOPE STRICT (LOCKED — FINANCIAL ONLY): sales_industry contains ONLY sales results, auctions, stud fees, breeding news, stallion/farm news, wagering handle, purse increases. ZERO race deaths, ZERO regulatory/legal decisions, ZERO criminal cases, ZERO human interest. If a story is not primarily about commerce or money changing hands → move it to Top 10 News, NEVER Sales & Industry. "Scott Robinson prison time" = Legal → Top 10. "Keeneland September Sale results" = Auction → Sales & Industry.
 - SYNDICATE HEADERS IN STABLE UPDATES (LOCKED): The Python generator groups stable_updates by syndicate and renders an underlined syndicate name header before each group. The JSON `syndicate` field must match exactly one of the 8 valid syndicate names so the grouping works correctly.
-- SYNDICATE ABBREVIATIONS FORBIDDEN (LOCKED — ABSOLUTE — ZERO TOLERANCE): The `syndicate` field in digest_data.json MUST be the exact title-case full name. Valid values: `Eclipse` | `Team Valor` | `Commonwealth` | `Woodford` | `Middleham Park` | `Wasabi` | `Final Furlong` | `RTP Racing` | `Rainbows End`. NEVER use abbreviations: MHP, WSB, WRF, TV, ECL, COM, FF, or any other shorthand. Abbreviation → `silk()` falls back to gray badge labeled with the abbreviation → all silk colors broken. Step 7.1 validation WILL `sys.exit(1)` if any abbreviation is found — the generator will not run until this is fixed.
+- SYNDICATE ABBREVIATIONS FORBIDDEN (LOCKED — ABSOLUTE — ZERO TOLERANCE): The `syndicate` field in digest_data.json MUST be the exact title-case full name. Valid values: `Eclipse` | `Team Valor` | `Commonwealth` | `Woodford` | `Middleham Park` | `Wasabi` | `Final Furlong` | `RTP Racing` | `Rainbows End` | `Bradley Thoroughbreds`. NEVER use abbreviations: MHP, WSB, WRF, TV, ECL, COM, FF, or any other shorthand. Abbreviation → `silk()` falls back to gray badge labeled with the abbreviation → all silk colors broken. Step 7.1 validation WILL `sys.exit(1)` if any abbreviation is found — the generator will not run until this is fixed.
 - MY STABLE MANUAL HTML IS ABSOLUTELY FORBIDDEN (LOCKED — ZERO TOLERANCE): The My Stable section header MUST use 🏇 (U+1F3C7, the horse-racing emoji, `\U0001f3c7`). The emoji 🐴 (U+1F434, horse face) is PROOF the agent wrote manual HTML — this is a critical violation. Every stable-row MUST be produced by the `row()` function in Step 7.5. NEVER write `<div class="stable-row">` or `<h4>` or any horse HTML manually. If you find yourself typing a horse entry directly → STOP → fix the JSON and re-run Step 7.5. Step 7.6 checks for missing silk badges and wrong emoji and will block submission if found.
 - EU RESULTS PROACTIVE SEARCH (LOCKED — MANDATORY EVERY DAY): Step 4c-R-EU runs every day for all 9 EU-based horses: Saxony Charms, Oracle of Delphi, Eager Lad, Sweetheart Jewelry (Team Valor) + Otherworldly (Eclipse) + Phantom Princess (RTP Racing) + Boleto, Capricious Star, Double Right (Middleham Park). Equibase virtual stable does NOT cover European tracks. These horses will NEVER appear in Equibase notifications even when they race. Use Racing Post WebSearch for each horse every day without exception.
 - CONTINENT DIVIDERS IN RECAP (LOCKED): 🇺🇸 UNITED STATES and 🌍 EUROPE dividers always present.

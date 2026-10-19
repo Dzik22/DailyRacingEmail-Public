@@ -1,6 +1,6 @@
 {
- "for_date": "2026-10-18",
- "built_utc": "2026-10-18T12:01:35.664468Z",
+ "for_date": "2026-10-19",
+ "built_utc": "2026-10-19T06:09:15.381228Z",
  "source": "https://members.breederscup.com/Points/PointsLeaderboard",
  "event": {
   "name": "Breeders' Cup World Championships",
@@ -454,7 +454,7 @@
      "notes": [],
      "challenge_winner": false,
      "nomination": "",
-     "owner": "Bay View Stables, Mark Edwards , Mike Trout",
+     "owner": "Bay View Stables, Mark Edwards , Mike Trout , MAS Racing",
      "trainer": "Kenneth G. McPeek",
      "races": [
       {
@@ -1908,7 +1908,7 @@
      "notes": [],
      "challenge_winner": true,
      "nomination": "",
-     "owner": "Front Row Club, Starlight Racing, Madaket Stables LLC, Stonestreet Stables, LLC, Diane Bashor , Albaugh Family Stables LLC, Robert E. Masterson , Golconda Stables, Waves Edge Capital LLC, Catherine Donovan",
+     "owner": "Front Row Club, LLC, Starlight Racing, Madaket Stables LLC, Stonestreet Stables, LLC, Bashor Racing, LLC , Albaugh Family Stables LLC, Robert E. Masterson , Golconda Stables, Waves Edge Capital LLC, Catherine Donovan",
      "trainer": "Bob Baffert",
      "races": [
       {
@@ -9701,7 +9701,7 @@
    ]
   }
  ],
- "prev_date": "2026-10-17",
+ "prev_date": "2026-10-18",
  "prev": {
   "Brown Advisory Juvenile Turf|Al Hudaiba": {
    "points": 10,
@@ -9823,49 +9823,49 @@
    "points_rank": 4,
    "board_pos": 8
   },
-  "Cygames Sprint|Local Knowledge": {
+  "Cygames Sprint|Chief Wallabee": {
    "points": 10,
    "points_rank": 5,
    "board_pos": 9
   },
-  "Cygames Sprint|Maximum Bourbon": {
+  "Cygames Sprint|Deep Flame": {
    "points": 10,
    "points_rank": 5,
    "board_pos": 10
   },
-  "Cygames Sprint|T O Elvis": {
+  "Cygames Sprint|Local Knowledge": {
    "points": 10,
    "points_rank": 5,
    "board_pos": 11
   },
+  "Cygames Sprint|Maximum Bourbon": {
+   "points": 10,
+   "points_rank": 5,
+   "board_pos": 12
+  },
+  "Cygames Sprint|T O Elvis": {
+   "points": 10,
+   "points_rank": 5,
+   "board_pos": 13
+  },
   "Cygames Sprint|Book'em Danno": {
    "points": 8,
-   "points_rank": 9,
-   "board_pos": 12
+   "points_rank": 11,
+   "board_pos": 14
   },
   "Cygames Sprint|Built": {
    "points": 8,
-   "points_rank": 9,
-   "board_pos": 13
+   "points_rank": 11,
+   "board_pos": 15
   },
   "Cygames Sprint|Crazy Mason": {
    "points": 8,
-   "points_rank": 9,
-   "board_pos": 14
-  },
-  "Cygames Sprint|Getaway Car": {
-   "points": 8,
-   "points_rank": 9,
-   "board_pos": 15
-  },
-  "Cygames Sprint|Moonlight": {
-   "points": 8,
-   "points_rank": 9,
+   "points_rank": 11,
    "board_pos": 16
   },
   "Dirt Mile|Iron Man Cal": {
    "points": 8,
-   "points_rank": 6,
+   "points_rank": 5,
    "board_pos": 1
   },
   "Dirt Mile|Commandment": {
@@ -9878,68 +9878,68 @@
    "points_rank": 2,
    "board_pos": 3
   },
-  "Dirt Mile|Deep Flame": {
+  "Dirt Mile|Disruptor": {
    "points": 10,
    "points_rank": 3,
    "board_pos": 4
   },
-  "Dirt Mile|Disruptor": {
+  "Dirt Mile|Nu What's New": {
    "points": 10,
    "points_rank": 3,
    "board_pos": 5
   },
-  "Dirt Mile|Nu What's New": {
-   "points": 10,
-   "points_rank": 3,
-   "board_pos": 6
-  },
   "Dirt Mile|Full Serrano": {
    "points": 8,
-   "points_rank": 6,
-   "board_pos": 7
+   "points_rank": 5,
+   "board_pos": 6
   },
   "Dirt Mile|Caldera": {
    "points": 6,
-   "points_rank": 8,
-   "board_pos": 8
+   "points_rank": 7,
+   "board_pos": 7
   },
   "Dirt Mile|Chunk of Gold": {
    "points": 6,
-   "points_rank": 8,
-   "board_pos": 9
+   "points_rank": 7,
+   "board_pos": 8
   },
   "Dirt Mile|Class President": {
    "points": 6,
-   "points_rank": 8,
-   "board_pos": 10
+   "points_rank": 7,
+   "board_pos": 9
   },
   "Dirt Mile|Corporate Power": {
    "points": 6,
-   "points_rank": 8,
-   "board_pos": 11
+   "points_rank": 7,
+   "board_pos": 10
   },
   "Dirt Mile|East Avenue": {
    "points": 6,
-   "points_rank": 8,
-   "board_pos": 12
+   "points_rank": 7,
+   "board_pos": 11
   },
   "Dirt Mile|Paladin": {
    "points": 6,
-   "points_rank": 8,
-   "board_pos": 13
+   "points_rank": 7,
+   "board_pos": 12
   },
   "Dirt Mile|Point Dume": {
    "points": 6,
-   "points_rank": 8,
-   "board_pos": 14
+   "points_rank": 7,
+   "board_pos": 13
   },
   "Dirt Mile|Vodka Vodka": {
    "points": 6,
-   "points_rank": 8,
-   "board_pos": 15
+   "points_rank": 7,
+   "board_pos": 14
   },
   "Dirt Mile|Taptastic": {
    "points": 5,
+   "points_rank": 15,
+   "board_pos": 15
+  },
+  "Dirt Mile|Bartholdy": {
+   "points": 4,
    "points_rank": 16,
    "board_pos": 16
   },
@@ -10575,72 +10575,72 @@
   },
   "Longines Turf|Tiffany": {
    "points": 6,
-   "points_rank": 10,
+   "points_rank": 11,
    "board_pos": 3
   },
   "Longines Turf|Calandagan": {
    "points": 0,
-   "points_rank": 11,
+   "points_rank": 12,
    "board_pos": 4
   },
   "Longines Turf|Eccentric": {
    "points": 0,
-   "points_rank": 11,
+   "points_rank": 12,
    "board_pos": 5
   },
   "Longines Turf|Hotazhell": {
    "points": 0,
-   "points_rank": 11,
+   "points_rank": 12,
    "board_pos": 6
-  },
-  "Longines Turf|Kalpana": {
-   "points": 0,
-   "points_rank": 11,
-   "board_pos": 7
   },
   "Longines Turf|Meisho Tabaru": {
    "points": 0,
-   "points_rank": 11,
-   "board_pos": 8
+   "points_rank": 12,
+   "board_pos": 7
   },
   "Longines Turf|Ombudsman": {
    "points": 0,
-   "points_rank": 11,
-   "board_pos": 9
+   "points_rank": 12,
+   "board_pos": 8
   },
   "Longines Turf|Burnham Square": {
    "points": 20,
    "points_rank": 2,
-   "board_pos": 10
+   "board_pos": 9
   },
   "Longines Turf|Minaret Station": {
    "points": 20,
    "points_rank": 2,
-   "board_pos": 11
+   "board_pos": 10
   },
   "Longines Turf|West End Kid": {
    "points": 16,
    "points_rank": 4,
-   "board_pos": 12
+   "board_pos": 11
   },
   "Longines Turf|Glacius": {
    "points": 14,
    "points_rank": 6,
-   "board_pos": 13
+   "board_pos": 12
   },
   "Longines Turf|Gold Phoenix": {
    "points": 14,
    "points_rank": 6,
-   "board_pos": 14
+   "board_pos": 13
   },
   "Longines Turf|Remember Mamba": {
    "points": 14,
    "points_rank": 6,
-   "board_pos": 15
+   "board_pos": 14
   },
   "Longines Turf|Mondego": {
    "points": 13,
    "points_rank": 9,
+   "board_pos": 15
+  },
+  "Longines Turf|Flashiest": {
+   "points": 12,
+   "points_rank": 10,
    "board_pos": 16
   },
   "Maker's Mark Filly & Mare Turf|Thought Process": {
@@ -10660,65 +10660,65 @@
   },
   "Maker's Mark Filly & Mare Turf|Embroidery": {
    "points": 0,
-   "points_rank": 14,
+   "points_rank": 13,
    "board_pos": 4
+  },
+  "Maker's Mark Filly & Mare Turf|Kalpana": {
+   "points": 0,
+   "points_rank": 13,
+   "board_pos": 5
   },
   "Maker's Mark Filly & Mare Turf|Miss Scott": {
    "points": 0,
-   "points_rank": 14,
-   "board_pos": 5
+   "points_rank": 13,
+   "board_pos": 6
   },
   "Maker's Mark Filly & Mare Turf|Se Va Colando": {
    "points": 0,
-   "points_rank": 14,
-   "board_pos": 6
+   "points_rank": 13,
+   "board_pos": 7
   },
   "Maker's Mark Filly & Mare Turf|Classic Q": {
    "points": 30,
    "points_rank": 1,
-   "board_pos": 7
+   "board_pos": 8
   },
   "Maker's Mark Filly & Mare Turf|Tam Tam": {
    "points": 25,
    "points_rank": 3,
-   "board_pos": 8
+   "board_pos": 9
   },
   "Maker's Mark Filly & Mare Turf|Faithful Departed": {
    "points": 20,
    "points_rank": 5,
-   "board_pos": 9
+   "board_pos": 10
   },
   "Maker's Mark Filly & Mare Turf|Segesta": {
    "points": 20,
    "points_rank": 5,
-   "board_pos": 10
+   "board_pos": 11
   },
   "Maker's Mark Filly & Mare Turf|Portfolio Duration": {
    "points": 18,
    "points_rank": 8,
-   "board_pos": 11
+   "board_pos": 12
   },
   "Maker's Mark Filly & Mare Turf|Kensington Lane": {
    "points": 14,
    "points_rank": 9,
-   "board_pos": 12
+   "board_pos": 13
   },
   "Maker's Mark Filly & Mare Turf|Take A Breath": {
    "points": 14,
    "points_rank": 9,
-   "board_pos": 13
+   "board_pos": 14
   },
   "Maker's Mark Filly & Mare Turf|Destino d'Oro": {
    "points": 12,
    "points_rank": 11,
-   "board_pos": 14
-  },
-  "Maker's Mark Filly & Mare Turf|Bless the Broken": {
-   "points": 10,
-   "points_rank": 12,
    "board_pos": 15
   },
-  "Maker's Mark Filly & Mare Turf|Expensive Queen": {
+  "Maker's Mark Filly & Mare Turf|Bless the Broken": {
    "points": 10,
    "points_rank": 12,
    "board_pos": 16

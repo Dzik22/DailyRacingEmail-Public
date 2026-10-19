@@ -1,74 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Sat Oct 17",
-  "races": [
-   {
-    "grade": "G1",
-    "race_name": "Qatar Racing Champion Stakes (Group 1)",
-    "date_short": "Sat\nOct 17",
-    "track": "Ascot",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m2f · Turf"
-   },
-   {
-    "grade": "G1",
-    "race_name": "Queen Elizabeth II Stakes (Sponsored By Qatar Racing) (Group 1)",
-    "date_short": "Sat\nOct 17",
-    "track": "Ascot",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "G1",
-    "race_name": "Qatar Racing British Champions Fillies & Mares Stakes (Group 1)",
-    "date_short": "Sat\nOct 17",
-    "track": "Ascot",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "G1",
-    "race_name": "Qatar Racing British Champions Sprint Stakes (Group 1)",
-    "date_short": "Sat\nOct 17",
-    "track": "Ascot",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · Turf"
-   },
-   {
-    "grade": "G1",
-    "race_name": "Qatar Racing British Champions Long Distance Cup (Group 1)",
-    "date_short": "Sat\nOct 17",
-    "track": "Ascot",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "2m · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Mongey Communications Killavullan Stakes (Group 3)",
-    "date_short": "Sat\nOct 17",
-    "track": "Leopardstown",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Mongey Communications Eyrefield Stakes (Group 3)",
-    "date_short": "Sat\nOct 17",
-    "track": "Leopardstown",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m1f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Sun Oct 18",
+  "day_label": "YESTERDAY — Sun Oct 18",
   "races": [
    {
     "grade": "G2",
@@ -81,15 +13,6 @@
    },
    {
     "grade": "LR",
-    "race_name": "Bahrain Turf Club Knockaire Stakes (Listed)",
-    "date_short": "Sun\nOct 18",
-    "track": "Leopardstown",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m½f · Turf"
-   },
-   {
-    "grade": "LR",
     "race_name": "Trigo Stakes (Listed)",
     "date_short": "Sun\nOct 18",
     "track": "Leopardstown",
@@ -99,12 +22,12 @@
    },
    {
     "grade": "LR",
-    "race_name": "Prix Casimir Delamarre",
+    "race_name": "Bahrain Turf Club Knockaire Stakes (Listed)",
     "date_short": "Sun\nOct 18",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m1f · Turf"
+    "track": "Leopardstown",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m½f · Turf"
    },
    {
     "grade": "LR",
@@ -114,11 +37,34 @@
     "country": "FR",
     "flag": "🇫🇷",
     "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Prix Casimir Delamarre",
+    "date_short": "Sun\nOct 18",
+    "track": "Longchamp",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m1f · Turf"
    }
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Mon Oct 19",
+  "day_label": "TODAY — Mon Oct 19",
+  "races": [
+   {
+    "grade": "LR",
+    "race_name": "British Stallion Studs Ebf Silver Tankard Stakes (Listed Race)",
+    "date_short": "Mon\nOct 19",
+    "track": "Pontefract",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Tue Oct 20",
   "races": [
    {
     "grade": "G3",
@@ -128,15 +74,6 @@
     "country": "IRE",
     "flag": "🇮🇪",
     "dist_surface": "5f · AW"
-   },
-   {
-    "grade": "LR",
-    "race_name": "British Stallion Studs Ebf Silver Tankard Stakes (Listed Race)",
-    "date_short": "Mon\nOct 19",
-    "track": "Pontefract",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m · Turf"
    },
    {
     "grade": "G1",

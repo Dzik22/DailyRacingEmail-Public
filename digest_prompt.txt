@@ -4243,7 +4243,12 @@ if _placed:
 failed = [k for k,v in checks.items() if not v]
 gate = 'FAIL' if failed else 'PASS'
 open('/tmp/gate_passed.txt','w').write(gate)
-print('HTML GENERATOR: ' + gate + ' | ' + str(len(html)) + ' bytes')
+# len() counts CHARACTERS, not bytes. On Oct 19 2026 the draft subagent correctly refused to send
+# because the brief said '41242 bytes' while the file on disk was 41650 — the same file, 408 bytes
+# of multibyte overhead from the podium icons, flags, middots and dashes. A mislabelled unit cost
+# a whole round, so print both and name each one.
+print('HTML GENERATOR: ' + gate + ' | ' + str(len(html)) + ' chars / '
+      + str(len(html.encode('utf-8'))) + ' bytes')
 print('Section breaks: ' + str(html.count('======================================================')))
 print('Silk badges: ' + str(html.count('display:inline-table')))
 print('Grade icons: G1=' + str(html.count('grade-g1')) + ' G2=' + str(html.count('grade-g2')) + ' G3=' + str(html.count('grade-g3')))
@@ -4380,7 +4385,7 @@ if my_stable_pos >= 0:
         print('MY_STABLE_BADGES: ' + str(badge_count) + ' silk badges verified')
     if '\U0001f434' in ms_region or '\U0001f40e' in ms_region:
         problems.append('CRITICAL: My Stable header uses wrong emoji (horse face/horse U+1F434 or U+1F40E) — agent wrote manual section header. Generator uses 🏇 (U+1F3C7). Fix JSON and re-run Step 7.5.')
-print('FILE_SIZE:', len(h))
+print('FILE_SIZE:', len(h), 'chars /', len(h.encode('utf-8')), 'bytes')
 print('SECTION_BREAKS:', h.count('======================================================'))
 print('PROBLEMS:', problems if problems else 'NONE — VERIFIED OK')
 if problems:
@@ -4470,7 +4475,9 @@ if problems:
 sha = hashlib.sha256(h.encode('utf-8')).hexdigest()
 open('/tmp/digest_draft.sha256','w').write(sha)
 open('/tmp/digest_draft.sealed','w').write(h)
-print('STEP 8 VERIFY PASS: ' + str(len(h)) + ' bytes — generator output confirmed and sealed')
+print('STEP 8 VERIFY PASS: ' + str(len(h)) + ' chars / ' + str(len(h.encode('utf-8')))
+      + ' bytes — generator output confirmed and sealed')
+print('  Quote the BYTE count to the draft subagent — wc -c and sha256sum both report bytes.')
 print('  SHA256: ' + sha)
 print('  Sealed: /tmp/digest_draft.sealed (use THIS file for create_draft htmlBody — Read it with the Read tool, do NOT type)')
 "

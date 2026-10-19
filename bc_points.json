@@ -1,6 +1,6 @@
 {
  "for_date": "2026-10-19",
- "built_utc": "2026-10-19T10:40:55.568948Z",
+ "built_utc": "2026-10-19T14:36:10.168608Z",
  "source": "https://members.breederscup.com/Points/PointsLeaderboard",
  "event": {
   "name": "Breeders' Cup World Championships",
@@ -3598,7 +3598,7 @@
      "notes": [],
      "challenge_winner": false,
      "nomination": "",
-     "owner": "Medallion Racing, Evan Trommer , Sheila Regan , Agave Racing Stable, Sublime Racing",
+     "owner": "Medallion Racing, Agave Racing Stable, Sheila Regan , Evan Trommer",
      "trainer": "Philip D'Amato",
      "races": [
       {
@@ -7614,7 +7614,7 @@
      "challenge_winner": true,
      "nomination": "",
      "owner": "Godolphin, LLC",
-     "trainer": "John Gosden and Thady Gosden",
+     "trainer": "John H.M. Gosden",
      "races": [
       {
        "bcc": true,
@@ -8337,53 +8337,7 @@
      ],
      "board_pos": 4,
      "points": 0,
-     "points_rank": 13,
-     "points_tied": true
-    },
-    {
-     "name": "Kalpana",
-     "country": "GB",
-     "out": false,
-     "notes": [],
-     "challenge_winner": true,
-     "nomination": "",
-     "owner": "Juddmonte Farms Limited",
-     "trainer": "Andrew Balding",
-     "races": [
-      {
-       "bcc": true,
-       "date": "10/4/2026",
-       "track": "Lch",
-       "race": "Qatar Prix de l'Arc de Triomphe",
-       "grade": "G1",
-       "division": "Turf",
-       "pos": "5",
-       "points": 0
-      },
-      {
-       "bcc": true,
-       "date": "8/20/2026",
-       "track": "YOR",
-       "race": "Legends Global Yorkshire Oaks",
-       "grade": "G1",
-       "division": "Filly & Mare Turf",
-       "pos": "1",
-       "points": 0
-      },
-      {
-       "bcc": true,
-       "date": "7/25/2026",
-       "track": "ASC",
-       "race": "King George VI & Queen Elizabeth Stakes",
-       "grade": "G1",
-       "division": "Turf",
-       "pos": "1",
-       "points": 0
-      }
-     ],
-     "board_pos": 5,
-     "points": 0,
-     "points_rank": 13,
+     "points_rank": 14,
      "points_tied": true
     },
     {
@@ -8407,9 +8361,9 @@
        "points": 0
       }
      ],
-     "board_pos": 6,
+     "board_pos": 5,
      "points": 0,
-     "points_rank": 13,
+     "points_rank": 14,
      "points_tied": true
     },
     {
@@ -8433,9 +8387,9 @@
        "points": 0
       }
      ],
-     "board_pos": 7,
+     "board_pos": 6,
      "points": 0,
-     "points_rank": 13,
+     "points_rank": 14,
      "points_tied": true
     },
     {
@@ -8509,7 +8463,7 @@
        "points": 0
       }
      ],
-     "board_pos": 8,
+     "board_pos": 7,
      "points": 30,
      "points_rank": 1,
      "points_tied": false
@@ -8565,7 +8519,7 @@
        "points": 4
       }
      ],
-     "board_pos": 9,
+     "board_pos": 8,
      "points": 25,
      "points_rank": 3,
      "points_tied": false
@@ -8633,7 +8587,7 @@
        "points": 0
       }
      ],
-     "board_pos": 10,
+     "board_pos": 9,
      "points": 20,
      "points_rank": 5,
      "points_tied": true
@@ -8699,7 +8653,7 @@
        "points": 10
       }
      ],
-     "board_pos": 11,
+     "board_pos": 10,
      "points": 20,
      "points_rank": 5,
      "points_tied": true
@@ -8745,7 +8699,7 @@
        "points": 4
       }
      ],
-     "board_pos": 12,
+     "board_pos": 11,
      "points": 18,
      "points_rank": 8,
      "points_tied": false
@@ -8791,7 +8745,7 @@
        "points": 10
       }
      ],
-     "board_pos": 13,
+     "board_pos": 12,
      "points": 14,
      "points_rank": 9,
      "points_tied": true
@@ -8847,7 +8801,7 @@
        "points": 4
       }
      ],
-     "board_pos": 14,
+     "board_pos": 13,
      "points": 14,
      "points_rank": 9,
      "points_tied": true
@@ -8883,7 +8837,7 @@
        "points": 6
       }
      ],
-     "board_pos": 15,
+     "board_pos": 14,
      "points": 12,
      "points_rank": 11,
      "points_tied": false
@@ -8959,10 +8913,46 @@
        "points": 6
       }
      ],
+     "board_pos": 15,
+     "points": 10,
+     "points_rank": 12,
+     "points_tied": true
+    },
+    {
+     "name": "Expensive Queen",
+     "country": "IRE",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "Farfellow Farms Ltd.",
+     "trainer": "Brendan P. Walsh",
+     "races": [
+      {
+       "bcc": false,
+       "date": "10/2/2026",
+       "track": "Kee",
+       "race": "First Lady Stakes",
+       "grade": "G1",
+       "division": "Filly & Mare Turf",
+       "pos": "6",
+       "points": 0
+      },
+      {
+       "bcc": false,
+       "date": "4/11/2026",
+       "track": "Kee",
+       "race": "Jenny Wiley S.",
+       "grade": "G1",
+       "division": "Filly & Mare Turf",
+       "pos": "1",
+       "points": 10
+      }
+     ],
      "board_pos": 16,
      "points": 10,
      "points_rank": 12,
-     "points_tied": false
+     "points_tied": true
     }
    ]
   },

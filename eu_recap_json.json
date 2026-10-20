@@ -1,52 +1,12 @@
 [
  {
-  "grade": "G2",
-  "race_name": "Prix Du Conseil De Paris (Group 2)",
-  "track": "Longchamp",
-  "country": "FR",
-  "flag": "🇫🇷",
-  "dist_surface": "1m3f · Turf",
-  "winner": "Rembrand To Go",
-  "off_time": "2:50"
- },
- {
   "grade": "LR",
-  "race_name": "Trigo Stakes (Listed)",
-  "track": "Leopardstown",
-  "country": "IRE",
-  "flag": "🇮🇪",
-  "dist_surface": "1m2f · Turf",
-  "winner": "Come What May",
-  "off_time": "3:42"
- },
- {
-  "grade": "LR",
-  "race_name": "Bahrain Turf Club Knockaire Stakes (Listed)",
-  "track": "Leopardstown",
-  "country": "IRE",
-  "flag": "🇮🇪",
-  "dist_surface": "1m½f · Turf",
-  "winner": "King Cuan",
-  "off_time": "2:42"
- },
- {
-  "grade": "LR",
-  "race_name": "Prix De Saint-cyr",
-  "track": "Longchamp",
-  "country": "FR",
-  "flag": "🇫🇷",
-  "dist_surface": "7f · Turf",
-  "winner": "Indifferente",
-  "off_time": "4:00"
- },
- {
-  "grade": "LR",
-  "race_name": "Prix Casimir Delamarre",
-  "track": "Longchamp",
-  "country": "FR",
-  "flag": "🇫🇷",
-  "dist_surface": "1m1f · Turf",
-  "winner": "Pierchic",
-  "off_time": "3:25"
+  "race_name": "British Stallion Studs Ebf Silver Tankard Stakes (Listed Race)",
+  "track": "Pontefract",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "1m · Turf",
+  "winner": "King High",
+  "off_time": "2:53"
  }
 ]

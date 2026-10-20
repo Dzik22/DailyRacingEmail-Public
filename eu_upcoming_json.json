@@ -1,56 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Sun Oct 18",
-  "races": [
-   {
-    "grade": "G2",
-    "race_name": "Prix Du Conseil De Paris (Group 2)",
-    "date_short": "Sun\nOct 18",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m3f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Trigo Stakes (Listed)",
-    "date_short": "Sun\nOct 18",
-    "track": "Leopardstown",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m2f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Bahrain Turf Club Knockaire Stakes (Listed)",
-    "date_short": "Sun\nOct 18",
-    "track": "Leopardstown",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m½f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Prix De Saint-cyr",
-    "date_short": "Sun\nOct 18",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Prix Casimir Delamarre",
-    "date_short": "Sun\nOct 18",
-    "track": "Longchamp",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m1f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Mon Oct 19",
+  "day_label": "YESTERDAY — Mon Oct 19",
   "races": [
    {
     "grade": "LR",
@@ -64,7 +14,21 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Tue Oct 20",
+  "day_label": "TODAY — Tue Oct 20",
+  "races": [
+   {
+    "grade": "G3",
+    "race_name": "Staffordstown Stud Stakes (Group 3)",
+    "date_short": "Tue\nOct 20",
+    "track": "Curragh",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Wed Oct 21",
   "races": [
    {
     "grade": "G3",
@@ -82,15 +46,6 @@
     "track": "Doncaster",
     "country": "GB",
     "flag": "🇬🇧",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Staffordstown Stud Stakes (Group 3)",
-    "date_short": "Tue\nOct 20",
-    "track": "Curragh",
-    "country": "IRE",
-    "flag": "🇮🇪",
     "dist_surface": "1m · Turf"
    }
   ]

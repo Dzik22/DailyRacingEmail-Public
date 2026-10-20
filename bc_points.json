@@ -1,6 +1,6 @@
 {
- "for_date": "2026-10-19",
- "built_utc": "2026-10-19T14:36:10.168608Z",
+ "for_date": "2026-10-20",
+ "built_utc": "2026-10-20T05:59:19.710981Z",
  "source": "https://members.breederscup.com/Points/PointsLeaderboard",
  "event": {
   "name": "Breeders' Cup World Championships",
@@ -3328,7 +3328,7 @@
      ],
      "board_pos": 2,
      "points": 8,
-     "points_rank": 12,
+     "points_rank": 11,
      "points_tied": true
     },
     {
@@ -3364,7 +3364,7 @@
      "notes": [],
      "challenge_winner": false,
      "nomination": "",
-     "owner": "Averill Racing LLC, Anthony Mattera",
+     "owner": "Averill Racing LLC, Madaket Stables LLC, Anthony Mattera",
      "trainer": "Saffie Joseph Jr.",
      "races": [
       {
@@ -3424,62 +3424,6 @@
      "points_tied": false
     },
     {
-     "name": "Eclatant",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "Stonestreet Stables, LLC",
-     "trainer": "Brad Cox",
-     "races": [
-      {
-       "bcc": true,
-       "date": "10/3/2026",
-       "track": "Kee",
-       "race": "Thoroughbred Club of America",
-       "grade": "G2",
-       "division": "Filly & Mare Sprint",
-       "pos": "3",
-       "points": 2
-      },
-      {
-       "bcc": true,
-       "date": "8/29/2026",
-       "track": "Sar",
-       "race": "Resorts World Casino Ballerina",
-       "grade": "G1",
-       "division": "Filly & Mare Sprint",
-       "pos": "7",
-       "points": 0
-      },
-      {
-       "bcc": false,
-       "date": "6/20/2026",
-       "track": "CD",
-       "race": "The Chicago",
-       "grade": "G2",
-       "division": "Filly & Mare Sprint",
-       "pos": "1",
-       "points": 6
-      },
-      {
-       "bcc": false,
-       "date": "4/4/2026",
-       "track": "Kee",
-       "race": "Madison S.",
-       "grade": "G1",
-       "division": "Filly & Mare Sprint",
-       "pos": "1",
-       "points": 10
-      }
-     ],
-     "board_pos": 5,
-     "points": 18,
-     "points_rank": 3,
-     "points_tied": true
-    },
-    {
      "name": "Grand Job",
      "country": "",
      "out": true,
@@ -3530,10 +3474,10 @@
        "points": 6
       }
      ],
-     "board_pos": 6,
+     "board_pos": 5,
      "points": 18,
      "points_rank": 3,
-     "points_tied": true
+     "points_tied": false
     },
     {
      "name": "Explora",
@@ -3586,9 +3530,9 @@
        "points": 4
       }
      ],
-     "board_pos": 7,
+     "board_pos": 6,
      "points": 16,
-     "points_rank": 5,
+     "points_rank": 4,
      "points_tied": true
     },
     {
@@ -3652,9 +3596,9 @@
        "points": 6
       }
      ],
-     "board_pos": 8,
+     "board_pos": 7,
      "points": 16,
-     "points_rank": 5,
+     "points_rank": 4,
      "points_tied": true
     },
     {
@@ -3718,9 +3662,9 @@
        "points": 10
       }
      ],
-     "board_pos": 9,
+     "board_pos": 8,
      "points": 16,
-     "points_rank": 5,
+     "points_rank": 4,
      "points_tied": true
     },
     {
@@ -3784,9 +3728,9 @@
        "points": 4
       }
      ],
-     "board_pos": 10,
+     "board_pos": 9,
      "points": 14,
-     "points_rank": 8,
+     "points_rank": 7,
      "points_tied": true
     },
     {
@@ -3850,9 +3794,9 @@
        "points": 0
       }
      ],
-     "board_pos": 11,
+     "board_pos": 10,
      "points": 14,
-     "points_rank": 8,
+     "points_rank": 7,
      "points_tied": true
     },
     {
@@ -3906,9 +3850,9 @@
        "points": 4
       }
      ],
-     "board_pos": 12,
+     "board_pos": 11,
      "points": 12,
-     "points_rank": 10,
+     "points_rank": 9,
      "points_tied": false
     },
     {
@@ -3942,9 +3886,9 @@
        "points": 6
       }
      ],
-     "board_pos": 13,
+     "board_pos": 12,
      "points": 10,
-     "points_rank": 11,
+     "points_rank": 10,
      "points_tied": false
     },
     {
@@ -3988,9 +3932,9 @@
        "points": 4
       }
      ],
-     "board_pos": 14,
+     "board_pos": 13,
      "points": 8,
-     "points_rank": 12,
+     "points_rank": 11,
      "points_tied": true
     },
     {
@@ -4044,9 +3988,9 @@
        "points": 4
       }
      ],
-     "board_pos": 15,
+     "board_pos": 14,
      "points": 8,
-     "points_rank": 12,
+     "points_rank": 11,
      "points_tied": true
     },
     {
@@ -4100,10 +4044,56 @@
        "points": 6
       }
      ],
+     "board_pos": 15,
+     "points": 7,
+     "points_rank": 14,
+     "points_tied": true
+    },
+    {
+     "name": "Movie Night",
+     "country": "",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "WinStar Farm, LLC",
+     "trainer": "William Walden",
+     "races": [
+      {
+       "bcc": false,
+       "date": "10/17/2026",
+       "track": "Kee",
+       "race": "Raven Run S.",
+       "grade": "G2",
+       "division": "Filly & Mare Sprint",
+       "pos": "1",
+       "points": 6
+      },
+      {
+       "bcc": false,
+       "date": "9/19/2026",
+       "track": "CD",
+       "race": "Dogwood Stakes",
+       "grade": "G3",
+       "division": "Filly & Mare Sprint",
+       "pos": "3",
+       "points": 1
+      },
+      {
+       "bcc": false,
+       "date": "8/8/2026",
+       "track": "Sar",
+       "race": "Test S.",
+       "grade": "G1",
+       "division": "Filly & Mare Sprint",
+       "pos": "6",
+       "points": 0
+      }
+     ],
      "board_pos": 16,
      "points": 7,
-     "points_rank": 15,
-     "points_tied": false
+     "points_rank": 14,
+     "points_tied": true
     }
    ]
   },
@@ -5628,7 +5618,7 @@
      "notes": [],
      "challenge_winner": true,
      "nomination": "",
-     "owner": "C2 Racing Stable LLC, Bill & Terry Mathis , TCC Stables LLC",
+     "owner": "C2 Racing Stable LLC, Mathis Stables, LLC, TCC Stables LLC",
      "trainer": "Saffie Joseph Jr.",
      "races": [
       {
@@ -6610,7 +6600,7 @@
      "notes": [],
      "challenge_winner": true,
      "nomination": "",
-     "owner": "St. Elias Stables LLC, WSS Racing, LLC",
+     "owner": "St. Elias Stables LLC, , WSS Racing, LLC, Turf Express Racing, Inc., Miller Racing LLC",
      "trainer": "Saffie Joseph Jr.",
      "races": [
       {
@@ -9403,7 +9393,7 @@
      "notes": [],
      "challenge_winner": false,
      "nomination": "",
-     "owner": "Foster Family Racing",
+     "owner": "Foster Family Racing, Lonnie Reynolds , Vicki Mills , Donald Coomes",
      "trainer": "Eric Foster",
      "races": [
       {
@@ -9691,7 +9681,7 @@
    ]
   }
  ],
- "prev_date": "2026-10-18",
+ "prev_date": "2026-10-19",
  "prev": {
   "Brown Advisory Juvenile Turf|Al Hudaiba": {
    "points": 10,
@@ -10650,65 +10640,65 @@
   },
   "Maker's Mark Filly & Mare Turf|Embroidery": {
    "points": 0,
-   "points_rank": 13,
+   "points_rank": 14,
    "board_pos": 4
-  },
-  "Maker's Mark Filly & Mare Turf|Kalpana": {
-   "points": 0,
-   "points_rank": 13,
-   "board_pos": 5
   },
   "Maker's Mark Filly & Mare Turf|Miss Scott": {
    "points": 0,
-   "points_rank": 13,
-   "board_pos": 6
+   "points_rank": 14,
+   "board_pos": 5
   },
   "Maker's Mark Filly & Mare Turf|Se Va Colando": {
    "points": 0,
-   "points_rank": 13,
-   "board_pos": 7
+   "points_rank": 14,
+   "board_pos": 6
   },
   "Maker's Mark Filly & Mare Turf|Classic Q": {
    "points": 30,
    "points_rank": 1,
-   "board_pos": 8
+   "board_pos": 7
   },
   "Maker's Mark Filly & Mare Turf|Tam Tam": {
    "points": 25,
    "points_rank": 3,
-   "board_pos": 9
+   "board_pos": 8
   },
   "Maker's Mark Filly & Mare Turf|Faithful Departed": {
    "points": 20,
    "points_rank": 5,
-   "board_pos": 10
+   "board_pos": 9
   },
   "Maker's Mark Filly & Mare Turf|Segesta": {
    "points": 20,
    "points_rank": 5,
-   "board_pos": 11
+   "board_pos": 10
   },
   "Maker's Mark Filly & Mare Turf|Portfolio Duration": {
    "points": 18,
    "points_rank": 8,
-   "board_pos": 12
+   "board_pos": 11
   },
   "Maker's Mark Filly & Mare Turf|Kensington Lane": {
    "points": 14,
    "points_rank": 9,
-   "board_pos": 13
+   "board_pos": 12
   },
   "Maker's Mark Filly & Mare Turf|Take A Breath": {
    "points": 14,
    "points_rank": 9,
-   "board_pos": 14
+   "board_pos": 13
   },
   "Maker's Mark Filly & Mare Turf|Destino d'Oro": {
    "points": 12,
    "points_rank": 11,
-   "board_pos": 15
+   "board_pos": 14
   },
   "Maker's Mark Filly & Mare Turf|Bless the Broken": {
+   "points": 10,
+   "points_rank": 12,
+   "board_pos": 15
+  },
+  "Maker's Mark Filly & Mare Turf|Expensive Queen": {
    "points": 10,
    "points_rank": 12,
    "board_pos": 16

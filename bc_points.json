@@ -1,6 +1,6 @@
 {
- "for_date": "2026-10-20",
- "built_utc": "2026-10-20T12:40:32.723993Z",
+ "for_date": "2026-10-21",
+ "built_utc": "2026-10-21T05:59:41.652807Z",
  "source": "https://members.breederscup.com/Points/PointsLeaderboard",
  "event": {
   "name": "Breeders' Cup World Championships",
@@ -146,7 +146,7 @@
      "notes": [],
      "challenge_winner": true,
      "nomination": "",
-     "owner": "Mrs. John Magnier , Michael Tabor , Derrick Smith , Peter M. Brant , Brook T. Smith",
+     "owner": "Mrs. John Magnier , Michael Tabor , Derrick Smith , Westerberg, Brook T. Smith, Peter M. Brant",
      "trainer": "Aidan P. O'Brien",
      "races": [
       {
@@ -9681,7 +9681,7 @@
    ]
   }
  ],
- "prev_date": "2026-10-19",
+ "prev_date": "2026-10-20",
  "prev": {
   "Brown Advisory Juvenile Turf|Al Hudaiba": {
    "points": 10,
@@ -10090,7 +10090,7 @@
   },
   "Filly & Mare Sprint|Evanescence": {
    "points": 8,
-   "points_rank": 12,
+   "points_rank": 11,
    "board_pos": 2
   },
   "Filly & Mare Sprint|Kerry's Kiss": {
@@ -10103,64 +10103,64 @@
    "points_rank": 1,
    "board_pos": 4
   },
-  "Filly & Mare Sprint|Eclatant": {
+  "Filly & Mare Sprint|Grand Job": {
    "points": 18,
    "points_rank": 3,
    "board_pos": 5
   },
-  "Filly & Mare Sprint|Grand Job": {
-   "points": 18,
-   "points_rank": 3,
-   "board_pos": 6
-  },
   "Filly & Mare Sprint|Explora": {
    "points": 16,
-   "points_rank": 5,
-   "board_pos": 7
+   "points_rank": 4,
+   "board_pos": 6
   },
   "Filly & Mare Sprint|Majestic Oops": {
    "points": 16,
-   "points_rank": 5,
-   "board_pos": 8
+   "points_rank": 4,
+   "board_pos": 7
   },
   "Filly & Mare Sprint|Percy's Bar": {
    "points": 16,
-   "points_rank": 5,
-   "board_pos": 9
+   "points_rank": 4,
+   "board_pos": 8
   },
   "Filly & Mare Sprint|Luv Your Neighbor": {
    "points": 14,
-   "points_rank": 8,
-   "board_pos": 10
+   "points_rank": 7,
+   "board_pos": 9
   },
   "Filly & Mare Sprint|Simply Joking": {
    "points": 14,
-   "points_rank": 8,
-   "board_pos": 11
+   "points_rank": 7,
+   "board_pos": 10
   },
   "Filly & Mare Sprint|On Time Girl": {
    "points": 12,
-   "points_rank": 10,
-   "board_pos": 12
+   "points_rank": 9,
+   "board_pos": 11
   },
   "Filly & Mare Sprint|Sweet Azteca": {
    "points": 10,
-   "points_rank": 11,
-   "board_pos": 13
+   "points_rank": 10,
+   "board_pos": 12
   },
   "Filly & Mare Sprint|Grammy Girl": {
    "points": 8,
-   "points_rank": 12,
-   "board_pos": 14
+   "points_rank": 11,
+   "board_pos": 13
   },
   "Filly & Mare Sprint|Usha": {
    "points": 8,
-   "points_rank": 12,
-   "board_pos": 15
+   "points_rank": 11,
+   "board_pos": 14
   },
   "Filly & Mare Sprint|A Fine Chardonnay": {
    "points": 7,
-   "points_rank": 15,
+   "points_rank": 14,
+   "board_pos": 15
+  },
+  "Filly & Mare Sprint|Movie Night": {
+   "points": 7,
+   "points_rank": 14,
    "board_pos": 16
   },
   "John Deere Juvenile Fillies Turf|Voyager": {

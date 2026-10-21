@@ -1,20 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Mon Oct 19",
-  "races": [
-   {
-    "grade": "LR",
-    "race_name": "British Stallion Studs Ebf Silver Tankard Stakes (Listed Race)",
-    "date_short": "Mon\nOct 19",
-    "track": "Pontefract",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Tue Oct 20",
+  "day_label": "YESTERDAY — Tue Oct 20",
   "races": [
    {
     "grade": "G3",
@@ -28,7 +14,11 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Wed Oct 21",
+  "day_label": "TODAY — Wed Oct 21",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Thu Oct 22",
   "races": [
    {
     "grade": "G3",
@@ -47,6 +37,42 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Betvictor St Simon Stakes (Group 3)",
+    "date_short": "Sat\nOct 24",
+    "track": "Newbury",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Betvictor Horris Hill Stakes (Group 3)",
+    "date_short": "Sat\nOct 24",
+    "track": "Newbury",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "William Hill Remembering Sue Wright Prospect Stakes (registered As The Doncaster Stakes) (Listed Race)",
+    "date_short": "Sat\nOct 24",
+    "track": "Doncaster",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "D&H Racing Stakes (Listed Race) (Registered As The Radley Stakes)",
+    "date_short": "Sat\nOct 24",
+    "track": "Newbury",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "7f · Turf"
    }
   ]
  }

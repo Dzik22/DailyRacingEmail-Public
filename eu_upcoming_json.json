@@ -1,24 +1,14 @@
 [
  {
-  "day_label": "YESTERDAY — Tue Oct 20",
-  "races": [
-   {
-    "grade": "G3",
-    "race_name": "Staffordstown Stud Stakes (Group 3)",
-    "date_short": "Tue\nOct 20",
-    "track": "Curragh",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Wed Oct 21",
+  "day_label": "YESTERDAY — Wed Oct 21",
   "races": []
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Thu Oct 22",
+  "day_label": "TODAY — Thu Oct 22",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Fri Oct 23",
   "races": [
    {
     "grade": "G3",

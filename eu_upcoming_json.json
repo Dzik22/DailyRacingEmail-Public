@@ -1,14 +1,10 @@
 [
  {
-  "day_label": "YESTERDAY — Wed Oct 21",
+  "day_label": "YESTERDAY — Thu Oct 22",
   "races": []
  },
  {
-  "day_label": "TODAY — Thu Oct 22",
-  "races": []
- },
- {
-  "day_label": "TOMORROW — Next 7 days from Fri Oct 23",
+  "day_label": "TODAY — Fri Oct 23",
   "races": [
    {
     "grade": "G3",
@@ -18,7 +14,12 @@
     "country": "IRE",
     "flag": "🇮🇪",
     "dist_surface": "5f · AW"
-   },
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Sat Oct 24",
+  "races": [
    {
     "grade": "G1",
     "race_name": "William Hill Futurity Trophy Stakes (Group 1)",
@@ -63,6 +64,15 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Robin Hood Stakes (Listed)",
+    "date_short": "Wed\nOct 28",
+    "track": "Nottingham",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m½f · Turf"
    }
   ]
  }

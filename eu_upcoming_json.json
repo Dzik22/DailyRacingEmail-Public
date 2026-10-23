@@ -30,24 +30,6 @@
     "dist_surface": "1m · Turf"
    },
    {
-    "grade": "G3",
-    "race_name": "Betvictor St Simon Stakes (Group 3)",
-    "date_short": "Sat\nOct 24",
-    "track": "Newbury",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Betvictor Horris Hill Stakes (Group 3)",
-    "date_short": "Sat\nOct 24",
-    "track": "Newbury",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "7f · Turf"
-   },
-   {
     "grade": "LR",
     "race_name": "William Hill Remembering Sue Wright Prospect Stakes (registered As The Doncaster Stakes) (Listed Race)",
     "date_short": "Sat\nOct 24",
@@ -55,15 +37,6 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "6f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "D&H Racing Stakes (Listed Race) (Registered As The Radley Stakes)",
-    "date_short": "Sat\nOct 24",
-    "track": "Newbury",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "7f · Turf"
    },
    {
     "grade": "LR",

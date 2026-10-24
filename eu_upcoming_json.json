@@ -1,10 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Thu Oct 22",
-  "races": []
- },
- {
-  "day_label": "TODAY — Fri Oct 23",
+  "day_label": "YESTERDAY — Fri Oct 23",
   "races": [
    {
     "grade": "G3",
@@ -18,7 +14,7 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Sat Oct 24",
+  "day_label": "TODAY — Sat Oct 24",
   "races": [
    {
     "grade": "G1",
@@ -37,10 +33,60 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "6f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Sun Oct 25",
+  "races": [
+   {
+    "grade": "G1",
+    "race_name": "Criterium International (Group 1)",
+    "date_short": "Sun\nOct 25",
+    "track": "Saint-Cloud",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "G1",
+    "race_name": "Criterium de Saint-Cloud (Group 1)",
+    "date_short": "Sun\nOct 25",
+    "track": "Saint-Cloud",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m2f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Prix de Flore",
+    "date_short": "Sun\nOct 25",
+    "track": "Saint-Cloud",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m2½f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Prix Perth (Group 3)",
+    "date_short": "Sun\nOct 25",
+    "track": "Saint-Cloud",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Prix Belle de Nuit",
+    "date_short": "Sun\nOct 25",
+    "track": "Saint-Cloud",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m6f · Turf"
    },
    {
     "grade": "LR",
-    "race_name": "Robin Hood Stakes (Listed)",
+    "race_name": "Robin Hood Stakes (Listed Race) (Formerly Known As The Ben Marshall Stakes)",
     "date_short": "Wed\nOct 28",
     "track": "Nottingham",
     "country": "GB",

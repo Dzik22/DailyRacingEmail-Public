@@ -58,6 +58,15 @@
     "dist_surface": "1m2f · Turf"
    },
    {
+    "grade": "G1",
+    "race_name": "Prix Royal-oak (group 1)",
+    "date_short": "Sun\nOct 25",
+    "track": "Saint-Cloud",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m7½f · Turf"
+   },
+   {
     "grade": "G3",
     "race_name": "Prix de Flore",
     "date_short": "Sun\nOct 25",

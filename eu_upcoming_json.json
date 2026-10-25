@@ -1,20 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Fri Oct 23",
-  "races": [
-   {
-    "grade": "G3",
-    "race_name": "BAR 1 Betting Mercury Stakes (Group 3)",
-    "date_short": "Fri\nOct 23",
-    "track": "Dundalk (AW)",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "5f · AW"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Sat Oct 24",
+  "day_label": "YESTERDAY — Sat Oct 24",
   "races": [
    {
     "grade": "G1",
@@ -37,7 +23,7 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Sun Oct 25",
+  "day_label": "TODAY — Sun Oct 25",
   "races": [
    {
     "grade": "G1",
@@ -92,7 +78,12 @@
     "country": "FR",
     "flag": "🇫🇷",
     "dist_surface": "1m6f · Turf"
-   },
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Mon Oct 26",
+  "races": [
    {
     "grade": "LR",
     "race_name": "Robin Hood Stakes (Listed Race) (Formerly Known As The Ben Marshall Stakes)",

@@ -1,6 +1,6 @@
 {
  "for_date": "2026-10-25",
- "built_utc": "2026-10-25T09:44:29.956596Z",
+ "built_utc": "2026-10-25T12:31:32.888954Z",
  "source": "https://members.breederscup.com/Points/PointsLeaderboard",
  "event": {
   "name": "Breeders' Cup World Championships",
@@ -2580,7 +2580,7 @@
      ],
      "board_pos": 3,
      "points": 10,
-     "points_rank": 11,
+     "points_rank": 12,
      "points_tied": true
     },
     {
@@ -2626,7 +2626,7 @@
      ],
      "board_pos": 4,
      "points": 10,
-     "points_rank": 11,
+     "points_rank": 12,
      "points_tied": true
     },
     {
@@ -2972,6 +2972,72 @@
      "points_tied": true
     },
     {
+     "name": "Remember Mamba",
+     "country": "",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "C R K Stable LLC",
+     "trainer": "Cherie DeVaux",
+     "races": [
+      {
+       "bcc": false,
+       "date": "10/24/2026",
+       "track": "Kee",
+       "race": "Bryan Station",
+       "grade": "G2",
+       "division": "Mile",
+       "pos": "3",
+       "points": 2
+      },
+      {
+       "bcc": false,
+       "date": "8/8/2026",
+       "track": "Sar",
+       "race": "Saratoga Derby",
+       "grade": "G1",
+       "division": "Turf",
+       "pos": "4",
+       "points": 0
+      },
+      {
+       "bcc": false,
+       "date": "7/4/2026",
+       "track": "Sar",
+       "race": "Belmont Derby",
+       "grade": "G1",
+       "division": "Turf",
+       "pos": "3",
+       "points": 4
+      },
+      {
+       "bcc": false,
+       "date": "5/2/2026",
+       "track": "CD",
+       "race": "American Turf S.",
+       "grade": "G1",
+       "division": "Mile",
+       "pos": "2",
+       "points": 6
+      },
+      {
+       "bcc": false,
+       "date": "4/3/2026",
+       "track": "Kee",
+       "race": "Transylvania S.",
+       "grade": "G3",
+       "division": "Mile",
+       "pos": "1",
+       "points": 4
+      }
+     ],
+     "board_pos": 12,
+     "points": 16,
+     "points_rank": 5,
+     "points_tied": true
+    },
+    {
      "name": "El Potente",
      "country": "",
      "out": false,
@@ -3024,9 +3090,65 @@
        "points": 4
       }
      ],
-     "board_pos": 12,
+     "board_pos": 13,
      "points": 14,
-     "points_rank": 7,
+     "points_rank": 8,
+     "points_tied": false
+    },
+    {
+     "name": "Bottas",
+     "country": "",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "Dahman",
+     "trainer": "Miguel Clement",
+     "races": [
+      {
+       "bcc": false,
+       "date": "10/24/2026",
+       "track": "Kee",
+       "race": "Bryan Station",
+       "grade": "G2",
+       "division": "Mile",
+       "pos": "1",
+       "points": 6
+      },
+      {
+       "bcc": false,
+       "date": "8/7/2026",
+       "track": "Sar",
+       "race": "National Museum of Racing Hall of Fame S.",
+       "grade": "G2",
+       "division": "Mile",
+       "pos": "1",
+       "points": 6
+      },
+      {
+       "bcc": false,
+       "date": "7/4/2026",
+       "track": "Sar",
+       "race": "Belmont Derby",
+       "grade": "G1",
+       "division": "Turf",
+       "pos": "5",
+       "points": 0
+      },
+      {
+       "bcc": false,
+       "date": "6/4/2026",
+       "track": "Sar",
+       "race": "Pennine Ridge S.",
+       "grade": "G3",
+       "division": "Mile",
+       "pos": "3",
+       "points": 1
+      }
+     ],
+     "board_pos": 14,
+     "points": 13,
+     "points_rank": 9,
      "points_tied": false
     },
     {
@@ -3070,9 +3192,9 @@
        "points": 10
       }
      ],
-     "board_pos": 13,
+     "board_pos": 15,
      "points": 12,
-     "points_rank": 8,
+     "points_rank": 10,
      "points_tied": true
     },
     {
@@ -3126,121 +3248,9 @@
        "points": 0
       }
      ],
-     "board_pos": 14,
-     "points": 12,
-     "points_rank": 8,
-     "points_tied": true
-    },
-    {
-     "name": "Lagynos",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "HRH Prince Sultan Bin Mishal Al Saud",
-     "trainer": "Steven M. Asmussen",
-     "races": [
-      {
-       "bcc": false,
-       "date": "9/7/2026",
-       "track": "KD",
-       "race": "The Mint Millions",
-       "grade": "G3",
-       "division": "Mile",
-       "pos": "2",
-       "points": 2
-      },
-      {
-       "bcc": true,
-       "date": "8/8/2026",
-       "track": "Sar",
-       "race": "Fourstardave",
-       "grade": "G1",
-       "division": "Mile",
-       "pos": "5",
-       "points": 0
-      },
-      {
-       "bcc": false,
-       "date": "6/27/2026",
-       "track": "CD",
-       "race": "Wise Dan S.",
-       "grade": "G2",
-       "division": "Mile",
-       "pos": "1",
-       "points": 6
-      },
-      {
-       "bcc": false,
-       "date": "5/30/2026",
-       "track": "CD",
-       "race": "Arlington Stakes",
-       "grade": "G3",
-       "division": "Mile",
-       "pos": "1",
-       "points": 4
-      }
-     ],
-     "board_pos": 15,
-     "points": 12,
-     "points_rank": 8,
-     "points_tied": true
-    },
-    {
-     "name": "Mi Bago",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "Gary Barber",
-     "trainer": "Mark E. Casse",
-     "races": [
-      {
-       "bcc": false,
-       "date": "9/7/2026",
-       "track": "KD",
-       "race": "The Mint Millions",
-       "grade": "G3",
-       "division": "Mile",
-       "pos": "11",
-       "points": 0
-      },
-      {
-       "bcc": true,
-       "date": "8/8/2026",
-       "track": "Sar",
-       "race": "Fourstardave",
-       "grade": "G1",
-       "division": "Mile",
-       "pos": "2",
-       "points": 6
-      },
-      {
-       "bcc": false,
-       "date": "7/5/2026",
-       "track": "Sar",
-       "race": "Kelso",
-       "grade": "G3",
-       "division": "Mile",
-       "pos": "1",
-       "points": 4
-      },
-      {
-       "bcc": false,
-       "date": "3/7/2026",
-       "track": "SA",
-       "race": "Frank E. Kilroe Mile",
-       "grade": "G2",
-       "division": "Mile",
-       "pos": "8",
-       "points": 0
-      }
-     ],
      "board_pos": 16,
-     "points": 10,
-     "points_rank": 11,
+     "points": 12,
+     "points_rank": 10,
      "points_tied": true
     }
    ]
@@ -7923,72 +7933,6 @@
      "points_tied": true
     },
     {
-     "name": "Remember Mamba",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "C R K Stable LLC",
-     "trainer": "Cherie DeVaux",
-     "races": [
-      {
-       "bcc": false,
-       "date": "10/24/2026",
-       "track": "Kee",
-       "race": "Bryan Station",
-       "grade": "G2",
-       "division": "Mile",
-       "pos": "0",
-       "points": 0
-      },
-      {
-       "bcc": false,
-       "date": "8/8/2026",
-       "track": "Sar",
-       "race": "Saratoga Derby",
-       "grade": "G1",
-       "division": "Turf",
-       "pos": "4",
-       "points": 0
-      },
-      {
-       "bcc": false,
-       "date": "7/4/2026",
-       "track": "Sar",
-       "race": "Belmont Derby",
-       "grade": "G1",
-       "division": "Turf",
-       "pos": "3",
-       "points": 4
-      },
-      {
-       "bcc": false,
-       "date": "5/2/2026",
-       "track": "CD",
-       "race": "American Turf S.",
-       "grade": "G1",
-       "division": "Mile",
-       "pos": "2",
-       "points": 6
-      },
-      {
-       "bcc": false,
-       "date": "4/3/2026",
-       "track": "Kee",
-       "race": "Transylvania S.",
-       "grade": "G3",
-       "division": "Mile",
-       "pos": "1",
-       "points": 4
-      }
-     ],
-     "board_pos": 14,
-     "points": 14,
-     "points_rank": 6,
-     "points_tied": true
-    },
-    {
      "name": "Mondego",
      "country": "GB",
      "out": false,
@@ -8059,9 +8003,9 @@
        "points": 4
       }
      ],
-     "board_pos": 15,
+     "board_pos": 14,
      "points": 13,
-     "points_rank": 9,
+     "points_rank": 8,
      "points_tied": false
     },
     {
@@ -8135,8 +8079,44 @@
        "points": 2
       }
      ],
-     "board_pos": 16,
+     "board_pos": 15,
      "points": 12,
+     "points_rank": 9,
+     "points_tied": false
+    },
+    {
+     "name": "Atitlan",
+     "country": "",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "John M. B. O'Connor",
+     "trainer": "Richard E. Mandella",
+     "races": [
+      {
+       "bcc": false,
+       "date": "9/26/2026",
+       "track": "SA",
+       "race": "John Henry Turf Championship",
+       "grade": "G2",
+       "division": "Turf",
+       "pos": "1",
+       "points": 6
+      },
+      {
+       "bcc": true,
+       "date": "8/29/2026",
+       "track": "Dmr",
+       "race": "Del Mar Handicap Presented By The Japan Racing Association",
+       "grade": "G2",
+       "division": "Turf",
+       "pos": "2",
+       "points": 4
+      }
+     ],
+     "board_pos": 16,
+     "points": 10,
      "points_rank": 10,
      "points_tied": false
     }

@@ -85,6 +85,42 @@
   "day_label": "TOMORROW — Next 7 days from Mon Oct 26",
   "races": [
    {
+    "grade": "G3",
+    "race_name": "Darley Prix Des Reservoirs (Group 3)",
+    "date_short": "Mon\nOct 26",
+    "track": "Chantilly",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Grand Prix Du Nord",
+    "date_short": "Mon\nOct 26",
+    "track": "Chantilly",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m2f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Prix Isonomy",
+    "date_short": "Mon\nOct 26",
+    "track": "Chantilly",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m1f · AW"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Criterium De Vitesse",
+    "date_short": "Mon\nOct 26",
+    "track": "Chantilly",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "5½f · Turf"
+   },
+   {
     "grade": "LR",
     "race_name": "Robin Hood Stakes (Listed Race) (Formerly Known As The Ben Marshall Stakes)",
     "date_short": "Wed\nOct 28",

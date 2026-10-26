@@ -1,6 +1,6 @@
 {
- "for_date": "2026-10-25",
- "built_utc": "2026-10-25T12:31:32.888954Z",
+ "for_date": "2026-10-26",
+ "built_utc": "2026-10-26T06:07:32.930044Z",
  "source": "https://members.breederscup.com/Points/PointsLeaderboard",
  "event": {
   "name": "Breeders' Cup World Championships",
@@ -9661,7 +9661,7 @@
    ]
   }
  ],
- "prev_date": "2026-10-24",
+ "prev_date": "2026-10-25",
  "prev": {
   "Brown Advisory Juvenile Turf|Al Hudaiba": {
    "points": 10,
@@ -9995,12 +9995,12 @@
   },
   "FanDuel Mile|Cabo Spirit": {
    "points": 10,
-   "points_rank": 11,
+   "points_rank": 12,
    "board_pos": 3
   },
   "FanDuel Mile|Notable Speech": {
    "points": 10,
-   "points_rank": 11,
+   "points_rank": 12,
    "board_pos": 4
   },
   "FanDuel Mile|Sixpence": {
@@ -10038,29 +10038,29 @@
    "points_rank": 5,
    "board_pos": 11
   },
-  "FanDuel Mile|El Potente": {
-   "points": 14,
-   "points_rank": 7,
+  "FanDuel Mile|Remember Mamba": {
+   "points": 16,
+   "points_rank": 5,
    "board_pos": 12
   },
-  "FanDuel Mile|Formidable Man": {
-   "points": 12,
+  "FanDuel Mile|El Potente": {
+   "points": 14,
    "points_rank": 8,
    "board_pos": 13
   },
-  "FanDuel Mile|King of Gosford": {
-   "points": 12,
-   "points_rank": 8,
+  "FanDuel Mile|Bottas": {
+   "points": 13,
+   "points_rank": 9,
    "board_pos": 14
   },
-  "FanDuel Mile|Lagynos": {
+  "FanDuel Mile|Formidable Man": {
    "points": 12,
-   "points_rank": 8,
+   "points_rank": 10,
    "board_pos": 15
   },
-  "FanDuel Mile|Mi Bago": {
-   "points": 10,
-   "points_rank": 11,
+  "FanDuel Mile|King of Gosford": {
+   "points": 12,
+   "points_rank": 10,
    "board_pos": 16
   },
   "Filly & Mare Sprint|Ways and Means": {
@@ -10588,18 +10588,18 @@
    "points_rank": 6,
    "board_pos": 13
   },
-  "Longines Turf|Remember Mamba": {
-   "points": 14,
-   "points_rank": 6,
-   "board_pos": 14
-  },
   "Longines Turf|Mondego": {
    "points": 13,
-   "points_rank": 9,
-   "board_pos": 15
+   "points_rank": 8,
+   "board_pos": 14
   },
   "Longines Turf|Flashiest": {
    "points": 12,
+   "points_rank": 9,
+   "board_pos": 15
+  },
+  "Longines Turf|Atitlan": {
+   "points": 10,
    "points_rank": 10,
    "board_pos": 16
   },

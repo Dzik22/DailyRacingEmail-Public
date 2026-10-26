@@ -1,22 +1,62 @@
 [
  {
   "grade": "G1",
-  "race_name": "William Hill Futurity Trophy Stakes (Group 1)",
-  "track": "Doncaster",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "1m · Turf",
-  "winner": "Giant Sequoia (USA)",
-  "off_time": "1:30"
+  "race_name": "Prix Royal-oak (group 1)",
+  "track": "Saint-Cloud",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m7½f · Turf",
+  "winner": "Queenstown",
+  "off_time": "2:50"
  },
  {
-  "grade": "LR",
-  "race_name": "William Hill Remembering Sue Wright Prospect Stakes (registered As The Doncaster Stakes) (Listed Race)",
-  "track": "Doncaster",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "6f · Turf",
-  "winner": "Bengal Tiger",
-  "off_time": "2:05"
+  "grade": "G1",
+  "race_name": "Criterium de Saint-Cloud (Group 1)",
+  "track": "Saint-Cloud",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m2f · Turf",
+  "winner": "Drumbeat",
+  "off_time": "1:33"
+ },
+ {
+  "grade": "G1",
+  "race_name": "Criterium International (Group 1)",
+  "track": "Saint-Cloud",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m · Turf",
+  "winner": "Master Man",
+  "off_time": "12:23"
+ },
+ {
+  "grade": "G3",
+  "race_name": "Prix Belle de Nuit",
+  "track": "Saint-Cloud",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m6f · Turf",
+  "winner": "Eleganz",
+  "off_time": "3:25"
+ },
+ {
+  "grade": "G3",
+  "race_name": "Prix Perth (Group 3)",
+  "track": "Saint-Cloud",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m · Turf",
+  "winner": "Half Half",
+  "off_time": "12:58"
+ },
+ {
+  "grade": "G3",
+  "race_name": "Prix de Flore",
+  "track": "Saint-Cloud",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m2½f · Turf",
+  "winner": "Miss Justice",
+  "off_time": "11:48"
  }
 ]

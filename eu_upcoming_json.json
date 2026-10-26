@@ -1,38 +1,15 @@
 [
  {
-  "day_label": "YESTERDAY — Sat Oct 24",
+  "day_label": "YESTERDAY — Sun Oct 25",
   "races": [
    {
     "grade": "G1",
-    "race_name": "William Hill Futurity Trophy Stakes (Group 1)",
-    "date_short": "Sat\nOct 24",
-    "track": "Doncaster",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "William Hill Remembering Sue Wright Prospect Stakes (registered As The Doncaster Stakes) (Listed Race)",
-    "date_short": "Sat\nOct 24",
-    "track": "Doncaster",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Sun Oct 25",
-  "races": [
-   {
-    "grade": "G1",
-    "race_name": "Criterium International (Group 1)",
+    "race_name": "Prix Royal-oak (group 1)",
     "date_short": "Sun\nOct 25",
     "track": "Saint-Cloud",
     "country": "FR",
     "flag": "🇫🇷",
-    "dist_surface": "1m · Turf"
+    "dist_surface": "1m7½f · Turf"
    },
    {
     "grade": "G1",
@@ -45,25 +22,7 @@
    },
    {
     "grade": "G1",
-    "race_name": "Prix Royal-oak (group 1)",
-    "date_short": "Sun\nOct 25",
-    "track": "Saint-Cloud",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m7½f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Prix de Flore",
-    "date_short": "Sun\nOct 25",
-    "track": "Saint-Cloud",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m2½f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Prix Perth (Group 3)",
+    "race_name": "Criterium International (Group 1)",
     "date_short": "Sun\nOct 25",
     "track": "Saint-Cloud",
     "country": "FR",
@@ -78,11 +37,29 @@
     "country": "FR",
     "flag": "🇫🇷",
     "dist_surface": "1m6f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Prix Perth (Group 3)",
+    "date_short": "Sun\nOct 25",
+    "track": "Saint-Cloud",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Prix de Flore",
+    "date_short": "Sun\nOct 25",
+    "track": "Saint-Cloud",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m2½f · Turf"
    }
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Mon Oct 26",
+  "day_label": "TODAY — Mon Oct 26",
   "races": [
    {
     "grade": "G3",
@@ -119,6 +96,29 @@
     "country": "FR",
     "flag": "🇫🇷",
     "dist_surface": "5½f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Tue Oct 27",
+  "races": [
+   {
+    "grade": "G3",
+    "race_name": "St Simon Stakes (Group 3)",
+    "date_short": "Fri\nOct 30",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Irish Stallion Farms Ebf 'bosra Sham' Fillies' Stakes (Listed Race)",
+    "date_short": "Fri\nOct 30",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · Turf"
    },
    {
     "grade": "LR",

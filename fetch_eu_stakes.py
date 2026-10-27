@@ -50,6 +50,17 @@ if not CREDS:
     print('FATAL: RACING_API_CREDS not set', file=sys.stderr)
     sys.exit(1)
 
+# SIRE LINES (Oct 27 2026) rides along the same way as the BC fetch above, but needs the credential,
+# so it runs right after the CREDS check and before the EU build's own ABORT exit at the bottom.
+if os.path.exists('fetch_sire_lines.py'):
+    import subprocess
+    try:
+        subprocess.run([sys.executable, 'fetch_sire_lines.py'], timeout=240, check=False)
+        if os.path.exists('sire_lines.json'):
+            subprocess.run(['git', 'add', 'sire_lines.json'], timeout=30, check=False)
+    except Exception as _sle:
+        print('SIRE_FAIL: ' + str(_sle))
+
 BASE = 'https://api.theracingapi.com/v1'
 # gb, ire, fr, ger are the only codes this endpoint accepts. 'ita' returns HTTP 422
 # "unrecognised region code" and, because codes go as one query string, ONE bad code

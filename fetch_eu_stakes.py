@@ -48,7 +48,7 @@ if os.path.exists('fetch_bc_points.py'):
 if os.path.exists('fetch_farm_news.py'):
     import subprocess
     try:
-        subprocess.run([sys.executable, 'fetch_farm_news.py'], timeout=300, check=False)
+        subprocess.run([sys.executable, 'fetch_farm_news.py'], timeout=420, check=False)
         if os.path.exists('farm_news.json'):
             subprocess.run(['git', 'add', 'farm_news.json'], timeout=30, check=False)
     except Exception as _fne:

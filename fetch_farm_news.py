@@ -22,6 +22,10 @@ SOURCES (all probed Oct 27 2026 with curl_cffi, 200 unless noted)
   items.
 - Arzak ("2 Amsterdam"): no website found, so no farm source.
 
+- TDN (added the same day, Mike's request): the /tag/stallion-shares/ feed -- TDN's public archive of
+  share sales and online stallion-share auctions -- plus a search feed per sire. Private share deals
+  through agents are usually unreported, so no source can promise every trade.
+
 Every failure is per-source and non-fatal; on a total failure the old farm_news.json stays as is.
 
 OUTPUT
@@ -49,14 +53,43 @@ PAGES = [
     ('Mill Ridge', 'https://www.millridge.com/casa-creed', ['Casa Creed']),
     ('Murmur Farm', 'https://www.murmurfarm.com/Blofeld.html', ['Blofeld']),
 ]
+# TDN (WordPress): the stallion-shares tag feed is the public share-sale archive (Tattersalls/Arqana/
+# AKTEM online sales, private share deals); the per-sire search feed returns every article that names
+# the sire. Search terms drop punctuation where TDN's own spelling varies (Honor A. P., Arthur’s Ride).
+TDN = 'https://www.thoroughbreddailynews.com'
+TDN_SHARES = TDN + '/tag/stallion-shares/feed/'
+TDN_TERMS = {'Honor A.P.': 'Honor A. P.', "Arthur's Ride": 'Arthur Ride', 'Dr. Schivel': 'Schivel'}
+SHARE_WORDS = r"(?:shares?|half-share|breeding rights?|syndicat\w*|stallion seasons?|interest in)"
 GRADED = re.compile(r'\((?:G|Gr\.?\s?|Grade\s)(?:[123]|I{1,3})\)|\bG(?:[123]|I{1,3})\b|\bGrade\s(?:[123]|I{1,3})\b')
 NEWSY = re.compile(r'Stakes|\(G|Grade|Fee|share|syndicat|sold|\$', re.I)
 
 
-def sire_re(name):
+def sire_re(name, ci=True):
     # "Honor A.P." matches Honor AP / Honor A. P. / HONOR A.P.; "Arthur's Ride" matches Arthurs Ride.
-    parts = [re.escape(p) for p in re.findall(r'[A-Za-z0-9]+', name)]
-    return re.compile(r'(?<![A-Za-z])' + r"[\s.'’]*".join(parts) + r'(?![A-Za-z])', re.I)
+    # ci=False (TDN, which covers every horse in the country) accepts only Title Case or ALL CAPS, so
+    # the plain words "complexity" or "charge it" in an article can never match.
+    def pat(ps): return r"[\s.'’]*".join(re.escape(p) for p in ps)
+    parts = re.findall(r'[A-Za-z0-9]+', name)
+    body = pat(parts) if ci else '(?:' + pat(parts) + '|' + pat([p.upper() for p in parts]) + ')'
+    return re.compile(r'(?<![A-Za-z])' + body + r'(?![A-Za-z])', re.I if ci else 0)
+
+
+def share_near(name, text):
+    # A share/breeding-right word within ~80 chars of the sire's name, either side.
+    sr = sire_re(name, ci=False).pattern
+    return re.search(sr + r'.{0,80}?\b' + SHARE_WORDS + r'\b|\b' + SHARE_WORDS + r'\b.{0,80}?' + sr, text, re.S | re.I) is not None
+
+
+def rss_items(xml):
+    for it in re.findall(r'<item>(.*?)</item>', xml, re.S):
+        title = re.sub(r'\s+', ' ', text_of((re.search(r'<title>(.*?)</title>', it, re.S) or [None, ''])[1])).strip()
+        link = text_of((re.search(r'<link>(.*?)</link>', it, re.S) or [None, ''])[1]).strip()
+        pub = (re.search(r'<pubDate>(.*?)</pubDate>', it, re.S) or [None, ''])[1].strip()
+        try:
+            d = parsedate_to_datetime(pub).date().isoformat()
+        except Exception:
+            continue
+        yield d, title, link, re.sub(r'\s+', ' ', text_of(it))
 
 
 def text_of(s):
@@ -127,6 +160,39 @@ def main():
         except Exception as e:
             status[farm] = 'fail ' + str(e)[:80]
 
+    # TDN. A share item = the stallion-shares tag feed, or any article with a share word next to the
+    # sire's name. A news item = the sire named in the HEADLINE (body-only mentions are too incidental).
+    import time
+    from fetch_sire_lines import SIRES as _ROSTER
+    tdn_n, tdn_fail = 0, []
+    cutoff30 = (t - timedelta(days=KEEP_DAYS)).isoformat()
+    for label, url, names in ([('shares tag', TDN_SHARES, [n for n, _ in _ROSTER])]
+                              + [(n, TDN + '/?s=%22' + TDN_TERMS.get(n, n).replace(' ', '+') + '%22&feed=rss2', [n])
+                                 for n, _ in _ROSTER]):
+        try:
+            xml = get(requests, url)
+            for d, title, link, body in rss_items(xml):
+                if d < cutoff30:
+                    continue
+                for nm in names:
+                    if not sire_re(nm, ci=False).search(title + ' ' + body):
+                        continue
+                    if url == TDN_SHARES or share_near(nm, title + ' ' + body):
+                        kind = 'share'
+                    elif sire_re(nm, ci=False).search(title):
+                        kind = 'news'
+                    else:
+                        continue
+                    new_items.append({'date': d, 'farm': 'TDN', 'sires': [nm], 'title': title, 'link': link,
+                                      'graded': bool(GRADED.search(title)), 'kind': kind})
+                    tdn_n += 1
+        except Exception as e:
+            tdn_fail.append(label + ': ' + str(e)[:60])
+        time.sleep(1.5)
+    status['TDN'] = ('ok %d' % tdn_n) + ('; fail ' + ' | '.join(tdn_fail) if tdn_fail else '')
+    if len(tdn_fail) > len(_ROSTER):
+        status['TDN'] = 'fail ' + ' | '.join(tdn_fail)[:200]
+
     if all(v.startswith('fail') for v in status.values()):
         print('FARM_FAIL: every source failed; previous %s left untouched: %s' % (OUT, json.dumps(status)))
         return
@@ -134,7 +200,7 @@ def main():
     cutoff = (t - timedelta(days=KEEP_DAYS)).isoformat()
     seen, items = set(), []
     for it in sorted(new_items + prev.get('items', []), key=lambda x: x.get('date', ''), reverse=True):
-        k = (it.get('farm'), it.get('title'))
+        k = (it.get('farm'), it.get('title'), tuple(it.get('sires', [])) if it.get('farm') == 'TDN' else ())
         if it.get('date', '') >= cutoff and k not in seen:
             seen.add(k); items.append(it)
     try:

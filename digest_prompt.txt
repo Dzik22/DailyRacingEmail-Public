@@ -116,7 +116,7 @@ Every digest MUST contain exactly these 6 sections in this exact order. No secti
 
 THE ONE SANCTIONED EXTRA (Oct 11 2026, Mike's request): a seasonal **🏅 BREEDERS' CUP WATCH** section between MY STABLE and STABLE UPDATES. The Step 7.5 generator builds it entirely from `/tmp/mirror_bc_points.json` (downloaded in Step 0.4) — it needs NO JSON from you, NO searches, NO tool calls. Do not add it, edit it, move it or remove it; if it is present, it is correct. It disappears by itself after the Breeders' Cup (Oct 31 2026).
 
-THE SECOND SANCTIONED EXTRA (Oct 27 2026, Mike's request): a permanent **🧬 SIRE LINES** section directly after BREEDERS' CUP WATCH (or after MY STABLE once that is gone). It lists G1/G2/G3 winners sired by the stallions Mike holds shares in through the Wasabi Ventures Stallions funds. The Step 7.5 generator builds it from `/tmp/mirror_sire_lines.json` (downloaded in Step 0.4) plus the optional `winner_sire` field in Step 5-DRF's results. It needs NO JSON from you and NO extra searches or tool calls. Do not add it, edit it, move it or remove it.
+THE SECOND SANCTIONED EXTRA (Oct 27 2026, Mike's request): a permanent **🧬 SIRE LINES** section directly after BREEDERS' CUP WATCH (or after MY STABLE once that is gone). It lists G1/G2/G3 winners sired by the stallions Mike holds shares in through the Wasabi Ventures Stallions funds, share sales/listings for them (TDN), and farm + TDN news about them. The Step 7.5 generator builds it from `/tmp/mirror_sire_lines.json` (downloaded in Step 0.4) plus the optional `winner_sire` field in Step 5-DRF's results. It needs NO JSON from you and NO extra searches or tool calls. Do not add it, edit it, move it or remove it.
 
 **SECTION 1 — 🏇 MY STABLE** (3 subsections — ALL always present, use placeholder if empty, never omit)
 1. 📋 ENTRIES — NEXT 7 DAYS → upcoming races for MASTER TABLE horses (from Step 4c)
@@ -4189,8 +4189,19 @@ try:
         # Farm news (fetch_farm_news.py): stallion-farm RSS posts and stallion-page changes that name a
         # roster sire. Graded-stakes headlines first, then newest.
         _fn_rows = []
-        _fn_items = [x for x in (_fn or {}).get('items', []) if str(x.get('date', '')) >= _cut]
+        _fn_all = [x for x in (_fn or {}).get('items', []) if str(x.get('date', '')) >= _cut]
+        _fn_items = [x for x in _fn_all if x.get('kind') != 'share']
         _fn_items.sort(key=lambda x: (bool(x.get('graded')), str(x.get('date', ''))), reverse=True)
+        _sh_rows = []
+        for x in sorted([x for x in _fn_all if x.get('kind') == 'share'], key=lambda x: str(x.get('date', '')), reverse=True)[:8]:
+            try: _xd = _dt.fromisoformat(str(x.get('date'))); _xds = _xd.strftime('%a %b ') + str(_xd.day)
+            except Exception: _xds = str(x.get('date', ''))
+            _ttl = str(x.get('title', '')).replace('&', '&amp;').replace('<', '&lt;')
+            if str(x.get('link', '')).startswith('http'):
+                _ttl = '<a href="' + str(x['link']).replace('"', '%22') + '">' + _ttl + '</a>'
+            _sh_rows.append(row(' / '.join(x.get('sires', [])), 'Wasabi',
+                                '💼 <b>Share / breeding-right news</b> &nbsp;·&nbsp; ' + _ttl + ' &nbsp;·&nbsp; '
+                                + str(x.get('farm', '')).replace("'", '&#39;') + ' &nbsp;·&nbsp; ' + _xds, 0))
         for x in _fn_items[:10]:
             try: _xd = _dt.fromisoformat(str(x.get('date'))); _xds = _xd.strftime('%a %b ') + str(_xd.day)
             except Exception: _xds = str(x.get('date', ''))
@@ -4208,12 +4219,15 @@ try:
         s_sire = (hdr('\U0001f9ec', 'Sire Lines') + '<div class="horse-gap"></div>\n'
                   + '<div class="story"><p>' + _intro + '</p></div>\n'
                   + sub('\U0001f3c6', 'GRADED WINNERS BY YOUR SIRES — LAST 7 DAYS', _sl_rows)
-                  + SSB + '\n' + sub('\U0001f4f0', 'FARM NEWS ON YOUR SIRES — LAST 7 DAYS', _fn_rows)
+                  + SSB + '\n' + sub('\U0001f4bc', 'SHARE MARKET — SALES &amp; LISTINGS, LAST 7 DAYS', _sh_rows)
+                  + SSB + '\n' + sub('\U0001f4f0', 'NEWS ON YOUR SIRES — FARMS &amp; TDN, LAST 7 DAYS', _fn_rows)
                   + '<div style="height:20px;background:#fff"></div>\n')
         if not _sl_rows:
             s_sire = s_sire.replace('No data this week.', 'No G1/G2/G3 winners by your sires in the last 7 days.', 1)
+        if not _sh_rows:
+            s_sire = s_sire.replace('No data this week.', 'No share sales or listings reported for your sires in the last 7 days.', 1)
         if not _fn_rows:
-            s_sire = s_sire.replace('No data this week.', 'No farm news about your sires in the last 7 days.', 1)
+            s_sire = s_sire.replace('No data this week.', 'No farm or TDN news about your sires in the last 7 days.', 1)
         print('SIRE_LINES: ' + str(len(_sl_rows)) + ' graded winner(s) in the last 7 days, data for ' + str(_sl_for))
 except Exception as _slx:
     s_sire = ''

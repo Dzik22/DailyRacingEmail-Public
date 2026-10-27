@@ -300,7 +300,7 @@ Run this ONE Bash command NOW:
 ```bash
 MIRROR="https://raw.githubusercontent.com/Dzik22/DailyRacingEmail-Public/main"
 CB="$$-$(date +%s)"
-for f in eu_build_status.json eu_upcoming_json.json eu_recap_json.json bc_points.json sire_lines.json; do
+for f in eu_build_status.json eu_upcoming_json.json eu_recap_json.json bc_points.json sire_lines.json farm_news.json; do
   curl -sSL --connect-timeout 15 --max-time 90 --retry 2 --retry-delay 3 \
        "${MIRROR}/${f}?cb=${CB}" -o "/tmp/mirror_${f}" 2>/dev/null || true
 done
@@ -4144,6 +4144,21 @@ try:
                 _sl = json.loads(_r.read().decode('utf-8'))
         except Exception as _sle:
             print('SIRE_LINES: no sire_lines.json (' + str(_sle) + ') -- section skipped')
+    _fn = None
+    for _fnp in ('/tmp/mirror_farm_news.json', '/tmp/farm_news.json'):
+        if _os.path.exists(_fnp):
+            try: _fn = json.load(open(_fnp)); break
+            except Exception: _fn = None
+    if _fn is None:
+        try:
+            import urllib.request as _fnur
+            with _fnur.urlopen('https://raw.githubusercontent.com/Dzik22/DailyRacingEmail-Public/main/farm_news.json?cb='
+                               + str(_dt.today().toordinal()), timeout=30) as _r:
+                _fn = json.loads(_r.read().decode('utf-8'))
+        except Exception as _fne:
+            print('SIRE_LINES: no farm_news.json (' + str(_fne) + ')')
+    if not (_sl and _sl.get('sires')) and _fn and _fn.get('sires'):
+        _sl = {'sires': _fn['sires'], 'hits': [], 'for_date': _fn.get('for_date', '1900-01-01')}
     if _sl and _sl.get('sires'):
         def _sn(x): return _re.sub(r'[^a-z0-9]', '', _re.sub(r'\s*\([A-Za-z]{2,4}\)\s*$', '', str(x or '')).lower())
         _roster = {_sn(x.get('name')): x for x in _sl['sires']}
@@ -4171,6 +4186,20 @@ try:
                   + GI.get(str(h.get('grade', '')), str(h.get('grade', ''))) + '&nbsp;' + str(h.get('race_name', '')).replace('&', '&amp;')
                   + ' &nbsp;·&nbsp; ' + str(h.get('course', '')) + ' (' + str(h.get('region', '')) + ') &nbsp;·&nbsp; ' + _hds)
             _sl_rows.append(row(h.get('winner'), 'Wasabi', _t, 1))
+        # Farm news (fetch_farm_news.py): stallion-farm RSS posts and stallion-page changes that name a
+        # roster sire. Graded-stakes headlines first, then newest.
+        _fn_rows = []
+        _fn_items = [x for x in (_fn or {}).get('items', []) if str(x.get('date', '')) >= _cut]
+        _fn_items.sort(key=lambda x: (bool(x.get('graded')), str(x.get('date', ''))), reverse=True)
+        for x in _fn_items[:10]:
+            try: _xd = _dt.fromisoformat(str(x.get('date'))); _xds = _xd.strftime('%a %b ') + str(_xd.day)
+            except Exception: _xds = str(x.get('date', ''))
+            _ttl = str(x.get('title', '')).replace('&', '&amp;').replace('<', '&lt;')
+            if str(x.get('link', '')).startswith('http'):
+                _ttl = '<a href="' + str(x['link']).replace('"', '%22') + '">' + _ttl + '</a>'
+            _fn_rows.append(row(' / '.join(x.get('sires', [])), 'Wasabi',
+                                ('🏆 <b>Graded stakes</b> &nbsp;·&nbsp; ' if x.get('graded') else '') + _ttl
+                                + ' &nbsp;·&nbsp; ' + str(x.get('farm', '')).replace("'", '&#39;') + ' &nbsp;·&nbsp; ' + _xds, 0))
         _sl_for = _dt.fromisoformat(_sl.get('for_date', '1900-01-01'))
         _intro = ('Wasabi Ventures Stallions shares &nbsp;·&nbsp; ' + str(len(_sl['sires'])) + ' sires tracked'
                   + '<br>' + ' · '.join(str(x.get('name', '')) + ' (' + str(x.get('farm', '')) + ')' for x in _sl['sires']).replace("'", '&#39;')
@@ -4179,9 +4208,12 @@ try:
         s_sire = (hdr('\U0001f9ec', 'Sire Lines') + '<div class="horse-gap"></div>\n'
                   + '<div class="story"><p>' + _intro + '</p></div>\n'
                   + sub('\U0001f3c6', 'GRADED WINNERS BY YOUR SIRES — LAST 7 DAYS', _sl_rows)
+                  + SSB + '\n' + sub('\U0001f4f0', 'FARM NEWS ON YOUR SIRES — LAST 7 DAYS', _fn_rows)
                   + '<div style="height:20px;background:#fff"></div>\n')
         if not _sl_rows:
-            s_sire = s_sire.replace('No data this week.', 'No G1/G2/G3 winners by your sires in the last 7 days.')
+            s_sire = s_sire.replace('No data this week.', 'No G1/G2/G3 winners by your sires in the last 7 days.', 1)
+        if not _fn_rows:
+            s_sire = s_sire.replace('No data this week.', 'No farm news about your sires in the last 7 days.', 1)
         print('SIRE_LINES: ' + str(len(_sl_rows)) + ' graded winner(s) in the last 7 days, data for ' + str(_sl_for))
 except Exception as _slx:
     s_sire = ''

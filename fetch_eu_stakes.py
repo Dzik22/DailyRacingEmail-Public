@@ -44,6 +44,15 @@ if os.path.exists('fetch_bc_points.py'):
             subprocess.run(['git', 'add', 'bc_points.json'], timeout=30, check=False)
     except Exception as _bce:
         print('BC_FAIL: ' + str(_bce))
+# FARM NEWS for SIRE LINES (Oct 27 2026): needs no credential, so it rides here with the BC fetch.
+if os.path.exists('fetch_farm_news.py'):
+    import subprocess
+    try:
+        subprocess.run([sys.executable, 'fetch_farm_news.py'], timeout=300, check=False)
+        if os.path.exists('farm_news.json'):
+            subprocess.run(['git', 'add', 'farm_news.json'], timeout=30, check=False)
+    except Exception as _fne:
+        print('FARM_FAIL: ' + str(_fne))
 
 CREDS = os.environ.get('RACING_API_CREDS', '').strip()
 if not CREDS:

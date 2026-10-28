@@ -1,6 +1,6 @@
 {
  "for_date": "2026-10-28",
- "built_utc": "2026-10-28T06:51:55.368889Z",
+ "built_utc": "2026-10-28T09:35:18.103760Z",
  "sources": {
   "Gainesway": "ok 0",
   "Claiborne": "ok 6",
@@ -8,9 +8,9 @@
   "WinStar": "ok 2",
   "Airdrie Stud": "ok 0",
   "Lane's End": "ok 0",
-  "Hill 'n' Dale": "baseline 45 lines",
-  "Mill Ridge": "baseline 50 lines",
-  "Murmur Farm": "baseline 35 lines",
+  "Hill 'n' Dale": "ok 0 new",
+  "Mill Ridge": "ok 0 new",
+  "Murmur Farm": "ok 0 new",
   "TDN": "ok 4"
  },
  "sires": [

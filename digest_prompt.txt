@@ -81,7 +81,7 @@ Your ONE output is a Gmail draft to michaeljdzik@gmail.com. Step 8 (create_draft
 
 **THE FORMAT CONFIRMED PERFECT ON JUNE 2, 2026 CONTAINED:**
 1. Table-based silk badges: `<table>...<td bgcolor="c1">...<td bgcolor="c2">...<td>SYNDICATE NAME</td>` — ZERO spans
-2. 6 sections in exact order: MY STABLE → STABLE UPDATES → TOP 10 NEWS → STAKES RECAP → UPCOMING STAKES → SALES & INDUSTRY (+ seasonal 🏅 BREEDERS' CUP WATCH between MY STABLE and STABLE UPDATES, emitted by the Step 7.5 generator alone, only until the Breeders' Cup ends; + 🧬 SIRE LINES right after it, also generator-only)
+2. 6 sections in exact order: MY STABLE → STABLE UPDATES → TOP 10 NEWS → STAKES RECAP → UPCOMING STAKES → SALES & INDUSTRY (+ seasonal 🏅 BREEDERS' CUP WATCH between MY STABLE and STABLE UPDATES, emitted by the Step 7.5 generator alone, only until the Breeders' Cup ends; + 🧬 SIRE LINES between UPCOMING STAKES and SALES & INDUSTRY, also generator-only)
 3. `======================================================` section breaks between every section
 4. Grade icons: 🏆G1 (red badge), 🥈G2 (green badge), 🥉G3 (blue badge) — in EVERY race row
 5. Underlined syndicate name headers in STABLE UPDATES (TEAM VALOR, COMMONWEALTH, WOODFORD, WASABI, ECLIPSE, etc.)
@@ -96,7 +96,7 @@ Your ONE output is a Gmail draft to michaeljdzik@gmail.com. Step 8 (create_draft
 The format of this email is PERMANENTLY FIXED. It was set by Mike and cannot be changed, simplified, or adapted under any circumstances.
 
 **WHAT IS LOCKED (cannot change under ANY circumstances):**
-- The 6 HTML sections, in exact order: My Stable → Stable Updates → Top 10 News → Stakes Recap → Upcoming Stakes → Sales & Industry (+ seasonal 🏅 BREEDERS' CUP WATCH between MY STABLE and STABLE UPDATES, emitted by the Step 7.5 generator alone, only until the Breeders' Cup ends; + 🧬 SIRE LINES right after it, also generator-only)
+- The 6 HTML sections, in exact order: My Stable → Stable Updates → Top 10 News → Stakes Recap → Upcoming Stakes → Sales & Industry (+ seasonal 🏅 BREEDERS' CUP WATCH between MY STABLE and STABLE UPDATES, emitted by the Step 7.5 generator alone, only until the Breeders' Cup ends; + 🧬 SIRE LINES between UPCOMING STAKES and SALES & INDUSTRY, also generator-only)
 - Every CSS class name used in the template (`.wrapper`, `.section-header`, `.stable-row`, `.stable-tag`, `.race-table`, `.grade-g1/g2/g3`, `.upcoming-wrapper`, `.day-header`, etc.)
 - The section-spacer + `======` section-break separators between every section
 - The silk badge HTML structure with inline-style colored squares
@@ -116,7 +116,7 @@ Every digest MUST contain exactly these 6 sections in this exact order. No secti
 
 THE ONE SANCTIONED EXTRA (Oct 11 2026, Mike's request): a seasonal **🏅 BREEDERS' CUP WATCH** section between MY STABLE and STABLE UPDATES. The Step 7.5 generator builds it entirely from `/tmp/mirror_bc_points.json` (downloaded in Step 0.4) — it needs NO JSON from you, NO searches, NO tool calls. Do not add it, edit it, move it or remove it; if it is present, it is correct. It disappears by itself after the Breeders' Cup (Oct 31 2026).
 
-THE SECOND SANCTIONED EXTRA (Oct 27 2026, Mike's request): a permanent **🧬 SIRE LINES** section directly after BREEDERS' CUP WATCH (or after MY STABLE once that is gone). It lists G1/G2/G3 winners sired by the stallions Mike holds shares in through the Wasabi Ventures Stallions funds, share sales/listings for them (TDN), and farm + TDN news about them. The Step 7.5 generator builds it from `/tmp/mirror_sire_lines.json` (downloaded in Step 0.4) plus the optional `winner_sire` field in Step 5-DRF's results. It needs NO JSON from you and NO extra searches or tool calls. Do not add it, edit it, move it or remove it.
+THE SECOND SANCTIONED EXTRA (Oct 27 2026, Mike's request): a permanent **🧬 SIRE LINES** section directly before SALES & INDUSTRY (after UPCOMING STAKES; moved there Oct 28 2026 at Mike's request). It lists G1/G2/G3 winners sired by the stallions Mike holds shares in through the Wasabi Ventures Stallions funds, share sales/listings for them (TDN), and farm + TDN news about them. The Step 7.5 generator builds it from `/tmp/mirror_sire_lines.json` (downloaded in Step 0.4) plus the optional `winner_sire` field in Step 5-DRF's results. It needs NO JSON from you and NO extra searches or tool calls. Do not add it, edit it, move it or remove it.
 
 **SECTION 1 — 🏇 MY STABLE** (3 subsections — ALL always present, use placeholder if empty, never omit)
 1. 📋 ENTRIES — NEXT 7 DAYS → upcoming races for MASTER TABLE horses (from Step 4c)
@@ -4374,7 +4374,7 @@ footer = ("<div class=\"footer\"><p>Mike's Daily Racing Digest | DRF · Racing P
 
 html = ('<!DOCTYPE html><html><head><meta charset="UTF-8"><style>' + css + '</style></head><body><div class="wrapper">'
         + '<div class="header"><h1>\U0001f3c7 Daily Racing Digest</h1><p>' + td + ' | News from ' + yd + '</p></div>\n'
-        + SB + s1 + (SB + s_bc if s_bc else '') + (SB + s_sire if s_sire else '') + SB + s2 + SB + s3 + SB + s4 + SB + s5 + SB + s6 + footer + '</div></body></html>')
+        + SB + s1 + (SB + s_bc if s_bc else '') + SB + s2 + SB + s3 + SB + s4 + SB + s5 + (SB + s_sire if s_sire else '') + SB + s6 + footer + '</div></body></html>')
 
 with open('/tmp/digest_draft.html','w') as f: f.write(html)
 
@@ -4831,7 +4831,7 @@ except Exception as e:
 - MINIMUM VIABLE HTML (LOCKED): Context tight → shorten content, NEVER change format.
 - SECTION ORDER (LOCKED — 6 SECTIONS): (1) MY STABLE (2) STABLE UPDATES (3) TOP 10 NEWS (4) STAKES RECAP (5) UPCOMING STAKES (6) SALES & INDUSTRY. This order is ABSOLUTE. MY STABLE is ALWAYS first. STABLE UPDATES is ALWAYS second. TOP 10 NEWS is ALWAYS third.
 - BREEDERS' CUP WATCH (SEASONAL — Oct 11 2026): the generator alone inserts a 🏅 Breeders' Cup Watch section between MY STABLE and STABLE UPDATES from /tmp/mirror_bc_points.json (barn horses in each division's top-16 points leaderboard, with change since the previous day). It is not a 7th section you produce — it needs no JSON, searches or tool calls — and it is not a format violation. Never add, edit or remove it. It switches itself off after the last Breeders' Cup day.
-- SIRE LINES (PERMANENT — Oct 27 2026): the generator alone inserts a 🧬 Sire Lines section right after BREEDERS' CUP WATCH (after MY STABLE when BC Watch is off) from /tmp/mirror_sire_lines.json — G1/G2/G3 winners by Mike's Wasabi-held stallions over the last 7 days. It is not a section you produce and not a format violation. Never add, edit or remove it.
+- SIRE LINES (PERMANENT — Oct 27 2026): the generator alone inserts a 🧬 Sire Lines section between UPCOMING STAKES and SALES & INDUSTRY from /tmp/mirror_sire_lines.json — G1/G2/G3 winners by Mike's Wasabi-held stallions over the last 7 days. It is not a section you produce and not a format violation. Never add, edit or remove it.
 - SECTION BREAKS MANDATORY COUNT (LOCKED): The HTML MUST contain ≥ 8 `<div class="section-break" style="text-align:center;font-family:monospace;color:#555;font-size:14px;font-weight:bold;padding:10px 0;letter-spacing:2px">======================================================</div>` dividers. Count them before writing to /tmp/digest_draft.html. Fewer than 8 → STOP, add missing breaks, then write. The gate check enforces this: `has_section_breaks` FAIL = missing dividers.
 - SUBSECTION HEADERS EXACT (LOCKED): MY STABLE has exactly 3 subsection headers, VERBATIM: `📋 ENTRIES — NEXT 7 DAYS` | `🏁 RESULTS — LAST 7 DAYS` | `🏃 WORKS — LAST 7 DAYS`. No 4th subsection. No UPDATES & NEWS inside MY STABLE.
 - STABLE UPDATES SECTION (LOCKED): Section 2 uses `<div class="section-header"><h2><span class="sh-icon">🐎</span>Stable Updates</h2></div>`. Content = MASTER TABLE horses only, grouped by syndicate, stable-row format with silk badges.

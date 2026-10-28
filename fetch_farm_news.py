@@ -25,14 +25,19 @@ SOURCES (all probed Oct 27 2026 with curl_cffi, 200 unless noted)
 - TDN (added the same day, Mike's request): the /tag/stallion-shares/ feed -- TDN's public archive of
   share sales and online stallion-share auctions -- plus a search feed per sire. Private share deals
   through agents are usually unreported, so no source can promise every trade.
+- TDN graded winners (Oct 28 2026): the Racing API carries no USA races at all, so USA graded wins by
+  roster sires come from the results chart TDN prints in every stakes write-up:
+  "GLEN COVE S.-GIII , $200,000, Belmont, 10-25, ... 1– GROUND SUPPORT, 124, f, 3, by Army Mule 1st Dam".
+  Exact, so no headline guessing. A race TDN never writes up is missed (Mike: "oh well").
 
 Every failure is per-source and non-fatal; on a total failure the old farm_news.json stays as is.
 
 OUTPUT
 ------
 farm_news.json  {for_date, built_utc, sources:{farm: "ok N"|"fail ..."}, items:[{date, farm,
-                 sires, title, link, graded, kind}], pages:{url: [lines]}}
-items is a rolling 30-day history, newest first.
+                 sires, title, link, graded, kind}], pages:{url: [lines]}, graded_hits:[{date, sire,
+                 farm, winner, grade, race_name, course, region, source, link}]}
+items and graded_hits are rolling 30-day histories, newest first.
 """
 import html, json, re, subprocess, sys
 from datetime import date, datetime, timedelta
@@ -62,6 +67,10 @@ TDN_TERMS = {'Honor A.P.': 'Honor A. P.', "Arthur's Ride": 'Arthur Ride', 'Dr. S
 SHARE_WORDS = r"(?:shares?|half-share|breeding rights?|syndicat\w*|stallion seasons?|interest in)"
 GRADED = re.compile(r'\((?:G|Gr\.?\s?|Grade\s)(?:[123]|I{1,3})\)|\bG(?:[123]|I{1,3})\b|\bGrade\s(?:[123]|I{1,3})\b')
 NEWSY = re.compile(r'Stakes|\(G|Grade|Fee|share|syndicat|sold|\$', re.I)
+# TDN's results chart: RACE NAME-G<grade>, purse, track, M-D, ... 1– WINNER, weight, sex, age, by SIRE 1st Dam
+CHART = re.compile(r"([A-Z0-9][A-Z0-9'’.&\- ]{2,80}?)\s*-\s*G(III|II|I|[123])\b\s*,\s*(?:[A-Z]{0,2}\$|€|£)[\d,]+,"
+                   r"\s*([^,]{2,40}),\s*(\d{1,2})-(\d{1,2}),.{0,240}?\b1\s*[–-]\s*([^,]{2,40}),\s*\d+,\s*[a-z]+,"
+                   r"\s*\d+,\s*by\s+(.{2,40}?)\s+1st Dam", re.S)
 
 
 def sire_re(name, ci=True):
@@ -78,6 +87,29 @@ def share_near(name, text):
     # A share/breeding-right word within ~80 chars of the sire's name, either side.
     sr = sire_re(name, ci=False).pattern
     return re.search(sr + r'.{0,80}?\b' + SHARE_WORDS + r'\b|\b' + SHARE_WORDS + r'\b.{0,80}?' + sr, text, re.S | re.I) is not None
+
+
+def tdn_charts(body, pub, roster, norm):
+    # Graded winners in a TDN article whose sire is on the roster. pub = the article's ISO date, which
+    # supplies the year (a chart dated after the article belongs to the previous year).
+    out = []
+    for m in CHART.finditer(body):
+        hit = roster.get(norm(m.group(7)))
+        if not hit:
+            continue
+        y = int(pub[:4])
+        try:
+            d = date(y, int(m.group(4)), int(m.group(5)))
+            if d.isoformat() > pub:
+                d = date(y - 1, d.month, d.day)
+        except ValueError:
+            continue
+        out.append({'date': d.isoformat(), 'sire': hit[0], 'farm': hit[1],
+                    'winner': re.sub(r'\s*\([A-Za-z]{2,4}\)\s*$', '', m.group(6)).strip().title(),
+                    'grade': 'G' + {'I': '1', 'II': '2', 'III': '3'}.get(m.group(2), m.group(2)),
+                    'race_name': re.sub(r'\s+', ' ', m.group(1)).strip().title(),
+                    'course': m.group(3).strip(), 'region': '', 'source': 'TDN'})
+    return out
 
 
 def rss_items(xml):
@@ -99,8 +131,8 @@ def text_of(s):
     return re.sub(r'<[^>]+>', '\n', s)
 
 
-def get(requests, url):
-    r = requests.get(url, impersonate='chrome', timeout=40)
+def get(requests, url, timeout=40):
+    r = requests.get(url, impersonate='chrome', timeout=timeout)
     if r.status_code != 200:
         raise RuntimeError('HTTP %d' % r.status_code)
     return r.text
@@ -163,17 +195,26 @@ def main():
     # TDN. A share item = the stallion-shares tag feed, or any article with a share word next to the
     # sire's name. A news item = the sire named in the HEADLINE (body-only mentions are too incidental).
     import time
-    from fetch_sire_lines import SIRES as _ROSTER
-    tdn_n, tdn_fail = 0, []
+    from fetch_sire_lines import SIRES as _ROSTER, ROSTER as _RNORM, norm as _norm
+    tdn_n, tdn_fail, chart_hits = 0, [], []
+    # TDN can be slow (Oct 28: three 40 s timeouts, a 4m16s run). fetch_eu_stakes.py kills this script
+    # at 420 s and the whole file is then lost, so cap TDN at 20 s a request and 240 s in all. A skipped
+    # sire is caught up the next night: each search feed holds its 30 newest articles.
+    tdn_t0 = time.time()
     cutoff30 = (t - timedelta(days=KEEP_DAYS)).isoformat()
     for label, url, names in ([('shares tag', TDN_SHARES, [n for n, _ in _ROSTER])]
                               + [(n, TDN + '/?s=%22' + TDN_TERMS.get(n, n).replace(' ', '+') + '%22&feed=rss2', [n])
                                  for n, _ in _ROSTER]):
+        if time.time() - tdn_t0 > 240:
+            tdn_fail.append(label + ': skipped (TDN time budget)')
+            continue
         try:
-            xml = get(requests, url)
+            xml = get(requests, url, timeout=20)
             for d, title, link, body in rss_items(xml):
                 if d < cutoff30:
                     continue
+                for h in tdn_charts(body, d, _RNORM, _norm):
+                    chart_hits.append(dict(h, link=link))
                 for nm in names:
                     if not sire_re(nm, ci=False).search(title + ' ' + body):
                         continue
@@ -189,7 +230,7 @@ def main():
         except Exception as e:
             tdn_fail.append(label + ': ' + str(e)[:60])
         time.sleep(1.5)
-    status['TDN'] = ('ok %d' % tdn_n) + ('; fail ' + ' | '.join(tdn_fail) if tdn_fail else '')
+    status['TDN'] = ('ok %d, %d graded wins' % (tdn_n, len(chart_hits))) + ('; fail ' + ' | '.join(tdn_fail) if tdn_fail else '')
     if len(tdn_fail) > len(_ROSTER):
         status['TDN'] = 'fail ' + ' | '.join(tdn_fail)[:200]
 
@@ -203,14 +244,23 @@ def main():
         k = (it.get('farm'), it.get('title'), tuple(it.get('sires', [])) if it.get('farm') == 'TDN' else ())
         if it.get('date', '') >= cutoff and k not in seen:
             seen.add(k); items.append(it)
+    # Graded winners from TDN charts: one row per winner+race (a day's recap and the race's own story
+    # print the same chart).
+    seen, ghits = set(), []
+    for h in sorted(chart_hits + prev.get('graded_hits', []), key=lambda x: (x.get('date', ''), x.get('grade', '')), reverse=True):
+        k = (_norm(h.get('winner')), h.get('race_name', '').lower(), h.get('date'))
+        if h.get('date', '') >= cutoff and k not in seen:
+            seen.add(k); ghits.append(h)
     try:
         from fetch_sire_lines import SIRES   # one roster, so the section renders even if the API build fails
     except Exception:
         SIRES = []
     json.dump({'for_date': t.isoformat(), 'built_utc': datetime.utcnow().isoformat() + 'Z', 'sources': status,
                'sires': [{'name': n, 'farm': f} for n, f in SIRES],
-               'items': items, 'pages': pages}, open(OUT, 'w'), ensure_ascii=False, indent=1)
-    print('FARM_OK items=%d %s' % (len(items), json.dumps(status)))
+               'items': items, 'pages': pages, 'graded_hits': ghits}, open(OUT, 'w'), ensure_ascii=False, indent=1)
+    print('FARM_OK items=%d graded_hits=%d %s' % (len(items), len(ghits), json.dumps(status)))
+    for h in ghits[:8]:
+        print('  [%s] %s by %s -- %s @ %s %s' % (h['grade'], h['winner'], h['sire'], h['race_name'], h['course'], h['date']))
     for it in items[:12]:
         print('  %s [%s] %s%s: %s' % (it['date'], it['farm'], '/'.join(it['sires']), ' G' if it['graded'] else '',
                                      it['title'][:90]))

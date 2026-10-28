@@ -116,7 +116,7 @@ Every digest MUST contain exactly these 6 sections in this exact order. No secti
 
 THE ONE SANCTIONED EXTRA (Oct 11 2026, Mike's request): a seasonal **🏅 BREEDERS' CUP WATCH** section between MY STABLE and STABLE UPDATES. The Step 7.5 generator builds it entirely from `/tmp/mirror_bc_points.json` (downloaded in Step 0.4) — it needs NO JSON from you, NO searches, NO tool calls. Do not add it, edit it, move it or remove it; if it is present, it is correct. It disappears by itself after the Breeders' Cup (Oct 31 2026).
 
-THE SECOND SANCTIONED EXTRA (Oct 27 2026, Mike's request): a permanent **🧬 SIRE LINES** section directly before SALES & INDUSTRY (after UPCOMING STAKES; moved there Oct 28 2026 at Mike's request). It lists G1/G2/G3 winners sired by the stallions Mike holds shares in through the Wasabi Ventures Stallions funds, share sales/listings for them (TDN), and farm + TDN news about them. The Step 7.5 generator builds it from `/tmp/mirror_sire_lines.json` (downloaded in Step 0.4) plus the optional `winner_sire` field in Step 5-DRF's results. It needs NO JSON from you and NO extra searches or tool calls. Do not add it, edit it, move it or remove it.
+THE SECOND SANCTIONED EXTRA (Oct 27 2026, Mike's request): a permanent **🧬 SIRE LINES** section directly before SALES & INDUSTRY (after UPCOMING STAKES; moved there Oct 28 2026 at Mike's request). It lists G1/G2/G3 winners sired by the stallions Mike holds shares in through the Wasabi Ventures Stallions funds, share sales/listings for them (TDN), and farm + TDN news about them. USA graded winners come from TDN's results charts (in farm_news.json `graded_hits`). The Step 7.5 generator builds it from `/tmp/mirror_sire_lines.json` (downloaded in Step 0.4) plus the optional `winner_sire` field in Step 5-DRF's results. It needs NO JSON from you and NO extra searches or tool calls. Do not add it, edit it, move it or remove it.
 
 **SECTION 1 — 🏇 MY STABLE** (3 subsections — ALL always present, use placeholder if empty, never omit)
 1. 📋 ENTRIES — NEXT 7 DAYS → upcoming races for MASTER TABLE horses (from Step 4c)
@@ -4165,6 +4165,12 @@ try:
         _cut = (_dt.today() - _td(days=7)).isoformat()
         _hits = [h for h in _sl.get('hits', []) if str(h.get('date', '')) >= _cut]
         _seen = {_sn(h.get('winner')) for h in _hits}
+        # USA graded winners parsed from TDN's results charts (fetch_farm_news.py) -- the Racing API has
+        # no USA races at all (measured Oct 28 2026).
+        for h in (_fn or {}).get('graded_hits', []):
+            if str(h.get('date', '')) >= _cut and _sn(h.get('winner')) not in _seen and _sn(h.get('sire')) in _roster:
+                _hits.append(h); _seen.add(_sn(h.get('winner')))
+        _hit_links = {h.get('link') for h in _hits if h.get('link')}
         # USA fallback: the Step 5-DRF subagent's winner_sire, only when it names a roster sire.
         try:
             _drf = json.load(open('/tmp/step_5drf_data.json'))
@@ -4184,13 +4190,16 @@ try:
             except Exception: _hds = str(h.get('date', ''))
             _t = ('<b>by ' + str(h.get('sire', '')).upper() + '</b> (' + str(h.get('farm', '')) + ') &nbsp;·&nbsp; WON '
                   + GI.get(str(h.get('grade', '')), str(h.get('grade', ''))) + '&nbsp;' + str(h.get('race_name', '')).replace('&', '&amp;')
-                  + ' &nbsp;·&nbsp; ' + str(h.get('course', '')) + ' (' + str(h.get('region', '')) + ') &nbsp;·&nbsp; ' + _hds)
+                  + ' &nbsp;·&nbsp; ' + str(h.get('course', '')) + (' (' + str(h.get('region')) + ')' if h.get('region') else '')
+                  + ' &nbsp;·&nbsp; ' + _hds
+                  + (' &nbsp;·&nbsp; <a href="' + str(h['link']).replace('"', '%22') + '">TDN report</a>'
+                     if str(h.get('link', '')).startswith('http') else ''))
             _sl_rows.append(row(h.get('winner'), 'Wasabi', _t, 1))
         # Farm news (fetch_farm_news.py): stallion-farm RSS posts and stallion-page changes that name a
         # roster sire. Graded-stakes headlines first, then newest.
         _fn_rows = []
         _fn_all = [x for x in (_fn or {}).get('items', []) if str(x.get('date', '')) >= _cut]
-        _fn_items = [x for x in _fn_all if x.get('kind') != 'share']
+        _fn_items = [x for x in _fn_all if x.get('kind') != 'share' and x.get('link') not in _hit_links]
         _fn_items.sort(key=lambda x: (bool(x.get('graded')), str(x.get('date', ''))), reverse=True)
         _sh_rows = []
         for x in sorted([x for x in _fn_all if x.get('kind') == 'share'], key=lambda x: str(x.get('date', '')), reverse=True)[:8]:

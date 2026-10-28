@@ -1,0 +1,82 @@
+{
+ "for_date": "2026-10-28",
+ "built_utc": "2026-10-28T06:52:03.368512Z",
+ "source": "theracingapi.com",
+ "window": [
+  "2026-10-25",
+  "2026-10-27"
+ ],
+ "sires": [
+  {
+   "name": "Charge It",
+   "farm": "Gainesway"
+  },
+  {
+   "name": "Prince of Monaco",
+   "farm": "Claiborne"
+  },
+  {
+   "name": "Army Mule",
+   "farm": "Hill 'n' Dale"
+  },
+  {
+   "name": "Casa Creed",
+   "farm": "Mill Ridge"
+  },
+  {
+   "name": "Blofeld",
+   "farm": "Murmur Farm"
+  },
+  {
+   "name": "Annapolis",
+   "farm": "Claiborne"
+  },
+  {
+   "name": "Dr. Schivel",
+   "farm": "Taylor Made"
+  },
+  {
+   "name": "Straight No Chaser",
+   "farm": "WinStar"
+  },
+  {
+   "name": "Mindframe",
+   "farm": "Claiborne"
+  },
+  {
+   "name": "Johannes",
+   "farm": "Claiborne"
+  },
+  {
+   "name": "Arzak",
+   "farm": "2 Amsterdam"
+  },
+  {
+   "name": "Arthur's Ride",
+   "farm": "Taylor Made"
+  },
+  {
+   "name": "Tappan Street",
+   "farm": "WinStar"
+  },
+  {
+   "name": "Honor A.P.",
+   "farm": "Lane's End"
+  },
+  {
+   "name": "Complexity",
+   "farm": "Airdrie Stud"
+  }
+ ],
+ "scanned": {
+  "races": 151,
+  "graded": 8,
+  "by_region": {
+   "GB": 77,
+   "FR": 40,
+   "IRE": 23,
+   "HK": 11
+  }
+ },
+ "hits": []
+}

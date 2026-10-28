@@ -1,33 +1,24 @@
 [
  {
-  "day_label": "YESTERDAY — Mon Oct 26",
+  "day_label": "YESTERDAY — Tue Oct 27",
+  "races": []
+ },
+ {
+  "day_label": "TODAY — Wed Oct 28",
   "races": [
    {
-    "grade": "G3",
-    "race_name": "Prix de Seine-et-Oise (Group 3)",
-    "date_short": "Mon\nOct 26",
-    "track": "Chantilly",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "5f212y · Turf"
-   },
-   {
     "grade": "LR",
-    "race_name": "Criterium De Vitesse",
-    "date_short": "Mon\nOct 26",
-    "track": "Chantilly",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "5½f · Turf"
+    "race_name": "Robin Hood Stakes (Listed Race) (Formerly Known As The Ben Marshall Stakes)",
+    "date_short": "Wed\nOct 28",
+    "track": "Nottingham",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m½f · Turf"
    }
   ]
  },
  {
-  "day_label": "TODAY — Tue Oct 27",
-  "races": []
- },
- {
-  "day_label": "TOMORROW — Next 7 days from Wed Oct 28",
+  "day_label": "TOMORROW — Next 7 days from Thu Oct 29",
   "races": [
    {
     "grade": "G3",
@@ -49,21 +40,39 @@
    },
    {
     "grade": "G3",
-    "race_name": "Loughbrown Stakes (Group 3)",
+    "race_name": "Horris Hill Stakes (Group 3)",
+    "date_short": "Sat\nOct 31",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "British Stallion Studs Ebf Montrose Fillies' Stakes (Listed Race)",
+    "date_short": "Sat\nOct 31",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "German Group One Racecourses James Seymour Stakes (Listed Race)",
+    "date_short": "Sat\nOct 31",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m2f · Turf"
+   },
+   {
+    "grade": "G3",
+    "race_name": "QuinnBet Loughbrown Stakes (Group 3)",
     "date_short": "Sun\nNov 1",
     "track": "Curragh",
     "country": "IRE",
     "flag": "🇮🇪",
     "dist_surface": "2m½f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Robin Hood Stakes (Listed Race) (Formerly Known As The Ben Marshall Stakes)",
-    "date_short": "Wed\nOct 28",
-    "track": "Nottingham",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m½f · Turf"
    }
   ]
  }

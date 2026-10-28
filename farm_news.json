@@ -1,0 +1,311 @@
+{
+ "for_date": "2026-10-28",
+ "built_utc": "2026-10-28T06:51:55.368889Z",
+ "sources": {
+  "Gainesway": "ok 0",
+  "Claiborne": "ok 6",
+  "Taylor Made": "ok 1",
+  "WinStar": "ok 2",
+  "Airdrie Stud": "ok 0",
+  "Lane's End": "ok 0",
+  "Hill 'n' Dale": "baseline 45 lines",
+  "Mill Ridge": "baseline 50 lines",
+  "Murmur Farm": "baseline 35 lines",
+  "TDN": "ok 4"
+ },
+ "sires": [
+  {
+   "name": "Charge It",
+   "farm": "Gainesway"
+  },
+  {
+   "name": "Prince of Monaco",
+   "farm": "Claiborne"
+  },
+  {
+   "name": "Army Mule",
+   "farm": "Hill 'n' Dale"
+  },
+  {
+   "name": "Casa Creed",
+   "farm": "Mill Ridge"
+  },
+  {
+   "name": "Blofeld",
+   "farm": "Murmur Farm"
+  },
+  {
+   "name": "Annapolis",
+   "farm": "Claiborne"
+  },
+  {
+   "name": "Dr. Schivel",
+   "farm": "Taylor Made"
+  },
+  {
+   "name": "Straight No Chaser",
+   "farm": "WinStar"
+  },
+  {
+   "name": "Mindframe",
+   "farm": "Claiborne"
+  },
+  {
+   "name": "Johannes",
+   "farm": "Claiborne"
+  },
+  {
+   "name": "Arzak",
+   "farm": "2 Amsterdam"
+  },
+  {
+   "name": "Arthur's Ride",
+   "farm": "Taylor Made"
+  },
+  {
+   "name": "Tappan Street",
+   "farm": "WinStar"
+  },
+  {
+   "name": "Honor A.P.",
+   "farm": "Lane's End"
+  },
+  {
+   "name": "Complexity",
+   "farm": "Airdrie Stud"
+  }
+ ],
+ "items": [
+  {
+   "date": "2026-10-25",
+   "farm": "TDN",
+   "sires": [
+    "Army Mule"
+   ],
+   "title": "Army Mule’s Ground Support Takes Division 1 of the Glen Cove",
+   "link": "https://www.thoroughbreddailynews.com/army-mules-ground-support-takes-division-1-of-the-glen-cove/",
+   "graded": false,
+   "kind": "news"
+  },
+  {
+   "date": "2026-10-16",
+   "farm": "Claiborne",
+   "sires": [
+    "Annapolis"
+   ],
+   "title": "Eight Yearlings for ANNAPOLIS at Fasig-Tipton October",
+   "link": "https://claibornefarm.com/eight-yearlings-for-annapolis-at-fasig-tipton-october/?utm_source=rss&utm_medium=rss&utm_campaign=eight-yearlings-for-annapolis-at-fasig-tipton-october",
+   "graded": false,
+   "kind": "feed"
+  },
+  {
+   "date": "2026-10-15",
+   "farm": "Taylor Made",
+   "sires": [
+    "Dr. Schivel",
+    "Arthur's Ride"
+   ],
+   "title": "Taylor Made Stallions announces 2027 stallion roster and fees",
+   "link": "https://www.taylormadestallions.com/taylor-made-stallions-announces-2027-stallion-roster-and-fees/",
+   "graded": false,
+   "kind": "feed"
+  },
+  {
+   "date": "2026-10-14",
+   "farm": "WinStar",
+   "sires": [
+    "Straight No Chaser",
+    "Tappan Street"
+   ],
+   "title": "WinStar Farm announces 2027 stallion roster and fees",
+   "link": "https://www.winstarfarm.com/winstar-farm-announces-2027-stallion-roster-and-fees/",
+   "graded": false,
+   "kind": "feed"
+  },
+  {
+   "date": "2026-10-14",
+   "farm": "TDN",
+   "sires": [
+    "Army Mule"
+   ],
+   "title": "Hill ‘n’ Dale (Army Mule) 10-15-26",
+   "link": "https://www.thoroughbreddailynews.com/interstitialad/hill-n-dale-army-mule-10-15-26/",
+   "graded": false,
+   "kind": "news"
+  },
+  {
+   "date": "2026-10-13",
+   "farm": "Claiborne",
+   "sires": [
+    "Prince of Monaco",
+    "Annapolis",
+    "Mindframe",
+    "Johannes"
+   ],
+   "title": "Claiborne Farm Announces Fees For 2027 Breeding Season",
+   "link": "https://claibornefarm.com/claiborne-farm-announces-fees-for-2027-breeding-season/?utm_source=rss&utm_medium=rss&utm_campaign=claiborne-farm-announces-fees-for-2027-breeding-season",
+   "graded": false,
+   "kind": "feed"
+  },
+  {
+   "date": "2026-10-13",
+   "farm": "TDN",
+   "sires": [
+    "Mindframe"
+   ],
+   "title": "At $40k, Mindframe Leads Claiborne Stud Fees in 2027",
+   "link": "https://www.thoroughbreddailynews.com/at-40k-mindframe-leads-claiborne-stud-fees-in-2027/",
+   "graded": false,
+   "kind": "news"
+  },
+  {
+   "date": "2026-10-11",
+   "farm": "TDN",
+   "sires": [
+    "Army Mule"
+   ],
+   "title": "Army Mule’s Lamirada Romps in Glorious Song",
+   "link": "https://www.thoroughbreddailynews.com/army-mules-lamirada-romps-in-glorious-song/",
+   "graded": false,
+   "kind": "news"
+  }
+ ],
+ "pages": {
+  "https://www.hillndalefarms.com/army-mule": [
+   "Army Mule — Hill 'n' Dale Farms",
+   "Maclean's Music",
+   "Nominate Your Mare",
+   "2027 Stud Fee: $25,000 LFSN",
+   "to Starters / Lifetime",
+   "Ranked #3 by % SWs to Starters",
+   "Among 5th crop sires among sires having 50 starters or more.",
+   "Danse Macabre ($1,095,878)",
+   "- 2nd $210,000 Eclipse Stakes (G2)",
+   "Soldier N Diplomat",
+   "- 2nd $1,000,000 Southwest Stakes (G3), 2nd $200,000 Hot Springs Stakes",
+   "Party in the Army",
+   "- 3rd $200,000 Mike Lee Stakes at Saratoga",
+   "- 2nd $125,000 Star Shoot Stakes at Woodbine",
+   "- 2nd Hoover Stakes",
+   "- 3rd Goldfinch Stakes",
+   "Two Year Olds sold for $750,000, $500,000, $350,000, etc.",
+   "21 Stakes Winners, 37 Stakes Horses from His First Five Crops",
+   "aria-label=\"Army Mule\"",
+   "Maiden Special Weight at Belmont (6.5f, by 8 1/2 lengths, defeating Zap Zap Zap, Thaddeus, River Deep, New Moon, Wage Acceleration, Peace Speaker, Polar City, etc.)",
+   "Carter Hcp. (G1)",
+   "at Aqueduct (7f, by 6 1/4 lengths, defeating Awesome Slew, Great Stuff, Skyler's Scramjet, Petrov, Favorable Outcome, Fellowship, Do Share, Red Dragon Tattoo, Spartiatis, Green Gratto, etc.),",
+   "Allowance Optional Claiming race at Gulfstream Park (6f, by 7 1/2 lengths, defeating Harryhee, Barry Karafin Bets, Malibu Action, Boot Legger, etc.)",
+   "Friesan Fire - Crafty Toast by Crafty Prospector",
+   "Catalogue Style Pedigree",
+   "\" data-provider-name=\"YouTube\">",
+   "Hillerito - 2025 Dream Supreme Stakes",
+   "Stanley House - 2025 Niagara Stakes",
+   "Pinky Finger - 2025 Kentucky Juvenile Stakes (G2)",
+   "Ground Support - 2025 Miss Grillo Stakes (G2)",
+   "Danse Macabre - 2022 $500,000 Ainsworth Untapable",
+   "Federal Judge - 2024 Stoll Keenon Ogden Phoenix Stakes (G2)",
+   "U.S Army - 2023 Jeffrey A. Hawk Memorial Stakes",
+   "Klassy Bridgette - 2023 Dixie Belle Stakes",
+   "One in Vermillion - 2023 Lazaro Barrera Stakes",
+   "Danse Macabre - 2023 The Glen Cove",
+   "A Little Frisky - 2023 Glorious Song Stakes",
+   "Broadway Girls - 2022 The Blue Norther Stakes",
+   "Army Mule’s Races",
+   "data-localized=\"{\"invalidVideo\":\"Invalid video embed.\",\"playButton\":\"Play\"}\"",
+   "data-config-loading=\"\"",
+   "Undefeated Army Mule winning his Maiden debut by 8 1/2 lengths at Belmont",
+   "Undefeated Army Mule winning his Stakes Debut in the Grade 1 Carter Hcp. by 6 1/4 lengths",
+   "Hill ‘n’ Dale Farms © 2026",
+   "Terms of Service"
+  ],
+  "https://www.millridge.com/casa-creed": [
+   "Casa Creed — Mill Ridge",
+   "Skip to Content",
+   "Accomplishments",
+   "Oscar Performance",
+   "Stallion History",
+   "Fasig Tipton October 2026",
+   "Mill Ridge Club",
+   "2027 Stud Fee: $7,500 LF",
+   "Four-Time Grade 1 Winner",
+   "$2,691,308 Earnings",
+   "“Never x-rayed in seven years.” - Bill Mott",
+   ") Triple Digit Beyer Speedfigures",
+   ") in Graded Stakes on turf including (",
+   ") Grade 1 races and earning nearly $2.7m.",
+   ") starts in Graded Stakes he was beaten more than (",
+   "“He was a fan favorite in Saratoga where they called him '",
+   "' for running (",
+   ") years in a row '20-'24 in the two-turn mile,",
+   "Fourstardave (G1)",
+   "winning twice in '22 & '23.",
+   "And at Belmont, he ran in the six-furlong sprint,",
+   "from '21-'24 and again won twice.”",
+   "Mill Ridge/Glen Hill Stallions",
+   "CASA CREED into a (",
+   ") share Syndicate with outstanding breeders, many of whom are in Oscar Performance & Aloha West syndicates, for",
+   "and will include (",
+   ") seasons a year for (",
+   ") years and will stand for",
+   ". We only syndicated 25 shares at this time.",
+   "And, you benefit from '",
+   "' incentive where the registered breeder qualifies for a 'free season' when/if that foal wins straight maiden race at 2 or 3yo, thus, '",
+   "rewarding you down the road",
+   "data-localized=\"{\"invalidVideo\":\"Invalid video embed.\",\"playButton\":\"Play\"}\"",
+   "data-config-loading=\"\"",
+   "2023 Grade 1 Fourstardave",
+   "2022 Grade 1 Fourstardave",
+   "2021 Grade 1 Jaipur",
+   "2023 Grade 3 Kelso",
+   "2022 Grade 1 Jaipur",
+   "2019 Grade 2 National Museum of Racing and Hall of Fame",
+   "TDN: ‘Brilliant from Two to Eight’, Mill Ridge Makes a Case for Casa Creed",
+   "“A turf horse launching his stud career at the age of nine might go against the stallion market grain in Kentucky, but Mill Ridge Farm has already shown a knack for bucking those trends and doing so successfully.”",
+   "Mill Ridge Farm",
+   "2800 Bowman Mill Road",
+   "Lexington, KY 40513",
+   "Fax: 859.255.6010",
+   "kim@millridge.com",
+   "Monday – Friday",
+   "8:00am – 4:00pm",
+   "Sign up with your email address to receive news and updates."
+  ],
+  "https://www.murmurfarm.com/Blofeld.html": [
+   "Quality Road - Storm Minstrel, by Storm Cat",
+   "Gray or Roan Horse, 2012; 16.1 Hands",
+   "2026 Fee - $5,000 Live",
+   "Payable when foal stands and nurses",
+   "$87,040 Average earnings per starter.",
+   "72% Average winner per starter.",
+   "17 Stakes Horses.",
+   "Stakes Winners include -",
+   "BEACH DAZE ($461,410)",
+   "BEAUTIFUL BLOME ($200,640)",
+   "MISS HARRIETT ($280,390)",
+   "CHARMING WAY ($326,511)",
+   "SILVER KISS ($219,140)",
+   "CHICKINESS ($266,255)",
+   "Stakes Placed Include - Crabs N Beer ($425,376), Mugatu ($201,868), and Majestic Blue",
+   "Undefeated as a 2 year old. In 3 starts, he broke his maiden in a Saratoga Maiden special weight and won the Grade 2",
+   "at Belmont Park.",
+   "placed in the $100,00",
+   "William Walker S.",
+   "at 3. He won the Grade 2",
+   "at 4 with a 103 Beyer.",
+   "won from distances of 5 furlongs to 1 mile, winning over $745,420.",
+   ", stakes winner of 8 races, $2,232,830,",
+   "Florida Derby-G1",
+   "Metropolitan H-G1",
+   "ABEL TASMAN, CALEDONIA ROAD, CITY OF LIGHT, SPRING QUALITY, HOOTENANNY",
+   "and multiple other Stakes winners.",
+   ", multiple stakes winner of $299,339. Second dam is multiple graded SW",
+   "COLONIAL MINSTEL",
+   "Property of a Syndicate",
+   "Stallion compatibility analysis available. Nominated to Breeders' Cup and Maryland Million.",
+   "Mrs. Audrey Murray",
+   "1334 Stafford Road",
+   "Darlington, Maryland 21034",
+   "(410) 836-3491, fax (410) 836-3489"
+  ]
+ }
+}

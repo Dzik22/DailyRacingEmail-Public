@@ -4157,7 +4157,7 @@ try:
         _days = (_bc_first - _dt.today()).days
         _pre = _dt.fromisoformat(_ev.get('pre_entry_deadline', '1900-01-01'))
         _intro = (str(_ev.get('venue', '')) + ' &nbsp;·&nbsp; ' + str(_ev.get('dates', ''))
-                  + (' &nbsp;·&nbsp; <b>' + str(_days) + ' days to go</b>' if _days > 0 else ' &nbsp;·&nbsp; <b>RACE DAY</b>' if _days == 0 else '')
+                  + (' &nbsp;·&nbsp; <b>' + str(_days) + (' day' if _days == 1 else ' days') + ' to go</b>' if _days > 0 else ' &nbsp;·&nbsp; <b>RACE DAY</b>' if _days == 0 else '')
                   + ('<br>Pre-entry deadline: <b>' + _pre.strftime('%a %b ') + str(_pre.day) + '</b>' if _pre >= _dt.today() else '')
                   + "<br>Fields max 14. 'Win and You're In' winners get automatic berths; the rest come from points and a selection panel."
                   + '<br>Standings as of ' + _md(_bc_for) + (' ⚠️ (latest available)' if (_dt.today() - _bc_for).days > 2 else ''))

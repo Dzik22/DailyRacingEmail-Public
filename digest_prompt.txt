@@ -305,6 +305,57 @@ for f in eu_build_status.json eu_upcoming_json.json eu_recap_json.json bc_points
        "${MIRROR}/${f}?cb=${CB}" -o "/tmp/mirror_${f}" 2>/dev/null || true
 done
 
+# ---- artifact freshness report (added Oct 29 2026) ----
+# The graded-staleness doctrine above re-buckets EU races by their own date, so a stale
+# eu_upcoming_json / eu_recap_json is survivable. It does NOT cover sire_lines.json and
+# farm_news.json: their content is "today's news", not date-bucketed, so a stale copy renders
+# YESTERDAY's news with no visible symptom anywhere downstream. On Oct 29 2026 a CDN-cached
+# farm_news.json was served a full day stale and would have silently dropped the brand-new
+# `graded_hits` key, losing the only USA graded winner in SIRE LINES. Re-fetch those two with
+# cache-defeating headers, then PRINT every artifact's for_date so the agent can see what it has.
+for f in sire_lines.json farm_news.json; do
+  curl -sSL --connect-timeout 15 --max-time 90 --retry 2 --retry-delay 3 \
+       -H 'Cache-Control: no-cache' -H 'Pragma: no-cache' \
+       "${MIRROR}/${f}?cb=${CB}-r2" -o "/tmp/mirror_${f}.r2" 2>/dev/null || true
+  if [ -s "/tmp/mirror_${f}.r2" ]; then mv "/tmp/mirror_${f}.r2" "/tmp/mirror_${f}"
+  else rm -f "/tmp/mirror_${f}.r2"; fi
+done
+
+TODAY_ISO="$(date -u +%Y-%m-%d)"
+python3 - "$TODAY_ISO" << 'FRESHEOF'
+import json, sys, os
+today = sys.argv[1]
+print('ARTIFACT FRESHNESS (today=' + today + '):')
+for n in ('eu_build_status','eu_upcoming_json','eu_recap_json','bc_points','sire_lines','farm_news'):
+    path = '/tmp/mirror_' + n + '.json'
+    if not os.path.exists(path) or os.path.getsize(path) == 0:
+        print('  %-18s MISSING' % n)
+        continue
+    try:
+        d = json.load(open(path))
+    except Exception as exc:
+        print('  %-18s UNPARSEABLE (%s)' % (n, exc))
+        continue
+    if not isinstance(d, dict):
+        # eu_upcoming_json.json is a bare JSON list - it carries no for_date of its own.
+        print('  %-18s %s of %d items (no for_date field - staleness judged by eu_build_status)'
+              % (n, type(d).__name__, len(d)))
+        continue
+    fd = d.get('for_date', '?')
+    tag = 'SAME-DAY' if fd == today else 'STALE by date'
+    extra = ''
+    if n == 'farm_news':
+        extra = ' | graded_hits=' + (str(len(d['graded_hits'])) if 'graded_hits' in d else 'KEY ABSENT')
+    print('  %-18s for_date=%s  %-14s%s' % (n, fd, tag, extra))
+print('')
+print('HOW TO READ THIS: a STALE eu_upcoming_json/eu_recap_json is EXPECTED and survivable -')
+print('races are re-bucketed by their own date. A STALE sire_lines/farm_news is NOT survivable')
+print('the same way: the SIRE LINES section would render yesterday news, and a missing')
+print('graded_hits key silently drops every USA graded winner. If either is stale, carry it')
+print('into the final report to Mike as a named gap.')
+print('NEVER hand-edit these files, and NEVER invent a for_date to make this report look clean.')
+FRESHEOF
+
 python3 << 'EU04EOF'
 import json, os, re
 from datetime import date, timedelta

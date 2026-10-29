@@ -22,11 +22,29 @@
   "races": [
    {
     "grade": "G3",
+    "race_name": "Prix Du Tremblay",
+    "date_short": "Fri\nOct 30",
+    "track": "Lyon Parilly",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "G3",
     "race_name": "St Simon Stakes (Group 3)",
     "date_short": "Fri\nOct 30",
     "track": "Newmarket",
     "country": "GB",
     "flag": "🇬🇧",
+    "dist_surface": "1m4f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Prix Du Grand Camp",
+    "date_short": "Fri\nOct 30",
+    "track": "Lyon Parilly",
+    "country": "FR",
+    "flag": "🇫🇷",
     "dist_surface": "1m4f · Turf"
    },
    {

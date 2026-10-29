@@ -1,6 +1,6 @@
 {
- "for_date": "2026-10-28",
- "built_utc": "2026-10-28T13:59:17.623980Z",
+ "for_date": "2026-10-29",
+ "built_utc": "2026-10-29T07:02:21.126869Z",
  "sources": {
   "Gainesway": "ok 0",
   "Claiborne": "ok 6",
@@ -11,7 +11,7 @@
   "Hill 'n' Dale": "ok 0 new",
   "Mill Ridge": "ok 0 new",
   "Murmur Farm": "ok 0 new",
-  "TDN": "ok 4"
+  "TDN": "ok 4, 1 graded wins"
  },
  "sires": [
   {
@@ -307,5 +307,19 @@
    "Darlington, Maryland 21034",
    "(410) 836-3491, fax (410) 836-3489"
   ]
- }
+ },
+ "graded_hits": [
+  {
+   "date": "2026-10-25",
+   "sire": "Army Mule",
+   "farm": "Hill 'n' Dale",
+   "winner": "Ground Support",
+   "grade": "G3",
+   "race_name": "Glen Cove S.",
+   "course": "Belmont",
+   "region": "",
+   "source": "TDN",
+   "link": "https://www.thoroughbreddailynews.com/army-mules-ground-support-takes-division-1-of-the-glen-cove/"
+  }
+ ]
 }

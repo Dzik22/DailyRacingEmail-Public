@@ -1,24 +1,10 @@
 [
  {
-  "day_label": "YESTERDAY — Wed Oct 28",
-  "races": [
-   {
-    "grade": "LR",
-    "race_name": "Robin Hood Stakes (Listed Race) (Formerly Known As The Ben Marshall Stakes)",
-    "date_short": "Wed\nOct 28",
-    "track": "Nottingham",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m½f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Thu Oct 29",
+  "day_label": "YESTERDAY — Thu Oct 29",
   "races": []
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Fri Oct 30",
+  "day_label": "TODAY — Fri Oct 30",
   "races": [
    {
     "grade": "G3",
@@ -55,7 +41,12 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "6f · Turf"
-   },
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Sat Oct 31",
+  "races": [
    {
     "grade": "G3",
     "race_name": "Horris Hill Stakes (Group 3)",

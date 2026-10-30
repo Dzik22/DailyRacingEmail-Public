@@ -58,6 +58,24 @@
    },
    {
     "grade": "LR",
+    "race_name": "Prix Zeddaan",
+    "date_short": "Sat\nOct 31",
+    "track": "Deauville",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "7f · AW"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Prix Irish River",
+    "date_short": "Sat\nOct 31",
+    "track": "Deauville",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "7f · AW"
+   },
+   {
+    "grade": "LR",
     "race_name": "British Stallion Studs Ebf Montrose Fillies' Stakes (Listed Race)",
     "date_short": "Sat\nOct 31",
     "track": "Newmarket",

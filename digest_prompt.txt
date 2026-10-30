@@ -2958,6 +2958,18 @@ VALID_SENDERS = {
     'dan@finalfurlongracingstable.com', 'vince@finalfurlongracingstable.com', 'finalfurlongracingstable.com',
     'rainbowsendracingstable@gmail.com',
     'liam.middlehamparkracing@gmail.com',
+    # Oct 30 2026: the whitelist was narrower than this prompt's own documented sender list, and two
+    # genuine sources failed the source-citation gate on a correct digest.
+    # 'middlehamparkracing' is a SUBSTRING entry (the check is `vs in sender`) and so covers the
+    # mike./tom./liam. gmail variants and the .net domain together -- the Step 4e sender list names
+    # "tom., mike. and liam.middlehamparkracing@gmail.com", but only liam. was ever whitelisted, so a
+    # real MPR update from mike. read as fabricated.
+    'middlehamparkracing',
+    # Timeform is the documented fallback result source for every British and Irish runner -- this
+    # prompt says to search it because Middleham Park do not reliably send a post-race note, and it
+    # supplied Capricious Star's Redcar result on Oct 16 and Celestial Siren's Punchestown win on
+    # Oct 29. It was never on the whitelist, so citing it was treated as having no valid source.
+    'info@timeform.com', 'timeform.com',
     'prb@bradleythoroughbreds.com', 'bradleythoroughbreds.com', 'theracingmanager.com',
     'michaeljdzik@gmail.com',  # self-forwarded notes (declared, etc.)
     'woodford', 'woodfordracing.ccsend.com', 'benhaggin', 'rtp',  # substring matches for Woodford/RTP senders
@@ -3101,9 +3113,19 @@ if _os6.path.exists('/tmp/step_5drf_data.json'):
             print('  stakes_recap.usa cross-check: all ' + str(len(_drf_results)) + ' subagent races present')
         # Cross-check USA entries in upcoming[] — every upcoming entry should appear somewhere in agent's upcoming days
         agent_upcoming_usa = set()
+        # NORTH AMERICAN, NOT US-ONLY (fixed Oct 30 2026). The source for this check is the Equibase
+        # "Thoroughbred NORTH AMERICAN Stakes Race Notification", which carries Woodbine alongside the
+        # US tracks, so step_5drf_data.json legitimately holds country='CAN' rows. This set was built
+        # from country=='USA' only while the loop below demands that EVERY _drf_upcoming entry appear
+        # in it -- so a Canadian graded race could never satisfy the gate no matter what the digest
+        # contained. Measured Oct 30 2026: the notification added the G3 Mazarine S. and the G3 bet365
+        # Grey S. at Woodbine for Nov 1, both were correctly in the digest with country='CAN', and the
+        # gate still aborted claiming they were missing. Same family as the eu_sdl_json.json gate that
+        # could not be cleared in CCR: a gate nobody can satisfy honestly teaches the next run to
+        # bypass it. Canada is in scope for UPCOMING STAKES, so compare like with like.
         for day in d.get('upcoming', []):
             for r in day.get('races', []):
-                if r.get('country','') == 'USA':
+                if str(r.get('country','')).upper() in ('USA', 'CAN'):
                     agent_upcoming_usa.add((str(r.get('race_name','')).lower().strip(), str(r.get('grade','')).upper()))
         missing_up = []
         for su in _drf_upcoming:
@@ -3223,7 +3245,14 @@ eu_json = '/tmp/eu_upcoming_json.json'
 if _os2.path.exists(eu_json):
     eu_days = _j2.load(open(eu_json))
     total_eu = sum(len(d2.get('races',[])) for d2 in eu_days)
-    agent_eu = sum(1 for day in d.get('upcoming',[]) for r in day.get('races',[]) if r.get('country','') not in ('USA',''))
+    # Oct 30 2026: count TRUE EU countries, matching the generator's own _EU_CTRY. This used to be
+    # `not in ('USA','')`, which counted CANADA as Europe: the Equibase North American notification
+    # carries Woodbine, so a Woodbine G3 made this line report "Agent wrote 2 EU races" when none had
+    # been written. The generator was never at risk -- its usa_races filter uses _EU_CTRY, which has
+    # no CAN -- but the message sends a later run hunting for hand-written EU rows that do not exist,
+    # and this prompt forbids writing them, so a false positive here is actively misleading.
+    _EU_CTRY_CHK = ('GB','IRE','FR','GER','ITA','BEL','SWE','SPA','DEN','NOR','HOL','AUT')
+    agent_eu = sum(1 for day in d.get('upcoming',[]) for r in day.get('races',[]) if str(r.get('country','')).upper() in _EU_CTRY_CHK)
     print('  eu_upcoming_json: ' + str(total_eu) + ' EU races from API')
     if total_eu > 0 and agent_eu == 0:
         print('  ⚠️ Agent wrote ZERO EU races in upcoming JSON — generator auto-merge in Step 7.5 WILL inject all ' + str(total_eu) + ' EU races. PROCEED.')

@@ -1,10 +1,10 @@
 {
  "for_date": "2026-10-31",
- "built_utc": "2026-10-31T10:53:19.883696Z",
+ "built_utc": "2026-10-31T13:36:58.859696Z",
  "sources": {
   "Gainesway": "ok 1",
   "Claiborne": "ok 6",
-  "Taylor Made": "fail HTTP 500",
+  "Taylor Made": "ok 1",
   "WinStar": "ok 2",
   "Airdrie Stud": "ok 0",
   "Lane's End": "ok 0",

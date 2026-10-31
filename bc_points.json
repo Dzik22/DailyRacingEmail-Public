@@ -1,6 +1,6 @@
 {
  "for_date": "2026-10-31",
- "built_utc": "2026-10-31T09:31:39.978982Z",
+ "built_utc": "2026-10-31T10:51:33.889806Z",
  "source": "https://members.breederscup.com/Points/PointsLeaderboard",
  "event": {
   "name": "Breeders' Cup World Championships",
@@ -136,7 +136,7 @@
      ],
      "board_pos": 4,
      "points": 0,
-     "points_rank": 14,
+     "points_rank": 15,
      "points_tied": true
     },
     {
@@ -172,7 +172,7 @@
      ],
      "board_pos": 5,
      "points": 0,
-     "points_rank": 14,
+     "points_rank": 15,
      "points_tied": true
     },
     {
@@ -370,32 +370,6 @@
      "points_tied": true
     },
     {
-     "name": "How's Al Today",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "Gold Square LLC",
-     "trainer": "Riley Mott",
-     "races": [
-      {
-       "bcc": false,
-       "date": "8/1/2026",
-       "track": "Sar",
-       "race": "Saratoga Special S.",
-       "grade": "G2",
-       "division": "Juvenile",
-       "pos": "3",
-       "points": 2
-      }
-     ],
-     "board_pos": 13,
-     "points": 0,
-     "points_rank": 14,
-     "points_tied": true
-    },
-    {
      "name": "Maxify",
      "country": "",
      "out": false,
@@ -416,7 +390,7 @@
        "points": 2
       }
      ],
-     "board_pos": 14,
+     "board_pos": 13,
      "points": 2,
      "points_rank": 11,
      "points_tied": true
@@ -442,7 +416,7 @@
        "points": 2
       }
      ],
-     "board_pos": 15,
+     "board_pos": 14,
      "points": 2,
      "points_rank": 11,
      "points_tied": true
@@ -476,6 +450,32 @@
        "division": "Juvenile",
        "pos": "4",
        "points": 0
+      }
+     ],
+     "board_pos": 15,
+     "points": 2,
+     "points_rank": 11,
+     "points_tied": true
+    },
+    {
+     "name": "Shadow Nation",
+     "country": "IRE",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "Slugo Racing, Tiger Racing, Inc., Craig Warren",
+     "trainer": "Mike Puype",
+     "races": [
+      {
+       "bcc": false,
+       "date": "9/5/2026",
+       "track": "Dmr",
+       "race": "Del Mar Juvenile Turf",
+       "grade": "G3",
+       "division": "Juvenile Turf",
+       "pos": "2",
+       "points": 2
       }
      ],
      "board_pos": 16,
@@ -4418,6 +4418,58 @@
      "points_tied": true
     },
     {
+     "name": "Mel Went Home",
+     "country": "",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "August Dawn Farm",
+     "trainer": "Robert Medina",
+     "races": [
+      {
+       "bcc": true,
+       "date": "10/2/2026",
+       "track": "Kee",
+       "race": "Jessamine Presented by Keeneland Sales",
+       "grade": "G2",
+       "division": "Juvenile Fillies Turf",
+       "pos": "3",
+       "points": 2
+      }
+     ],
+     "board_pos": 12,
+     "points": 2,
+     "points_rank": 9,
+     "points_tied": true
+    },
+    {
+     "name": "Big Blast",
+     "country": "",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "George Krikorian",
+     "trainer": "Tim Yakteen",
+     "races": [
+      {
+       "bcc": false,
+       "date": "10/4/2026",
+       "track": "SA",
+       "race": "Surfer Girl Stakes",
+       "grade": "G3",
+       "division": "Juvenile Fillies Turf",
+       "pos": "3",
+       "points": 1
+      }
+     ],
+     "board_pos": 13,
+     "points": 1,
+     "points_rank": 11,
+     "points_tied": true
+    },
+    {
      "name": "Luminous Beauty",
      "country": "",
      "out": false,
@@ -4446,58 +4498,6 @@
        "division": "Juvenile Fillies",
        "pos": "2",
        "points": 2
-      }
-     ],
-     "board_pos": 12,
-     "points": 1,
-     "points_rank": 11,
-     "points_tied": true
-    },
-    {
-     "name": "Mel Went Home",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "August Dawn Farm",
-     "trainer": "Robert Medina",
-     "races": [
-      {
-       "bcc": true,
-       "date": "10/2/2026",
-       "track": "Kee",
-       "race": "Jessamine Presented by Keeneland Sales",
-       "grade": "G2",
-       "division": "Juvenile Fillies Turf",
-       "pos": "3",
-       "points": 2
-      }
-     ],
-     "board_pos": 13,
-     "points": 2,
-     "points_rank": 9,
-     "points_tied": true
-    },
-    {
-     "name": "Big Blast",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "George Krikorian",
-     "trainer": "Tim Yakteen",
-     "races": [
-      {
-       "bcc": false,
-       "date": "10/4/2026",
-       "track": "SA",
-       "race": "Surfer Girl Stakes",
-       "grade": "G3",
-       "division": "Juvenile Fillies Turf",
-       "pos": "3",
-       "points": 1
       }
      ],
      "board_pos": 14,
@@ -4786,6 +4786,42 @@
      "points_tied": false
     },
     {
+     "name": "Harper's Corner",
+     "country": "",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "Charles L. Biggs",
+     "trainer": "Cathal A. Lynch",
+     "races": [
+      {
+       "bcc": false,
+       "date": "10/3/2026",
+       "track": "Bel",
+       "race": "Matron Stakes",
+       "grade": "G3",
+       "division": "Juvenile Fillies Turf",
+       "pos": "2",
+       "points": 2
+      },
+      {
+       "bcc": true,
+       "date": "9/5/2026",
+       "track": "Sar",
+       "race": "Spinaway",
+       "grade": "G1",
+       "division": "Juvenile Fillies",
+       "pos": "2",
+       "points": 6
+      }
+     ],
+     "board_pos": 8,
+     "points": 6,
+     "points_rank": 7,
+     "points_tied": true
+    },
+    {
      "name": "Rum Twist",
      "country": "",
      "out": false,
@@ -4806,7 +4842,7 @@
        "points": 6
       }
      ],
-     "board_pos": 8,
+     "board_pos": 9,
      "points": 6,
      "points_rank": 7,
      "points_tied": true
@@ -4832,9 +4868,9 @@
        "points": 4
       }
      ],
-     "board_pos": 9,
+     "board_pos": 10,
      "points": 4,
-     "points_rank": 9,
+     "points_rank": 10,
      "points_tied": true
     },
     {
@@ -4858,9 +4894,9 @@
        "points": 4
       }
      ],
-     "board_pos": 10,
+     "board_pos": 11,
      "points": 4,
-     "points_rank": 9,
+     "points_rank": 10,
      "points_tied": true
     },
     {
@@ -4884,9 +4920,9 @@
        "points": 4
       }
      ],
-     "board_pos": 11,
+     "board_pos": 12,
      "points": 4,
-     "points_rank": 9,
+     "points_rank": 10,
      "points_tied": true
     },
     {
@@ -4910,9 +4946,9 @@
        "points": 4
       }
      ],
-     "board_pos": 12,
+     "board_pos": 13,
      "points": 4,
-     "points_rank": 9,
+     "points_rank": 10,
      "points_tied": true
     },
     {
@@ -4946,9 +4982,9 @@
        "points": 4
       }
      ],
-     "board_pos": 13,
+     "board_pos": 14,
      "points": 4,
-     "points_rank": 9,
+     "points_rank": 10,
      "points_tied": true
     },
     {
@@ -4982,9 +5018,9 @@
        "points": 1
       }
      ],
-     "board_pos": 14,
+     "board_pos": 15,
      "points": 3,
-     "points_rank": 14,
+     "points_rank": 15,
      "points_tied": false
     },
     {
@@ -5018,35 +5054,9 @@
        "points": 0
       }
      ],
-     "board_pos": 15,
+     "board_pos": 16,
      "points": 0,
      "points_rank": 16,
-     "points_tied": false
-    },
-    {
-     "name": "Quattro Passi",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "Debbie Lanni",
-     "trainer": "Bob Baffert",
-     "races": [
-      {
-       "bcc": true,
-       "date": "10/3/2026",
-       "track": "SA",
-       "race": "Oak Leaf Stakes Presented by Oak Tree Racing Association",
-       "grade": "G2",
-       "division": "Juvenile Fillies",
-       "pos": "3",
-       "points": 2
-      }
-     ],
-     "board_pos": 16,
-     "points": 2,
-     "points_rank": 15,
      "points_tied": false
     }
    ]
@@ -5104,7 +5114,7 @@
      ],
      "board_pos": 2,
      "points": 0,
-     "points_rank": 9,
+     "points_rank": 8,
      "points_tied": true
     },
     {
@@ -5140,7 +5150,7 @@
      ],
      "board_pos": 3,
      "points": 0,
-     "points_rank": 9,
+     "points_rank": 8,
      "points_tied": true
     },
     {
@@ -5304,78 +5314,6 @@
      "points_tied": true
     },
     {
-     "name": "Ruiva",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "Three Chimneys Farm LLC",
-     "trainer": "Wesley A. Ward",
-     "races": [
-      {
-       "bcc": false,
-       "date": "10/4/2026",
-       "track": "Kee",
-       "race": "Indian Summer S.",
-       "grade": "G3",
-       "division": "Juvenile Turf Sprint",
-       "pos": "4",
-       "points": 0
-      },
-      {
-       "bcc": false,
-       "date": "8/9/2026",
-       "track": "Dmr",
-       "race": "Sorrento S.",
-       "grade": "G3",
-       "division": "Juvenile Fillies",
-       "pos": "2",
-       "points": 2
-      }
-     ],
-     "board_pos": 9,
-     "points": 0,
-     "points_rank": 9,
-     "points_tied": true
-    },
-    {
-     "name": "Luminous Beauty",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "HorseOlogy, LLC, Fredrick Rosen , Steve Dervenis , Cliff Racing",
-     "trainer": "Jena M. Antonucci",
-     "races": [
-      {
-       "bcc": true,
-       "date": "10/3/2026",
-       "track": "Bel",
-       "race": "Futurity",
-       "grade": "G3",
-       "division": "Juvenile Turf Sprint",
-       "pos": "3",
-       "points": 1
-      },
-      {
-       "bcc": false,
-       "date": "8/2/2026",
-       "track": "Sar",
-       "race": "Adirondack S.",
-       "grade": "G3",
-       "division": "Juvenile Fillies",
-       "pos": "2",
-       "points": 2
-      }
-     ],
-     "board_pos": 10,
-     "points": 1,
-     "points_rank": 7,
-     "points_tied": true
-    },
-    {
      "name": "Wood Island",
      "country": "",
      "out": false,
@@ -5396,10 +5334,10 @@
        "points": 1
       }
      ],
-     "board_pos": 11,
+     "board_pos": 9,
      "points": 1,
      "points_rank": 7,
-     "points_tied": true
+     "points_tied": false
     },
     {
      "name": "Moonrise",
@@ -5422,9 +5360,9 @@
        "points": 0
       }
      ],
-     "board_pos": 12,
+     "board_pos": 10,
      "points": 0,
-     "points_rank": 9,
+     "points_rank": 8,
      "points_tied": true
     }
    ]

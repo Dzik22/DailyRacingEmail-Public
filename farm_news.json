@@ -1,10 +1,10 @@
 {
- "for_date": "2026-10-30",
- "built_utc": "2026-10-30T14:02:19.453107Z",
+ "for_date": "2026-10-31",
+ "built_utc": "2026-10-31T06:58:46.651437Z",
  "sources": {
-  "Gainesway": "ok 0",
+  "Gainesway": "ok 1",
   "Claiborne": "ok 6",
-  "Taylor Made": "ok 1",
+  "Taylor Made": "fail HTTP 500",
   "WinStar": "ok 2",
   "Airdrie Stud": "ok 0",
   "Lane's End": "ok 0",
@@ -76,6 +76,28 @@
   }
  ],
  "items": [
+  {
+   "date": "2026-10-30",
+   "farm": "Gainesway",
+   "sires": [
+    "Charge It"
+   ],
+   "title": "CHARGE IT Weanlings Make Debut at Fasig Tipton November",
+   "link": "https://gainesway.com/charge-it-weanlings-make-debut-at-fasig-tipton-november/",
+   "graded": false,
+   "kind": "feed"
+  },
+  {
+   "date": "2026-10-30",
+   "farm": "Claiborne",
+   "sires": [
+    "Prince of Monaco"
+   ],
+   "title": "Sale-Leading Six Weanlings On Offer for PRINCE OF MONACO at Fasig-Tipton November",
+   "link": "https://claibornefarm.com/sale-leading-six-weanlings-on-offer-for-prince-of-monaco-at-fasig-tipton-november/?utm_source=rss&utm_medium=rss&utm_campaign=sale-leading-six-weanlings-on-offer-for-prince-of-monaco-at-fasig-tipton-november",
+   "graded": false,
+   "kind": "feed"
+  },
   {
    "date": "2026-10-25",
    "farm": "TDN",

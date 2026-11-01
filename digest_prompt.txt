@@ -1967,7 +1967,18 @@ Your ONLY job is to find Master Table horse mentions in syndicate emails from th
 MASTER_TABLE = [{{ACTIVE_BARN_LIST}}]
 
 EXECUTE THESE SEARCHES IN ORDER:
-1. mcp__Gmail__search_threads({"query": "from:(aron@eclipsetbpartners.com OR barry@teamvalor.com OR emily@teamvalor.com OR hello@joincommonwealth.com OR woodford OR benhaggin@woodfordracing.ccsend.com OR woodfordracing.ccsend.com OR jamie@middlehamparkracing.net OR middlehamparkoffice@gmail.com OR \"Tom Palin\" OR tk@wasabistables.com OR stallions@wasabistables.com OR dan@finalfurlongracingstable.com OR vince@finalfurlongracingstable.com OR rainbowsendracingstable@gmail.com OR liam.middlehamparkracing@gmail.com OR bradleythoroughbreds.com OR noreply@theracingmanager.com) newer_than:7d in:inbox"})
+1. mcp__Gmail__search_threads({"query": "from:(aron@eclipsetbpartners.com OR barry@teamvalor.com OR emily@teamvalor.com OR hello@joincommonwealth.com OR woodford OR benhaggin@woodfordracing.ccsend.com OR woodfordracing.ccsend.com OR jamie@middlehamparkracing.net OR middlehamparkoffice@gmail.com OR \"Tom Palin\" OR tk@wasabistables.com OR stallions@wasabistables.com OR dan@finalfurlongracingstable.com OR vince@finalfurlongracingstable.com OR rainbowsendracingstable@gmail.com OR liam.middlehamparkracing@gmail.com OR bradleythoroughbreds.com OR shared1.ccsend.com OR josh@rtpsyndicate.co.uk OR rtpsyndicate.co.uk OR mike.middlehamparkracing@gmail.com OR tom.middlehamparkracing@gmail.com OR noreply@theracingmanager.com) newer_than:7d in:inbox"})
+   ⚠️ TWO OF THOSE ARE THERE BECAUSE A REAL MAIL WAS MISSED BY THIS QUERY (Nov 1 2026).
+   `shared1.ccsend.com` is Constant Contact's shared relay, and Bradley Thoroughbreds mail arrives
+   from `prb-bradleythoroughbreds.com@shared1.ccsend.com` -- note the DOT before the @. No query for
+   prb@ / sarah@ / Devon@bradleythoroughbreds.com can ever match that address, so the "BT November
+   2026 Newsletter" was invisible to every sweep until it was found by accident in an unrelated
+   search. (It passes VALID_SENDERS by luck, because the substring entry `bradleythoroughbreds.com`
+   happens to appear inside the relay address -- so the gate would have accepted a citation the
+   search could never produce.)
+   `josh@rtpsyndicate.co.uk` is RTP's real sending address and is NOT an rtpracing address, which is
+   exactly how Phantom Princess updates were being missed; it was named in the Step 4e prose for days
+   while this query, the thing that actually runs, never asked for it.
 2. mcp__Gmail__search_threads({"query": "from:(middlehamparkoffice@gmail.com OR liam.middlehamparkracing@gmail.com) newer_than:14d in:anywhere"})
    ⚠️ liam.middlehamparkracing@gmail.com (Liam Spiby, MPR admin) sends the "MPR Update - <horse>" owner
    updates, BCC'd to Mike. Added Oct 19 2026 — it carries the St Mark's Basilica colt's updates.
@@ -2175,6 +2186,29 @@ EXECUTE THESE STEPS IN ORDER:
      Charge It", "a son of Mindframe", "Sire: Army Mule"). Otherwise null. Never guess, never run
      an extra search for it. (Oct 27 2026: feeds the SIRE LINES section as the USA fallback.)
    If the search returns no clear winner, set winner="?" and dist_surface="?".
+
+   ⚠️⚠️ **A SNIPPET-SOURCED WINNER NEEDS A SECOND INDEPENDENT OUTLET BEFORE IT GOES IN. THIS IS NOT
+   OPTIONAL, AND IT IS HERE BECAUSE TWO OF TEN WINNERS CAME BACK WRONG ON Nov 1 2026 — IN THE SAME
+   DIRECTION, ON THE BIGGEST CARD OF THE YEAR.** Both errors presented a BEATEN HORSE AS THE WINNER:
+   the Breeders' Cup Mile came back as Notable Speech when Deterministic won and Notable Speech was
+   second, and the Dirt Mile came back as Owen Almighty when Further Ado won it by a nose after a
+   photo review and Owen Almighty was second. Neither was caught by the "check the YEAR on the
+   snippet" rule, because both pages really were about the 2026 race.
+   The mechanism, and it will recur: a near-misser or a beaten favourite gets written up as the
+   winner. The Mile case shows exactly how — Notable Speech was the GENUINE 2025 winner of that race,
+   so the bad page framed him as "defending his 2025 title", a title defence that never happened.
+   A beaten favourite and a defending champion are the two shapes most likely to be mis-reported, so
+   a photo finish, a short margin, or a hot favourite in the field all RAISE the burden of proof
+   rather than lowering it.
+   SO: for every winner taken from a WebSearch snippet rather than from an email in the inbox, name
+   TWO independent outlets that agree, and put both in `source_quote`. If only one outlet can be
+   found, say so in `source_quote` explicitly — do not quietly ship a single-sourced winner. Where an
+   email in Mike's inbox (TDN's daily edition, a Paulick news alert, an Equibase Result Notification)
+   states the winner, that email OUTRANKS any number of search snippets: it is a dated primary
+   document. On Nov 1 the TDN edition had the Mile right while the search snippets had it wrong.
+   AND CHECK THE RUNNER-UP, NOT JUST THE WINNER. Both errors would have been caught instantly by
+   noticing that the "winner" was named as second elsewhere. A cheap, high-yield check: confirm the
+   winner is not named as the runner-up in any other source you have.
 
 5. Extract Section B — *Stakes Entries* (upcoming):
    Format:
@@ -3035,10 +3069,20 @@ _ev_loaded_files = []
 if _os5.path.exists('/tmp/step_4e_evidence.json'):
     try:
         _ev4e = json.load(open('/tmp/step_4e_evidence.json'))
-        for _e in _ev4e.get('evidence', []):
+        # SHAPE TOLERANCE (added Nov 1 2026). The documented schema is {"evidence": [...]}, but the
+        # Step 4e subagent legitimately returns a BARE LIST of rows some days -- it did on Nov 1 2026,
+        # with 23 correct rows carrying every horse/sender/subject/quote the gate needs. Against a
+        # list, `.get('evidence')` raises `'list' object has no attribute 'get'`, the lookup table is
+        # left EMPTY, and the cross-check then reports every single stable_updates row as an invented
+        # source -- i.e. a perfectly good digest aborts with five false fabrication accusations. The
+        # envelope is not evidence of anything; the rows are. Accept either shape.
+        _ev4e_rows = _ev4e.get('evidence', []) if isinstance(_ev4e, dict) else (_ev4e if isinstance(_ev4e, list) else [])
+        if isinstance(_ev4e, list):
+            print('  step_4e_evidence.json: bare-list shape accepted (' + str(len(_ev4e_rows)) + ' rows) -- documented schema is {"evidence": [...]}')
+        for _e in _ev4e_rows:
             _key = (str(_e.get('horse','')).lower().strip(), str(_e.get('sender','')).lower().strip(), str(_e.get('subject','')).lower().strip())
             _evidence_lookup[_key] = str(_e.get('quote',''))
-        _ev_loaded_files.append('step_4e_evidence.json (' + str(len(_ev4e.get('evidence',[]))) + ' entries)')
+        _ev_loaded_files.append('step_4e_evidence.json (' + str(len(_ev4e_rows)) + ' entries)')
     except Exception as _ex4e:
         print('  step_4e_evidence.json read error: ' + str(_ex4e))
 # Load Team Valor PDFs as valid evidence sources too

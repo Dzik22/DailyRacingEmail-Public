@@ -1,47 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Fri Oct 30",
-  "races": [
-   {
-    "grade": "G3",
-    "race_name": "Prix Du Tremblay",
-    "date_short": "Fri\nOct 30",
-    "track": "Lyon Parilly",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "G3",
-    "race_name": "St Simon Stakes (Group 3)",
-    "date_short": "Fri\nOct 30",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Prix Du Grand Camp",
-    "date_short": "Fri\nOct 30",
-    "track": "Lyon Parilly",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m4f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Irish Stallion Farms Ebf 'bosra Sham' Fillies' Stakes (Listed Race)",
-    "date_short": "Fri\nOct 30",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Sat Oct 31",
+  "day_label": "YESTERDAY — Sat Oct 31",
   "races": [
    {
     "grade": "G3",
@@ -54,15 +13,6 @@
    },
    {
     "grade": "LR",
-    "race_name": "Prix Zeddaan",
-    "date_short": "Sat\nOct 31",
-    "track": "Deauville",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "7f · AW"
-   },
-   {
-    "grade": "LR",
     "race_name": "Prix Irish River",
     "date_short": "Sat\nOct 31",
     "track": "Deauville",
@@ -72,12 +22,12 @@
    },
    {
     "grade": "LR",
-    "race_name": "British Stallion Studs Ebf Montrose Fillies' Stakes (Listed Race)",
+    "race_name": "Prix Zeddaan",
     "date_short": "Sat\nOct 31",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m · Turf"
+    "track": "Deauville",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "7f · AW"
    },
    {
     "grade": "LR",
@@ -87,11 +37,20 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m2f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "British Stallion Studs Ebf Montrose Fillies' Stakes (Listed Race)",
+    "date_short": "Sat\nOct 31",
+    "track": "Newmarket",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m · Turf"
    }
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Sun Nov 1",
+  "day_label": "TODAY — Sun Nov 1",
   "races": [
    {
     "grade": "G3",
@@ -112,5 +71,9 @@
     "dist_surface": "1m4f · Turf"
    }
   ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Mon Nov 2",
+  "races": []
  }
 ]

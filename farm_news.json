@@ -1,9 +1,9 @@
 {
- "for_date": "2026-10-31",
- "built_utc": "2026-10-31T13:36:58.859696Z",
+ "for_date": "2026-11-01",
+ "built_utc": "2026-11-01T07:31:13.800014Z",
  "sources": {
-  "Gainesway": "ok 1",
-  "Claiborne": "ok 6",
+  "Gainesway": "ok 0",
+  "Claiborne": "ok 7",
   "Taylor Made": "ok 1",
   "WinStar": "ok 2",
   "Airdrie Stud": "ok 0",
@@ -77,13 +77,13 @@
  ],
  "items": [
   {
-   "date": "2026-10-30",
-   "farm": "Gainesway",
+   "date": "2026-10-31",
+   "farm": "Claiborne",
    "sires": [
-    "Charge It"
+    "Prince of Monaco"
    ],
-   "title": "CHARGE IT Weanlings Make Debut at Fasig Tipton November",
-   "link": "https://gainesway.com/charge-it-weanlings-make-debut-at-fasig-tipton-november/",
+   "title": "Thirteen Weanlings Kick off Keeneland November for PRINCE OF MONACO",
+   "link": "https://claibornefarm.com/thirteen-weanlings-kick-off-keeneland-november-for-prince-of-monaco/?utm_source=rss&utm_medium=rss&utm_campaign=thirteen-weanlings-kick-off-keeneland-november-for-prince-of-monaco",
    "graded": false,
    "kind": "feed"
   },
@@ -95,6 +95,17 @@
    ],
    "title": "Sale-Leading Six Weanlings On Offer for PRINCE OF MONACO at Fasig-Tipton November",
    "link": "https://claibornefarm.com/sale-leading-six-weanlings-on-offer-for-prince-of-monaco-at-fasig-tipton-november/?utm_source=rss&utm_medium=rss&utm_campaign=sale-leading-six-weanlings-on-offer-for-prince-of-monaco-at-fasig-tipton-november",
+   "graded": false,
+   "kind": "feed"
+  },
+  {
+   "date": "2026-10-30",
+   "farm": "Gainesway",
+   "sires": [
+    "Charge It"
+   ],
+   "title": "CHARGE IT Weanlings Make Debut at Fasig Tipton November",
+   "link": "https://gainesway.com/charge-it-weanlings-make-debut-at-fasig-tipton-november/",
    "graded": false,
    "kind": "feed"
   },
@@ -246,7 +257,7 @@
    "Accomplishments",
    "Oscar Performance",
    "Stallion History",
-   "Fasig Tipton October 2026",
+   "Fasig November 2026",
    "Mill Ridge Club",
    "2027 Stud Fee: $7,500 LF",
    "Four-Time Grade 1 Winner",

@@ -953,6 +953,20 @@ Three columns: horse name (with optional country suffix in parentheses), age/sex
   syndicate. Never invent a prospect that is not in that table.
 - If a horse shows "claimed", "sold", "retired" → NOT active, exclude
 - If a horse is in the MASTER TABLE but NOT in ACTIVE_BARN → claimed/sold/retired → stop tracking it immediately
+  ⚠️⚠️ **THIS RULE PRESUMES A SUCCESSFUL FULL READ OF THE TAB, AND IN CCR THE READ USUALLY IS NOT ONE.**
+  `read_file_content` on this spreadsheet returns a SAMPLE — measured Oct 26, Nov 1 and Nov 2 2026 it returned
+  about EIGHT of the tab's 288 rows, under a heading that literally says "Table Sample Data". A horse's absence
+  from a sample is NOT evidence that it left the barn, and applying the stop-tracking rule to a sampled read
+  would silently drop a live horse from the digest.
+  AND THE SAMPLE WINDOW MOVES, WHICH LOOKS EXACTLY LIKE A DELETION. On Nov 1 the eight sampled rows included
+  Simply Joking and ended at Coco G; on Nov 2 Simply Joking was gone from the window and Sierra Sagrada had
+  appeared at the end — precisely the shape you would see if her row had been deleted and everything below it
+  shifted up by one. It is equally consistent with the sampler simply choosing a different window, and nothing
+  in the response distinguishes the two.
+  SO: when the read returns a sample, say so in the Step 2 gate file, fall back to the MASTER TABLE, and KEEP
+  TRACKING every MASTER TABLE horse. If a horse disappears from the sample window, report it to Mike in chat as
+  an UNCONFIRMED SIGNAL worth his checking — never as a finding, and never by quietly dropping the horse. Only a
+  read that demonstrably returns the whole tab may trigger the stop-tracking rule.
 - If a horse IS in ACTIVE_BARN but NOT in the MASTER TABLE → new addition → use the syndicate name from the spreadsheet (normalised per the rules above) in the JSON `syndicate` field. The generator SILK dict is keyed by syndicate name, so any horse in a known syndicate (Eclipse, Team Valor, Commonwealth, Woodford, Middleham Park, Wasabi, Final Furlong, RTP Racing, Rainbows End, Bradley Thoroughbreds) will automatically get the correct badge colors
 
 ### UNNAMED PROSPECTS (2025 yearlings — no registered name yet)
@@ -1336,6 +1350,25 @@ Horse Workout Notification
 All 7 fields are ALWAYS present after the horse name block. Read the ENTIRE plaintextBody. Do not stop early. Time formats: `38:84 Breezing`, `:38.84 Breezing`, `1:01.00 Handily` — all valid. Add horse to WORKOUT_FOUND immediately on name found. HARD PROHIBITION: NEVER output "unavailable", "N/A", "blocked", or reference "web sources" for WORKOUT_FOUND horses.
 
 Match against MASTER TABLE (case-insensitive). Store complete record. Data is FINAL.
+
+⚠️⚠️ **WHEN THE SYNDICATE AND EQUIBASE DISAGREE ON A WORKOUT'S SURFACE OR TIME — A CONFLICT CLASS THAT HAD NO RULE UNTIL Nov 2 2026.**
+The existing rule says Equibase's workout RANK outranks anyone's DESCRIPTION, and the Oct 14 example is a
+"bullet" that Equibase ranked 2/5. That rule is about an adjective losing to a number. It does NOT cover the
+case measured on Nov 2 2026, where the two sources gave different NUMBERS and different SURFACES for the same
+move: Equibase's Workout Notification had Random Recall at Belmont Park, Four Furlongs, Time 50:50, Surface
+**Dirt**, Rank 1/2, while Final Furlong's own mail said she "breezed an easy half mile in **50.2** seconds this
+morning over the Belmont **tapeta** track" and went on to contrast the two surfaces explicitly — "she handles
+the tapeta much better than the dirt". The distance agreed; the time and the surface did not. Belmont has both
+a dirt main track and a Tapeta course, so neither claim is absurd and this is a genuine unresolved disagreement
+rather than one side being careless.
+WHAT TO DO, and do NOT silently pick a side: print Equibase's figures for the measurable fields, because it is
+the official workout record — but **OMIT the surface from the works row when the two sources disagree about it**,
+rather than asserting Equibase's value as though it were uncontested. Then quote the syndicate's note verbatim in
+STABLE UPDATES and state the disagreement in that update in one sentence, naming both values. That way every
+claim in the digest is backed by a source, the reader sees the discrepancy instead of a false certainty, and the
+works row never contradicts the stable update two sections below it. Carry the conflict into the chat report too.
+A syndicate talking to the trainer may well be right about the surface; the point is that the digest must not
+pretend to know which.
 Build WORKOUT_FOUND list.
 
 ⚠️ REQUIRED OUTPUT TOKEN — write this line verbatim right now (fill in ACTUAL values from your search_threads response):

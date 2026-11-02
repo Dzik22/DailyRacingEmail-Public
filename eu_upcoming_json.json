@@ -38,6 +38,34 @@
  },
  {
   "day_label": "TOMORROW — Next 7 days from Tue Nov 3",
-  "races": []
+  "races": [
+   {
+    "grade": "LR",
+    "race_name": "Irish Stallion Farms Ebf Cooley Fillies Stakes (listed)",
+    "date_short": "Fri\nNov 6",
+    "track": "Dundalk (AW)",
+    "country": "IRE",
+    "flag": "🇮🇪",
+    "dist_surface": "1m · AW"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Virgin Bet Every Saturday Money Back Wentworth Stakes (Listed)",
+    "date_short": "Sat\nNov 7",
+    "track": "Doncaster",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Virgin Bet Daily Price Boosts Irish EBF Gillies Fillies' Stakes (Fillies' And Mares' Listed)",
+    "date_short": "Sat\nNov 7",
+    "track": "Doncaster",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m2f · Turf"
+   }
+  ]
  }
 ]

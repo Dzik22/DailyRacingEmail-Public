@@ -1,6 +1,6 @@
 {
  "for_date": "2026-11-02",
- "built_utc": "2026-11-02T13:23:45.907514Z",
+ "built_utc": "2026-11-02T16:58:58.911785Z",
  "source": "https://members.breederscup.com/Points/PointsLeaderboard",
  "event": {
   "name": "Breeders' Cup World Championships",
@@ -546,52 +546,6 @@
      "points_tied": false
     },
     {
-     "name": "T Kraft",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": true,
-     "nomination": "",
-     "owner": "LRE Racing LLC",
-     "trainer": "William I. Mott",
-     "races": [
-      {
-       "bcc": true,
-       "date": "10/1/2026",
-       "track": "Bel",
-       "race": "Vosburgh",
-       "grade": "G3",
-       "division": "Sprint",
-       "pos": "1",
-       "points": 4
-      },
-      {
-       "bcc": true,
-       "date": "8/29/2026",
-       "track": "Sar",
-       "race": "Forego",
-       "grade": "G1",
-       "division": "Dirt Mile",
-       "pos": "2",
-       "points": 6
-      },
-      {
-       "bcc": false,
-       "date": "7/25/2026",
-       "track": "Sar",
-       "race": "Alfred G. Vanderbilt H.",
-       "grade": "G2",
-       "division": "Sprint",
-       "pos": "4",
-       "points": 0
-      }
-     ],
-     "board_pos": 2,
-     "points": 10,
-     "points_rank": 5,
-     "points_tied": true
-    },
-    {
      "name": "Nakatomi",
      "country": "",
      "out": false,
@@ -622,7 +576,7 @@
        "points": 0
       }
      ],
-     "board_pos": 3,
+     "board_pos": 2,
      "points": 6,
      "points_rank": 14,
      "points_tied": false
@@ -648,7 +602,7 @@
        "points": 0
       }
      ],
-     "board_pos": 4,
+     "board_pos": 3,
      "points": 0,
      "points_rank": 15,
      "points_tied": true
@@ -704,7 +658,7 @@
        "points": 0
       }
      ],
-     "board_pos": 5,
+     "board_pos": 4,
      "points": 0,
      "points_rank": 15,
      "points_tied": true
@@ -750,45 +704,9 @@
        "points": 4
       }
      ],
-     "board_pos": 6,
+     "board_pos": 5,
      "points": 24,
      "points_rank": 1,
-     "points_tied": false
-    },
-    {
-     "name": "Hymn",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "Fleur De Lis Stables, William S. Sparks , Bret Jones",
-     "trainer": "Ron Moquett",
-     "races": [
-      {
-       "bcc": true,
-       "date": "8/29/2026",
-       "track": "Sar",
-       "race": "Forego",
-       "grade": "G1",
-       "division": "Dirt Mile",
-       "pos": "1",
-       "points": 10
-      },
-      {
-       "bcc": false,
-       "date": "7/25/2026",
-       "track": "Sar",
-       "race": "Alfred G. Vanderbilt H.",
-       "grade": "G2",
-       "division": "Sprint",
-       "pos": "2",
-       "points": 4
-      }
-     ],
-     "board_pos": 7,
-     "points": 14,
-     "points_rank": 3,
      "points_tied": false
     },
     {
@@ -822,9 +740,9 @@
        "points": 6
       }
      ],
-     "board_pos": 8,
+     "board_pos": 6,
      "points": 12,
-     "points_rank": 4,
+     "points_rank": 3,
      "points_tied": false
     },
     {
@@ -888,9 +806,9 @@
        "points": 4
       }
      ],
-     "board_pos": 9,
+     "board_pos": 7,
      "points": 10,
-     "points_rank": 5,
+     "points_rank": 4,
      "points_tied": true
     },
     {
@@ -934,9 +852,9 @@
        "points": 4
       }
      ],
-     "board_pos": 10,
+     "board_pos": 8,
      "points": 10,
-     "points_rank": 5,
+     "points_rank": 4,
      "points_tied": true
     },
     {
@@ -970,9 +888,9 @@
        "points": 6
       }
      ],
-     "board_pos": 11,
+     "board_pos": 9,
      "points": 10,
-     "points_rank": 5,
+     "points_rank": 4,
      "points_tied": true
     },
     {
@@ -1006,9 +924,9 @@
        "points": 6
       }
      ],
-     "board_pos": 12,
+     "board_pos": 10,
      "points": 10,
-     "points_rank": 5,
+     "points_rank": 4,
      "points_tied": true
     },
     {
@@ -1032,9 +950,9 @@
        "points": 10
       }
      ],
-     "board_pos": 13,
+     "board_pos": 11,
      "points": 10,
-     "points_rank": 5,
+     "points_rank": 4,
      "points_tied": true
     },
     {
@@ -1068,45 +986,9 @@
        "points": 4
       }
      ],
-     "board_pos": 14,
+     "board_pos": 12,
      "points": 8,
-     "points_rank": 11,
-     "points_tied": true
-    },
-    {
-     "name": "Built",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "Eclipse Thoroughbred Partners",
-     "trainer": "Wayne M. Catalano",
-     "races": [
-      {
-       "bcc": false,
-       "date": "7/25/2026",
-       "track": "Sar",
-       "race": "Alfred G. Vanderbilt H.",
-       "grade": "G2",
-       "division": "Sprint",
-       "pos": "1",
-       "points": 6
-      },
-      {
-       "bcc": false,
-       "date": "6/27/2026",
-       "track": "CD",
-       "race": "Bango S.",
-       "grade": "G3",
-       "division": "Sprint",
-       "pos": "2",
-       "points": 2
-      }
-     ],
-     "board_pos": 15,
-     "points": 8,
-     "points_rank": 11,
+     "points_rank": 9,
      "points_tied": true
     },
     {
@@ -1172,23 +1054,99 @@
        "points": 2
       }
      ],
-     "board_pos": 16,
+     "board_pos": 13,
      "points": 8,
-     "points_rank": 11,
+     "points_rank": 9,
      "points_tied": true
-    }
-   ]
-  },
-  {
-   "name": "Dirt Mile",
-   "surface": "dirt",
-   "horses": [
+    },
+    {
+     "name": "Dr. Kapur",
+     "country": "",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "Kenneth L. Ramsey",
+     "trainer": "Saffie Joseph Jr.",
+     "races": [
+      {
+       "bcc": false,
+       "date": "10/17/2026",
+       "track": "Kee",
+       "race": "Perryville",
+       "grade": "G3",
+       "division": "Sprint",
+       "pos": "1",
+       "points": 4
+      },
+      {
+       "bcc": false,
+       "date": "9/19/2026",
+       "track": "Prx",
+       "race": "Gallant Bob S.",
+       "grade": "G2",
+       "division": "Sprint",
+       "pos": "2",
+       "points": 4
+      }
+     ],
+     "board_pos": 14,
+     "points": 8,
+     "points_rank": 9,
+     "points_tied": true
+    },
+    {
+     "name": "Getaway Car",
+     "country": "",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "SF Racing LLC, Starlight Racing, Madaket Stables LLC, Stonestreet Stables, LLC, Dianne Bashor , Determined Stables, Robert E. Masterson , Tom Ryan , Waves Edge Capital LLC, Catherine Donovan",
+     "trainer": "Bob Baffert",
+     "races": [
+      {
+       "bcc": false,
+       "date": "3/29/2026",
+       "track": "SA",
+       "race": "San Carlos S.",
+       "grade": "G3",
+       "division": "Sprint",
+       "pos": "6",
+       "points": 0
+      },
+      {
+       "bcc": false,
+       "date": "3/7/2026",
+       "track": "SA",
+       "race": "Santa Anita H.",
+       "grade": "G1",
+       "division": "Classic",
+       "pos": "3",
+       "points": 4
+      },
+      {
+       "bcc": false,
+       "date": "1/31/2026",
+       "track": "SA",
+       "race": "San Pasqual S.",
+       "grade": "G2",
+       "division": "Classic",
+       "pos": "2",
+       "points": 4
+      }
+     ],
+     "board_pos": 15,
+     "points": 8,
+     "points_rank": 9,
+     "points_tied": true
+    },
     {
      "name": "Iron Man Cal",
      "country": "",
      "out": false,
      "notes": [],
-     "challenge_winner": true,
+     "challenge_winner": false,
      "nomination": "",
      "owner": "Little Red Feather Racing, Madaket Stables LLC",
      "trainer": "Philip D'Amato",
@@ -1214,10 +1172,52 @@
        "points": 2
       }
      ],
-     "board_pos": 1,
+     "board_pos": 16,
      "points": 8,
-     "points_rank": 5,
+     "points_rank": 9,
      "points_tied": true
+    }
+   ]
+  },
+  {
+   "name": "Dirt Mile",
+   "surface": "dirt",
+   "horses": [
+    {
+     "name": "Hymn",
+     "country": "",
+     "out": false,
+     "notes": [],
+     "challenge_winner": true,
+     "nomination": "",
+     "owner": "Fleur De Lis Stables, William S. Sparks , Bret Jones",
+     "trainer": "Ron Moquett",
+     "races": [
+      {
+       "bcc": true,
+       "date": "8/29/2026",
+       "track": "Sar",
+       "race": "Forego",
+       "grade": "G1",
+       "division": "Dirt Mile",
+       "pos": "1",
+       "points": 10
+      },
+      {
+       "bcc": false,
+       "date": "7/25/2026",
+       "track": "Sar",
+       "race": "Alfred G. Vanderbilt H.",
+       "grade": "G2",
+       "division": "Sprint",
+       "pos": "2",
+       "points": 4
+      }
+     ],
+     "board_pos": 1,
+     "points": 14,
+     "points_rank": 2,
+     "points_tied": false
     },
     {
      "name": "Commandment",
@@ -1350,7 +1350,7 @@
      ],
      "board_pos": 3,
      "points": 12,
-     "points_rank": 2,
+     "points_rank": 3,
      "points_tied": false
     },
     {
@@ -1386,7 +1386,7 @@
      ],
      "board_pos": 4,
      "points": 10,
-     "points_rank": 3,
+     "points_rank": 4,
      "points_tied": true
     },
     {
@@ -1452,7 +1452,89 @@
      ],
      "board_pos": 5,
      "points": 10,
-     "points_rank": 3,
+     "points_rank": 4,
+     "points_tied": true
+    },
+    {
+     "name": "T Kraft",
+     "country": "",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "LRE Racing LLC",
+     "trainer": "William I. Mott",
+     "races": [
+      {
+       "bcc": true,
+       "date": "10/1/2026",
+       "track": "Bel",
+       "race": "Vosburgh",
+       "grade": "G3",
+       "division": "Sprint",
+       "pos": "1",
+       "points": 4
+      },
+      {
+       "bcc": true,
+       "date": "8/29/2026",
+       "track": "Sar",
+       "race": "Forego",
+       "grade": "G1",
+       "division": "Dirt Mile",
+       "pos": "2",
+       "points": 6
+      },
+      {
+       "bcc": false,
+       "date": "7/25/2026",
+       "track": "Sar",
+       "race": "Alfred G. Vanderbilt H.",
+       "grade": "G2",
+       "division": "Sprint",
+       "pos": "4",
+       "points": 0
+      }
+     ],
+     "board_pos": 6,
+     "points": 10,
+     "points_rank": 4,
+     "points_tied": true
+    },
+    {
+     "name": "Built",
+     "country": "",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "Eclipse Thoroughbred Partners",
+     "trainer": "Wayne M. Catalano",
+     "races": [
+      {
+       "bcc": false,
+       "date": "7/25/2026",
+       "track": "Sar",
+       "race": "Alfred G. Vanderbilt H.",
+       "grade": "G2",
+       "division": "Sprint",
+       "pos": "1",
+       "points": 6
+      },
+      {
+       "bcc": false,
+       "date": "6/27/2026",
+       "track": "CD",
+       "race": "Bango S.",
+       "grade": "G3",
+       "division": "Sprint",
+       "pos": "2",
+       "points": 2
+      }
+     ],
+     "board_pos": 7,
+     "points": 8,
+     "points_rank": 7,
      "points_tied": true
     },
     {
@@ -1496,9 +1578,65 @@
        "points": 4
       }
      ],
-     "board_pos": 6,
+     "board_pos": 8,
      "points": 8,
-     "points_rank": 5,
+     "points_rank": 7,
+     "points_tied": true
+    },
+    {
+     "name": "Moonlight",
+     "country": "",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "Tom Kagele",
+     "trainer": "Peter Miller",
+     "races": [
+      {
+       "bcc": true,
+       "date": "10/1/2026",
+       "track": "Bel",
+       "race": "Vosburgh",
+       "grade": "G3",
+       "division": "Sprint",
+       "pos": "7",
+       "points": 0
+      },
+      {
+       "bcc": true,
+       "date": "8/29/2026",
+       "track": "Dmr",
+       "race": "Pat O'Brien Stakes",
+       "grade": "G2",
+       "division": "Dirt Mile",
+       "pos": "2",
+       "points": 4
+      },
+      {
+       "bcc": true,
+       "date": "7/25/2026",
+       "track": "Dmr",
+       "race": "Bing Crosby Stakes",
+       "grade": "G1",
+       "division": "Sprint",
+       "pos": "3",
+       "points": 4
+      },
+      {
+       "bcc": false,
+       "date": "6/28/2026",
+       "track": "CD",
+       "race": "Hanshin S.",
+       "grade": "G3",
+       "division": "Dirt Mile",
+       "pos": "7",
+       "points": 0
+      }
+     ],
+     "board_pos": 9,
+     "points": 8,
+     "points_rank": 7,
      "points_tied": true
     },
     {
@@ -1522,9 +1660,9 @@
        "points": 6
       }
      ],
-     "board_pos": 7,
+     "board_pos": 10,
      "points": 6,
-     "points_rank": 7,
+     "points_rank": 10,
      "points_tied": true
     },
     {
@@ -1558,9 +1696,9 @@
        "points": 2
       }
      ],
-     "board_pos": 8,
+     "board_pos": 11,
      "points": 6,
-     "points_rank": 7,
+     "points_rank": 10,
      "points_tied": true
     },
     {
@@ -1586,9 +1724,9 @@
        "points": 6
       }
      ],
-     "board_pos": 9,
+     "board_pos": 12,
      "points": 6,
-     "points_rank": 7,
+     "points_rank": 10,
      "points_tied": true
     },
     {
@@ -1612,9 +1750,9 @@
        "points": 6
       }
      ],
-     "board_pos": 10,
+     "board_pos": 13,
      "points": 6,
-     "points_rank": 7,
+     "points_rank": 10,
      "points_tied": true
     },
     {
@@ -1678,9 +1816,9 @@
        "points": 2
       }
      ],
-     "board_pos": 11,
+     "board_pos": 14,
      "points": 6,
-     "points_rank": 7,
+     "points_rank": 10,
      "points_tied": true
     },
     {
@@ -1706,9 +1844,9 @@
        "points": 6
       }
      ],
-     "board_pos": 12,
+     "board_pos": 15,
      "points": 6,
-     "points_rank": 7,
+     "points_rank": 10,
      "points_tied": true
     },
     {
@@ -1752,148 +1890,10 @@
        "points": 6
       }
      ],
-     "board_pos": 13,
-     "points": 6,
-     "points_rank": 7,
-     "points_tied": true
-    },
-    {
-     "name": "Vodka Vodka",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "Baker Stables, LLC, McLean Racing Stables, William Gorman , Aggie Ordonez , Anthony Parsons , Rachel Parsons , Delbert G. Williams",
-     "trainer": "Aggie Ordonez",
-     "races": [
-      {
-       "bcc": true,
-       "date": "9/26/2026",
-       "track": "SA",
-       "race": "Goodwood Stakes",
-       "grade": "G1",
-       "division": "Classic",
-       "pos": "8",
-       "points": 0
-      },
-      {
-       "bcc": true,
-       "date": "8/29/2026",
-       "track": "Dmr",
-       "race": "Pat O'Brien Stakes",
-       "grade": "G2",
-       "division": "Dirt Mile",
-       "pos": "7",
-       "points": 0
-      },
-      {
-       "bcc": false,
-       "date": "3/7/2026",
-       "track": "SA",
-       "race": "Santa Anita H.",
-       "grade": "G1",
-       "division": "Classic",
-       "pos": "2",
-       "points": 6
-      }
-     ],
-     "board_pos": 14,
-     "points": 6,
-     "points_rank": 7,
-     "points_tied": true
-    },
-    {
-     "name": "Taptastic",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "Winchell Thoroughbreds LLC, Stonestreet Stables, LLC",
-     "trainer": "Steven M. Asmussen",
-     "races": [
-      {
-       "bcc": false,
-       "date": "6/7/2026",
-       "track": "CD",
-       "race": "Matt Winn S.",
-       "grade": "G3",
-       "division": "Dirt Mile",
-       "pos": "3",
-       "points": 1
-      },
-      {
-       "bcc": false,
-       "date": "3/28/2026",
-       "track": "OP",
-       "race": "Arkansas Derby",
-       "grade": "G1",
-       "division": "Classic",
-       "pos": "3",
-       "points": 4
-      }
-     ],
-     "board_pos": 15,
-     "points": 5,
-     "points_rank": 15,
-     "points_tied": false
-    },
-    {
-     "name": "Bartholdy",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "David A. Bernsen",
-     "trainer": "Jose Francisco D'Angelo",
-     "races": [
-      {
-       "bcc": true,
-       "date": "8/29/2026",
-       "track": "Dmr",
-       "race": "Pat O'Brien Stakes",
-       "grade": "G2",
-       "division": "Dirt Mile",
-       "pos": "10",
-       "points": 0
-      },
-      {
-       "bcc": false,
-       "date": "5/31/2026",
-       "track": "SA",
-       "race": "Triple Bend S.",
-       "grade": "G3",
-       "division": "Dirt Mile",
-       "pos": "3",
-       "points": 1
-      },
-      {
-       "bcc": false,
-       "date": "3/29/2026",
-       "track": "SA",
-       "race": "San Carlos S.",
-       "grade": "G3",
-       "division": "Sprint",
-       "pos": "3",
-       "points": 1
-      },
-      {
-       "bcc": false,
-       "date": "1/31/2026",
-       "track": "SA",
-       "race": "San Pasqual S.",
-       "grade": "G2",
-       "division": "Classic",
-       "pos": "3",
-       "points": 2
-      }
-     ],
      "board_pos": 16,
-     "points": 4,
-     "points_rank": 16,
-     "points_tied": false
+     "points": 6,
+     "points_rank": 10,
+     "points_tied": true
     }
    ]
   },
@@ -6594,7 +6594,7 @@
      ],
      "board_pos": 4,
      "points": 15,
-     "points_rank": 10,
+     "points_rank": 11,
      "points_tied": false
     },
     {
@@ -6957,6 +6957,82 @@
      "points_tied": true
     },
     {
+     "name": "Bless the Broken",
+     "country": "",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "Qatar Racing LLC, Mountmellick Farm, Hunter Valley Farm",
+     "trainer": "Brad Cox",
+     "races": [
+      {
+       "bcc": false,
+       "date": "10/2/2026",
+       "track": "Kee",
+       "race": "First Lady Stakes",
+       "grade": "G1",
+       "division": "Filly & Mare Turf",
+       "pos": "3",
+       "points": 4
+      },
+      {
+       "bcc": false,
+       "date": "9/5/2026",
+       "track": "KD",
+       "race": "The Ladies Turf",
+       "grade": "G2",
+       "division": "Filly & Mare Turf",
+       "pos": "1",
+       "points": 6
+      },
+      {
+       "bcc": false,
+       "date": "7/24/2026",
+       "track": "Sar",
+       "race": "Shuvee",
+       "grade": "G2",
+       "division": "Distaff",
+       "pos": "4",
+       "points": 0
+      },
+      {
+       "bcc": true,
+       "date": "6/5/2026",
+       "track": "Sar",
+       "race": "Ogden Phipps Presented by Ford",
+       "grade": "G1",
+       "division": "Distaff",
+       "pos": "2",
+       "points": 6
+      },
+      {
+       "bcc": false,
+       "date": "5/1/2026",
+       "track": "CD",
+       "race": "La Troienne S.",
+       "grade": "G1",
+       "division": "Distaff",
+       "pos": "3",
+       "points": 4
+      },
+      {
+       "bcc": false,
+       "date": "3/7/2026",
+       "track": "SA",
+       "race": "Beholder Mile S.",
+       "grade": "G1",
+       "division": "Distaff",
+       "pos": "2",
+       "points": 6
+      }
+     ],
+     "board_pos": 11,
+     "points": 16,
+     "points_rank": 8,
+     "points_tied": true
+    },
+    {
      "name": "Meaning",
      "country": "",
      "out": false,
@@ -6997,7 +7073,7 @@
        "points": 6
       }
      ],
-     "board_pos": 11,
+     "board_pos": 12,
      "points": 16,
      "points_rank": 8,
      "points_tied": true
@@ -7073,7 +7149,7 @@
        "points": 4
       }
      ],
-     "board_pos": 12,
+     "board_pos": 13,
      "points": 16,
      "points_rank": 8,
      "points_tied": true
@@ -7119,9 +7195,9 @@
        "points": 4
       }
      ],
-     "board_pos": 13,
+     "board_pos": 14,
      "points": 14,
-     "points_rank": 11,
+     "points_rank": 12,
      "points_tied": false
     },
     {
@@ -7155,9 +7231,9 @@
        "points": 2
       }
      ],
-     "board_pos": 14,
+     "board_pos": 15,
      "points": 12,
-     "points_rank": 12,
+     "points_rank": 13,
      "points_tied": true
     },
     {
@@ -7221,57 +7297,9 @@
        "points": 4
       }
      ],
-     "board_pos": 15,
-     "points": 12,
-     "points_rank": 12,
-     "points_tied": true
-    },
-    {
-     "name": "Shred the Gnar",
-     "country": "",
-     "out": false,
-     "notes": [
-      "layoff"
-     ],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "Flying Dutchmen",
-     "trainer": "Brian A. Lynch",
-     "races": [
-      {
-       "bcc": true,
-       "date": "6/27/2026",
-       "track": "CD",
-       "race": "Fasig-Tipton Fleur de Lis",
-       "grade": "G2",
-       "division": "Distaff",
-       "pos": "3",
-       "points": 2
-      },
-      {
-       "bcc": false,
-       "date": "5/1/2026",
-       "track": "CD",
-       "race": "La Troienne S.",
-       "grade": "G1",
-       "division": "Distaff",
-       "pos": "1",
-       "points": 10
-      },
-      {
-       "bcc": false,
-       "date": "2/14/2026",
-       "track": "GP",
-       "race": "Royal Delta S.",
-       "grade": "G3",
-       "division": "Distaff",
-       "pos": "6",
-       "points": 0
-      }
-     ],
      "board_pos": 16,
      "points": 12,
-     "points_rank": 12,
+     "points_rank": 13,
      "points_tied": true
     }
    ]
@@ -8223,6 +8251,32 @@
      "points_tied": true
     },
     {
+     "name": "Blue Bolt",
+     "country": "IRE",
+     "out": false,
+     "notes": [],
+     "challenge_winner": true,
+     "nomination": "",
+     "owner": "Juddmonte",
+     "trainer": "Andrew Balding",
+     "races": [
+      {
+       "bcc": true,
+       "date": "9/12/2026",
+       "track": "LEO",
+       "race": "Coolmore America 'Justify' Matron Stakes",
+       "grade": "G1",
+       "division": "Filly & Mare Turf",
+       "pos": "1",
+       "points": 0
+      }
+     ],
+     "board_pos": 4,
+     "points": 0,
+     "points_rank": 13,
+     "points_tied": true
+    },
+    {
      "name": "Embroidery",
      "country": "JPN",
      "out": false,
@@ -8243,9 +8297,9 @@
        "points": 0
       }
      ],
-     "board_pos": 4,
+     "board_pos": 5,
      "points": 0,
-     "points_rank": 14,
+     "points_rank": 13,
      "points_tied": true
     },
     {
@@ -8269,9 +8323,9 @@
        "points": 0
       }
      ],
-     "board_pos": 5,
+     "board_pos": 6,
      "points": 0,
-     "points_rank": 14,
+     "points_rank": 13,
      "points_tied": true
     },
     {
@@ -8295,9 +8349,9 @@
        "points": 0
       }
      ],
-     "board_pos": 6,
+     "board_pos": 7,
      "points": 0,
-     "points_rank": 14,
+     "points_rank": 13,
      "points_tied": true
     },
     {
@@ -8371,7 +8425,7 @@
        "points": 0
       }
      ],
-     "board_pos": 7,
+     "board_pos": 8,
      "points": 30,
      "points_rank": 1,
      "points_tied": false
@@ -8427,7 +8481,7 @@
        "points": 4
       }
      ],
-     "board_pos": 8,
+     "board_pos": 9,
      "points": 25,
      "points_rank": 3,
      "points_tied": false
@@ -8495,7 +8549,7 @@
        "points": 0
       }
      ],
-     "board_pos": 9,
+     "board_pos": 10,
      "points": 20,
      "points_rank": 5,
      "points_tied": true
@@ -8561,7 +8615,7 @@
        "points": 10
       }
      ],
-     "board_pos": 10,
+     "board_pos": 11,
      "points": 20,
      "points_rank": 5,
      "points_tied": true
@@ -8607,7 +8661,7 @@
        "points": 4
       }
      ],
-     "board_pos": 11,
+     "board_pos": 12,
      "points": 18,
      "points_rank": 8,
      "points_tied": false
@@ -8653,7 +8707,7 @@
        "points": 10
       }
      ],
-     "board_pos": 12,
+     "board_pos": 13,
      "points": 14,
      "points_rank": 9,
      "points_tied": true
@@ -8709,7 +8763,7 @@
        "points": 4
       }
      ],
-     "board_pos": 13,
+     "board_pos": 14,
      "points": 14,
      "points_rank": 9,
      "points_tied": true
@@ -8745,7 +8799,7 @@
        "points": 6
       }
      ],
-     "board_pos": 14,
+     "board_pos": 15,
      "points": 12,
      "points_rank": 11,
      "points_tied": false
@@ -8821,46 +8875,10 @@
        "points": 6
       }
      ],
-     "board_pos": 15,
-     "points": 10,
-     "points_rank": 12,
-     "points_tied": true
-    },
-    {
-     "name": "Expensive Queen",
-     "country": "IRE",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "Farfellow Farms Ltd.",
-     "trainer": "Brendan P. Walsh",
-     "races": [
-      {
-       "bcc": false,
-       "date": "10/2/2026",
-       "track": "Kee",
-       "race": "First Lady Stakes",
-       "grade": "G1",
-       "division": "Filly & Mare Turf",
-       "pos": "6",
-       "points": 0
-      },
-      {
-       "bcc": false,
-       "date": "4/11/2026",
-       "track": "Kee",
-       "race": "Jenny Wiley S.",
-       "grade": "G1",
-       "division": "Filly & Mare Turf",
-       "pos": "1",
-       "points": 10
-      }
-     ],
      "board_pos": 16,
      "points": 10,
      "points_rank": 12,
-     "points_tied": true
+     "points_tied": false
     }
    ]
   },

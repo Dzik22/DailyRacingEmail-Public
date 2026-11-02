@@ -1,56 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Sat Oct 31",
-  "races": [
-   {
-    "grade": "G3",
-    "race_name": "Hurworth Blooodstock Horris Hill Stakes (Group 3)",
-    "date_short": "Sat\nOct 31",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "7f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Prix Irish River",
-    "date_short": "Sat\nOct 31",
-    "track": "Deauville",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "7f · AW"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Prix Zeddaan",
-    "date_short": "Sat\nOct 31",
-    "track": "Deauville",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "7f · AW"
-   },
-   {
-    "grade": "LR",
-    "race_name": "German Group One Racecourses James Seymour Stakes (Listed Race)",
-    "date_short": "Sat\nOct 31",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m2f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "British Stallion Studs Ebf Montrose Fillies' Stakes (Listed Race)",
-    "date_short": "Sat\nOct 31",
-    "track": "Newmarket",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Sun Nov 1",
+  "day_label": "YESTERDAY — Sun Nov 1",
   "races": [
    {
     "grade": "G3",
@@ -73,7 +23,7 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Mon Nov 2",
+  "day_label": "TODAY — Mon Nov 2",
   "races": [
    {
     "grade": "LR",
@@ -85,5 +35,9 @@
     "dist_surface": "1m4f · Turf"
    }
   ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Tue Nov 3",
+  "races": []
  }
 ]

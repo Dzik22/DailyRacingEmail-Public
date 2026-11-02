@@ -1,9 +1,9 @@
 {
- "for_date": "2026-11-01",
- "built_utc": "2026-11-01T14:15:27.992371Z",
+ "for_date": "2026-11-02",
+ "built_utc": "2026-11-02T07:40:01.016209Z",
  "sources": {
-  "Gainesway": "ok 0",
-  "Claiborne": "ok 7",
+  "Gainesway": "ok 1",
+  "Claiborne": "ok 8",
   "Taylor Made": "ok 1",
   "WinStar": "ok 2",
   "Airdrie Stud": "ok 0",
@@ -76,6 +76,28 @@
   }
  ],
  "items": [
+  {
+   "date": "2026-11-01",
+   "farm": "Gainesway",
+   "sires": [
+    "Charge It"
+   ],
+   "title": "Exciting CHARGE IT Weanlings Make Sales Ring Debut at Keeneland November",
+   "link": "https://gainesway.com/exciting-charge-it-weanlings-make-sales-ring-debut-at-keeneland-november/",
+   "graded": false,
+   "kind": "feed"
+  },
+  {
+   "date": "2026-11-01",
+   "farm": "Claiborne",
+   "sires": [
+    "Mindframe"
+   ],
+   "title": "Exciting Group of In-Foal Mares Represent MINDFRAME at Keeneland November",
+   "link": "https://claibornefarm.com/exciting-group-of-in-foal-mares-represent-mindframe-at-keeneland-november/?utm_source=rss&utm_medium=rss&utm_campaign=exciting-group-of-in-foal-mares-represent-mindframe-at-keeneland-november",
+   "graded": false,
+   "kind": "feed"
+  },
   {
    "date": "2026-10-31",
    "farm": "Claiborne",
@@ -257,7 +279,7 @@
    "Accomplishments",
    "Oscar Performance",
    "Stallion History",
-   "Fasig November 2026",
+   "Keeneland November",
    "Mill Ridge Club",
    "2027 Stud Fee: $7,500 LF",
    "Four-Time Grade 1 Winner",

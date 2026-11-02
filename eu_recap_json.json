@@ -1,52 +1,22 @@
 [
  {
   "grade": "G3",
-  "race_name": "Hurworth Blooodstock Horris Hill Stakes (Group 3)",
-  "track": "Newmarket",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "7f · Turf",
-  "winner": "Bengal Tiger",
-  "off_time": "1:40"
+  "race_name": "QuinnBet Loughbrown Stakes (Group 3)",
+  "track": "Curragh",
+  "country": "IRE",
+  "flag": "🇮🇪",
+  "dist_surface": "2m½f · Turf",
+  "winner": "Amelia Earhart",
+  "off_time": "2:37"
  },
  {
   "grade": "LR",
-  "race_name": "Prix Irish River",
-  "track": "Deauville",
-  "country": "FR",
-  "flag": "🇫🇷",
-  "dist_surface": "7f · AW",
-  "winner": "Charibelle",
-  "off_time": "4:00"
- },
- {
-  "grade": "LR",
-  "race_name": "Prix Zeddaan",
-  "track": "Deauville",
-  "country": "FR",
-  "flag": "🇫🇷",
-  "dist_surface": "7f · AW",
-  "winner": "Vignelli",
-  "off_time": "2:50"
- },
- {
-  "grade": "LR",
-  "race_name": "German Group One Racecourses James Seymour Stakes (Listed Race)",
-  "track": "Newmarket",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "1m2f · Turf",
-  "winner": "Arabian Light",
-  "off_time": "2:44"
- },
- {
-  "grade": "LR",
-  "race_name": "British Stallion Studs Ebf Montrose Fillies' Stakes (Listed Race)",
-  "track": "Newmarket",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "1m · Turf",
-  "winner": "Haldon Pier",
-  "off_time": "2:10"
+  "race_name": "QuinnBet Finale Stakes (Listed)",
+  "track": "Curragh",
+  "country": "IRE",
+  "flag": "🇮🇪",
+  "dist_surface": "1m4f · Turf",
+  "winner": "Thread Of Gold",
+  "off_time": "4:20"
  }
 ]

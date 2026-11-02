@@ -1,6 +1,6 @@
 {
- "for_date": "2026-11-01",
- "built_utc": "2026-11-01T14:13:31.988697Z",
+ "for_date": "2026-11-02",
+ "built_utc": "2026-11-02T07:38:13.956284Z",
  "source": "https://members.breederscup.com/Points/PointsLeaderboard",
  "event": {
   "name": "Breeders' Cup World Championships",
@@ -9599,7 +9599,7 @@
    ]
   }
  ],
- "prev_date": "2026-10-31",
+ "prev_date": "2026-11-01",
  "prev": {
   "Brown Advisory Juvenile Turf|Al Hudaiba": {
    "points": 10,

@@ -3725,6 +3725,7 @@ def _eu_selfheal():
     got = {}
     for name in ('eu_build_status.json', 'eu_upcoming_json.json', 'eu_recap_json.json'):
         try:
+            if __import__('os').environ.get('DIGEST_NO_NET'): raise RuntimeError('DIGEST_NO_NET set (selftest): no mirror fetch')
             with _ur.urlopen(MIRROR + '/' + name + '?cb=' + _cb, timeout=45) as r:
                 got[name] = json.loads(r.read().decode('utf-8'))
         except Exception as e:
@@ -4304,6 +4305,7 @@ try:
     if _bc is None:
         import urllib.request as _bcur
         try:
+            if __import__('os').environ.get('DIGEST_NO_NET'): raise RuntimeError('DIGEST_NO_NET set (selftest): no mirror fetch')
             with _bcur.urlopen('https://raw.githubusercontent.com/Dzik22/DailyRacingEmail-Public/main/bc_points.json?cb='
                                + str(_dt.today().toordinal()), timeout=30) as _r:
                 _bc = json.loads(_r.read().decode('utf-8'))
@@ -4389,6 +4391,7 @@ try:
     if _sl is None:
         import urllib.request as _slur
         try:
+            if __import__('os').environ.get('DIGEST_NO_NET'): raise RuntimeError('DIGEST_NO_NET set (selftest): no mirror fetch')
             with _slur.urlopen('https://raw.githubusercontent.com/Dzik22/DailyRacingEmail-Public/main/sire_lines.json?cb='
                                + str(_dt.today().toordinal()), timeout=30) as _r:
                 _sl = json.loads(_r.read().decode('utf-8'))
@@ -4402,6 +4405,7 @@ try:
     if _fn is None:
         try:
             import urllib.request as _fnur
+            if __import__('os').environ.get('DIGEST_NO_NET'): raise RuntimeError('DIGEST_NO_NET set (selftest): no mirror fetch')
             with _fnur.urlopen('https://raw.githubusercontent.com/Dzik22/DailyRacingEmail-Public/main/farm_news.json?cb='
                                + str(_dt.today().toordinal()), timeout=30) as _r:
                 _fn = json.loads(_r.read().decode('utf-8'))
@@ -4444,7 +4448,13 @@ try:
                   + ' &nbsp;·&nbsp; ' + _hds
                   + (' &nbsp;·&nbsp; <a href="' + str(h['link']).replace('"', '%22') + '">TDN report</a>'
                      if str(h.get('link', '')).startswith('http') else ''))
-            _sl_rows.append(row(h.get('winner'), 'Wasabi', _t, 1))
+            # Own icon class, NOT place-icon: the podium checks count place-icon spans against My Stable
+            # placings, so a Sire Lines trophy inflated that count and could hide a winner that lost its
+            # icon (open defect recorded Nov 2 2026). place=0 suppresses row()'s place-icon spans.
+            _nm = str(h.get('winner') or 'UNKNOWN').upper()
+            _si = '<span class="sire-icon" style="font-size:16px;vertical-align:middle;line-height:1">\U0001f3c6</span>'
+            _sl_rows.append(row(h.get('winner'), 'Wasabi', _t, 0).replace(
+                '<div class="stable-h4">' + _nm + '&nbsp;', '<div class="stable-h4">' + _si + '&nbsp;' + _nm + '&nbsp;' + _si + '&nbsp;', 1))
         # Farm news (fetch_farm_news.py): stallion-farm RSS posts and stallion-page changes that name a
         # roster sire. Graded-stakes headlines first, then newest.
         _fn_rows = []

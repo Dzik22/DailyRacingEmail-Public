@@ -3296,6 +3296,38 @@ if eu_raced_missing:
     print('  ACTION: Step 4c-R-EU returned these horses with raced_with_result, but Step 7.1 did not add them to my_stable.results. Add an entry to my_stable.results for each (use the horse name, syndicate, and finish_string verbatim from /tmp/step_4creu_data.json). Then re-run this validator.')
     import sys as _sysXR; _sysXR.exit(1)
 
+# === USA RESULTS CROSS-CHECK + EMPTY-RESULTS TRIPWIRE (Nov 3 2026) ===
+# The EU check above had no USA twin, and nothing compared "result emails found" with "results printed".
+# On Nov 3 the digest showed "No data this week." under RESULTS with six of Mike's runners in the window.
+us_missing = []
+if _osXR.path.exists('/tmp/step_4cr_data.json'):
+    try:
+        for _uh in _jXR.load(open('/tmp/step_4cr_data.json')).get('horses', []):
+            hn = str(_uh.get('horse', '')).lower().strip()
+            if hn and hn not in results_horses_lower:
+                us_missing.append(str(_uh.get('horse', '?')) + ' — ' + str(_uh.get('finish_string') or 'unresolved: show "Result pending verification"'))
+    except Exception as _eUS:
+        print('  step_4cr_data.json parse warning: ' + str(_eUS))
+if us_missing:
+    print('USA_RESULTS_MISSING_FROM_DIGEST — ABORT:')
+    for m in us_missing: print('  MISSING from my_stable.results: ' + m)
+    print('  ACTION: Step 4c-R returned these horses but Step 7.1 did not add them. Add each to my_stable.results with finish_string VERBATIM (or "Result pending verification" when unresolved), then re-run this gate.')
+    import sys as _sysUS; _sysUS.exit(1)
+if not results_horses_lower:
+    _found = {}
+    for _gf, _keys in (('/tmp/step_4c_done.txt', ('results', 'direct_results', 'sent_results')),
+                       ('/tmp/step_4ceu_done.txt', ('results_alerts',))):
+        try:
+            _g = _jXR.load(open(_gf))
+            _found[_gf] = sum(int(_g.get(k) or 0) for k in _keys)
+        except Exception:
+            pass
+    if any(v > 0 for v in _found.values()):
+        print('RESULTS_EMPTY_BUT_RESULT_EMAILS_FOUND — ABORT: my_stable.results is EMPTY, but the gate files record result notifications: ' + str(_found))
+        print('  ACTION: Re-read every Equibase "Result" notification (Step 4c Searches B and D) and every "My Timeform: Results Alert" (Step 4c-EU-EMAIL), run Step 4c-R / 4c-R-EU on those horses, and fill my_stable.results. An empty RESULTS list is only legitimate when no MASTER horse ran in the last 7 days.')
+        import sys as _sysRE; _sysRE.exit(1)
+    print('  RESULTS is empty and no result notifications were recorded — confirm in chat that no MASTER horse ran in the last 7 days.')
+
 # Stable-updates → results cross-check: any stable_update mentioning racing keywords requires a results entry
 RACE_KEYWORDS = (' ran ',' raced ',' finished ',' debut ',' debuted',' debut.',' won ',' placed ',' 1st ',' 2nd ',' 3rd ',' 4th ',' 5th ','made her debut','made his debut','12-runner','11-runner','10-runner','9-runner','8-runner','7-runner','6-runner','finished 1','finished 2','finished 3','finished 4','finished 5','finished 6','finished 7','finished 8')
 upd_racing_missing = []
@@ -4204,6 +4236,49 @@ def tblock(v, yd):
     return out + '</tbody></table>\n<div class="track-spacer">&nbsp;</div>\n'
 
 ms = d.get('my_stable', {}); yd = str(d.get('yesterday_display','')); td = str(d.get('today_display',''))
+# RESULTS SAFETY NET (Nov 3 2026). That day's digest printed "No data this week." under RESULTS while
+# Mike had six runners in the window (Celestial Siren won Thu, McCoy and Snowglobe ran Fri, Highwaymen
+# 2nd and Simply Joking 7th Sat, Flightress won Mon). Whatever the results subagents found must reach
+# the page, so their output is merged in here even when Step 7.1 left it out (UNION, never replace).
+try:
+    _res = ms.setdefault('results', [])
+    _have = {str(r.get('horse', '')).lower().strip() for r in _res}
+    _add = []
+    try:
+        for _h in json.load(open('/tmp/step_4cr_data.json')).get('horses', []):        # USA (Step 4c-R)
+            _n = str(_h.get('horse', '')).strip()
+            if not _n or _n.lower() in _have:
+                continue
+            if _h.get('resolved') is True and _h.get('finish_string'):
+                _add.append({'horse': _n, 'syndicate': MASTER.get(_n.lower(), ''), 'text': str(_h['finish_string'])})
+            elif _h.get('resolved') is False:
+                _add.append({'horse': _n, 'syndicate': MASTER.get(_n.lower(), ''), 'place': 0,
+                             'text': 'Result pending verification — ' + str(_h.get('best_effort') or 'position not yet confirmed')})
+            else:
+                continue
+            _have.add(_n.lower())
+    except Exception:
+        pass
+    try:
+        for _h in json.load(open('/tmp/step_4creu_data.json')).get('horses', []):      # EU (Step 4c-R-EU)
+            _n = str(_h.get('horse', '')).strip(); _fs = (_h.get('result') or {}).get('finish_string')
+            if not _n or _n.lower() in _have:
+                continue
+            if _h.get('status') == 'raced_with_result' and _fs:
+                _add.append({'horse': _n, 'syndicate': _h.get('syndicate') or MASTER.get(_n.lower(), ''), 'text': str(_fs)})
+            elif _h.get('status') == 'raced_no_position':
+                _add.append({'horse': _n, 'syndicate': _h.get('syndicate') or MASTER.get(_n.lower(), ''), 'place': 0,
+                             'text': 'Ran — position pending verification'})
+            else:
+                continue
+            _have.add(_n.lower())
+    except Exception:
+        pass
+    _res.extend(_add)
+    if _add:
+        print('RESULTS_SAFETY_NET: added ' + str(len(_add)) + ' result(s) Step 7.1 left out: ' + ', '.join(a['horse'] for a in _add))
+except Exception as _rsn:
+    print('RESULTS_SAFETY_NET_ERR: ' + str(_rsn))
 s1 = hdr('\U0001f3c7','My Stable') + '<div class="horse-gap"></div>\n'
 s1 += sub('\U0001f4cb','ENTRIES — NEXT 7 DAYS', [row(e.get('horse'),e.get('syndicate'),e.get('text'),0) for e in ms.get('entries',[])])
 s1 += SSB + '\n'

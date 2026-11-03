@@ -1,6 +1,6 @@
 {
- "for_date": "2026-11-02",
- "built_utc": "2026-11-02T16:58:58.911785Z",
+ "for_date": "2026-11-03",
+ "built_utc": "2026-11-03T07:53:03.770326Z",
  "source": "https://members.breederscup.com/Points/PointsLeaderboard",
  "event": {
   "name": "Breeders' Cup World Championships",
@@ -9617,7 +9617,7 @@
    ]
   }
  ],
- "prev_date": "2026-11-01",
+ "prev_date": "2026-11-02",
  "prev": {
   "Brown Advisory Juvenile Turf|Al Hudaiba": {
    "points": 10,
@@ -9704,84 +9704,84 @@
    "points_rank": 2,
    "board_pos": 1
   },
-  "Cygames Sprint|T Kraft": {
-   "points": 10,
-   "points_rank": 5,
-   "board_pos": 2
-  },
   "Cygames Sprint|Nakatomi": {
    "points": 6,
    "points_rank": 14,
-   "board_pos": 3
+   "board_pos": 2
   },
   "Cygames Sprint|Dark Saffron": {
    "points": 0,
    "points_rank": 15,
-   "board_pos": 4
+   "board_pos": 3
   },
   "Cygames Sprint|Imagination": {
    "points": 0,
    "points_rank": 15,
-   "board_pos": 5
+   "board_pos": 4
   },
   "Cygames Sprint|Englishman": {
    "points": 24,
    "points_rank": 1,
-   "board_pos": 6
-  },
-  "Cygames Sprint|Hymn": {
-   "points": 14,
-   "points_rank": 3,
-   "board_pos": 7
+   "board_pos": 5
   },
   "Cygames Sprint|Crude Velocity": {
    "points": 12,
-   "points_rank": 4,
-   "board_pos": 8
+   "points_rank": 3,
+   "board_pos": 6
   },
   "Cygames Sprint|Chief Wallabee": {
    "points": 10,
-   "points_rank": 5,
-   "board_pos": 9
+   "points_rank": 4,
+   "board_pos": 7
   },
   "Cygames Sprint|Deep Flame": {
    "points": 10,
-   "points_rank": 5,
-   "board_pos": 10
+   "points_rank": 4,
+   "board_pos": 8
   },
   "Cygames Sprint|Local Knowledge": {
    "points": 10,
-   "points_rank": 5,
-   "board_pos": 11
+   "points_rank": 4,
+   "board_pos": 9
   },
   "Cygames Sprint|Maximum Bourbon": {
    "points": 10,
-   "points_rank": 5,
-   "board_pos": 12
+   "points_rank": 4,
+   "board_pos": 10
   },
   "Cygames Sprint|T O Elvis": {
    "points": 10,
-   "points_rank": 5,
-   "board_pos": 13
+   "points_rank": 4,
+   "board_pos": 11
   },
   "Cygames Sprint|Book'em Danno": {
    "points": 8,
-   "points_rank": 11,
-   "board_pos": 14
-  },
-  "Cygames Sprint|Built": {
-   "points": 8,
-   "points_rank": 11,
-   "board_pos": 15
+   "points_rank": 9,
+   "board_pos": 12
   },
   "Cygames Sprint|Crazy Mason": {
    "points": 8,
-   "points_rank": 11,
+   "points_rank": 9,
+   "board_pos": 13
+  },
+  "Cygames Sprint|Dr. Kapur": {
+   "points": 8,
+   "points_rank": 9,
+   "board_pos": 14
+  },
+  "Cygames Sprint|Getaway Car": {
+   "points": 8,
+   "points_rank": 9,
+   "board_pos": 15
+  },
+  "Cygames Sprint|Iron Man Cal": {
+   "points": 8,
+   "points_rank": 9,
    "board_pos": 16
   },
-  "Dirt Mile|Iron Man Cal": {
-   "points": 8,
-   "points_rank": 5,
+  "Dirt Mile|Hymn": {
+   "points": 14,
+   "points_rank": 2,
    "board_pos": 1
   },
   "Dirt Mile|Commandment": {
@@ -9791,72 +9791,72 @@
   },
   "Dirt Mile|Bishops Bay": {
    "points": 12,
-   "points_rank": 2,
+   "points_rank": 3,
    "board_pos": 3
   },
   "Dirt Mile|Disruptor": {
    "points": 10,
-   "points_rank": 3,
+   "points_rank": 4,
    "board_pos": 4
   },
   "Dirt Mile|Nu What's New": {
    "points": 10,
-   "points_rank": 3,
+   "points_rank": 4,
    "board_pos": 5
   },
-  "Dirt Mile|Full Serrano": {
-   "points": 8,
-   "points_rank": 5,
+  "Dirt Mile|T Kraft": {
+   "points": 10,
+   "points_rank": 4,
    "board_pos": 6
   },
-  "Dirt Mile|Caldera": {
-   "points": 6,
+  "Dirt Mile|Built": {
+   "points": 8,
    "points_rank": 7,
    "board_pos": 7
   },
-  "Dirt Mile|Chunk of Gold": {
-   "points": 6,
+  "Dirt Mile|Full Serrano": {
+   "points": 8,
    "points_rank": 7,
    "board_pos": 8
   },
-  "Dirt Mile|Class President": {
-   "points": 6,
+  "Dirt Mile|Moonlight": {
+   "points": 8,
    "points_rank": 7,
    "board_pos": 9
   },
+  "Dirt Mile|Caldera": {
+   "points": 6,
+   "points_rank": 10,
+   "board_pos": 10
+  },
+  "Dirt Mile|Chunk of Gold": {
+   "points": 6,
+   "points_rank": 10,
+   "board_pos": 11
+  },
+  "Dirt Mile|Class President": {
+   "points": 6,
+   "points_rank": 10,
+   "board_pos": 12
+  },
   "Dirt Mile|Corporate Power": {
    "points": 6,
-   "points_rank": 7,
-   "board_pos": 10
+   "points_rank": 10,
+   "board_pos": 13
   },
   "Dirt Mile|East Avenue": {
    "points": 6,
-   "points_rank": 7,
-   "board_pos": 11
+   "points_rank": 10,
+   "board_pos": 14
   },
   "Dirt Mile|Paladin": {
    "points": 6,
-   "points_rank": 7,
-   "board_pos": 12
+   "points_rank": 10,
+   "board_pos": 15
   },
   "Dirt Mile|Point Dume": {
    "points": 6,
-   "points_rank": 7,
-   "board_pos": 13
-  },
-  "Dirt Mile|Vodka Vodka": {
-   "points": 6,
-   "points_rank": 7,
-   "board_pos": 14
-  },
-  "Dirt Mile|Taptastic": {
-   "points": 5,
-   "points_rank": 15,
-   "board_pos": 15
-  },
-  "Dirt Mile|Bartholdy": {
-   "points": 4,
-   "points_rank": 16,
+   "points_rank": 10,
    "board_pos": 16
   },
   "FanDuel Juvenile|Hughes": {
@@ -10406,7 +10406,7 @@
   },
   "Longines Distaff|Eunomia": {
    "points": 15,
-   "points_rank": 10,
+   "points_rank": 11,
    "board_pos": 4
   },
   "Longines Distaff|Super Corredora": {
@@ -10439,34 +10439,34 @@
    "points_rank": 6,
    "board_pos": 10
   },
-  "Longines Distaff|Meaning": {
+  "Longines Distaff|Bless the Broken": {
    "points": 16,
    "points_rank": 8,
    "board_pos": 11
   },
-  "Longines Distaff|Om N Joy": {
+  "Longines Distaff|Meaning": {
    "points": 16,
    "points_rank": 8,
    "board_pos": 12
   },
-  "Longines Distaff|Measure": {
-   "points": 14,
-   "points_rank": 11,
+  "Longines Distaff|Om N Joy": {
+   "points": 16,
+   "points_rank": 8,
    "board_pos": 13
   },
-  "Longines Distaff|Bodacious Bay": {
-   "points": 12,
+  "Longines Distaff|Measure": {
+   "points": 14,
    "points_rank": 12,
    "board_pos": 14
   },
-  "Longines Distaff|Regaled": {
+  "Longines Distaff|Bodacious Bay": {
    "points": 12,
-   "points_rank": 12,
+   "points_rank": 13,
    "board_pos": 15
   },
-  "Longines Distaff|Shred the Gnar": {
+  "Longines Distaff|Regaled": {
    "points": 12,
-   "points_rank": 12,
+   "points_rank": 13,
    "board_pos": 16
   },
   "Longines Turf|Test Score": {
@@ -10564,67 +10564,67 @@
    "points_rank": 5,
    "board_pos": 3
   },
+  "Maker's Mark Filly & Mare Turf|Blue Bolt": {
+   "points": 0,
+   "points_rank": 13,
+   "board_pos": 4
+  },
   "Maker's Mark Filly & Mare Turf|Embroidery": {
    "points": 0,
-   "points_rank": 14,
-   "board_pos": 4
+   "points_rank": 13,
+   "board_pos": 5
   },
   "Maker's Mark Filly & Mare Turf|Miss Scott": {
    "points": 0,
-   "points_rank": 14,
-   "board_pos": 5
+   "points_rank": 13,
+   "board_pos": 6
   },
   "Maker's Mark Filly & Mare Turf|Se Va Colando": {
    "points": 0,
-   "points_rank": 14,
-   "board_pos": 6
+   "points_rank": 13,
+   "board_pos": 7
   },
   "Maker's Mark Filly & Mare Turf|Classic Q": {
    "points": 30,
    "points_rank": 1,
-   "board_pos": 7
+   "board_pos": 8
   },
   "Maker's Mark Filly & Mare Turf|Tam Tam": {
    "points": 25,
    "points_rank": 3,
-   "board_pos": 8
+   "board_pos": 9
   },
   "Maker's Mark Filly & Mare Turf|Faithful Departed": {
    "points": 20,
    "points_rank": 5,
-   "board_pos": 9
+   "board_pos": 10
   },
   "Maker's Mark Filly & Mare Turf|Segesta": {
    "points": 20,
    "points_rank": 5,
-   "board_pos": 10
+   "board_pos": 11
   },
   "Maker's Mark Filly & Mare Turf|Portfolio Duration": {
    "points": 18,
    "points_rank": 8,
-   "board_pos": 11
+   "board_pos": 12
   },
   "Maker's Mark Filly & Mare Turf|Kensington Lane": {
    "points": 14,
    "points_rank": 9,
-   "board_pos": 12
+   "board_pos": 13
   },
   "Maker's Mark Filly & Mare Turf|Take A Breath": {
    "points": 14,
    "points_rank": 9,
-   "board_pos": 13
+   "board_pos": 14
   },
   "Maker's Mark Filly & Mare Turf|Destino d'Oro": {
    "points": 12,
    "points_rank": 11,
-   "board_pos": 14
-  },
-  "Maker's Mark Filly & Mare Turf|Bless the Broken": {
-   "points": 10,
-   "points_rank": 12,
    "board_pos": 15
   },
-  "Maker's Mark Filly & Mare Turf|Expensive Queen": {
+  "Maker's Mark Filly & Mare Turf|Bless the Broken": {
    "points": 10,
    "points_rank": 12,
    "board_pos": 16

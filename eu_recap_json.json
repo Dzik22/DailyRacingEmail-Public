@@ -1,22 +1,12 @@
 [
  {
-  "grade": "G3",
-  "race_name": "QuinnBet Loughbrown Stakes (Group 3)",
-  "track": "Curragh",
-  "country": "IRE",
-  "flag": "🇮🇪",
-  "dist_surface": "2m½f · Turf",
-  "winner": "Amelia Earhart",
-  "off_time": "2:37"
- },
- {
   "grade": "LR",
-  "race_name": "QuinnBet Finale Stakes (Listed)",
-  "track": "Curragh",
-  "country": "IRE",
-  "flag": "🇮🇪",
+  "race_name": "Grand Prix De Nantes - 15eme Etape Du Defi Du Galop - G.camprubi",
+  "track": "Nantes",
+  "country": "FR",
+  "flag": "🇫🇷",
   "dist_surface": "1m4f · Turf",
-  "winner": "Thread Of Gold",
-  "off_time": "4:20"
+  "winner": "Bevan",
+  "off_time": "11:17"
  }
 ]

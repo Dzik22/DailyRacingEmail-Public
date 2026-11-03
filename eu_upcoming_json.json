@@ -1,29 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Sun Nov 1",
-  "races": [
-   {
-    "grade": "G3",
-    "race_name": "QuinnBet Loughbrown Stakes (Group 3)",
-    "date_short": "Sun\nNov 1",
-    "track": "Curragh",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "2m½f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "QuinnBet Finale Stakes (Listed)",
-    "date_short": "Sun\nNov 1",
-    "track": "Curragh",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m4f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Mon Nov 2",
+  "day_label": "YESTERDAY — Mon Nov 2",
   "races": [
    {
     "grade": "LR",
@@ -37,11 +14,15 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Tue Nov 3",
+  "day_label": "TODAY — Tue Nov 3",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Wed Nov 4",
   "races": [
    {
     "grade": "LR",
-    "race_name": "Irish Stallion Farms Ebf Cooley Fillies Stakes (listed)",
+    "race_name": "Irish Stallion Farms EBF Cooley Fillies Stakes (Listed)",
     "date_short": "Fri\nNov 6",
     "track": "Dundalk (AW)",
     "country": "IRE",

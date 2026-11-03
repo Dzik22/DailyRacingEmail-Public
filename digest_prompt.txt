@@ -152,6 +152,7 @@ USA and European races in same table per day, sorted G1→G2→G3 within each da
 **SECTION 6 — 💼 SALES AND INDUSTRY** (minimum 2 entries)
 Industry news, sales results, breeding news, stallion standings. 2–3 sentences each.
 Format: minimum 2× `<div class="story">` divs
+THOROUGHBRED INTELLIGENCE (Nov 3 2026, Mike's request): every "Thoroughbred Intelligence" story in the Step 4 pool goes into this section — none dropped for space — with the market figures from its summary kept intact (gross, average, median, clearance, % change, fee moves).
 
 SEPARATOR RULE (LOCKED): section-spacer + `======================================================` section-break + section-spacer BETWEEN every major section.
 MY STABLE SUBSECTION RULE (LOCKED): `======================================================` section-break + horse-gap BETWEEN every subsection. All 3 subsections always render.
@@ -1164,7 +1165,7 @@ If validator exits with error → re-invoke the Task subagent.
 
 ## STEP 4 — NEWS EMAILS (SUBAGENT-WRAPPED — TDN + Paulick + BloodHorse for Top 10 pool)
 
-⚠️ TDN arrives the EVENING BEFORE. Paulick arrives the MORNING OF. BloodHorse is intermittent. Subagent uses `newer_than:2d` to catch all.
+⚠️ TDN arrives the EVENING BEFORE. Paulick arrives the MORNING OF. BloodHorse is intermittent. Thoroughbred Intelligence (Substack) arrives ~7:40 AM, after the 6am/7am runs, so it lands in the NEXT morning's digest. Subagent uses `newer_than:2d` to catch all.
 
 ### 🔒 SUBAGENT ARCHITECTURE — WHY THIS STEP RUNS IN ISOLATION
 TDN + Paulick newsletters are ~20K tokens EACH (full daily digest). Reading both in main context was ~50K tokens of news prose that bled into Step 7.1 — agent would conflate stories, attribute wrong sources, or hallucinate top10 stories from fragments. Wrap in subagent that extracts structured `[{headline, summary, source, date, quote}]`; main agent only sees the 10–15K-token JSON.
@@ -1181,15 +1182,16 @@ Call the `Task` tool with these parameters:
 ```
 NEWS_PROMPT:
 You are a horse racing news extractor for Mike Dzik's daily racing digest.
-Your ONLY job is to read TDN + Paulick + BloodHorse emails from the last 2 days and return a Top 10 pool of stories in strict JSON.
+Your ONLY job is to read TDN + Paulick + BloodHorse + Thoroughbred Intelligence emails from the last 2 days and return a Top 10 pool of stories in strict JSON.
 
 EXECUTE THESE STEPS IN ORDER:
 
-1. Run: mcp__Gmail__search_threads({"query": "from:(tdn@thoroughbreddailynews.com OR ray@paulickreport.com OR bloodhorse) newer_than:2d in:anywhere"})
+1. Run: mcp__Gmail__search_threads({"query": "from:(tdn@thoroughbreddailynews.com OR ray@paulickreport.com OR bloodhorse OR thoroughbredintelligence@substack.com) newer_than:2d in:anywhere"})
 
 2. For each thread returned, call mcp__Gmail__get_thread with FULL_CONTENT and read the COMPLETE body. Do not skim.
 
 3. Extract EVERY distinct news story/headline. A single TDN email contains 10–30 stories; extract each as its own entry. Skip ads, classifieds, results lists with no narrative, "Eye on the Industry" tile lists, and pure stallion-fee tables.
+   THOROUGHBRED INTELLIGENCE (thoroughbredintelligence@substack.com, Henry Nothhaft Jr.'s Substack — added Nov 3 2026 at Mike's request: "it has great DATA about the market in it"): a market-analysis newsletter. Each topic in it (e.g. "Fasig-Tipton Nov by the Numbers", "Keeneland Book 1 Breakdown", "Stud Fee Updates from Coolmore & Lane's End") is its own story, category "sales", source "Thoroughbred Intelligence". Here the NUMBERS are the story: the summary MUST carry the concrete figures the email states — gross, average, median, clearance/RNA rate, % change vs last year, top prices, fee moves (old → new). Its stud-fee updates are NOT skipped as "pure stallion-fee tables". Copy figures exactly as written; never compute or round. Always flag any figure about Mike's Wasabi sires (Charge It, Prince of Monaco, Army Mule, Casa Creed, Blofeld, Annapolis, Dr. Schivel, Straight No Chaser, Mindframe, Johannes, Arzak, Arthur's Ride, Tappan Street, Honor A.P., Complexity) by naming the sire in the summary.
 
 4. For each story, write a 2–3 sentence summary. The summary MUST come from the email body text — no invention, no synthesis from outside knowledge. If the story refers to a horse, jockey, trainer, or owner, name them as stated.
 
@@ -1228,12 +1230,12 @@ EXECUTE THESE STEPS IN ORDER:
     "total_stories": 2,
     "top10_count": 1,
     "sales_count": 1,
-    "sources": {"TDN": 1, "Paulick": 0, "BloodHorse": 1}
+    "sources": {"TDN": 1, "Paulick": 0, "BloodHorse": 1, "Thoroughbred Intelligence": 0}
   }
 }
 
 If 0 news threads found (unusual but possible on weekends):
-  return {"version":"4.1","threads_searched":N,"threads_read":0,"stories":[],"summary":{"total_stories":0,"top10_count":0,"sales_count":0,"sources":{"TDN":0,"Paulick":0,"BloodHorse":0}}}
+  return {"version":"4.1","threads_searched":N,"threads_read":0,"stories":[],"summary":{"total_stories":0,"top10_count":0,"sales_count":0,"sources":{"TDN":0,"Paulick":0,"BloodHorse":0,"Thoroughbred Intelligence":0}}}
 
 Aim for 12–25 stories total (Top 10 picks 10, Sales picks 2+). NEVER fabricate. Every story must come from an email body you actually read. quote must be ≥30 chars copied verbatim.
 Return JSON only — no markdown fences, no commentary.

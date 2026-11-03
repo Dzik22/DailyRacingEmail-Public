@@ -2236,11 +2236,16 @@ EXECUTE THESE STEPS IN ORDER:
    a photo finish, a short margin, or a hot favourite in the field all RAISE the burden of proof
    rather than lowering it.
    SO: for every winner taken from a WebSearch snippet rather than from an email in the inbox, name
-   TWO independent outlets that agree, and put both in `source_quote`. If only one outlet can be
-   found, say so in `source_quote` explicitly — do not quietly ship a single-sourced winner. Where an
+   TWO independent outlets that agree, and list them in `winner_sources` (an array, outlet name
+   FIRST in each entry, e.g. ["BloodHorse result story", "DRF chart summary"]). If only one outlet can
+   be found, set `winner_single_source: true` — do not quietly ship a single-sourced winner. The
+   validator below enforces this (Nov 3 2026): a named winner with no `winner_sources`, or with one
+   outlet and no single-source flag, fails the schema. `source_quote` stays what it always was: the
+   verbatim email line for the race. Where an
    email in Mike's inbox (TDN's daily edition, a Paulick news alert, an Equibase Result Notification)
    states the winner, that email OUTRANKS any number of search snippets: it is a dated primary
-   document. On Nov 1 the TDN edition had the Mile right while the search snippets had it wrong.
+   document, and on its own it satisfies `winner_sources` — name it with the word "email" in the entry
+   (e.g. ["TDN daily email Nov 1"]). On Nov 1 the TDN edition had the Mile right while the search snippets had it wrong.
    AND CHECK THE RUNNER-UP, NOT JUST THE WINNER. Both errors would have been caught instantly by
    noticing that the "winner" was named as second elsewhere. A cheap, high-yield check: confirm the
    winner is not named as the runner-up in any other source you have.
@@ -2298,6 +2303,8 @@ EXECUTE THESE STEPS IN ORDER:
       "dist_surface": "7f · Dirt",
       "winner": "Eclatant",
       "winner_sire": null,
+      "winner_sources": ["BloodHorse result story", "DRF chart summary"],
+      "winner_single_source": false,
       "source_quote": "Chicago S. - Grade 2, Race 9, $300,000 Added"
     }
   ],
@@ -2375,6 +2382,18 @@ for i, r in enumerate(d['results']):
         problems.append('results[' + str(i) + '] date_iso="' + str(r['date_iso']) + '" does not match yesterday_rp="' + d['yesterday_rp'] + '" — recap is YESTERDAY ONLY')
     if r.get('source_quote') and len(str(r['source_quote'])) < 20:
         problems.append('results[' + str(i) + '] source_quote too short')
+    # Two-outlet rule (Nov 1 2026: two of ten BC winners came back as the beaten horse). Enforced here
+    # since Nov 3: a named winner needs an inbox email, or two distinct outlets, or an explicit
+    # single-source flag (allowed, but reported below so it is never shipped silently).
+    if str(r.get('winner') or '?').strip() not in ('?', ''):
+        _ws = r.get('winner_sources')
+        if not isinstance(_ws, list) or not [x for x in _ws if str(x).strip()]:
+            problems.append('results[' + str(i) + '] winner "' + str(r.get('winner')) + '" has no winner_sources — list the outlets that name it (2 independent outlets, or 1 inbox email)')
+        else:
+            _outlets = {(__import__('re').findall(r'[a-z0-9]+', str(x).lower()) or [''])[0] for x in _ws if str(x).strip()}
+            _email = any(('email' in str(x).lower() or 'notification' in str(x).lower()) for x in _ws)
+            if len(_outlets) < 2 and not _email and r.get('winner_single_source') is not True:
+                problems.append('results[' + str(i) + '] winner "' + str(r.get('winner')) + '" has ONE outlet (' + ', '.join(map(str, _ws)) + ') — find a second independent outlet, or set winner_single_source: true')
 for i, u in enumerate(d['upcoming']):
     for k in required_upcoming:
         if k not in u:
@@ -2390,6 +2409,9 @@ if problems:
     print('STEP_5DRF_SCHEMA_FAIL — abort:')
     for p in problems: print('  ' + p)
     sys.exit(1)
+_single = [str(r.get('race_name')) + ': ' + str(r.get('winner')) for r in d['results'] if r.get('winner_single_source') is True]
+if _single:
+    print('SINGLE_SOURCED_WINNERS (non-blocking — tell Mike in chat which winners rest on one outlet): ' + '; '.join(_single))
 
 # Write gate file in the format Step 6b master gate + downstream gates expect.
 # Existing format: "fwdeq_searched=YES usa_races=N usa_entries=N" — preserve for back-compat.

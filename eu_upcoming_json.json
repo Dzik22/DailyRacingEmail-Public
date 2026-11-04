@@ -1,24 +1,14 @@
 [
  {
-  "day_label": "YESTERDAY — Mon Nov 2",
-  "races": [
-   {
-    "grade": "LR",
-    "race_name": "Grand Prix De Nantes - 15eme Etape Du Defi Du Galop - G.camprubi",
-    "date_short": "Mon\nNov 2",
-    "track": "Nantes",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m4f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Tue Nov 3",
+  "day_label": "YESTERDAY — Tue Nov 3",
   "races": []
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Wed Nov 4",
+  "day_label": "TODAY — Wed Nov 4",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Thu Nov 5",
   "races": [
    {
     "grade": "LR",

@@ -1,6 +1,6 @@
 {
  "for_date": "2026-11-04",
- "built_utc": "2026-11-04T12:54:53.942520Z",
+ "built_utc": "2026-11-04T15:20:33.454394Z",
  "source": "https://members.breederscup.com/Points/PointsLeaderboard",
  "event": {
   "name": "Breeders' Cup World Championships",
@@ -992,74 +992,6 @@
      "points_tied": true
     },
     {
-     "name": "Crazy Mason",
-     "country": "",
-     "out": false,
-     "notes": [
-      "R1"
-     ],
-     "challenge_winner": false,
-     "nomination": "R1 - Not Nominated",
-     "owner": "Donna Wright , Reeves Thoroughbred Racing",
-     "trainer": "Gregory D. Sacco",
-     "races": [
-      {
-       "bcc": true,
-       "date": "10/1/2026",
-       "track": "Bel",
-       "race": "Vosburgh",
-       "grade": "G3",
-       "division": "Sprint",
-       "pos": "2",
-       "points": 2
-      },
-      {
-       "bcc": true,
-       "date": "8/29/2026",
-       "track": "Sar",
-       "race": "Forego",
-       "grade": "G1",
-       "division": "Dirt Mile",
-       "pos": "4",
-       "points": 0
-      },
-      {
-       "bcc": false,
-       "date": "6/28/2026",
-       "track": "CD",
-       "race": "Hanshin S.",
-       "grade": "G3",
-       "division": "Dirt Mile",
-       "pos": "6",
-       "points": 0
-      },
-      {
-       "bcc": false,
-       "date": "5/2/2026",
-       "track": "CD",
-       "race": "Churchill Downs Presented by Ford",
-       "grade": "G1",
-       "division": "Dirt Mile",
-       "pos": "3",
-       "points": 4
-      },
-      {
-       "bcc": false,
-       "date": "4/4/2026",
-       "track": "Kee",
-       "race": "Commonwealth S.",
-       "grade": "G3",
-       "division": "Sprint",
-       "pos": "2",
-       "points": 2
-      }
-     ],
-     "board_pos": 13,
-     "points": 8,
-     "points_rank": 9,
-     "points_tied": true
-    },
-    {
      "name": "Dr. Kapur",
      "country": "",
      "out": false,
@@ -1090,7 +1022,7 @@
        "points": 4
       }
      ],
-     "board_pos": 14,
+     "board_pos": 13,
      "points": 8,
      "points_rank": 9,
      "points_tied": true
@@ -1136,7 +1068,7 @@
        "points": 4
       }
      ],
-     "board_pos": 15,
+     "board_pos": 14,
      "points": 8,
      "points_rank": 9,
      "points_tied": true
@@ -1172,10 +1104,66 @@
        "points": 2
       }
      ],
-     "board_pos": 16,
+     "board_pos": 15,
      "points": 8,
      "points_rank": 9,
      "points_tied": true
+    },
+    {
+     "name": "Obliteration",
+     "country": "",
+     "out": false,
+     "notes": [],
+     "challenge_winner": false,
+     "nomination": "",
+     "owner": "Leland Ackerley Racing, James Sherwood , Jode Shupe , John G Cilia",
+     "trainer": "Steven M. Asmussen",
+     "races": [
+      {
+       "bcc": false,
+       "date": "10/17/2026",
+       "track": "Kee",
+       "race": "Perryville",
+       "grade": "G3",
+       "division": "Sprint",
+       "pos": "3",
+       "points": 1
+      },
+      {
+       "bcc": false,
+       "date": "9/7/2026",
+       "track": "KD",
+       "race": "The Franklin - Simpson Stakes",
+       "grade": "G2",
+       "division": "Turf Sprint",
+       "pos": "6",
+       "points": 0
+      },
+      {
+       "bcc": false,
+       "date": "7/31/2026",
+       "track": "Sar",
+       "race": "Amsterdam",
+       "grade": "G2",
+       "division": "Sprint",
+       "pos": "3",
+       "points": 2
+      },
+      {
+       "bcc": false,
+       "date": "6/6/2026",
+       "track": "Sar",
+       "race": "Woody Stephens S.",
+       "grade": "G1",
+       "division": "Sprint",
+       "pos": "3",
+       "points": 4
+      }
+     ],
+     "board_pos": 16,
+     "points": 7,
+     "points_rank": 13,
+     "points_tied": false
     }
    ]
   },
@@ -1538,6 +1526,74 @@
      "points_tied": true
     },
     {
+     "name": "Crazy Mason",
+     "country": "",
+     "out": false,
+     "notes": [
+      "R1"
+     ],
+     "challenge_winner": false,
+     "nomination": "R1 - Not Nominated",
+     "owner": "Donna Wright , Reeves Thoroughbred Racing",
+     "trainer": "Gregory D. Sacco",
+     "races": [
+      {
+       "bcc": true,
+       "date": "10/1/2026",
+       "track": "Bel",
+       "race": "Vosburgh",
+       "grade": "G3",
+       "division": "Sprint",
+       "pos": "2",
+       "points": 2
+      },
+      {
+       "bcc": true,
+       "date": "8/29/2026",
+       "track": "Sar",
+       "race": "Forego",
+       "grade": "G1",
+       "division": "Dirt Mile",
+       "pos": "4",
+       "points": 0
+      },
+      {
+       "bcc": false,
+       "date": "6/28/2026",
+       "track": "CD",
+       "race": "Hanshin S.",
+       "grade": "G3",
+       "division": "Dirt Mile",
+       "pos": "6",
+       "points": 0
+      },
+      {
+       "bcc": false,
+       "date": "5/2/2026",
+       "track": "CD",
+       "race": "Churchill Downs Presented by Ford",
+       "grade": "G1",
+       "division": "Dirt Mile",
+       "pos": "3",
+       "points": 4
+      },
+      {
+       "bcc": false,
+       "date": "4/4/2026",
+       "track": "Kee",
+       "race": "Commonwealth S.",
+       "grade": "G3",
+       "division": "Sprint",
+       "pos": "2",
+       "points": 2
+      }
+     ],
+     "board_pos": 8,
+     "points": 8,
+     "points_rank": 7,
+     "points_tied": true
+    },
+    {
      "name": "Full Serrano",
      "country": "ARG",
      "out": false,
@@ -1578,7 +1634,7 @@
        "points": 4
       }
      ],
-     "board_pos": 8,
+     "board_pos": 9,
      "points": 8,
      "points_rank": 7,
      "points_tied": true
@@ -1634,7 +1690,7 @@
        "points": 0
       }
      ],
-     "board_pos": 9,
+     "board_pos": 10,
      "points": 8,
      "points_rank": 7,
      "points_tied": true
@@ -1660,9 +1716,9 @@
        "points": 6
       }
      ],
-     "board_pos": 10,
+     "board_pos": 11,
      "points": 6,
-     "points_rank": 10,
+     "points_rank": 11,
      "points_tied": true
     },
     {
@@ -1696,9 +1752,9 @@
        "points": 2
       }
      ],
-     "board_pos": 11,
+     "board_pos": 12,
      "points": 6,
-     "points_rank": 10,
+     "points_rank": 11,
      "points_tied": true
     },
     {
@@ -1724,9 +1780,9 @@
        "points": 6
       }
      ],
-     "board_pos": 12,
+     "board_pos": 13,
      "points": 6,
-     "points_rank": 10,
+     "points_rank": 11,
      "points_tied": true
     },
     {
@@ -1750,9 +1806,9 @@
        "points": 6
       }
      ],
-     "board_pos": 13,
+     "board_pos": 14,
      "points": 6,
-     "points_rank": 10,
+     "points_rank": 11,
      "points_tied": true
     },
     {
@@ -1816,9 +1872,9 @@
        "points": 2
       }
      ],
-     "board_pos": 14,
+     "board_pos": 15,
      "points": 6,
-     "points_rank": 10,
+     "points_rank": 11,
      "points_tied": true
     },
     {
@@ -1844,55 +1900,9 @@
        "points": 6
       }
      ],
-     "board_pos": 15,
-     "points": 6,
-     "points_rank": 10,
-     "points_tied": true
-    },
-    {
-     "name": "Point Dume",
-     "country": "",
-     "out": false,
-     "notes": [],
-     "challenge_winner": false,
-     "nomination": "",
-     "owner": "Bush Racing Stable",
-     "trainer": "Timothy C. Kreiser",
-     "races": [
-      {
-       "bcc": false,
-       "date": "6/13/2026",
-       "track": "Mth",
-       "race": "Salvator Mile",
-       "grade": "G3",
-       "division": "Dirt Mile",
-       "pos": "5",
-       "points": 0
-      },
-      {
-       "bcc": false,
-       "date": "5/2/2026",
-       "track": "CD",
-       "race": "Churchill Downs Presented by Ford",
-       "grade": "G1",
-       "division": "Dirt Mile",
-       "pos": "10",
-       "points": 0
-      },
-      {
-       "bcc": false,
-       "date": "4/4/2026",
-       "track": "Aqu",
-       "race": "Carter H.",
-       "grade": "G2",
-       "division": "Sprint",
-       "pos": "1",
-       "points": 6
-      }
-     ],
      "board_pos": 16,
      "points": 6,
-     "points_rank": 10,
+     "points_rank": 11,
      "points_tied": true
     }
    ]

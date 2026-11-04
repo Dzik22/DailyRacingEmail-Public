@@ -1,8 +1,8 @@
 {
  "for_date": "2026-11-04",
- "built_utc": "2026-11-04T12:56:40.305105Z",
+ "built_utc": "2026-11-04T15:22:27.964681Z",
  "sources": {
-  "Gainesway": "ok 1",
+  "Gainesway": "ok 0",
   "Claiborne": "ok 8",
   "Taylor Made": "ok 1",
   "WinStar": "ok 2",
@@ -77,13 +77,24 @@
  ],
  "items": [
   {
-   "date": "2026-11-01",
-   "farm": "Gainesway",
+   "date": "2026-11-04",
+   "farm": "Claiborne",
    "sires": [
-    "Charge It"
+    "Prince of Monaco"
    ],
-   "title": "Exciting CHARGE IT Weanlings Make Sales Ring Debut at Keeneland November",
-   "link": "https://gainesway.com/exciting-charge-it-weanlings-make-sales-ring-debut-at-keeneland-november/",
+   "title": "Quality Offerings for PRINCE OF MONACO Continue in Book 3",
+   "link": "https://claibornefarm.com/quality-offerings-for-prince-of-monaco-continue-in-book-3/?utm_source=rss&utm_medium=rss&utm_campaign=quality-offerings-for-prince-of-monaco-continue-in-book-3",
+   "graded": false,
+   "kind": "feed"
+  },
+  {
+   "date": "2026-11-04",
+   "farm": "Claiborne",
+   "sires": [
+    "Mindframe"
+   ],
+   "title": "MINDFRAME Looks to Carry Keeneland Success into Book 3",
+   "link": "https://claibornefarm.com/mindframe-looks-to-carry-keeneland-success-into-book-3/?utm_source=rss&utm_medium=rss&utm_campaign=mindframe-looks-to-carry-keeneland-success-into-book-3",
    "graded": false,
    "kind": "feed"
   },
@@ -95,6 +106,17 @@
    ],
    "title": "Exciting Group of In-Foal Mares Represent MINDFRAME at Keeneland November",
    "link": "https://claibornefarm.com/exciting-group-of-in-foal-mares-represent-mindframe-at-keeneland-november/?utm_source=rss&utm_medium=rss&utm_campaign=exciting-group-of-in-foal-mares-represent-mindframe-at-keeneland-november",
+   "graded": false,
+   "kind": "feed"
+  },
+  {
+   "date": "2026-11-01",
+   "farm": "Gainesway",
+   "sires": [
+    "Charge It"
+   ],
+   "title": "Exciting CHARGE IT Weanlings Make Sales Ring Debut at Keeneland November",
+   "link": "https://gainesway.com/exciting-charge-it-weanlings-make-sales-ring-debut-at-keeneland-november/",
    "graded": false,
    "kind": "feed"
   },

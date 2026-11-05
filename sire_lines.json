@@ -1,6 +1,6 @@
 {
  "for_date": "2026-11-05",
- "built_utc": "2026-11-05T07:55:15.967486Z",
+ "built_utc": "2026-11-05T10:47:18.365990Z",
  "source": "theracingapi.com",
  "window": [
   "2026-11-02",
@@ -69,11 +69,11 @@
   }
  ],
  "scanned": {
-  "races": 157,
+  "races": 158,
   "graded": 0,
   "by_region": {
    "IRE": 22,
-   "FR": 35,
+   "FR": 36,
    "GB": 91,
    "HK": 9
   }

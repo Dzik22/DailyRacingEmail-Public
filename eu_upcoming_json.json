@@ -1,14 +1,10 @@
 [
  {
-  "day_label": "YESTERDAY — Wed Nov 4",
+  "day_label": "YESTERDAY — Thu Nov 5",
   "races": []
  },
  {
-  "day_label": "TODAY — Thu Nov 5",
-  "races": []
- },
- {
-  "day_label": "TOMORROW — Next 7 days from Fri Nov 6",
+  "day_label": "TODAY — Fri Nov 6",
   "races": [
    {
     "grade": "LR",
@@ -18,7 +14,12 @@
     "country": "IRE",
     "flag": "🇮🇪",
     "dist_surface": "1m · AW"
-   },
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Sat Nov 7",
+  "races": [
    {
     "grade": "LR",
     "race_name": "Virgin Bet Every Saturday Money Back Wentworth Stakes (Listed Race)",

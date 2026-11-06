@@ -1,9 +1,9 @@
 {
- "for_date": "2026-11-05",
- "built_utc": "2026-11-05T15:24:31.214860Z",
+ "for_date": "2026-11-06",
+ "built_utc": "2026-11-06T07:55:27.857171Z",
  "sources": {
   "Gainesway": "ok 0",
-  "Claiborne": "ok 7",
+  "Claiborne": "ok 6",
   "Taylor Made": "ok 1",
   "WinStar": "ok 2",
   "Airdrie Stud": "ok 0",
@@ -212,6 +212,17 @@
   },
   {
    "date": "2026-10-13",
+   "farm": "TDN",
+   "sires": [
+    "Mindframe"
+   ],
+   "title": "At $40k, Mindframe Leads Claiborne Stud Fees in 2027",
+   "link": "https://www.thoroughbreddailynews.com/at-40k-mindframe-leads-claiborne-stud-fees-in-2027/",
+   "graded": false,
+   "kind": "news"
+  },
+  {
+   "date": "2026-10-13",
    "farm": "Claiborne",
    "sires": [
     "Prince of Monaco",
@@ -223,17 +234,6 @@
    "link": "https://claibornefarm.com/claiborne-farm-announces-fees-for-2027-breeding-season/?utm_source=rss&utm_medium=rss&utm_campaign=claiborne-farm-announces-fees-for-2027-breeding-season",
    "graded": false,
    "kind": "feed"
-  },
-  {
-   "date": "2026-10-13",
-   "farm": "TDN",
-   "sires": [
-    "Mindframe"
-   ],
-   "title": "At $40k, Mindframe Leads Claiborne Stud Fees in 2027",
-   "link": "https://www.thoroughbreddailynews.com/at-40k-mindframe-leads-claiborne-stud-fees-in-2027/",
-   "graded": false,
-   "kind": "news"
   },
   {
    "date": "2026-10-11",

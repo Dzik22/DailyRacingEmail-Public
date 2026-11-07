@@ -1,13 +1,13 @@
 {
- "for_date": "2026-11-06",
- "built_utc": "2026-11-06T14:58:36.381600Z",
+ "for_date": "2026-11-07",
+ "built_utc": "2026-11-07T07:05:33.869547Z",
  "sources": {
   "Gainesway": "ok 0",
   "Claiborne": "ok 6",
   "Taylor Made": "ok 1",
   "WinStar": "ok 2",
   "Airdrie Stud": "ok 0",
-  "Lane's End": "ok 0",
+  "Lane's End": "fail HTTP 404",
   "Hill 'n' Dale": "ok 0 new",
   "Mill Ridge": "ok 0 new",
   "Murmur Farm": "ok 0 new",

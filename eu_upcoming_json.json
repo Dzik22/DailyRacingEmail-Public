@@ -1,10 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Thu Nov 5",
-  "races": []
- },
- {
-  "day_label": "TODAY — Fri Nov 6",
+  "day_label": "YESTERDAY — Fri Nov 6",
   "races": [
    {
     "grade": "LR",
@@ -18,7 +14,7 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Sat Nov 7",
+  "day_label": "TODAY — Sat Nov 7",
   "races": [
    {
     "grade": "LR",
@@ -36,6 +32,47 @@
     "track": "Doncaster",
     "country": "GB",
     "flag": "🇬🇧",
+    "dist_surface": "1m2f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Sun Nov 8",
+  "races": [
+   {
+    "grade": "LR",
+    "race_name": "Prix Herod",
+    "date_short": "Sun\nNov 8",
+    "track": "Saint-Cloud",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "7f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Prix Tantieme",
+    "date_short": "Sun\nNov 8",
+    "track": "Saint-Cloud",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Prix Vulcain",
+    "date_short": "Sun\nNov 8",
+    "track": "Saint-Cloud",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m4½f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Prix Solitude",
+    "date_short": "Sun\nNov 8",
+    "track": "Saint-Cloud",
+    "country": "FR",
+    "flag": "🇫🇷",
     "dist_surface": "1m2f · Turf"
    }
   ]

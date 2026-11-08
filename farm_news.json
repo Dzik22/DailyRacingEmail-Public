@@ -1,8 +1,8 @@
 {
- "for_date": "2026-11-07",
- "built_utc": "2026-11-07T13:56:45.832623Z",
+ "for_date": "2026-11-08",
+ "built_utc": "2026-11-08T07:18:06.802298Z",
  "sources": {
-  "Gainesway": "ok 0",
+  "Gainesway": "ok 1",
   "Claiborne": "ok 6",
   "Taylor Made": "ok 1",
   "WinStar": "ok 2",
@@ -76,6 +76,17 @@
   }
  ],
  "items": [
+  {
+   "date": "2026-11-07",
+   "farm": "Gainesway",
+   "sires": [
+    "Charge It"
+   ],
+   "title": "CHARGE IT Sister Easy Winner of Mother Goose (G2)",
+   "link": "https://gainesway.com/charge-it-sister-easy-winner-of-mother-goose-g2/",
+   "graded": true,
+   "kind": "feed"
+  },
   {
    "date": "2026-11-04",
    "farm": "Claiborne",

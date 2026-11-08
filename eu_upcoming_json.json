@@ -1,30 +1,7 @@
 [
  {
-  "day_label": "YESTERDAY — Fri Nov 6",
+  "day_label": "YESTERDAY — Sat Nov 7",
   "races": [
-   {
-    "grade": "LR",
-    "race_name": "Irish Stallion Farms EBF Cooley Fillies Stakes (Listed)",
-    "date_short": "Fri\nNov 6",
-    "track": "Dundalk (AW)",
-    "country": "IRE",
-    "flag": "🇮🇪",
-    "dist_surface": "1m · AW"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Sat Nov 7",
-  "races": [
-   {
-    "grade": "LR",
-    "race_name": "Virgin Bet Every Saturday Money Back Wentworth Stakes (Listed Race)",
-    "date_short": "Sat\nNov 7",
-    "track": "Doncaster",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · Turf"
-   },
    {
     "grade": "LR",
     "race_name": "Virgin Bet Daily Price Boosts Irish EBF Gillies Fillies' Stakes (Listed Race)",
@@ -33,11 +10,20 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m2f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Virgin Bet Every Saturday Money Back Wentworth Stakes (Listed Race)",
+    "date_short": "Sat\nNov 7",
+    "track": "Doncaster",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · Turf"
    }
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Sun Nov 8",
+  "day_label": "TODAY — Sun Nov 8",
   "races": [
    {
     "grade": "LR",
@@ -76,5 +62,9 @@
     "dist_surface": "1m2f · Turf"
    }
   ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Mon Nov 9",
+  "races": []
  }
 ]

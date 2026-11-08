@@ -1,12 +1,22 @@
 [
  {
   "grade": "LR",
-  "race_name": "Irish Stallion Farms EBF Cooley Fillies Stakes (Listed)",
-  "track": "Dundalk (AW)",
-  "country": "IRE",
-  "flag": "🇮🇪",
-  "dist_surface": "1m · AW",
-  "winner": "Aviatrice",
-  "off_time": "6:45"
+  "race_name": "Virgin Bet Daily Price Boosts Irish EBF Gillies Fillies' Stakes (Listed Race)",
+  "track": "Doncaster",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "1m2f · Turf",
+  "winner": "Seren Star",
+  "off_time": "2:45"
+ },
+ {
+  "grade": "LR",
+  "race_name": "Virgin Bet Every Saturday Money Back Wentworth Stakes (Listed Race)",
+  "track": "Doncaster",
+  "country": "GB",
+  "flag": "🇬🇧",
+  "dist_surface": "6f · Turf",
+  "winner": "Coul Angel",
+  "off_time": "2:10"
  }
 ]

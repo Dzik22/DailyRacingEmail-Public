@@ -215,6 +215,8 @@ For all other race data, WebSearch is PRIMARY and WebFetch is SUPPLEMENTAL ONLY 
 
 ## VERIFIED_STABLE — MASTER TABLE (horse → syndicate, fallback only)
 
+⚠️ UPDATED NOV 9 2026 FROM MIKE'S ACTIVE BARN LIST: added Woodford 2yos Forzuto, Early Decision, Sharma's Magic, Quiet on the Creek; removed Simply Joking (sold at Fasig-Tipton, Nov 2026), Oracle of Delphi, Eager Lad, Sweetheart Jewelry and Oh Shoot (no longer in the active barn). A removed horse is NOT Mike's: Top 10 News only.
+
 ⚠️ PRIMARY SOURCE IS THE SPREADSHEET ACTIVE BARN TAB (Step 2, gid=1658365509). The table below is a snapshot that may be stale. Always prefer the live ACTIVE_BARN list from Step 2 for filtering decisions. Use this table ONLY as a fallback when Step 2 fails, and as the source of silk badge colors for the HTML generator.
 
 ⚠️ SILK BADGE SYNDICATE = MASTER TABLE ONLY (for badge colors). THIS IS ABSOLUTE. NO EXCEPTIONS.
@@ -233,17 +235,12 @@ Match case-insensitively. Ignore country suffixes (IRE), (FR), (GB). NEVER assig
 ```
 Ulysses Rose          → Eclipse
 Tellus Mater          → Wasabi
-Simply Joking         → Commonwealth
 Saxony Charms         → Team Valor
-Oracle of Delphi      → Team Valor
 Celestial Siren       → Team Valor
-Eager Lad             → Team Valor
-Sweetheart Jewelry    → Team Valor
 Cuban Flame           → Eclipse
 Coco G                → Commonwealth
 Sierra Sagrada        → Wasabi
 Snowglobe             → Wasabi
-Oh Shoot              → Team Valor
 Otherworldly          → Eclipse
 Random Recall         → Final Furlong
 Phantom Princess      → RTP Racing
@@ -277,6 +274,10 @@ Outcomes Based        → Woodford
 Hypnos                → Woodford
 Kensai                → Woodford
 Castiglione           → Woodford
+Forzuto               → Woodford
+Early Decision        → Woodford
+Sharma's Magic        → Woodford
+Quiet on the Creek    → Woodford
 ```
 
 ⚠️ IMPLY '25 IS A COLT (confirmed by Mike Oct 19 2026; the handle was "Imply '25 Filly" until then).
@@ -1778,14 +1779,12 @@ Call the `Task` tool with these parameters:
 EU_RESULTS_PROMPT:
 You are the EU horse race-results lookup agent for Mike Dzik's daily racing digest.
 
-Your ONLY job: for each of the 9 hardcoded EU-based horses below, determine whether the horse raced in the last 7 days (today is whatever `date` shell command returns). If yes, return the full result. If no, return raced_recently=false. Never skip a horse. Never leave status blank.
+Your ONLY job: for each of the 7 hardcoded EU-based horses below, determine whether the horse raced in the last 7 days (today is whatever `date` shell command returns). If yes, return the full result. If no, return raced_recently=false. Never skip a horse. Never leave status blank.
 
-HARDCODED HORSE LIST (process ALL 9 every run — no exceptions):
+HARDCODED HORSE LIST (process ALL 7 every run — no exceptions):
 [
   {"horse":"Saxony Charms","syndicate":"Team Valor"},
-  {"horse":"Oracle of Delphi","syndicate":"Team Valor"},
-  {"horse":"Eager Lad","syndicate":"Team Valor"},
-  {"horse":"Sweetheart Jewelry","syndicate":"Team Valor"},
+  {"horse":"Celestial Siren","syndicate":"Team Valor"},
   {"horse":"Otherworldly","syndicate":"Eclipse"},
   {"horse":"Phantom Princess","syndicate":"RTP Racing"},
   {"horse":"Boleto","syndicate":"Middleham Park"},
@@ -1891,8 +1890,8 @@ for k in ['version','horses','summary']:
         print('STEP_4cREU_SCHEMA_FAIL: missing top-level key "' + k + '"')
         sys.exit(1)
 
-# Required: ALL 9 hardcoded horses must appear (case-insensitive name match)
-REQUIRED_HORSES = ['saxony charms','oracle of delphi','eager lad','sweetheart jewelry','otherworldly','phantom princess','boleto','capricious star','double right']
+# Required: ALL 7 hardcoded horses must appear (case-insensitive name match)
+REQUIRED_HORSES = ['saxony charms','celestial siren','otherworldly','phantom princess','boleto','capricious star','double right']
 got = set(str(h.get('horse','')).lower().strip() for h in d.get('horses',[]))
 missing_horses = [r for r in REQUIRED_HORSES if r not in got]
 if missing_horses:
@@ -2542,7 +2541,7 @@ REQUIRED_GATES = [
     ('/tmp/step_4cr_done.txt',   'Step 4c-R (Results verification — gate)','Run Step 4c-R verification subagent invocation'),
     ('/tmp/step_4cr_data.json',  'Step 4c-R (Results verification — data JSON from subagent)','Invoke the Step 4c-R Task subagent; capture its JSON response to /tmp/step_4cr_data.json'),
     ('/tmp/step_4ceu_done.txt',  'Step 4c-EU-EMAIL (Timeform)',     'Run Step 4c-EU-EMAIL Timeform search'),
-    ('/tmp/step_4creu_done.txt', 'Step 4c-R-EU (EU horse results — gate)','Invoke the Step 4c-R-EU Task subagent to search all 10 EU MASTER TABLE horses for last-7-day results'),
+    ('/tmp/step_4creu_done.txt', 'Step 4c-R-EU (EU horse results — gate)','Invoke the Step 4c-R-EU Task subagent to search all 7 EU MASTER TABLE horses for last-7-day results'),
     ('/tmp/step_4creu_data.json','Step 4c-R-EU (EU horse results — data JSON from subagent)','Invoke the Step 4c-R-EU Task subagent; capture its JSON response to /tmp/step_4creu_data.json'),
     ('/tmp/step_4d_done.txt',    'Step 4d (Workout web details)',   'Run Step 4d WebSearch for each ENTRIES horse'),
     ('/tmp/step_4e_done.txt',    'Step 4e (Syndicate emails — gate)','Run Step 4e syndicate subagent invocation'),
@@ -3025,7 +3024,7 @@ python3 << 'VALEOF'   # heredoc, NOT python3 -c "..." — see note below
 # never ran, silently, no matter what was in digest_data.json. A quoted heredoc needs no escaping at
 # all and cannot be re-broken by adding a quote later, so use it and do NOT convert this back to -c.
 import json
-MASTER = {'ulysses rose','tellus mater','simply joking','saxony charms','oracle of delphi','celestial siren','eager lad','sweetheart jewelry','cuban flame','coco g','sierra sagrada','snowglobe','oh shoot','otherworldly','random recall','phantom princess','boleto','capricious star','double right','straight shooter','maui madness','see you tonight','physique','just sayin','victor whiskey','corderito','core principle','highwaymen','clear for takeoff','mccoy','refute','alpha strike','flightress','outcomes based','hypnos','kensai','castiglione',
+MASTER = {'ulysses rose','tellus mater','saxony charms','celestial siren','cuban flame','coco g','sierra sagrada','snowglobe','otherworldly','random recall','phantom princess','boleto','capricious star','double right','straight shooter','maui madness','see you tonight','physique','just sayin','victor whiskey','corderito','core principle','highwaymen','clear for takeoff','mccoy','refute','alpha strike','flightress','outcomes based','hypnos','kensai','castiglione','forzuto','early decision',"sharma's magic",'quiet on the creek',
   # Unnamed 2025 yearling prospects (UNNAMED PROSPECTS table, keyed by dam). Added to this set
   # Oct 5 2026: they were in the MASTER TABLE and the silk dict but NOT here, so the
   # stable_updates gate below flagged them as non-MASTER and told the agent to move them to
@@ -4171,11 +4170,11 @@ SILK = {
 }
 MASTER = {
   'ulysses rose':'Eclipse','tellus mater':'Wasabi',
-  'simply joking':'Commonwealth','saxony charms':'Team Valor','oracle of delphi':'Team Valor',
-  'celestial siren':'Team Valor','eager lad':'Team Valor',
-  'sweetheart jewelry':'Team Valor','cuban flame':'Eclipse','coco g':'Commonwealth',
+  'saxony charms':'Team Valor',
+  'celestial siren':'Team Valor',
+  'cuban flame':'Eclipse','coco g':'Commonwealth',
   'sierra sagrada':'Wasabi','snowglobe':'Wasabi',
-  'oh shoot':'Team Valor','otherworldly':'Eclipse','random recall':'Final Furlong',
+  'otherworldly':'Eclipse','random recall':'Final Furlong',
   'phantom princess':'RTP Racing','boleto':'Middleham Park','capricious star':'Middleham Park',
   'double right':'Middleham Park','straight shooter':'Wasabi','maui madness':'Wasabi',
   'see you tonight':'Wasabi','physique':'Woodford','just sayin':'Woodford',
@@ -4183,6 +4182,7 @@ MASTER = {
   'highwaymen':'Woodford','clear for takeoff':'Woodford','mccoy':'Woodford',
   'refute':'Woodford','alpha strike':'Woodford','flightress':'Woodford','outcomes based':'Woodford',
   'hypnos':'Woodford','kensai':'Woodford','castiglione':'Woodford',
+  'forzuto':'Woodford','early decision':'Woodford',"sharma's magic":'Woodford','quiet on the creek':'Woodford',  # Nov 9 2026 active barn
   # Unnamed 2025 yearling fillies — see UNNAMED PROSPECTS table. Keyed by dam.
   "cs incharge '25 filly":'Rainbows End', "indian charm '25 filly":'Rainbows End',
   "velvet '25 filly":'Rainbows End', "ransomed heart '25 filly":'Wasabi',
@@ -5316,7 +5316,7 @@ except Exception as e:
 - SYNDICATE HEADERS IN STABLE UPDATES (LOCKED): The Python generator groups stable_updates by syndicate and renders an underlined syndicate name header before each group. The JSON `syndicate` field must match exactly one of the 8 valid syndicate names so the grouping works correctly.
 - SYNDICATE ABBREVIATIONS FORBIDDEN (LOCKED — ABSOLUTE — ZERO TOLERANCE): The `syndicate` field in digest_data.json MUST be the exact title-case full name. Valid values: `Eclipse` | `Team Valor` | `Commonwealth` | `Woodford` | `Middleham Park` | `Wasabi` | `Final Furlong` | `RTP Racing` | `Rainbows End` | `Bradley Thoroughbreds`. NEVER use abbreviations: MHP, WSB, WRF, TV, ECL, COM, FF, or any other shorthand. Abbreviation → `silk()` falls back to gray badge labeled with the abbreviation → all silk colors broken. Step 7.1 validation WILL `sys.exit(1)` if any abbreviation is found — the generator will not run until this is fixed.
 - MY STABLE MANUAL HTML IS ABSOLUTELY FORBIDDEN (LOCKED — ZERO TOLERANCE): The My Stable section header MUST use 🏇 (U+1F3C7, the horse-racing emoji, `\U0001f3c7`). The emoji 🐴 (U+1F434, horse face) is PROOF the agent wrote manual HTML — this is a critical violation. Every stable-row MUST be produced by the `row()` function in Step 7.5. NEVER write `<div class="stable-row">` or `<h4>` or any horse HTML manually. If you find yourself typing a horse entry directly → STOP → fix the JSON and re-run Step 7.5. Step 7.6 checks for missing silk badges and wrong emoji and will block submission if found.
-- EU RESULTS PROACTIVE SEARCH (LOCKED — MANDATORY EVERY DAY): Step 4c-R-EU runs every day for all 9 EU-based horses: Saxony Charms, Oracle of Delphi, Eager Lad, Sweetheart Jewelry (Team Valor) + Otherworldly (Eclipse) + Phantom Princess (RTP Racing) + Boleto, Capricious Star, Double Right (Middleham Park). Equibase virtual stable does NOT cover European tracks. These horses will NEVER appear in Equibase notifications even when they race. Use Racing Post WebSearch for each horse every day without exception.
+- EU RESULTS PROACTIVE SEARCH (LOCKED — MANDATORY EVERY DAY): Step 4c-R-EU runs every day for all 7 EU-based horses: Saxony Charms, Celestial Siren (Team Valor) + Otherworldly (Eclipse) + Phantom Princess (RTP Racing) + Boleto, Capricious Star, Double Right (Middleham Park). Equibase virtual stable does NOT cover European tracks. These horses will NEVER appear in Equibase notifications even when they race. Use Racing Post WebSearch for each horse every day without exception.
 - CONTINENT DIVIDERS IN RECAP (LOCKED): 🇺🇸 UNITED STATES and 🌍 EUROPE dividers always present.
 - STAKES RECAP DATE SCOPE (LOCKED): Only races that ran on YESTERDAY_RP appear in the recap. Never pad with races from prior days — no "Saturday context", "weekend reference", or similar. Zero races on YESTERDAY_RP → write the no-races note, nothing else.
 - FLAG EMOJIS IN TRACK HEADERS (LOCKED): USA=🇺🇸, UK=🇬🇧, Ireland=🇮🇪, France=🇫🇷, Germany=🇩🇪.

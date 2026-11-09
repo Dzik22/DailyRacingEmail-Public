@@ -4253,9 +4253,12 @@ def tblock(v, yd):
     c = str(v.get('country','USA')); fl = FLAGS.get(c,'\U0001f3c1')
     out  = '<div class="track-spacer">&nbsp;</div>\n'
     out += '<div class="track-header">' + fl + ' ' + str(v.get('track','')) + ' &nbsp;·&nbsp; ' + str(v.get('date_display', yd)) + '</div>\n'
-    out += '<table class="race-table"><thead><tr><th style="width:55%">Race</th><th style="width:18%">Dist · Surface</th><th style="width:27%">Winner</th></tr></thead><tbody>\n'
+    # Nov 9 2026 (Mike): two columns so the WINNER always fits on a phone -- distance/surface moved
+    # under the race name, winner in its own bold column. Never drop the winner.
+    out += '<table class="race-table"><thead><tr><th style="width:64%">Race · Dist · Surface</th><th style="width:36%">Winner</th></tr></thead><tbody>\n'
     for r in v.get('races',[]): out += '<tr><td class="race-name">' + GI.get(str(r.get('grade','')),'')\
-        + '&nbsp;' + str(r.get('race_name','')) + '</td><td>' + str(r.get('dist_surface','')) + '</td><td>' + str(r.get('winner','')) + '</td></tr>\n'
+        + '&nbsp;' + str(r.get('race_name','')) + '<br><span style="font-weight:normal;font-size:11px;color:#5a7fa6">' + str(r.get('dist_surface','')) + '</span></td>'\
+        + '<td style="font-weight:bold;color:#1f6fbf;font-size:13px">' + (str(r.get('winner','')).strip() or 'Not yet confirmed') + '</td></tr>\n'
     return out + '</tbody></table>\n<div class="track-spacer">&nbsp;</div>\n'
 
 ms = d.get('my_stable', {}); yd = str(d.get('yesterday_display','')); td = str(d.get('today_display',''))
@@ -4606,6 +4609,28 @@ if not any(_up_days_src):
     _ej3f = json.load(open('/tmp/eu_upcoming_json.json')) if _os.path.exists('/tmp/eu_upcoming_json.json') else []
     _up_days_src = _ej3f
     print('S5_FALLBACK: d[upcoming] empty — using eu_upcoming_json.json (EU-only)')
+# Nov 9 2026 (Mike): winner lookup for the YESTERDAY bucket, built from the Stakes Recap data so
+# the two sections can never disagree. Match on normalised race name (parentheticals and sponsor
+# boilerplate stripped) plus track; fall back to name alone when it is unique.
+def _wk_norm(x):
+    x = _re.sub(r'\([^)]*\)', ' ', str(x or '').lower())
+    return _re.sub(r'[^a-z0-9]+', ' ', x).strip()
+_wk_map = {}; _wk_name = {}
+for _wk_cont in ('usa', 'europe'):
+    for _wk_v in (d.get('stakes_recap', {}) or {}).get(_wk_cont, []) or []:
+        for _wk_r in _wk_v.get('races', []) or []:
+            _wk_w = str(_wk_r.get('winner', '') or '').strip()
+            if not _wk_w: continue
+            _wk_n = _wk_norm(_wk_r.get('race_name', ''))
+            _wk_map[(_wk_n, _wk_norm(_wk_v.get('track', '')))] = _wk_w
+            _wk_name.setdefault(_wk_n, set()).add(_wk_w)
+def _yday_winner(r):
+    _n = _wk_norm(r.get('race_name', '')); _t = _wk_norm(r.get('track', ''))
+    if (_n, _t) in _wk_map: return _wk_map[(_n, _t)]
+    for (_kn, _kt), _w in _wk_map.items():
+        if _kt == _t and _kn and _n and (_kn in _n or _n in _kn): return _w
+    _c = _wk_name.get(_n)
+    return next(iter(_c)) if _c and len(_c) == 1 else ''
 s5i = ''
 for _uday in (_up_days_src or []):
     # Aug 12 2026 FIX: normalise the day header. The bucket label can arrive from three
@@ -4640,14 +4665,18 @@ for _uday in (_up_days_src or []):
     s5i += '<div class="day-header">\U0001f4c5 ' + _dl_out + '</div>\n'
     _uraces = _uday.get('races', [])
     if _uraces:
-        s5i += '<table class="race-table"><thead><tr><th style="width:13%">Date</th><th style="width:47%">Race</th><th style="width:26%">Track</th><th style="width:14%">Dist · Surface</th></tr></thead><tbody>\n'
+        # Nov 9 2026 (Mike): three columns so it fits on a phone -- distance/surface sits under the
+        # race name -- and every YESTERDAY race shows its winner, taken from the Stakes Recap data.
+        s5i += '<table class="race-table"><thead><tr><th style="width:14%">Date</th><th style="width:58%">Race · Dist · Surface</th><th style="width:28%">Track</th></tr></thead><tbody>\n'
         for r in _uraces:
             fl = FLAGS.get(str(r.get('country','GB')), '\U0001f3c1')
             ds = str(r.get('date_short','')).replace('\n','<br>')
+            _wn = _yday_winner(r) if _dl_pfx == 'YESTERDAY' else ''
             s5i += ('<tr><td style="font-size:11px;text-align:center;font-weight:bold;color:#1a1a2e;line-height:1.4">' + ds + '</td>'
-                + '<td class="race-name">' + GI.get(str(r.get('grade','')), '') + '&nbsp;' + str(r.get('race_name','')) + '</td>'
-                + '<td>' + fl + ' ' + str(r.get('track','')) + '</td>'
-                + '<td>' + str(r.get('dist_surface','')) + '</td></tr>\n')
+                + '<td class="race-name">' + GI.get(str(r.get('grade','')), '') + '&nbsp;' + str(r.get('race_name',''))
+                + '<br><span style="font-weight:normal;font-size:11px;color:#5a7fa6">' + str(r.get('dist_surface','')) + '</span>'
+                + (('<br><span style="font-weight:bold;font-size:12px;color:#1f6fbf">Won by ' + _wn + '</span>') if _wn else '')
+                + '</td><td>' + fl + ' ' + str(r.get('track','')) + '</td></tr>\n')
         s5i += '</tbody></table>\n'
     else:
         s5i += '<div class="stable-no-news">No graded stakes scheduled.</div>\n'

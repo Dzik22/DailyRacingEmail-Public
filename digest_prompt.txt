@@ -763,21 +763,21 @@ for f in ('/tmp/eu_recap_json.json','/tmp/eu_upcoming_json.json'):
 # --- CSS ---
 css="""body{font-family:Georgia,serif;color:#1a1a1a;background:#e6eef7;margin:0;padding:0}
 .wrapper{max-width:700px;margin:0 auto;background:#fff}
-.header{background:#1a1a2e;color:#4da3ff;text-align:center;padding:44px 20px 36px}
+.header{background:#fff;color:#1f6fbf;border-bottom:4px solid #4da3ff;text-align:center;padding:44px 20px 36px}
 .header h1{margin:0;font-size:28px;letter-spacing:3px;text-transform:uppercase}
-.header p{margin:10px 0 0;color:#8fb8de;font-size:13px;letter-spacing:1px}
+.header p{margin:10px 0 0;color:#5a7fa6;font-size:13px;letter-spacing:1px}
 .section-spacer{height:40px;background:#e6eef7}
 .section-break{text-align:center;font-family:monospace;color:#999;padding:10px 22px;font-size:13px;background:#fff;letter-spacing:0}
-.section-header{background:#1a1a2e;padding:26px 22px 24px;border-top:5px solid #4da3ff;border-bottom:2px solid rgba(77,163,255,0.3)}
-.section-header h2{margin:0;color:#4da3ff;font-size:16px;letter-spacing:4px;text-transform:uppercase;font-weight:bold}
+.section-header{background:#fff;padding:26px 22px 24px;border-top:5px solid #4da3ff;border-bottom:2px solid rgba(77,163,255,0.3)}
+.section-header h2{margin:0;color:#1f6fbf;font-size:16px;letter-spacing:4px;text-transform:uppercase;font-weight:bold}
 .section-header .sh-icon{font-size:22px;margin-right:12px;vertical-align:middle}
 .horse-gap{height:18px;background:#fff}
 .continent-divider{background:#e6eef7;padding:14px 22px;font-size:11px;font-weight:bold;letter-spacing:3px;color:#888;text-transform:uppercase}
 .continent-gap{height:20px;background:#e6eef7;border-top:3px solid #4a7fb5;border-bottom:3px solid #4a7fb5;margin:20px 0;font-size:1px;line-height:20px}
 .track-spacer{height:20px;background:#e6eef7;font-size:1px;line-height:20px}
-.track-header{background:#1a1a2e;color:#4da3ff;padding:12px 16px;font-size:12px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;border-bottom:2px solid rgba(77,163,255,0.35)}
+.track-header{background:#eef5fc;color:#1f6fbf;padding:12px 16px;font-size:12px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;border-bottom:2px solid rgba(77,163,255,0.35)}
 .stable-subsection-wrap{border:3px dashed #4a7fb5;margin:16px 18px;border-radius:4px;background:#fff}
-.stable-subsection-header{background:#1a1a2e;color:#4da3ff;padding:16px 22px;font-size:13px;font-weight:900;letter-spacing:4px;text-transform:uppercase;border-bottom:3px solid #4da3ff}
+.stable-subsection-header{background:#eef5fc;color:#1f6fbf;padding:16px 22px;font-size:13px;font-weight:900;letter-spacing:4px;text-transform:uppercase;border-bottom:3px solid #4da3ff}
 .stable-row{background:#eef5fc;border-left:4px solid #4da3ff;margin:12px 14px;padding:16px 16px 14px;border-radius:3px}
 .stable-row h4{margin:0 0 8px;color:#1a1a2e;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px}.stable-h4{margin:0 0 8px;color:#1a1a2e;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;line-height:1.6}
 .stable-row p{margin:4px 0 0;font-size:13px;line-height:1.8;color:#333;font-weight:normal}
@@ -789,7 +789,7 @@ css="""body{font-family:Georgia,serif;color:#1a1a1a;background:#e6eef7;margin:0;
 .story-num{color:#4da3ff;font-weight:bold;margin-right:5px}
 .story p{margin:0;font-size:13px;line-height:1.8;color:#333}
 .race-table{width:100%;border-collapse:collapse;background:#fff;border:2px solid #4da3ff;margin-bottom:0}
-.race-table th{background:#1a1a2e;color:#4da3ff;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:10px 10px;text-align:left;border:1px solid rgba(77,163,255,0.45)}
+.race-table th{background:#eef5fc;color:#1f6fbf;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:10px 10px;text-align:left;border:1px solid rgba(77,163,255,0.45)}
 .race-table td{padding:9px 10px;border:1px solid #8fb8de;font-size:12px;vertical-align:middle;color:#222;white-space:normal}
 .race-table tr:nth-child(even) td{background:#fafaf7}
 .race-name{font-weight:bold;color:#1a1a2e;font-size:11px}
@@ -799,8 +799,8 @@ css="""body{font-family:Georgia,serif;color:#1a1a1a;background:#e6eef7;margin:0;
 .grade-listed{display:inline-block;background:#555;color:#fff;font-size:9px;font-weight:bold;padding:1px 5px;border-radius:3px;vertical-align:middle}
 .grade-icon{font-size:12px;margin-right:2px;vertical-align:middle}
 .upcoming-wrapper{border:3px solid #4da3ff;margin:0}
-.day-header{background:#1a1a2e;color:#4da3ff;padding:14px 22px;font-size:13px;font-weight:900;letter-spacing:3px;text-transform:uppercase;border-top:3px solid #4da3ff}
-.footer{background:#1a1a2e;color:#777;text-align:center;padding:32px;font-size:11px;border-top:4px solid #4da3ff}"""
+.day-header{background:#eef5fc;color:#1f6fbf;padding:14px 22px;font-size:13px;font-weight:900;letter-spacing:3px;text-transform:uppercase;border-top:3px solid #4da3ff}
+.footer{background:#fff;color:#777;text-align:center;padding:32px;font-size:11px;border-top:4px solid #4da3ff}"""
 with open('/tmp/digest_css.txt','w') as f: f.write(css)
 print(f"\n→ /tmp/digest_css.txt ({len(css)} bytes)")
 
@@ -2782,21 +2782,21 @@ Run this Bash command NOW:
 python3 << 'PYEOF'
 css = """body{font-family:Georgia,serif;color:#1a1a1a;background:#e6eef7;margin:0;padding:0}
 .wrapper{max-width:700px;margin:0 auto;background:#fff}
-.header{background:#1a1a2e;color:#4da3ff;text-align:center;padding:44px 20px 36px}
+.header{background:#fff;color:#1f6fbf;border-bottom:4px solid #4da3ff;text-align:center;padding:44px 20px 36px}
 .header h1{margin:0;font-size:28px;letter-spacing:3px;text-transform:uppercase}
-.header p{margin:10px 0 0;color:#8fb8de;font-size:13px;letter-spacing:1px}
+.header p{margin:10px 0 0;color:#5a7fa6;font-size:13px;letter-spacing:1px}
 .section-spacer{height:40px;background:#e6eef7}
 .section-break{text-align:center;font-family:monospace;color:#999;padding:10px 22px;font-size:13px;background:#fff;letter-spacing:0}
-.section-header{background:#1a1a2e;padding:26px 22px 24px;border-top:5px solid #4da3ff;border-bottom:2px solid rgba(77,163,255,0.3)}
-.section-header h2{margin:0;color:#4da3ff;font-size:16px;letter-spacing:4px;text-transform:uppercase;font-weight:bold}
+.section-header{background:#fff;padding:26px 22px 24px;border-top:5px solid #4da3ff;border-bottom:2px solid rgba(77,163,255,0.3)}
+.section-header h2{margin:0;color:#1f6fbf;font-size:16px;letter-spacing:4px;text-transform:uppercase;font-weight:bold}
 .section-header .sh-icon{font-size:22px;margin-right:12px;vertical-align:middle}
 .horse-gap{height:18px;background:#fff}
 .continent-divider{background:#e6eef7;padding:14px 22px;font-size:11px;font-weight:bold;letter-spacing:3px;color:#888;text-transform:uppercase}
 .continent-gap{height:20px;background:#e6eef7;border-top:3px solid #4a7fb5;border-bottom:3px solid #4a7fb5;margin:20px 0;font-size:1px;line-height:20px}
 .track-spacer{height:20px;background:#e6eef7;font-size:1px;line-height:20px}
-.track-header{background:#1a1a2e;color:#4da3ff;padding:12px 16px;font-size:12px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;border-bottom:2px solid rgba(77,163,255,0.35)}
+.track-header{background:#eef5fc;color:#1f6fbf;padding:12px 16px;font-size:12px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;border-bottom:2px solid rgba(77,163,255,0.35)}
 .stable-subsection-wrap{border:3px dashed #4a7fb5;margin:16px 18px;border-radius:4px;background:#fff}
-.stable-subsection-header{background:#1a1a2e;color:#4da3ff;padding:16px 22px;font-size:13px;font-weight:900;letter-spacing:4px;text-transform:uppercase;border-bottom:3px solid #4da3ff}
+.stable-subsection-header{background:#eef5fc;color:#1f6fbf;padding:16px 22px;font-size:13px;font-weight:900;letter-spacing:4px;text-transform:uppercase;border-bottom:3px solid #4da3ff}
 .stable-row{background:#eef5fc;border-left:4px solid #4da3ff;margin:12px 14px;padding:16px 16px 14px;border-radius:3px}
 .stable-row h4{margin:0 0 8px;color:#1a1a2e;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px}.stable-h4{margin:0 0 8px;color:#1a1a2e;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;line-height:1.6}
 .stable-row p{margin:4px 0 0;font-size:13px;line-height:1.8;color:#333;font-weight:normal}
@@ -2808,7 +2808,7 @@ css = """body{font-family:Georgia,serif;color:#1a1a1a;background:#e6eef7;margin:
 .story-num{color:#4da3ff;font-weight:bold;margin-right:5px}
 .story p{margin:0;font-size:13px;line-height:1.8;color:#333}
 .race-table{width:100%;border-collapse:collapse;background:#fff;border:2px solid #4da3ff;margin-bottom:0}
-.race-table th{background:#1a1a2e;color:#4da3ff;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:10px 10px;text-align:left;border:1px solid rgba(77,163,255,0.45)}
+.race-table th{background:#eef5fc;color:#1f6fbf;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:10px 10px;text-align:left;border:1px solid rgba(77,163,255,0.45)}
 .race-table td{padding:9px 10px;border:1px solid #8fb8de;font-size:12px;vertical-align:middle;color:#222;white-space:normal}
 .race-table tr:nth-child(even) td{background:#fafaf7}
 .race-name{font-weight:bold;color:#1a1a2e;font-size:11px}
@@ -2818,8 +2818,8 @@ css = """body{font-family:Georgia,serif;color:#1a1a1a;background:#e6eef7;margin:
 .grade-listed{display:inline-block;background:#555;color:#fff;font-size:9px;font-weight:bold;padding:1px 5px;border-radius:3px;vertical-align:middle}
 .grade-icon{font-size:12px;margin-right:2px;vertical-align:middle}
 .upcoming-wrapper{border:3px solid #4da3ff;margin:0}
-.day-header{background:#1a1a2e;color:#4da3ff;padding:14px 22px;font-size:13px;font-weight:900;letter-spacing:3px;text-transform:uppercase;border-top:3px solid #4da3ff}
-.footer{background:#1a1a2e;color:#777;text-align:center;padding:32px;font-size:11px;border-top:4px solid #4da3ff}"""
+.day-header{background:#eef5fc;color:#1f6fbf;padding:14px 22px;font-size:13px;font-weight:900;letter-spacing:3px;text-transform:uppercase;border-top:3px solid #4da3ff}
+.footer{background:#fff;color:#777;text-align:center;padding:32px;font-size:11px;border-top:4px solid #4da3ff}"""
 with open('/tmp/digest_css.txt', 'w') as f:
     f.write(css)
 print('CSS written to disk: /tmp/digest_css.txt — ' + str(len(css)) + ' bytes')

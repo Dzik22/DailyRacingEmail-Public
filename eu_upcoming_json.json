@@ -46,6 +46,16 @@
  },
  {
   "day_label": "TOMORROW — Next 7 days from Tue Nov 10",
-  "races": []
+  "races": [
+   {
+    "grade": "LR",
+    "race_name": "Prix Denisy",
+    "date_short": "Tue\nNov 10",
+    "track": "Fontainebleau",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m7f · Turf"
+   }
+  ]
  }
 ]

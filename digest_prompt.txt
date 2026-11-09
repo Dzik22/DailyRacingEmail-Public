@@ -4696,6 +4696,90 @@ html = ('<!DOCTYPE html><html><head><meta charset="UTF-8"><style>' + css + '</st
         + '<div class="header"><h1>\U0001f3c7 Daily Racing Digest</h1><p>' + td + ' | News from ' + yd + '</p></div>\n'
         + SB + s1 + (SB + s_bc if s_bc else '') + SB + s2 + SB + s3 + SB + s4 + SB + s5 + (SB + s_sire if s_sire else '') + SB + s6 + footer + '</div></body></html>')
 
+# ── CSS INLINER (Nov 9 2026) ───────────────────────────────────────────────────
+# Gmail strips the <style> block and every class= attribute when a draft is written, so any look
+# that lives only in the stylesheet (borders, header fills, table rules, colours) vanishes in the
+# delivered email. Mike saw exactly that on Nov 9 2026: the preview had borders, the draft had none.
+# Fix: copy every matching CSS rule onto each element's own style= attribute (rule order kept, the
+# element's existing inline style last so it still wins), and mirror any <td>/<th> background into
+# bgcolor= because Gmail drops background-color from cell styles but keeps bgcolor. The <style> block
+# and class= attributes stay in place, so every downstream check that looks for classes still works.
+from html.parser import HTMLParser as _HP
+def _inline_css(_doc, _css):
+    _rules = []
+    for _blk in _css.split('}'):
+        if '{' not in _blk: continue
+        _sel, _dec = _blk.split('{', 1)
+        _sel = _sel.strip(); _dec = _dec.strip().rstrip(';')
+        if _sel and _dec:
+            for _s in _sel.split(','):
+                _rules.append((_s.strip().split(), _dec))
+    def _simple(_part, _tag, _cls, _el):
+        _nth = None
+        if ':nth-child(even)' in _part:
+            _part = _part.replace(':nth-child(even)', ''); _nth = True
+        if _part.startswith('.'):
+            _ok = _part[1:] in _cls
+        else:
+            _ok = (_part == _tag)
+        if _ok and _nth: _ok = (_el.get('idx', 0) % 2 == 0)
+        return _ok
+    def _match(_parts, _stack):
+        _el = _stack[-1]
+        if not _simple(_parts[-1], _el['tag'], _el['cls'], _el): return False
+        _i = len(_stack) - 2
+        for _p in reversed(_parts[:-1]):
+            while _i >= 0 and not _simple(_p, _stack[_i]['tag'], _stack[_i]['cls'], _stack[_i]): _i -= 1
+            if _i < 0: return False
+            _i -= 1
+        return True
+    _VOID = {'meta','br','img','hr','input','link'}
+    class _P(_HP):
+        def __init__(self):
+            _HP.__init__(self, convert_charrefs=False); self.out = []; self.stack = []; self.kids = [{}]
+        def handle_decl(self, d): self.out.append('<!' + d + '>')
+        def handle_comment(self, d): self.out.append('<!--' + d + '-->')
+        def handle_entityref(self, n): self.out.append('&' + n + ';')
+        def handle_charref(self, n): self.out.append('&#' + n + ';')
+        def handle_data(self, d): self.out.append(d)
+        def handle_endtag(self, t):
+            self.out.append('</' + t + '>')
+            for _k in range(len(self.stack) - 1, -1, -1):
+                if self.stack[_k]['tag'] == t:
+                    del self.stack[_k:]; del self.kids[_k + 1:]; break
+        def handle_startendtag(self, t, a): self.handle_starttag(t, a, True)
+        def handle_starttag(self, t, a, _selfclose=False):
+            _raw = self.get_starttag_text()
+            _ad = dict(a)
+            _cnt = self.kids[-1]; _cnt[t] = _cnt.get(t, 0) + 1
+            _el = {'tag': t, 'cls': set((_ad.get('class') or '').split()), 'idx': _cnt[t]}
+            _stk = self.stack + [_el]
+            if t not in ('html','head','style','meta','title'):
+                _decs = [d for p, d in _rules if _match(p, _stk)]
+                if _decs:
+                    _old = _ad.get('style')
+                    _new = ';'.join(_decs) + ((';' + _old) if _old else '')
+                    _q = _new.replace('"', "'")
+                    if _old is not None:
+                        _raw = _re.sub(r'\sstyle="[^"]*"', ' style="' + _q + '"', _raw, count=1)
+                    else:
+                        _raw = _re.sub(r'^<' + t, '<' + t + ' style="' + _q + '"', _raw, count=1)
+                    if t in ('td','th') and 'bgcolor' not in _ad:
+                        _bg = _re.findall(r'background(?:-color)?\s*:\s*(#[0-9a-fA-F]{3,6})', _new)
+                        if _bg: _raw = _re.sub(r'^<' + t, '<' + t + ' bgcolor="' + _bg[-1] + '"', _raw, count=1)
+            self.out.append(_raw)
+            if t not in _VOID and not _selfclose:
+                self.stack.append(_el); self.kids.append({})
+    _p = _P(); _p.feed(_doc); _p.close()
+    return ''.join(_p.out)
+_pre_inline = html
+html = _inline_css(html, css)
+_vis = lambda s: _re.sub(r'\s+', ' ', _re.sub(r'<[^>]+>', '', _re.sub(r'<style>.*?</style>', '', s, flags=_re.S))).strip()
+if _vis(html) != _vis(_pre_inline):
+    print('CSS_INLINE_WARN: visible text changed -- shipping the un-inlined HTML instead'); html = _pre_inline
+else:
+    print('CSS_INLINE: OK -- ' + str(html.count(' style="')) + ' styled elements, visible text unchanged')
+
 with open('/tmp/digest_draft.html','w') as f: f.write(html)
 
 # Write subject line for the draft-sender subagent (Step 8)

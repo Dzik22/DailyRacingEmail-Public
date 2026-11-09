@@ -1,22 +1,42 @@
 [
  {
   "grade": "LR",
-  "race_name": "Virgin Bet Daily Price Boosts Irish EBF Gillies Fillies' Stakes (Listed Race)",
-  "track": "Doncaster",
-  "country": "GB",
-  "flag": "🇬🇧",
+  "race_name": "Prix Solitude",
+  "track": "Saint-Cloud",
+  "country": "FR",
+  "flag": "🇫🇷",
   "dist_surface": "1m2f · Turf",
-  "winner": "Seren Star",
-  "off_time": "2:45"
+  "winner": "Legacy Link",
+  "off_time": "4:00"
  },
  {
   "grade": "LR",
-  "race_name": "Virgin Bet Every Saturday Money Back Wentworth Stakes (Listed Race)",
-  "track": "Doncaster",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "6f · Turf",
-  "winner": "Coul Angel",
-  "off_time": "2:10"
+  "race_name": "Prix Vulcain",
+  "track": "Saint-Cloud",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m4½f · Turf",
+  "winner": "Lameloise",
+  "off_time": "2:50"
+ },
+ {
+  "grade": "LR",
+  "race_name": "Prix Tantieme",
+  "track": "Saint-Cloud",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m · Turf",
+  "winner": "Etincelle",
+  "off_time": "1:33"
+ },
+ {
+  "grade": "LR",
+  "race_name": "Prix Herod",
+  "track": "Saint-Cloud",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "7f · Turf",
+  "winner": "Flying Spur",
+  "off_time": "12:23"
  }
 ]

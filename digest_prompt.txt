@@ -91,6 +91,24 @@ Your ONE output is a Gmail draft to michaeljdzik@gmail.com. Step 8 (create_draft
 
 **⚠️ IF YOU ARE ABOUT TO DEVIATE FROM ANY ITEM ABOVE — STOP. THAT IS NEVER ALLOWED. FIX THE JSON AND RE-RUN THE STEP 7.5 GENERATOR INSTEAD.**
 
+## 🔒 GMAIL FORMATTING LOCK — INLINE STYLES ONLY (Mike, Nov 9 2026 — "Whatever you did FIXED it")
+
+Gmail STRIPS the `<style>` block and every `class=` attribute when a draft is written. Any border, fill or
+colour that lives only in the stylesheet vanishes in the delivered email. On Nov 9 2026 a re-run draft lost
+every border because of this, while the browser preview looked perfect. The fix, now permanent:
+- The Step 7.5 generator runs a CSS INLINER as its last step: every matching CSS rule is copied onto each
+  element's own `style=` (the element's existing inline style still wins), and every `<td>`/`<th>` background
+  is mirrored into `bgcolor=`. It prints `CSS_INLINE: OK -- N styled elements, visible text unchanged`.
+- NEVER remove, bypass or "simplify" the inliner. NEVER add formatting that exists only as a class rule.
+- Step 7.6 FAILS the digest if the HTML, with the `<style>` block and all `class=` attributes removed, no
+  longer carries the section-header rule, the race-table borders and the subsection boxes.
+- A browser preview is NOT proof of what Gmail shows. To check a look, render the HTML with the style block
+  and classes stripped first.
+- The approved look (Mike, Nov 9 2026): blue accents (#4da3ff / #1f6fbf), NO dark navy fills on header bars
+  (white or pale blue #eef5fc instead), Stakes Recap = Race · Dist · Surface | Winner (winner bold blue),
+  Upcoming Stakes = Date | Race · Dist · Surface | Track with "Won by <horse>" under every YESTERDAY race.
+  Silk badges keep their navy name pill and their real colours.
+
 ## 🔒 HTML TEMPLATE LOCK — NEVER DEVIATE FROM THIS
 
 The format of this email is PERMANENTLY FIXED. It was set by Mike and cannot be changed, simplified, or adapted under any circumstances.
@@ -4863,6 +4881,11 @@ if 'upcoming-wrapper' not in h: problems.append('Missing upcoming-wrapper — up
 if '| News from' not in h: problems.append('Wrong header subtitle — agent wrote custom header instead of generator output')
 if 'ENTRIES — NEXT 7 DAYS' not in h: problems.append('ENTRIES subsection header wrong — agent split entries manually')
 if 'class=\"race-table\"' not in h: problems.append('Missing race-table class')
+# GMAIL INLINE-STYLE GATE (Nov 9 2026): Gmail strips <style> and class=, so the look must survive without them.
+import re as _gre
+_gm = _gre.sub(r'<style>.*?</style>', '', h, flags=_gre.S); _gm = _gre.sub(r'\sclass="[^"]*"', '', _gm)
+for _need, _what in (('border-top:5px solid', 'section-header rule'), ('border:2px solid', 'race-table border'), ('border:3px dashed', 'My Stable subsection box')):
+    if _need not in _gm: problems.append('GMAIL INLINE STYLES MISSING: ' + _what + ' would vanish in Gmail -- the Step 7.5 CSS inliner did not run. Re-run Step 7.5.')
 # Verify EU upcoming races are present — check race names against eu_upcoming_json.json
 import os, json as _jeu
 # Aug 17 2026: the prefetch records what it actually fetched. If it reports EU races but the

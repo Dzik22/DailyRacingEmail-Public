@@ -1,6 +1,6 @@
 {
  "for_date": "2026-11-10",
- "built_utc": "2026-11-10T13:26:49.443911Z",
+ "built_utc": "2026-11-10T15:34:17.389855Z",
  "sources": {
   "Gainesway": "ok 1",
   "Claiborne": "ok 6",
@@ -11,7 +11,7 @@
   "Hill 'n' Dale": "ok 0 new",
   "Mill Ridge": "ok 0 new",
   "Murmur Farm": "ok 0 new",
-  "TDN": "ok 4, 1 graded wins"
+  "TDN": "ok 4, 1 graded wins; fail Honor A.P.: Failed to perform, curl: (28) Operation timed out after 2000"
  },
  "sires": [
   {

@@ -1,1 +1,12 @@
-[]
+[
+ {
+  "grade": "LR",
+  "race_name": "Prix Denisy",
+  "track": "Fontainebleau",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m7f · Turf",
+  "winner": "Galassi",
+  "off_time": "2:40"
+ }
+]

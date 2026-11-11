@@ -1,6 +1,6 @@
 {
- "for_date": "2026-11-10",
- "built_utc": "2026-11-10T15:34:17.389855Z",
+ "for_date": "2026-11-11",
+ "built_utc": "2026-11-11T07:47:08.932174Z",
  "sources": {
   "Gainesway": "ok 1",
   "Claiborne": "ok 6",
@@ -11,7 +11,7 @@
   "Hill 'n' Dale": "ok 0 new",
   "Mill Ridge": "ok 0 new",
   "Murmur Farm": "ok 0 new",
-  "TDN": "ok 4, 1 graded wins; fail Honor A.P.: Failed to perform, curl: (28) Operation timed out after 2000"
+  "TDN": "ok 3, 1 graded wins; fail Charge It: Failed to perform, curl: (28) Operation timed out after 2000 | Arzak: Failed to perform, curl: (28) Operation timed out after 2000"
  },
  "sires": [
   {
@@ -245,17 +245,6 @@
    "link": "https://claibornefarm.com/claiborne-farm-announces-fees-for-2027-breeding-season/?utm_source=rss&utm_medium=rss&utm_campaign=claiborne-farm-announces-fees-for-2027-breeding-season",
    "graded": false,
    "kind": "feed"
-  },
-  {
-   "date": "2026-10-11",
-   "farm": "TDN",
-   "sires": [
-    "Army Mule"
-   ],
-   "title": "Army Mule’s Lamirada Romps in Glorious Song",
-   "link": "https://www.thoroughbreddailynews.com/army-mules-lamirada-romps-in-glorious-song/",
-   "graded": false,
-   "kind": "news"
   }
  ],
  "pages": {

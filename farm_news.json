@@ -1,6 +1,6 @@
 {
  "for_date": "2026-11-11",
- "built_utc": "2026-11-11T07:47:08.932174Z",
+ "built_utc": "2026-11-11T10:48:35.253069Z",
  "sources": {
   "Gainesway": "ok 1",
   "Claiborne": "ok 6",
@@ -11,7 +11,7 @@
   "Hill 'n' Dale": "ok 0 new",
   "Mill Ridge": "ok 0 new",
   "Murmur Farm": "ok 0 new",
-  "TDN": "ok 3, 1 graded wins; fail Charge It: Failed to perform, curl: (28) Operation timed out after 2000 | Arzak: Failed to perform, curl: (28) Operation timed out after 2000"
+  "TDN": "ok 4, 1 graded wins"
  },
  "sires": [
   {
@@ -76,6 +76,17 @@
   }
  ],
  "items": [
+  {
+   "date": "2026-11-11",
+   "farm": "TDN",
+   "sires": [
+    "Arzak"
+   ],
+   "title": "100k Gun Pilot Weanling Pushes Keeneland November Over 2025’s Gross Total In Penultimate Session",
+   "link": "https://www.thoroughbreddailynews.com/100k-gun-pilot-weanling-pushes-keeneland-november-over-2025s-gross-total-in-penultimate-session/",
+   "graded": false,
+   "kind": "share"
+  },
   {
    "date": "2026-11-07",
    "farm": "Gainesway",

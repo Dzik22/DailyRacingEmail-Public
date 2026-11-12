@@ -1,10 +1,10 @@
 {
- "for_date": "2026-11-11",
- "built_utc": "2026-11-11T15:06:43.349133Z",
+ "for_date": "2026-11-12",
+ "built_utc": "2026-11-12T08:18:25.925700Z",
  "sources": {
-  "Gainesway": "ok 1",
+  "Gainesway": "ok 0",
   "Claiborne": "ok 6",
-  "Taylor Made": "ok 1",
+  "Taylor Made": "fail Failed to perform, curl: (35) Recv failure: Connection reset by peer. See https:",
   "WinStar": "ok 2",
   "Airdrie Stud": "ok 0",
   "Lane's End": "fail HTTP 404",
@@ -76,6 +76,28 @@
   }
  ],
  "items": [
+  {
+   "date": "2026-11-11",
+   "farm": "Claiborne",
+   "sires": [
+    "Mindframe"
+   ],
+   "title": "MINDFRAME Mares In Demand at Keeneland November",
+   "link": "https://claibornefarm.com/mindframe-mares-in-demand-at-keeneland-november/?utm_source=rss&utm_medium=rss&utm_campaign=mindframe-mares-in-demand-at-keeneland-november",
+   "graded": false,
+   "kind": "feed"
+  },
+  {
+   "date": "2026-11-11",
+   "farm": "Claiborne",
+   "sires": [
+    "Prince of Monaco"
+   ],
+   "title": "Successful Keeneland Debut for PRINCE OF MONACO Weanlings",
+   "link": "https://claibornefarm.com/successful-keeneland-debut-for-prince-of-monaco-weanlings/?utm_source=rss&utm_medium=rss&utm_campaign=successful-keeneland-debut-for-prince-of-monaco-weanlings",
+   "graded": false,
+   "kind": "feed"
+  },
   {
    "date": "2026-11-11",
    "farm": "TDN",

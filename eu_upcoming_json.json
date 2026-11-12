@@ -1,20 +1,6 @@
 [
  {
-  "day_label": "YESTERDAY — Tue Nov 10",
-  "races": [
-   {
-    "grade": "LR",
-    "race_name": "Prix Denisy",
-    "date_short": "Tue\nNov 10",
-    "track": "Fontainebleau",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m7f · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Wed Nov 11",
+  "day_label": "YESTERDAY — Wed Nov 11",
   "races": [
    {
     "grade": "G3",
@@ -37,7 +23,11 @@
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Thu Nov 12",
+  "day_label": "TODAY — Thu Nov 12",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Fri Nov 13",
   "races": []
  }
 ]

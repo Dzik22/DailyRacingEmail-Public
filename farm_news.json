@@ -1,10 +1,10 @@
 {
  "for_date": "2026-11-12",
- "built_utc": "2026-11-12T08:18:25.925700Z",
+ "built_utc": "2026-11-12T10:58:45.114498Z",
  "sources": {
   "Gainesway": "ok 0",
   "Claiborne": "ok 6",
-  "Taylor Made": "fail Failed to perform, curl: (35) Recv failure: Connection reset by peer. See https:",
+  "Taylor Made": "ok 1",
   "WinStar": "ok 2",
   "Airdrie Stud": "ok 0",
   "Lane's End": "fail HTTP 404",

@@ -1,33 +1,14 @@
 [
  {
-  "day_label": "YESTERDAY — Wed Nov 11",
-  "races": [
-   {
-    "grade": "G3",
-    "race_name": "Prix Fille De L'air (Group 3)",
-    "date_short": "Wed\nNov 11",
-    "track": "Toulouse",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m2½f · Turf"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Criterium Du Languedoc - Prix Bernard De Marmiesse",
-    "date_short": "Wed\nNov 11",
-    "track": "Toulouse",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m · Turf"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Thu Nov 12",
+  "day_label": "YESTERDAY — Thu Nov 12",
   "races": []
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Fri Nov 13",
+  "day_label": "TODAY — Fri Nov 13",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Sat Nov 14",
   "races": []
  }
 ]

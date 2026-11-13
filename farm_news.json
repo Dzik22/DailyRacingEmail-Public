@@ -1,6 +1,6 @@
 {
- "for_date": "2026-11-12",
- "built_utc": "2026-11-12T15:57:41.566564Z",
+ "for_date": "2026-11-13",
+ "built_utc": "2026-11-13T07:55:04.790841Z",
  "sources": {
   "Gainesway": "ok 0",
   "Claiborne": "ok 6",
@@ -11,7 +11,7 @@
   "Hill 'n' Dale": "ok 0 new",
   "Mill Ridge": "ok 0 new",
   "Murmur Farm": "ok 0 new",
-  "TDN": "ok 4, 1 graded wins"
+  "TDN": "ok 3, 1 graded wins"
  },
  "sires": [
   {
@@ -253,31 +253,6 @@
    "link": "https://www.thoroughbreddailynews.com/interstitialad/hill-n-dale-army-mule-10-15-26/",
    "graded": false,
    "kind": "news"
-  },
-  {
-   "date": "2026-10-13",
-   "farm": "TDN",
-   "sires": [
-    "Mindframe"
-   ],
-   "title": "At $40k, Mindframe Leads Claiborne Stud Fees in 2027",
-   "link": "https://www.thoroughbreddailynews.com/at-40k-mindframe-leads-claiborne-stud-fees-in-2027/",
-   "graded": false,
-   "kind": "news"
-  },
-  {
-   "date": "2026-10-13",
-   "farm": "Claiborne",
-   "sires": [
-    "Prince of Monaco",
-    "Annapolis",
-    "Mindframe",
-    "Johannes"
-   ],
-   "title": "Claiborne Farm Announces Fees For 2027 Breeding Season",
-   "link": "https://claibornefarm.com/claiborne-farm-announces-fees-for-2027-breeding-season/?utm_source=rss&utm_medium=rss&utm_campaign=claiborne-farm-announces-fees-for-2027-breeding-season",
-   "graded": false,
-   "kind": "feed"
   }
  ],
  "pages": {

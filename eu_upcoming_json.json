@@ -1,14 +1,33 @@
 [
  {
-  "day_label": "YESTERDAY — Thu Nov 12",
+  "day_label": "YESTERDAY — Fri Nov 13",
   "races": []
  },
  {
-  "day_label": "TODAY — Fri Nov 13",
+  "day_label": "TODAY — Sat Nov 14",
   "races": []
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Sat Nov 14",
-  "races": []
+  "day_label": "TOMORROW — Next 7 days from Sun Nov 15",
+  "races": [
+   {
+    "grade": "LR",
+    "race_name": "All-Weather Championships Season XIV River Eden EBF Fillies' Stakes (Listed) (GBBPlus Race)",
+    "date_short": "Thu\nNov 19",
+    "track": "Lingfield (AW)",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m5f · AW"
+   },
+   {
+    "grade": "LR",
+    "race_name": "All-Weather Championships Season XIV Fleur De Lys Fillies' Stakes (Listed)",
+    "date_short": "Thu\nNov 19",
+    "track": "Lingfield (AW)",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m · AW"
+   }
+  ]
  }
 ]

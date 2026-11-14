@@ -1,6 +1,6 @@
 {
- "for_date": "2026-11-13",
- "built_utc": "2026-11-13T15:20:08.569228Z",
+ "for_date": "2026-11-14",
+ "built_utc": "2026-11-14T07:36:33.374722Z",
  "sources": {
   "Gainesway": "ok 0",
   "Claiborne": "ok 6",
@@ -11,7 +11,7 @@
   "Hill 'n' Dale": "ok 0 new",
   "Mill Ridge": "ok 0 new",
   "Murmur Farm": "ok 0 new",
-  "TDN": "ok 3, 1 graded wins"
+  "TDN": "ok 2, 1 graded wins"
  },
  "sires": [
   {
@@ -230,29 +230,6 @@
    "link": "https://www.taylormadestallions.com/taylor-made-stallions-announces-2027-stallion-roster-and-fees/",
    "graded": false,
    "kind": "feed"
-  },
-  {
-   "date": "2026-10-14",
-   "farm": "WinStar",
-   "sires": [
-    "Straight No Chaser",
-    "Tappan Street"
-   ],
-   "title": "WinStar Farm announces 2027 stallion roster and fees",
-   "link": "https://www.winstarfarm.com/winstar-farm-announces-2027-stallion-roster-and-fees/",
-   "graded": false,
-   "kind": "feed"
-  },
-  {
-   "date": "2026-10-14",
-   "farm": "TDN",
-   "sires": [
-    "Army Mule"
-   ],
-   "title": "Hill ‘n’ Dale (Army Mule) 10-15-26",
-   "link": "https://www.thoroughbreddailynews.com/interstitialad/hill-n-dale-army-mule-10-15-26/",
-   "graded": false,
-   "kind": "news"
   }
  ],
  "pages": {

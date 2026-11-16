@@ -1,6 +1,6 @@
 {
- "for_date": "2026-11-15",
- "built_utc": "2026-11-15T14:42:39.984133Z",
+ "for_date": "2026-11-16",
+ "built_utc": "2026-11-16T07:58:23.569802Z",
  "sources": {
   "Gainesway": "ok 0",
   "Claiborne": "ok 6",
@@ -207,17 +207,6 @@
    "link": "https://www.thoroughbreddailynews.com/army-mules-ground-support-takes-division-1-of-the-glen-cove/",
    "graded": false,
    "kind": "news"
-  },
-  {
-   "date": "2026-10-16",
-   "farm": "Claiborne",
-   "sires": [
-    "Annapolis"
-   ],
-   "title": "Eight Yearlings for ANNAPOLIS at Fasig-Tipton October",
-   "link": "https://claibornefarm.com/eight-yearlings-for-annapolis-at-fasig-tipton-october/?utm_source=rss&utm_medium=rss&utm_campaign=eight-yearlings-for-annapolis-at-fasig-tipton-october",
-   "graded": false,
-   "kind": "feed"
   }
  ],
  "pages": {

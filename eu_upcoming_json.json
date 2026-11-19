@@ -1,14 +1,10 @@
 [
  {
-  "day_label": "YESTERDAY — Tue Nov 17",
+  "day_label": "YESTERDAY — Wed Nov 18",
   "races": []
  },
  {
-  "day_label": "TODAY — Wed Nov 18",
-  "races": []
- },
- {
-  "day_label": "TOMORROW — Next 7 days from Thu Nov 19",
+  "day_label": "TODAY — Thu Nov 19",
   "races": [
    {
     "grade": "LR",
@@ -29,5 +25,9 @@
     "dist_surface": "1m · AW"
    }
   ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Fri Nov 20",
+  "races": []
  }
 ]

@@ -28,6 +28,25 @@
  },
  {
   "day_label": "TOMORROW — Next 7 days from Fri Nov 20",
-  "races": []
+  "races": [
+   {
+    "grade": "G3",
+    "race_name": "Prix Thomas Bryon (Group 3)",
+    "date_short": "Fri\nNov 20",
+    "track": "Chantilly",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m1f · AW"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Prix Miesque (Group 3)",
+    "date_short": "Fri\nNov 20",
+    "track": "Chantilly",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "7f · AW"
+   }
+  ]
  }
 ]

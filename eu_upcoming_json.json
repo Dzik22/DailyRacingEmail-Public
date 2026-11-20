@@ -1,20 +1,7 @@
 [
  {
-  "day_label": "YESTERDAY — Wed Nov 18",
-  "races": []
- },
- {
-  "day_label": "TODAY — Thu Nov 19",
+  "day_label": "YESTERDAY — Thu Nov 19",
   "races": [
-   {
-    "grade": "LR",
-    "race_name": "All-Weather Championships Season XIV River Eden EBF Fillies' Stakes (Listed Race) (GBBPlus Race)",
-    "date_short": "Thu\nNov 19",
-    "track": "Lingfield (AW)",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m5f · AW"
-   },
    {
     "grade": "LR",
     "race_name": "All-Weather Championships Season XIV Fleur De Lys Fillies' Stakes (Listed Race)",
@@ -23,11 +10,20 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m · AW"
+   },
+   {
+    "grade": "LR",
+    "race_name": "All-Weather Championships Season XIV River Eden EBF Fillies' Stakes (Listed Race) (GBBPlus Race)",
+    "date_short": "Thu\nNov 19",
+    "track": "Lingfield (AW)",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m5f · AW"
    }
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Fri Nov 20",
+  "day_label": "TODAY — Fri Nov 20",
   "races": [
    {
     "grade": "G3",
@@ -46,6 +42,20 @@
     "country": "FR",
     "flag": "🇫🇷",
     "dist_surface": "7f · AW"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Sat Nov 21",
+  "races": [
+   {
+    "grade": "LR",
+    "race_name": "Unibet Floodlit Stakes (Listed)",
+    "date_short": "Wed\nNov 25",
+    "track": "Kempton (AW)",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m4f · AW"
    }
   ]
  }

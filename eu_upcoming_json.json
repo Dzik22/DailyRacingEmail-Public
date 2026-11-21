@@ -1,39 +1,7 @@
 [
  {
-  "day_label": "YESTERDAY — Thu Nov 19",
+  "day_label": "YESTERDAY — Fri Nov 20",
   "races": [
-   {
-    "grade": "LR",
-    "race_name": "All-Weather Championships Season XIV Fleur De Lys Fillies' Stakes (Listed Race)",
-    "date_short": "Thu\nNov 19",
-    "track": "Lingfield (AW)",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m · AW"
-   },
-   {
-    "grade": "LR",
-    "race_name": "All-Weather Championships Season XIV River Eden EBF Fillies' Stakes (Listed Race) (GBBPlus Race)",
-    "date_short": "Thu\nNov 19",
-    "track": "Lingfield (AW)",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m5f · AW"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Fri Nov 20",
-  "races": [
-   {
-    "grade": "G3",
-    "race_name": "Prix Thomas Bryon (Group 3)",
-    "date_short": "Fri\nNov 20",
-    "track": "Chantilly",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m1f · AW"
-   },
    {
     "grade": "G3",
     "race_name": "Prix Miesque (Group 3)",
@@ -42,15 +10,55 @@
     "country": "FR",
     "flag": "🇫🇷",
     "dist_surface": "7f · AW"
+   },
+   {
+    "grade": "G3",
+    "race_name": "Prix Thomas Bryon (Group 3)",
+    "date_short": "Fri\nNov 20",
+    "track": "Chantilly",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m1f · AW"
    }
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Sat Nov 21",
+  "day_label": "TODAY — Sat Nov 21",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Sun Nov 22",
   "races": [
    {
+    "grade": "G1",
+    "race_name": "Prix Jacques De Vienne",
+    "date_short": "Sun\nNov 22",
+    "track": "Fontainebleau",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m5f · Turf"
+   },
+   {
+    "grade": "G2",
+    "race_name": "Prix Chloris",
+    "date_short": "Sun\nNov 22",
+    "track": "Fontainebleau",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m5f · Turf"
+   },
+   {
     "grade": "LR",
-    "race_name": "Unibet Floodlit Stakes (Listed)",
+    "race_name": "Grand Prix De Fontainebleau - Fonds Europeen De L'elevage",
+    "date_short": "Sun\nNov 22",
+    "track": "Fontainebleau",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m2f · Turf"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Unibet Floodlit Stakes (Listed Race)",
     "date_short": "Wed\nNov 25",
     "track": "Kempton (AW)",
     "country": "GB",

@@ -1,22 +1,22 @@
 [
  {
-  "grade": "LR",
-  "race_name": "All-Weather Championships Season XIV Fleur De Lys Fillies' Stakes (Listed Race)",
-  "track": "Lingfield (AW)",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "1m · AW",
-  "winner": "Kon Tiki",
-  "off_time": "2:38"
+  "grade": "G3",
+  "race_name": "Prix Miesque (Group 3)",
+  "track": "Chantilly",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "7f · AW",
+  "winner": "Reina Sioux",
+  "off_time": "1:53"
  },
  {
-  "grade": "LR",
-  "race_name": "All-Weather Championships Season XIV River Eden EBF Fillies' Stakes (Listed Race) (GBBPlus Race)",
-  "track": "Lingfield (AW)",
-  "country": "GB",
-  "flag": "🇬🇧",
-  "dist_surface": "1m5f · AW",
-  "winner": "Little Dorrit",
-  "off_time": "2:03"
+  "grade": "G3",
+  "race_name": "Prix Thomas Bryon (Group 3)",
+  "track": "Chantilly",
+  "country": "FR",
+  "flag": "🇫🇷",
+  "dist_surface": "1m1f · AW",
+  "winner": "Wykehurst Park",
+  "off_time": "12:43"
  }
 ]

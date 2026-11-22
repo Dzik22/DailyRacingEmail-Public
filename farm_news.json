@@ -1,11 +1,11 @@
 {
- "for_date": "2026-11-21",
- "built_utc": "2026-11-21T15:17:31.146855Z",
+ "for_date": "2026-11-22",
+ "built_utc": "2026-11-22T07:59:13.168499Z",
  "sources": {
   "Gainesway": "ok 0",
   "Claiborne": "ok 6",
   "Taylor Made": "ok 1",
-  "WinStar": "ok 2",
+  "WinStar": "ok 1",
   "Airdrie Stud": "ok 0",
   "Lane's End": "fail HTTP 404",
   "Hill 'n' Dale": "ok 0 new",

@@ -1,33 +1,10 @@
 [
  {
-  "day_label": "YESTERDAY — Fri Nov 20",
-  "races": [
-   {
-    "grade": "G3",
-    "race_name": "Prix Miesque (Group 3)",
-    "date_short": "Fri\nNov 20",
-    "track": "Chantilly",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "7f · AW"
-   },
-   {
-    "grade": "G3",
-    "race_name": "Prix Thomas Bryon (Group 3)",
-    "date_short": "Fri\nNov 20",
-    "track": "Chantilly",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m1f · AW"
-   }
-  ]
- },
- {
-  "day_label": "TODAY — Sat Nov 21",
+  "day_label": "YESTERDAY — Sat Nov 21",
   "races": []
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Sun Nov 22",
+  "day_label": "TODAY — Sun Nov 22",
   "races": [
    {
     "grade": "G1",
@@ -55,6 +32,29 @@
     "country": "FR",
     "flag": "🇫🇷",
     "dist_surface": "1m2f · Turf"
+   }
+  ]
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Mon Nov 23",
+  "races": [
+   {
+    "grade": "LR",
+    "race_name": "Midnite Golden Rose Stakes (Listed)",
+    "date_short": "Fri\nNov 27",
+    "track": "Southwell (AW)",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · AW"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Midnite Churchill Stakes (Listed)",
+    "date_short": "Fri\nNov 27",
+    "track": "Southwell (AW)",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m3f · AW"
    },
    {
     "grade": "LR",

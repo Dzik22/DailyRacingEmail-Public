@@ -1,6 +1,6 @@
 {
  "for_date": "2026-11-23",
- "built_utc": "2026-11-23T15:54:02.398435Z",
+ "built_utc": "2026-11-23T19:11:57.474375Z",
  "sources": {
   "Gainesway": "ok 0",
   "Claiborne": "ok 6",
@@ -8,7 +8,7 @@
   "WinStar": "ok 1",
   "Airdrie Stud": "ok 0",
   "Lane's End": "fail HTTP 404",
-  "Hill 'n' Dale": "ok 0 new",
+  "Hill 'n' Dale": "ok 9 new",
   "Mill Ridge": "ok 0 new",
   "Murmur Farm": "ok 0 new",
   "TDN": "ok 2, 1 graded wins"
@@ -76,6 +76,72 @@
   }
  ],
  "items": [
+  {
+   "date": "2026-11-23",
+   "farm": "Hill 'n' Dale",
+   "sires": [
+    "Army Mule"
+   ],
+   "title": "15.2% STAKES HORSES TO STARTERS",
+   "link": "https://www.hillndalefarms.com/army-mule",
+   "graded": false,
+   "kind": "page"
+  },
+  {
+   "date": "2026-11-23",
+   "farm": "Hill 'n' Dale",
+   "sires": [
+    "Army Mule"
+   ],
+   "title": "• An Elite Source of Stakes Performance:",
+   "link": "https://www.hillndalefarms.com/army-mule",
+   "graded": false,
+   "kind": "page"
+  },
+  {
+   "date": "2026-11-23",
+   "farm": "Hill 'n' Dale",
+   "sires": [
+    "Army Mule"
+   ],
+   "title": "Sire of 24 Stakes Winners and 42 Stakes Horses to date",
+   "link": "https://www.hillndalefarms.com/army-mule",
+   "graded": false,
+   "kind": "page"
+  },
+  {
+   "date": "2026-11-23",
+   "farm": "Hill 'n' Dale",
+   "sires": [
+    "Army Mule"
+   ],
+   "title": ", with an outstanding 15.2% Stakes Horses to Starters,",
+   "link": "https://www.hillndalefarms.com/army-mule",
+   "graded": false,
+   "kind": "page"
+  },
+  {
+   "date": "2026-11-23",
+   "farm": "Hill 'n' Dale",
+   "sires": [
+    "Army Mule"
+   ],
+   "title": "• Top 4 Sire of 2 Year Old Stakes Winners in 2026, led by",
+   "link": "https://www.hillndalefarms.com/army-mule",
+   "graded": false,
+   "kind": "page"
+  },
+  {
+   "date": "2026-11-23",
+   "farm": "Hill 'n' Dale",
+   "sires": [
+    "Army Mule"
+   ],
+   "title": "of Woodbine’s Glorious Song Stakes,",
+   "link": "https://www.hillndalefarms.com/army-mule",
+   "graded": false,
+   "kind": "page"
+  },
   {
    "date": "2026-11-11",
    "farm": "Claiborne",
@@ -215,21 +281,22 @@
    "Maclean's Music",
    "Nominate Your Mare",
    "2027 Stud Fee: $25,000 LFSN",
-   "to Starters / Lifetime",
-   "Ranked #3 by % SWs to Starters",
-   "Among 5th crop sires among sires having 50 starters or more.",
-   "Danse Macabre ($1,095,878)",
-   "- 2nd $210,000 Eclipse Stakes (G2)",
-   "Soldier N Diplomat",
-   "- 2nd $1,000,000 Southwest Stakes (G3), 2nd $200,000 Hot Springs Stakes",
-   "Party in the Army",
-   "- 3rd $200,000 Mike Lee Stakes at Saratoga",
-   "- 2nd $125,000 Star Shoot Stakes at Woodbine",
-   "- 2nd Hoover Stakes",
-   "- 3rd Goldfinch Stakes",
-   "Two Year Olds sold for $750,000, $500,000, $350,000, etc.",
-   "21 Stakes Winners, 37 Stakes Horses from His First Five Crops",
+   "15.2% STAKES HORSES TO STARTERS",
+   "• An Elite Source of Stakes Performance:",
+   "Sire of 24 Stakes Winners and 42 Stakes Horses to date",
+   ", with an outstanding 15.2% Stakes Horses to Starters,",
+   "ranking second only to Justify among Kentucky sires of his crop.",
+   "• Top 4 Sire of 2 Year Old Stakes Winners in 2026, led by",
+   "LAMIRADA, an 8 ¼ length winner",
+   "of Woodbine’s Glorious Song Stakes,",
+   "earning a 94 Beyer Speed Figure –among the top three recorded by a 2 year old filly in 2026.",
+   "• Other stakes performers include Grade 2 winner and half-million-dollar earner GROUND SUPPORT (G2), a 3 ¾ length winner of the seven furlong Glen Cove Stakes (G3) at Belmont in 1:20.22 – New Stakes Record and winner of the Pebble Stakes (G3) at Belmont in 1:33.52, .02 off the Stakes Record.",
+   "• Commercial Success Year After Year: In 2026, 2 year olds sold for $750,000, $500,000, $350,000, etc.; Yearlings sold for $450,000, $385,000, $385,000, etc.; Weanlings sold for up to $230,000, etc.",
+   "• Respected by Leading Buyers: Progeny purchased in 2026 by Katsumi Yoshida, Donato Lanni, St. Elias Stable, West Point Thoroughbreds, Flying Dutchmen, Kenny McPeek, Wesley Ward, Bradley Thoroughbreds, Bill & Corinne Heiligbrodt, among others.",
+   "• Loaded Pipeline: Averaged 150 mares bred annually over the last two years, representing his highest-quality books to date.",
    "aria-label=\"Army Mule\"",
+   "CLICK TO WATCH RACE",
+   "NOMINATE A MARE",
    "Maiden Special Weight at Belmont (6.5f, by 8 1/2 lengths, defeating Zap Zap Zap, Thaddeus, River Deep, New Moon, Wage Acceleration, Peace Speaker, Polar City, etc.)",
    "Carter Hcp. (G1)",
    "at Aqueduct (7f, by 6 1/4 lengths, defeating Awesome Slew, Great Stuff, Skyler's Scramjet, Petrov, Favorable Outcome, Fellowship, Do Share, Red Dragon Tattoo, Spartiatis, Green Gratto, etc.),",
@@ -237,6 +304,7 @@
    "Friesan Fire - Crafty Toast by Crafty Prospector",
    "Catalogue Style Pedigree",
    "\" data-provider-name=\"YouTube\">",
+   "Ground Support - 2026 Pebbles (G3)",
    "Hillerito - 2025 Dream Supreme Stakes",
    "Stanley House - 2025 Niagara Stakes",
    "Pinky Finger - 2025 Kentucky Juvenile Stakes (G2)",

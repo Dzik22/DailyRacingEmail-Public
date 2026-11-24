@@ -1,6 +1,6 @@
 {
- "for_date": "2026-11-23",
- "built_utc": "2026-11-23T19:11:57.474375Z",
+ "for_date": "2026-11-24",
+ "built_utc": "2026-11-24T10:54:30.314598Z",
  "sources": {
   "Gainesway": "ok 0",
   "Claiborne": "ok 6",
@@ -8,7 +8,7 @@
   "WinStar": "ok 1",
   "Airdrie Stud": "ok 0",
   "Lane's End": "fail HTTP 404",
-  "Hill 'n' Dale": "ok 9 new",
+  "Hill 'n' Dale": "ok 0 new",
   "Mill Ridge": "ok 0 new",
   "Murmur Farm": "ok 0 new",
   "TDN": "ok 2, 1 graded wins"

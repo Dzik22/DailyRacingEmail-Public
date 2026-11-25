@@ -1,14 +1,33 @@
 [
  {
-  "day_label": "YESTERDAY — Mon Nov 23",
+  "day_label": "YESTERDAY — Tue Nov 24",
   "races": []
  },
  {
-  "day_label": "TODAY — Tue Nov 24",
-  "races": []
+  "day_label": "TODAY — Wed Nov 25",
+  "races": [
+   {
+    "grade": "LR",
+    "race_name": "Prix Lyphard",
+    "date_short": "Wed\nNov 25",
+    "track": "Deauville",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m1½f · AW"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Unibet Floodlit Stakes (Listed Race)",
+    "date_short": "Wed\nNov 25",
+    "track": "Kempton (AW)",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "1m4f · AW"
+   }
+  ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Wed Nov 25",
+  "day_label": "TOMORROW — Next 7 days from Thu Nov 26",
   "races": [
    {
     "grade": "LR",
@@ -27,24 +46,6 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m3f · AW"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Prix Lyphard",
-    "date_short": "Wed\nNov 25",
-    "track": "Deauville",
-    "country": "FR",
-    "flag": "🇫🇷",
-    "dist_surface": "1m1½f · AW"
-   },
-   {
-    "grade": "LR",
-    "race_name": "Unibet Floodlit Stakes (Listed Race)",
-    "date_short": "Wed\nNov 25",
-    "track": "Kempton (AW)",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "1m4f · AW"
    }
   ]
  }

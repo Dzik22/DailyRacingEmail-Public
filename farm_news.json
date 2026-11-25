@@ -1,6 +1,6 @@
 {
- "for_date": "2026-11-24",
- "built_utc": "2026-11-24T18:50:48.642658Z",
+ "for_date": "2026-11-25",
+ "built_utc": "2026-11-25T09:49:21.563272Z",
  "sources": {
   "Gainesway": "ok 0",
   "Claiborne": "ok 6",
@@ -11,7 +11,7 @@
   "Hill 'n' Dale": "ok 0 new",
   "Mill Ridge": "ok 0 new",
   "Murmur Farm": "ok 0 new",
-  "TDN": "ok 2, 1 graded wins"
+  "TDN": "ok 1, 0 graded wins"
  },
  "sires": [
   {
@@ -262,17 +262,6 @@
    "link": "https://gainesway.com/charge-it-weanlings-make-debut-at-fasig-tipton-november/",
    "graded": false,
    "kind": "feed"
-  },
-  {
-   "date": "2026-10-25",
-   "farm": "TDN",
-   "sires": [
-    "Army Mule"
-   ],
-   "title": "Army Mule’s Ground Support Takes Division 1 of the Glen Cove",
-   "link": "https://www.thoroughbreddailynews.com/army-mules-ground-support-takes-division-1-of-the-glen-cove/",
-   "graded": false,
-   "kind": "news"
   }
  ],
  "pages": {
@@ -415,18 +404,5 @@
    "(410) 836-3491, fax (410) 836-3489"
   ]
  },
- "graded_hits": [
-  {
-   "date": "2026-10-25",
-   "sire": "Army Mule",
-   "farm": "Hill 'n' Dale",
-   "winner": "Ground Support",
-   "grade": "G3",
-   "race_name": "Glen Cove S.",
-   "course": "Belmont",
-   "region": "",
-   "source": "TDN",
-   "link": "https://www.thoroughbreddailynews.com/army-mules-ground-support-takes-division-1-of-the-glen-cove/"
-  }
- ]
+ "graded_hits": []
 }

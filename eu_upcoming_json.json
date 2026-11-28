@@ -28,6 +28,16 @@
  },
  {
   "day_label": "TOMORROW — Next 7 days from Sun Nov 29",
-  "races": []
+  "races": [
+   {
+    "grade": "LR",
+    "race_name": "Prix Max Sicard - 17eme Etape Du Defi Du Galop - G.camprubi",
+    "date_short": "Sun\nNov 29",
+    "track": "Toulouse",
+    "country": "FR",
+    "flag": "🇫🇷",
+    "dist_surface": "1m4f · Turf"
+   }
+  ]
  }
 ]

@@ -1,20 +1,7 @@
 [
  {
-  "day_label": "YESTERDAY — Thu Nov 26",
-  "races": []
- },
- {
-  "day_label": "TODAY — Fri Nov 27",
+  "day_label": "YESTERDAY — Fri Nov 27",
   "races": [
-   {
-    "grade": "LR",
-    "race_name": "Midnite Golden Rose Stakes (Listed Race)",
-    "date_short": "Fri\nNov 27",
-    "track": "Southwell (AW)",
-    "country": "GB",
-    "flag": "🇬🇧",
-    "dist_surface": "6f · AW"
-   },
    {
     "grade": "LR",
     "race_name": "Midnite Churchill Stakes (Listed Race)",
@@ -23,11 +10,24 @@
     "country": "GB",
     "flag": "🇬🇧",
     "dist_surface": "1m3f · AW"
+   },
+   {
+    "grade": "LR",
+    "race_name": "Midnite Golden Rose Stakes (Listed Race)",
+    "date_short": "Fri\nNov 27",
+    "track": "Southwell (AW)",
+    "country": "GB",
+    "flag": "🇬🇧",
+    "dist_surface": "6f · AW"
    }
   ]
  },
  {
-  "day_label": "TOMORROW — Next 7 days from Sat Nov 28",
+  "day_label": "TODAY — Sat Nov 28",
+  "races": []
+ },
+ {
+  "day_label": "TOMORROW — Next 7 days from Sun Nov 29",
   "races": []
  }
 ]
